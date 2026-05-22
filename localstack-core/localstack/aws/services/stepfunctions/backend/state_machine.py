@@ -24,13 +24,13 @@ from localstack.aws.api.stepfunctions import (
     ValidationException,
     VariableReferences,
 )
-from localstack.services.stepfunctions.asl.eval.event.logging import (
+from localstack.aws.services.stepfunctions.asl.eval.event.logging import (
     CloudWatchLoggingConfiguration,
 )
-from localstack.services.stepfunctions.asl.static_analyser.variable_references_static_analyser import (
+from localstack.aws.services.stepfunctions.asl.static_analyser.variable_references_static_analyser import (
     VariableReferencesStaticAnalyser,
 )
-from localstack.services.stepfunctions.backend.alias import Alias
+from localstack.aws.services.stepfunctions.backend.alias import Alias
 from localstack.utils.strings import long_uid
 
 

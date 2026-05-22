@@ -7,8 +7,7 @@ from urllib.parse import parse_qs, parse_qsl, urlencode, urlparse, urlunparse
 import requests
 from requests.models import CaseInsensitiveDict, Response
 
-from localstack import config
-
+from localstack.platform import config
 from .strings import to_str
 
 # chunk size for file downloads

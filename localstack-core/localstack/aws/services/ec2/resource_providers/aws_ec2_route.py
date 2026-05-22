@@ -6,8 +6,8 @@ from typing import TypedDict
 
 from moto.ec2.utils import generate_route_id
 
-import localstack.services.cloudformation.provider_utils as util
-from localstack.services.cloudformation.resource_provider import (
+import localstack.aws.services.cloudformation.provider_utils as util
+from localstack.aws.services.cloudformation.resource_provider import (
     OperationStatus,
     ProgressEvent,
     ResourceProvider,

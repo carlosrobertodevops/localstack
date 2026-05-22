@@ -5,10 +5,10 @@ import pytest
 from localstack_snapshot.snapshots.transformer import JsonpathTransformer, RegexTransformer
 
 from localstack.aws.api.lambda_ import Runtime
-from localstack.services.stepfunctions.asl.utils.json_path import extract_json
-from localstack.testing.aws.util import is_aws_cloud
-from localstack.testing.pytest import markers
-from localstack.testing.pytest.stepfunctions.utils import (
+from localstack.aws.services.stepfunctions.asl.utils.json_path import extract_json
+from localstack.tooling.testing.aws.util import is_aws_cloud
+from localstack.tooling.testing.pytest import markers
+from localstack.tooling.testing.pytest.stepfunctions.utils import (
     SfnNoneRecursiveParallelTransformer,
     await_execution_terminated,
     create_and_record_execution,

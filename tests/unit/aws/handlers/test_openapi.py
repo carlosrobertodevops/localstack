@@ -7,7 +7,7 @@ from rolo import Request, Response
 from rolo.gateway import RequestContext
 from rolo.gateway.handlers import EmptyResponseHandler
 
-from localstack import config
+from localstack.platform import config
 from localstack.aws.chain import HandlerChain
 from localstack.aws.handlers.validation import OpenAPIRequestValidator
 

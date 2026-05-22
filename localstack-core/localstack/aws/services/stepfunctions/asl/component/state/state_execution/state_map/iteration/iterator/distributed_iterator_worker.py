@@ -1,28 +1,28 @@
-from localstack.services.stepfunctions.asl.component.common.error_name.failure_event import (
+from localstack.aws.services.stepfunctions.asl.component.common.error_name.failure_event import (
     FailureEventException,
 )
-from localstack.services.stepfunctions.asl.component.common.parargs import Parameters
-from localstack.services.stepfunctions.asl.component.common.timeouts.timeout import EvalTimeoutError
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.item_selector import (
+from localstack.aws.services.stepfunctions.asl.component.common.parargs import Parameters
+from localstack.aws.services.stepfunctions.asl.component.common.timeouts.timeout import EvalTimeoutError
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.item_selector import (
     ItemSelector,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.itemprocessor.map_run_record import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.itemprocessor.map_run_record import (
     MapRunRecord,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.iterator.inline_iterator_worker import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.iterator.inline_iterator_worker import (
     InlineIteratorWorker,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.job import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.job import (
     Job,
     JobPool,
 )
-from localstack.services.stepfunctions.asl.eval.environment import Environment
-from localstack.services.stepfunctions.asl.eval.program_state import (
+from localstack.aws.services.stepfunctions.asl.eval.environment import Environment
+from localstack.aws.services.stepfunctions.asl.eval.program_state import (
     ProgramError,
     ProgramState,
     ProgramStopped,
 )
-from localstack.services.stepfunctions.asl.eval.states import ItemData, MapData
+from localstack.aws.services.stepfunctions.asl.eval.states import ItemData, MapData
 
 
 class DistributedIteratorWorker(InlineIteratorWorker):

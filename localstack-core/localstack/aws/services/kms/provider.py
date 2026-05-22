@@ -121,8 +121,8 @@ from localstack.aws.api.kms import (
     VerifyResponse,
     WrappingKeySpec,
 )
-from localstack.services.kms.exceptions import ValidationException
-from localstack.services.kms.models import (
+from localstack.aws.services.kms.exceptions import ValidationException
+from localstack.aws.services.kms.models import (
     MULTI_REGION_PATTERN,
     PATTERN_UUID,
     RESERVED_ALIASES,
@@ -135,7 +135,7 @@ from localstack.services.kms.models import (
     deserialize_ciphertext_blob,
     kms_stores,
 )
-from localstack.services.kms.utils import (
+from localstack.aws.services.kms.utils import (
     execute_dry_run_capable,
     get_custom_key_id,
     get_custom_key_material,
@@ -144,8 +144,8 @@ from localstack.services.kms.utils import (
     validate_alias_name,
     validate_and_filter_tags,
 )
-from localstack.services.plugins import ServiceLifecycleHook
-from localstack.state import StateVisitor
+from localstack.aws.services.plugins import ServiceLifecycleHook
+from localstack.platform.state import StateVisitor
 from localstack.utils.aws.arns import get_partition, kms_alias_arn, parse_arn
 from localstack.utils.collections import PaginatedList
 from localstack.utils.common import select_attributes

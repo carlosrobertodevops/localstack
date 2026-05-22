@@ -3,7 +3,7 @@ from __future__ import annotations
 import abc
 from typing import Final
 
-from localstack.services.stepfunctions.asl.component.component import Component
+from localstack.aws.services.stepfunctions.asl.component.component import Component
 
 
 class ErrorName(Component, abc.ABC):

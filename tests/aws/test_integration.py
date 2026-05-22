@@ -6,8 +6,8 @@ import time
 
 import pytest
 
-from localstack.testing.aws.util import get_lambda_logs
-from localstack.testing.pytest import markers
+from localstack.tooling.testing.aws.util import get_lambda_logs
+from localstack.tooling.testing.pytest import markers
 from localstack.utils import testutil
 from localstack.utils.aws import arns
 from localstack.utils.common import (

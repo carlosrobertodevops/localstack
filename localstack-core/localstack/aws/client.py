@@ -12,9 +12,9 @@ from botocore.model import OperationModel
 from botocore.parsers import ResponseParser, ResponseParserFactory
 from werkzeug.datastructures import Headers
 
-from localstack import config
-from localstack.http import Request, Response
-from localstack.runtime import hooks
+from localstack.platform import config
+from localstack.platform.http import Request, Response
+from localstack.platform.runtime import hooks
 from localstack.utils.patch import Patch, patch
 from localstack.utils.strings import to_str
 

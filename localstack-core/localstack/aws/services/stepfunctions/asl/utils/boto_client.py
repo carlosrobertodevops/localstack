@@ -2,8 +2,8 @@ from botocore.client import BaseClient
 from botocore.config import Config
 
 from localstack.aws.connect import connect_to
-from localstack.services.stepfunctions.asl.component.common.timeouts.timeout import TimeoutSeconds
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_task.credentials import (
+from localstack.aws.services.stepfunctions.asl.component.common.timeouts.timeout import TimeoutSeconds
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_task.credentials import (
     StateCredentials,
 )
 from localstack.utils.aws.client_types import ServicePrincipal

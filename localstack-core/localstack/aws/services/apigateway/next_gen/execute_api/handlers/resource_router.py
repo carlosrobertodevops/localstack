@@ -12,9 +12,9 @@ from localstack.aws.protocol.routing import (
     post_process_arg_name,
     transform_path_params_to_rule_vars,
 )
-from localstack.http import Response
-from localstack.http.router import GreedyPathConverter
-from localstack.services.apigateway.models import RestApiDeployment
+from localstack.platform.http import Response
+from localstack.platform.http.router import GreedyPathConverter
+from localstack.aws.services.apigateway.models import RestApiDeployment
 
 from ..api import RestApiGatewayHandler, RestApiGatewayHandlerChain
 from ..context import RestApiInvocationContext

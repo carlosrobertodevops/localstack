@@ -3,20 +3,20 @@ from moto.apigateway.models import APIGatewayBackend, apigateway_backends
 from werkzeug.datastructures.headers import Headers
 
 from localstack.aws.api.apigateway import ApiKeySourceType, Method
-from localstack.http import Request, Response
-from localstack.services.apigateway.models import MergedRestApi, RestApiDeployment
-from localstack.services.apigateway.next_gen.execute_api.api import RestApiGatewayHandlerChain
-from localstack.services.apigateway.next_gen.execute_api.context import (
+from localstack.platform.http import Request, Response
+from localstack.aws.services.apigateway.models import MergedRestApi, RestApiDeployment
+from localstack.aws.services.apigateway.next_gen.execute_api.api import RestApiGatewayHandlerChain
+from localstack.aws.services.apigateway.next_gen.execute_api.context import (
     InvocationRequest,
     RestApiInvocationContext,
 )
-from localstack.services.apigateway.next_gen.execute_api.gateway_response import InvalidAPIKeyError
-from localstack.services.apigateway.next_gen.execute_api.handlers import ApiKeyValidationHandler
-from localstack.services.apigateway.next_gen.execute_api.variables import (
+from localstack.aws.services.apigateway.next_gen.execute_api.gateway_response import InvalidAPIKeyError
+from localstack.aws.services.apigateway.next_gen.execute_api.handlers import ApiKeyValidationHandler
+from localstack.aws.services.apigateway.next_gen.execute_api.variables import (
     ContextVariables,
     ContextVarsIdentity,
 )
-from localstack.testing.config import TEST_AWS_ACCOUNT_ID, TEST_AWS_REGION_NAME
+from localstack.tooling.testing.config import TEST_AWS_ACCOUNT_ID, TEST_AWS_REGION_NAME
 from localstack.utils.strings import short_uid
 
 TEST_API_ID = "testapi"

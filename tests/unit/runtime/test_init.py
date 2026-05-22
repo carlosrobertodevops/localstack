@@ -4,7 +4,7 @@ import textwrap
 
 import pytest
 
-from localstack.runtime.init import InitScriptManager, Script, Stage, State
+from localstack.platform.runtime.init import InitScriptManager, Script, Stage, State
 
 
 @pytest.fixture

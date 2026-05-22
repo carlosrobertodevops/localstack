@@ -13,7 +13,7 @@ from localstack.aws.api.events import (
     Timestamp,
 )
 from localstack.aws.connect import connect_to
-from localstack.services.events.models import (
+from localstack.aws.services.events.models import (
     Archive,
     ArchiveDescription,
     ArchiveName,
@@ -23,7 +23,7 @@ from localstack.services.events.models import (
     RetentionDays,
     RuleName,
 )
-from localstack.services.events.utils import extract_event_bus_name
+from localstack.aws.services.events.utils import extract_event_bus_name
 from localstack.utils.aws.client_types import ServicePrincipal
 
 LOG = logging.getLogger(__name__)

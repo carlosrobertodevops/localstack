@@ -10,22 +10,22 @@ from math import ceil
 
 from botocore.config import Config
 
-from localstack import config
+from localstack.platform import config
 from localstack.aws.api.lambda_ import InvocationType, TooManyRequestsException
-from localstack.services.lambda_.analytics import (
+from localstack.aws.services.lambda_.analytics import (
     FunctionInitializationType,
     FunctionOperation,
     FunctionStatus,
     function_counter,
 )
-from localstack.services.lambda_.invocation.internal_sqs_queue import get_fake_sqs_client
-from localstack.services.lambda_.invocation.lambda_models import (
+from localstack.aws.services.lambda_.invocation.internal_sqs_queue import get_fake_sqs_client
+from localstack.aws.services.lambda_.invocation.lambda_models import (
     EventInvokeConfig,
     FunctionVersion,
     Invocation,
     InvocationResult,
 )
-from localstack.services.lambda_.invocation.version_manager import LambdaVersionManager
+from localstack.aws.services.lambda_.invocation.version_manager import LambdaVersionManager
 from localstack.utils.aws import dead_letter_queue
 from localstack.utils.aws.message_forwarding import send_event_to_target
 from localstack.utils.strings import md5, to_str

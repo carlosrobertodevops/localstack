@@ -28,7 +28,7 @@ def set_current_runtime(runtime: "LocalstackRuntime"):
 
 
 def initialize_runtime() -> "LocalstackRuntime":
-    from localstack.runtime import runtime
+    from localstack.platform.runtime import runtime
 
     with _runtime_lock:
         try:

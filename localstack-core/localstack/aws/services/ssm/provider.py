@@ -77,8 +77,8 @@ from localstack.aws.api.ssm import (
     Targets,
 )
 from localstack.aws.connect import connect_to
-from localstack.services.moto import call_moto, call_moto_with_request
-from localstack.state import StateVisitor
+from localstack.aws.services.moto import call_moto, call_moto_with_request
+from localstack.platform.state import StateVisitor
 from localstack.utils.aws.arns import extract_resource_from_arn, is_arn
 from localstack.utils.bootstrap import is_api_enabled
 from localstack.utils.collections import remove_attributes

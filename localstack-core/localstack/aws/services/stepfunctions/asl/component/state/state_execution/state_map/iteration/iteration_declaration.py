@@ -1,11 +1,11 @@
 from typing import Final
 
-from localstack.services.stepfunctions.asl.component.common.comment import Comment
-from localstack.services.stepfunctions.asl.component.common.flow.start_at import StartAt
-from localstack.services.stepfunctions.asl.component.common.query_language import QueryLanguage
-from localstack.services.stepfunctions.asl.component.component import Component
-from localstack.services.stepfunctions.asl.component.program.states import States
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.itemprocessor.processor_config import (
+from localstack.aws.services.stepfunctions.asl.component.common.comment import Comment
+from localstack.aws.services.stepfunctions.asl.component.common.flow.start_at import StartAt
+from localstack.aws.services.stepfunctions.asl.component.common.query_language import QueryLanguage
+from localstack.aws.services.stepfunctions.asl.component.component import Component
+from localstack.aws.services.stepfunctions.asl.component.program.states import States
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.itemprocessor.processor_config import (
     ProcessorConfig,
 )
 

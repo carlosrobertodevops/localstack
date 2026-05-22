@@ -3,10 +3,10 @@ import logging
 
 from localstack.aws.api.lambda_ import InvocationType
 from localstack.aws.api.pipes import PipeTargetInvocationType
-from localstack.services.lambda_.api_utils import function_locators_from_arn
-from localstack.services.lambda_.event_source_mapping.pipe_utils import to_json_str
-from localstack.services.lambda_.event_source_mapping.pollers.poller import has_batch_item_failures
-from localstack.services.lambda_.event_source_mapping.senders.sender import (
+from localstack.aws.services.lambda_.api_utils import function_locators_from_arn
+from localstack.aws.services.lambda_.event_source_mapping.pipe_utils import to_json_str
+from localstack.aws.services.lambda_.event_source_mapping.pollers.poller import has_batch_item_failures
+from localstack.aws.services.lambda_.event_source_mapping.senders.sender import (
     PartialFailureSenderError,
     Sender,
     SenderError,
@@ -55,7 +55,7 @@ class LambdaSender(Sender):
 
         # TODO: test special payloads (e.g., None, str, empty str, bytes)
         #  see "to_bytes(json.dumps(payload or {}, cls=BytesEncoder))" in legacy invoke adapter
-        #  localstack.services.lambda_.event_source_listeners.adapters.EventSourceAsfAdapter.invoke_with_statuscode
+        #  localstack.aws.services.lambda_.event_source_listeners.adapters.EventSourceAsfAdapter.invoke_with_statuscode
         invoke_result = self.target_client.invoke(
             FunctionName=self.target_arn,
             Payload=to_json_str(events),

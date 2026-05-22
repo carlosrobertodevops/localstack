@@ -8,28 +8,28 @@ from collections import defaultdict
 from collections.abc import Callable
 from pathlib import Path
 
-from localstack import config
+from localstack.platform import config
 from localstack.aws.api.lambda_ import Architecture, PackageType, Runtime
-from localstack.dns import server as dns_server
-from localstack.services.lambda_ import hooks as lambda_hooks
-from localstack.services.lambda_.invocation.executor_endpoint import (
+from localstack.platform.dns import server as dns_server
+from localstack.aws.services.lambda_ import hooks as lambda_hooks
+from localstack.aws.services.lambda_.invocation.executor_endpoint import (
     INVOCATION_PORT,
     ExecutorEndpoint,
 )
-from localstack.services.lambda_.invocation.lambda_models import FunctionVersion
-from localstack.services.lambda_.invocation.runtime_executor import (
+from localstack.aws.services.lambda_.invocation.lambda_models import FunctionVersion
+from localstack.aws.services.lambda_.invocation.runtime_executor import (
     ChmodPath,
     LambdaPrebuildContext,
     LambdaRuntimeException,
     RuntimeExecutor,
 )
-from localstack.services.lambda_.lambda_utils import HINT_LOG
-from localstack.services.lambda_.networking import (
+from localstack.aws.services.lambda_.lambda_utils import HINT_LOG
+from localstack.aws.services.lambda_.networking import (
     get_all_container_networks_for_lambda,
     get_main_endpoint_from_container,
 )
-from localstack.services.lambda_.packages import get_runtime_client_path
-from localstack.services.lambda_.runtimes import IMAGE_MAPPING
+from localstack.aws.services.lambda_.packages import get_runtime_client_path
+from localstack.aws.services.lambda_.runtimes import IMAGE_MAPPING
 from localstack.utils.container_networking import get_main_container_name
 from localstack.utils.container_utils.container_client import (
     BindMount,

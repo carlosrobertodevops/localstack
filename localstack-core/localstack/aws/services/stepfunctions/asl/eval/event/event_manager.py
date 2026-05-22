@@ -13,12 +13,12 @@ from localstack.aws.api.stepfunctions import (
     LongArn,
     Timestamp,
 )
-from localstack.services.stepfunctions.asl.eval.event.event_detail import EventDetails
-from localstack.services.stepfunctions.asl.eval.event.logging import (
+from localstack.aws.services.stepfunctions.asl.eval.event.event_detail import EventDetails
+from localstack.aws.services.stepfunctions.asl.eval.event.logging import (
     CloudWatchLoggingSession,
     HistoryLog,
 )
-from localstack.services.stepfunctions.asl.utils.encoding import to_json_str
+from localstack.aws.services.stepfunctions.asl.utils.encoding import to_json_str
 
 LOG = logging.getLogger(__name__)
 

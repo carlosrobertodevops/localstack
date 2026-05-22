@@ -5,96 +5,96 @@ from localstack.aws.api.stepfunctions import (
     HistoryEventType,
     MapStateStartedEventDetails,
 )
-from localstack.services.stepfunctions.asl.component.common.catch.catch_decl import CatchDecl
-from localstack.services.stepfunctions.asl.component.common.catch.catch_outcome import CatchOutcome
-from localstack.services.stepfunctions.asl.component.common.error_name.failure_event import (
+from localstack.aws.services.stepfunctions.asl.component.common.catch.catch_decl import CatchDecl
+from localstack.aws.services.stepfunctions.asl.component.common.catch.catch_outcome import CatchOutcome
+from localstack.aws.services.stepfunctions.asl.component.common.error_name.failure_event import (
     FailureEvent,
     FailureEventException,
 )
-from localstack.services.stepfunctions.asl.component.common.error_name.states_error_name import (
+from localstack.aws.services.stepfunctions.asl.component.common.error_name.states_error_name import (
     StatesErrorName,
 )
-from localstack.services.stepfunctions.asl.component.common.error_name.states_error_name_type import (
+from localstack.aws.services.stepfunctions.asl.component.common.error_name.states_error_name_type import (
     StatesErrorNameType,
 )
-from localstack.services.stepfunctions.asl.component.common.parargs import Parameters, Parargs
-from localstack.services.stepfunctions.asl.component.common.path.items_path import ItemsPath
-from localstack.services.stepfunctions.asl.component.common.path.result_path import ResultPath
-from localstack.services.stepfunctions.asl.component.common.result_selector import ResultSelector
-from localstack.services.stepfunctions.asl.component.common.retry.retry_decl import RetryDecl
-from localstack.services.stepfunctions.asl.component.common.retry.retry_outcome import RetryOutcome
-from localstack.services.stepfunctions.asl.component.common.string.string_expression import (
+from localstack.aws.services.stepfunctions.asl.component.common.parargs import Parameters, Parargs
+from localstack.aws.services.stepfunctions.asl.component.common.path.items_path import ItemsPath
+from localstack.aws.services.stepfunctions.asl.component.common.path.result_path import ResultPath
+from localstack.aws.services.stepfunctions.asl.component.common.result_selector import ResultSelector
+from localstack.aws.services.stepfunctions.asl.component.common.retry.retry_decl import RetryDecl
+from localstack.aws.services.stepfunctions.asl.component.common.retry.retry_outcome import RetryOutcome
+from localstack.aws.services.stepfunctions.asl.component.common.string.string_expression import (
     JSONPATH_ROOT_PATH,
     StringJsonPath,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.execute_state import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.execute_state import (
     ExecutionState,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.item_reader.item_reader_decl import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.item_reader.item_reader_decl import (
     ItemReader,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.item_selector import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.item_selector import (
     ItemSelector,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.items.items import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.items.items import (
     Items,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.distributed_iteration_component import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.distributed_iteration_component import (
     DistributedIterationComponent,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.itemprocessor.distributed_item_processor import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.itemprocessor.distributed_item_processor import (
     DistributedItemProcessor,
     DistributedItemProcessorEvalInput,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.itemprocessor.inline_item_processor import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.itemprocessor.inline_item_processor import (
     InlineItemProcessor,
     InlineItemProcessorEvalInput,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.itemprocessor.item_processor_decl import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.itemprocessor.item_processor_decl import (
     ItemProcessorDecl,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.itemprocessor.item_processor_factory import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.itemprocessor.item_processor_factory import (
     from_item_processor_decl,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.itemprocessor.map_run_record import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.itemprocessor.map_run_record import (
     MapRunRecord,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.iteration_component import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.iteration_component import (
     IterationComponent,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.iterator.distributed_iterator import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.iterator.distributed_iterator import (
     DistributedIterator,
     DistributedIteratorEvalInput,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.iterator.inline_iterator import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.iterator.inline_iterator import (
     InlineIterator,
     InlineIteratorEvalInput,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.iterator.iterator_decl import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.iterator.iterator_decl import (
     IteratorDecl,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.iterator.iterator_factory import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.iterator.iterator_factory import (
     from_iterator_decl,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.label import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.label import (
     Label,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.max_concurrency import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.max_concurrency import (
     MaxConcurrency,
     MaxConcurrencyDecl,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.result_writer.result_writer_decl import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.result_writer.result_writer_decl import (
     ResultWriter,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.tolerated_failure import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.tolerated_failure import (
     ToleratedFailureCountDecl,
     ToleratedFailureCountInt,
     ToleratedFailurePercentage,
     ToleratedFailurePercentageDecl,
 )
-from localstack.services.stepfunctions.asl.component.state.state_props import StateProps
-from localstack.services.stepfunctions.asl.eval.environment import Environment
-from localstack.services.stepfunctions.asl.eval.event.event_detail import EventDetails
+from localstack.aws.services.stepfunctions.asl.component.state.state_props import StateProps
+from localstack.aws.services.stepfunctions.asl.eval.environment import Environment
+from localstack.aws.services.stepfunctions.asl.eval.event.event_detail import EventDetails
 
 
 class StateMap(ExecutionState):

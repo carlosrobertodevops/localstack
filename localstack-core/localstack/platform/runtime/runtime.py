@@ -4,8 +4,8 @@ import threading
 
 from plux import PluginManager
 
-from localstack import config, constants
-from localstack.runtime import events, hooks
+from localstack.platform import config, constants
+from localstack.platform.runtime import events, hooks
 from localstack.utils import files, functions, net, sync, threads
 
 from .components import Components
@@ -18,7 +18,7 @@ class LocalstackRuntime:
     The localstack runtime. It has the following responsibilities:
 
       - Manage localstack filesystem directories
-      - Execute runtime lifecycle hook plugins from ``localstack.runtime.hooks``.
+      - Execute runtime lifecycle hook plugins from ``localstack.platform.runtime.hooks``.
       - Manage the localstack SSL certificate
       - Serve the gateway (It uses a ``RuntimeServer`` to serve a ``Gateway`` instance coming from the
         ``Components`` factory.)
@@ -34,7 +34,7 @@ class LocalstackRuntime:
         # serve as a reminder to avoid global state in general.
         self.config = config
 
-        # TODO: move away from `localstack.runtime.events` and instantiate new `threading.Event()` here
+        # TODO: move away from `localstack.platform.runtime.events` and instantiate new `threading.Event()` here
         #  instead
         self.starting = events.infra_starting
         self.ready = events.infra_ready
@@ -171,7 +171,7 @@ class LocalstackRuntime:
 def create_from_environment() -> LocalstackRuntime:
     """
     Creates a new runtime instance from the current environment. It uses a plugin manager to resolve the
-    necessary components from the ``localstack.runtime.components`` plugin namespace to start the runtime.
+    necessary components from the ``localstack.platform.runtime.components`` plugin namespace to start the runtime.
 
     :return: a new LocalstackRuntime instance
     """

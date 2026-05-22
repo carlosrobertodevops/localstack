@@ -13,7 +13,7 @@ from moto.apigateway.models import APIGatewayBackend, Integration, Resource
 from moto.apigateway.models import RestAPI as MotoRestAPI
 from moto.apigateway.utils import ApigwAuthorizerIdentifier, ApigwResourceIdentifier
 
-from localstack import config
+from localstack.platform import config
 from localstack.aws.api import RequestContext
 from localstack.aws.api.apigateway import (
     Authorizer,
@@ -26,14 +26,14 @@ from localstack.aws.api.apigateway import (
     PutMode,
     RequestValidator,
 )
-from localstack.constants import (
+from localstack.platform.constants import (
     APPLICATION_JSON,
     AWS_REGION_US_EAST_1,
     DEFAULT_AWS_ACCOUNT_ID,
     PATH_USER_REQUEST,
 )
-from localstack.services.apigateway.legacy.context import ApiInvocationContext
-from localstack.services.apigateway.models import (
+from localstack.aws.services.apigateway.legacy.context import ApiInvocationContext
+from localstack.aws.services.apigateway.models import (
     ApiGatewayStore,
     RestApiContainer,
     apigateway_stores,

@@ -9,8 +9,8 @@ from localstack.aws.api.kms import (
     TagException,
     TagList,
 )
-from localstack.constants import TAG_KEY_CUSTOM_ID
-from localstack.services.kms.exceptions import ValidationException
+from localstack.platform.constants import TAG_KEY_CUSTOM_ID
+from localstack.aws.services.kms.exceptions import ValidationException
 from localstack.utils.aws.arns import ARN_PARTITION_REGEX
 
 KMS_KEY_ARN_PATTERN = re.compile(

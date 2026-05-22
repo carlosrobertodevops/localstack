@@ -1,6 +1,6 @@
 import boto3
 
-import localstack.services.cloudformation.provider_utils as utils
+import localstack.aws.services.cloudformation.provider_utils as utils
 
 
 class TestDictUtils:

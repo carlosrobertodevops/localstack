@@ -3,8 +3,8 @@ import os
 import pytest
 from botocore.exceptions import ClientError
 
-from localstack.testing.pytest import markers
-from localstack.testing.pytest.fixtures import StackDeployError
+from localstack.tooling.testing.pytest import markers
+from localstack.tooling.testing.pytest.fixtures import StackDeployError
 
 
 def deploy_stack(deploy_cfn_template, template_filename, **kwargs):

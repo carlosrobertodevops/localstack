@@ -75,10 +75,10 @@ from localstack.aws.api.cloudwatch import (
     UntagResourceOutput,
 )
 from localstack.aws.connect import connect_to
-from localstack.http import Request
-from localstack.services.cloudwatch.alarm_scheduler import AlarmScheduler
-from localstack.services.cloudwatch.cloudwatch_database_helper import CloudwatchDatabase
-from localstack.services.cloudwatch.models import (
+from localstack.platform.http import Request
+from localstack.aws.services.cloudwatch.alarm_scheduler import AlarmScheduler
+from localstack.aws.services.cloudwatch.cloudwatch_database_helper import CloudwatchDatabase
+from localstack.aws.services.cloudwatch.models import (
     CloudWatchStore,
     LocalStackAlarm,
     LocalStackCompositeAlarm,
@@ -86,9 +86,9 @@ from localstack.services.cloudwatch.models import (
     LocalStackMetricAlarm,
     cloudwatch_stores,
 )
-from localstack.services.edge import ROUTER
-from localstack.services.plugins import SERVICE_PLUGINS, ServiceLifecycleHook
-from localstack.state import AssetDirectory, StateVisitor
+from localstack.aws.services.edge import ROUTER
+from localstack.aws.services.plugins import SERVICE_PLUGINS, ServiceLifecycleHook
+from localstack.platform.state import AssetDirectory, StateVisitor
 from localstack.utils.aws import arns
 from localstack.utils.aws.arns import extract_account_id_from_arn, lambda_function_name
 from localstack.utils.collections import PaginatedList

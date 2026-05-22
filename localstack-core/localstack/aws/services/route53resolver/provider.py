@@ -3,7 +3,7 @@ from datetime import UTC, datetime
 from moto.route53resolver.models import Route53ResolverBackend as MotoRoute53ResolverBackend
 from moto.route53resolver.models import route53resolver_backends
 
-import localstack.services.route53resolver.utils
+import localstack.aws.services.route53resolver.utils
 from localstack.aws.api import RequestContext
 from localstack.aws.api.route53resolver import (
     Action,
@@ -89,10 +89,10 @@ from localstack.aws.api.route53resolver import (
     UpdateFirewallRuleResponse,
     ValidationException,
 )
-from localstack.services.ec2.models import get_ec2_backend
-from localstack.services.moto import call_moto
-from localstack.services.route53resolver.models import Route53ResolverStore, route53resolver_stores
-from localstack.services.route53resolver.utils import (
+from localstack.aws.services.ec2.models import get_ec2_backend
+from localstack.aws.services.moto import call_moto
+from localstack.aws.services.route53resolver.models import Route53ResolverStore, route53resolver_stores
+from localstack.aws.services.route53resolver.utils import (
     get_resolver_query_log_config_id,
     get_route53_resolver_firewall_domain_list_id,
     get_route53_resolver_firewall_rule_group_association_id,
@@ -102,7 +102,7 @@ from localstack.services.route53resolver.utils import (
     validate_mutation_protection,
     validate_priority,
 )
-from localstack.state import StateVisitor
+from localstack.platform.state import StateVisitor
 from localstack.utils.aws import arns
 from localstack.utils.aws.arns import extract_account_id_from_arn, extract_region_from_arn
 from localstack.utils.collections import select_from_typed_dict
@@ -283,7 +283,7 @@ class Route53ResolverProvider(Route53ResolverApi):
                         firewall_domains.remove(domain)
                     else:
                         raise ValidationException(
-                            f"[RSLVR-02502] The following domains don't exist in the DNS Firewall domain list '{firewall_domain_list_id}'. You can't delete a domain that isn't in a domain list. Example unknown domain: '{domain}'. Trace Id: '{localstack.services.route53resolver.utils.get_trace_id()}'"
+                            f"[RSLVR-02502] The following domains don't exist in the DNS Firewall domain list '{firewall_domain_list_id}'. You can't delete a domain that isn't in a domain list. Example unknown domain: '{domain}'. Trace Id: '{localstack.aws.services.route53resolver.utils.get_trace_id()}'"
                         )
 
         if operation == FirewallDomainUpdateOperation.REPLACE:
@@ -396,7 +396,7 @@ class Route53ResolverProvider(Route53ResolverApi):
         firewall_rule_group = store.firewall_rules.get(firewall_rule_group_id)
         if firewall_rule_group is None:
             raise ResourceNotFoundException(
-                f"Can't find the resource with ID '{firewall_rule_group_id}'. Trace Id: '{localstack.services.route53resolver.utils.get_trace_id()}'"
+                f"Can't find the resource with ID '{firewall_rule_group_id}'. Trace Id: '{localstack.aws.services.route53resolver.utils.get_trace_id()}'"
             )
 
         firewall_rules = [
@@ -480,7 +480,7 @@ class Route53ResolverProvider(Route53ResolverApi):
                 == firewall_rule_group_id
             ):
                 raise ValidationException(
-                    f"[RSLVR-02302] This DNS Firewall rule group can't be associated to a VPC: '{vpc_id}'. It is already associated to VPC '{firewall_rule_group_id}'. Try again with another VPC or DNS Firewall rule group. Trace Id: '{localstack.services.route53resolver.utils.get_trace_id()}'"
+                    f"[RSLVR-02302] This DNS Firewall rule group can't be associated to a VPC: '{vpc_id}'. It is already associated to VPC '{firewall_rule_group_id}'. Try again with another VPC or DNS Firewall rule group. Trace Id: '{localstack.aws.services.route53resolver.utils.get_trace_id()}'"
                 )
 
         id = get_route53_resolver_firewall_rule_group_association_id()

@@ -14,7 +14,7 @@ from typing import IO
 from urllib import parse as urlparse
 from zoneinfo import ZoneInfo
 
-from localstack import config
+from localstack.platform import config
 from localstack.aws.api import CommonServiceException, RequestContext, handler
 from localstack.aws.api.s3 import (
     MFA,
@@ -230,19 +230,19 @@ from localstack.aws.handlers import (
     preprocess_request,
     serve_custom_service_request_handlers,
 )
-from localstack.constants import AWS_REGION_EU_WEST_1, AWS_REGION_US_EAST_1
-from localstack.services.edge import ROUTER
-from localstack.services.plugins import ServiceLifecycleHook
-from localstack.services.s3.codec import AwsChunkedDecoder
-from localstack.services.s3.constants import (
+from localstack.platform.constants import AWS_REGION_EU_WEST_1, AWS_REGION_US_EAST_1
+from localstack.aws.services.edge import ROUTER
+from localstack.aws.services.plugins import ServiceLifecycleHook
+from localstack.aws.services.s3.codec import AwsChunkedDecoder
+from localstack.aws.services.s3.constants import (
     ALLOWED_HEADER_OVERRIDES,
     ARCHIVES_STORAGE_CLASSES,
     CHECKSUM_ALGORITHMS,
     DEFAULT_BUCKET_ENCRYPTION,
     S3_HOST_ID,
 )
-from localstack.services.s3.cors import S3CorsHandler, s3_cors_request_handler
-from localstack.services.s3.exceptions import (
+from localstack.aws.services.s3.cors import S3CorsHandler, s3_cors_request_handler
+from localstack.aws.services.s3.exceptions import (
     InvalidBucketOwnerAWSAccountID,
     InvalidBucketState,
     InvalidRequest,
@@ -253,7 +253,7 @@ from localstack.services.s3.exceptions import (
     TooManyConfigurations,
     UnexpectedContent,
 )
-from localstack.services.s3.models import (
+from localstack.aws.services.s3.models import (
     BucketCorsIndex,
     EncryptionParameters,
     ObjectLockParameters,
@@ -266,11 +266,11 @@ from localstack.services.s3.models import (
     VersionedKeyStore,
     s3_stores,
 )
-from localstack.services.s3.notifications import NotificationDispatcher, S3EventNotificationContext
-from localstack.services.s3.presigned_url import validate_post_policy
-from localstack.services.s3.storage.core import LimitedIterableStream, S3ObjectStore
-from localstack.services.s3.storage.ephemeral import EphemeralS3ObjectStore
-from localstack.services.s3.utils import (
+from localstack.aws.services.s3.notifications import NotificationDispatcher, S3EventNotificationContext
+from localstack.aws.services.s3.presigned_url import validate_post_policy
+from localstack.aws.services.s3.storage.core import LimitedIterableStream, S3ObjectStore
+from localstack.aws.services.s3.storage.ephemeral import EphemeralS3ObjectStore
+from localstack.aws.services.s3.utils import (
     ObjectRange,
     add_expiration_days_to_datetime,
     base_64_content_md5_to_etag,
@@ -315,7 +315,7 @@ from localstack.services.s3.utils import (
     validate_location_constraint,
     validate_tag_set,
 )
-from localstack.services.s3.validation import (
+from localstack.aws.services.s3.validation import (
     parse_grants_in_headers,
     validate_acl_acp,
     validate_bucket_analytics_configuration,
@@ -330,8 +330,8 @@ from localstack.services.s3.validation import (
     validate_sse_c,
     validate_website_configuration,
 )
-from localstack.services.s3.website_hosting import register_website_hosting_routes
-from localstack.state import AssetDirectory, StateVisitor
+from localstack.aws.services.s3.website_hosting import register_website_hosting_routes
+from localstack.platform.state import AssetDirectory, StateVisitor
 from localstack.utils.aws.arns import s3_bucket_name
 from localstack.utils.aws.aws_stack import get_valid_regions_for_service
 from localstack.utils.collections import select_from_typed_dict

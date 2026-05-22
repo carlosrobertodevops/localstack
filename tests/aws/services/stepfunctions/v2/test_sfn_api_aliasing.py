@@ -5,9 +5,9 @@ import pytest
 from localstack_snapshot.snapshots.transformer import RegexTransformer
 
 from localstack.aws.api.stepfunctions import Arn, RoutingConfigurationListItem
-from localstack.testing.aws.util import is_aws_cloud
-from localstack.testing.pytest import markers
-from localstack.testing.pytest.stepfunctions.utils import (
+from localstack.tooling.testing.aws.util import is_aws_cloud
+from localstack.tooling.testing.pytest import markers
+from localstack.tooling.testing.pytest.stepfunctions.utils import (
     await_execution_terminated,
     await_state_machine_alias_is_created,
     await_state_machine_alias_is_deleted,

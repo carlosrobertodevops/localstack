@@ -4,11 +4,11 @@ import threading
 
 from botocore.utils import ArnParser
 
-from localstack import config
+from localstack.platform import config
 from localstack.aws.api.opensearch import DomainEndpointOptions, EngineType
-from localstack.constants import LOCALHOST
-from localstack.services.opensearch import versions
-from localstack.services.opensearch.cluster import (
+from localstack.platform.constants import LOCALHOST
+from localstack.aws.services.opensearch import versions
+from localstack.aws.services.opensearch.cluster import (
     CustomEndpoint,
     EdgeProxiedElasticsearchCluster,
     EdgeProxiedOpensearchCluster,

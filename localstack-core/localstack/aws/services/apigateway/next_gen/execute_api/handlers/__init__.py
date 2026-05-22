@@ -1,6 +1,6 @@
 from rolo.gateway import CompositeHandler
 
-from localstack.services.apigateway.analytics import invocation_counter
+from localstack.aws.services.apigateway.analytics import invocation_counter
 
 from .analytics import IntegrationUsageCounter
 from .api_key_validation import ApiKeyValidationHandler

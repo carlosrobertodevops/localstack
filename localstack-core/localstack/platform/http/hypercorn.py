@@ -9,8 +9,8 @@ from hypercorn.typing import ASGIFramework
 from localstack.aws.gateway import Gateway
 from localstack.aws.handlers.proxy import ProxyHandler
 from localstack.aws.serving.asgi import AsgiGateway
-from localstack.config import HostAndPort
-from localstack.logging.setup import setup_hypercorn_logger
+from localstack.platform.config import HostAndPort
+from localstack.platform.logging.setup import setup_hypercorn_logger
 from localstack.utils.collections import ensure_list
 from localstack.utils.functions import call_safe
 from localstack.utils.serving import Server
@@ -125,7 +125,7 @@ class GatewayServer(HypercornServer):
 
 class ProxyServer(GatewayServer):
     """
-    Proxy server implementation which uses the localstack.http.proxy module.
+    Proxy server implementation which uses the localstack.platform.http.proxy module.
     These server instances can be spawned easily, while implementing HTTP/HTTPS multiplexing (if enabled),
     and just forward all incoming requests to a backend.
     """

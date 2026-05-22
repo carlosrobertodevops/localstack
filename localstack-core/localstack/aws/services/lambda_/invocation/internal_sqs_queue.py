@@ -2,7 +2,7 @@ import logging
 import threading
 from collections.abc import Iterable
 
-from localstack import config
+from localstack.platform import config
 from localstack.aws.api.sqs import (
     AttributeNameList,
     CreateQueueResult,
@@ -19,9 +19,9 @@ from localstack.aws.api.sqs import (
     String,
     TagMap,
 )
-from localstack.services.sqs.models import SqsQueue, StandardQueue, to_sqs_api_message
-from localstack.services.sqs.provider import QueueUpdateWorker
-from localstack.services.sqs.utils import create_message_attribute_hash, generate_message_id
+from localstack.aws.services.sqs.models import SqsQueue, StandardQueue, to_sqs_api_message
+from localstack.aws.services.sqs.provider import QueueUpdateWorker
+from localstack.aws.services.sqs.utils import create_message_attribute_hash, generate_message_id
 from localstack.utils.objects import singleton_factory
 from localstack.utils.strings import md5
 from localstack.utils.time import now

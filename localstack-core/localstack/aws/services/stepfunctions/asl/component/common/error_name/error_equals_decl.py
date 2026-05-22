@@ -1,14 +1,14 @@
 from typing import Final
 
-from localstack.services.stepfunctions.asl.component.common.error_name.error_name import ErrorName
-from localstack.services.stepfunctions.asl.component.common.error_name.states_error_name import (
+from localstack.aws.services.stepfunctions.asl.component.common.error_name.error_name import ErrorName
+from localstack.aws.services.stepfunctions.asl.component.common.error_name.states_error_name import (
     StatesErrorName,
 )
-from localstack.services.stepfunctions.asl.component.common.error_name.states_error_name_type import (
+from localstack.aws.services.stepfunctions.asl.component.common.error_name.states_error_name_type import (
     StatesErrorNameType,
 )
-from localstack.services.stepfunctions.asl.component.eval_component import EvalComponent
-from localstack.services.stepfunctions.asl.eval.environment import Environment
+from localstack.aws.services.stepfunctions.asl.component.eval_component import EvalComponent
+from localstack.aws.services.stepfunctions.asl.eval.environment import Environment
 
 
 class ErrorEqualsDecl(EvalComponent):

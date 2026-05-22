@@ -1,6 +1,6 @@
 from enum import Enum
 
-from localstack.services.stepfunctions.asl.antlr.runtime.ASLIntrinsicLexer import ASLIntrinsicLexer
+from localstack.aws.services.stepfunctions.asl.antlr.runtime.ASLIntrinsicLexer import ASLIntrinsicLexer
 
 
 class StatesFunctionNameType(Enum):

@@ -19,11 +19,11 @@ from localstack.aws.api.sts import (
     tokenCodeType,
     unrestrictedSessionPolicyDocumentType,
 )
-from localstack.services.iam.iam_patches import apply_iam_patches
-from localstack.services.moto import call_moto
-from localstack.services.plugins import ServiceLifecycleHook
-from localstack.services.sts.models import SessionConfig, sts_stores
-from localstack.state import StateVisitor
+from localstack.aws.services.iam.iam_patches import apply_iam_patches
+from localstack.aws.services.moto import call_moto
+from localstack.aws.services.plugins import ServiceLifecycleHook
+from localstack.aws.services.sts.models import SessionConfig, sts_stores
+from localstack.platform.state import StateVisitor
 from localstack.utils.aws.arns import extract_account_id_from_arn
 from localstack.utils.aws.request_context import extract_access_key_id_from_auth_header
 

@@ -1,7 +1,7 @@
-from localstack.http import Request, Response, Router
-from localstack.http.client import HttpClient, SimpleRequestsClient
-from localstack.http.dispatcher import Handler as RouteHandler
-from localstack.http.proxy import Proxy, ProxyHandler, forward
+from localstack.platform.http import Request, Response, Router
+from localstack.platform.http.client import HttpClient, SimpleRequestsClient
+from localstack.platform.http.dispatcher import Handler as RouteHandler
+from localstack.platform.http.proxy import Proxy, ProxyHandler, forward
 
 __all__ = [
     "Request",

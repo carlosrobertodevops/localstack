@@ -3,33 +3,33 @@ from typing import Final
 
 from antlr4.tree.Tree import ParseTree
 
-from localstack.services.stepfunctions.asl.antlr.runtime.ASLParser import ASLParser
-from localstack.services.stepfunctions.asl.antlt4utils.antlr4utils import (
+from localstack.aws.services.stepfunctions.asl.antlr.runtime.ASLParser import ASLParser
+from localstack.aws.services.stepfunctions.asl.antlt4utils.antlr4utils import (
     is_production,
 )
-from localstack.services.stepfunctions.asl.component.common.parargs import (
+from localstack.aws.services.stepfunctions.asl.component.common.parargs import (
     ArgumentsJSONataTemplateValueObject,
     ArgumentsStringJSONata,
     Parameters,
 )
-from localstack.services.stepfunctions.asl.component.common.path.input_path import InputPath
-from localstack.services.stepfunctions.asl.component.common.path.items_path import ItemsPath
-from localstack.services.stepfunctions.asl.component.common.path.result_path import ResultPath
-from localstack.services.stepfunctions.asl.component.common.query_language import QueryLanguage
-from localstack.services.stepfunctions.asl.component.common.result_selector import ResultSelector
-from localstack.services.stepfunctions.asl.component.state.state import CommonStateField
-from localstack.services.stepfunctions.asl.component.state.state_choice.state_choice import (
+from localstack.aws.services.stepfunctions.asl.component.common.path.input_path import InputPath
+from localstack.aws.services.stepfunctions.asl.component.common.path.items_path import ItemsPath
+from localstack.aws.services.stepfunctions.asl.component.common.path.result_path import ResultPath
+from localstack.aws.services.stepfunctions.asl.component.common.query_language import QueryLanguage
+from localstack.aws.services.stepfunctions.asl.component.common.result_selector import ResultSelector
+from localstack.aws.services.stepfunctions.asl.component.state.state import CommonStateField
+from localstack.aws.services.stepfunctions.asl.component.state.state_choice.state_choice import (
     StateChoice,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.max_concurrency import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.max_concurrency import (
     MaxConcurrency,
     MaxConcurrencyJSONata,
     MaxConcurrencyPath,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.state_map import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.state_map import (
     StateMap,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.tolerated_failure import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.tolerated_failure import (
     ToleratedFailureCountInt,
     ToleratedFailureCountPath,
     ToleratedFailureCountStringJSONata,
@@ -37,39 +37,39 @@ from localstack.services.stepfunctions.asl.component.state.state_execution.state
     ToleratedFailurePercentagePath,
     ToleratedFailurePercentageStringJSONata,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_parallel.state_parallel import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_parallel.state_parallel import (
     StateParallel,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_task.state_task import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_task.state_task import (
     StateTask,
 )
-from localstack.services.stepfunctions.asl.component.state.state_fail.state_fail import StateFail
-from localstack.services.stepfunctions.asl.component.state.state_pass.result import Result
-from localstack.services.stepfunctions.asl.component.state.state_pass.state_pass import StatePass
-from localstack.services.stepfunctions.asl.component.state.state_succeed.state_succeed import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_fail.state_fail import StateFail
+from localstack.aws.services.stepfunctions.asl.component.state.state_pass.result import Result
+from localstack.aws.services.stepfunctions.asl.component.state.state_pass.state_pass import StatePass
+from localstack.aws.services.stepfunctions.asl.component.state.state_succeed.state_succeed import (
     StateSucceed,
 )
-from localstack.services.stepfunctions.asl.component.test_state.program.test_state_program import (
+from localstack.aws.services.stepfunctions.asl.component.test_state.program.test_state_program import (
     TestStateProgram,
 )
-from localstack.services.stepfunctions.asl.component.test_state.state.common import (
+from localstack.aws.services.stepfunctions.asl.component.test_state.state.common import (
     MockedCommonState,
 )
-from localstack.services.stepfunctions.asl.component.test_state.state.map import (
+from localstack.aws.services.stepfunctions.asl.component.test_state.state.map import (
     MockedStateMap,
 )
-from localstack.services.stepfunctions.asl.component.test_state.state.parallel import (
+from localstack.aws.services.stepfunctions.asl.component.test_state.state.parallel import (
     MockedStateParallel,
 )
-from localstack.services.stepfunctions.asl.component.test_state.state.task import (
+from localstack.aws.services.stepfunctions.asl.component.test_state.state.task import (
     MockedStateTask,
 )
-from localstack.services.stepfunctions.asl.component.test_state.state.test_state_state_props import (
+from localstack.aws.services.stepfunctions.asl.component.test_state.state.test_state_state_props import (
     TestStateStateProps,
 )
-from localstack.services.stepfunctions.asl.eval.test_state.environment import TestStateEnvironment
-from localstack.services.stepfunctions.asl.parse.preprocessor import Preprocessor
-from localstack.services.stepfunctions.asl.utils.encoding import to_json_str
+from localstack.aws.services.stepfunctions.asl.eval.test_state.environment import TestStateEnvironment
+from localstack.aws.services.stepfunctions.asl.parse.preprocessor import Preprocessor
+from localstack.aws.services.stepfunctions.asl.utils.encoding import to_json_str
 
 
 class InspectionDataKey(enum.Enum):

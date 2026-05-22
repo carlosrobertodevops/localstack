@@ -1,7 +1,7 @@
 from abc import ABC
 
 from localstack.aws.api.support import SupportApi
-from localstack.state import StateVisitor
+from localstack.platform.state import StateVisitor
 
 
 class SupportProvider(SupportApi, ABC):

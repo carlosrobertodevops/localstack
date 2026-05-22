@@ -6,7 +6,7 @@ from moto.apigateway.utils import (
     ApigwRestApiIdentifier,
 )
 
-from localstack.testing.pytest import markers
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.strings import long_uid, short_uid
 
 API_ID = "api-id"

@@ -4,7 +4,7 @@ from moto.ec2 import models as ec2_models
 from moto.ec2.models.vpcs import VPCEndPoint
 from moto.utilities.id_generator import Tags
 
-from localstack.services.ec2.exceptions import (
+from localstack.aws.services.ec2.exceptions import (
     InvalidSecurityGroupDuplicateCustomIdError,
     InvalidSubnetDuplicateCustomIdError,
     InvalidVpcDuplicateCustomIdError,

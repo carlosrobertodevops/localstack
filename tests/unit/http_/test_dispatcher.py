@@ -3,8 +3,8 @@ from typing import Any
 import pytest
 from werkzeug.exceptions import NotFound
 
-from localstack.http import Request, Response, Router
-from localstack.http.dispatcher import handler_dispatcher
+from localstack.platform.http import Request, Response, Router
+from localstack.platform.http.dispatcher import handler_dispatcher
 
 
 class TestHandlerDispatcher:

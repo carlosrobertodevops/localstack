@@ -1,10 +1,10 @@
 import abc
 
-from localstack.services.stepfunctions.asl.component.intrinsic.argument.argument import (
+from localstack.aws.services.stepfunctions.asl.component.intrinsic.argument.argument import (
     ArgumentList,
 )
-from localstack.services.stepfunctions.asl.component.intrinsic.function.function import Function
-from localstack.services.stepfunctions.asl.component.intrinsic.functionname.states_function_name import (
+from localstack.aws.services.stepfunctions.asl.component.intrinsic.function.function import Function
+from localstack.aws.services.stepfunctions.asl.component.intrinsic.functionname.states_function_name import (
     StatesFunctionName,
 )
 

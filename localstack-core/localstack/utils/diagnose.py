@@ -4,10 +4,10 @@ import inspect
 import os
 import socket
 
-from localstack import config
-from localstack.constants import DEFAULT_VOLUME_DIR
-from localstack.services.lambda_.invocation.docker_runtime_executor import IMAGE_PREFIX
-from localstack.services.lambda_.runtimes import IMAGE_MAPPING
+from localstack.platform import config
+from localstack.platform.constants import DEFAULT_VOLUME_DIR
+from localstack.aws.services.lambda_.invocation.docker_runtime_executor import IMAGE_PREFIX
+from localstack.aws.services.lambda_.runtimes import IMAGE_MAPPING
 from localstack.utils import bootstrap
 from localstack.utils.analytics.metrics import MetricRegistry
 from localstack.utils.container_networking import get_main_container_name
@@ -116,7 +116,7 @@ def get_important_image_hashes() -> dict[str, str]:
 
 
 def get_service_stats() -> dict[str, str]:
-    from localstack.services.plugins import SERVICE_PLUGINS
+    from localstack.aws.services.plugins import SERVICE_PLUGINS
 
     return {service: state.value for service, state in SERVICE_PLUGINS.get_states().items()}
 

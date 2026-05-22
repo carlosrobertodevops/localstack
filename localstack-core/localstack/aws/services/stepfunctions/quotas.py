@@ -1,6 +1,6 @@
 from typing import Any, Final
 
-from localstack.services.stepfunctions.asl.utils.encoding import to_json_str
+from localstack.aws.services.stepfunctions.asl.utils.encoding import to_json_str
 
 MAX_STATE_SIZE_UTF8_BYTES: Final[int] = 256 * 1024  # 256 KB of data as a UTF-8 encoded string.
 

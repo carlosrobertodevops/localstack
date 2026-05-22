@@ -4,8 +4,8 @@ import threading
 from abc import abstractmethod
 from pathlib import Path
 
-from localstack import config
-from localstack.services.kinesis.packages import (
+from localstack.platform import config
+from localstack.aws.services.kinesis.packages import (
     KinesisMockEngine,
     kinesismock_package,
     kinesismock_scala_package,

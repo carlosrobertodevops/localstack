@@ -5,14 +5,14 @@ import subprocess
 import sys
 from typing import TypeVar
 
-from localstack import config, constants
-from localstack.config import HostAndPort
-from localstack.constants import (
+from localstack.platform import config, constants
+from localstack.platform.config import HostAndPort
+from localstack.platform.constants import (
     LOCALSTACK_ROOT_FOLDER,
 )
-from localstack.http import Router
-from localstack.http.dispatcher import Handler, handler_dispatcher
-from localstack.http.router import GreedyPathConverter
+from localstack.platform.http import Router
+from localstack.platform.http.dispatcher import Handler, handler_dispatcher
+from localstack.platform.http.router import GreedyPathConverter
 from localstack.utils.collections import split_list_by
 from localstack.utils.net import get_free_tcp_port
 from localstack.utils.run import is_root, run
@@ -156,7 +156,7 @@ def start_edge(listen_str: str, use_ssl: bool = True, asynchronous: bool = False
             str(proxy_destination),
         ]
         run_module_as_sudo(
-            module="localstack.services.edge",
+            module="localstack.aws.services.edge",
             arguments=args,
             asynchronous=True,
         )

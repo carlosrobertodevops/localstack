@@ -4,7 +4,7 @@ from typing import Any, Final
 from jsonpath_ng.ext import parse
 from jsonpath_ng.jsonpath import Index
 
-from localstack.services.events.utils import to_json_str
+from localstack.aws.services.events.utils import to_json_str
 
 _PATTERN_SINGLETON_ARRAY_ACCESS_OUTPUT: Final[str] = r"\[\d+\]$"
 _PATTERN_SLICE_OR_WILDCARD_ACCESS = r"\$(?:\.[^[]+\[(?:\*|\d*:\d*)\]|\[\*\])(?:\.[^[]+)*$"

@@ -17,14 +17,14 @@ from localstack.aws.protocol.parser import OperationNotFoundParserError, create_
 from localstack.aws.protocol.serializer import create_serializer
 from localstack.aws.protocol.validate import MissingRequiredField, validate_request
 from localstack.aws.spec import load_service
-from localstack.constants import (
+from localstack.platform.constants import (
     AWS_REGION_US_EAST_1,
     INTERNAL_AWS_ACCESS_KEY_ID,
     INTERNAL_AWS_SECRET_ACCESS_KEY,
 )
-from localstack.http import Request, Response, Router, route
-from localstack.http.dispatcher import Handler
-from localstack.services.sqs.exceptions import MissingRequiredParameterException
+from localstack.platform.http import Request, Response, Router, route
+from localstack.platform.http.dispatcher import Handler
+from localstack.aws.services.sqs.exceptions import MissingRequiredParameterException
 from localstack.utils.aws.request_context import (
     extract_access_key_id_from_auth_header,
     extract_region_from_headers,

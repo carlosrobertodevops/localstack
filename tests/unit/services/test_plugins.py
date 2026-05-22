@@ -1,8 +1,8 @@
 import threading
 from queue import Queue
 
-from localstack.services.plugins import ServicePluginManager
-from localstack.services.sqs.provider import SqsProvider
+from localstack.aws.services.plugins import ServicePluginManager
+from localstack.aws.services.sqs.provider import SqsProvider
 
 
 class TestServicePluginManager:

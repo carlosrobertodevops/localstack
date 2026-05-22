@@ -11,7 +11,7 @@ from typing import IO, Any
 
 from botocore.exceptions import ClientError
 
-from localstack import config
+from localstack.platform import config
 from localstack.aws.api import RequestContext, ServiceException, handler
 from localstack.aws.api.lambda_ import (
     AccountLimit,
@@ -154,37 +154,37 @@ from localstack.aws.api.pipes import (
 )
 from localstack.aws.connect import connect_to
 from localstack.aws.spec import load_service
-from localstack.services.edge import ROUTER
-from localstack.services.lambda_ import api_utils
-from localstack.services.lambda_ import hooks as lambda_hooks
-from localstack.services.lambda_.analytics import (
+from localstack.aws.services.edge import ROUTER
+from localstack.aws.services.lambda_ import api_utils
+from localstack.aws.services.lambda_ import hooks as lambda_hooks
+from localstack.aws.services.lambda_.analytics import (
     FunctionInitializationType,
     FunctionOperation,
     FunctionStatus,
     function_counter,
 )
-from localstack.services.lambda_.api_utils import (
+from localstack.aws.services.lambda_.api_utils import (
     ARCHITECTURES,
     STATEMENT_ID_REGEX,
     SUBNET_ID_REGEX,
     function_locators_from_arn,
 )
-from localstack.services.lambda_.event_source_mapping.esm_config_factory import (
+from localstack.aws.services.lambda_.event_source_mapping.esm_config_factory import (
     EsmConfigFactory,
 )
-from localstack.services.lambda_.event_source_mapping.esm_worker import (
+from localstack.aws.services.lambda_.event_source_mapping.esm_worker import (
     EsmState,
     EsmWorker,
 )
-from localstack.services.lambda_.event_source_mapping.esm_worker_factory import (
+from localstack.aws.services.lambda_.event_source_mapping.esm_worker_factory import (
     EsmWorkerFactory,
 )
-from localstack.services.lambda_.event_source_mapping.pipe_utils import get_internal_client
-from localstack.services.lambda_.invocation import AccessDeniedException
-from localstack.services.lambda_.invocation.execution_environment import (
+from localstack.aws.services.lambda_.event_source_mapping.pipe_utils import get_internal_client
+from localstack.aws.services.lambda_.invocation import AccessDeniedException
+from localstack.aws.services.lambda_.invocation.execution_environment import (
     EnvironmentStartupTimeoutException,
 )
-from localstack.services.lambda_.invocation.lambda_models import (
+from localstack.aws.services.lambda_.invocation.lambda_models import (
     AliasRoutingConfig,
     CodeSigningConfig,
     DesiredCapacityProviderState,
@@ -210,7 +210,7 @@ from localstack.services.lambda_.invocation.lambda_models import (
     VersionState,
     VpcConfig,
 )
-from localstack.services.lambda_.invocation.lambda_service import (
+from localstack.aws.services.lambda_.invocation.lambda_service import (
     LambdaService,
     create_image_code,
     destroy_code_if_not_used,
@@ -218,17 +218,17 @@ from localstack.services.lambda_.invocation.lambda_service import (
     store_lambda_archive,
     store_s3_bucket_archive,
 )
-from localstack.services.lambda_.invocation.models import CapacityProvider as CapacityProviderModel
-from localstack.services.lambda_.invocation.models import LambdaStore
-from localstack.services.lambda_.invocation.runtime_executor import get_runtime_executor
-from localstack.services.lambda_.lambda_utils import HINT_LOG
-from localstack.services.lambda_.layerfetcher.layer_fetcher import LayerFetcher
-from localstack.services.lambda_.provider_utils import (
+from localstack.aws.services.lambda_.invocation.models import CapacityProvider as CapacityProviderModel
+from localstack.aws.services.lambda_.invocation.models import LambdaStore
+from localstack.aws.services.lambda_.invocation.runtime_executor import get_runtime_executor
+from localstack.aws.services.lambda_.lambda_utils import HINT_LOG
+from localstack.aws.services.lambda_.layerfetcher.layer_fetcher import LayerFetcher
+from localstack.aws.services.lambda_.provider_utils import (
     LambdaLayerVersionIdentifier,
     get_function_version,
     get_function_version_from_arn,
 )
-from localstack.services.lambda_.runtimes import (
+from localstack.aws.services.lambda_.runtimes import (
     ALL_RUNTIMES,
     DEPRECATED_RUNTIMES,
     DEPRECATED_RUNTIMES_UPGRADES,
@@ -237,9 +237,9 @@ from localstack.services.lambda_.runtimes import (
     VALID_MANAGED_INSTANCE_RUNTIMES,
     VALID_RUNTIMES,
 )
-from localstack.services.lambda_.urlrouter import FunctionUrlRouter
-from localstack.services.plugins import ServiceLifecycleHook
-from localstack.state import StateVisitor
+from localstack.aws.services.lambda_.urlrouter import FunctionUrlRouter
+from localstack.aws.services.plugins import ServiceLifecycleHook
+from localstack.platform.state import StateVisitor
 from localstack.utils.aws.arns import (
     ArnData,
     capacity_provider_arn,

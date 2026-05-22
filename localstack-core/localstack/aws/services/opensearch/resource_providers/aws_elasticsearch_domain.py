@@ -5,9 +5,9 @@ import copy
 from pathlib import Path
 from typing import TypedDict
 
-import localstack.services.cloudformation.provider_utils as util
+import localstack.aws.services.cloudformation.provider_utils as util
 from localstack.aws.api.es import CreateElasticsearchDomainRequest
-from localstack.services.cloudformation.resource_provider import (
+from localstack.aws.services.cloudformation.resource_provider import (
     OperationStatus,
     ProgressEvent,
     ResourceProvider,

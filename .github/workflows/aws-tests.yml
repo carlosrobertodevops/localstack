@@ -241,7 +241,7 @@ jobs:
             SCRIPT_OPTS="--base-commit-sha ${{ github.event.pull_request.base.sha }} --head-commit-sha ${{ github.event.pull_request.head.sha }}"
           fi
           source .venv/bin/activate
-          python -m localstack.testing.testselection.scripts.generate_test_selection $(pwd) dist/testselection/test-selection.txt $SCRIPT_OPTS || (mkdir -p dist/testselection && echo "SENTINEL_ALL_TESTS" >> dist/testselection/test-selection.txt)
+          python -m localstack.tooling.testing.testselection.scripts.generate_test_selection $(pwd) dist/testselection/test-selection.txt $SCRIPT_OPTS || (mkdir -p dist/testselection && echo "SENTINEL_ALL_TESTS" >> dist/testselection/test-selection.txt)
           echo "Test selection:"
           cat dist/testselection/test-selection.txt
 

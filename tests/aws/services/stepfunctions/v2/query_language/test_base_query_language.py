@@ -2,8 +2,8 @@ import json
 
 import pytest
 
-from localstack.testing.pytest import markers
-from localstack.testing.pytest.stepfunctions.utils import create_and_record_execution
+from localstack.tooling.testing.pytest import markers
+from localstack.tooling.testing.pytest.stepfunctions.utils import create_and_record_execution
 from tests.aws.services.stepfunctions.templates.querylanguage.query_language_templates import (
     QueryLanguageTemplate as QLT,
 )

@@ -4,7 +4,7 @@ import pytest
 import requests
 from botocore.exceptions import ClientError
 
-from localstack.testing.pytest import markers
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.sync import retry
 from tests.aws.services.apigateway.apigateway_fixtures import api_invoke_url
 

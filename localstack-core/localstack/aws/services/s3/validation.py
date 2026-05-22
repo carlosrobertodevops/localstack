@@ -36,9 +36,9 @@ from localstack.aws.api.s3 import (
     WebsiteConfiguration,
 )
 from localstack.aws.api.s3 import Type as GranteeType
-from localstack.services.s3 import constants as s3_constants
-from localstack.services.s3.exceptions import InvalidRequest, MalformedACLError, MalformedXML
-from localstack.services.s3.utils import (
+from localstack.aws.services.s3 import constants as s3_constants
+from localstack.aws.services.s3.exceptions import InvalidRequest, MalformedACLError, MalformedXML
+from localstack.aws.services.s3.utils import (
     get_class_attrs_from_spec_class,
     get_permission_header_name,
     is_bucket_name_valid,

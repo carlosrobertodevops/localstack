@@ -238,13 +238,13 @@ Simply include a list of json-paths. Those paths will then be excluded from the 
 Sometimes different transformers might interfere, especially regex transformers and reference transformations can be tricky We added debug logs so that each replacement step should be visible in the output to help locate any unexpected behavior. You can enable the debug logs by setting the env `DEBUG_SNAPSHOT=1`.
 
 ```bash
-localstack.testing.snapshots.transformer: Registering regex pattern '000000000000' in snapshot with '111111111111'
-localstack.testing.snapshots.transformer: Registering regex pattern 'us-east-1' in snapshot with '<region>'localstack.testing.snapshots.transformer: Replacing JsonPath '$.json_encoded_delivery..Body.Signature' in snapshot with '<signature>'
-localstack.testing.snapshots.transformer: Registering reference replacement for value: '1ad533b5-ac54-4354-a273-3ea885f0d59d' -> '<uuid:1>'
-localstack.testing.snapshots.transformer: Replacing JsonPath '$.json_encoded_delivery..MD5OfBody' in snapshot with '<md5-hash>'
-localstack.testing.snapshots.transformer: Replacing regex '000000000000' with '111111111111'
-localstack.testing.snapshots.transformer: Replacing regex 'us-east-1' with '<region>'
-localstack.testing.snapshots.transformer: Replacing '1ad533b5-ac54-4354-a273-3ea885f0d59d' in snapshot with '<uuid:1>'
+localstack.tooling.testing.snapshots.transformer: Registering regex pattern '000000000000' in snapshot with '111111111111'
+localstack.tooling.testing.snapshots.transformer: Registering regex pattern 'us-east-1' in snapshot with '<region>'localstack.tooling.testing.snapshots.transformer: Replacing JsonPath '$.json_encoded_delivery..Body.Signature' in snapshot with '<signature>'
+localstack.tooling.testing.snapshots.transformer: Registering reference replacement for value: '1ad533b5-ac54-4354-a273-3ea885f0d59d' -> '<uuid:1>'
+localstack.tooling.testing.snapshots.transformer: Replacing JsonPath '$.json_encoded_delivery..MD5OfBody' in snapshot with '<md5-hash>'
+localstack.tooling.testing.snapshots.transformer: Replacing regex '000000000000' with '111111111111'
+localstack.tooling.testing.snapshots.transformer: Replacing regex 'us-east-1' with '<region>'
+localstack.tooling.testing.snapshots.transformer: Replacing '1ad533b5-ac54-4354-a273-3ea885f0d59d' in snapshot with '<uuid:1>'
 ```
 
 ### Test duration recording

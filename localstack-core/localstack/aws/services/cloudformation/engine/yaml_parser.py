@@ -1,6 +1,6 @@
 import yaml
 
-from localstack.services.cloudformation.engine.validations import ValidationError
+from localstack.aws.services.cloudformation.engine.validations import ValidationError
 
 
 def construct_raw(_, node):

@@ -18,7 +18,7 @@ from typing import IO, Any, TypedDict
 import boto3
 from botocore.exceptions import ClientError
 
-from localstack import config
+from localstack.platform import config
 from localstack.aws.api import CommonServiceException
 from localstack.aws.api.lambda_ import (
     AllowedPublishers,
@@ -51,8 +51,8 @@ from localstack.aws.api.lambda_ import (
     TracingMode,
 )
 from localstack.aws.connect import connect_to
-from localstack.constants import AWS_REGION_US_EAST_1, INTERNAL_AWS_SECRET_ACCESS_KEY
-from localstack.services.lambda_.api_utils import qualified_lambda_arn, unqualified_lambda_arn
+from localstack.platform.constants import AWS_REGION_US_EAST_1, INTERNAL_AWS_SECRET_ACCESS_KEY
+from localstack.aws.services.lambda_.api_utils import qualified_lambda_arn, unqualified_lambda_arn
 from localstack.utils.archives import unzip
 from localstack.utils.files import chmod_r
 from localstack.utils.strings import long_uid, short_uid

@@ -8,7 +8,7 @@ import re
 from rolo import Request as RoloRequest
 
 from localstack.aws.accounts import get_account_id_from_access_key_id
-from localstack.constants import (
+from localstack.platform.constants import (
     APPLICATION_AMZ_JSON_1_0,
     APPLICATION_AMZ_JSON_1_1,
     APPLICATION_X_WWW_FORM_URLENCODED,

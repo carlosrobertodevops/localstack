@@ -2,7 +2,7 @@ from abc import abstractmethod
 
 from botocore.client import BaseClient
 
-from localstack.services.lambda_.event_source_mapping.pipe_utils import get_internal_client
+from localstack.aws.services.lambda_.event_source_mapping.pipe_utils import get_internal_client
 
 
 class SenderError(Exception):

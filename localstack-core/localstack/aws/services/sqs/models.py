@@ -10,7 +10,7 @@ import time
 from datetime import datetime
 from queue import Empty
 
-from localstack import config
+from localstack.platform import config
 from localstack.aws.api import RequestContext
 from localstack.aws.api.sqs import (
     AttributeNameList,
@@ -23,15 +23,15 @@ from localstack.aws.api.sqs import (
     ReceiptHandleIsInvalid,
     TagMap,
 )
-from localstack.services.sqs import constants as sqs_constants
-from localstack.services.sqs.constants import DYNAMIC_ATTRIBUTES
-from localstack.services.sqs.exceptions import (
+from localstack.aws.services.sqs import constants as sqs_constants
+from localstack.aws.services.sqs.constants import DYNAMIC_ATTRIBUTES
+from localstack.aws.services.sqs.exceptions import (
     InvalidAttributeValue,
     InvalidParameterValueException,
     MissingRequiredParameterException,
 )
-from localstack.services.sqs.queue import InterruptiblePriorityQueue, InterruptibleQueue
-from localstack.services.sqs.utils import (
+from localstack.aws.services.sqs.queue import InterruptiblePriorityQueue, InterruptibleQueue
+from localstack.aws.services.sqs.utils import (
     create_message_attribute_hash,
     encode_move_task_handle,
     encode_receipt_handle,
@@ -42,7 +42,7 @@ from localstack.services.sqs.utils import (
     message_filter_attributes,
     message_filter_message_attributes,
 )
-from localstack.services.stores import AccountRegionBundle, BaseStore, LocalAttribute
+from localstack.aws.services.stores import AccountRegionBundle, BaseStore, LocalAttribute
 from localstack.utils.aws.arns import get_partition
 from localstack.utils.strings import long_uid
 from localstack.utils.tagging import Tags

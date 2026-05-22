@@ -9,8 +9,8 @@ from localstack.aws.api.events import (
     ReplayState,
     Timestamp,
 )
-from localstack.services.events.models import FormattedEventList, Replay
-from localstack.services.events.utils import (
+from localstack.aws.services.events.models import FormattedEventList, Replay
+from localstack.aws.services.events.utils import (
     convert_to_timezone_aware_datetime,
     extract_event_bus_name,
     re_format_event,

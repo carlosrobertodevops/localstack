@@ -6,11 +6,11 @@ from typing import Any
 from botocore.client import BaseClient
 
 from localstack.aws.api.pipes import PipeStateReason
-from localstack.services.lambda_.event_source_mapping.event_processor import EventProcessor
-from localstack.services.lambda_.event_source_mapping.noops_event_processor import (
+from localstack.aws.services.lambda_.event_source_mapping.event_processor import EventProcessor
+from localstack.aws.services.lambda_.event_source_mapping.noops_event_processor import (
     NoOpsEventProcessor,
 )
-from localstack.services.lambda_.event_source_mapping.pipe_utils import get_internal_client
+from localstack.aws.services.lambda_.event_source_mapping.pipe_utils import get_internal_client
 from localstack.utils.aws.arns import parse_arn
 from localstack.utils.event_matcher import matches_event
 

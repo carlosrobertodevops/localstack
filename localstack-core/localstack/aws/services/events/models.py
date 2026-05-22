@@ -45,7 +45,7 @@ from localstack.aws.api.events import (
     TargetId,
     Timestamp,
 )
-from localstack.services.stores import (
+from localstack.aws.services.stores import (
     AccountRegionBundle,
     BaseStore,
     CrossRegionAttribute,

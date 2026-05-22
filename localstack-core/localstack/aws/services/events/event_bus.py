@@ -12,7 +12,7 @@ from localstack.aws.api.events import (
     StatementId,
     TagList,
 )
-from localstack.services.events.models import EventBus, ResourcePolicy, RuleDict
+from localstack.aws.services.events.models import EventBus, ResourcePolicy, RuleDict
 from localstack.utils.aws.arns import get_partition
 
 

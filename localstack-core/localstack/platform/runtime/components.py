@@ -23,7 +23,7 @@ class Components(Plugin):
     own component factory.
     """
 
-    namespace = "localstack.runtime.components"
+    namespace = "localstack.platform.runtime.components"
 
     @cached_property
     def gateway(self) -> Gateway:
@@ -42,8 +42,7 @@ class BaseComponents(Components):
 
     @cached_property
     def runtime_server(self) -> RuntimeServer:
-        from localstack import config
-
+        from localstack.platform import config
         # TODO: rename to RUNTIME_SERVER
         server_type = config.GATEWAY_SERVER
 

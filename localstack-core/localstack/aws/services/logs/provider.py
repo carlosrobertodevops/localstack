@@ -40,11 +40,11 @@ from localstack.aws.api.logs import (
     Tags,
 )
 from localstack.aws.connect import connect_to
-from localstack.services import moto
-from localstack.services.logs.models import get_moto_logs_backend, logs_stores
-from localstack.services.moto import call_moto
-from localstack.services.plugins import ServiceLifecycleHook
-from localstack.state import StateVisitor
+from localstack.aws.services import moto
+from localstack.aws.services.logs.models import get_moto_logs_backend, logs_stores
+from localstack.aws.services.moto import call_moto
+from localstack.aws.services.plugins import ServiceLifecycleHook
+from localstack.platform.state import StateVisitor
 from localstack.utils.aws import arns
 from localstack.utils.aws.client_types import ServicePrincipal
 from localstack.utils.bootstrap import is_api_enabled

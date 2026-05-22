@@ -1,5 +1,4 @@
-from localstack import config
-
+from localstack.platform import config
 # TODO: remove imports from here (need to update any client code that imports these from utils.common)
 from localstack.utils.archives import get_unzipped_size, is_zip_file, untar, unzip  # noqa
 
@@ -210,7 +209,7 @@ from localstack.utils.urls import path_from_url  # noqa
 from localstack.utils.xml import obj_to_xml, strip_xmlns  # noqa
 
 
-# TODO: move somewhere sensible (probably localstack.runtime)
+# TODO: move somewhere sensible (probably localstack.platform.runtime)
 class ExternalServicePortsManager(PortRange):
     """Manages the ports used for starting external services like ElasticSearch, OpenSearch,..."""
 

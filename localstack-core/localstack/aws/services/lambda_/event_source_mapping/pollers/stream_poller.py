@@ -13,25 +13,25 @@ from botocore.exceptions import ClientError
 from localstack.aws.api.pipes import (
     OnPartialBatchItemFailureStreams,
 )
-from localstack.services.lambda_.event_source_mapping.event_processor import (
+from localstack.aws.services.lambda_.event_source_mapping.event_processor import (
     BatchFailureError,
     CustomerInvocationError,
     EventProcessor,
     PartialBatchFailureError,
     PipeInternalError,
 )
-from localstack.services.lambda_.event_source_mapping.pipe_utils import (
+from localstack.aws.services.lambda_.event_source_mapping.pipe_utils import (
     get_current_time,
     get_datetime_from_timestamp,
     get_internal_client,
 )
-from localstack.services.lambda_.event_source_mapping.pollers.poller import (
+from localstack.aws.services.lambda_.event_source_mapping.pollers.poller import (
     EmptyPollResultsException,
     Poller,
     get_batch_item_failures,
 )
-from localstack.services.lambda_.event_source_mapping.pollers.sqs_poller import get_queue_url
-from localstack.services.lambda_.event_source_mapping.senders.sender_utils import (
+from localstack.aws.services.lambda_.event_source_mapping.pollers.sqs_poller import get_queue_url
+from localstack.aws.services.lambda_.event_source_mapping.senders.sender_utils import (
     batched,
 )
 from localstack.utils.aws.arns import parse_arn, s3_bucket_name
@@ -220,7 +220,7 @@ class StreamPoller(Poller):
         #  https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-event-filtering.html
         #  Check whether we need poller-specific filter-preprocessing here without modifying the actual event!
         # convert to json for filtering (HACK for fixing parity with v1 and getting regression tests passing)
-        # localstack.services.lambda_.event_source_listeners.kinesis_event_source_listener.KinesisEventSourceListener._filter_records
+        # localstack.aws.services.lambda_.event_source_listeners.kinesis_event_source_listener.KinesisEventSourceListener._filter_records
         # TODO: explore better abstraction for the entire filtering, including the set_data and get_data remapping
         #  We need better clarify which transformations happen before and after filtering -> fix missing test coverage
         parsed_events = self.pre_filter(polled_events)

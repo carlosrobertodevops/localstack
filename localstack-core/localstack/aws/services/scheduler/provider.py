@@ -4,9 +4,9 @@ import re
 from moto.scheduler.models import EventBridgeSchedulerBackend, scheduler_backends
 
 from localstack.aws.api.scheduler import SchedulerApi, ValidationException
-from localstack.services.events.rule import RULE_SCHEDULE_CRON_REGEX, RULE_SCHEDULE_RATE_REGEX
-from localstack.services.plugins import ServiceLifecycleHook
-from localstack.state import StateVisitor
+from localstack.aws.services.events.rule import RULE_SCHEDULE_CRON_REGEX, RULE_SCHEDULE_RATE_REGEX
+from localstack.aws.services.plugins import ServiceLifecycleHook
+from localstack.platform.state import StateVisitor
 from localstack.utils.patch import patch
 
 LOG = logging.getLogger(__name__)

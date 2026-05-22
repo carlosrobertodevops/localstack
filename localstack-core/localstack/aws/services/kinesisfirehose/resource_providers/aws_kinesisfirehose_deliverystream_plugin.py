@@ -1,4 +1,4 @@
-from localstack.services.cloudformation.resource_provider import (
+from localstack.aws.services.cloudformation.resource_provider import (
     CloudFormationResourceProviderPlugin,
     ResourceProvider,
 )
@@ -11,7 +11,7 @@ class KinesisFirehoseDeliveryStreamProviderPlugin(CloudFormationResourceProvider
         self.factory: type[ResourceProvider] | None = None
 
     def load(self):
-        from localstack.services.kinesisfirehose.resource_providers.aws_kinesisfirehose_deliverystream import (
+        from localstack.aws.services.kinesisfirehose.resource_providers.aws_kinesisfirehose_deliverystream import (
             KinesisFirehoseDeliveryStreamProvider,
         )
 

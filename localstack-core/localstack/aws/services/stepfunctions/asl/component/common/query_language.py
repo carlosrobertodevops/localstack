@@ -3,8 +3,8 @@ from __future__ import annotations
 import enum
 from typing import Final
 
-from localstack.services.stepfunctions.asl.antlr.runtime.ASLLexer import ASLLexer
-from localstack.services.stepfunctions.asl.component.component import Component
+from localstack.aws.services.stepfunctions.asl.antlr.runtime.ASLLexer import ASLLexer
+from localstack.aws.services.stepfunctions.asl.component.component import Component
 
 
 class QueryLanguageMode(enum.Enum):

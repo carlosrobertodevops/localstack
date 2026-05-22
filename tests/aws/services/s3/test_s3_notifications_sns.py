@@ -6,7 +6,7 @@ from typing import TYPE_CHECKING
 import pytest
 from botocore.exceptions import ClientError
 
-from localstack.testing.pytest import markers
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.aws import arns
 from localstack.utils.strings import short_uid
 from localstack.utils.sync import poll_condition

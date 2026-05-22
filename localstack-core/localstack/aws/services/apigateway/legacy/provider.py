@@ -98,9 +98,9 @@ from localstack.aws.api.apigateway import (
 )
 from localstack.aws.connect import connect_to
 from localstack.aws.forwarder import create_aws_request_context
-from localstack.constants import APPLICATION_JSON
-from localstack.services.apigateway.exporter import OpenApiExporter
-from localstack.services.apigateway.helpers import (
+from localstack.platform.constants import APPLICATION_JSON
+from localstack.aws.services.apigateway.exporter import OpenApiExporter
+from localstack.aws.services.apigateway.helpers import (
     EMPTY_MODEL,
     ERROR_MODEL,
     INVOKE_TEST_LOG_TEMPLATE,
@@ -116,22 +116,22 @@ from localstack.services.apigateway.helpers import (
     is_variable_path,
     resolve_references,
 )
-from localstack.services.apigateway.legacy.helpers import multi_value_dict_for_list
-from localstack.services.apigateway.legacy.invocations import invoke_rest_api_from_request
-from localstack.services.apigateway.legacy.router_asf import ApigatewayRouter, to_invocation_context
-from localstack.services.apigateway.models import (
+from localstack.aws.services.apigateway.legacy.helpers import multi_value_dict_for_list
+from localstack.aws.services.apigateway.legacy.invocations import invoke_rest_api_from_request
+from localstack.aws.services.apigateway.legacy.router_asf import ApigatewayRouter, to_invocation_context
+from localstack.aws.services.apigateway.models import (
     ApiGatewayStore,
     RestApiContainer,
     apigateway_stores,
 )
-from localstack.services.apigateway.next_gen.execute_api.router import (
+from localstack.aws.services.apigateway.next_gen.execute_api.router import (
     ApiGatewayRouter as ApiGatewayRouterNextGen,
 )
-from localstack.services.apigateway.patches import apply_patches
-from localstack.services.edge import ROUTER
-from localstack.services.moto import call_moto, call_moto_with_request
-from localstack.services.plugins import ServiceLifecycleHook
-from localstack.state import StateVisitor
+from localstack.aws.services.apigateway.patches import apply_patches
+from localstack.aws.services.edge import ROUTER
+from localstack.aws.services.moto import call_moto, call_moto_with_request
+from localstack.aws.services.plugins import ServiceLifecycleHook
+from localstack.platform.state import StateVisitor
 from localstack.utils.aws.arns import InvalidArnException, get_partition, parse_arn
 from localstack.utils.collections import (
     DelSafeDict,

@@ -1,28 +1,28 @@
 from collections.abc import Callable
 from functools import partial
 
-from localstack.services.stepfunctions.asl.component.common.catch.catcher_outcome import (
+from localstack.aws.services.stepfunctions.asl.component.common.catch.catcher_outcome import (
     CatcherOutcomeCaught,
 )
-from localstack.services.stepfunctions.asl.component.common.error_name.failure_event import (
+from localstack.aws.services.stepfunctions.asl.component.common.error_name.failure_event import (
     FailureEvent,
 )
-from localstack.services.stepfunctions.asl.component.common.query_language import (
+from localstack.aws.services.stepfunctions.asl.component.common.query_language import (
     QueryLanguageMode,
 )
-from localstack.services.stepfunctions.asl.component.common.retry.retrier_decl import RetrierDecl
-from localstack.services.stepfunctions.asl.component.common.retry.retrier_outcome import (
+from localstack.aws.services.stepfunctions.asl.component.common.retry.retrier_decl import RetrierDecl
+from localstack.aws.services.stepfunctions.asl.component.common.retry.retrier_outcome import (
     RetrierOutcome,
 )
-from localstack.services.stepfunctions.asl.component.common.retry.retry_outcome import RetryOutcome
-from localstack.services.stepfunctions.asl.component.state.state_execution.execute_state import (
+from localstack.aws.services.stepfunctions.asl.component.common.retry.retry_outcome import RetryOutcome
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.execute_state import (
     ExecutionState,
 )
-from localstack.services.stepfunctions.asl.component.test_state.state.base_mock import (
+from localstack.aws.services.stepfunctions.asl.component.test_state.state.base_mock import (
     MockedBaseState,
 )
-from localstack.services.stepfunctions.asl.eval.test_state.environment import TestStateEnvironment
-from localstack.services.stepfunctions.asl.utils.encoding import to_json_str
+from localstack.aws.services.stepfunctions.asl.eval.test_state.environment import TestStateEnvironment
+from localstack.aws.services.stepfunctions.asl.utils.encoding import to_json_str
 
 
 class MockedStateExecution(MockedBaseState[ExecutionState]):

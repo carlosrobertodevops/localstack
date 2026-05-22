@@ -3,16 +3,16 @@ from json import JSONDecodeError
 from typing import IO, Any, Final
 
 from localstack.aws.api.lambda_ import InvocationResponse
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_task.credentials import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_task.credentials import (
     StateCredentials,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_task.local_mock_eval_utils import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_task.local_mock_eval_utils import (
     eval_local_mocked_response,
 )
-from localstack.services.stepfunctions.asl.eval.environment import Environment
-from localstack.services.stepfunctions.asl.utils.boto_client import boto_client_for
-from localstack.services.stepfunctions.asl.utils.encoding import to_json_str
-from localstack.services.stepfunctions.local_mocking.mock_config import LocalMockedResponse
+from localstack.aws.services.stepfunctions.asl.eval.environment import Environment
+from localstack.aws.services.stepfunctions.asl.utils.boto_client import boto_client_for
+from localstack.aws.services.stepfunctions.asl.utils.encoding import to_json_str
+from localstack.aws.services.stepfunctions.local_mocking.mock_config import LocalMockedResponse
 from localstack.utils.collections import select_from_typed_dict
 from localstack.utils.strings import to_bytes
 

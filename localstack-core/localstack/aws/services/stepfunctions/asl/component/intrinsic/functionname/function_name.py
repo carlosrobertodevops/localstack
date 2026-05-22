@@ -1,6 +1,6 @@
 import abc
 
-from localstack.services.stepfunctions.asl.component.component import Component
+from localstack.aws.services.stepfunctions.asl.component.component import Component
 
 
 class FunctionName(Component, abc.ABC):

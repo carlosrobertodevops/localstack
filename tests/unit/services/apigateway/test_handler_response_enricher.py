@@ -1,16 +1,16 @@
 import pytest
 
 from localstack.aws.api.apigateway import Integration, IntegrationType
-from localstack.http import Request
-from localstack.services.apigateway.next_gen.execute_api.api import RestApiGatewayHandlerChain
-from localstack.services.apigateway.next_gen.execute_api.context import (
+from localstack.platform.http import Request
+from localstack.aws.services.apigateway.next_gen.execute_api.api import RestApiGatewayHandlerChain
+from localstack.aws.services.apigateway.next_gen.execute_api.context import (
     RestApiInvocationContext,
 )
-from localstack.services.apigateway.next_gen.execute_api.handlers import (
+from localstack.aws.services.apigateway.next_gen.execute_api.handlers import (
     InvocationResponseEnricher,
 )
-from localstack.services.apigateway.next_gen.execute_api.router import ApiGatewayEndpoint
-from localstack.services.apigateway.next_gen.execute_api.variables import (
+from localstack.aws.services.apigateway.next_gen.execute_api.router import ApiGatewayEndpoint
+from localstack.aws.services.apigateway.next_gen.execute_api.variables import (
     ContextVariables,
     GatewayResponseContextVarsError,
 )

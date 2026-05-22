@@ -4,11 +4,11 @@ from pathlib import Path
 import dns
 import pytest
 
-from localstack import config
+from localstack.platform import config
 from localstack.aws.spec import iterate_service_operations
-from localstack.constants import LOCALHOST_HOSTNAME
-from localstack.dns.models import AliasTarget, RecordType, SOARecord, TargetRecord
-from localstack.dns.server import (
+from localstack.platform.constants import LOCALHOST_HOSTNAME
+from localstack.platform.dns.models import AliasTarget, RecordType, SOARecord, TargetRecord
+from localstack.platform.dns.server import (
     HOST_PREFIXES_NO_SUBDOMAIN,
     NAME_PATTERNS_POINTING_TO_LOCALSTACK,
     DnsServer,
@@ -437,7 +437,7 @@ class TestDNSServer:
 
 class TestDnsUtils:
     def test_resolv_conf_overwriting(self, tmp_path: Path, monkeypatch):
-        from localstack.dns import server
+        from localstack.platform.dns import server
 
         monkeypatch.setattr(server, "in_docker", lambda: True)
 
@@ -453,7 +453,7 @@ class TestDnsUtils:
         assert "nameserver 127.0.0.1" in new_contents.splitlines()
 
     def test_exising_resolv_conf_contents(self, tmp_path: Path, monkeypatch):
-        from localstack.dns import server
+        from localstack.platform.dns import server
 
         monkeypatch.setattr(server, "in_docker", lambda: True)
 
@@ -480,7 +480,7 @@ class TestDnsUtils:
         assert "nameserver 127.0.0.11" not in lines
 
     def test_no_resolv_conf_overwriting_on_host(self, tmp_path: Path, monkeypatch):
-        from localstack.dns import server
+        from localstack.platform.dns import server
 
         monkeypatch.setattr(server, "in_docker", lambda: False)
 

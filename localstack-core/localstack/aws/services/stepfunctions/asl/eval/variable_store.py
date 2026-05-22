@@ -2,11 +2,11 @@ from __future__ import annotations
 
 from typing import Any, Final
 
-from localstack.services.stepfunctions.asl.jsonata.jsonata import (
+from localstack.aws.services.stepfunctions.asl.jsonata.jsonata import (
     VariableDeclarations,
     encode_jsonata_variable_declarations,
 )
-from localstack.services.stepfunctions.asl.utils.encoding import to_json_str
+from localstack.aws.services.stepfunctions.asl.utils.encoding import to_json_str
 
 VariableIdentifier = str
 VariableValue = Any

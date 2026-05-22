@@ -70,20 +70,20 @@ from localstack.aws.api.s3 import (
     WebsiteConfiguration,
     WebsiteRedirectLocation,
 )
-from localstack.constants import AWS_REGION_US_EAST_1
-from localstack.services.s3.constants import (
+from localstack.platform.constants import AWS_REGION_US_EAST_1
+from localstack.aws.services.s3.constants import (
     DEFAULT_BUCKET_ENCRYPTION,
     DEFAULT_PUBLIC_BLOCK_ACCESS,
     S3_UPLOAD_PART_MIN_SIZE,
 )
-from localstack.services.s3.exceptions import InvalidRequest
-from localstack.services.s3.headers import replace_non_iso_8859_1_characters
-from localstack.services.s3.utils import (
+from localstack.aws.services.s3.exceptions import InvalidRequest
+from localstack.aws.services.s3.headers import replace_non_iso_8859_1_characters
+from localstack.aws.services.s3.utils import (
     CombinedCrcHash,
     get_s3_checksum,
     rfc_1123_datetime,
 )
-from localstack.services.stores import (
+from localstack.aws.services.stores import (
     AccountRegionBundle,
     BaseStore,
     CrossAccountAttribute,

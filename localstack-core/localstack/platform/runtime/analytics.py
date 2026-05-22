@@ -1,7 +1,7 @@
 import logging
 import os
 
-from localstack.runtime import hooks
+from localstack.platform.runtime import hooks
 from localstack.utils.analytics import log
 
 LOG = logging.getLogger(__name__)

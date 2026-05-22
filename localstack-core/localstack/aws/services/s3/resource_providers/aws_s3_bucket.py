@@ -7,15 +7,15 @@ from typing import TypedDict
 
 from botocore.exceptions import ClientError
 
-import localstack.services.cloudformation.provider_utils as util
-from localstack.config import S3_STATIC_WEBSITE_HOSTNAME, S3_VIRTUAL_HOSTNAME
-from localstack.services.cloudformation.resource_provider import (
+import localstack.aws.services.cloudformation.provider_utils as util
+from localstack.platform.config import S3_STATIC_WEBSITE_HOSTNAME, S3_VIRTUAL_HOSTNAME
+from localstack.aws.services.cloudformation.resource_provider import (
     OperationStatus,
     ProgressEvent,
     ResourceProvider,
     ResourceRequest,
 )
-from localstack.services.s3.utils import normalize_bucket_name
+from localstack.aws.services.s3.utils import normalize_bucket_name
 from localstack.utils.aws import arns
 from localstack.utils.testutil import delete_all_s3_objects
 from localstack.utils.urls import localstack_host

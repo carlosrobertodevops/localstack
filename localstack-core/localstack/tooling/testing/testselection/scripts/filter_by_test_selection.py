@@ -18,7 +18,7 @@ def filter_test_files(tests: list[str], selected_tests: list[str]):
 def main():
     if len(sys.argv) != 2:
         print(
-            "Usage: python -m localstack.testing.testselection.scripts.filter_by_test_selection <file>",
+            "Usage: python -m localstack.tooling.testing.testselection.scripts.filter_by_test_selection <file>",
             file=sys.stderr,
         )
         sys.exit(1)

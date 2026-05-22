@@ -5,8 +5,8 @@ import stat
 from functools import cache
 from pathlib import Path
 
-from localstack import config
-from localstack.packages import DownloadInstaller, InstallTarget, Package, PackageInstaller
+from localstack.platform import config
+from localstack.tooling.packages import DownloadInstaller, InstallTarget, Package, PackageInstaller
 from localstack.utils.platform import get_arch
 
 """Customized LocalStack version of the AWS Lambda Runtime Interface Emulator (RIE).

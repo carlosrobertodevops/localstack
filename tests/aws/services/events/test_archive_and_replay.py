@@ -4,7 +4,7 @@ from datetime import UTC, datetime, timedelta
 import pytest
 from botocore.exceptions import ClientError
 
-from localstack.testing.pytest import markers
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.strings import short_uid
 from localstack.utils.sync import retry
 from tests.aws.services.events.helper_functions import (

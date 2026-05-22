@@ -1,10 +1,10 @@
 import logging
 
-from localstack import config, constants
+from localstack.platform import config, constants
 from localstack.aws.api import RequestContext
 from localstack.aws.chain import Handler, HandlerChain
-from localstack.http import Response
-from localstack.runtime import hooks
+from localstack.platform.http import Response
+from localstack.platform.runtime import hooks
 
 LOG = logging.getLogger(__name__)
 

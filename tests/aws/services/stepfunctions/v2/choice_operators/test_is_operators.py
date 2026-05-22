@@ -1,7 +1,7 @@
 import pytest
 
-from localstack.testing.aws.util import is_aws_cloud
-from localstack.testing.pytest import markers
+from localstack.tooling.testing.aws.util import is_aws_cloud
+from localstack.tooling.testing.pytest import markers
 from tests.aws.services.stepfunctions.v2.choice_operators.utils import (
     TYPE_COMPARISONS,
     create_and_test_comparison_function,

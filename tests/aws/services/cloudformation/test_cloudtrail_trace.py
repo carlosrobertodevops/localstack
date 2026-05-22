@@ -3,8 +3,8 @@ import json
 import pytest
 
 from localstack.aws.connect import ServiceLevelClientFactory
-from localstack.testing.aws.util import is_aws_cloud
-from localstack.testing.pytest import markers
+from localstack.tooling.testing.aws.util import is_aws_cloud
+from localstack.tooling.testing.pytest import markers
 
 
 @pytest.mark.skipif(not is_aws_cloud(), reason="Test only works on AWS")

@@ -6,12 +6,12 @@ from rolo.routing.handler import Handler
 from werkzeug.routing import Rule
 
 from localstack.aws.api.apigateway import Stage
-from localstack.constants import APPLICATION_JSON, AWS_REGION_US_EAST_1, DEFAULT_AWS_ACCOUNT_ID
-from localstack.deprecations import deprecated_endpoint
-from localstack.http import Response
-from localstack.services.apigateway.models import ApiGatewayStore, apigateway_stores
-from localstack.services.edge import ROUTER
-from localstack.services.stores import AccountRegionBundle
+from localstack.platform.constants import APPLICATION_JSON, AWS_REGION_US_EAST_1, DEFAULT_AWS_ACCOUNT_ID
+from localstack.platform.deprecations import deprecated_endpoint
+from localstack.platform.http import Response
+from localstack.aws.services.apigateway.models import ApiGatewayStore, apigateway_stores
+from localstack.aws.services.edge import ROUTER
+from localstack.aws.services.stores import AccountRegionBundle
 
 from .context import RestApiInvocationContext
 from .gateway import RestApiGateway

@@ -10,7 +10,7 @@ from functools import cached_property
 
 from plux import Plugin, PluginManager
 
-from localstack.runtime import hooks
+from localstack.platform.runtime import hooks
 from localstack.utils.objects import singleton_factory
 
 LOG = logging.getLogger(__name__)
@@ -230,8 +230,7 @@ class InitScriptManager:
 
 @singleton_factory
 def init_script_manager() -> InitScriptManager:
-    from localstack import config
-
+    from localstack.platform import config
     return InitScriptManager(script_root=config.dirs.init)
 
 
@@ -267,7 +266,7 @@ def main():
     """
     Run the init scripts for a particular stage. For example, to run all boot scripts run::
 
-        python -m localstack.runtime.init BOOT
+        python -m localstack.platform.runtime.init BOOT
 
     The __main__ entrypoint is currently mainly used for the docker-entrypoint.sh. Other stages
     are executed from runtime hooks.

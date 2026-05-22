@@ -1,17 +1,17 @@
 import logging
 from typing import Final
 
-from localstack.services.stepfunctions.asl.component.common.parargs import Parameters
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.item_selector import (
+from localstack.aws.services.stepfunctions.asl.component.common.parargs import Parameters
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.item_selector import (
     ItemSelector,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.iteration_worker import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.iteration_worker import (
     IterationWorker,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.job import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.job import (
     JobPool,
 )
-from localstack.services.stepfunctions.asl.eval.environment import Environment
+from localstack.aws.services.stepfunctions.asl.eval.environment import Environment
 
 LOG = logging.getLogger(__name__)
 

@@ -1,12 +1,12 @@
 # LocalStack Resource Provider Scaffolding v2
 import json
 
-from localstack.services.cloudformation.resource_provider import (
+from localstack.aws.services.cloudformation.resource_provider import (
     OperationStatus,
     ProgressEvent,
     ResourceRequest,
 )
-from localstack.services.sqs.resource_providers.generated.aws_sqs_queueinlinepolicy_base import (
+from localstack.aws.services.sqs.resource_providers.generated.aws_sqs_queueinlinepolicy_base import (
     SQSQueueInlinePolicyProperties,
     SQSQueueInlinePolicyProviderBase,
 )

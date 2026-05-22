@@ -5,7 +5,7 @@ import re
 import time
 from random import random
 
-from localstack import config
+from localstack.platform import config
 from localstack.aws.api import RequestContext
 from localstack.aws.api.kinesis import (
     ConsumerARN,
@@ -34,11 +34,11 @@ from localstack.aws.api.kinesis import (
     ValidationException,
 )
 from localstack.aws.connect import connect_to
-from localstack.constants import LOCALHOST
-from localstack.services.kinesis.kinesis_mock_server import KinesisServerManager
-from localstack.services.kinesis.models import KinesisStore, kinesis_stores
-from localstack.services.plugins import ServiceLifecycleHook
-from localstack.state import AssetDirectory, StateVisitor
+from localstack.platform.constants import LOCALHOST
+from localstack.aws.services.kinesis.kinesis_mock_server import KinesisServerManager
+from localstack.aws.services.kinesis.models import KinesisStore, kinesis_stores
+from localstack.aws.services.plugins import ServiceLifecycleHook
+from localstack.platform.state import AssetDirectory, StateVisitor
 from localstack.utils.aws import arns
 from localstack.utils.aws.arns import extract_account_id_from_arn, extract_region_from_arn
 from localstack.utils.time import now_utc

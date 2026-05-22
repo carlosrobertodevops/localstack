@@ -5,8 +5,8 @@ import signal
 import sys
 import traceback
 
-from localstack import config, constants
-from localstack.runtime.exceptions import LocalstackExit
+from localstack.platform import config, constants
+from localstack.platform.runtime.exceptions import LocalstackExit
 
 
 def print_runtime_information(in_docker: bool = False):
@@ -53,8 +53,8 @@ def print_runtime_information(in_docker: bool = False):
 
 
 def main():
-    from localstack.logging.setup import setup_logging_from_config
-    from localstack.runtime import current
+    from localstack.platform.logging.setup import setup_logging_from_config
+    from localstack.platform.runtime import current
 
     try:
         setup_logging_from_config()

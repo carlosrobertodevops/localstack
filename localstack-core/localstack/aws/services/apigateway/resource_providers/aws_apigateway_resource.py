@@ -6,9 +6,9 @@ from typing import TypedDict
 
 from botocore.exceptions import ClientError
 
-import localstack.services.cloudformation.provider_utils as util
+import localstack.aws.services.cloudformation.provider_utils as util
 from localstack.aws.api.cloudcontrol import InvalidRequestException, ResourceNotFoundException
-from localstack.services.cloudformation.resource_provider import (
+from localstack.aws.services.cloudformation.resource_provider import (
     OperationStatus,
     ProgressEvent,
     ResourceProvider,

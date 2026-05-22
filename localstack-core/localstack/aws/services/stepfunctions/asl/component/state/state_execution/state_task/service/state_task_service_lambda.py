@@ -5,27 +5,27 @@ from typing import Final
 from botocore.exceptions import ClientError
 
 from localstack.aws.api.stepfunctions import HistoryEventType, TaskFailedEventDetails
-from localstack.services.stepfunctions.asl.component.common.error_name.custom_error_name import (
+from localstack.aws.services.stepfunctions.asl.component.common.error_name.custom_error_name import (
     CustomErrorName,
 )
-from localstack.services.stepfunctions.asl.component.common.error_name.failure_event import (
+from localstack.aws.services.stepfunctions.asl.component.common.error_name.failure_event import (
     FailureEvent,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_task import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_task import (
     lambda_eval_utils,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_task.credentials import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_task.credentials import (
     StateCredentials,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_task.service.resource import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_task.service.resource import (
     ResourceCondition,
     ResourceRuntimePart,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_task.service.state_task_service_callback import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_task.service.state_task_service_callback import (
     StateTaskServiceCallback,
 )
-from localstack.services.stepfunctions.asl.eval.environment import Environment
-from localstack.services.stepfunctions.asl.eval.event.event_detail import EventDetails
+from localstack.aws.services.stepfunctions.asl.eval.environment import Environment
+from localstack.aws.services.stepfunctions.asl.eval.event.event_detail import EventDetails
 
 LOG = logging.getLogger(__name__)
 

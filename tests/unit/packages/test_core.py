@@ -1,7 +1,7 @@
 import pytest
 
-from localstack.packages import PackageException
-from localstack.packages.core import GitHubReleaseInstaller
+from localstack.tooling.packages import PackageException
+from localstack.tooling.packages.core import GitHubReleaseInstaller
 
 
 class TestGitHubPackageInstaller(GitHubReleaseInstaller):

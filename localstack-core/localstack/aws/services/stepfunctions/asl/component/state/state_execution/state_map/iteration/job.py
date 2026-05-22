@@ -3,8 +3,8 @@ import logging
 import threading
 from typing import Any, Final
 
-from localstack.services.stepfunctions.asl.component.program.program import Program
-from localstack.services.stepfunctions.asl.utils.encoding import to_json_str
+from localstack.aws.services.stepfunctions.asl.component.program.program import Program
+from localstack.aws.services.stepfunctions.asl.utils.encoding import to_json_str
 
 LOG = logging.getLogger(__name__)
 

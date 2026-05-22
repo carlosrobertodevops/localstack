@@ -26,39 +26,39 @@ from localstack.aws.api.stepfunctions import (
     VariableReferences,
 )
 from localstack.aws.connect import connect_to
-from localstack.services.stepfunctions.asl.eval.evaluation_details import (
+from localstack.aws.services.stepfunctions.asl.eval.evaluation_details import (
     AWSExecutionDetails,
     EvaluationDetails,
     ExecutionDetails,
     StateMachineDetails,
 )
-from localstack.services.stepfunctions.asl.eval.event.logging import (
+from localstack.aws.services.stepfunctions.asl.eval.event.logging import (
     CloudWatchLoggingSession,
 )
-from localstack.services.stepfunctions.asl.eval.program_state import (
+from localstack.aws.services.stepfunctions.asl.eval.program_state import (
     ProgramEnded,
     ProgramError,
     ProgramState,
     ProgramStopped,
     ProgramTimedOut,
 )
-from localstack.services.stepfunctions.asl.static_analyser.variable_references_static_analyser import (
+from localstack.aws.services.stepfunctions.asl.static_analyser.variable_references_static_analyser import (
     VariableReferencesStaticAnalyser,
 )
-from localstack.services.stepfunctions.asl.utils.encoding import to_json_str
-from localstack.services.stepfunctions.backend.activity import Activity
-from localstack.services.stepfunctions.backend.execution_worker import (
+from localstack.aws.services.stepfunctions.asl.utils.encoding import to_json_str
+from localstack.aws.services.stepfunctions.backend.activity import Activity
+from localstack.aws.services.stepfunctions.backend.execution_worker import (
     ExecutionWorker,
     SyncExecutionWorker,
 )
-from localstack.services.stepfunctions.backend.execution_worker_comm import (
+from localstack.aws.services.stepfunctions.backend.execution_worker_comm import (
     ExecutionWorkerCommunication,
 )
-from localstack.services.stepfunctions.backend.state_machine import (
+from localstack.aws.services.stepfunctions.backend.state_machine import (
     StateMachineInstance,
     StateMachineVersion,
 )
-from localstack.services.stepfunctions.local_mocking.mock_config import LocalMockTestCase
+from localstack.aws.services.stepfunctions.local_mocking.mock_config import LocalMockTestCase
 
 LOG = logging.getLogger(__name__)
 

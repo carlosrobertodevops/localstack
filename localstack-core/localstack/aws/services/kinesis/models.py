@@ -7,7 +7,7 @@ from localstack.aws.api.kinesis import (
     ResourceARN,
     StreamName,
 )
-from localstack.services.stores import (
+from localstack.aws.services.stores import (
     AccountRegionBundle,
     BaseStore,
     CrossAccountAttribute,

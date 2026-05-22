@@ -12,16 +12,16 @@ from botocore.exceptions import ClientError
 from pytest_httpserver import HTTPServer
 from werkzeug import Request, Response
 
-from localstack import config
+from localstack.platform import config
 from localstack.aws.api.apigateway import IntegrationType
 from localstack.aws.api.ec2 import VpcEndpoint
 from localstack.aws.api.lambda_ import Runtime
-from localstack.config import in_docker
-from localstack.constants import APPLICATION_JSON
-from localstack.services.lambda_.networking import get_main_endpoint_from_container
-from localstack.testing.aws.util import is_aws_cloud
-from localstack.testing.pytest import markers
-from localstack.testing.pytest.fixtures import PUBLIC_HTTP_ECHO_SERVER_URL
+from localstack.platform.config import in_docker
+from localstack.platform.constants import APPLICATION_JSON
+from localstack.aws.services.lambda_.networking import get_main_endpoint_from_container
+from localstack.tooling.testing.aws.util import is_aws_cloud
+from localstack.tooling.testing.pytest import markers
+from localstack.tooling.testing.pytest.fixtures import PUBLIC_HTTP_ECHO_SERVER_URL
 from localstack.utils.aws import arns
 from localstack.utils.json import json_safe
 from localstack.utils.strings import short_uid, to_bytes, to_str

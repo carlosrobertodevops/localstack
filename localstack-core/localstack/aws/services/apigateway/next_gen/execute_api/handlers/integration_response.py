@@ -11,8 +11,8 @@ from localstack.aws.api.apigateway import (
     IntegrationResponse,
     IntegrationType,
 )
-from localstack.constants import APPLICATION_JSON
-from localstack.http import Response
+from localstack.platform.constants import APPLICATION_JSON
+from localstack.platform.http import Response
 from localstack.utils.strings import to_bytes
 
 from ..api import RestApiGatewayHandler, RestApiGatewayHandlerChain

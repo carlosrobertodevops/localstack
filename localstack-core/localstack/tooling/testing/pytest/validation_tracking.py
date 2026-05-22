@@ -14,7 +14,7 @@ import pytest
 from pluggy import Result
 from pytest import StashKey, TestReport
 
-from localstack.testing.aws.util import is_aws_cloud
+from localstack.tooling.testing.aws.util import is_aws_cloud
 
 durations_key = StashKey[dict[str, float]]()
 """

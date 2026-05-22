@@ -4,29 +4,29 @@ import abc
 from typing import Optional
 
 from localstack.aws.api.stepfunctions import HistoryEventType, TaskTimedOutEventDetails
-from localstack.services.stepfunctions.asl.component.common.error_name.failure_event import (
+from localstack.aws.services.stepfunctions.asl.component.common.error_name.failure_event import (
     FailureEvent,
 )
-from localstack.services.stepfunctions.asl.component.common.error_name.states_error_name import (
+from localstack.aws.services.stepfunctions.asl.component.common.error_name.states_error_name import (
     StatesErrorName,
 )
-from localstack.services.stepfunctions.asl.component.common.error_name.states_error_name_type import (
+from localstack.aws.services.stepfunctions.asl.component.common.error_name.states_error_name_type import (
     StatesErrorNameType,
 )
-from localstack.services.stepfunctions.asl.component.common.parargs import Parargs
-from localstack.services.stepfunctions.asl.component.state.state_execution.execute_state import (
+from localstack.aws.services.stepfunctions.asl.component.common.parargs import Parargs
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.execute_state import (
     ExecutionState,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_task.credentials import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_task.credentials import (
     Credentials,
     StateCredentials,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_task.service.resource import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_task.service.resource import (
     Resource,
 )
-from localstack.services.stepfunctions.asl.component.state.state_props import StateProps
-from localstack.services.stepfunctions.asl.eval.environment import Environment
-from localstack.services.stepfunctions.asl.eval.event.event_detail import EventDetails
+from localstack.aws.services.stepfunctions.asl.component.state.state_props import StateProps
+from localstack.aws.services.stepfunctions.asl.eval.environment import Environment
+from localstack.aws.services.stepfunctions.asl.eval.event.event_detail import EventDetails
 
 
 class StateTask(ExecutionState, abc.ABC):

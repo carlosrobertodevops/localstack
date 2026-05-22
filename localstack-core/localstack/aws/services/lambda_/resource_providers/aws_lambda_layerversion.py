@@ -5,15 +5,15 @@ import logging
 from pathlib import Path
 from typing import TypedDict
 
-import localstack.services.cloudformation.provider_utils as util
-from localstack.services.cloudformation.resource_provider import (
+import localstack.aws.services.cloudformation.provider_utils as util
+from localstack.aws.services.cloudformation.resource_provider import (
     OperationStatus,
     ProgressEvent,
     Properties,
     ResourceProvider,
     ResourceRequest,
 )
-from localstack.services.lambda_.api_utils import parse_layer_arn
+from localstack.aws.services.lambda_.api_utils import parse_layer_arn
 from localstack.utils.strings import short_uid
 
 LOG = logging.getLogger(__name__)

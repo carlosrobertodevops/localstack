@@ -5,7 +5,7 @@ from zoneinfo import ZoneInfo
 import pytest
 from botocore.exceptions import ClientError
 
-from localstack.testing.pytest import markers
+from localstack.tooling.testing.pytest import markers
 
 
 class TestS3CopySourcePreconditions:

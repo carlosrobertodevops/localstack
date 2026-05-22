@@ -3,25 +3,25 @@ import logging
 from typing import Final
 
 from localstack.aws.api.stepfunctions import HistoryEventType, MapIterationEventDetails
-from localstack.services.stepfunctions.asl.component.common.error_name.custom_error_name import (
+from localstack.aws.services.stepfunctions.asl.component.common.error_name.custom_error_name import (
     CustomErrorName,
 )
-from localstack.services.stepfunctions.asl.component.common.error_name.failure_event import (
+from localstack.aws.services.stepfunctions.asl.component.common.error_name.failure_event import (
     FailureEvent,
     FailureEventException,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.job import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.job import (
     Job,
     JobPool,
 )
-from localstack.services.stepfunctions.asl.eval.environment import Environment
-from localstack.services.stepfunctions.asl.eval.event.event_detail import EventDetails
-from localstack.services.stepfunctions.asl.eval.program_state import (
+from localstack.aws.services.stepfunctions.asl.eval.environment import Environment
+from localstack.aws.services.stepfunctions.asl.eval.event.event_detail import EventDetails
+from localstack.aws.services.stepfunctions.asl.eval.program_state import (
     ProgramError,
     ProgramState,
     ProgramStopped,
 )
-from localstack.services.stepfunctions.asl.eval.states import ItemData, MapData
+from localstack.aws.services.stepfunctions.asl.eval.states import ItemData, MapData
 
 LOG = logging.getLogger(__name__)
 

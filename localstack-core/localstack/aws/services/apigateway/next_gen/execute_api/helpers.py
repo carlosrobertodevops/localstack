@@ -8,7 +8,7 @@ from typing import TypedDict
 
 from moto.apigateway.models import RestAPI as MotoRestAPI
 
-from localstack.services.apigateway.models import MergedRestApi, RestApiContainer, RestApiDeployment
+from localstack.aws.services.apigateway.models import MergedRestApi, RestApiContainer, RestApiDeployment
 from localstack.utils.aws.arns import get_partition
 
 from .context import RestApiInvocationContext

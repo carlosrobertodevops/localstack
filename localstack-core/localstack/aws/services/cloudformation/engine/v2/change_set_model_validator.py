@@ -3,7 +3,7 @@ from typing import Any
 
 from botocore.exceptions import ParamValidationError
 
-from localstack.services.cloudformation.engine.v2.change_set_model import (
+from localstack.aws.services.cloudformation.engine.v2.change_set_model import (
     NodeIntrinsicFunction,
     NodeProperty,
     NodeResource,
@@ -11,13 +11,13 @@ from localstack.services.cloudformation.engine.v2.change_set_model import (
     Nothing,
     is_nothing,
 )
-from localstack.services.cloudformation.engine.v2.change_set_model_preproc import (
+from localstack.aws.services.cloudformation.engine.v2.change_set_model_preproc import (
     _PSEUDO_PARAMETERS,
     ChangeSetModelPreproc,
     PreprocEntityDelta,
     PreprocResource,
 )
-from localstack.services.cloudformation.engine.validations import ValidationError
+from localstack.aws.services.cloudformation.engine.validations import ValidationError
 
 
 class ChangeSetModelValidator(ChangeSetModelPreproc):

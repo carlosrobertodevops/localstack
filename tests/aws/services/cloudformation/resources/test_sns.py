@@ -4,8 +4,8 @@ import aws_cdk as cdk
 from tests.aws.services.cloudformation.conftest import skip_if_legacy_engine
 
 from localstack.aws.api.cloudformation import Stack
-from localstack.testing.aws.util import is_aws_cloud
-from localstack.testing.pytest import markers
+from localstack.tooling.testing.aws.util import is_aws_cloud
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.aws.arns import parse_arn
 from localstack.utils.common import short_uid
 from localstack.utils.sync import wait_until

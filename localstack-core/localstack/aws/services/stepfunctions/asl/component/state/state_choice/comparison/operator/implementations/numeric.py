@@ -1,13 +1,13 @@
 from typing import Any
 
-from localstack.services.stepfunctions.asl.component.state.state_choice.comparison.comparison_operator_type import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_choice.comparison.comparison_operator_type import (
     ComparisonOperatorType,
 )
-from localstack.services.stepfunctions.asl.component.state.state_choice.comparison.operator.operator import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_choice.comparison.operator.operator import (
     Operator,
 )
-from localstack.services.stepfunctions.asl.eval.environment import Environment
-from localstack.services.stepfunctions.asl.utils.json_path import extract_json
+from localstack.aws.services.stepfunctions.asl.eval.environment import Environment
+from localstack.aws.services.stepfunctions.asl.utils.json_path import extract_json
 
 
 def _is_numeric(variable: Any) -> bool:

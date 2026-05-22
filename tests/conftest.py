@@ -3,23 +3,22 @@ import os
 import pytest
 from _pytest.monkeypatch import MonkeyPatch
 
-from localstack import config
-
+from localstack.platform import config
 os.environ["LOCALSTACK_INTERNAL_TEST_RUN"] = "1"
 
 pytest_plugins = [
-    "localstack.testing.pytest.fixtures",
-    "localstack.testing.pytest.container",
+    "localstack.tooling.testing.pytest.fixtures",
+    "localstack.tooling.testing.pytest.container",
     "localstack_snapshot.pytest.snapshot",
-    "localstack.testing.pytest.filters",
-    "localstack.testing.pytest.fixture_conflicts",
-    "localstack.testing.pytest.marking",
-    "localstack.testing.pytest.marker_report",
-    "localstack.testing.pytest.in_memory_localstack",
-    "localstack.testing.pytest.validation_tracking",
-    "localstack.testing.pytest.path_filter",
-    "localstack.testing.pytest.stepfunctions.fixtures",
-    "localstack.testing.pytest.cloudformation.fixtures",
+    "localstack.tooling.testing.pytest.filters",
+    "localstack.tooling.testing.pytest.fixture_conflicts",
+    "localstack.tooling.testing.pytest.marking",
+    "localstack.tooling.testing.pytest.marker_report",
+    "localstack.tooling.testing.pytest.in_memory_localstack",
+    "localstack.tooling.testing.pytest.validation_tracking",
+    "localstack.tooling.testing.pytest.path_filter",
+    "localstack.tooling.testing.pytest.stepfunctions.fixtures",
+    "localstack.tooling.testing.pytest.cloudformation.fixtures",
 ]
 
 
@@ -28,7 +27,7 @@ def aws_session():
     """
     This fixture returns the Boto Session instance for testing.
     """
-    from localstack.testing.aws.util import base_aws_session
+    from localstack.tooling.testing.aws.util import base_aws_session
 
     return base_aws_session()
 
@@ -38,7 +37,7 @@ def secondary_aws_session():
     """
     This fixture returns the Boto Session instance for testing a secondary account.
     """
-    from localstack.testing.aws.util import secondary_aws_session
+    from localstack.tooling.testing.aws.util import secondary_aws_session
 
     return secondary_aws_session()
 
@@ -50,7 +49,7 @@ def aws_client_factory(aws_session):
 
     Use this fixture if you need to use custom endpoint or Boto config.
     """
-    from localstack.testing.aws.util import base_aws_client_factory
+    from localstack.tooling.testing.aws.util import base_aws_client_factory
 
     return base_aws_client_factory(aws_session)
 
@@ -62,7 +61,7 @@ def secondary_aws_client_factory(secondary_aws_session):
 
     Use this fixture if you need to use custom endpoint or Boto config.
     """
-    from localstack.testing.aws.util import base_aws_client_factory
+    from localstack.tooling.testing.aws.util import base_aws_client_factory
 
     return base_aws_client_factory(secondary_aws_session)
 
@@ -74,7 +73,7 @@ def aws_client(aws_client_factory):
 
     The clients are configured with the primary testing credentials.
     """
-    from localstack.testing.aws.util import base_testing_aws_client
+    from localstack.tooling.testing.aws.util import base_testing_aws_client
 
     return base_testing_aws_client(aws_client_factory)
 
@@ -87,7 +86,7 @@ def secondary_aws_client(secondary_aws_client_factory):
     The clients are configured with the secondary testing credentials.
     The region is not overridden.
     """
-    from localstack.testing.aws.util import base_testing_aws_client
+    from localstack.tooling.testing.aws.util import base_testing_aws_client
 
     return base_testing_aws_client(secondary_aws_client_factory)
 

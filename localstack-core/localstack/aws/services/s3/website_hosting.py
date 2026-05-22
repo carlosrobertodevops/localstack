@@ -18,8 +18,8 @@ from localstack.aws.api.s3 import (
 )
 from localstack.aws.connect import connect_to
 from localstack.aws.protocol.serializer import gen_amzn_requestid
-from localstack.http import Request, Response, Router
-from localstack.http.dispatcher import Handler
+from localstack.platform.http import Request, Response, Router
+from localstack.platform.http.dispatcher import Handler
 
 LOG = logging.getLogger(__name__)
 

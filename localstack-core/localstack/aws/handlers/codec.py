@@ -2,7 +2,7 @@ import gzip
 
 from localstack.aws.api import RequestContext
 from localstack.aws.chain import Handler, HandlerChain
-from localstack.http import Response
+from localstack.platform.http import Response
 
 
 class ContentDecoder(Handler):

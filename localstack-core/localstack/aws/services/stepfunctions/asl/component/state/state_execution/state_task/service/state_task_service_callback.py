@@ -11,23 +11,23 @@ from localstack.aws.api.stepfunctions import (
     TaskFailedEventDetails,
     TaskSubmittedEventDetails,
 )
-from localstack.services.stepfunctions.asl.component.common.error_name.custom_error_name import (
+from localstack.aws.services.stepfunctions.asl.component.common.error_name.custom_error_name import (
     CustomErrorName,
 )
-from localstack.services.stepfunctions.asl.component.common.error_name.failure_event import (
+from localstack.aws.services.stepfunctions.asl.component.common.error_name.failure_event import (
     FailureEvent,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_task.credentials import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_task.credentials import (
     StateCredentials,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_task.service.resource import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_task.service.resource import (
     ResourceCondition,
     ResourceRuntimePart,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_task.service.state_task_service import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_task.service.state_task_service import (
     StateTaskService,
 )
-from localstack.services.stepfunctions.asl.eval.callback.callback import (
+from localstack.aws.services.stepfunctions.asl.eval.callback.callback import (
     CallbackEndpoint,
     CallbackOutcome,
     CallbackOutcomeFailure,
@@ -39,9 +39,9 @@ from localstack.services.stepfunctions.asl.eval.callback.callback import (
     HeartbeatTimedOut,
     HeartbeatTimeoutError,
 )
-from localstack.services.stepfunctions.asl.eval.environment import Environment
-from localstack.services.stepfunctions.asl.eval.event.event_detail import EventDetails
-from localstack.services.stepfunctions.asl.utils.encoding import to_json_str
+from localstack.aws.services.stepfunctions.asl.eval.environment import Environment
+from localstack.aws.services.stepfunctions.asl.eval.event.event_detail import EventDetails
+from localstack.aws.services.stepfunctions.asl.utils.encoding import to_json_str
 from localstack.utils.threads import TMP_THREADS
 
 # TODO: consider implementing a polling pattern similar to that observable from AWS:

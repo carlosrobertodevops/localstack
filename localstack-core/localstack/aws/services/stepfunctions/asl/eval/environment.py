@@ -11,19 +11,19 @@ from localstack.aws.api.stepfunctions import (
     StateMachineType,
     Timestamp,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.itemprocessor.map_run_record import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.itemprocessor.map_run_record import (
     MapRunRecordPoolManager,
 )
-from localstack.services.stepfunctions.asl.eval.callback.callback import CallbackPoolManager
-from localstack.services.stepfunctions.asl.eval.evaluation_details import AWSExecutionDetails
-from localstack.services.stepfunctions.asl.eval.event.event_manager import (
+from localstack.aws.services.stepfunctions.asl.eval.callback.callback import CallbackPoolManager
+from localstack.aws.services.stepfunctions.asl.eval.evaluation_details import AWSExecutionDetails
+from localstack.aws.services.stepfunctions.asl.eval.event.event_manager import (
     EventHistoryContext,
     EventManager,
 )
-from localstack.services.stepfunctions.asl.eval.event.logging import (
+from localstack.aws.services.stepfunctions.asl.eval.event.logging import (
     CloudWatchLoggingSession,
 )
-from localstack.services.stepfunctions.asl.eval.program_state import (
+from localstack.aws.services.stepfunctions.asl.eval.program_state import (
     ProgramEnded,
     ProgramError,
     ProgramRunning,
@@ -31,10 +31,10 @@ from localstack.services.stepfunctions.asl.eval.program_state import (
     ProgramStopped,
     ProgramTimedOut,
 )
-from localstack.services.stepfunctions.asl.eval.states import ContextObjectData, States
-from localstack.services.stepfunctions.asl.eval.variable_store import VariableStore
-from localstack.services.stepfunctions.backend.activity import Activity
-from localstack.services.stepfunctions.local_mocking.mock_config import (
+from localstack.aws.services.stepfunctions.asl.eval.states import ContextObjectData, States
+from localstack.aws.services.stepfunctions.asl.eval.variable_store import VariableStore
+from localstack.aws.services.stepfunctions.backend.activity import Activity
+from localstack.aws.services.stepfunctions.local_mocking.mock_config import (
     LocalMockedResponse,
     LocalMockTestCase,
 )

@@ -2,20 +2,20 @@ from __future__ import annotations
 
 import logging
 
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.inline_iteration_component import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.inline_iteration_component import (
     InlineIterationComponent,
     InlineIterationComponentEvalInput,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.iterator.inline_iterator_worker import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.iterator.inline_iterator_worker import (
     InlineIteratorWorker,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.iterator.iterator_decl import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.iterator.iterator_decl import (
     IteratorDecl,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.job import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.job import (
     JobPool,
 )
-from localstack.services.stepfunctions.asl.eval.environment import Environment
+from localstack.aws.services.stepfunctions.asl.eval.environment import Environment
 
 LOG = logging.getLogger(__name__)
 

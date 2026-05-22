@@ -6,8 +6,8 @@ import pytest
 from pytest_httpserver import HTTPServer
 from requests.exceptions import SSLError
 
-from localstack.http import Request
-from localstack.http.client import SimpleRequestsClient
+from localstack.platform.http import Request
+from localstack.platform.http.client import SimpleRequestsClient
 from localstack.utils.ssl import create_ssl_cert
 
 

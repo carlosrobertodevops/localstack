@@ -1,6 +1,6 @@
 import os
 
-from localstack.testing.pytest import markers
+from localstack.tooling.testing.pytest import markers
 
 
 def deploy_stack(deploy_cfn_template, template_filename, **kwargs):

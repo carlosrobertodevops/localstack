@@ -3,15 +3,15 @@ import logging
 import uuid
 
 from localstack.aws.api.pipes import LogLevel
-from localstack.services.lambda_.analytics import EsmExecutionStatus, esm_counter
-from localstack.services.lambda_.event_source_mapping.event_processor import (
+from localstack.aws.services.lambda_.analytics import EsmExecutionStatus, esm_counter
+from localstack.aws.services.lambda_.event_source_mapping.event_processor import (
     BatchFailureError,
     EventProcessor,
     PartialBatchFailureError,
 )
-from localstack.services.lambda_.event_source_mapping.pipe_loggers.pipe_logger import PipeLogger
-from localstack.services.lambda_.event_source_mapping.pipe_utils import to_json_str
-from localstack.services.lambda_.event_source_mapping.senders.sender import (
+from localstack.aws.services.lambda_.event_source_mapping.pipe_loggers.pipe_logger import PipeLogger
+from localstack.aws.services.lambda_.event_source_mapping.pipe_utils import to_json_str
+from localstack.aws.services.lambda_.event_source_mapping.senders.sender import (
     PartialFailureSenderError,
     Sender,
     SenderError,

@@ -2,8 +2,8 @@ import pytest
 from botocore.config import Config
 from botocore.exceptions import ClientError
 
-from localstack import config
-from localstack.testing.pytest import markers
+from localstack.platform import config
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.aws import resources
 from localstack.utils.common import short_uid
 

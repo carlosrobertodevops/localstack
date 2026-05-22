@@ -1,7 +1,7 @@
 import re
 
 from localstack.aws.api.route53resolver import ResourceNotFoundException, ValidationException
-from localstack.services.ec2.models import get_ec2_backend
+from localstack.aws.services.ec2.models import get_ec2_backend
 from localstack.utils.aws.arns import ARN_PARTITION_REGEX
 from localstack.utils.strings import get_random_hex
 

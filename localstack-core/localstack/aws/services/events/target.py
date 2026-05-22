@@ -10,7 +10,7 @@ from urllib.parse import urlencode
 import requests
 from botocore.client import BaseClient
 
-from localstack import config
+from localstack.platform import config
 from localstack.aws.api.events import (
     Arn,
     InputTransformer,
@@ -19,13 +19,13 @@ from localstack.aws.api.events import (
     TargetInputPath,
 )
 from localstack.aws.connect import connect_to
-from localstack.services.events.api_destination import add_api_destination_authorization
-from localstack.services.events.models import (
+from localstack.aws.services.events.api_destination import add_api_destination_authorization
+from localstack.aws.services.events.models import (
     FormattedEvent,
     TransformedEvent,
     ValidationException,
 )
-from localstack.services.events.utils import (
+from localstack.aws.services.events.utils import (
     event_time_to_time_string,
     get_trace_header_encoded_region_account,
     is_nested_in_string,

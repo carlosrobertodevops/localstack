@@ -1,10 +1,10 @@
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.item_reader.resource_eval.resource_eval import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.item_reader.resource_eval.resource_eval import (
     ResourceEval,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.item_reader.resource_eval.resource_eval_s3 import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.item_reader.resource_eval.resource_eval_s3 import (
     ResourceEvalS3,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_task.service.resource import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_task.service.resource import (
     Resource,
     ServiceResource,
 )

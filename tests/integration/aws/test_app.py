@@ -8,10 +8,10 @@ import websocket
 from werkzeug import Request, Response
 from werkzeug.exceptions import Forbidden
 
-from localstack import config
-from localstack.http import route
-from localstack.http.websocket import WebSocketRequest
-from localstack.services.edge import ROUTER
+from localstack.platform import config
+from localstack.platform.http import route
+from localstack.platform.http.websocket import WebSocketRequest
+from localstack.aws.services.edge import ROUTER
 
 
 class TestExceptionHandlers:

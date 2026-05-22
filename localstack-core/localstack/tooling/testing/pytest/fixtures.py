@@ -22,20 +22,20 @@ from botocore.regions import EndpointResolver
 from pytest_httpserver import HTTPServer
 from werkzeug import Request, Response
 
-from localstack import config
+from localstack.platform import config
 from localstack.aws.api.cloudformation import CreateChangeSetInput, Parameter
 from localstack.aws.api.ec2 import CreateSecurityGroupRequest, CreateVpcEndpointRequest, VpcEndpoint
 from localstack.aws.connect import ServiceLevelClientFactory
-from localstack.services.stores import (
+from localstack.aws.services.stores import (
     AccountRegionBundle,
     BaseStore,
     CrossAccountAttribute,
     CrossRegionAttribute,
     LocalAttribute,
 )
-from localstack.testing.aws.cloudformation_utils import load_template_file, render_template
-from localstack.testing.aws.util import get_lambda_logs, is_aws_cloud, wait_for_user
-from localstack.testing.config import (
+from localstack.tooling.testing.aws.cloudformation_utils import load_template_file, render_template
+from localstack.tooling.testing.aws.util import get_lambda_logs, is_aws_cloud, wait_for_user
+from localstack.tooling.testing.config import (
     SECONDARY_TEST_AWS_ACCOUNT_ID,
     SECONDARY_TEST_AWS_REGION_NAME,
     TEST_AWS_ACCOUNT_ID,

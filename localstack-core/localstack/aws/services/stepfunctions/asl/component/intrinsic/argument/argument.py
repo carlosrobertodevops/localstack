@@ -1,12 +1,12 @@
 import abc
 from typing import Any, Final
 
-from localstack.services.stepfunctions.asl.component.common.string.string_expression import (
+from localstack.aws.services.stepfunctions.asl.component.common.string.string_expression import (
     StringVariableSample,
 )
-from localstack.services.stepfunctions.asl.component.eval_component import EvalComponent
-from localstack.services.stepfunctions.asl.eval.environment import Environment
-from localstack.services.stepfunctions.asl.utils.json_path import extract_json
+from localstack.aws.services.stepfunctions.asl.component.eval_component import EvalComponent
+from localstack.aws.services.stepfunctions.asl.eval.environment import Environment
+from localstack.aws.services.stepfunctions.asl.utils.json_path import extract_json
 
 
 class Argument(EvalComponent, abc.ABC):

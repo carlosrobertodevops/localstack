@@ -4,8 +4,8 @@ import time
 import pytest
 from botocore.exceptions import ClientError
 
-from localstack.testing.aws.util import in_default_partition, is_aws_cloud
-from localstack.testing.pytest import markers
+from localstack.tooling.testing.aws.util import in_default_partition, is_aws_cloud
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.aws.arns import get_partition
 from localstack.utils.common import short_uid
 

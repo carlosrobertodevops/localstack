@@ -10,7 +10,7 @@ import re
 import string
 from typing import TYPE_CHECKING, Any
 
-from localstack import config
+from localstack.platform import config
 from localstack.aws.api import CommonServiceException, RequestContext
 from localstack.aws.api import lambda_ as api_spec
 from localstack.aws.api.lambda_ import (
@@ -30,13 +30,13 @@ from localstack.aws.api.lambda_ import (
     TracingConfig,
     VpcConfigResponse,
 )
-from localstack.services.lambda_.invocation import AccessDeniedException
-from localstack.services.lambda_.runtimes import ALL_RUNTIMES, VALID_LAYER_RUNTIMES, VALID_RUNTIMES
+from localstack.aws.services.lambda_.invocation import AccessDeniedException
+from localstack.aws.services.lambda_.runtimes import ALL_RUNTIMES, VALID_LAYER_RUNTIMES, VALID_RUNTIMES
 from localstack.utils.aws.arns import ARN_PARTITION_REGEX, get_partition
 from localstack.utils.collections import merge_recursive
 
 if TYPE_CHECKING:
-    from localstack.services.lambda_.invocation.lambda_models import (
+    from localstack.aws.services.lambda_.invocation.lambda_models import (
         CodeSigningConfig,
         Function,
         FunctionUrlConfig,
@@ -44,7 +44,7 @@ if TYPE_CHECKING:
         LayerVersion,
         VersionAlias,
     )
-    from localstack.services.lambda_.invocation.models import LambdaStore
+    from localstack.aws.services.lambda_.invocation.models import LambdaStore
 
 
 # Pattern for a full (both with and without qualifier) lambda function ARN

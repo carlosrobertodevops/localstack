@@ -4,8 +4,8 @@ import json
 
 import pytest
 
-from localstack.testing.aws.util import is_aws_cloud
-from localstack.testing.pytest import markers
+from localstack.tooling.testing.aws.util import is_aws_cloud
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.common import short_uid
 from localstack.utils.sync import retry
 

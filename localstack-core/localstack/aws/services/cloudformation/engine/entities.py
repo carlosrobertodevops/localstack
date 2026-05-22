@@ -2,13 +2,13 @@ import logging
 from typing import TypedDict
 
 from localstack.aws.api.cloudformation import Capability, ChangeSetType, Parameter
-from localstack.services.cloudformation.engine.parameters import (
+from localstack.aws.services.cloudformation.engine.parameters import (
     StackParameter,
     convert_stack_parameters_to_list,
     mask_no_echo,
     strip_parameter_type,
 )
-from localstack.services.cloudformation.engine.v2.change_set_model import (
+from localstack.aws.services.cloudformation.engine.v2.change_set_model import (
     ChangeSetModel,
     NodeTemplate,
 )

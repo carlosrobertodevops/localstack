@@ -16,7 +16,7 @@ from localstack.aws.api.events import (
     UpdateConnectionAuthRequestParameters,
 )
 from localstack.aws.connect import connect_to
-from localstack.services.events.models import Connection, ValidationException
+from localstack.aws.services.events.models import Connection, ValidationException
 
 VALID_AUTH_TYPES = [t.value for t in ConnectionAuthorizationType]
 LOG = logging.getLogger(__name__)

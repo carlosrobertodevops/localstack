@@ -4,7 +4,7 @@ import time
 
 import pytest
 
-from localstack.testing.aws.util import is_aws_cloud
+from localstack.tooling.testing.aws.util import is_aws_cloud
 from localstack.utils.strings import short_uid
 
 LOG = logging.getLogger(__name__)

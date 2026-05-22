@@ -7,9 +7,9 @@ from localstack.aws.api.lambda_ import (
     EventSourcePosition,
     RequestContext,
 )
-from localstack.services.lambda_ import hooks as lambda_hooks
-from localstack.services.lambda_.event_source_mapping.esm_worker import EsmState, EsmStateReason
-from localstack.services.lambda_.event_source_mapping.pipe_utils import (
+from localstack.aws.services.lambda_ import hooks as lambda_hooks
+from localstack.aws.services.lambda_.event_source_mapping.esm_worker import EsmState, EsmStateReason
+from localstack.aws.services.lambda_.event_source_mapping.pipe_utils import (
     get_standardized_service_name,
 )
 from localstack.utils.aws.arns import lambda_event_source_mapping_arn, parse_arn

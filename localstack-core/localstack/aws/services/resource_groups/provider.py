@@ -1,5 +1,5 @@
 from localstack.aws.api.resource_groups import ResourceGroupsApi
-from localstack.state import StateVisitor
+from localstack.platform.state import StateVisitor
 
 
 class ResourceGroupsProvider(ResourceGroupsApi):

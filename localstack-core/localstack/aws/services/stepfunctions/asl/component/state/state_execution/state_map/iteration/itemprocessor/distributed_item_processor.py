@@ -1,24 +1,24 @@
 from __future__ import annotations
 
-from localstack.services.stepfunctions.asl.component.common.comment import Comment
-from localstack.services.stepfunctions.asl.component.common.flow.start_at import StartAt
-from localstack.services.stepfunctions.asl.component.common.query_language import QueryLanguage
-from localstack.services.stepfunctions.asl.component.program.states import States
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.distributed_iteration_component import (
+from localstack.aws.services.stepfunctions.asl.component.common.comment import Comment
+from localstack.aws.services.stepfunctions.asl.component.common.flow.start_at import StartAt
+from localstack.aws.services.stepfunctions.asl.component.common.query_language import QueryLanguage
+from localstack.aws.services.stepfunctions.asl.component.program.states import States
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.distributed_iteration_component import (
     DistributedIterationComponent,
     DistributedIterationComponentEvalInput,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.itemprocessor.distributed_item_processor_worker import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.itemprocessor.distributed_item_processor_worker import (
     DistributedItemProcessorWorker,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.itemprocessor.processor_config import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.itemprocessor.processor_config import (
     ProcessorConfig,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.job import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.job import (
     JobPool,
 )
-from localstack.services.stepfunctions.asl.eval.environment import Environment
-from localstack.services.stepfunctions.asl.parse.typed_props import TypedProps
+from localstack.aws.services.stepfunctions.asl.eval.environment import Environment
+from localstack.aws.services.stepfunctions.asl.parse.typed_props import TypedProps
 
 
 class DistributedItemProcessorEvalInput(DistributedIterationComponentEvalInput):

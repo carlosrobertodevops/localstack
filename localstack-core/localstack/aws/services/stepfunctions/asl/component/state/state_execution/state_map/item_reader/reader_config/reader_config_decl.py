@@ -1,20 +1,20 @@
 from typing import Final, TypedDict
 
-from localstack.services.stepfunctions.asl.component.eval_component import EvalComponent
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.item_reader.reader_config.csv_header_location import (
+from localstack.aws.services.stepfunctions.asl.component.eval_component import EvalComponent
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.item_reader.reader_config.csv_header_location import (
     CSVHeaderLocation,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.item_reader.reader_config.csv_headers import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.item_reader.reader_config.csv_headers import (
     CSVHeaders,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.item_reader.reader_config.input_type import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.item_reader.reader_config.input_type import (
     InputType,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.item_reader.reader_config.max_items_decl import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.item_reader.reader_config.max_items_decl import (
     MaxItemsDecl,
     MaxItemsInt,
 )
-from localstack.services.stepfunctions.asl.eval.environment import Environment
+from localstack.aws.services.stepfunctions.asl.eval.environment import Environment
 
 
 class InputTypeOutput(str):

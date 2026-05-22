@@ -31,9 +31,9 @@ from botocore.config import Config
 from botocore.httpsession import URLLib3Session
 from botocore.waiter import Waiter
 
-from localstack import config as localstack_config
+from localstack.platform import config as localstack_config
 from localstack.aws.spec import LOCALSTACK_BUILTIN_DATA_PATH
-from localstack.constants import (
+from localstack.platform.constants import (
     AWS_REGION_US_EAST_1,
     INTERNAL_AWS_ACCESS_KEY_ID,
     INTERNAL_AWS_SECRET_ACCESS_KEY,
@@ -475,7 +475,7 @@ class InternalClientFactory(ClientFactory):
         if localstack_config.IN_MEMORY_CLIENT:
             # this make the client call the gateway directly
             from localstack.aws.client import GatewayShortCircuit
-            from localstack.runtime import get_current_runtime
+            from localstack.platform.runtime import get_current_runtime
 
             GatewayShortCircuit.modify_client(client, get_current_runtime().components.gateway)
 
@@ -665,7 +665,7 @@ class ExternalAwsClientFactory(ClientFactory):
 
 
 def resolve_dns_from_upstream(hostname: str) -> str:
-    from localstack.dns.server import get_fallback_dns_server
+    from localstack.platform.dns.server import get_fallback_dns_server
 
     upstream_dns = get_fallback_dns_server()
     request = dns.message.make_query(hostname, "A")

@@ -5,7 +5,7 @@ import re
 from collections import defaultdict
 from copy import deepcopy
 
-from localstack import config
+from localstack.platform import config
 from localstack.aws.api import CommonServiceException, RequestContext, handler
 from localstack.aws.api.cloudformation import (
     AlreadyExistsException,
@@ -84,36 +84,36 @@ from localstack.aws.api.cloudformation import (
     ValidateTemplateOutput,
 )
 from localstack.aws.connect import connect_to
-from localstack.services.cloudformation import api_utils
-from localstack.services.cloudformation.engine import parameters as param_resolver
-from localstack.services.cloudformation.engine import template_deployer, template_preparer
-from localstack.services.cloudformation.engine.entities import (
+from localstack.aws.services.cloudformation import api_utils
+from localstack.aws.services.cloudformation.engine import parameters as param_resolver
+from localstack.aws.services.cloudformation.engine import template_deployer, template_preparer
+from localstack.aws.services.cloudformation.engine.entities import (
     Stack,
     StackChangeSet,
     StackInstance,
     StackSet,
 )
-from localstack.services.cloudformation.engine.parameters import mask_no_echo, strip_parameter_type
-from localstack.services.cloudformation.engine.resource_ordering import (
+from localstack.aws.services.cloudformation.engine.parameters import mask_no_echo, strip_parameter_type
+from localstack.aws.services.cloudformation.engine.resource_ordering import (
     NoResourceInStack,
     order_resources,
 )
-from localstack.services.cloudformation.engine.template_deployer import (
+from localstack.aws.services.cloudformation.engine.template_deployer import (
     NoStackUpdates,
 )
-from localstack.services.cloudformation.engine.template_utils import resolve_stack_conditions
-from localstack.services.cloudformation.engine.transformers import (
+from localstack.aws.services.cloudformation.engine.template_utils import resolve_stack_conditions
+from localstack.aws.services.cloudformation.engine.transformers import (
     FailedTransformationException,
 )
-from localstack.services.cloudformation.engine.validations import (
+from localstack.aws.services.cloudformation.engine.validations import (
     DEFAULT_TEMPLATE_VALIDATIONS,
     ValidationError,
 )
-from localstack.services.cloudformation.resource_provider import (
+from localstack.aws.services.cloudformation.resource_provider import (
     PRO_RESOURCE_PROVIDERS,
     ResourceProvider,
 )
-from localstack.services.cloudformation.stores import (
+from localstack.aws.services.cloudformation.stores import (
     cloudformation_stores,
     find_active_stack_by_name_or_id,
     find_change_set,
@@ -121,8 +121,8 @@ from localstack.services.cloudformation.stores import (
     find_stack_by_id,
     get_cloudformation_store,
 )
-from localstack.services.plugins import ServiceLifecycleHook
-from localstack.state import StateVisitor
+from localstack.aws.services.plugins import ServiceLifecycleHook
+from localstack.platform.state import StateVisitor
 from localstack.utils.aws.arns import ARN_PARTITION_REGEX
 from localstack.utils.collections import (
     remove_attributes,
@@ -1362,13 +1362,13 @@ class CloudformationProvider(CloudformationApi, ServiceLifecycleHook):
                     type_summaries.append(type_summary)
             return type_summaries
 
-        from localstack.services.cloudformation.resource_provider import (
+        from localstack.aws.services.cloudformation.resource_provider import (
             plugin_manager,
         )
 
         type_summaries = get_listable_types_summaries(plugin_manager)
         if PRO_RESOURCE_PROVIDERS:
-            from localstack.services.cloudformation.resource_provider import (
+            from localstack.aws.services.cloudformation.resource_provider import (
                 pro_plugin_manager,
             )
 

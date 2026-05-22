@@ -2,11 +2,11 @@ import logging
 
 from werkzeug.routing import Rule
 
-from localstack.config import LAMBDA_DOCKER_NETWORK
-from localstack.packages import Package, package
-from localstack.runtime import hooks
-from localstack.services.edge import ROUTER
-from localstack.services.lambda_.custom_endpoints import LambdaCustomEndpoints
+from localstack.platform.config import LAMBDA_DOCKER_NETWORK
+from localstack.tooling.packages import Package, package
+from localstack.platform.runtime import hooks
+from localstack.aws.services.edge import ROUTER
+from localstack.aws.services.lambda_.custom_endpoints import LambdaCustomEndpoints
 
 LOG = logging.getLogger(__name__)
 
@@ -15,14 +15,14 @@ CUSTOM_ROUTER_RULES: list[Rule] = []
 
 @package(name="lambda-runtime")
 def lambda_runtime_package() -> Package:
-    from localstack.services.lambda_.packages import lambda_runtime_package
+    from localstack.aws.services.lambda_.packages import lambda_runtime_package
 
     return lambda_runtime_package
 
 
 @package(name="lambda-java-libs")
 def lambda_java_libs() -> Package:
-    from localstack.services.lambda_.packages import lambda_java_libs_package
+    from localstack.aws.services.lambda_.packages import lambda_java_libs_package
 
     return lambda_java_libs_package
 

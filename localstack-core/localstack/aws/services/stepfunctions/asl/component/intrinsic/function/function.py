@@ -1,9 +1,9 @@
 import abc
 from typing import Final
 
-from localstack.services.stepfunctions.asl.component.eval_component import EvalComponent
-from localstack.services.stepfunctions.asl.component.intrinsic.argument.argument import ArgumentList
-from localstack.services.stepfunctions.asl.component.intrinsic.functionname.function_name import (
+from localstack.aws.services.stepfunctions.asl.component.eval_component import EvalComponent
+from localstack.aws.services.stepfunctions.asl.component.intrinsic.argument.argument import ArgumentList
+from localstack.aws.services.stepfunctions.asl.component.intrinsic.functionname.function_name import (
     FunctionName,
 )
 

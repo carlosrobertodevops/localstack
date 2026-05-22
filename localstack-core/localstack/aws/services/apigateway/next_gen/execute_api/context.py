@@ -6,7 +6,7 @@ from rolo.gateway import RequestContext
 from werkzeug.datastructures import Headers
 
 from localstack.aws.api.apigateway import Integration, Method, Resource, Stage
-from localstack.services.apigateway.models import RestApiDeployment
+from localstack.aws.services.apigateway.models import RestApiDeployment
 
 from .variables import ContextVariableOverrides, ContextVariables, LoggingContextVariables
 

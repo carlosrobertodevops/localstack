@@ -1,4 +1,4 @@
-from localstack.services.cloudformation.resource_provider import (
+from localstack.aws.services.cloudformation.resource_provider import (
     CloudFormationResourceProviderPlugin,
     ResourceProvider,
 )
@@ -11,7 +11,7 @@ class EventsEventBusPolicyProviderPlugin(CloudFormationResourceProviderPlugin):
         self.factory: type[ResourceProvider] | None = None
 
     def load(self):
-        from localstack.services.events.resource_providers.aws_events_eventbuspolicy import (
+        from localstack.aws.services.events.resource_providers.aws_events_eventbuspolicy import (
             EventsEventBusPolicyProvider,
         )
 

@@ -1,5 +1,5 @@
-from localstack import config
-from localstack.config import HostAndPort
+from localstack.platform import config
+from localstack.platform.config import HostAndPort
 
 
 def path_from_url(url: str) -> str:

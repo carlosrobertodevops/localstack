@@ -7,7 +7,7 @@ from localstack.aws.api.cloudwatch import (
     MetricAlarm,
     StateValue,
 )
-from localstack.services.stores import (
+from localstack.aws.services.stores import (
     AccountRegionBundle,
     BaseStore,
     LocalAttribute,

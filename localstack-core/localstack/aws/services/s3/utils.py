@@ -18,7 +18,7 @@ import xmltodict
 from botocore.exceptions import ClientError
 from botocore.utils import InvalidArnException
 
-from localstack import config, constants
+from localstack.platform import config, constants
 from localstack.aws.api import CommonServiceException, RequestContext
 from localstack.aws.api.s3 import (
     AccessControlPolicy,
@@ -58,10 +58,10 @@ from localstack.aws.api.s3 import (
 from localstack.aws.api.s3 import Type as GranteeType
 from localstack.aws.chain import HandlerChain
 from localstack.aws.connect import connect_to
-from localstack.constants import AWS_REGION_EU_WEST_1, AWS_REGION_US_EAST_1
-from localstack.http import Response
-from localstack.services.s3 import checksums
-from localstack.services.s3.constants import (
+from localstack.platform.constants import AWS_REGION_EU_WEST_1, AWS_REGION_US_EAST_1
+from localstack.platform.http import Response
+from localstack.aws.services.s3 import checksums
+from localstack.aws.services.s3.constants import (
     ALL_USERS_ACL_GRANTEE,
     AUTHENTICATED_USERS_ACL_GRANTEE,
     BUCKET_LOCATION_CONSTRAINTS,
@@ -72,12 +72,12 @@ from localstack.services.s3.constants import (
     SIGNATURE_V4_PARAMS,
     SYSTEM_METADATA_SETTABLE_HEADERS,
 )
-from localstack.services.s3.exceptions import (
+from localstack.aws.services.s3.exceptions import (
     IllegalLocationConstraintException,
     InvalidRequest,
     MalformedXML,
 )
-from localstack.services.s3.headers import decode_header_rfc2047, encode_header_rfc2047
+from localstack.aws.services.s3.headers import decode_header_rfc2047, encode_header_rfc2047
 from localstack.utils.aws import arns
 from localstack.utils.aws.arns import parse_arn
 from localstack.utils.objects import singleton_factory

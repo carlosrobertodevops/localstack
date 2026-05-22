@@ -3,7 +3,7 @@ import atexit
 import logging
 import threading
 
-from localstack import config
+from localstack.platform import config
 from localstack.utils.batching import AsyncBatcher
 from localstack.utils.threads import FuncThread, start_thread, start_worker_thread
 

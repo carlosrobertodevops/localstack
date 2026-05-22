@@ -1,19 +1,19 @@
-from localstack.services.stepfunctions.asl.component.state.state import CommonStateField
-from localstack.services.stepfunctions.asl.component.state.state_choice.state_choice import (
+from localstack.aws.services.stepfunctions.asl.component.state.state import CommonStateField
+from localstack.aws.services.stepfunctions.asl.component.state.state_choice.state_choice import (
     StateChoice,
 )
-from localstack.services.stepfunctions.asl.component.state.state_continue_with import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_continue_with import (
     ContinueWithEnd,
 )
-from localstack.services.stepfunctions.asl.component.state.state_fail.state_fail import StateFail
-from localstack.services.stepfunctions.asl.component.state.state_pass.state_pass import StatePass
-from localstack.services.stepfunctions.asl.component.state.state_succeed.state_succeed import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_fail.state_fail import StateFail
+from localstack.aws.services.stepfunctions.asl.component.state.state_pass.state_pass import StatePass
+from localstack.aws.services.stepfunctions.asl.component.state.state_succeed.state_succeed import (
     StateSucceed,
 )
-from localstack.services.stepfunctions.asl.component.test_state.state.base_mock import (
+from localstack.aws.services.stepfunctions.asl.component.test_state.state.base_mock import (
     MockedBaseState,
 )
-from localstack.services.stepfunctions.asl.eval.test_state.environment import TestStateEnvironment
+from localstack.aws.services.stepfunctions.asl.eval.test_state.environment import TestStateEnvironment
 
 
 class MockedCommonState(MockedBaseState[CommonStateField]):

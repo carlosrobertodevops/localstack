@@ -10,12 +10,12 @@ from typing import Protocol
 
 from plux import Plugin, PluginLifecycleListener, PluginManager, PluginSpec
 
-from localstack import config
+from localstack.platform import config
 from localstack.aws.skeleton import DispatchTable, Skeleton
 from localstack.aws.spec import load_service
-from localstack.config import ServiceProviderConfig
-from localstack.runtime import hooks
-from localstack.state import StateLifecycleHook, StateVisitable, StateVisitor
+from localstack.platform.config import ServiceProviderConfig
+from localstack.platform.runtime import hooks
+from localstack.platform.state import StateLifecycleHook, StateVisitable, StateVisitor
 from localstack.utils.bootstrap import get_enabled_apis, is_api_enabled, log_duration
 from localstack.utils.functions import call_safe
 from localstack.utils.sync import SynchronizedDefaultDict, poll_condition
@@ -135,7 +135,7 @@ class Service:
             self._provider.accept_state_visitor(visitor)
             return
 
-        from localstack.state.inspect import ReflectionStateLocator
+        from localstack.platform.state.inspect import ReflectionStateLocator
 
         ReflectionStateLocator(service=self.name()).accept_state_visitor(visitor)
 

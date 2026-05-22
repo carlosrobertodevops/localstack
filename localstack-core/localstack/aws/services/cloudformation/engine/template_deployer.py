@@ -7,30 +7,30 @@ import uuid
 
 from botocore.exceptions import ClientError
 
-from localstack import config
+from localstack.platform import config
 from localstack.aws.connect import connect_to
-from localstack.constants import INTERNAL_AWS_SECRET_ACCESS_KEY
-from localstack.services.cloudformation.analytics import track_resource_operation
-from localstack.services.cloudformation.deployment_utils import (
+from localstack.platform.constants import INTERNAL_AWS_SECRET_ACCESS_KEY
+from localstack.aws.services.cloudformation.analytics import track_resource_operation
+from localstack.aws.services.cloudformation.deployment_utils import (
     PLACEHOLDER_AWS_NO_VALUE,
     get_action_name_for_resource_change,
     log_not_available_message,
     remove_none_values,
 )
-from localstack.services.cloudformation.engine.changes import ChangeConfig, ResourceChange
-from localstack.services.cloudformation.engine.entities import Stack, StackChangeSet
-from localstack.services.cloudformation.engine.parameters import StackParameter
-from localstack.services.cloudformation.engine.quirks import VALID_GETATT_PROPERTIES
-from localstack.services.cloudformation.engine.resource_ordering import (
+from localstack.aws.services.cloudformation.engine.changes import ChangeConfig, ResourceChange
+from localstack.aws.services.cloudformation.engine.entities import Stack, StackChangeSet
+from localstack.aws.services.cloudformation.engine.parameters import StackParameter
+from localstack.aws.services.cloudformation.engine.quirks import VALID_GETATT_PROPERTIES
+from localstack.aws.services.cloudformation.engine.resource_ordering import (
     order_changes,
     order_resources,
 )
-from localstack.services.cloudformation.engine.template_utils import (
+from localstack.aws.services.cloudformation.engine.template_utils import (
     AWS_URL_SUFFIX,
     fn_equals_type_conversion,
     get_deps_for_resource,
 )
-from localstack.services.cloudformation.resource_provider import (
+from localstack.aws.services.cloudformation.resource_provider import (
     Credentials,
     NoResourceProvider,
     OperationStatus,
@@ -39,17 +39,17 @@ from localstack.services.cloudformation.resource_provider import (
     ResourceProviderPayload,
     get_resource_type,
 )
-from localstack.services.cloudformation.service_models import (
+from localstack.aws.services.cloudformation.service_models import (
     DependencyNotYetSatisfied,
 )
-from localstack.services.cloudformation.stores import exports_map, find_stack
+from localstack.aws.services.cloudformation.stores import exports_map, find_stack
 from localstack.utils.aws.arns import get_partition
 from localstack.utils.functions import prevent_stack_overflow
 from localstack.utils.json import clone_safe
 from localstack.utils.strings import to_bytes, to_str
 from localstack.utils.threads import start_worker_thread
 
-from localstack.services.cloudformation.models import *  # noqa: F401, F403, isort:skip
+from localstack.aws.services.cloudformation.models import *  # noqa: F401, F403, isort:skip
 from localstack.utils.urls import localstack_host
 
 ACTION_CREATE = "create"

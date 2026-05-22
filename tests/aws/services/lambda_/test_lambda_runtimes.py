@@ -11,10 +11,10 @@ import textwrap
 import pytest
 
 from localstack.aws.api.lambda_ import Runtime
-from localstack.constants import LOCALSTACK_MAVEN_VERSION, MAVEN_REPO_URL
-from localstack.packages import DownloadInstaller, Package, PackageInstaller
-from localstack.services.lambda_.packages import lambda_java_libs_package
-from localstack.testing.pytest import markers
+from localstack.platform.constants import LOCALSTACK_MAVEN_VERSION, MAVEN_REPO_URL
+from localstack.tooling.packages import DownloadInstaller, Package, PackageInstaller
+from localstack.aws.services.lambda_.packages import lambda_java_libs_package
+from localstack.tooling.testing.pytest import markers
 from localstack.utils import testutil
 from localstack.utils.archives import unzip
 from localstack.utils.files import cp_r, load_file, mkdir, new_tmp_dir, save_file

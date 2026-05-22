@@ -5,8 +5,8 @@ from uuid import uuid4
 from botocore.utils import InvalidArnException
 
 from localstack.aws.api.sns import InvalidParameterException
-from localstack.services.sns.constants import E164_REGEX, VALID_SUBSCRIPTION_ATTR_NAME
-from localstack.services.sns.models import SnsStore, SnsSubscription
+from localstack.aws.services.sns.constants import E164_REGEX, VALID_SUBSCRIPTION_ATTR_NAME
+from localstack.aws.services.sns.models import SnsStore, SnsSubscription
 from localstack.utils.aws.arns import ArnData, parse_arn
 from localstack.utils.strings import short_uid, to_bytes, to_str
 

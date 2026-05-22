@@ -1,8 +1,8 @@
-from localstack.packages import Package, package
+from localstack.tooling.packages import Package, package
 
 
 @package(name="opensearch")
 def opensearch_package() -> Package:
-    from localstack.services.opensearch.packages import opensearch_package
+    from localstack.aws.services.opensearch.packages import opensearch_package
 
     return opensearch_package

@@ -17,27 +17,27 @@ from localstack.aws.api.pipes import (
     PipeTargetLambdaFunctionParameters,
     PipeTargetParameters,
 )
-from localstack.services.lambda_ import hooks as lambda_hooks
-from localstack.services.lambda_ import ldm
-from localstack.services.lambda_.event_source_mapping.esm_event_processor import (
+from localstack.aws.services.lambda_ import hooks as lambda_hooks
+from localstack.aws.services.lambda_ import ldm
+from localstack.aws.services.lambda_.event_source_mapping.esm_event_processor import (
     EsmEventProcessor,
 )
-from localstack.services.lambda_.event_source_mapping.esm_worker import EsmStateReason, EsmWorker
-from localstack.services.lambda_.event_source_mapping.pipe_loggers.noops_pipe_logger import (
+from localstack.aws.services.lambda_.event_source_mapping.esm_worker import EsmStateReason, EsmWorker
+from localstack.aws.services.lambda_.event_source_mapping.pipe_loggers.noops_pipe_logger import (
     NoOpsPipeLogger,
 )
-from localstack.services.lambda_.event_source_mapping.pipe_utils import (
+from localstack.aws.services.lambda_.event_source_mapping.pipe_utils import (
     get_internal_client,
     get_standardized_service_name,
 )
-from localstack.services.lambda_.event_source_mapping.pollers.dynamodb_poller import DynamoDBPoller
-from localstack.services.lambda_.event_source_mapping.pollers.kinesis_poller import KinesisPoller
-from localstack.services.lambda_.event_source_mapping.pollers.poller import Poller
-from localstack.services.lambda_.event_source_mapping.pollers.sqs_poller import (
+from localstack.aws.services.lambda_.event_source_mapping.pollers.dynamodb_poller import DynamoDBPoller
+from localstack.aws.services.lambda_.event_source_mapping.pollers.kinesis_poller import KinesisPoller
+from localstack.aws.services.lambda_.event_source_mapping.pollers.poller import Poller
+from localstack.aws.services.lambda_.event_source_mapping.pollers.sqs_poller import (
     DEFAULT_MAX_WAIT_TIME_SECONDS,
     SqsPoller,
 )
-from localstack.services.lambda_.event_source_mapping.senders.lambda_sender import LambdaSender
+from localstack.aws.services.lambda_.event_source_mapping.senders.lambda_sender import LambdaSender
 from localstack.utils.aws.arns import parse_arn
 from localstack.utils.aws.client_types import ServicePrincipal
 

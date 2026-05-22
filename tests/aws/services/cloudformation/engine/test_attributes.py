@@ -2,8 +2,8 @@ import os
 
 import pytest
 
-from localstack.testing.pytest import markers
-from localstack.testing.pytest.fixtures import StackDeployError
+from localstack.tooling.testing.pytest import markers
+from localstack.tooling.testing.pytest.fixtures import StackDeployError
 
 
 class TestResourceAttributes:

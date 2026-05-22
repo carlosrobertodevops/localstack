@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from localstack import config
+from localstack.platform import config
 from localstack.aws.api.cloudformation import ChangeSetType
 
 

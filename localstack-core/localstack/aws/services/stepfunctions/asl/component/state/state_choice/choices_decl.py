@@ -1,7 +1,7 @@
 from typing import Final
 
-from localstack.services.stepfunctions.asl.component.component import Component
-from localstack.services.stepfunctions.asl.component.state.state_choice.choice_rule import (
+from localstack.aws.services.stepfunctions.asl.component.component import Component
+from localstack.aws.services.stepfunctions.asl.component.state.state_choice.choice_rule import (
     ChoiceRule,
 )
 

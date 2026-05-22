@@ -1,7 +1,7 @@
 import pytest
 
-from localstack import config
-from localstack.runtime.current import get_current_runtime, set_current_runtime
+from localstack.platform import config
+from localstack.platform.runtime.current import get_current_runtime, set_current_runtime
 from localstack.utils.analytics.metrics import (
     MetricRegistry,
 )

@@ -8,10 +8,10 @@ import threading
 
 import semver
 
-from localstack import config
-from localstack.packages import InstallTarget, Package, PackageInstaller
-from localstack.packages.java import java_package
-from localstack.services.opensearch import versions
+from localstack.platform import config
+from localstack.tooling.packages import InstallTarget, Package, PackageInstaller
+from localstack.tooling.packages.java import java_package
+from localstack.aws.services.opensearch import versions
 from localstack.utils.archives import download_and_extract_with_retry
 from localstack.utils.files import chmod_r, load_file, mkdir, rm_rf, save_file
 from localstack.utils.java import (
@@ -78,7 +78,7 @@ class OpensearchPackageInstaller(PackageInstaller):
     def _install(self, target: InstallTarget):
         # locally import to avoid having a dependency on ASF when starting the CLI
         from localstack.aws.api.opensearch import EngineType
-        from localstack.services.opensearch import versions
+        from localstack.aws.services.opensearch import versions
 
         version = self._get_opensearch_install_version()
         install_dir = self._get_install_dir(target)
@@ -254,7 +254,7 @@ class OpensearchPackageInstaller(PackageInstaller):
         return os.path.join(install_dir, "bin", "opensearch")
 
     def _get_opensearch_install_version(self) -> str:
-        from localstack.services.opensearch import versions
+        from localstack.aws.services.opensearch import versions
 
         if config.SKIP_INFRA_DOWNLOADS:
             self.version = OPENSEARCH_DEFAULT_VERSION
@@ -275,7 +275,7 @@ class ElasticsearchPackageInstaller(PackageInstaller):
     def _install(self, target: InstallTarget):
         # locally import to avoid having a dependency on ASF when starting the CLI
         from localstack.aws.api.opensearch import EngineType
-        from localstack.services.opensearch import versions
+        from localstack.aws.services.opensearch import versions
 
         version = self.get_elasticsearch_install_version()
         install_dir = self._get_install_dir(target)
@@ -369,7 +369,7 @@ class ElasticsearchPackageInstaller(PackageInstaller):
         return os.path.join(install_dir, "bin", "elasticsearch")
 
     def get_elasticsearch_install_version(self) -> str:
-        from localstack.services.opensearch import versions
+        from localstack.aws.services.opensearch import versions
 
         if config.SKIP_INFRA_DOWNLOADS:
             return ELASTICSEARCH_DEFAULT_VERSION

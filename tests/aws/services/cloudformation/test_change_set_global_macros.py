@@ -5,8 +5,8 @@ from localstack_snapshot.snapshots.transformer import JsonpathTransformer, Regex
 from tests.aws.services.cloudformation.conftest import skip_if_legacy_engine
 
 from localstack.aws.api.lambda_ import Runtime
-from localstack.testing.pytest import markers
-from localstack.testing.pytest.cloudformation.fixtures import _normalise_describe_change_set_output
+from localstack.tooling.testing.pytest import markers
+from localstack.tooling.testing.pytest.cloudformation.fixtures import _normalise_describe_change_set_output
 from localstack.utils.functions import call_safe
 from localstack.utils.strings import short_uid
 

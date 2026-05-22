@@ -13,16 +13,16 @@ from botocore.exceptions import ClientError
 from moto.apigatewayv2.exceptions import BadRequestException
 from requests import Response
 
-from localstack import config
+from localstack.platform import config
 from localstack.aws.connect import (
     INTERNAL_REQUEST_PARAMS_HEADER,
     InternalRequestParameters,
     connect_to,
     dump_dto,
 )
-from localstack.constants import APPLICATION_JSON, HEADER_CONTENT_TYPE
-from localstack.services.apigateway.legacy.context import ApiInvocationContext
-from localstack.services.apigateway.legacy.helpers import (
+from localstack.platform.constants import APPLICATION_JSON, HEADER_CONTENT_TYPE
+from localstack.aws.services.apigateway.legacy.context import ApiInvocationContext
+from localstack.aws.services.apigateway.legacy.helpers import (
     ApiGatewayIntegrationError,
     IntegrationParameters,
     RequestParametersResolver,
@@ -34,12 +34,12 @@ from localstack.services.apigateway.legacy.helpers import (
     make_error_response,
     multi_value_dict_for_list,
 )
-from localstack.services.apigateway.legacy.templates import (
+from localstack.aws.services.apigateway.legacy.templates import (
     MappingTemplates,
     RequestTemplates,
     ResponseTemplates,
 )
-from localstack.services.stepfunctions.stepfunctions_utils import await_sfn_execution_result
+from localstack.aws.services.stepfunctions.stepfunctions_utils import await_sfn_execution_result
 from localstack.utils import common
 from localstack.utils.aws.arns import ARN_PARTITION_REGEX, extract_region_from_arn, get_partition
 from localstack.utils.aws.aws_responses import (

@@ -11,15 +11,15 @@ from botocore.exceptions import ClientError, ParamValidationError
 from samtranslator.translator.transform import transform as transform_sam
 
 from localstack.aws.connect import connect_to
-from localstack.services.cloudformation.engine.parameters import StackParameter
-from localstack.services.cloudformation.engine.policy_loader import create_policy_loader
-from localstack.services.cloudformation.engine.template_preparer import parse_template
-from localstack.services.cloudformation.engine.transformers import (
+from localstack.aws.services.cloudformation.engine.parameters import StackParameter
+from localstack.aws.services.cloudformation.engine.policy_loader import create_policy_loader
+from localstack.aws.services.cloudformation.engine.template_preparer import parse_template
+from localstack.aws.services.cloudformation.engine.transformers import (
     FailedTransformationException,
     ResolveRefsRecursivelyContext,
     apply_language_extensions_transform,
 )
-from localstack.services.cloudformation.engine.v2.change_set_model import (
+from localstack.aws.services.cloudformation.engine.v2.change_set_model import (
     ChangeType,
     FnTransform,
     Maybe,
@@ -36,15 +36,15 @@ from localstack.services.cloudformation.engine.v2.change_set_model import (
     Scope,
     is_nothing,
 )
-from localstack.services.cloudformation.engine.v2.change_set_model_preproc import (
+from localstack.aws.services.cloudformation.engine.v2.change_set_model_preproc import (
     ChangeSetModelPreproc,
     PreprocEntityDelta,
     PreprocProperties,
 )
-from localstack.services.cloudformation.engine.validations import ValidationError
-from localstack.services.cloudformation.stores import get_cloudformation_store
-from localstack.services.cloudformation.v2.entities import ChangeSet
-from localstack.services.cloudformation.v2.types import EngineParameter, engine_parameter_value
+from localstack.aws.services.cloudformation.engine.validations import ValidationError
+from localstack.aws.services.cloudformation.stores import get_cloudformation_store
+from localstack.aws.services.cloudformation.v2.entities import ChangeSet
+from localstack.aws.services.cloudformation.v2.types import EngineParameter, engine_parameter_value
 from localstack.utils import testutil
 from localstack.utils.strings import long_uid
 

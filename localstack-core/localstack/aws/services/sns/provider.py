@@ -76,13 +76,13 @@ from localstack.aws.api.sns import (
     topicARN,
     topicName,
 )
-from localstack.constants import AWS_REGION_US_EAST_1, DEFAULT_AWS_ACCOUNT_ID
-from localstack.http import Response
-from localstack.services.edge import ROUTER
-from localstack.services.plugins import ServiceLifecycleHook
-from localstack.services.sns.analytics import internal_api_calls
-from localstack.services.sns.certificate import SNS_SERVER_CERT
-from localstack.services.sns.constants import (
+from localstack.platform.constants import AWS_REGION_US_EAST_1, DEFAULT_AWS_ACCOUNT_ID
+from localstack.platform.http import Response
+from localstack.aws.services.edge import ROUTER
+from localstack.aws.services.plugins import ServiceLifecycleHook
+from localstack.aws.services.sns.analytics import internal_api_calls
+from localstack.aws.services.sns.certificate import SNS_SERVER_CERT
+from localstack.aws.services.sns.constants import (
     ATTR_TYPE_REGEX,
     BATCH_ENTRY_ID_REGEX,
     DUMMY_SUBSCRIPTION_PRINCIPAL,
@@ -100,8 +100,8 @@ from localstack.services.sns.constants import (
     VALID_POLICY_ACTIONS,
     VALID_SUBSCRIPTION_ATTR_NAME,
 )
-from localstack.services.sns.filter import FilterPolicyValidator
-from localstack.services.sns.models import (
+from localstack.aws.services.sns.filter import FilterPolicyValidator
+from localstack.aws.services.sns.models import (
     SMS_ATTRIBUTE_NAMES,
     SMS_DEFAULT_SENDER_REGEX,
     SMS_TYPES,
@@ -115,12 +115,12 @@ from localstack.services.sns.models import (
     Topic,
     sns_stores,
 )
-from localstack.services.sns.publisher import (
+from localstack.aws.services.sns.publisher import (
     PublishDispatcher,
     SnsBatchPublishContext,
     SnsPublishContext,
 )
-from localstack.services.sns.utils import (
+from localstack.aws.services.sns.utils import (
     create_default_topic_policy,
     create_platform_endpoint_arn,
     create_subscription_arn,
@@ -133,7 +133,7 @@ from localstack.services.sns.utils import (
     parse_and_validate_topic_arn,
     validate_subscription_attribute,
 )
-from localstack.state import StateVisitor
+from localstack.platform.state import StateVisitor
 from localstack.utils.aws.arns import (
     extract_account_id_from_arn,
     extract_region_from_arn,

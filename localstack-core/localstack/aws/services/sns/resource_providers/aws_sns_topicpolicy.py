@@ -7,14 +7,14 @@ from typing import TypedDict
 
 from botocore.exceptions import ClientError
 
-import localstack.services.cloudformation.provider_utils as util
-from localstack.services.cloudformation.resource_provider import (
+import localstack.aws.services.cloudformation.provider_utils as util
+from localstack.aws.services.cloudformation.resource_provider import (
     OperationStatus,
     ProgressEvent,
     ResourceProvider,
     ResourceRequest,
 )
-from localstack.services.sns.provider import create_default_topic_policy
+from localstack.aws.services.sns.provider import create_default_topic_policy
 
 
 class SNSTopicPolicyProperties(TypedDict):

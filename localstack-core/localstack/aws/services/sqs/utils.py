@@ -15,7 +15,7 @@ from localstack.aws.api.sqs import (
     QueueAttributeName,
     ReceiptHandleIsInvalid,
 )
-from localstack.services.sqs.constants import (
+from localstack.aws.services.sqs.constants import (
     DOMAIN_STRATEGY_URL_REGEX,
     LEGACY_STRATEGY_URL_REGEX,
     PATH_STRATEGY_URL_REGEX,

@@ -78,7 +78,7 @@ from localstack.aws.api.firehose import (
     UpdateDestinationOutput,
 )
 from localstack.aws.connect import connect_to
-from localstack.services.firehose.mappers import (
+from localstack.aws.services.firehose.mappers import (
     convert_es_config_to_desc,
     convert_es_update_to_desc,
     convert_extended_s3_config_to_desc,
@@ -92,8 +92,8 @@ from localstack.services.firehose.mappers import (
     convert_s3_update_to_desc,
     convert_source_config_to_desc,
 )
-from localstack.services.firehose.models import FirehoseStore, firehose_stores
-from localstack.state import StateVisitor
+from localstack.aws.services.firehose.models import FirehoseStore, firehose_stores
+from localstack.platform.state import StateVisitor
 from localstack.utils.aws.arns import (
     extract_account_id_from_arn,
     extract_region_from_arn,

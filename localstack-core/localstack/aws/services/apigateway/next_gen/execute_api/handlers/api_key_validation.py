@@ -1,7 +1,7 @@
 import logging
 
 from localstack.aws.api.apigateway import ApiKey, ApiKeySourceType, RestApi
-from localstack.http import Response
+from localstack.platform.http import Response
 
 from ..api import RestApiGatewayHandler, RestApiGatewayHandlerChain
 from ..context import InvocationRequest, RestApiInvocationContext

@@ -3,12 +3,12 @@ from __future__ import annotations
 import logging
 from typing import Final
 
-from localstack.services.stepfunctions import analytics
-from localstack.services.stepfunctions.asl.antlr.runtime.ASLParser import ASLParser
-from localstack.services.stepfunctions.asl.component.common.query_language import (
+from localstack.aws.services.stepfunctions import analytics
+from localstack.aws.services.stepfunctions.asl.antlr.runtime.ASLParser import ASLParser
+from localstack.aws.services.stepfunctions.asl.component.common.query_language import (
     QueryLanguageMode,
 )
-from localstack.services.stepfunctions.asl.static_analyser.static_analyser import StaticAnalyser
+from localstack.aws.services.stepfunctions.asl.static_analyser.static_analyser import StaticAnalyser
 
 LOG = logging.getLogger(__name__)
 

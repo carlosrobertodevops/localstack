@@ -24,14 +24,14 @@ from localstack.aws.api.cloudformation import (
 from localstack.aws.api.cloudformation import (
     Parameter as ApiParameter,
 )
-from localstack.services.cloudformation.engine.entities import (
+from localstack.aws.services.cloudformation.engine.entities import (
     StackIdentifierV2,
 )
-from localstack.services.cloudformation.engine.v2.change_set_model import (
+from localstack.aws.services.cloudformation.engine.v2.change_set_model import (
     ChangeType,
     UpdateModel,
 )
-from localstack.services.cloudformation.v2.types import EngineParameter, ResolvedResource
+from localstack.aws.services.cloudformation.v2.types import EngineParameter, ResolvedResource
 from localstack.utils.aws import arns
 from localstack.utils.strings import long_uid, short_uid
 

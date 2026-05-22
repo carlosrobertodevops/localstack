@@ -3,8 +3,8 @@ import json
 import pytest
 from botocore.exceptions import ClientError
 
-from localstack.constants import APPLICATION_JSON
-from localstack.testing.pytest import markers
+from localstack.platform.constants import APPLICATION_JSON
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.http import safe_requests as requests
 from localstack.utils.sync import retry
 from tests.aws.services.apigateway.apigateway_fixtures import (

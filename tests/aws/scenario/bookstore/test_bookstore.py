@@ -14,9 +14,9 @@ from botocore.exceptions import ClientError
 from constructs import Construct
 from localstack_snapshot.snapshots.transformer import GenericTransformer, KeyValueBasedTransformer
 
-from localstack.testing.pytest import markers
-from localstack.testing.scenario.cdk_lambda_helper import load_python_lambda_to_s3
-from localstack.testing.scenario.provisioning import InfraProvisioner, cleanup_s3_bucket
+from localstack.tooling.testing.pytest import markers
+from localstack.tooling.testing.scenario.cdk_lambda_helper import load_python_lambda_to_s3
+from localstack.tooling.testing.scenario.provisioning import InfraProvisioner, cleanup_s3_bucket
 from localstack.utils.aws.resources import create_s3_bucket
 from localstack.utils.files import load_file
 from localstack.utils.strings import to_bytes
@@ -52,8 +52,7 @@ class TestBookstoreApplication:
         """patching the endpoint strategy for opensearch to path, to make the endpoint resolution in the lambda easier"""
         from _pytest.monkeypatch import MonkeyPatch
 
-        from localstack import config
-
+        from localstack.platform import config
         mpatch = MonkeyPatch()
         mpatch.setattr(config, "OPENSEARCH_ENDPOINT_STRATEGY", "path")
         yield mpatch

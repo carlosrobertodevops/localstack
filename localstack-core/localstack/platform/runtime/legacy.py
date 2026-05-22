@@ -1,5 +1,5 @@
 """Adapter code for the legacy runtime to make sure the new runtime is compatible with the old one,
-and at the same time doesn't need ``localstack.services.infra``, which imports AWS-specific modules."""
+and at the same time doesn't need ``localstack.aws.services.infra``, which imports AWS-specific modules."""
 
 import logging
 import os

@@ -1,7 +1,7 @@
 from abc import ABC
 
 from localstack.aws.api.resourcegroupstaggingapi import ResourcegroupstaggingapiApi
-from localstack.state import StateVisitor
+from localstack.platform.state import StateVisitor
 
 
 class ResourcegroupstaggingapiProvider(ResourcegroupstaggingapiApi, ABC):

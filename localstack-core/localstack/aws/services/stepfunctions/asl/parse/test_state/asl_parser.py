@@ -1,14 +1,14 @@
 from antlr4 import CommonTokenStream, InputStream, ParserRuleContext
 
-from localstack.services.stepfunctions.asl.antlr.runtime.ASLLexer import ASLLexer
-from localstack.services.stepfunctions.asl.antlr.runtime.ASLParser import ASLParser
-from localstack.services.stepfunctions.asl.component.eval_component import EvalComponent
-from localstack.services.stepfunctions.asl.parse.asl_parser import (
+from localstack.aws.services.stepfunctions.asl.antlr.runtime.ASLLexer import ASLLexer
+from localstack.aws.services.stepfunctions.asl.antlr.runtime.ASLParser import ASLParser
+from localstack.aws.services.stepfunctions.asl.component.eval_component import EvalComponent
+from localstack.aws.services.stepfunctions.asl.parse.asl_parser import (
     AmazonStateLanguageParser,
     ASLParserException,
     SyntaxErrorListener,
 )
-from localstack.services.stepfunctions.asl.parse.test_state.preprocessor import (
+from localstack.aws.services.stepfunctions.asl.parse.test_state.preprocessor import (
     TestStatePreprocessor,
 )
 

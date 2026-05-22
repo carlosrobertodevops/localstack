@@ -2,24 +2,24 @@ from __future__ import annotations
 
 from typing import Final
 
-from localstack.services.stepfunctions.asl.component.common.assign.assign_decl import AssignDecl
-from localstack.services.stepfunctions.asl.component.common.catch.catcher_outcome import (
+from localstack.aws.services.stepfunctions.asl.component.common.assign.assign_decl import AssignDecl
+from localstack.aws.services.stepfunctions.asl.component.common.catch.catcher_outcome import (
     CatcherOutcomeCaught,
     CatcherOutcomeNotCaught,
 )
-from localstack.services.stepfunctions.asl.component.common.catch.catcher_props import CatcherProps
-from localstack.services.stepfunctions.asl.component.common.comment import Comment
-from localstack.services.stepfunctions.asl.component.common.error_name.error_equals_decl import (
+from localstack.aws.services.stepfunctions.asl.component.common.catch.catcher_props import CatcherProps
+from localstack.aws.services.stepfunctions.asl.component.common.comment import Comment
+from localstack.aws.services.stepfunctions.asl.component.common.error_name.error_equals_decl import (
     ErrorEqualsDecl,
 )
-from localstack.services.stepfunctions.asl.component.common.error_name.failure_event import (
+from localstack.aws.services.stepfunctions.asl.component.common.error_name.failure_event import (
     FailureEvent,
 )
-from localstack.services.stepfunctions.asl.component.common.flow.next import Next
-from localstack.services.stepfunctions.asl.component.common.outputdecl import Output
-from localstack.services.stepfunctions.asl.component.common.path.result_path import ResultPath
-from localstack.services.stepfunctions.asl.component.eval_component import EvalComponent
-from localstack.services.stepfunctions.asl.eval.environment import Environment
+from localstack.aws.services.stepfunctions.asl.component.common.flow.next import Next
+from localstack.aws.services.stepfunctions.asl.component.common.outputdecl import Output
+from localstack.aws.services.stepfunctions.asl.component.common.path.result_path import ResultPath
+from localstack.aws.services.stepfunctions.asl.component.eval_component import EvalComponent
+from localstack.aws.services.stepfunctions.asl.eval.environment import Environment
 
 
 class CatcherOutput(dict):

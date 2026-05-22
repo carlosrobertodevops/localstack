@@ -1,16 +1,16 @@
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.itemprocessor.distributed_item_processor import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.itemprocessor.distributed_item_processor import (
     DistributedItemProcessor,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.itemprocessor.inline_item_processor import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.itemprocessor.inline_item_processor import (
     InlineItemProcessor,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.itemprocessor.item_processor_decl import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.itemprocessor.item_processor_decl import (
     ItemProcessorDecl,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.iteration_component import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.iteration_component import (
     IterationComponent,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.mode import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.mode import (
     Mode,
 )
 

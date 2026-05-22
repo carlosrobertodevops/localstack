@@ -1,4 +1,4 @@
-from localstack.services.cloudformation.resource_provider import (
+from localstack.aws.services.cloudformation.resource_provider import (
     CloudFormationResourceProviderPlugin,
     ResourceProvider,
 )
@@ -11,7 +11,7 @@ class CloudWatchAlarmProviderPlugin(CloudFormationResourceProviderPlugin):
         self.factory: type[ResourceProvider] | None = None
 
     def load(self):
-        from localstack.services.cloudwatch.resource_providers.aws_cloudwatch_alarm import (
+        from localstack.aws.services.cloudwatch.resource_providers.aws_cloudwatch_alarm import (
             CloudWatchAlarmProvider,
         )
 

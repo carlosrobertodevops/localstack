@@ -23,8 +23,8 @@ from localstack.aws.api.dynamodbstreams import (
     ResourceNotFoundException as DynamoDBStreamsResourceNotFoundException,
 )
 from localstack.aws.connect import connect_to
-from localstack.constants import INTERNAL_AWS_SECRET_ACCESS_KEY
-from localstack.http import Response
+from localstack.platform.constants import INTERNAL_AWS_SECRET_ACCESS_KEY
+from localstack.platform.http import Response
 from localstack.utils.aws.arns import (
     dynamodb_stream_arn,
     dynamodb_table_arn,
@@ -104,7 +104,7 @@ class SchemaExtractor:
     def get_key_schema(
         cls, table_name: str, account_id: str, region_name: str
     ) -> list[dict] | None:
-        from localstack.services.dynamodb.provider import get_store
+        from localstack.aws.services.dynamodb.provider import get_store
 
         table_definitions: dict = get_store(
             account_id=account_id,
@@ -174,7 +174,7 @@ class ItemFinder:
         region_name: str,
         endpoint_url: str,
     ) -> AttributeMap | None:
-        from localstack.services.dynamodb.provider import ValidationException
+        from localstack.aws.services.dynamodb.provider import ValidationException
 
         ddb_client = ItemFinder.get_ddb_local_client(account_id, region_name, endpoint_url)
 
@@ -221,7 +221,7 @@ class ItemFinder:
         region_name: str,
         endpoint_url: str,
     ) -> BatchGetResponseMap:
-        from localstack.services.dynamodb.provider import ValidationException
+        from localstack.aws.services.dynamodb.provider import ValidationException
 
         ddb_client = ItemFinder.get_ddb_local_client(account_id, region_name, endpoint_url)
 

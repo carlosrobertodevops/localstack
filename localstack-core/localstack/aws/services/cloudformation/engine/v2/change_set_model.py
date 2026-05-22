@@ -7,8 +7,8 @@ from itertools import zip_longest
 from typing import Any, Final, TypedDict, TypeVar, cast
 
 from localstack.aws.api.cloudformation import ChangeAction
-from localstack.services.cloudformation.resource_provider import ResourceProviderExecutor
-from localstack.services.cloudformation.v2.types import (
+from localstack.aws.services.cloudformation.resource_provider import ResourceProviderExecutor
+from localstack.aws.services.cloudformation.v2.types import (
     EngineParameter,
     engine_parameter_value,
 )

@@ -8,10 +8,10 @@ import requests
 from botocore.exceptions import ClientError
 from localstack_snapshot.snapshots.transformer import SortingTransformer
 
-import localstack.config as config
-from localstack.services.ses.provider import EMAILS, EMAILS_ENDPOINT
-from localstack.testing.aws.util import is_aws_cloud
-from localstack.testing.pytest import markers
+import localstack.platform.config as config
+from localstack.aws.services.ses.provider import EMAILS, EMAILS_ENDPOINT
+from localstack.tooling.testing.aws.util import is_aws_cloud
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.strings import short_uid
 from localstack.utils.sync import poll_condition, retry
 

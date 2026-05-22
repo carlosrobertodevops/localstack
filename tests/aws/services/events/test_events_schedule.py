@@ -5,10 +5,10 @@ from datetime import UTC, timedelta
 import pytest
 from botocore.exceptions import ClientError
 
-from localstack.testing.aws.eventbus_utils import trigger_scheduled_rule
-from localstack.testing.aws.util import is_aws_cloud
-from localstack.testing.pytest import markers
-from localstack.testing.snapshots.transformer_utility import TransformerUtility
+from localstack.tooling.testing.aws.eventbus_utils import trigger_scheduled_rule
+from localstack.tooling.testing.aws.util import is_aws_cloud
+from localstack.tooling.testing.pytest import markers
+from localstack.tooling.testing.snapshots.transformer_utility import TransformerUtility
 from localstack.utils.strings import short_uid
 from localstack.utils.sync import retry
 from tests.aws.services.events.helper_functions import (

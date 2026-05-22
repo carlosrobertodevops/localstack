@@ -52,4 +52,4 @@ To test changes locally for multi-account and multi-region compatibility, set th
 - `TEST_AWS_REGION` (Any value except `us-east-1`)
 
 Note that within all tests you must use `account_id`, `secondary_account_id`, `region_name`, `secondary_region_name` fixtures.
-Importing and using `localstack.constants.TEST_` values is not advised.
+Importing and using `localstack.platform.constants.TEST_` values is not advised.

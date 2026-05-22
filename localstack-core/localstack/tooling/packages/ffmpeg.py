@@ -1,7 +1,7 @@
 import os
 
-from localstack.packages import Package
-from localstack.packages.core import ArchiveDownloadAndExtractInstaller
+from localstack.tooling.packages import Package
+from localstack.tooling.packages.core import ArchiveDownloadAndExtractInstaller
 from localstack.utils.platform import Arch, get_arch
 
 # Mapping LocalStack architecture to BtbN's naming convention

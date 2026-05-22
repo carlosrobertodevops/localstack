@@ -1,4 +1,4 @@
-from localstack.services.cloudformation.resource_provider import (
+from localstack.aws.services.cloudformation.resource_provider import (
     CloudFormationResourceProviderPlugin,
     ResourceProvider,
 )
@@ -11,6 +11,6 @@ class IAMUserProviderPlugin(CloudFormationResourceProviderPlugin):
         self.factory: type[ResourceProvider] | None = None
 
     def load(self):
-        from localstack.services.iam.resource_providers.aws_iam_user import IAMUserProvider
+        from localstack.aws.services.iam.resource_providers.aws_iam_user import IAMUserProvider
 
         self.factory = IAMUserProvider

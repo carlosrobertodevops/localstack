@@ -5,13 +5,13 @@ from collections import defaultdict
 from collections.abc import Iterator
 from concurrent.futures import Future, ThreadPoolExecutor
 
-from localstack.services.lambda_.invocation.execution_environment import (
+from localstack.aws.services.lambda_.invocation.execution_environment import (
     EnvironmentStartupTimeoutException,
     ExecutionEnvironment,
     InvalidStatusException,
 )
-from localstack.services.lambda_.invocation.executor_endpoint import StatusErrorException
-from localstack.services.lambda_.invocation.lambda_models import (
+from localstack.aws.services.lambda_.invocation.executor_endpoint import StatusErrorException
+from localstack.aws.services.lambda_.invocation.lambda_models import (
     FunctionVersion,
     InitializationType,
     OtherServiceEndpoint,

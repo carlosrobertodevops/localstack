@@ -1,23 +1,23 @@
 import json
 from typing import Any, Final
 
-from localstack.services.stepfunctions.asl.component.intrinsic.argument.argument import (
+from localstack.aws.services.stepfunctions.asl.component.intrinsic.argument.argument import (
     ArgumentContextPath,
     ArgumentJsonPath,
     ArgumentList,
     ArgumentLiteral,
     ArgumentVar,
 )
-from localstack.services.stepfunctions.asl.component.intrinsic.function.statesfunction.states_function import (
+from localstack.aws.services.stepfunctions.asl.component.intrinsic.function.statesfunction.states_function import (
     StatesFunction,
 )
-from localstack.services.stepfunctions.asl.component.intrinsic.functionname.state_function_name_types import (
+from localstack.aws.services.stepfunctions.asl.component.intrinsic.functionname.state_function_name_types import (
     StatesFunctionNameType,
 )
-from localstack.services.stepfunctions.asl.component.intrinsic.functionname.states_function_name import (
+from localstack.aws.services.stepfunctions.asl.component.intrinsic.functionname.states_function_name import (
     StatesFunctionName,
 )
-from localstack.services.stepfunctions.asl.eval.environment import Environment
+from localstack.aws.services.stepfunctions.asl.eval.environment import Environment
 
 
 class StringFormat(StatesFunction):

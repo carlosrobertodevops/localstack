@@ -1,4 +1,4 @@
-from localstack.services.cloudformation.resource_provider import (
+from localstack.aws.services.cloudformation.resource_provider import (
     CloudFormationResourceProviderPlugin,
     ResourceProvider,
 )
@@ -11,7 +11,7 @@ class ApiGatewayBasePathMappingProviderPlugin(CloudFormationResourceProviderPlug
         self.factory: type[ResourceProvider] | None = None
 
     def load(self):
-        from localstack.services.apigateway.resource_providers.aws_apigateway_basepathmapping import (
+        from localstack.aws.services.apigateway.resource_providers.aws_apigateway_basepathmapping import (
             ApiGatewayBasePathMappingProvider,
         )
 

@@ -1,7 +1,7 @@
 import dataclasses
 
 from localstack.aws.api.dynamodbstreams import StreamDescription
-from localstack.services.stores import AccountRegionBundle, BaseStore, LocalAttribute
+from localstack.aws.services.stores import AccountRegionBundle, BaseStore, LocalAttribute
 
 
 @dataclasses.dataclass

@@ -2,9 +2,8 @@ import logging
 import sys
 import warnings
 
-from localstack import config, constants
-
-from ..utils.strings import key_value_pairs_to_dict
+from localstack.platform import config, constants
+from localstack.utils.strings import key_value_pairs_to_dict
 from .format import AddFormattedAttributes, DefaultFormatter
 
 # The log levels for modules are evaluated incrementally for logging granularity,
@@ -30,7 +29,7 @@ default_log_levels = {
     "localstack.aws.serving.wsgi": logging.WARNING,
     "localstack.request": logging.INFO,
     "localstack.request.internal": logging.WARNING,
-    "localstack.state.inspect": logging.INFO,
+    "localstack.platform.state.inspect": logging.INFO,
     "localstack_persistence": logging.INFO,
 }
 
@@ -40,7 +39,7 @@ trace_log_levels = {
     "localstack.aws.serving.wsgi": logging.DEBUG,
     "localstack.request": logging.DEBUG,
     "localstack.request.internal": logging.INFO,
-    "localstack.state.inspect": logging.DEBUG,
+    "localstack.platform.state.inspect": logging.DEBUG,
 }
 
 trace_internal_log_levels = {

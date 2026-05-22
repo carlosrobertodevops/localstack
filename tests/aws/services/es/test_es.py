@@ -4,16 +4,16 @@ import threading
 import botocore.exceptions
 import pytest
 
-from localstack import config
-from localstack.services.opensearch.packages import (
+from localstack.platform import config
+from localstack.aws.services.opensearch.packages import (
     ELASTICSEARCH_DEFAULT_VERSION,
     OPENSEARCH_DEFAULT_VERSION,
     elasticsearch_package,
     opensearch_package,
 )
-from localstack.testing import config as test_config
-from localstack.testing.aws.util import is_aws_cloud
-from localstack.testing.pytest import markers
+from localstack.tooling.testing import config as test_config
+from localstack.tooling.testing.aws.util import is_aws_cloud
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.common import safe_requests as requests
 from localstack.utils.common import short_uid, start_worker_thread
 

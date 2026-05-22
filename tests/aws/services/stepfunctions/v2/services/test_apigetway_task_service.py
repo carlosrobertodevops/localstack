@@ -3,11 +3,11 @@ import json
 import pytest
 from localstack_snapshot.snapshots.transformer import JsonpathTransformer
 
-from localstack import config
+from localstack.platform import config
 from localstack.aws.api.lambda_ import Runtime
-from localstack.testing.aws.util import is_aws_cloud
-from localstack.testing.pytest import markers
-from localstack.testing.pytest.stepfunctions.utils import (
+from localstack.tooling.testing.aws.util import is_aws_cloud
+from localstack.tooling.testing.pytest import markers
+from localstack.tooling.testing.pytest.stepfunctions.utils import (
     create_and_record_execution,
 )
 from localstack.utils.aws import arns, aws_stack
@@ -25,7 +25,7 @@ from tests.aws.services.stepfunctions.templates.services.services_templates impo
         "$..SdkHttpMetadata",
         "$..SdkResponseMetadata",
         # TODO: add support for response headers, review:
-        #  localstack.services.stepfunctions.asl.component.state.state_execution.state_task.service.state_task_service_api_gateway.StateTaskServiceApiGateway._invoke_output_of
+        #  localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_task.service.state_task_service_api_gateway.StateTaskServiceApiGateway._invoke_output_of
         "$..Headers.Content-Length",
     ]
 )

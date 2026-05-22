@@ -1,19 +1,19 @@
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_task.service.resource import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_task.service.resource import (
     ActivityResource,
     LambdaResource,
     Resource,
     ServiceResource,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_task.service.state_task_service_factory import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_task.service.state_task_service_factory import (
     state_task_service_for,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_task.state_task import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_task.state_task import (
     StateTask,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_task.state_task_activitiy import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_task.state_task_activitiy import (
     StateTaskActivity,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_task.state_task_lambda import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_task.state_task_lambda import (
     StateTaskLambda,
 )
 

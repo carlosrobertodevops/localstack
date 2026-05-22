@@ -9,11 +9,11 @@ from datetime import datetime
 
 from plux import PluginManager
 
-from localstack import config, constants
-from localstack.deprecations import deprecated_endpoint
-from localstack.http import Request, Resource, Response, Router
-from localstack.http.dispatcher import handler_dispatcher
-from localstack.runtime.legacy import signal_supervisor_restart
+from localstack.platform import config, constants
+from localstack.platform.deprecations import deprecated_endpoint
+from localstack.platform.http import Request, Resource, Response, Router
+from localstack.platform.http.dispatcher import handler_dispatcher
+from localstack.platform.runtime.legacy import signal_supervisor_restart
 from localstack.utils.analytics.metadata import (
     get_client_metadata,
     get_localstack_edition,
@@ -70,7 +70,7 @@ class HealthResource:
         if data.get("action") == "restart":
             signal_supervisor_restart()
         elif data.get("action") == "kill":
-            from localstack.runtime import get_current_runtime
+            from localstack.platform.runtime import get_current_runtime
 
             get_current_runtime().exit(0)
 
@@ -185,8 +185,8 @@ class PluginsResource:
 
     def __init__(self):
         # defer imports here to lazy-load code
-        from localstack.runtime import hooks, init
-        from localstack.services.plugins import SERVICE_PLUGINS
+        from localstack.platform.runtime import hooks, init
+        from localstack.aws.services.plugins import SERVICE_PLUGINS
 
         # service providers
         PluginsResource.plugin_managers.append(SERVICE_PLUGINS.plugin_manager)
@@ -231,7 +231,7 @@ class PluginsResource:
 
 class InitScriptsResource:
     def on_get(self, request):
-        from localstack.runtime.init import init_script_manager
+        from localstack.platform.runtime.init import init_script_manager
 
         manager = init_script_manager()
 
@@ -253,7 +253,7 @@ class InitScriptsResource:
 
 class InitScriptsStageResource:
     def on_get(self, request, stage: str):
-        from localstack.runtime.init import Stage, init_script_manager
+        from localstack.platform.runtime.init import Stage, init_script_manager
 
         manager = init_script_manager()
 
@@ -310,7 +310,7 @@ class LocalstackResources(Router):
         # TODO: load routes as plugins
 
     def add_default_routes(self):
-        from localstack.services.plugins import SERVICE_PLUGINS
+        from localstack.aws.services.plugins import SERVICE_PLUGINS
 
         health_resource = HealthResource(SERVICE_PLUGINS)
         self.add(Resource("/_localstack/health", health_resource))

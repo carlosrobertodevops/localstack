@@ -1,6 +1,6 @@
-from localstack.packages import InstallTarget, Package, PackageInstaller
-from localstack.packages.core import MavenPackageInstaller
-from localstack.packages.java import JavaInstallerMixin, java_package
+from localstack.tooling.packages import InstallTarget, Package, PackageInstaller
+from localstack.tooling.packages.core import MavenPackageInstaller
+from localstack.tooling.packages.java import JavaInstallerMixin, java_package
 
 JSONATA_DEFAULT_VERSION = "0.9.7"
 JACKSON_DEFAULT_VERSION = "2.16.2"

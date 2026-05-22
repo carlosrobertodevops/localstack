@@ -14,7 +14,7 @@ from rolo.router import RegexConverter
 from werkzeug.exceptions import NotFound
 from werkzeug.routing import Map, Rule
 
-from localstack import constants
+from localstack.platform import constants
 from localstack.aws.api import (
     CommonServiceException,
     RequestContext,
@@ -27,10 +27,10 @@ from localstack.aws.forwarder import (
     dispatch_to_backend,
 )
 from localstack.aws.skeleton import DispatchTable
-from localstack.constants import DEFAULT_AWS_ACCOUNT_ID
-from localstack.constants import VERSION as LOCALSTACK_VERSION
-from localstack.http import Response
-from localstack.http.request import Request, get_full_raw_path, get_raw_current_url
+from localstack.platform.constants import DEFAULT_AWS_ACCOUNT_ID
+from localstack.platform.constants import VERSION as LOCALSTACK_VERSION
+from localstack.platform.http import Response
+from localstack.platform.http.request import Request, get_full_raw_path, get_raw_current_url
 
 MotoDispatcher = Callable[[Request, str, dict], Response]
 

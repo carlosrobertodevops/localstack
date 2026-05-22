@@ -71,7 +71,7 @@ def to_json_str(obj: any) -> str:
     JSON encoders in LocalStack:
     * localstack.utils.json.CustomEncoder
     * localstack.utils.json.BytesEncoder
-    * localstack.services.events.utils.EventJSONEncoder
-    * localstack.services.stepfunctions.asl.utils.encoding._DateTimeEncoder
+    * localstack.aws.services.events.utils.EventJSONEncoder
+    * localstack.aws.services.stepfunctions.asl.utils.encoding._DateTimeEncoder
     """
     return json.dumps(obj, cls=BytesEncoder)

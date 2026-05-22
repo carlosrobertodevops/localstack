@@ -1,5 +1,5 @@
-from localstack.services.stepfunctions.asl.component.component import Component
-from localstack.services.stepfunctions.asl.component.state.state import CommonStateField
+from localstack.aws.services.stepfunctions.asl.component.component import Component
+from localstack.aws.services.stepfunctions.asl.component.state.state import CommonStateField
 
 
 class States(Component):

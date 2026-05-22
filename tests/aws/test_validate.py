@@ -1,4 +1,4 @@
-from localstack.testing.pytest import markers
+from localstack.tooling.testing.pytest import markers
 
 """This is to demonstrate how to write tests for server-side request validation. Ideally these tests are part of the
 service test suite."""

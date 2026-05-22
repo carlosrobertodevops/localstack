@@ -1,12 +1,12 @@
 import pytest
 
-from localstack.http import Request
-from localstack.services.apigateway.next_gen.execute_api.context import (
+from localstack.platform.http import Request
+from localstack.aws.services.apigateway.next_gen.execute_api.context import (
     IntegrationRequest,
     RestApiInvocationContext,
 )
-from localstack.services.apigateway.next_gen.execute_api.gateway_response import InternalServerError
-from localstack.services.apigateway.next_gen.execute_api.integrations.mock import (
+from localstack.aws.services.apigateway.next_gen.execute_api.gateway_response import InternalServerError
+from localstack.aws.services.apigateway.next_gen.execute_api.integrations.mock import (
     RestApiMockIntegration,
 )
 from localstack.utils.strings import to_bytes

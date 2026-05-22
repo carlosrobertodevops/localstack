@@ -6,8 +6,7 @@ from typing import Any, Final, Optional
 
 from pydantic import BaseModel, RootModel, ValidationError, model_validator
 
-from localstack import config
-
+from localstack.platform import config
 LOG = logging.getLogger(__name__)
 
 _RETURN_KEY: Final[str] = "Return"

@@ -4,7 +4,7 @@ from typing import Protocol
 
 from werkzeug.datastructures import Headers
 
-from localstack import config
+from localstack.platform import config
 from localstack.aws.api import RequestContext
 from localstack.aws.api.s3 import (
     AccessForbidden,
@@ -19,10 +19,10 @@ from localstack.aws.chain import Handler, HandlerChain
 from localstack.aws.handlers.cors import CorsEnforcer, CorsResponseEnricher
 from localstack.aws.protocol.op_router import RestServiceOperationRouter
 from localstack.aws.spec import get_service_catalog
-from localstack.config import S3_VIRTUAL_HOSTNAME
-from localstack.http import Request, Response
-from localstack.services.s3.constants import S3_HOST_ID
-from localstack.services.s3.utils import S3_VIRTUAL_HOSTNAME_REGEX
+from localstack.platform.config import S3_VIRTUAL_HOSTNAME
+from localstack.platform.http import Request, Response
+from localstack.aws.services.s3.constants import S3_HOST_ID
+from localstack.aws.services.s3.utils import S3_VIRTUAL_HOSTNAME_REGEX
 
 # TODO: add more logging statements
 LOG = logging.getLogger(__name__)

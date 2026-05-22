@@ -102,7 +102,7 @@ from werkzeug.exceptions import BadRequest, NotFound
 
 from localstack.aws.protocol.op_router import RestServiceOperationRouter
 from localstack.aws.spec import ProtocolName
-from localstack.http import Request
+from localstack.platform.http import Request
 
 
 def _text_content(func):
@@ -1491,7 +1491,7 @@ class S3RequestParser(RestXMLRequestParser):
 
         @staticmethod
         def _is_vhost_address_get_bucket(request: Request) -> str | None:
-            from localstack.services.s3.utils import uses_host_addressing
+            from localstack.aws.services.s3.utils import uses_host_addressing
 
             return uses_host_addressing(request.headers)
 

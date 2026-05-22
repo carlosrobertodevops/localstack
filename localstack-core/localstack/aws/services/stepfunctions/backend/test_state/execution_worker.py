@@ -1,29 +1,29 @@
 from localstack.aws.api.stepfunctions import Arn, StateName
-from localstack.services.stepfunctions.asl.component.eval_component import EvalComponent
-from localstack.services.stepfunctions.asl.eval.environment import Environment
-from localstack.services.stepfunctions.asl.eval.evaluation_details import EvaluationDetails
-from localstack.services.stepfunctions.asl.eval.event.event_manager import (
+from localstack.aws.services.stepfunctions.asl.component.eval_component import EvalComponent
+from localstack.aws.services.stepfunctions.asl.eval.environment import Environment
+from localstack.aws.services.stepfunctions.asl.eval.evaluation_details import EvaluationDetails
+from localstack.aws.services.stepfunctions.asl.eval.event.event_manager import (
     EventHistoryContext,
 )
-from localstack.services.stepfunctions.asl.eval.event.logging import (
+from localstack.aws.services.stepfunctions.asl.eval.event.logging import (
     CloudWatchLoggingSession,
 )
-from localstack.services.stepfunctions.asl.eval.states import (
+from localstack.aws.services.stepfunctions.asl.eval.states import (
     ContextObjectData,
     ExecutionData,
     StateMachineData,
 )
-from localstack.services.stepfunctions.asl.eval.test_state.environment import TestStateEnvironment
-from localstack.services.stepfunctions.asl.eval.variable_store import VariableStore
-from localstack.services.stepfunctions.asl.parse.test_state.asl_parser import (
+from localstack.aws.services.stepfunctions.asl.eval.test_state.environment import TestStateEnvironment
+from localstack.aws.services.stepfunctions.asl.eval.variable_store import VariableStore
+from localstack.aws.services.stepfunctions.asl.parse.test_state.asl_parser import (
     TestStateAmazonStateLanguageParser,
 )
-from localstack.services.stepfunctions.backend.activity import Activity
-from localstack.services.stepfunctions.backend.execution_worker import SyncExecutionWorker
-from localstack.services.stepfunctions.backend.execution_worker_comm import (
+from localstack.aws.services.stepfunctions.backend.activity import Activity
+from localstack.aws.services.stepfunctions.backend.execution_worker import SyncExecutionWorker
+from localstack.aws.services.stepfunctions.backend.execution_worker_comm import (
     ExecutionWorkerCommunication,
 )
-from localstack.services.stepfunctions.backend.test_state.test_state_mock import TestStateMock
+from localstack.aws.services.stepfunctions.backend.test_state.test_state_mock import TestStateMock
 
 
 class TestStateExecutionWorker(SyncExecutionWorker):

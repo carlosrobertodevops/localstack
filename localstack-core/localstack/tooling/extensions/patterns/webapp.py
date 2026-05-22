@@ -8,9 +8,9 @@ from rolo.gateway import HandlerChain
 from rolo.router import RuleAdapter, WithHost
 from werkzeug.routing import Submount
 
-from localstack import config
+from localstack.platform import config
 from localstack.aws.api import RequestContext
-from localstack.extensions.api import Extension, http
+from localstack.tooling.extensions.api import Extension, http
 
 if t.TYPE_CHECKING:
     # although jinja2 is included transitively via moto, let's make sure jinja2 stays optional

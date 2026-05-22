@@ -8,10 +8,10 @@ from typing import Any
 import requests
 from werkzeug import Request
 
-from localstack.http import Response, route
-from localstack.services.edge import ROUTER
-from localstack.services.lambda_ import ldm
-from localstack.services.lambda_.invocation.lambda_models import InvocationResult
+from localstack.platform.http import Response, route
+from localstack.aws.services.edge import ROUTER
+from localstack.aws.services.lambda_ import ldm
+from localstack.aws.services.lambda_.invocation.lambda_models import InvocationResult
 from localstack.utils.backoff import ExponentialBackoff
 from localstack.utils.objects import singleton_factory
 from localstack.utils.strings import to_str

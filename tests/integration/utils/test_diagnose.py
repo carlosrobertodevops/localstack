@@ -1,6 +1,6 @@
-from localstack import config
-from localstack.http import Request
-from localstack.services.internal import DiagnoseResource
+from localstack.platform import config
+from localstack.platform.http import Request
+from localstack.aws.services.internal import DiagnoseResource
 
 
 def test_diagnose_resource():

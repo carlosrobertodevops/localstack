@@ -8,9 +8,9 @@ from hypercorn.typing import ASGIFramework
 from werkzeug.datastructures import Headers
 from werkzeug.wrappers import Request as WerkzeugRequest
 
-from localstack.http import Response
-from localstack.http.asgi import ASGIAdapter, ASGILifespanListener, WebSocketListener
-from localstack.http.hypercorn import HypercornServer
+from localstack.platform.http import Response
+from localstack.platform.http.asgi import ASGIAdapter, ASGILifespanListener, WebSocketListener
+from localstack.platform.http.hypercorn import HypercornServer
 from localstack.utils import net
 from localstack.utils.sync import poll_condition
 

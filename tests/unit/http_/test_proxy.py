@@ -5,11 +5,11 @@ import requests
 from pytest_httpserver import HTTPServer
 from werkzeug import Request as WerkzeugRequest
 
-from localstack.http import Request, Response, Router
-from localstack.http.client import SimpleRequestsClient
-from localstack.http.dispatcher import handler_dispatcher
-from localstack.http.hypercorn import HypercornServer
-from localstack.http.proxy import Proxy, ProxyHandler, forward
+from localstack.platform.http import Request, Response, Router
+from localstack.platform.http.client import SimpleRequestsClient
+from localstack.platform.http.dispatcher import handler_dispatcher
+from localstack.platform.http.hypercorn import HypercornServer
+from localstack.platform.http.proxy import Proxy, ProxyHandler, forward
 
 
 @pytest.fixture
@@ -145,7 +145,7 @@ class TestPathForwarder:
         backend = httpserver
 
         def _handler(request: WerkzeugRequest):
-            from localstack.http.request import get_raw_path
+            from localstack.platform.http.request import get_raw_path
 
             data = {"path": get_raw_path(request), "query": request.query_string.decode("utf-8")}
             return Response(json.dumps(data), mimetype="application/json")

@@ -1,8 +1,8 @@
 import re
 from typing import Any
 
-from localstack.services.cloudformation.deployment_utils import PLACEHOLDER_AWS_NO_VALUE
-from localstack.services.cloudformation.engine.errors import TemplateError
+from localstack.aws.services.cloudformation.deployment_utils import PLACEHOLDER_AWS_NO_VALUE
+from localstack.aws.services.cloudformation.engine.errors import TemplateError
 from localstack.utils.urls import localstack_host
 
 AWS_URL_SUFFIX = localstack_host().host  # value is "amazonaws.com" in real AWS

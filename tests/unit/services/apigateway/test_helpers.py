@@ -3,7 +3,7 @@ import time
 
 import pytest
 
-from localstack.services.apigateway.next_gen.execute_api.helpers import (
+from localstack.aws.services.apigateway.next_gen.execute_api.helpers import (
     generate_trace_id,
     parse_trace_id,
 )

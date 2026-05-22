@@ -1,11 +1,11 @@
-from localstack.services.stepfunctions.asl.antlr.runtime.ASLParser import ASLParser
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_task.service.resource import (
+from localstack.aws.services.stepfunctions.asl.antlr.runtime.ASLParser import ASLParser
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_task.service.resource import (
     ActivityResource,
     Resource,
     ResourceCondition,
     ServiceResource,
 )
-from localstack.services.stepfunctions.asl.static_analyser.static_analyser import StaticAnalyser
+from localstack.aws.services.stepfunctions.asl.static_analyser.static_analyser import StaticAnalyser
 
 
 class ExpressStaticAnalyser(StaticAnalyser):

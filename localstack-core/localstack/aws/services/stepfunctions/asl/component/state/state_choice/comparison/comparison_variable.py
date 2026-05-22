@@ -1,15 +1,15 @@
 from typing import Final
 
-from localstack.services.stepfunctions.asl.component.state.state_choice.comparison.comparison_func import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_choice.comparison.comparison_func import (
     ComparisonFunc,
 )
-from localstack.services.stepfunctions.asl.component.state.state_choice.comparison.comparison_type import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_choice.comparison.comparison_type import (
     Comparison,
 )
-from localstack.services.stepfunctions.asl.component.state.state_choice.comparison.variable import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_choice.comparison.variable import (
     Variable,
 )
-from localstack.services.stepfunctions.asl.eval.environment import Environment
+from localstack.aws.services.stepfunctions.asl.eval.environment import Environment
 
 
 class ComparisonVariable(Comparison):

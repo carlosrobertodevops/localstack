@@ -9,7 +9,7 @@ from rich.console import Console
 from watchdog.events import FileSystemEvent, FileSystemEventHandler
 from watchdog.observers import Observer
 
-from localstack.dev.run.paths import HOST_PATH_MAPPINGS, HostPaths
+from localstack.tooling.dev.run.paths import HOST_PATH_MAPPINGS, HostPaths
 from localstack.utils.container_utils.container_client import ContainerClient
 from localstack.utils.threads import TMP_THREADS, FuncThread
 

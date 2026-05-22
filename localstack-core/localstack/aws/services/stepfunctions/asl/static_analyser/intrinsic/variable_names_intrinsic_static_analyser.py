@@ -1,12 +1,12 @@
 from localstack.aws.api.stepfunctions import VariableName, VariableNameList
-from localstack.services.stepfunctions.asl.antlr.runtime.ASLIntrinsicParser import (
+from localstack.aws.services.stepfunctions.asl.antlr.runtime.ASLIntrinsicParser import (
     ASLIntrinsicParser,
 )
-from localstack.services.stepfunctions.asl.jsonata.jsonata import (
+from localstack.aws.services.stepfunctions.asl.jsonata.jsonata import (
     VariableReference,
     extract_jsonata_variable_references,
 )
-from localstack.services.stepfunctions.asl.static_analyser.intrinsic.intrinsic_static_analyser import (
+from localstack.aws.services.stepfunctions.asl.static_analyser.intrinsic.intrinsic_static_analyser import (
     IntrinsicStaticAnalyser,
 )
 

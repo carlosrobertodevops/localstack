@@ -122,7 +122,7 @@ def enforce_single_aws_marker(items: list[pytest.Item]):
 
 def filter_by_markers(config: "Config", items: list[pytest.Item]):
     """Filter tests by markers."""
-    from localstack import config as localstack_config
+    from localstack.platform import config as localstack_config
     from localstack.utils.bootstrap import in_ci
     from localstack.utils.platform import Arch, get_arch
 
@@ -131,7 +131,7 @@ def filter_by_markers(config: "Config", items: list[pytest.Item]):
     is_in_ci = in_ci()
     is_amd64 = get_arch() == Arch.amd64
     is_arm64 = get_arch() == Arch.arm64
-    # Inlining `is_aws_cloud()` here because localstack.testing.aws.util imports boto3,
+    # Inlining `is_aws_cloud()` here because localstack.tooling.testing.aws.util imports boto3,
     # which is not installed for the CLI tests
     is_real_aws = os.environ.get("TEST_TARGET", "") == "AWS_CLOUD"
 

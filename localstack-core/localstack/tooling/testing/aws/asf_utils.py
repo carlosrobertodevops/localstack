@@ -54,7 +54,7 @@ def _collect_provider_classes(
 
 
 def collect_implemented_provider_operations(
-    provider_module: str = "localstack.services",
+    provider_module: str = "localstack.aws.services",
     provider_module_regex: Pattern = re.compile(r".*\.provider[A-Za-z_0-9]*$"),
     provider_class_regex: Pattern = re.compile(r".*Provider$"),
     asf_api_module: str = "localstack.aws.api",

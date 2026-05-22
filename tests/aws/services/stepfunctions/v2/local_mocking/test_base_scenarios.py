@@ -2,13 +2,13 @@ import json
 
 from localstack_snapshot.snapshots.transformer import JsonpathTransformer, RegexTransformer
 
-import localstack.testing.config
-from localstack import config
+import localstack.tooling.testing.config
+from localstack.platform import config
 from localstack.aws.api.lambda_ import Runtime
 from localstack.aws.api.stepfunctions import HistoryEventType
-from localstack.testing.aws.util import is_aws_cloud
-from localstack.testing.pytest import markers
-from localstack.testing.pytest.stepfunctions.utils import (
+from localstack.tooling.testing.aws.util import is_aws_cloud
+from localstack.tooling.testing.pytest import markers
+from localstack.tooling.testing.pytest.stepfunctions.utils import (
     SfnNoneRecursiveParallelTransformer,
     await_execution_terminated,
     create_and_record_execution,
@@ -84,7 +84,7 @@ class TestBaseScenarios:
             monkeypatch.setattr(config, "SFN_MOCK_CONFIG", mock_config_file_path)
             # Insert the test environment's region name into this mock ARN
             # to maintain snapshot compatibility across multi-region tests.
-            test_region_name = localstack.testing.config.TEST_AWS_REGION_NAME
+            test_region_name = localstack.tooling.testing.config.TEST_AWS_REGION_NAME
             template["States"]["step1"]["Resource"] = (
                 f"arn:aws:lambda:{test_region_name}:111111111111:function:{function_name}"
             )

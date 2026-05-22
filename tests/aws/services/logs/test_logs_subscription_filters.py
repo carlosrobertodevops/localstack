@@ -9,8 +9,8 @@ import pytest
 from localstack_snapshot.snapshots.transformer import KeyValueBasedTransformer
 
 from localstack.aws.api.lambda_ import Runtime
-from localstack.testing.config import TEST_AWS_REGION_NAME
-from localstack.testing.pytest import markers
+from localstack.tooling.testing.config import TEST_AWS_REGION_NAME
+from localstack.tooling.testing.pytest import markers
 from localstack.utils import testutil
 from localstack.utils.aws.arns import get_partition
 from localstack.utils.common import now_utc, retry, short_uid

@@ -1,7 +1,7 @@
 from abc import ABC
 
 from localstack.aws.api.swf import SwfApi
-from localstack.state import StateVisitor
+from localstack.platform.state import StateVisitor
 
 
 class SWFProvider(SwfApi, ABC):

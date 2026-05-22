@@ -5,9 +5,9 @@ import re
 import pytest
 from localstack_snapshot.snapshots.transformer import JsonpathTransformer
 
-from localstack.testing.aws.util import is_aws_cloud
-from localstack.testing.pytest import markers
-from localstack.testing.pytest.stepfunctions.utils import (
+from localstack.tooling.testing.aws.util import is_aws_cloud
+from localstack.tooling.testing.pytest import markers
+from localstack.tooling.testing.pytest.stepfunctions.utils import (
     await_execution_success,
     create_and_record_events,
     create_and_record_execution,

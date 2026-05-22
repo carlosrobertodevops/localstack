@@ -4,8 +4,8 @@ import re
 
 from localstack_snapshot.snapshots.transformer import KeyValueBasedTransformer
 
-from localstack.testing.pytest import markers
-from localstack.testing.snapshots.transformer_utility import PATTERN_ARN
+from localstack.tooling.testing.pytest import markers
+from localstack.tooling.testing.snapshots.transformer_utility import PATTERN_ARN
 from localstack.utils.strings import short_uid
 
 

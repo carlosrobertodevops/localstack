@@ -10,7 +10,7 @@ from itertools import islice
 from botocore.utils import InvalidArnException
 from werkzeug import Request as WerkzeugRequest
 
-from localstack import config
+from localstack.platform import config
 from localstack.aws.api import RequestContext, ServiceException
 from localstack.aws.api.sqs import (
     ActionNameList,
@@ -66,22 +66,22 @@ from localstack.aws.api.sqs import (
     TooManyEntriesInBatchRequest,
 )
 from localstack.aws.spec import load_service
-from localstack.config import SQS_DISABLE_MAX_NUMBER_OF_MESSAGE_LIMIT
-from localstack.services.edge import ROUTER
-from localstack.services.plugins import ServiceLifecycleHook
-from localstack.services.sqs import constants as sqs_constants
-from localstack.services.sqs import query_api
-from localstack.services.sqs.constants import (
+from localstack.platform.config import SQS_DISABLE_MAX_NUMBER_OF_MESSAGE_LIMIT
+from localstack.aws.services.edge import ROUTER
+from localstack.aws.services.plugins import ServiceLifecycleHook
+from localstack.aws.services.sqs import constants as sqs_constants
+from localstack.aws.services.sqs import query_api
+from localstack.aws.services.sqs.constants import (
     HEADER_LOCALSTACK_SQS_OVERRIDE_MESSAGE_COUNT,
     HEADER_LOCALSTACK_SQS_OVERRIDE_WAIT_TIME_SECONDS,
     MAX_RESULT_LIMIT,
 )
-from localstack.services.sqs.developer_api import SqsDeveloperApi
-from localstack.services.sqs.exceptions import (
+from localstack.aws.services.sqs.developer_api import SqsDeveloperApi
+from localstack.aws.services.sqs.exceptions import (
     InvalidParameterValueException,
     MissingRequiredParameterException,
 )
-from localstack.services.sqs.models import (
+from localstack.aws.services.sqs.models import (
     FifoQueue,
     MessageMoveTask,
     MessageMoveTaskStatus,
@@ -92,7 +92,7 @@ from localstack.services.sqs.models import (
     sqs_stores,
     to_sqs_api_message,
 )
-from localstack.services.sqs.utils import (
+from localstack.aws.services.sqs.utils import (
     create_message_attribute_hash,
     decode_move_task_handle,
     generate_message_id,
@@ -100,8 +100,8 @@ from localstack.services.sqs.utils import (
     is_message_deduplication_id_required,
     parse_queue_url,
 )
-from localstack.services.stores import AccountRegionBundle
-from localstack.state import StateVisitor
+from localstack.aws.services.stores import AccountRegionBundle
+from localstack.platform.state import StateVisitor
 from localstack.utils.aws.arns import parse_arn
 from localstack.utils.bootstrap import is_api_enabled
 from localstack.utils.cloudwatch.cloudwatch_util import (

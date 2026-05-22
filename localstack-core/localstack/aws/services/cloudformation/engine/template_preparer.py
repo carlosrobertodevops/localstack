@@ -1,12 +1,12 @@
 import json
 import logging
 
-from localstack.services.cloudformation.engine import yaml_parser
-from localstack.services.cloudformation.engine.transformers import (
+from localstack.aws.services.cloudformation.engine import yaml_parser
+from localstack.aws.services.cloudformation.engine.transformers import (
     apply_global_transformations,
     apply_intrinsic_transformations,
 )
-from localstack.services.cloudformation.engine.validations import ValidationError
+from localstack.aws.services.cloudformation.engine.validations import ValidationError
 from localstack.utils.json import clone_safe
 
 LOG = logging.getLogger(__name__)

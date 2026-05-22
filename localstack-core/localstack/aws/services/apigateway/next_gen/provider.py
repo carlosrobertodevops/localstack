@@ -23,19 +23,19 @@ from localstack.aws.api.apigateway import (
     TestInvokeMethodRequest,
     TestInvokeMethodResponse,
 )
-from localstack.services.apigateway.helpers import (
+from localstack.aws.services.apigateway.helpers import (
     get_apigateway_store,
     get_moto_rest_api,
     get_rest_api_container,
 )
-from localstack.services.apigateway.legacy.provider import (
+from localstack.aws.services.apigateway.legacy.provider import (
     STAGE_UPDATE_PATHS,
     ApigatewayProvider,
     patch_api_gateway_entity,
 )
-from localstack.services.apigateway.patches import apply_patches
-from localstack.services.edge import ROUTER
-from localstack.services.moto import call_moto
+from localstack.aws.services.apigateway.patches import apply_patches
+from localstack.aws.services.edge import ROUTER
+from localstack.aws.services.moto import call_moto
 
 from ..models import apigateway_stores
 from .execute_api.gateway_response import (

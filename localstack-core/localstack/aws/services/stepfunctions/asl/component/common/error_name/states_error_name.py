@@ -2,8 +2,8 @@ from __future__ import annotations
 
 from typing import Final
 
-from localstack.services.stepfunctions.asl.component.common.error_name.error_name import ErrorName
-from localstack.services.stepfunctions.asl.component.common.error_name.states_error_name_type import (
+from localstack.aws.services.stepfunctions.asl.component.common.error_name.error_name import ErrorName
+from localstack.aws.services.stepfunctions.asl.component.common.error_name.states_error_name_type import (
     StatesErrorNameType,
 )
 

@@ -1,24 +1,24 @@
 import json
 
 from localstack.aws.api.stepfunctions import HistoryEventType, MapRunFailedEventDetails
-from localstack.services.stepfunctions.asl.component.common.error_name.failure_event import (
+from localstack.aws.services.stepfunctions.asl.component.common.error_name.failure_event import (
     FailureEvent,
     FailureEventException,
 )
-from localstack.services.stepfunctions.asl.component.common.error_name.states_error_name import (
+from localstack.aws.services.stepfunctions.asl.component.common.error_name.states_error_name import (
     StatesErrorName,
 )
-from localstack.services.stepfunctions.asl.component.common.error_name.states_error_name_type import (
+from localstack.aws.services.stepfunctions.asl.component.common.error_name.states_error_name_type import (
     StatesErrorNameType,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.item_reader.reader_config.reader_config_decl import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.item_reader.reader_config.reader_config_decl import (
     ReaderConfigOutput,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.item_reader.resource_eval.resource_output_transformer.resource_output_transformer import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.item_reader.resource_eval.resource_output_transformer.resource_output_transformer import (
     ResourceOutputTransformer,
 )
-from localstack.services.stepfunctions.asl.eval.environment import Environment
-from localstack.services.stepfunctions.asl.eval.event.event_detail import EventDetails
+from localstack.aws.services.stepfunctions.asl.eval.environment import Environment
+from localstack.aws.services.stepfunctions.asl.eval.event.event_detail import EventDetails
 
 
 class ResourceOutputTransformerJson(ResourceOutputTransformer):

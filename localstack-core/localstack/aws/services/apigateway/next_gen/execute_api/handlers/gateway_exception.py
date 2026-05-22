@@ -4,18 +4,18 @@ import logging
 from rolo import Response
 from werkzeug.datastructures import Headers
 
-from localstack.constants import APPLICATION_JSON
-from localstack.services.apigateway.next_gen.execute_api.api import (
+from localstack.platform.constants import APPLICATION_JSON
+from localstack.aws.services.apigateway.next_gen.execute_api.api import (
     RestApiGatewayExceptionHandler,
     RestApiGatewayHandlerChain,
 )
-from localstack.services.apigateway.next_gen.execute_api.context import RestApiInvocationContext
-from localstack.services.apigateway.next_gen.execute_api.gateway_response import (
+from localstack.aws.services.apigateway.next_gen.execute_api.context import RestApiInvocationContext
+from localstack.aws.services.apigateway.next_gen.execute_api.gateway_response import (
     AccessDeniedError,
     BaseGatewayException,
     get_gateway_response_or_default,
 )
-from localstack.services.apigateway.next_gen.execute_api.variables import (
+from localstack.aws.services.apigateway.next_gen.execute_api.variables import (
     GatewayResponseContextVarsError,
 )
 

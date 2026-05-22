@@ -10,41 +10,41 @@ from localstack.aws.api.stepfunctions import (
     MapRunStartedEventDetails,
     MapRunStatus,
 )
-from localstack.services.stepfunctions.asl.component.common.comment import Comment
-from localstack.services.stepfunctions.asl.component.common.error_name.failure_event import (
+from localstack.aws.services.stepfunctions.asl.component.common.comment import Comment
+from localstack.aws.services.stepfunctions.asl.component.common.error_name.failure_event import (
     FailureEventException,
 )
-from localstack.services.stepfunctions.asl.component.common.flow.start_at import StartAt
-from localstack.services.stepfunctions.asl.component.common.parargs import Parameters
-from localstack.services.stepfunctions.asl.component.common.query_language import QueryLanguage
-from localstack.services.stepfunctions.asl.component.program.program import Program
-from localstack.services.stepfunctions.asl.component.program.states import States
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.item_reader.item_reader_decl import (
+from localstack.aws.services.stepfunctions.asl.component.common.flow.start_at import StartAt
+from localstack.aws.services.stepfunctions.asl.component.common.parargs import Parameters
+from localstack.aws.services.stepfunctions.asl.component.common.query_language import QueryLanguage
+from localstack.aws.services.stepfunctions.asl.component.program.program import Program
+from localstack.aws.services.stepfunctions.asl.component.program.states import States
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.item_reader.item_reader_decl import (
     ItemReader,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.item_selector import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.item_selector import (
     ItemSelector,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.inline_iteration_component import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.inline_iteration_component import (
     InlineIterationComponent,
     InlineIterationComponentEvalInput,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.itemprocessor.map_run_record import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.itemprocessor.map_run_record import (
     MapRunRecord,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.itemprocessor.processor_config import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.itemprocessor.processor_config import (
     ProcessorConfig,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.job import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.job import (
     JobClosed,
     JobPool,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.max_concurrency import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.max_concurrency import (
     DEFAULT_MAX_CONCURRENCY_VALUE,
 )
-from localstack.services.stepfunctions.asl.eval.environment import Environment
-from localstack.services.stepfunctions.asl.eval.event.event_detail import EventDetails
-from localstack.services.stepfunctions.asl.eval.event.event_manager import (
+from localstack.aws.services.stepfunctions.asl.eval.environment import Environment
+from localstack.aws.services.stepfunctions.asl.eval.event.event_detail import EventDetails
+from localstack.aws.services.stepfunctions.asl.eval.event.event_manager import (
     EventManager,
 )
 

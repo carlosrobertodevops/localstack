@@ -6,9 +6,9 @@ import pytest as pytest
 import requests
 from pytest_httpserver import HTTPServer
 
-from localstack import config
-from localstack.testing.aws.util import is_aws_cloud
-from localstack.testing.pytest import markers
+from localstack.platform import config
+from localstack.tooling.testing.aws.util import is_aws_cloud
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.aws import arns
 from localstack.utils.aws.arns import iam_role_arn, s3_bucket_arn
 from localstack.utils.strings import short_uid, to_bytes, to_str

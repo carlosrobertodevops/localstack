@@ -16,7 +16,7 @@ from localstack.aws.protocol.parser import (
     create_parser,
 )
 from localstack.aws.spec import load_service
-from localstack.http import Request as HttpRequest
+from localstack.platform.http import Request as HttpRequest
 from localstack.utils.common import to_bytes, to_str
 
 

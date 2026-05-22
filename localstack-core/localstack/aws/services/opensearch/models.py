@@ -1,5 +1,5 @@
 from localstack.aws.api.opensearch import DomainStatus
-from localstack.services.stores import (
+from localstack.aws.services.stores import (
     AccountRegionBundle,
     BaseStore,
     LocalAttribute,

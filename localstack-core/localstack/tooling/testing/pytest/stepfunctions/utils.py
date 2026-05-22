@@ -11,7 +11,7 @@ from localstack_snapshot.snapshots.transformer import (
     TransformContext,
 )
 
-from localstack import config
+from localstack.platform import config
 from localstack.aws.api.stepfunctions import (
     Arn,
     CloudWatchLogsLogGroup,
@@ -26,10 +26,10 @@ from localstack.aws.api.stepfunctions import (
     LongArn,
     StateMachineType,
 )
-from localstack.services.stepfunctions.asl.eval.event.logging import is_logging_enabled_for
-from localstack.services.stepfunctions.asl.utils.encoding import to_json_str
-from localstack.services.stepfunctions.asl.utils.json_path import NoSuchJsonPathError, extract_json
-from localstack.testing.aws.util import is_aws_cloud
+from localstack.aws.services.stepfunctions.asl.eval.event.logging import is_logging_enabled_for
+from localstack.aws.services.stepfunctions.asl.utils.encoding import to_json_str
+from localstack.aws.services.stepfunctions.asl.utils.json_path import NoSuchJsonPathError, extract_json
+from localstack.tooling.testing.aws.util import is_aws_cloud
 from localstack.utils.strings import short_uid
 from localstack.utils.sync import poll_condition
 

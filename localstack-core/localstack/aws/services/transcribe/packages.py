@@ -1,5 +1,5 @@
-from localstack.packages import Package
-from localstack.packages.core import PythonPackageInstaller
+from localstack.tooling.packages import Package
+from localstack.tooling.packages.core import PythonPackageInstaller
 
 _VOSK_DEFAULT_VERSION = "0.3.43"
 

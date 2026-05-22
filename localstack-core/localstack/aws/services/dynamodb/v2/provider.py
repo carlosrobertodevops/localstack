@@ -13,7 +13,7 @@ from operator import itemgetter
 import requests
 import werkzeug
 
-from localstack import config
+from localstack.platform import config
 from localstack.aws import handlers
 from localstack.aws.api import (
     CommonServiceException,
@@ -110,27 +110,27 @@ from localstack.aws.api.dynamodb import (
     WriteRequest,
 )
 from localstack.aws.connect import connect_to
-from localstack.constants import (
+from localstack.platform.constants import (
     AUTH_CREDENTIAL_REGEX,
     AWS_REGION_US_EAST_1,
     INTERNAL_AWS_SECRET_ACCESS_KEY,
 )
-from localstack.http import Request, Response, route
-from localstack.services.dynamodb.models import (
+from localstack.platform.http import Request, Response, route
+from localstack.aws.services.dynamodb.models import (
     DynamoDBStore,
     StreamRecord,
     dynamodb_stores,
 )
-from localstack.services.dynamodb.server import DynamodbServer
-from localstack.services.dynamodb.utils import (
+from localstack.aws.services.dynamodb.server import DynamodbServer
+from localstack.aws.services.dynamodb.utils import (
     SchemaExtractor,
     get_ddb_access_key,
     modify_ddblocal_arns,
 )
-from localstack.services.dynamodbstreams.models import dynamodbstreams_stores
-from localstack.services.edge import ROUTER
-from localstack.services.plugins import ServiceLifecycleHook
-from localstack.state import AssetDirectory, StateVisitor
+from localstack.aws.services.dynamodbstreams.models import dynamodbstreams_stores
+from localstack.aws.services.edge import ROUTER
+from localstack.aws.services.plugins import ServiceLifecycleHook
+from localstack.platform.state import AssetDirectory, StateVisitor
 from localstack.utils.aws import arns
 from localstack.utils.aws.arns import (
     extract_account_id_from_arn,
@@ -188,7 +188,7 @@ class SSEUtils:
 
     @classmethod
     def get_sse_kms_managed_key(cls, account_id: str, region_name: str):
-        from localstack.services.kms import provider
+        from localstack.aws.services.kms import provider
 
         existing_key = MANAGED_KMS_KEYS.get(region_name)
         if existing_key:

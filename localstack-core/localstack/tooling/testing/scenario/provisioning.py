@@ -9,9 +9,9 @@ from typing import TYPE_CHECKING
 import aws_cdk as cdk
 from botocore.exceptions import ClientError, WaiterError
 
-from localstack.config import is_env_true
-from localstack.testing.aws.util import is_aws_cloud
-from localstack.testing.pytest.fixtures import StackDeployError
+from localstack.platform.config import is_env_true
+from localstack.tooling.testing.aws.util import is_aws_cloud
+from localstack.tooling.testing.pytest.fixtures import StackDeployError
 from localstack.utils.aws.resources import create_s3_bucket
 from localstack.utils.files import load_file
 from localstack.utils.functions import call_safe

@@ -14,7 +14,7 @@ from localstack.aws.api.sns import (
     subscriptionARN,
     topicARN,
 )
-from localstack.services.stores import (
+from localstack.aws.services.stores import (
     AccountRegionBundle,
     BaseStore,
     CrossRegionAttribute,

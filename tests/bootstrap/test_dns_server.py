@@ -2,10 +2,10 @@ import logging
 
 import pytest
 
-from localstack import constants
-from localstack.config import in_docker
-from localstack.constants import LOCALHOST_HOSTNAME
-from localstack.testing.pytest.container import ContainerFactory
+from localstack.platform import constants
+from localstack.platform.config import in_docker
+from localstack.platform.constants import LOCALHOST_HOSTNAME
+from localstack.tooling.testing.pytest.container import ContainerFactory
 from localstack.utils.bootstrap import ContainerConfigurators
 from localstack.utils.strings import short_uid
 

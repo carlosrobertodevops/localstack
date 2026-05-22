@@ -1,8 +1,8 @@
 import pytest
 
-from localstack.constants import TAG_KEY_CUSTOM_ID
-from localstack.services.cloudformation.engine.entities import StackIdentifier
-from localstack.testing.config import TEST_AWS_ACCOUNT_ID, TEST_AWS_REGION_NAME
+from localstack.platform.constants import TAG_KEY_CUSTOM_ID
+from localstack.aws.services.cloudformation.engine.entities import StackIdentifier
+from localstack.tooling.testing.config import TEST_AWS_ACCOUNT_ID, TEST_AWS_REGION_NAME
 from localstack.utils.id_generator import (
     ResourceIdentifier,
     generate_short_uid,

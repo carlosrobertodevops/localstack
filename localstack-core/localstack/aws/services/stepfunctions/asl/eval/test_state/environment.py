@@ -3,27 +3,27 @@ from __future__ import annotations
 from typing import Self
 
 from localstack.aws.api.stepfunctions import Arn, InspectionData, StateMachineType
-from localstack.services.stepfunctions.asl.eval.environment import Environment
-from localstack.services.stepfunctions.asl.eval.evaluation_details import AWSExecutionDetails
-from localstack.services.stepfunctions.asl.eval.event.event_manager import (
+from localstack.aws.services.stepfunctions.asl.eval.environment import Environment
+from localstack.aws.services.stepfunctions.asl.eval.evaluation_details import AWSExecutionDetails
+from localstack.aws.services.stepfunctions.asl.eval.event.event_manager import (
     EventHistoryContext,
 )
-from localstack.services.stepfunctions.asl.eval.event.logging import (
+from localstack.aws.services.stepfunctions.asl.eval.event.logging import (
     CloudWatchLoggingSession,
 )
-from localstack.services.stepfunctions.asl.eval.program_state import (
+from localstack.aws.services.stepfunctions.asl.eval.program_state import (
     ProgramRunning,
 )
-from localstack.services.stepfunctions.asl.eval.states import ContextObjectData
-from localstack.services.stepfunctions.asl.eval.test_state.program_state import (
+from localstack.aws.services.stepfunctions.asl.eval.states import ContextObjectData
+from localstack.aws.services.stepfunctions.asl.eval.test_state.program_state import (
     ProgramCaughtError,
     ProgramChoiceSelected,
     ProgramRetriable,
 )
-from localstack.services.stepfunctions.asl.eval.variable_store import VariableStore
-from localstack.services.stepfunctions.asl.utils.encoding import to_json_str
-from localstack.services.stepfunctions.backend.activity import Activity
-from localstack.services.stepfunctions.backend.test_state.test_state_mock import TestStateMock
+from localstack.aws.services.stepfunctions.asl.eval.variable_store import VariableStore
+from localstack.aws.services.stepfunctions.asl.utils.encoding import to_json_str
+from localstack.aws.services.stepfunctions.backend.activity import Activity
+from localstack.aws.services.stepfunctions.backend.test_state.test_state_mock import TestStateMock
 
 
 class TestStateEnvironment(Environment):

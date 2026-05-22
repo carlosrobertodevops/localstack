@@ -6,7 +6,7 @@ from collections import defaultdict
 from datetime import UTC, datetime
 from urllib.parse import urlencode
 
-from localstack import config
+from localstack.platform import config
 from localstack.aws.api import RequestContext, handler
 from localstack.aws.api.cloudformation import (
     AlreadyExistsException,
@@ -82,49 +82,49 @@ from localstack.aws.api.cloudformation import (
     Stack as ApiStack,
 )
 from localstack.aws.connect import connect_to
-from localstack.services.cloudformation import api_utils
-from localstack.services.cloudformation.engine import template_preparer
-from localstack.services.cloudformation.engine.parameters import resolve_ssm_parameter
-from localstack.services.cloudformation.engine.transformers import FailedTransformationException
-from localstack.services.cloudformation.engine.v2.change_set_model import (
+from localstack.aws.services.cloudformation import api_utils
+from localstack.aws.services.cloudformation.engine import template_preparer
+from localstack.aws.services.cloudformation.engine.parameters import resolve_ssm_parameter
+from localstack.aws.services.cloudformation.engine.transformers import FailedTransformationException
+from localstack.aws.services.cloudformation.engine.v2.change_set_model import (
     ChangeSetModel,
     ChangeType,
     UpdateModel,
 )
-from localstack.services.cloudformation.engine.v2.change_set_model_describer import (
+from localstack.aws.services.cloudformation.engine.v2.change_set_model_describer import (
     ChangeSetModelDescriber,
 )
-from localstack.services.cloudformation.engine.v2.change_set_model_executor import (
+from localstack.aws.services.cloudformation.engine.v2.change_set_model_executor import (
     ChangeSetModelExecutor,
 )
-from localstack.services.cloudformation.engine.v2.change_set_model_transform import (
+from localstack.aws.services.cloudformation.engine.v2.change_set_model_transform import (
     ChangeSetModelTransform,
 )
-from localstack.services.cloudformation.engine.v2.change_set_model_validator import (
+from localstack.aws.services.cloudformation.engine.v2.change_set_model_validator import (
     ChangeSetModelValidator,
 )
-from localstack.services.cloudformation.engine.v2.change_set_resource_support_checker import (
+from localstack.aws.services.cloudformation.engine.v2.change_set_resource_support_checker import (
     ChangeSetResourceSupportChecker,
 )
-from localstack.services.cloudformation.engine.validations import ValidationError
-from localstack.services.cloudformation.provider import (
+from localstack.aws.services.cloudformation.engine.validations import ValidationError
+from localstack.aws.services.cloudformation.provider import (
     ARN_CHANGESET_REGEX,
     ARN_STACK_REGEX,
     ARN_STACK_SET_REGEX,
     CloudformationProvider,
 )
-from localstack.services.cloudformation.stores import (
+from localstack.aws.services.cloudformation.stores import (
     CloudFormationStore,
     get_cloudformation_store,
 )
-from localstack.services.cloudformation.v2.entities import (
+from localstack.aws.services.cloudformation.v2.entities import (
     ChangeSet,
     Stack,
     StackInstance,
     StackSet,
 )
-from localstack.services.cloudformation.v2.types import EngineParameter, engine_parameter_value
-from localstack.services.plugins import ServiceLifecycleHook
+from localstack.aws.services.cloudformation.v2.types import EngineParameter, engine_parameter_value
+from localstack.aws.services.plugins import ServiceLifecycleHook
 from localstack.utils.collections import select_attributes
 from localstack.utils.numbers import is_number
 from localstack.utils.strings import short_uid

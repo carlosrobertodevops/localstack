@@ -5,8 +5,8 @@ import pytest
 from botocore.exceptions import ClientError
 from tests.aws.services.cloudformation.conftest import skip_if_legacy_engine
 
-from localstack.testing.pytest import markers
-from localstack.testing.pytest.fixtures import StackDeployError
+from localstack.tooling.testing.pytest import markers
+from localstack.tooling.testing.pytest.fixtures import StackDeployError
 from localstack.utils.strings import short_uid
 
 

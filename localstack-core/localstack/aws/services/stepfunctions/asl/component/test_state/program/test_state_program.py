@@ -5,19 +5,19 @@ from typing import Final
 from localstack.aws.api.stepfunctions import (
     ExecutionFailedEventDetails,
 )
-from localstack.services.stepfunctions.asl.component.common.error_name.failure_event import (
+from localstack.aws.services.stepfunctions.asl.component.common.error_name.failure_event import (
     FailureEventException,
 )
-from localstack.services.stepfunctions.asl.component.common.error_name.states_error_name import (
+from localstack.aws.services.stepfunctions.asl.component.common.error_name.states_error_name import (
     StatesErrorName,
 )
-from localstack.services.stepfunctions.asl.component.common.error_name.states_error_name_type import (
+from localstack.aws.services.stepfunctions.asl.component.common.error_name.states_error_name_type import (
     StatesErrorNameType,
 )
-from localstack.services.stepfunctions.asl.component.eval_component import EvalComponent
-from localstack.services.stepfunctions.asl.component.state.state import CommonStateField
-from localstack.services.stepfunctions.asl.eval.test_state.environment import TestStateEnvironment
-from localstack.services.stepfunctions.asl.utils.encoding import to_json_str
+from localstack.aws.services.stepfunctions.asl.component.eval_component import EvalComponent
+from localstack.aws.services.stepfunctions.asl.component.state.state import CommonStateField
+from localstack.aws.services.stepfunctions.asl.eval.test_state.environment import TestStateEnvironment
+from localstack.aws.services.stepfunctions.asl.utils.encoding import to_json_str
 from localstack.utils.threads import TMP_THREADS
 
 LOG = logging.getLogger(__name__)

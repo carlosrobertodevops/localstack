@@ -1,6 +1,6 @@
 import pytest
 
-from localstack.testing.config import (
+from localstack.tooling.testing.config import (
     TEST_AWS_ACCESS_KEY_ID,
     TEST_AWS_REGION_NAME,
     TEST_AWS_SECRET_ACCESS_KEY,

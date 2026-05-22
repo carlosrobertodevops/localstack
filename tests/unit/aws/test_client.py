@@ -9,7 +9,7 @@ from localstack.aws.client import (
     parse_service_exception,
 )
 from localstack.aws.connect import get_service_endpoint
-from localstack.http import Response
+from localstack.platform.http import Response
 
 
 def test_parse_service_exception():

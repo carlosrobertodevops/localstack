@@ -25,10 +25,10 @@ from localstack.aws.api.route53 import (
     Route53Api,
 )
 from localstack.aws.connect import connect_to
-from localstack.services.moto import call_moto
-from localstack.services.plugins import ServiceLifecycleHook
-from localstack.services.route53.models import route53_stores
-from localstack.state import StateVisitor
+from localstack.aws.services.moto import call_moto
+from localstack.aws.services.plugins import ServiceLifecycleHook
+from localstack.aws.services.route53.models import route53_stores
+from localstack.platform.state import StateVisitor
 
 
 class Route53Provider(Route53Api, ServiceLifecycleHook):

@@ -5,32 +5,32 @@ import json
 import threading
 from typing import Any, Final
 
-from localstack.services.stepfunctions.asl.component.common.comment import Comment
-from localstack.services.stepfunctions.asl.component.common.flow.start_at import StartAt
-from localstack.services.stepfunctions.asl.component.common.parargs import Parameters
-from localstack.services.stepfunctions.asl.component.common.query_language import QueryLanguage
-from localstack.services.stepfunctions.asl.component.program.program import Program
-from localstack.services.stepfunctions.asl.component.program.states import States
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.item_selector import (
+from localstack.aws.services.stepfunctions.asl.component.common.comment import Comment
+from localstack.aws.services.stepfunctions.asl.component.common.flow.start_at import StartAt
+from localstack.aws.services.stepfunctions.asl.component.common.parargs import Parameters
+from localstack.aws.services.stepfunctions.asl.component.common.query_language import QueryLanguage
+from localstack.aws.services.stepfunctions.asl.component.program.program import Program
+from localstack.aws.services.stepfunctions.asl.component.program.states import States
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.item_selector import (
     ItemSelector,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.itemprocessor.processor_config import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.itemprocessor.processor_config import (
     ProcessorConfig,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.iteration_component import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.iteration_component import (
     IterationComponent,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.iteration_worker import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.iteration_worker import (
     IterationWorker,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.job import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.job import (
     JobClosed,
     JobPool,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.max_concurrency import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.max_concurrency import (
     DEFAULT_MAX_CONCURRENCY_VALUE,
 )
-from localstack.services.stepfunctions.asl.eval.environment import Environment
+from localstack.aws.services.stepfunctions.asl.eval.environment import Environment
 from localstack.utils.threads import TMP_THREADS
 
 

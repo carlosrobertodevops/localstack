@@ -27,7 +27,7 @@ import os
 import pytest
 from _pytest.main import Session
 
-from localstack.testing.testselection.matching import SENTINEL_ALL_TESTS, SENTINEL_NO_TEST
+from localstack.tooling.testing.testselection.matching import SENTINEL_ALL_TESTS, SENTINEL_NO_TEST
 
 
 def pytest_addoption(parser):

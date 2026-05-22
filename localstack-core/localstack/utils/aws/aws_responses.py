@@ -10,7 +10,7 @@ import xmltodict
 from requests.models import CaseInsensitiveDict
 from requests.models import Response as RequestsResponse
 
-from localstack.constants import APPLICATION_JSON, HEADER_CONTENT_TYPE
+from localstack.platform.constants import APPLICATION_JSON, HEADER_CONTENT_TYPE
 from localstack.utils.json import json_safe
 from localstack.utils.strings import short_uid, str_startswith_ignore_case, to_bytes, to_str
 

@@ -7,7 +7,7 @@ import botocore.exceptions
 import pytest
 from tests.aws.services.cloudformation.conftest import skip_if_legacy_engine
 
-from localstack.testing.pytest import markers
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.files import load_file
 from localstack.utils.strings import short_uid
 from localstack.utils.testutil import upload_file_to_bucket

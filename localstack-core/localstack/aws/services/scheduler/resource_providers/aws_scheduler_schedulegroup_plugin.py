@@ -1,4 +1,4 @@
-from localstack.services.cloudformation.resource_provider import (
+from localstack.aws.services.cloudformation.resource_provider import (
     CloudFormationResourceProviderPlugin,
     ResourceProvider,
 )
@@ -11,7 +11,7 @@ class SchedulerScheduleGroupProviderPlugin(CloudFormationResourceProviderPlugin)
         self.factory: type[ResourceProvider] | None = None
 
     def load(self):
-        from localstack.services.scheduler.resource_providers.aws_scheduler_schedulegroup import (
+        from localstack.aws.services.scheduler.resource_providers.aws_scheduler_schedulegroup import (
             SchedulerScheduleGroupProvider,
         )
 

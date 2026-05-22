@@ -1,12 +1,12 @@
 from typing import Final
 
-from localstack.services.stepfunctions.asl.component.common.string.string_expression import (
+from localstack.aws.services.stepfunctions.asl.component.common.string.string_expression import (
     StringJSONata,
 )
-from localstack.services.stepfunctions.asl.component.state.state_wait.wait_function.wait_function import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_wait.wait_function.wait_function import (
     WaitFunction,
 )
-from localstack.services.stepfunctions.asl.eval.environment import Environment
+from localstack.aws.services.stepfunctions.asl.eval.environment import Environment
 
 
 class Seconds(WaitFunction):

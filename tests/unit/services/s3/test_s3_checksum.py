@@ -2,8 +2,8 @@ import base64
 
 import pytest
 
-from localstack.services.s3 import checksums
-from localstack.services.s3.utils import S3CRC32Checksum
+from localstack.aws.services.s3 import checksums
+from localstack.aws.services.s3.utils import S3CRC32Checksum
 
 
 @pytest.mark.parametrize("checksum_type", ["CRC32", "CRC32C", "CRC64NVME"])

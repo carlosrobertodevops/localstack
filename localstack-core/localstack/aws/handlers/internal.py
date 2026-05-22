@@ -4,10 +4,10 @@ import logging
 
 from werkzeug.exceptions import NotFound
 
-from localstack import constants
-from localstack.http import Response
-from localstack.runtime import events
-from localstack.services.internal import LocalstackResources
+from localstack.platform import constants
+from localstack.platform.http import Response
+from localstack.platform.runtime import events
+from localstack.aws.services.internal import LocalstackResources
 
 from ..api import RequestContext
 from ..chain import Handler, HandlerChain
@@ -23,7 +23,7 @@ class LocalstackResourceHandler(Handler):
     resources: LocalstackResources
 
     def __init__(self, resources: LocalstackResources = None) -> None:
-        from localstack.services.internal import get_internal_apis
+        from localstack.aws.services.internal import get_internal_apis
 
         self.resources = resources or get_internal_apis()
 

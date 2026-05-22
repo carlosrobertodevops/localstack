@@ -18,9 +18,9 @@ import pytest
 import requests
 from constructs import Construct
 
-from localstack.testing.pytest import markers
-from localstack.testing.scenario.cdk_lambda_helper import load_nodejs_lambda_to_s3
-from localstack.testing.scenario.provisioning import InfraProvisioner
+from localstack.tooling.testing.pytest import markers
+from localstack.tooling.testing.scenario.cdk_lambda_helper import load_nodejs_lambda_to_s3
+from localstack.tooling.testing.scenario.provisioning import InfraProvisioner
 
 LOG = logging.getLogger(__name__)
 

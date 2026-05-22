@@ -19,8 +19,8 @@ from localstack.aws.api.events import (
     TargetIdList,
     TargetList,
 )
-from localstack.services.events.models import Rule, TargetDict, ValidationException
-from localstack.services.events.scheduler import JobScheduler, convert_schedule_to_cron
+from localstack.aws.services.events.models import Rule, TargetDict, ValidationException
+from localstack.aws.services.events.scheduler import JobScheduler, convert_schedule_to_cron
 
 TARGET_ID_REGEX = re.compile(r"^[\.\-_A-Za-z0-9]+$")
 TARGET_ARN_REGEX = re.compile(r"arn:[\d\w:\-/]*")

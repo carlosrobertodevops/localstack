@@ -1,7 +1,7 @@
 import abc
 
-from localstack.services.stepfunctions.asl.antlr.runtime.ASLParserVisitor import ASLParserVisitor
-from localstack.services.stepfunctions.asl.parse.asl_parser import AmazonStateLanguageParser
+from localstack.aws.services.stepfunctions.asl.antlr.runtime.ASLParserVisitor import ASLParserVisitor
+from localstack.aws.services.stepfunctions.asl.parse.asl_parser import AmazonStateLanguageParser
 
 
 class StaticAnalyser(ASLParserVisitor, abc.ABC):

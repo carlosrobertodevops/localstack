@@ -7,8 +7,8 @@ from typing import Any, TypedDict
 
 from moto.core.base_backend import BackendDict
 
-from localstack.services.stores import AccountRegionBundle
-from localstack.state.core import StateVisitor
+from localstack.aws.services.stores import AccountRegionBundle
+from localstack.platform.state.core import StateVisitor
 
 LOG = logging.getLogger(__name__)
 
@@ -76,7 +76,7 @@ class ReflectionStateLocator:
         # it first looks for a module in ext; eventually, it falls back to community
         attribute = _load_attribute_from_module(module_name, attribute_name)
         if attribute is None:
-            module_name = f"localstack.services.{service_name}.models"
+            module_name = f"localstack.aws.services.{service_name}.models"
             attribute = _load_attribute_from_module(module_name, attribute_name)
 
         if attribute is not None:

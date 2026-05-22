@@ -113,8 +113,7 @@ def test_default_localstack_container_configurator(
     volume.mkdir(parents=True)
 
     # overwrite a few config variables
-    from localstack import config
-
+    from localstack.platform import config
     monkeypatch.setenv("DEBUG", "1")
     monkeypatch.setenv("LOCALSTACK_AUTH_TOKEN", "")
     monkeypatch.setenv("LOCALSTACK_API_KEY", "")
@@ -207,8 +206,7 @@ def test_container_configurator_no_deprecation_warning_for_ci_env_var(
 def test_container_configurator_no_deprecation_warning_on_profile(
     container_factory, monkeypatch, caplog, tmp_path
 ):
-    from localstack import config
-
+    from localstack.platform import config
     # create a test profile
     tmp_config_dir = tmp_path
     test_profile = tmp_config_dir / "testprofile.env"

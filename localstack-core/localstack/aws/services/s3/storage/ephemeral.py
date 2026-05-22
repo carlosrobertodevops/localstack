@@ -14,9 +14,9 @@ from typing import IO, Literal, TypedDict
 from readerwriterlock import rwlock
 
 from localstack.aws.api.s3 import BucketName, MultipartUploadId, PartNumber
-from localstack.services.s3.constants import S3_CHUNK_SIZE
-from localstack.services.s3.models import S3Multipart, S3Object, S3Part
-from localstack.services.s3.utils import ChecksumHash, ObjectRange, get_s3_checksum
+from localstack.aws.services.s3.constants import S3_CHUNK_SIZE
+from localstack.aws.services.s3.models import S3Multipart, S3Object, S3Part
+from localstack.aws.services.s3.utils import ChecksumHash, ObjectRange, get_s3_checksum
 from localstack.utils.files import mkdir
 
 from .core import (

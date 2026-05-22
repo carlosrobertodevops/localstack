@@ -1,5 +1,5 @@
 from localstack.aws.api.route53 import DelegationSet
-from localstack.services.stores import AccountRegionBundle, BaseStore, LocalAttribute
+from localstack.aws.services.stores import AccountRegionBundle, BaseStore, LocalAttribute
 from localstack.utils.tagging import Tags
 
 

@@ -3,25 +3,25 @@ import copy
 from typing import Any, Final
 
 from localstack.aws.api.stepfunctions import HistoryEventType, TaskFailedEventDetails
-from localstack.services.events.utils import to_json_str
-from localstack.services.stepfunctions.asl.component.common.error_name.failure_event import (
+from localstack.aws.services.events.utils import to_json_str
+from localstack.aws.services.stepfunctions.asl.component.common.error_name.failure_event import (
     FailureEvent,
     FailureEventException,
 )
-from localstack.services.stepfunctions.asl.component.common.error_name.states_error_name import (
+from localstack.aws.services.stepfunctions.asl.component.common.error_name.states_error_name import (
     StatesErrorName,
 )
-from localstack.services.stepfunctions.asl.component.common.error_name.states_error_name_type import (
+from localstack.aws.services.stepfunctions.asl.component.common.error_name.states_error_name_type import (
     StatesErrorNameType,
 )
-from localstack.services.stepfunctions.asl.component.common.query_language import QueryLanguageMode
-from localstack.services.stepfunctions.asl.component.eval_component import EvalComponent
-from localstack.services.stepfunctions.asl.component.intrinsic.jsonata import (
+from localstack.aws.services.stepfunctions.asl.component.common.query_language import QueryLanguageMode
+from localstack.aws.services.stepfunctions.asl.component.eval_component import EvalComponent
+from localstack.aws.services.stepfunctions.asl.component.intrinsic.jsonata import (
     get_intrinsic_functions_declarations,
 )
-from localstack.services.stepfunctions.asl.eval.environment import Environment
-from localstack.services.stepfunctions.asl.eval.event.event_detail import EventDetails
-from localstack.services.stepfunctions.asl.jsonata.jsonata import (
+from localstack.aws.services.stepfunctions.asl.eval.environment import Environment
+from localstack.aws.services.stepfunctions.asl.eval.event.event_detail import EventDetails
+from localstack.aws.services.stepfunctions.asl.jsonata.jsonata import (
     JSONataExpression,
     VariableDeclarations,
     VariableReference,
@@ -29,10 +29,10 @@ from localstack.services.stepfunctions.asl.jsonata.jsonata import (
     eval_jsonata_expression,
     extract_jsonata_variable_references,
 )
-from localstack.services.stepfunctions.asl.jsonata.validations import (
+from localstack.aws.services.stepfunctions.asl.jsonata.validations import (
     validate_jsonata_expression_output,
 )
-from localstack.services.stepfunctions.asl.utils.json_path import (
+from localstack.aws.services.stepfunctions.asl.utils.json_path import (
     NoSuchJsonPathError,
     extract_json,
 )

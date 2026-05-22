@@ -8,13 +8,13 @@ import dateutil.parser
 import pytest
 
 from localstack.aws.api.sns import InvalidParameterException
-from localstack.services.sns.filter import FilterPolicyValidator, SubscriptionFilter
-from localstack.services.sns.models import SnsMessage
-from localstack.services.sns.provider import (
+from localstack.aws.services.sns.filter import FilterPolicyValidator, SubscriptionFilter
+from localstack.aws.services.sns.models import SnsMessage
+from localstack.aws.services.sns.provider import (
     encode_subscription_token_with_region,
     get_region_from_subscription_token,
 )
-from localstack.services.sns.publisher import (
+from localstack.aws.services.sns.publisher import (
     compute_canonical_string,
     create_sns_message_body,
     is_raw_message_delivery,

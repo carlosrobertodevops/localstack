@@ -1,7 +1,7 @@
 import pytest
 from botocore.exceptions import ClientError
 
-from localstack.testing.pytest import markers
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.sync import poll_condition
 from tests.aws.services.events.helper_functions import is_old_provider
 

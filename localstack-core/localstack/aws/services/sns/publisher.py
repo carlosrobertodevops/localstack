@@ -14,23 +14,23 @@ import requests
 from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.primitives.asymmetric import padding
 
-from localstack import config
+from localstack.platform import config
 from localstack.aws.api.lambda_ import InvocationType
 from localstack.aws.api.sns import MessageAttributeMap, TopicAttributesMap
 from localstack.aws.connect import connect_to
-from localstack.config import external_service_url
-from localstack.services.sns import constants as sns_constants
-from localstack.services.sns.certificate import SNS_SERVER_PRIVATE_KEY
-from localstack.services.sns.executor import TopicPartitionedThreadPoolExecutor
-from localstack.services.sns.filter import SubscriptionFilter
-from localstack.services.sns.models import (
+from localstack.platform.config import external_service_url
+from localstack.aws.services.sns import constants as sns_constants
+from localstack.aws.services.sns.certificate import SNS_SERVER_PRIVATE_KEY
+from localstack.aws.services.sns.executor import TopicPartitionedThreadPoolExecutor
+from localstack.aws.services.sns.filter import SubscriptionFilter
+from localstack.aws.services.sns.models import (
     SnsApplicationPlatforms,
     SnsMessage,
     SnsMessageType,
     SnsStore,
     SnsSubscription,
 )
-from localstack.services.sns.utils import get_topic_subscriptions, snake_to_pascal_case
+from localstack.aws.services.sns.utils import get_topic_subscriptions, snake_to_pascal_case
 from localstack.utils.aws.arns import (
     PARTITION_NAMES,
     extract_account_id_from_arn,

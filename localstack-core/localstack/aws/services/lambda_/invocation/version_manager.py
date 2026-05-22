@@ -5,19 +5,19 @@ import time
 from concurrent.futures import Future
 from concurrent.futures._base import ALL_COMPLETED, CancelledError
 
-from localstack import config
+from localstack.platform import config
 from localstack.aws.api.lambda_ import (
     ProvisionedConcurrencyStatusEnum,
     ServiceException,
     State,
     StateReasonCode,
 )
-from localstack.services.lambda_ import hooks as lambda_hooks
-from localstack.services.lambda_.invocation.assignment import AssignmentService
-from localstack.services.lambda_.invocation.counting_service import CountingService
-from localstack.services.lambda_.invocation.execution_environment import ExecutionEnvironment
-from localstack.services.lambda_.invocation.executor_endpoint import StatusErrorException
-from localstack.services.lambda_.invocation.lambda_models import (
+from localstack.aws.services.lambda_ import hooks as lambda_hooks
+from localstack.aws.services.lambda_.invocation.assignment import AssignmentService
+from localstack.aws.services.lambda_.invocation.counting_service import CountingService
+from localstack.aws.services.lambda_.invocation.execution_environment import ExecutionEnvironment
+from localstack.aws.services.lambda_.invocation.executor_endpoint import StatusErrorException
+from localstack.aws.services.lambda_.invocation.lambda_models import (
     Function,
     FunctionVersion,
     Invocation,
@@ -25,13 +25,13 @@ from localstack.services.lambda_.invocation.lambda_models import (
     ProvisionedConcurrencyState,
     VersionState,
 )
-from localstack.services.lambda_.invocation.logs import LogHandler, LogItem
-from localstack.services.lambda_.invocation.metrics import (
+from localstack.aws.services.lambda_.invocation.logs import LogHandler, LogItem
+from localstack.aws.services.lambda_.invocation.metrics import (
     record_cw_metric_error,
     record_cw_metric_invocation,
 )
-from localstack.services.lambda_.invocation.runtime_executor import get_runtime_executor
-from localstack.services.lambda_.ldm import LDMProvisioner
+from localstack.aws.services.lambda_.invocation.runtime_executor import get_runtime_executor
+from localstack.aws.services.lambda_.ldm import LDMProvisioner
 from localstack.utils.strings import long_uid, to_bytes, truncate
 from localstack.utils.threads import FuncThread, start_thread
 

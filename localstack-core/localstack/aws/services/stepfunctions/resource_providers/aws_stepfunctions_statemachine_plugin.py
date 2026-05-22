@@ -1,4 +1,4 @@
-from localstack.services.cloudformation.resource_provider import (
+from localstack.aws.services.cloudformation.resource_provider import (
     CloudFormationResourceProviderPlugin,
     ResourceProvider,
 )
@@ -11,7 +11,7 @@ class StepFunctionsStateMachineProviderPlugin(CloudFormationResourceProviderPlug
         self.factory: type[ResourceProvider] | None = None
 
     def load(self):
-        from localstack.services.stepfunctions.resource_providers.aws_stepfunctions_statemachine import (
+        from localstack.aws.services.stepfunctions.resource_providers.aws_stepfunctions_statemachine import (
             StepFunctionsStateMachineProvider,
         )
 

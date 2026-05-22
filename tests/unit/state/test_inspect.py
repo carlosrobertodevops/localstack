@@ -2,8 +2,8 @@ import pytest
 from moto.core.base_backend import BackendDict, BaseBackend
 from moto.sns import models as sns_models
 
-from localstack.services.sqs import models as sqs_models
-from localstack.state.inspect import ReflectionStateLocator, ServiceBackendCollectorVisitor
+from localstack.aws.services.sqs import models as sqs_models
+from localstack.platform.state.inspect import ReflectionStateLocator, ServiceBackendCollectorVisitor
 
 
 @pytest.fixture()

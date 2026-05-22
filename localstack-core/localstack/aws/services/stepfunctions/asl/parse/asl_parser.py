@@ -4,10 +4,10 @@ from typing import Final
 from antlr4 import CommonTokenStream, InputStream, ParserRuleContext
 from antlr4.error.ErrorListener import ErrorListener
 
-from localstack.services.stepfunctions.asl.antlr.runtime.ASLLexer import ASLLexer
-from localstack.services.stepfunctions.asl.antlr.runtime.ASLParser import ASLParser
-from localstack.services.stepfunctions.asl.component.eval_component import EvalComponent
-from localstack.services.stepfunctions.asl.parse.preprocessor import Preprocessor
+from localstack.aws.services.stepfunctions.asl.antlr.runtime.ASLLexer import ASLLexer
+from localstack.aws.services.stepfunctions.asl.antlr.runtime.ASLParser import ASLParser
+from localstack.aws.services.stepfunctions.asl.component.eval_component import EvalComponent
+from localstack.aws.services.stepfunctions.asl.parse.preprocessor import Preprocessor
 
 
 class SyntaxErrorListener(ErrorListener):

@@ -5,12 +5,12 @@ from localstack.aws.api.stepfunctions import (
     ExecutionFailedEventDetails,
     HistoryEventType,
 )
-from localstack.services.stepfunctions.asl.component.common.error_name.error_name import ErrorName
-from localstack.services.stepfunctions.asl.component.common.error_name.states_error_name_type import (
+from localstack.aws.services.stepfunctions.asl.component.common.error_name.error_name import ErrorName
+from localstack.aws.services.stepfunctions.asl.component.common.error_name.states_error_name_type import (
     StatesErrorNameType,
 )
-from localstack.services.stepfunctions.asl.eval.environment import Environment
-from localstack.services.stepfunctions.asl.eval.event.event_detail import EventDetails
+from localstack.aws.services.stepfunctions.asl.eval.environment import Environment
+from localstack.aws.services.stepfunctions.asl.eval.event.event_detail import EventDetails
 
 
 class FailureEvent:

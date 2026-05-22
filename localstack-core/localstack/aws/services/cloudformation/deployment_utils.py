@@ -5,7 +5,7 @@ import re
 from collections.abc import Callable
 from copy import deepcopy
 
-from localstack import config
+from localstack.platform import config
 from localstack.utils import common
 from localstack.utils.aws import aws_stack
 from localstack.utils.common import select_attributes, short_uid

@@ -14,7 +14,7 @@ from pathlib import PurePosixPath, PureWindowsPath
 from threading import RLock
 from typing import TYPE_CHECKING
 
-from localstack import config
+from localstack.platform import config
 from localstack.aws.api.lambda_ import (
     InvalidParameterValueException,
     InvalidRequestContentException,
@@ -26,24 +26,24 @@ from localstack.aws.api.lambda_ import (
     State,
 )
 from localstack.aws.connect import connect_to
-from localstack.constants import AWS_REGION_US_EAST_1
-from localstack.services.lambda_ import hooks as lambda_hooks
-from localstack.services.lambda_.analytics import (
+from localstack.platform.constants import AWS_REGION_US_EAST_1
+from localstack.aws.services.lambda_ import hooks as lambda_hooks
+from localstack.aws.services.lambda_.analytics import (
     FunctionInitializationType,
     FunctionOperation,
     FunctionStatus,
     function_counter,
     hotreload_counter,
 )
-from localstack.services.lambda_.api_utils import (
+from localstack.aws.services.lambda_.api_utils import (
     lambda_arn,
     qualified_lambda_arn,
     qualifier_is_alias,
 )
-from localstack.services.lambda_.invocation.assignment import AssignmentService
-from localstack.services.lambda_.invocation.counting_service import CountingService
-from localstack.services.lambda_.invocation.event_manager import LambdaEventManager
-from localstack.services.lambda_.invocation.lambda_models import (
+from localstack.aws.services.lambda_.invocation.assignment import AssignmentService
+from localstack.aws.services.lambda_.invocation.counting_service import CountingService
+from localstack.aws.services.lambda_.invocation.event_manager import LambdaEventManager
+from localstack.aws.services.lambda_.invocation.lambda_models import (
     ArchiveCode,
     Function,
     FunctionVersion,
@@ -56,9 +56,9 @@ from localstack.services.lambda_.invocation.lambda_models import (
     VersionAlias,
     VersionState,
 )
-from localstack.services.lambda_.invocation.models import LambdaStore, lambda_stores
-from localstack.services.lambda_.invocation.version_manager import LambdaVersionManager
-from localstack.services.lambda_.lambda_utils import HINT_LOG
+from localstack.aws.services.lambda_.invocation.models import LambdaStore, lambda_stores
+from localstack.aws.services.lambda_.invocation.version_manager import LambdaVersionManager
+from localstack.aws.services.lambda_.lambda_utils import HINT_LOG
 from localstack.utils.archives import get_unzipped_size, is_zip_file
 from localstack.utils.container_utils.container_client import ContainerException
 from localstack.utils.docker_utils import DOCKER_CLIENT as CONTAINER_CLIENT

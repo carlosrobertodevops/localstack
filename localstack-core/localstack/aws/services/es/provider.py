@@ -67,8 +67,8 @@ from localstack.aws.api.opensearch import (
     VersionString,
 )
 from localstack.aws.connect import connect_to
-from localstack.services.opensearch.packages import ELASTICSEARCH_DEFAULT_VERSION
-from localstack.state import StateVisitor
+from localstack.aws.services.opensearch.packages import ELASTICSEARCH_DEFAULT_VERSION
+from localstack.platform.state import StateVisitor
 
 
 def _version_to_opensearch(

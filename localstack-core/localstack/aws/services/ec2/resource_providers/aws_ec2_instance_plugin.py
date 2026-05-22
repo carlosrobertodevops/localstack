@@ -1,4 +1,4 @@
-from localstack.services.cloudformation.resource_provider import (
+from localstack.aws.services.cloudformation.resource_provider import (
     CloudFormationResourceProviderPlugin,
     ResourceProvider,
 )
@@ -11,6 +11,6 @@ class EC2InstanceProviderPlugin(CloudFormationResourceProviderPlugin):
         self.factory: type[ResourceProvider] | None = None
 
     def load(self):
-        from localstack.services.ec2.resource_providers.aws_ec2_instance import EC2InstanceProvider
+        from localstack.aws.services.ec2.resource_providers.aws_ec2_instance import EC2InstanceProvider
 
         self.factory = EC2InstanceProvider

@@ -4,15 +4,15 @@ from collections import defaultdict
 from collections.abc import Iterator
 from threading import RLock
 
-from localstack import config
+from localstack.platform import config
 from localstack.aws.api.lambda_ import ProvisionedConcurrencyStatusEnum, TooManyRequestsException
-from localstack.services.lambda_.invocation.lambda_models import (
+from localstack.aws.services.lambda_.invocation.lambda_models import (
     Function,
     FunctionVersion,
     InitializationType,
     ProvisionedConcurrencyState,
 )
-from localstack.services.lambda_.invocation.models import lambda_stores
+from localstack.aws.services.lambda_.invocation.models import lambda_stores
 
 LOG = logging.getLogger(__name__)
 

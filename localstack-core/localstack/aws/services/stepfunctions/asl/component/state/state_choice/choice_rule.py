@@ -1,14 +1,14 @@
 from typing import Final
 
-from localstack.services.stepfunctions.asl.component.common.assign.assign_decl import AssignDecl
-from localstack.services.stepfunctions.asl.component.common.comment import Comment
-from localstack.services.stepfunctions.asl.component.common.flow.next import Next
-from localstack.services.stepfunctions.asl.component.common.outputdecl import Output
-from localstack.services.stepfunctions.asl.component.eval_component import EvalComponent
-from localstack.services.stepfunctions.asl.component.state.state_choice.comparison.comparison_type import (
+from localstack.aws.services.stepfunctions.asl.component.common.assign.assign_decl import AssignDecl
+from localstack.aws.services.stepfunctions.asl.component.common.comment import Comment
+from localstack.aws.services.stepfunctions.asl.component.common.flow.next import Next
+from localstack.aws.services.stepfunctions.asl.component.common.outputdecl import Output
+from localstack.aws.services.stepfunctions.asl.component.eval_component import EvalComponent
+from localstack.aws.services.stepfunctions.asl.component.state.state_choice.comparison.comparison_type import (
     Comparison,
 )
-from localstack.services.stepfunctions.asl.eval.environment import Environment
+from localstack.aws.services.stepfunctions.asl.eval.environment import Environment
 
 
 class ChoiceRule(EvalComponent):

@@ -3,30 +3,30 @@ from http import HTTPMethod
 import pytest
 
 from localstack.aws.api.apigateway import Integration, IntegrationType
-from localstack.http import Request, Response
-from localstack.services.apigateway.models import MergedRestApi, RestApiDeployment
-from localstack.services.apigateway.next_gen.execute_api.api import RestApiGatewayHandlerChain
-from localstack.services.apigateway.next_gen.execute_api.context import (
+from localstack.platform.http import Request, Response
+from localstack.aws.services.apigateway.models import MergedRestApi, RestApiDeployment
+from localstack.aws.services.apigateway.next_gen.execute_api.api import RestApiGatewayHandlerChain
+from localstack.aws.services.apigateway.next_gen.execute_api.context import (
     RestApiInvocationContext,
 )
-from localstack.services.apigateway.next_gen.execute_api.gateway_response import (
+from localstack.aws.services.apigateway.next_gen.execute_api.gateway_response import (
     InternalServerError,
     UnsupportedMediaTypeError,
 )
-from localstack.services.apigateway.next_gen.execute_api.handlers import (
+from localstack.aws.services.apigateway.next_gen.execute_api.handlers import (
     IntegrationRequestHandler,
     InvocationRequestParser,
 )
-from localstack.services.apigateway.next_gen.execute_api.handlers.integration_request import (
+from localstack.aws.services.apigateway.next_gen.execute_api.handlers.integration_request import (
     PassthroughBehavior,
 )
-from localstack.services.apigateway.next_gen.execute_api.variables import (
+from localstack.aws.services.apigateway.next_gen.execute_api.variables import (
     ContextVariableOverrides,
     ContextVariables,
     ContextVarsRequestOverride,
     ContextVarsResponseOverride,
 )
-from localstack.testing.config import TEST_AWS_ACCOUNT_ID, TEST_AWS_REGION_NAME
+from localstack.tooling.testing.config import TEST_AWS_ACCOUNT_ID, TEST_AWS_REGION_NAME
 
 TEST_API_ID = "test-api"
 TEST_API_STAGE = "stage"

@@ -1,6 +1,6 @@
 from enum import Enum
 
-from localstack.services.stepfunctions.asl.antlr.runtime.ASLLexer import ASLLexer
+from localstack.aws.services.stepfunctions.asl.antlr.runtime.ASLLexer import ASLLexer
 
 
 class StateType(Enum):

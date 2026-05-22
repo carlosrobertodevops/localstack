@@ -6,8 +6,8 @@ import click
 from rich.console import Console
 from rich.rule import Rule
 
-from localstack import config
-from localstack.dev.run.configurators import (
+from localstack.platform import config
+from localstack.tooling.dev.run.configurators import (
     ConfigEnvironmentConfigurator,
     DependencyMountConfigurator,
     EntryPointMountConfigurator,
@@ -15,8 +15,8 @@ from localstack.dev.run.configurators import (
     PortConfigurator,
     SourceVolumeMountConfigurator,
 )
-from localstack.dev.run.paths import HOST_PATH_MAPPINGS, HostPaths
-from localstack.runtime import hooks
+from localstack.tooling.dev.run.paths import HOST_PATH_MAPPINGS, HostPaths
+from localstack.platform.runtime import hooks
 from localstack.utils.bootstrap import Container, ContainerConfigurators
 from localstack.utils.container_utils.container_client import (
     ContainerConfiguration,
@@ -155,52 +155,52 @@ def run(
     Here are some examples::
 
     \b
-        python -m localstack.dev.run
-        python -m localstack.dev.run -e DEBUG=1 -e LOCALSTACK_AUTH_TOKEN=test
-        python -m localstack.dev.run -- bash -c 'echo "hello"'
+        python -m localstack.tooling.dev.run
+        python -m localstack.tooling.dev.run -e DEBUG=1 -e LOCALSTACK_AUTH_TOKEN=test
+        python -m localstack.tooling.dev.run -- bash -c 'echo "hello"'
 
     Explanations and more examples:
 
     Start a normal container localstack container. If you run this from the localstack-pro repo,
     it will start localstack-pro::
 
-        python -m localstack.dev.run
+        python -m localstack.tooling.dev.run
 
     If you start localstack-pro, you might also want to add the API KEY as environment variable::
 
-        python -m localstack.dev.run -e DEBUG=1 -e LOCALSTACK_AUTH_TOKEN=test
+        python -m localstack.tooling.dev.run -e DEBUG=1 -e LOCALSTACK_AUTH_TOKEN=test
 
     If your local changes are making modifications to plux plugins (e.g., adding new providers or hooks),
     then you also want to mount the newly generated entry_point.txt files into the container::
 
-        python -m localstack.dev.run --mount-entrypoints
+        python -m localstack.tooling.dev.run --mount-entrypoints
 
     Start a new container with randomized gateway and service ports, and randomized container name::
 
-        python -m localstack.dev.run --randomize
+        python -m localstack.tooling.dev.run --randomize
 
     You can also run custom commands:
 
-        python -m localstack.dev.run bash -c 'echo "hello"'
+        python -m localstack.tooling.dev.run bash -c 'echo "hello"'
 
     Or use custom entrypoints:
 
-        python -m localstack.dev.run --entrypoint /bin/bash -- echo "hello"
+        python -m localstack.tooling.dev.run --entrypoint /bin/bash -- echo "hello"
 
     Use the --live-reload flag to restart LocalStack on code changes. Beware: this will remove any state
     that you had in your LocalStack instance. Consider using PERSISTENCE to keep resources:
 
-        python -m localstack.dev.run --live-reload
+        python -m localstack.tooling.dev.run --live-reload
 
     You can import and expose debugpy:
 
-        python -m localstack.dev.run --develop
+        python -m localstack.tooling.dev.run --develop
 
     You can also mount local dependencies (e.g., pytest and other test dependencies, and then use that
     in the container)::
 
     \b
-        python -m localstack.dev.run --mount-dependencies \\
+        python -m localstack.tooling.dev.run --mount-dependencies \\
             -v $PWD/tests:/opt/code/localstack/tests \\
             -- .venv/bin/python -m pytest tests/unit/http_/
 
@@ -240,12 +240,12 @@ def run(
     both present, only mount `rolo` into the container.
 
     \b
-        python -m localstack.dev.run --local-packages rolo
+        python -m localstack.tooling.dev.run --local-packages rolo
 
     If both `rolo` and `moto` are available and both should be mounted, use the flag twice.
 
     \b
-        python -m localstack.dev.run --local-packages rolo --local-packages moto
+        python -m localstack.tooling.dev.run --local-packages rolo --local-packages moto
     """
     with console.status("Configuring") as status:
         env_vars = parse_env_vars(env)
@@ -260,7 +260,7 @@ def run(
 
         # setup important paths on the host
         host_paths = HostPaths(
-            # we assume that python -m localstack.dev.run is always executed in the repo source
+            # we assume that python -m localstack.tooling.dev.run is always executed in the repo source
             workspace_dir=os.path.abspath(os.path.join(os.getcwd(), "..")),
             volume_dir=volume_dir or config.VOLUME_DIR,
         )
@@ -359,7 +359,7 @@ def run(
             # don't install LocalStack using the `Makefile`, so they find that they don't have
             # the `watchdog` dependency. We lazy import these functions so that we don't trigger
             # an import error for these developers.
-            from localstack.dev.run.watcher import collect_watch_directories, start_file_watcher
+            from localstack.tooling.dev.run.watcher import collect_watch_directories, start_file_watcher
 
             if watch_dirs := collect_watch_directories(host_paths, pro, local_packages):
                 stop_live_reload_watcher = start_file_watcher(watch_dirs, docker, container_id)

@@ -1,4 +1,4 @@
-from localstack.services.cloudformation.resource_provider import (
+from localstack.aws.services.cloudformation.resource_provider import (
     CloudFormationResourceProviderPlugin,
     ResourceProvider,
 )
@@ -11,7 +11,7 @@ class Route53HealthCheckProviderPlugin(CloudFormationResourceProviderPlugin):
         self.factory: type[ResourceProvider] | None = None
 
     def load(self):
-        from localstack.services.route53.resource_providers.aws_route53_healthcheck import (
+        from localstack.aws.services.route53.resource_providers.aws_route53_healthcheck import (
             Route53HealthCheckProvider,
         )
 

@@ -2,7 +2,7 @@ import json
 import time
 
 from localstack.aws.api.lambda_ import Runtime
-from localstack.testing.pytest import markers
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.strings import short_uid
 from localstack.utils.sync import retry
 from localstack.utils.testutil import check_expected_lambda_log_events_length
@@ -21,7 +21,7 @@ import re
 
 import pytest
 
-from localstack.testing.aws.util import is_aws_cloud
+from localstack.tooling.testing.aws.util import is_aws_cloud
 from tests.aws.services.events.helper_functions import is_old_provider
 from tests.aws.services.events.test_events import TEST_EVENT_DETAIL, TEST_EVENT_PATTERN
 from tests.aws.services.lambda_.test_lambda import TEST_LAMBDA_XRAY_TRACEID

@@ -1,11 +1,11 @@
 from localstack.aws.api.lambda_ import EventSourceMappingConfiguration
-from localstack.services.lambda_.invocation.lambda_models import (
+from localstack.aws.services.lambda_.invocation.lambda_models import (
     CapacityProvider,
     CodeSigningConfig,
     Function,
     Layer,
 )
-from localstack.services.stores import AccountRegionBundle, BaseStore, LocalAttribute
+from localstack.aws.services.stores import AccountRegionBundle, BaseStore, LocalAttribute
 from localstack.utils.tagging import Tags
 
 

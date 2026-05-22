@@ -10,7 +10,7 @@ from zoneinfo import ZoneInfo
 import pytest
 import yaml
 
-from localstack import config
+from localstack.platform import config
 from localstack.utils import common
 from localstack.utils.archives import unzip
 from localstack.utils.common import (

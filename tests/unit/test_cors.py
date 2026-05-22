@@ -1,8 +1,8 @@
 from werkzeug.datastructures import Headers
 
-from localstack import config
+from localstack.platform import config
 from localstack.aws.handlers import cors
-from localstack.config import HostAndPort
+from localstack.platform.config import HostAndPort
 
 # The default host depends on whether running in Docker (see config.py::default_ip) but that's good enough for testing:
 default_gateway_listen = [HostAndPort(host="0.0.0.0", port=4566)]

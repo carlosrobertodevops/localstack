@@ -107,60 +107,60 @@ from localstack.aws.api.stepfunctions import (
     ValidationException,
     VersionDescription,
 )
-from localstack.services.plugins import ServiceLifecycleHook
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.itemprocessor.map_run_record import (
+from localstack.aws.services.plugins import ServiceLifecycleHook
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.itemprocessor.map_run_record import (
     MapRunRecord,
 )
-from localstack.services.stepfunctions.asl.eval.callback.callback import (
+from localstack.aws.services.stepfunctions.asl.eval.callback.callback import (
     ActivityCallbackEndpoint,
     CallbackConsumerTimeout,
     CallbackNotifyConsumerError,
     CallbackOutcomeFailure,
     CallbackOutcomeSuccess,
 )
-from localstack.services.stepfunctions.asl.eval.event.logging import (
+from localstack.aws.services.stepfunctions.asl.eval.event.logging import (
     CloudWatchLoggingConfiguration,
     CloudWatchLoggingSession,
 )
-from localstack.services.stepfunctions.asl.parse.asl_parser import (
+from localstack.aws.services.stepfunctions.asl.parse.asl_parser import (
     ASLParserException,
 )
-from localstack.services.stepfunctions.asl.static_analyser.express_static_analyser import (
+from localstack.aws.services.stepfunctions.asl.static_analyser.express_static_analyser import (
     ExpressStaticAnalyser,
 )
-from localstack.services.stepfunctions.asl.static_analyser.static_analyser import (
+from localstack.aws.services.stepfunctions.asl.static_analyser.static_analyser import (
     StaticAnalyser,
 )
-from localstack.services.stepfunctions.asl.static_analyser.test_state.test_state_analyser import (
+from localstack.aws.services.stepfunctions.asl.static_analyser.test_state.test_state_analyser import (
     TestStateStaticAnalyser,
 )
-from localstack.services.stepfunctions.asl.static_analyser.usage_metrics_static_analyser import (
+from localstack.aws.services.stepfunctions.asl.static_analyser.usage_metrics_static_analyser import (
     UsageMetricsStaticAnalyser,
 )
-from localstack.services.stepfunctions.backend.activity import Activity, ActivityTask
-from localstack.services.stepfunctions.backend.alias import Alias
-from localstack.services.stepfunctions.backend.execution import Execution, SyncExecution
-from localstack.services.stepfunctions.backend.models import SFNStore, sfn_stores
-from localstack.services.stepfunctions.backend.state_machine import (
+from localstack.aws.services.stepfunctions.backend.activity import Activity, ActivityTask
+from localstack.aws.services.stepfunctions.backend.alias import Alias
+from localstack.aws.services.stepfunctions.backend.execution import Execution, SyncExecution
+from localstack.aws.services.stepfunctions.backend.models import SFNStore, sfn_stores
+from localstack.aws.services.stepfunctions.backend.state_machine import (
     StateMachineInstance,
     StateMachineRevision,
     StateMachineVersion,
     TestStateMachine,
 )
-from localstack.services.stepfunctions.backend.test_state.execution import (
+from localstack.aws.services.stepfunctions.backend.test_state.execution import (
     TestStateExecution,
 )
-from localstack.services.stepfunctions.backend.test_state.test_state_mock import TestStateMock
-from localstack.services.stepfunctions.local_mocking.mock_config import (
+from localstack.aws.services.stepfunctions.backend.test_state.test_state_mock import TestStateMock
+from localstack.aws.services.stepfunctions.local_mocking.mock_config import (
     LocalMockTestCase,
     load_local_mock_test_case_for,
 )
-from localstack.services.stepfunctions.stepfunctions_utils import (
+from localstack.aws.services.stepfunctions.stepfunctions_utils import (
     assert_pagination_parameters_valid,
     get_next_page_token_from_arn,
     normalise_max_results,
 )
-from localstack.state import StateVisitor
+from localstack.platform.state import StateVisitor
 from localstack.utils.aws import arns
 from localstack.utils.aws.arns import (
     ARN_PARTITION_REGEX,

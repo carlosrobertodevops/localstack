@@ -35,8 +35,8 @@ from localstack.aws.api.s3 import (
     TopicConfiguration,
 )
 from localstack.aws.connect import connect_to
-from localstack.services.s3.exceptions import MalformedXML
-from localstack.services.s3.models import S3Bucket, S3DeleteMarker, S3Object
+from localstack.aws.services.s3.exceptions import MalformedXML
+from localstack.aws.services.s3.models import S3Bucket, S3DeleteMarker, S3Object
 from localstack.utils.aws import arns
 from localstack.utils.aws.arns import ARN_PARTITION_REGEX, get_partition, parse_arn, s3_bucket_arn
 from localstack.utils.aws.client_types import ServicePrincipal

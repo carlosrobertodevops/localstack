@@ -13,12 +13,12 @@ from localstack.aws.api.dynamodbstreams import (
     ListStreamsInput,
     ListStreamsOutput,
 )
-from localstack.services.dynamodb.server import DynamodbServer
-from localstack.services.dynamodb.utils import modify_ddblocal_arns
-from localstack.services.dynamodb.v2.provider import DynamoDBProvider, modify_context_region
-from localstack.services.dynamodbstreams.dynamodbstreams_api import get_original_region
-from localstack.services.plugins import ServiceLifecycleHook
-from localstack.state import StateVisitor
+from localstack.aws.services.dynamodb.server import DynamodbServer
+from localstack.aws.services.dynamodb.utils import modify_ddblocal_arns
+from localstack.aws.services.dynamodb.v2.provider import DynamoDBProvider, modify_context_region
+from localstack.aws.services.dynamodbstreams.dynamodbstreams_api import get_original_region
+from localstack.aws.services.plugins import ServiceLifecycleHook
+from localstack.platform.state import StateVisitor
 from localstack.utils.aws.arns import parse_arn
 
 LOG = logging.getLogger(__name__)

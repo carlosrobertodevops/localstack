@@ -1,4 +1,4 @@
-from localstack.services.cloudformation.resource_provider import (
+from localstack.aws.services.cloudformation.resource_provider import (
     CloudFormationResourceProviderPlugin,
     ResourceProvider,
 )
@@ -11,7 +11,7 @@ class SESEmailIdentityProviderPlugin(CloudFormationResourceProviderPlugin):
         self.factory: type[ResourceProvider] | None = None
 
     def load(self):
-        from localstack.services.ses.resource_providers.aws_ses_emailidentity import (
+        from localstack.aws.services.ses.resource_providers.aws_ses_emailidentity import (
             SESEmailIdentityProvider,
         )
 

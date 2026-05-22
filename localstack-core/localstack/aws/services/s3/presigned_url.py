@@ -20,7 +20,7 @@ from botocore.model import ServiceModel
 from botocore.utils import percent_encode_sequence
 from werkzeug.datastructures import Headers, ImmutableMultiDict
 
-from localstack import config, constants
+from localstack.platform import config, constants
 from localstack.aws.accounts import get_account_id_from_access_key_id
 from localstack.aws.api import CommonServiceException, RequestContext
 from localstack.aws.api.s3 import (
@@ -35,17 +35,17 @@ from localstack.aws.api.s3 import (
 from localstack.aws.chain import HandlerChain
 from localstack.aws.protocol.op_router import RestServiceOperationRouter
 from localstack.aws.spec import get_service_catalog
-from localstack.constants import AWS_REGION_US_EAST_1
-from localstack.http import Request, Response
-from localstack.http.request import get_raw_path
-from localstack.services.s3.constants import (
+from localstack.platform.constants import AWS_REGION_US_EAST_1
+from localstack.platform.http import Request, Response
+from localstack.platform.http.request import get_raw_path
+from localstack.aws.services.s3.constants import (
     DEFAULT_PRE_SIGNED_ACCESS_KEY_ID,
     DEFAULT_PRE_SIGNED_SECRET_ACCESS_KEY,
     S3_HOST_ID,
     SIGNATURE_V2_PARAMS,
     SIGNATURE_V4_PARAMS,
 )
-from localstack.services.s3.utils import (
+from localstack.aws.services.s3.utils import (
     capitalize_header_name_from_snake_case,
     extract_bucket_name_and_key_from_headers_and_path,
     is_bucket_name_valid,

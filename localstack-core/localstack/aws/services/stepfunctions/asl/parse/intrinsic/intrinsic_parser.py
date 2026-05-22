@@ -3,12 +3,12 @@ import abc
 from antlr4 import CommonTokenStream, InputStream
 from antlr4.ParserRuleContext import ParserRuleContext
 
-from localstack.services.stepfunctions.asl.antlr.runtime.ASLIntrinsicLexer import ASLIntrinsicLexer
-from localstack.services.stepfunctions.asl.antlr.runtime.ASLIntrinsicParser import (
+from localstack.aws.services.stepfunctions.asl.antlr.runtime.ASLIntrinsicLexer import ASLIntrinsicLexer
+from localstack.aws.services.stepfunctions.asl.antlr.runtime.ASLIntrinsicParser import (
     ASLIntrinsicParser,
 )
-from localstack.services.stepfunctions.asl.component.intrinsic.function.function import Function
-from localstack.services.stepfunctions.asl.parse.intrinsic.preprocessor import Preprocessor
+from localstack.aws.services.stepfunctions.asl.component.intrinsic.function.function import Function
+from localstack.aws.services.stepfunctions.asl.parse.intrinsic.preprocessor import Preprocessor
 
 
 class IntrinsicParser(abc.ABC):

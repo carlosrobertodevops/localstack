@@ -1,8 +1,8 @@
 import pytest
 import requests
 
-from localstack.config import in_docker
-from localstack.testing.pytest.container import ContainerFactory
+from localstack.platform.config import in_docker
+from localstack.tooling.testing.pytest.container import ContainerFactory
 from localstack.utils.bootstrap import ContainerConfigurators
 from localstack.utils.net import get_free_tcp_port
 

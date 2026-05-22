@@ -4,7 +4,7 @@ Base class and utilities for provider stores.
 Stores provide storage for AWS service providers and are analogous to Moto's BackendDict.
 
 By convention, Stores are to be defined in `models` submodule of the service
-by subclassing BaseStore e.g. `localstack.services.sqs.models.SqsStore`
+by subclassing BaseStore e.g. `localstack.aws.services.sqs.models.SqsStore`
 Also by convention, cross-region and cross-account attributes are declared in CAPITAL_CASE
 
     class SqsStore(BaseStore):
@@ -34,7 +34,7 @@ from collections.abc import Callable, Iterator
 from threading import RLock
 from typing import Any, TypeVar
 
-from localstack import config
+from localstack.platform import config
 from localstack.utils.aws.aws_stack import get_valid_regions_for_service
 
 LOCAL_ATTR_PREFIX = "attr_"

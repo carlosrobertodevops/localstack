@@ -4,8 +4,8 @@ import threading
 from collections import Counter
 from typing import NamedTuple
 
-from localstack import config
-from localstack.runtime.shutdown import SHUTDOWN_HANDLERS
+from localstack.platform import config
+from localstack.platform.runtime.shutdown import SHUTDOWN_HANDLERS
 from localstack.utils import analytics
 from localstack.utils.scheduler import Scheduler
 

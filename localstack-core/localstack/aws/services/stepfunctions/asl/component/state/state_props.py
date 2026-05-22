@@ -1,38 +1,38 @@
 from typing import Any, Final
 
-from localstack.services.stepfunctions.asl.component.common.flow.end import End
-from localstack.services.stepfunctions.asl.component.common.flow.next import Next
-from localstack.services.stepfunctions.asl.component.common.parargs import Parargs
-from localstack.services.stepfunctions.asl.component.common.timeouts.heartbeat import Heartbeat
-from localstack.services.stepfunctions.asl.component.common.timeouts.timeout import Timeout
-from localstack.services.stepfunctions.asl.component.state.state_choice.comparison.comparison_type import (
+from localstack.aws.services.stepfunctions.asl.component.common.flow.end import End
+from localstack.aws.services.stepfunctions.asl.component.common.flow.next import Next
+from localstack.aws.services.stepfunctions.asl.component.common.parargs import Parargs
+from localstack.aws.services.stepfunctions.asl.component.common.timeouts.heartbeat import Heartbeat
+from localstack.aws.services.stepfunctions.asl.component.common.timeouts.timeout import Timeout
+from localstack.aws.services.stepfunctions.asl.component.state.state_choice.comparison.comparison_type import (
     Comparison,
 )
-from localstack.services.stepfunctions.asl.component.state.state_choice.comparison.variable import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_choice.comparison.variable import (
     Variable,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.item_reader.reader_config.max_items_decl import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.item_reader.reader_config.max_items_decl import (
     MaxItemsDecl,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.items.items import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.items.items import (
     Items,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.max_concurrency import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.max_concurrency import (
     MaxConcurrencyDecl,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.tolerated_failure import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.tolerated_failure import (
     ToleratedFailureCountDecl,
     ToleratedFailurePercentageDecl,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_task.service.resource import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_task.service.resource import (
     Resource,
 )
-from localstack.services.stepfunctions.asl.component.state.state_fail.cause_decl import CauseDecl
-from localstack.services.stepfunctions.asl.component.state.state_fail.error_decl import ErrorDecl
-from localstack.services.stepfunctions.asl.component.state.state_wait.wait_function.wait_function import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_fail.cause_decl import CauseDecl
+from localstack.aws.services.stepfunctions.asl.component.state.state_fail.error_decl import ErrorDecl
+from localstack.aws.services.stepfunctions.asl.component.state.state_wait.wait_function.wait_function import (
     WaitFunction,
 )
-from localstack.services.stepfunctions.asl.parse.typed_props import TypedProps
+from localstack.aws.services.stepfunctions.asl.parse.typed_props import TypedProps
 
 UNIQUE_SUBINSTANCES: Final[set[type]] = {
     Items,

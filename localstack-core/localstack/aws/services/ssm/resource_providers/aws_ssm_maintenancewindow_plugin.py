@@ -1,4 +1,4 @@
-from localstack.services.cloudformation.resource_provider import (
+from localstack.aws.services.cloudformation.resource_provider import (
     CloudFormationResourceProviderPlugin,
     ResourceProvider,
 )
@@ -11,7 +11,7 @@ class SSMMaintenanceWindowProviderPlugin(CloudFormationResourceProviderPlugin):
         self.factory: type[ResourceProvider] | None = None
 
     def load(self):
-        from localstack.services.ssm.resource_providers.aws_ssm_maintenancewindow import (
+        from localstack.aws.services.ssm.resource_providers.aws_ssm_maintenancewindow import (
             SSMMaintenanceWindowProvider,
         )
 

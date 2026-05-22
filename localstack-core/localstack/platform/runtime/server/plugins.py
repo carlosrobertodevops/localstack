@@ -1,4 +1,4 @@
-from localstack.runtime.server.core import RuntimeServer, RuntimeServerPlugin
+from localstack.platform.runtime.server.core import RuntimeServer, RuntimeServerPlugin
 
 
 class TwistedRuntimeServerPlugin(RuntimeServerPlugin):

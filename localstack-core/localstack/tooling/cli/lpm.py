@@ -5,10 +5,10 @@ from multiprocessing.pool import ThreadPool
 import click
 from rich.console import Console
 
-from localstack import config
-from localstack.cli.exceptions import CLIError
-from localstack.packages import InstallTarget, Package
-from localstack.packages.api import NoSuchPackageException, PackagesPluginManager
+from localstack.platform import config
+from localstack.tooling.cli.exceptions import CLIError
+from localstack.tooling.packages import InstallTarget, Package
+from localstack.tooling.packages.api import NoSuchPackageException, PackagesPluginManager
 from localstack.utils.bootstrap import setup_logging
 
 LOG = logging.getLogger(__name__)
@@ -26,15 +26,15 @@ def cli():
 
     List all packages
 
-        python -m localstack.cli.lpm list
+        python -m localstack.tooling.cli.lpm list
 
     Install DynamoDB Local:
 
-        python -m localstack.cli.install dynamodb-local
+        python -m localstack.tooling.cli.install dynamodb-local
 
     Install all community packages, four in parallel:
 
-        python -m localstack.cli.lpm list | grep "/community" | cut -d'/' -f1 | xargs python -m localstack.cli.lpm install --parallel 4
+        python -m localstack.tooling.cli.lpm list | grep "/community" | cut -d'/' -f1 | xargs python -m localstack.tooling.cli.lpm install --parallel 4
     """
     setup_logging()
 

@@ -1,20 +1,20 @@
-from localstack.services.stepfunctions.asl.component.common.query_language import (
+from localstack.aws.services.stepfunctions.asl.component.common.query_language import (
     QueryLanguageMode,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_task.service.state_task_service import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_task.service.state_task_service import (
     StateTaskService,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_task.state_task import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_task.state_task import (
     StateTask,
 )
-from localstack.services.stepfunctions.asl.component.test_state.state.base_mock import (
+from localstack.aws.services.stepfunctions.asl.component.test_state.state.base_mock import (
     MockedBaseState,
 )
-from localstack.services.stepfunctions.asl.component.test_state.state.execution import (
+from localstack.aws.services.stepfunctions.asl.component.test_state.state.execution import (
     MockedStateExecution,
 )
-from localstack.services.stepfunctions.asl.eval.test_state.environment import TestStateEnvironment
-from localstack.services.stepfunctions.asl.utils.encoding import to_json_str
+from localstack.aws.services.stepfunctions.asl.eval.test_state.environment import TestStateEnvironment
+from localstack.aws.services.stepfunctions.asl.utils.encoding import to_json_str
 
 
 class MockedStateTask(MockedBaseState[StateTask]):

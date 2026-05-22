@@ -1,7 +1,7 @@
 import logging
 from typing import TypedDict
 
-from localstack.services.cloudformation.deployment_utils import check_not_found_exception
+from localstack.aws.services.cloudformation.deployment_utils import check_not_found_exception
 
 LOG = logging.getLogger(__name__)
 

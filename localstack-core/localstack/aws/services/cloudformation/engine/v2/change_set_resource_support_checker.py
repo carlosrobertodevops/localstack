@@ -1,12 +1,12 @@
 from localstack.aws.api.cloudformation import ChangeSetType
-from localstack.services.cloudformation.engine.v2.change_set_model import NodeResource
-from localstack.services.cloudformation.engine.v2.change_set_model_visitor import (
+from localstack.aws.services.cloudformation.engine.v2.change_set_model import NodeResource
+from localstack.aws.services.cloudformation.engine.v2.change_set_model_visitor import (
     ChangeSetModelVisitor,
 )
-from localstack.services.cloudformation.engine.v2.unsupported_resource import (
+from localstack.aws.services.cloudformation.engine.v2.unsupported_resource import (
     should_ignore_unsupported_resource_type,
 )
-from localstack.services.cloudformation.resources import AWS_AVAILABLE_CFN_RESOURCES
+from localstack.aws.services.cloudformation.resources import AWS_AVAILABLE_CFN_RESOURCES
 from localstack.utils.catalog.catalog import (
     AwsServicesSupportStatus,
     CatalogPlugin,

@@ -1,4 +1,4 @@
-from localstack.packages import InstallTarget, Package, PackageInstaller
+from localstack.tooling.packages import InstallTarget, Package, PackageInstaller
 from localstack.utils.run import run
 
 

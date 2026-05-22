@@ -6,7 +6,7 @@ from aws_cdk import aws_dynamodb as dynamodb
 from aws_cdk.aws_dynamodb import BillingMode
 from botocore.exceptions import ClientError
 
-from localstack.testing.pytest import markers
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.aws.arns import get_partition
 from localstack.utils.strings import short_uid
 

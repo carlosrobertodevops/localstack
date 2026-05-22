@@ -17,7 +17,7 @@ from localstack.aws.api.stepfunctions import (
     LongArn,
 )
 from localstack.aws.connect import connect_to
-from localstack.services.stepfunctions.asl.utils.encoding import to_json_str
+from localstack.aws.services.stepfunctions.asl.utils.encoding import to_json_str
 from localstack.utils.aws.arns import (
     ArnData,
     parse_arn,

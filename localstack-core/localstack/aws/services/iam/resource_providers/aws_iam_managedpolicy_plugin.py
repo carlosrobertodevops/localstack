@@ -1,4 +1,4 @@
-from localstack.services.cloudformation.resource_provider import (
+from localstack.aws.services.cloudformation.resource_provider import (
     CloudFormationResourceProviderPlugin,
     ResourceProvider,
 )
@@ -11,7 +11,7 @@ class IAMManagedPolicyProviderPlugin(CloudFormationResourceProviderPlugin):
         self.factory: type[ResourceProvider] | None = None
 
     def load(self):
-        from localstack.services.iam.resource_providers.aws_iam_managedpolicy import (
+        from localstack.aws.services.iam.resource_providers.aws_iam_managedpolicy import (
             IAMManagedPolicyProvider,
         )
 

@@ -2,25 +2,25 @@ import re
 
 from antlr4.tree.Tree import ParseTree, TerminalNodeImpl
 
-from localstack.services.stepfunctions.asl.antlr.runtime.ASLIntrinsicLexer import ASLIntrinsicLexer
-from localstack.services.stepfunctions.asl.antlr.runtime.ASLIntrinsicParser import (
+from localstack.aws.services.stepfunctions.asl.antlr.runtime.ASLIntrinsicLexer import ASLIntrinsicLexer
+from localstack.aws.services.stepfunctions.asl.antlr.runtime.ASLIntrinsicParser import (
     ASLIntrinsicParser,
 )
-from localstack.services.stepfunctions.asl.antlr.runtime.ASLIntrinsicParserVisitor import (
+from localstack.aws.services.stepfunctions.asl.antlr.runtime.ASLIntrinsicParserVisitor import (
     ASLIntrinsicParserVisitor,
 )
-from localstack.services.stepfunctions.asl.antlt4utils.antlr4utils import (
+from localstack.aws.services.stepfunctions.asl.antlt4utils.antlr4utils import (
     is_production,
     is_terminal,
 )
-from localstack.services.stepfunctions.asl.component.common.query_language import (
+from localstack.aws.services.stepfunctions.asl.component.common.query_language import (
     QueryLanguageMode,
 )
-from localstack.services.stepfunctions.asl.component.common.string.string_expression import (
+from localstack.aws.services.stepfunctions.asl.component.common.string.string_expression import (
     StringVariableSample,
 )
-from localstack.services.stepfunctions.asl.component.component import Component
-from localstack.services.stepfunctions.asl.component.intrinsic.argument.argument import (
+from localstack.aws.services.stepfunctions.asl.component.component import Component
+from localstack.aws.services.stepfunctions.asl.component.intrinsic.argument.argument import (
     Argument,
     ArgumentContextPath,
     ArgumentFunction,
@@ -29,17 +29,17 @@ from localstack.services.stepfunctions.asl.component.intrinsic.argument.argument
     ArgumentLiteral,
     ArgumentVar,
 )
-from localstack.services.stepfunctions.asl.component.intrinsic.function.function import Function
-from localstack.services.stepfunctions.asl.component.intrinsic.function.statesfunction.factory import (
+from localstack.aws.services.stepfunctions.asl.component.intrinsic.function.function import Function
+from localstack.aws.services.stepfunctions.asl.component.intrinsic.function.statesfunction.factory import (
     StatesFunctionFactory,
 )
-from localstack.services.stepfunctions.asl.component.intrinsic.function.statesfunction.states_function import (
+from localstack.aws.services.stepfunctions.asl.component.intrinsic.function.statesfunction.states_function import (
     StatesFunction,
 )
-from localstack.services.stepfunctions.asl.component.intrinsic.functionname.state_function_name_types import (
+from localstack.aws.services.stepfunctions.asl.component.intrinsic.functionname.state_function_name_types import (
     StatesFunctionNameType,
 )
-from localstack.services.stepfunctions.asl.component.intrinsic.functionname.states_function_name import (
+from localstack.aws.services.stepfunctions.asl.component.intrinsic.functionname.states_function_name import (
     StatesFunctionName,
 )
 

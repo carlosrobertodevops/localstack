@@ -1,4 +1,4 @@
-from localstack.services.cloudformation.resource_provider import (
+from localstack.aws.services.cloudformation.resource_provider import (
     CloudFormationResourceProviderPlugin,
     ResourceProvider,
 )
@@ -11,6 +11,6 @@ class EC2KeyPairProviderPlugin(CloudFormationResourceProviderPlugin):
         self.factory: type[ResourceProvider] | None = None
 
     def load(self):
-        from localstack.services.ec2.resource_providers.aws_ec2_keypair import EC2KeyPairProvider
+        from localstack.aws.services.ec2.resource_providers.aws_ec2_keypair import EC2KeyPairProvider
 
         self.factory = EC2KeyPairProvider

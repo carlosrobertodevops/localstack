@@ -15,7 +15,7 @@ from localstack.aws.protocol.service_router import (
     match_available_protocols,
 )
 from localstack.aws.spec import get_service_catalog
-from localstack.http import Request
+from localstack.platform.http import Request
 from localstack.utils.run import to_str
 
 

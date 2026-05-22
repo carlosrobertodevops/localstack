@@ -4,7 +4,7 @@ class hierarchies.
 
 For your convenience, you can simply call ``dumps`` or ``loads`` as you would pickle or dill::
 
-    from localstack.state import pickle
+    from localstack.platform.state import pickle
     foo = pickle.loads(pickle.dumps(Foo()))
 
 

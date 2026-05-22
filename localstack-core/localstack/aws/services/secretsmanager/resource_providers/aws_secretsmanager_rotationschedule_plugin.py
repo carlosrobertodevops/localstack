@@ -1,4 +1,4 @@
-from localstack.services.cloudformation.resource_provider import (
+from localstack.aws.services.cloudformation.resource_provider import (
     CloudFormationResourceProviderPlugin,
     ResourceProvider,
 )
@@ -11,7 +11,7 @@ class SecretsManagerRotationScheduleProviderPlugin(CloudFormationResourceProvide
         self.factory: type[ResourceProvider] | None = None
 
     def load(self):
-        from localstack.services.secretsmanager.resource_providers.aws_secretsmanager_rotationschedule import (
+        from localstack.aws.services.secretsmanager.resource_providers.aws_secretsmanager_rotationschedule import (
             SecretsManagerRotationScheduleProvider,
         )
 

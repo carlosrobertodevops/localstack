@@ -3,32 +3,32 @@ from __future__ import annotations
 import time
 from typing import Final
 
-from localstack.services.stepfunctions.asl.component.common.comment import Comment
-from localstack.services.stepfunctions.asl.component.common.error_name.error_equals_decl import (
+from localstack.aws.services.stepfunctions.asl.component.common.comment import Comment
+from localstack.aws.services.stepfunctions.asl.component.common.error_name.error_equals_decl import (
     ErrorEqualsDecl,
 )
-from localstack.services.stepfunctions.asl.component.common.retry.backoff_rate_decl import (
+from localstack.aws.services.stepfunctions.asl.component.common.retry.backoff_rate_decl import (
     BackoffRateDecl,
 )
-from localstack.services.stepfunctions.asl.component.common.retry.interval_seconds_decl import (
+from localstack.aws.services.stepfunctions.asl.component.common.retry.interval_seconds_decl import (
     IntervalSecondsDecl,
 )
-from localstack.services.stepfunctions.asl.component.common.retry.jitter_strategy_decl import (
+from localstack.aws.services.stepfunctions.asl.component.common.retry.jitter_strategy_decl import (
     JitterStrategyDecl,
 )
-from localstack.services.stepfunctions.asl.component.common.retry.max_attempts_decl import (
+from localstack.aws.services.stepfunctions.asl.component.common.retry.max_attempts_decl import (
     MaxAttemptsDecl,
     MaxAttemptsOutcome,
 )
-from localstack.services.stepfunctions.asl.component.common.retry.max_delay_seconds_decl import (
+from localstack.aws.services.stepfunctions.asl.component.common.retry.max_delay_seconds_decl import (
     MaxDelaySecondsDecl,
 )
-from localstack.services.stepfunctions.asl.component.common.retry.retrier_outcome import (
+from localstack.aws.services.stepfunctions.asl.component.common.retry.retrier_outcome import (
     RetrierOutcome,
 )
-from localstack.services.stepfunctions.asl.component.common.retry.retrier_props import RetrierProps
-from localstack.services.stepfunctions.asl.component.eval_component import EvalComponent
-from localstack.services.stepfunctions.asl.eval.environment import Environment
+from localstack.aws.services.stepfunctions.asl.component.common.retry.retrier_props import RetrierProps
+from localstack.aws.services.stepfunctions.asl.component.eval_component import EvalComponent
+from localstack.aws.services.stepfunctions.asl.eval.environment import Environment
 
 
 class RetrierDecl(EvalComponent):

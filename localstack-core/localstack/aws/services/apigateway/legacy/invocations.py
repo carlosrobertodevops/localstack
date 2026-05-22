@@ -7,21 +7,21 @@ from requests.models import Response
 from werkzeug.exceptions import NotFound
 
 from localstack.aws.connect import connect_to
-from localstack.constants import APPLICATION_JSON
-from localstack.services.apigateway.helpers import (
+from localstack.platform.constants import APPLICATION_JSON
+from localstack.aws.services.apigateway.helpers import (
     EMPTY_MODEL,
     ModelResolver,
     get_apigateway_store_for_invocation,
 )
-from localstack.services.apigateway.legacy.context import ApiInvocationContext
-from localstack.services.apigateway.legacy.helpers import (
+from localstack.aws.services.apigateway.legacy.context import ApiInvocationContext
+from localstack.aws.services.apigateway.legacy.helpers import (
     get_cors_response,
     get_event_request_context,
     get_target_resource_details,
     make_error_response,
     set_api_id_stage_invocation_path,
 )
-from localstack.services.apigateway.legacy.integration import (
+from localstack.aws.services.apigateway.legacy.integration import (
     ApiGatewayIntegrationError,
     DynamoDBIntegration,
     EventBridgeIntegration,
@@ -35,7 +35,7 @@ from localstack.services.apigateway.legacy.integration import (
     SQSIntegration,
     StepFunctionIntegration,
 )
-from localstack.services.apigateway.models import ApiGatewayStore
+from localstack.aws.services.apigateway.models import ApiGatewayStore
 from localstack.utils.aws.arns import ARN_PARTITION_REGEX
 from localstack.utils.aws.aws_responses import requests_response
 

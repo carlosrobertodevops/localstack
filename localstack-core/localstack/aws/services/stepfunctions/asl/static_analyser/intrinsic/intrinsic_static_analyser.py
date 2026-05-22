@@ -1,9 +1,9 @@
 import abc
 
-from localstack.services.stepfunctions.asl.antlr.runtime.ASLIntrinsicParserVisitor import (
+from localstack.aws.services.stepfunctions.asl.antlr.runtime.ASLIntrinsicParserVisitor import (
     ASLIntrinsicParserVisitor,
 )
-from localstack.services.stepfunctions.asl.parse.intrinsic.intrinsic_parser import IntrinsicParser
+from localstack.aws.services.stepfunctions.asl.parse.intrinsic.intrinsic_parser import IntrinsicParser
 
 
 class IntrinsicStaticAnalyser(ASLIntrinsicParserVisitor, abc.ABC):

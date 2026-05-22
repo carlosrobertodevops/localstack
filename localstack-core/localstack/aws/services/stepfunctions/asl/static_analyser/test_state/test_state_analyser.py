@@ -20,36 +20,36 @@ from localstack.aws.api.stepfunctions import (
     TestStateInput,
     ValidationException,
 )
-from localstack.services.stepfunctions.asl.antlr.runtime.ASLParser import ASLParser
-from localstack.services.stepfunctions.asl.component.state.state import CommonStateField
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.state_map import (
+from localstack.aws.services.stepfunctions.asl.antlr.runtime.ASLParser import ASLParser
+from localstack.aws.services.stepfunctions.asl.component.state.state import CommonStateField
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.state_map import (
     StateMap,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_parallel.state_parallel import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_parallel.state_parallel import (
     StateParallel,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_task.service.state_task_service import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_task.service.state_task_service import (
     StateTaskService,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_task.service.state_task_service_api_gateway import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_task.service.state_task_service_api_gateway import (
     StateTaskServiceApiGateway,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_task.state_task import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_task.state_task import (
     StateTask,
 )
-from localstack.services.stepfunctions.asl.component.state.state_fail.state_fail import StateFail
-from localstack.services.stepfunctions.asl.component.state.state_pass.state_pass import StatePass
-from localstack.services.stepfunctions.asl.component.state.state_succeed.state_succeed import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_fail.state_fail import StateFail
+from localstack.aws.services.stepfunctions.asl.component.state.state_pass.state_pass import StatePass
+from localstack.aws.services.stepfunctions.asl.component.state.state_succeed.state_succeed import (
     StateSucceed,
 )
-from localstack.services.stepfunctions.asl.component.state.state_type import StateType
-from localstack.services.stepfunctions.asl.component.test_state.program.test_state_program import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_type import StateType
+from localstack.aws.services.stepfunctions.asl.component.test_state.program.test_state_program import (
     TestStateProgram,
 )
-from localstack.services.stepfunctions.asl.parse.test_state.asl_parser import (
+from localstack.aws.services.stepfunctions.asl.parse.test_state.asl_parser import (
     TestStateAmazonStateLanguageParser,
 )
-from localstack.services.stepfunctions.asl.static_analyser.static_analyser import StaticAnalyser
+from localstack.aws.services.stepfunctions.asl.static_analyser.static_analyser import StaticAnalyser
 
 
 class TestStateStaticAnalyser(StaticAnalyser):

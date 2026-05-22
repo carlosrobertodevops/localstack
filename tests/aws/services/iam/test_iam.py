@@ -7,10 +7,10 @@ import pytest
 from botocore.exceptions import ClientError
 
 from localstack.aws.api.iam import Tag
-from localstack.services.iam.iam_patches import ADDITIONAL_MANAGED_POLICIES
-from localstack.testing.aws.util import create_client_with_keys, wait_for_user
-from localstack.testing.pytest import markers
-from localstack.testing.snapshots.transformer_utility import PATTERN_UUID
+from localstack.aws.services.iam.iam_patches import ADDITIONAL_MANAGED_POLICIES
+from localstack.tooling.testing.aws.util import create_client_with_keys, wait_for_user
+from localstack.tooling.testing.pytest import markers
+from localstack.tooling.testing.snapshots.transformer_utility import PATTERN_UUID
 from localstack.utils.aws.arns import get_partition
 from localstack.utils.common import short_uid
 from localstack.utils.strings import long_uid

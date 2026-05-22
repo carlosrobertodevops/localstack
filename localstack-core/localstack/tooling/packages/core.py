@@ -8,14 +8,13 @@ from typing import Any
 
 import requests
 
-from localstack import config
-
-from ..constants import LOCALSTACK_VENV_FOLDER, MAVEN_REPO_URL
-from ..utils.archives import download_and_extract
-from ..utils.files import chmod_r, chown_r, mkdir, rm_rf
-from ..utils.http import download, get_proxies
-from ..utils.run import is_root, run
-from ..utils.venv import VirtualEnvironment
+from localstack.platform import config
+from localstack.platform.constants import LOCALSTACK_VENV_FOLDER, MAVEN_REPO_URL
+from localstack.utils.archives import download_and_extract
+from localstack.utils.files import chmod_r, chown_r, mkdir, rm_rf
+from localstack.utils.http import download, get_proxies
+from localstack.utils.run import is_root, run
+from localstack.utils.venv import VirtualEnvironment
 from .api import InstallTarget, PackageException, PackageInstaller
 
 LOG = logging.getLogger(__name__)

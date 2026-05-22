@@ -45,7 +45,7 @@ class Extension(BaseExtension):
     - on_platform_ready
     """
 
-    namespace = "localstack.extensions"
+    namespace = "localstack.tooling.extensions"
 
     def on_extension_load(self):
         """

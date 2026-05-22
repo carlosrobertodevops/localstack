@@ -4,7 +4,7 @@ from typing import Any
 
 import pytest
 
-from localstack import constants
+from localstack.platform import constants
 from localstack.utils.bootstrap import (
     Container,
     ContainerConfigurators,
@@ -38,7 +38,7 @@ class TestGetPreloadedServices:
         get_preloaded_services.cache_clear()
 
     def test_returns_default_service_ports(self):
-        from localstack.services.plugins import SERVICE_PLUGINS
+        from localstack.aws.services.plugins import SERVICE_PLUGINS
 
         with temporary_env({"EAGER_SERVICE_LOADING": "1"}):
             result = get_preloaded_services()
@@ -95,7 +95,7 @@ class TestGetEnabledApis:
         get_enabled_apis.cache_clear()
 
     def test_returns_default_service_ports(self):
-        from localstack.services.plugins import SERVICE_PLUGINS
+        from localstack.aws.services.plugins import SERVICE_PLUGINS
 
         with temporary_env({"STRICT_SERVICE_LOADING": "1"}):
             result = get_enabled_apis()
@@ -103,7 +103,7 @@ class TestGetEnabledApis:
         assert result == set(SERVICE_PLUGINS.list_available())
 
     def test_strict_service_loading_disabled(self):
-        from localstack.services.plugins import SERVICE_PLUGINS
+        from localstack.aws.services.plugins import SERVICE_PLUGINS
 
         with temporary_env({"STRICT_SERVICE_LOADING": "0", "SERVICES": "s3,sqs"}):
             result = get_enabled_apis()

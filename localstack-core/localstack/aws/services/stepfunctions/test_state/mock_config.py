@@ -3,7 +3,7 @@ from typing import Any, Final
 
 from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr, create_model
 
-from localstack.services.stepfunctions.asl.eval.states import (
+from localstack.aws.services.stepfunctions.asl.eval.states import (
     ExecutionData,
     StateData,
     StateMachineData,

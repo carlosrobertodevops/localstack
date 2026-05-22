@@ -14,11 +14,11 @@ from samtranslator.translator.transform import transform as transform_sam
 
 from localstack.aws.api import CommonServiceException
 from localstack.aws.connect import connect_to
-from localstack.services.cloudformation.engine.parameters import StackParameter
-from localstack.services.cloudformation.engine.policy_loader import create_policy_loader
-from localstack.services.cloudformation.engine.template_deployer import resolve_refs_recursively
-from localstack.services.cloudformation.engine.validations import ValidationError
-from localstack.services.cloudformation.stores import get_cloudformation_store
+from localstack.aws.services.cloudformation.engine.parameters import StackParameter
+from localstack.aws.services.cloudformation.engine.policy_loader import create_policy_loader
+from localstack.aws.services.cloudformation.engine.template_deployer import resolve_refs_recursively
+from localstack.aws.services.cloudformation.engine.validations import ValidationError
+from localstack.aws.services.cloudformation.stores import get_cloudformation_store
 from localstack.utils import testutil
 from localstack.utils.objects import recurse_object
 from localstack.utils.strings import long_uid
@@ -66,7 +66,7 @@ class AwsIncludeTransformer(Transformer):
     """Implements the 'AWS::Include' transform intrinsic function"""
 
     def transform(self, account_id: str, region_name: str, parameters: dict) -> TransformResult:
-        from localstack.services.cloudformation.engine.template_preparer import parse_template
+        from localstack.aws.services.cloudformation.engine.template_preparer import parse_template
 
         location = parameters.get("Location")
         if location and location.startswith("s3://"):

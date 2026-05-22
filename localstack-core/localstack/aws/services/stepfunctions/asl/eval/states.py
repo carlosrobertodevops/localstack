@@ -1,12 +1,12 @@
 import copy
 from typing import Any, Final, NotRequired, TypedDict
 
-from localstack.services.stepfunctions.asl.jsonata.jsonata import (
+from localstack.aws.services.stepfunctions.asl.jsonata.jsonata import (
     VariableDeclarations,
     VariableReference,
     encode_jsonata_variable_declarations,
 )
-from localstack.services.stepfunctions.asl.utils.json_path import extract_json
+from localstack.aws.services.stepfunctions.asl.utils.json_path import extract_json
 from localstack.utils.strings import long_uid
 
 _STATES_PREFIX: Final[str] = "$states"

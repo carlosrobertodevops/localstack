@@ -2,7 +2,7 @@ import logging
 from collections.abc import Callable
 from typing import Any
 
-from localstack.runtime import hooks
+from localstack.platform.runtime import hooks
 from localstack.utils.functions import call_safe
 
 LOG = logging.getLogger(__name__)
@@ -63,7 +63,7 @@ def run_shutdown_handlers():
 @hooks.on_infra_shutdown(priority=SERVICE_SHUTDOWN_PRIORITY)
 def shutdown_services():
     # TODO: this belongs into the shutdown procedure of a `Platform` or `RuntimeContainer` class.
-    from localstack.services.plugins import SERVICE_PLUGINS
+    from localstack.aws.services.plugins import SERVICE_PLUGINS
 
     LOG.info("[shutdown] Stopping all services")
     SERVICE_PLUGINS.stop_all_services()

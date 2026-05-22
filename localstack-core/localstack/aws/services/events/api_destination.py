@@ -19,7 +19,7 @@ from localstack.aws.api.events import (
     Timestamp,
 )
 from localstack.aws.connect import connect_to
-from localstack.services.events.models import ApiDestination, Connection, ValidationException
+from localstack.aws.services.events.models import ApiDestination, Connection, ValidationException
 from localstack.utils.aws.arns import (
     extract_account_id_from_arn,
     extract_region_from_arn,

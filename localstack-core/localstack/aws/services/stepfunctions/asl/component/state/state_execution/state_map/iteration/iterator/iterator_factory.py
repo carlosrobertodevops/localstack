@@ -1,16 +1,16 @@
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.iteration_component import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.iteration_component import (
     IterationComponent,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.iterator.distributed_iterator import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.iterator.distributed_iterator import (
     DistributedIterator,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.iterator.inline_iterator import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.iterator.inline_iterator import (
     InlineIterator,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.iterator.iterator_decl import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.iterator.iterator_decl import (
     IteratorDecl,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.mode import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.mode import (
     Mode,
 )
 

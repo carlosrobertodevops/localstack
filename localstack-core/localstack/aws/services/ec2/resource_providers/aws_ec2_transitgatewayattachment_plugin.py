@@ -1,4 +1,4 @@
-from localstack.services.cloudformation.resource_provider import (
+from localstack.aws.services.cloudformation.resource_provider import (
     CloudFormationResourceProviderPlugin,
     ResourceProvider,
 )
@@ -11,7 +11,7 @@ class EC2TransitGatewayAttachmentProviderPlugin(CloudFormationResourceProviderPl
         self.factory: type[ResourceProvider] | None = None
 
     def load(self):
-        from localstack.services.ec2.resource_providers.aws_ec2_transitgatewayattachment import (
+        from localstack.aws.services.ec2.resource_providers.aws_ec2_transitgatewayattachment import (
             EC2TransitGatewayAttachmentProvider,
         )
 

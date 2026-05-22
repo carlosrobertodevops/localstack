@@ -5,8 +5,8 @@ from http import HTTPMethod
 from werkzeug.datastructures import Headers
 
 from localstack.aws.api.apigateway import ContentHandlingStrategy, Integration, IntegrationType
-from localstack.constants import APPLICATION_JSON
-from localstack.http import Request, Response
+from localstack.platform.constants import APPLICATION_JSON
+from localstack.platform.http import Request, Response
 from localstack.utils.collections import merge_recursive
 from localstack.utils.strings import to_bytes, to_str
 

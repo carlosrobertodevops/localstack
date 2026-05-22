@@ -89,7 +89,7 @@ coveralls:         		  ## Publish coveralls metrics
 	$(VENV_RUN); coveralls
 
 start:             		  ## Manually start the local infrastructure for testing
-	($(VENV_RUN); python3 -m localstack.runtime.main)
+	($(VENV_RUN); python3 -m localstack.platform.runtime.main)
 
 docker-run-tests:		  ## Initializes the test environment and runs the tests in a docker container
 	docker run -e LOCALSTACK_INTERNAL_TEST_COLLECT_METRIC=1 -e DOCKERHUB_USERNAME -e DOCKERHUB_PASSWORD --entrypoint= -v `pwd`/.git:/opt/code/localstack/.git -v `pwd`/requirements-test.txt:/opt/code/localstack/requirements-test.txt -v `pwd`/.test_durations:/opt/code/localstack/.test_durations -v `pwd`/tests/:/opt/code/localstack/tests/ -v `pwd`/dist/:/opt/code/localstack/dist/ -v `pwd`/target/:/opt/code/localstack/target/ -v /var/run/docker.sock:/var/run/docker.sock -v /tmp/localstack:/var/lib/localstack  \
@@ -121,7 +121,7 @@ lint:              		  ## Run code linter to check code style, check if formatte
 	@[ -f localstack-core/localstack/__init__.py ] && echo "localstack-core/localstack/__init__.py will break packaging." && exit 1 || :
 	($(VENV_RUN); python -m ruff check --output-format=full . && python -m ruff format --check --diff .)
 	$(VENV_RUN); pre-commit run check-pinned-deps-for-needed-upgrade --files pyproject.toml # run pre-commit hook manually here to ensure that this check runs in CI as well
-	$(VENV_RUN); openapi-spec-validator localstack-core/localstack/openapi.yaml
+	$(VENV_RUN); openapi-spec-validator localstack-core/localstack/platform/openapi.yaml
 	$(VENV_RUN); cd localstack-core && mypy --install-types --non-interactive
 	$(VENV_RUN); deptry .
 

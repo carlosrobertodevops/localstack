@@ -1,12 +1,12 @@
 from localstack.aws.api.stepfunctions import (
     HistoryEventType,
 )
-from localstack.services.stepfunctions.asl.component.common.parargs import Parameters, Parargs
-from localstack.services.stepfunctions.asl.component.common.path.result_path import ResultPath
-from localstack.services.stepfunctions.asl.component.state.state import CommonStateField
-from localstack.services.stepfunctions.asl.component.state.state_pass.result import Result
-from localstack.services.stepfunctions.asl.component.state.state_props import StateProps
-from localstack.services.stepfunctions.asl.eval.environment import Environment
+from localstack.aws.services.stepfunctions.asl.component.common.parargs import Parameters, Parargs
+from localstack.aws.services.stepfunctions.asl.component.common.path.result_path import ResultPath
+from localstack.aws.services.stepfunctions.asl.component.state.state import CommonStateField
+from localstack.aws.services.stepfunctions.asl.component.state.state_pass.result import Result
+from localstack.aws.services.stepfunctions.asl.component.state.state_props import StateProps
+from localstack.aws.services.stepfunctions.asl.eval.environment import Environment
 
 
 class StatePass(CommonStateField):

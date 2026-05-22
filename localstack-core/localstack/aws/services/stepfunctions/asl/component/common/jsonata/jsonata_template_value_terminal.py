@@ -1,13 +1,13 @@
 import abc
 from typing import Any, Final
 
-from localstack.services.stepfunctions.asl.component.common.jsonata.jsonata_template_value import (
+from localstack.aws.services.stepfunctions.asl.component.common.jsonata.jsonata_template_value import (
     JSONataTemplateValue,
 )
-from localstack.services.stepfunctions.asl.component.common.string.string_expression import (
+from localstack.aws.services.stepfunctions.asl.component.common.string.string_expression import (
     StringJSONata,
 )
-from localstack.services.stepfunctions.asl.eval.environment import Environment
+from localstack.aws.services.stepfunctions.asl.eval.environment import Environment
 
 
 class JSONataTemplateValueTerminal(JSONataTemplateValue, abc.ABC): ...

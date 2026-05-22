@@ -12,8 +12,7 @@ from functools import lru_cache
 from queue import Queue
 from typing import Any, AnyStr
 
-from localstack import config
-
+from localstack.platform import config
 # TODO: remove imports from here (need to update any client code that imports these from utils.common)
 from localstack.utils.platform import is_linux, is_mac_os, is_windows  # noqa
 
@@ -250,7 +249,7 @@ class ShellCommandThread(FuncThread):
     def run_cmd(self, params):
         while True:
             self.do_run_cmd()
-            from localstack.runtime import events
+            from localstack.platform.runtime import events
 
             if (
                 events.infra_stopping.is_set()  # FIXME: this is the wrong level of abstraction
@@ -327,7 +326,7 @@ class ShellCommandThread(FuncThread):
             LOG.warning('Shell command exit code "%s": %s', self.process.returncode, self.cmd)
 
     def is_killed(self):
-        from localstack.runtime import events
+        from localstack.platform.runtime import events
 
         if not self.process:
             return True

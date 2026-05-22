@@ -6,7 +6,7 @@ from botocore.parsers import create_parser
 from botocore.serialize import create_serializer
 
 from localstack.aws.spec import load_service
-from localstack.testing.aws.util import is_aws_cloud
+from localstack.tooling.testing.aws.util import is_aws_cloud
 
 if TYPE_CHECKING:
     from mypy_boto3_cloudwatch import CloudWatchClient

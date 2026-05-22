@@ -1,4 +1,4 @@
-from localstack.services.cloudformation.resource_provider import (
+from localstack.aws.services.cloudformation.resource_provider import (
     CloudFormationResourceProviderPlugin,
     ResourceProvider,
 )
@@ -11,7 +11,7 @@ class DynamoDBTableProviderPlugin(CloudFormationResourceProviderPlugin):
         self.factory: type[ResourceProvider] | None = None
 
     def load(self):
-        from localstack.services.dynamodb.resource_providers.aws_dynamodb_table import (
+        from localstack.aws.services.dynamodb.resource_providers.aws_dynamodb_table import (
             DynamoDBTableProvider,
         )
 

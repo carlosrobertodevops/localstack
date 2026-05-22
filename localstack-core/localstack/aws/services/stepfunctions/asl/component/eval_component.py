@@ -1,12 +1,12 @@
 import abc
 import logging
 
-from localstack.services.stepfunctions.asl.component.common.error_name.failure_event import (
+from localstack.aws.services.stepfunctions.asl.component.common.error_name.failure_event import (
     FailureEventException,
 )
-from localstack.services.stepfunctions.asl.component.component import Component
-from localstack.services.stepfunctions.asl.eval.environment import Environment
-from localstack.services.stepfunctions.asl.utils.encoding import to_json_str
+from localstack.aws.services.stepfunctions.asl.component.component import Component
+from localstack.aws.services.stepfunctions.asl.eval.environment import Environment
+from localstack.aws.services.stepfunctions.asl.utils.encoding import to_json_str
 from localstack.utils.strings import long_uid
 
 LOG = logging.getLogger(__name__)

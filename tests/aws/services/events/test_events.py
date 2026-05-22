@@ -13,12 +13,12 @@ import pytest
 from botocore.exceptions import ClientError
 from localstack_snapshot.snapshots.transformer import SortingTransformer
 
-from localstack import config
+from localstack.platform import config
 from localstack.aws.api.lambda_ import Runtime
-from localstack.services.events.v1.provider import _get_events_tmp_dir
-from localstack.testing.aws.eventbus_utils import allow_event_rule_to_sqs_queue
-from localstack.testing.aws.util import is_aws_cloud
-from localstack.testing.pytest import markers
+from localstack.aws.services.events.v1.provider import _get_events_tmp_dir
+from localstack.tooling.testing.aws.eventbus_utils import allow_event_rule_to_sqs_queue
+from localstack.tooling.testing.aws.util import is_aws_cloud
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.files import load_file
 from localstack.utils.strings import long_uid, short_uid
 from localstack.utils.sync import retry

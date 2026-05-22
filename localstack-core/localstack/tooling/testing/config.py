@@ -1,7 +1,7 @@
 import os
 
-from localstack.config import is_env_true
-from localstack.constants import DEFAULT_AWS_ACCOUNT_ID
+from localstack.platform.config import is_env_true
+from localstack.platform.constants import DEFAULT_AWS_ACCOUNT_ID
 
 # Credentials used in the test suite
 # These can be overridden if the tests are being run against AWS

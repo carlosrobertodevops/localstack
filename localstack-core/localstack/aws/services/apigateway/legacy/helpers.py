@@ -12,14 +12,14 @@ from moto.apigateway.models import apigateway_backends
 from requests.models import Response
 
 from localstack.aws.connect import connect_to
-from localstack.constants import (
+from localstack.platform.constants import (
     APPLICATION_JSON,
     DEFAULT_AWS_ACCOUNT_ID,
     HEADER_LOCALSTACK_EDGE_URL,
     PATH_USER_REQUEST,
 )
-from localstack.services.apigateway.helpers import REQUEST_TIME_DATE_FORMAT
-from localstack.services.apigateway.legacy.context import ApiInvocationContext
+from localstack.aws.services.apigateway.helpers import REQUEST_TIME_DATE_FORMAT
+from localstack.aws.services.apigateway.legacy.context import ApiInvocationContext
 from localstack.utils import common
 from localstack.utils.aws import resources as resource_utils
 from localstack.utils.aws.arns import get_partition, parse_arn

@@ -3,22 +3,22 @@ from __future__ import annotations
 import abc
 from typing import Any, Final
 
-from localstack.services.stepfunctions.asl.component.common.string.string_expression import (
+from localstack.aws.services.stepfunctions.asl.component.common.string.string_expression import (
     StringVariableSample,
 )
-from localstack.services.stepfunctions.asl.component.state.state_choice.comparison.comparison_operator_type import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_choice.comparison.comparison_operator_type import (
     ComparisonOperatorType,
 )
-from localstack.services.stepfunctions.asl.component.state.state_choice.comparison.comparison_type import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_choice.comparison.comparison_type import (
     Comparison,
 )
-from localstack.services.stepfunctions.asl.component.state.state_choice.comparison.operator.factory import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_choice.comparison.operator.factory import (
     OperatorFactory,
 )
-from localstack.services.stepfunctions.asl.component.state.state_choice.comparison.operator.operator import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_choice.comparison.operator.operator import (
     Operator,
 )
-from localstack.services.stepfunctions.asl.eval.environment import Environment
+from localstack.aws.services.stepfunctions.asl.eval.environment import Environment
 
 
 class ComparisonFunc(Comparison, abc.ABC):

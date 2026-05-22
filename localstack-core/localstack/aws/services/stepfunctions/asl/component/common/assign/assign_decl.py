@@ -1,10 +1,10 @@
 from typing import Any, Final
 
-from localstack.services.stepfunctions.asl.component.common.assign.assign_decl_binding import (
+from localstack.aws.services.stepfunctions.asl.component.common.assign.assign_decl_binding import (
     AssignDeclBinding,
 )
-from localstack.services.stepfunctions.asl.component.eval_component import EvalComponent
-from localstack.services.stepfunctions.asl.eval.environment import Environment
+from localstack.aws.services.stepfunctions.asl.component.eval_component import EvalComponent
+from localstack.aws.services.stepfunctions.asl.eval.environment import Environment
 
 
 class AssignDecl(EvalComponent):

@@ -4,7 +4,7 @@ import sqlite3
 import threading
 from datetime import UTC, datetime
 
-from localstack import config
+from localstack.platform import config
 from localstack.aws.api.cloudwatch import MetricData, MetricDataQuery, ScanBy
 from localstack.utils.files import mkdir
 

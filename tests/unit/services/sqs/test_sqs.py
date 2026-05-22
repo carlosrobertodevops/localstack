@@ -1,10 +1,10 @@
 import pytest
 
-import localstack.services.sqs.exceptions
-import localstack.services.sqs.models
-from localstack.services.sqs import provider
-from localstack.services.sqs.constants import DEFAULT_MAXIMUM_MESSAGE_SIZE
-from localstack.services.sqs.utils import (
+import localstack.aws.services.sqs.exceptions
+import localstack.aws.services.sqs.models
+from localstack.aws.services.sqs import provider
+from localstack.aws.services.sqs.constants import DEFAULT_MAXIMUM_MESSAGE_SIZE
+from localstack.aws.services.sqs.utils import (
     create_message_attribute_hash,
     guess_endpoint_strategy_and_host,
     is_sqs_queue_url,
@@ -40,7 +40,7 @@ def test_parse_max_receive_count_string_in_redrive_policy():
     # fmt: off
     policy = {"RedrivePolicy": "{\"deadLetterTargetArn\":\"arn:aws:sqs:us-east-1:000000000000:DeadLetterQueue\",\"maxReceiveCount\": \"5\" }"}
     # fmt: on
-    queue = localstack.services.sqs.models.SqsQueue("TestQueue", "us-east-1", "123456789", policy)
+    queue = localstack.aws.services.sqs.models.SqsQueue("TestQueue", "us-east-1", "123456789", policy)
     assert queue.max_receive_count == 5
 
 
@@ -48,7 +48,7 @@ def test_except_check_message_max_size():
     message_attributes = {"k": {"DataType": "String", "StringValue": "x"}}
     message_attributes_size = len("k") + len("String") + len("x")
     message_body = "a" * (DEFAULT_MAXIMUM_MESSAGE_SIZE - message_attributes_size + 1)
-    with pytest.raises(localstack.services.sqs.exceptions.InvalidParameterValueException):
+    with pytest.raises(localstack.aws.services.sqs.exceptions.InvalidParameterValueException):
         provider.check_message_max_size(
             message_body, message_attributes, DEFAULT_MAXIMUM_MESSAGE_SIZE
         )
@@ -62,7 +62,7 @@ def test_check_message_max_size():
 
 def test_except_check_message_min_size():
     message_body = ""
-    with pytest.raises(localstack.services.sqs.exceptions.MissingRequiredParameterException):
+    with pytest.raises(localstack.aws.services.sqs.exceptions.MissingRequiredParameterException):
         provider.check_message_min_size(message_body)
 
 

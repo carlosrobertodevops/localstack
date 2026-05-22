@@ -1,7 +1,7 @@
 import abc
 from typing import Any, Final
 
-from localstack.services.stepfunctions.local_mocking.mock_config_file import (
+from localstack.aws.services.stepfunctions.local_mocking.mock_config_file import (
     RawMockConfig,
     RawResponseModel,
     RawTestCase,

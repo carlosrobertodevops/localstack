@@ -1,9 +1,7 @@
 from plux import Plugin
 from rolo.gateway import Gateway
 
-from localstack import config
-
-
+from localstack.platform import config
 class RuntimeServer:
     """
     The main network IO loop of LocalStack. This could be twisted, hypercorn, or any other server
@@ -45,7 +43,7 @@ class RuntimeServerPlugin(Plugin):
     Plugin that serves as a factory for specific ```RuntimeServer`` implementations.
     """
 
-    namespace = "localstack.runtime.server"
+    namespace = "localstack.platform.runtime.server"
 
     def load(self, *args, **kwargs) -> RuntimeServer:
         raise NotImplementedError

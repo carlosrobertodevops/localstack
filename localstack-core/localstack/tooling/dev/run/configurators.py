@@ -7,7 +7,7 @@ import os
 from pathlib import Path, PurePosixPath
 from tempfile import gettempdir
 
-from localstack import config, constants
+from localstack.platform import config, constants
 from localstack.utils.bootstrap import ContainerConfigurators
 from localstack.utils.container_utils.container_client import (
     BindMount,

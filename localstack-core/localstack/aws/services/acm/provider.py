@@ -9,8 +9,8 @@ from localstack.aws.api.acm import (
     RequestCertificateRequest,
     RequestCertificateResponse,
 )
-from localstack.services import moto
-from localstack.state import StateVisitor
+from localstack.aws.services import moto
+from localstack.platform.state import StateVisitor
 from localstack.utils.patch import patch
 
 # reduce the validation wait time from 60 (default) to 10 seconds

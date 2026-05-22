@@ -1,5 +1,5 @@
-from localstack.services.stepfunctions.asl.component.intrinsic.argument.argument import ArgumentList
-from localstack.services.stepfunctions.asl.component.intrinsic.function.statesfunction.array import (
+from localstack.aws.services.stepfunctions.asl.component.intrinsic.argument.argument import ArgumentList
+from localstack.aws.services.stepfunctions.asl.component.intrinsic.function.statesfunction.array import (
     array,
     array_contains,
     array_get_item,
@@ -8,38 +8,38 @@ from localstack.services.stepfunctions.asl.component.intrinsic.function.statesfu
     array_range,
     array_unique,
 )
-from localstack.services.stepfunctions.asl.component.intrinsic.function.statesfunction.encoding_decoding import (
+from localstack.aws.services.stepfunctions.asl.component.intrinsic.function.statesfunction.encoding_decoding import (
     base_64_decode,
     base_64_encode,
 )
-from localstack.services.stepfunctions.asl.component.intrinsic.function.statesfunction.generic import (
+from localstack.aws.services.stepfunctions.asl.component.intrinsic.function.statesfunction.generic import (
     string_format,
 )
-from localstack.services.stepfunctions.asl.component.intrinsic.function.statesfunction.hash_calculations import (
+from localstack.aws.services.stepfunctions.asl.component.intrinsic.function.statesfunction.hash_calculations import (
     hash_func,
 )
-from localstack.services.stepfunctions.asl.component.intrinsic.function.statesfunction.json_manipulation import (
+from localstack.aws.services.stepfunctions.asl.component.intrinsic.function.statesfunction.json_manipulation import (
     json_merge,
     json_to_string,
     string_to_json,
 )
-from localstack.services.stepfunctions.asl.component.intrinsic.function.statesfunction.math_operations import (
+from localstack.aws.services.stepfunctions.asl.component.intrinsic.function.statesfunction.math_operations import (
     math_add,
     math_random,
 )
-from localstack.services.stepfunctions.asl.component.intrinsic.function.statesfunction.states_function import (
+from localstack.aws.services.stepfunctions.asl.component.intrinsic.function.statesfunction.states_function import (
     StatesFunction,
 )
-from localstack.services.stepfunctions.asl.component.intrinsic.function.statesfunction.string_operations import (
+from localstack.aws.services.stepfunctions.asl.component.intrinsic.function.statesfunction.string_operations import (
     string_split,
 )
-from localstack.services.stepfunctions.asl.component.intrinsic.function.statesfunction.unique_id_generation import (
+from localstack.aws.services.stepfunctions.asl.component.intrinsic.function.statesfunction.unique_id_generation import (
     uuid,
 )
-from localstack.services.stepfunctions.asl.component.intrinsic.functionname.state_function_name_types import (
+from localstack.aws.services.stepfunctions.asl.component.intrinsic.functionname.state_function_name_types import (
     StatesFunctionNameType,
 )
-from localstack.services.stepfunctions.asl.component.intrinsic.functionname.states_function_name import (
+from localstack.aws.services.stepfunctions.asl.component.intrinsic.functionname.states_function_name import (
     StatesFunctionName,
 )
 

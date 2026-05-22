@@ -1,4 +1,4 @@
-from localstack import config
+from localstack.platform import config
 from localstack.utils.container_networking import (
     get_endpoint_for_network,
     get_main_container_network,

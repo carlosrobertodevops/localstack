@@ -1,4 +1,4 @@
-from localstack.services.cloudformation.resource_provider import (
+from localstack.aws.services.cloudformation.resource_provider import (
     CloudFormationResourceProviderPlugin,
     ResourceProvider,
 )
@@ -11,6 +11,6 @@ class SNSTopicProviderPlugin(CloudFormationResourceProviderPlugin):
         self.factory: type[ResourceProvider] | None = None
 
     def load(self):
-        from localstack.services.sns.resource_providers.aws_sns_topic import SNSTopicProvider
+        from localstack.aws.services.sns.resource_providers.aws_sns_topic import SNSTopicProvider
 
         self.factory = SNSTopicProvider

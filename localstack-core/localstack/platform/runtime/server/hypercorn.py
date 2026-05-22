@@ -6,8 +6,8 @@ from hypercorn.asyncio import serve
 from rolo.gateway import Gateway
 from rolo.gateway.asgi import AsgiGateway
 
-from localstack import config
-from localstack.logging.setup import setup_hypercorn_logger
+from localstack.platform import config
+from localstack.platform.logging.setup import setup_hypercorn_logger
 
 from .core import RuntimeServer
 

@@ -16,7 +16,7 @@ from localstack.aws.catalog_exceptions import get_service_availability_exception
 from localstack.aws.protocol.parser import create_parser
 from localstack.aws.protocol.serializer import ResponseSerializer, create_serializer
 from localstack.aws.spec import load_service
-from localstack.http import Response
+from localstack.platform.http import Response
 from localstack.utils import analytics
 from localstack.utils.catalog.plugins import get_aws_catalog
 

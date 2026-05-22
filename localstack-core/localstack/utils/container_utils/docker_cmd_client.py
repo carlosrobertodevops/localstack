@@ -8,7 +8,7 @@ import shlex
 import subprocess
 from collections.abc import Callable
 
-from localstack import config
+from localstack.platform import config
 from localstack.utils.collections import ensure_list
 from localstack.utils.container_utils.container_client import (
     AccessDenied,

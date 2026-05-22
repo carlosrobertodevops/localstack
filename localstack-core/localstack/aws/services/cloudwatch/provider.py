@@ -29,13 +29,13 @@ from localstack.aws.api.cloudwatch import (
     UntagResourceOutput,
 )
 from localstack.aws.connect import connect_to
-from localstack.constants import DEFAULT_AWS_ACCOUNT_ID
-from localstack.http import Request
-from localstack.services import moto
-from localstack.services.cloudwatch.alarm_scheduler import AlarmScheduler
-from localstack.services.edge import ROUTER
-from localstack.services.plugins import SERVICE_PLUGINS, ServiceLifecycleHook
-from localstack.state import StateVisitor
+from localstack.platform.constants import DEFAULT_AWS_ACCOUNT_ID
+from localstack.platform.http import Request
+from localstack.aws.services import moto
+from localstack.aws.services.cloudwatch.alarm_scheduler import AlarmScheduler
+from localstack.aws.services.edge import ROUTER
+from localstack.aws.services.plugins import SERVICE_PLUGINS, ServiceLifecycleHook
+from localstack.platform.state import StateVisitor
 from localstack.utils.aws import arns
 from localstack.utils.aws.arns import extract_account_id_from_arn, lambda_function_name
 from localstack.utils.aws.request_context import (

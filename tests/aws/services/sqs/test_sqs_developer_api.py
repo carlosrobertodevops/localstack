@@ -6,14 +6,14 @@ import requests
 import xmltodict
 from botocore.exceptions import ClientError
 
-from localstack import config
-from localstack.services.sqs.constants import (
+from localstack.platform import config
+from localstack.aws.services.sqs.constants import (
     HEADER_LOCALSTACK_SQS_OVERRIDE_MESSAGE_COUNT,
     HEADER_LOCALSTACK_SQS_OVERRIDE_WAIT_TIME_SECONDS,
 )
-from localstack.services.sqs.provider import MAX_NUMBER_OF_MESSAGES
-from localstack.services.sqs.utils import parse_queue_url
-from localstack.testing.pytest import markers
+from localstack.aws.services.sqs.provider import MAX_NUMBER_OF_MESSAGES
+from localstack.aws.services.sqs.utils import parse_queue_url
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.strings import short_uid
 
 

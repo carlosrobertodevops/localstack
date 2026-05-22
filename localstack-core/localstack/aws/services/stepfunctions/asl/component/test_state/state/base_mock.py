@@ -1,14 +1,14 @@
 import abc
 import copy
 
-from localstack.services.stepfunctions.asl.component.eval_component import EvalComponent
-from localstack.services.stepfunctions.asl.component.state.state import CommonStateField
-from localstack.services.stepfunctions.asl.component.state.state_continue_with import (
+from localstack.aws.services.stepfunctions.asl.component.eval_component import EvalComponent
+from localstack.aws.services.stepfunctions.asl.component.state.state import CommonStateField
+from localstack.aws.services.stepfunctions.asl.component.state.state_continue_with import (
     ContinueWithNext,
 )
-from localstack.services.stepfunctions.asl.eval.test_state.environment import TestStateEnvironment
-from localstack.services.stepfunctions.asl.utils.encoding import to_json_str
-from localstack.services.stepfunctions.backend.test_state.test_state_mock import (
+from localstack.aws.services.stepfunctions.asl.eval.test_state.environment import TestStateEnvironment
+from localstack.aws.services.stepfunctions.asl.utils.encoding import to_json_str
+from localstack.aws.services.stepfunctions.backend.test_state.test_state_mock import (
     TestStateResponseReturn,
     TestStateResponseThrow,
     eval_mocked_response_throw,

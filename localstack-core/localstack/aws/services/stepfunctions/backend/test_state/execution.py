@@ -12,30 +12,30 @@ from localstack.aws.api.stepfunctions import (
     TestStateOutput,
     Timestamp,
 )
-from localstack.services.stepfunctions.asl.eval.evaluation_details import (
+from localstack.aws.services.stepfunctions.asl.eval.evaluation_details import (
     EvaluationDetails,
 )
-from localstack.services.stepfunctions.asl.eval.program_state import (
+from localstack.aws.services.stepfunctions.asl.eval.program_state import (
     ProgramEnded,
     ProgramError,
     ProgramState,
 )
-from localstack.services.stepfunctions.asl.eval.test_state.program_state import (
+from localstack.aws.services.stepfunctions.asl.eval.test_state.program_state import (
     ProgramCaughtError,
     ProgramChoiceSelected,
     ProgramRetriable,
 )
-from localstack.services.stepfunctions.asl.utils.encoding import to_json_str
-from localstack.services.stepfunctions.backend.activity import Activity
-from localstack.services.stepfunctions.backend.execution import (
+from localstack.aws.services.stepfunctions.asl.utils.encoding import to_json_str
+from localstack.aws.services.stepfunctions.backend.activity import Activity
+from localstack.aws.services.stepfunctions.backend.execution import (
     BaseExecutionWorkerCommunication,
     Execution,
 )
-from localstack.services.stepfunctions.backend.state_machine import StateMachineInstance
-from localstack.services.stepfunctions.backend.test_state.execution_worker import (
+from localstack.aws.services.stepfunctions.backend.state_machine import StateMachineInstance
+from localstack.aws.services.stepfunctions.backend.test_state.execution_worker import (
     TestStateExecutionWorker,
 )
-from localstack.services.stepfunctions.backend.test_state.test_state_mock import TestStateMock
+from localstack.aws.services.stepfunctions.backend.test_state.test_state_mock import TestStateMock
 
 LOG = logging.getLogger(__name__)
 

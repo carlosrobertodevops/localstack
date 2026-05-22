@@ -21,8 +21,8 @@ from typing import (
 
 import dotenv
 
-from localstack import config
-from localstack.constants import DEFAULT_VOLUME_DIR
+from localstack.platform import config
+from localstack.platform.constants import DEFAULT_VOLUME_DIR
 from localstack.utils.collections import HashableList, ensure_list
 from localstack.utils.files import TMP_FILES, chmod_r, rm_rf, save_file
 from localstack.utils.no_exit_argument_parser import NoExitArgumentParser

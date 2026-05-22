@@ -1,6 +1,6 @@
 from typing import Final
 
-from localstack.services.stepfunctions.asl.component.common.error_name.error_name import ErrorName
+from localstack.aws.services.stepfunctions.asl.component.common.error_name.error_name import ErrorName
 
 ILLEGAL_CUSTOM_ERROR_PREFIX: Final[str] = "States."
 

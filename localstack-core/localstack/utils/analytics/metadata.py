@@ -3,9 +3,9 @@ import logging
 import os
 import platform
 
-from localstack import config
-from localstack.constants import VERSION
-from localstack.runtime import get_current_runtime, hooks
+from localstack.platform import config
+from localstack.platform.constants import VERSION
+from localstack.platform.runtime import get_current_runtime, hooks
 from localstack.utils.bootstrap import Container
 from localstack.utils.files import rm_rf
 from localstack.utils.functions import call_safe

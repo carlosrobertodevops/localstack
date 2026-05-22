@@ -4,43 +4,43 @@ from typing import Final
 
 from antlr4 import RecognitionException
 
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_task.service.state_task_service import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_task.service.state_task_service import (
     StateTaskService,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_task.service.state_task_service_api_gateway import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_task.service.state_task_service_api_gateway import (
     StateTaskServiceApiGateway,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_task.service.state_task_service_aws_sdk import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_task.service.state_task_service_aws_sdk import (
     StateTaskServiceAwsSdk,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_task.service.state_task_service_batch import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_task.service.state_task_service_batch import (
     StateTaskServiceBatch,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_task.service.state_task_service_dynamodb import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_task.service.state_task_service_dynamodb import (
     StateTaskServiceDynamoDB,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_task.service.state_task_service_ecs import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_task.service.state_task_service_ecs import (
     StateTaskServiceEcs,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_task.service.state_task_service_events import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_task.service.state_task_service_events import (
     StateTaskServiceEvents,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_task.service.state_task_service_glue import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_task.service.state_task_service_glue import (
     StateTaskServiceGlue,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_task.service.state_task_service_lambda import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_task.service.state_task_service_lambda import (
     StateTaskServiceLambda,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_task.service.state_task_service_sfn import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_task.service.state_task_service_sfn import (
     StateTaskServiceSfn,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_task.service.state_task_service_sns import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_task.service.state_task_service_sns import (
     StateTaskServiceSns,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_task.service.state_task_service_sqs import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_task.service.state_task_service_sqs import (
     StateTaskServiceSqs,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_task.service.state_task_service_unsupported import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_task.service.state_task_service_unsupported import (
     StateTaskServiceUnsupported,
 )
 

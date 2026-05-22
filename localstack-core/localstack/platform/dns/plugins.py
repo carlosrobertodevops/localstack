@@ -1,7 +1,7 @@
 import logging
 
-from localstack import config
-from localstack.runtime import hooks
+from localstack.platform import config
+from localstack.platform.runtime import hooks
 
 LOG = logging.getLogger(__name__)
 
@@ -19,7 +19,7 @@ if the resolv.conf is set to localhost from outside the container"""
 @hooks.on_infra_start(priority=DNS_START_PRIORITY)
 def start_dns_server():
     try:
-        from localstack.dns import server
+        from localstack.platform.dns import server
 
         server.start_dns_server(port=config.DNS_PORT, asynchronous=True)
     except Exception as e:
@@ -29,7 +29,7 @@ def start_dns_server():
 @hooks.on_infra_start()
 def setup_dns_configuration_on_host():
     try:
-        from localstack.dns import server
+        from localstack.platform.dns import server
 
         if server.is_server_running():
             # Prepare network interfaces for DNS server for the infra.
@@ -41,7 +41,7 @@ def setup_dns_configuration_on_host():
 @hooks.on_infra_shutdown(priority=DNS_SHUTDOWN_PRIORITY)
 def stop_server():
     try:
-        from localstack.dns import server
+        from localstack.platform.dns import server
 
         server.revert_network_configuration()
         server.stop_servers()

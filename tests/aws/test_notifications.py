@@ -1,4 +1,4 @@
-from localstack.testing.pytest import markers
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.common import retry, short_uid
 
 PUBLICATION_TIMEOUT = 1

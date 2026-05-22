@@ -1,8 +1,8 @@
 from collections import OrderedDict
 
-from localstack.services.cloudformation.engine.changes import ChangeConfig
-from localstack.services.cloudformation.engine.parameters import StackParameter
-from localstack.services.cloudformation.engine.template_utils import get_deps_for_resource
+from localstack.aws.services.cloudformation.engine.changes import ChangeConfig
+from localstack.aws.services.cloudformation.engine.parameters import StackParameter
+from localstack.aws.services.cloudformation.engine.template_utils import get_deps_for_resource
 
 
 class NoResourceInStack(ValueError):

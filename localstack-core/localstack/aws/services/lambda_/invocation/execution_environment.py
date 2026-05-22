@@ -7,17 +7,17 @@ from datetime import date, datetime
 from enum import Enum, auto
 from threading import RLock, Timer
 
-from localstack import config
+from localstack.platform import config
 from localstack.aws.api.lambda_ import LogFormat
 from localstack.aws.connect import connect_to
-from localstack.services.lambda_.invocation.lambda_models import (
+from localstack.aws.services.lambda_.invocation.lambda_models import (
     Credentials,
     FunctionVersion,
     InitializationType,
     Invocation,
     InvocationResult,
 )
-from localstack.services.lambda_.invocation.runtime_executor import (
+from localstack.aws.services.lambda_.invocation.runtime_executor import (
     RuntimeExecutor,
     get_runtime_executor,
 )

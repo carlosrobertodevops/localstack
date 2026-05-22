@@ -2,7 +2,7 @@ from unittest import mock
 
 from localstack.aws.api import RequestContext
 from localstack.aws.chain import CompositeHandler, HandlerChain
-from localstack.http import Response
+from localstack.platform.http import Response
 
 
 class TestCompositeHandler:

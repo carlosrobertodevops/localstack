@@ -118,17 +118,17 @@ from localstack.aws.api.events import Connection as ApiTypeConnection
 from localstack.aws.api.events import EventBus as ApiTypeEventBus
 from localstack.aws.api.events import Replay as ApiTypeReplay
 from localstack.aws.api.events import Rule as ApiTypeRule
-from localstack.services.events.api_destination import (
+from localstack.aws.services.events.api_destination import (
     APIDestinationService,
     ApiDestinationServiceDict,
 )
-from localstack.services.events.archive import ArchiveService, ArchiveServiceDict
-from localstack.services.events.connection import (
+from localstack.aws.services.events.archive import ArchiveService, ArchiveServiceDict
+from localstack.aws.services.events.connection import (
     ConnectionService,
     ConnectionServiceDict,
 )
-from localstack.services.events.event_bus import EventBusService, EventBusServiceDict
-from localstack.services.events.models import (
+from localstack.aws.services.events.event_bus import EventBusService, EventBusServiceDict
+from localstack.aws.services.events.models import (
     ApiDestination,
     ApiDestinationDict,
     Archive,
@@ -148,15 +148,15 @@ from localstack.services.events.models import (
     ValidationException,
     events_stores,
 )
-from localstack.services.events.replay import ReplayService, ReplayServiceDict
-from localstack.services.events.rule import RuleService, RuleServiceDict
-from localstack.services.events.scheduler import JobScheduler
-from localstack.services.events.target import (
+from localstack.aws.services.events.replay import ReplayService, ReplayServiceDict
+from localstack.aws.services.events.rule import RuleService, RuleServiceDict
+from localstack.aws.services.events.scheduler import JobScheduler
+from localstack.aws.services.events.target import (
     TargetSender,
     TargetSenderDict,
     TargetSenderFactory,
 )
-from localstack.services.events.utils import (
+from localstack.aws.services.events.utils import (
     TARGET_ID_PATTERN,
     extract_connection_name,
     extract_event_bus_name,
@@ -167,8 +167,8 @@ from localstack.services.events.utils import (
     is_archive_arn,
     recursive_remove_none_values_from_dict,
 )
-from localstack.services.plugins import ServiceLifecycleHook
-from localstack.state import StateVisitor
+from localstack.aws.services.plugins import ServiceLifecycleHook
+from localstack.platform.state import StateVisitor
 from localstack.utils.common import truncate
 from localstack.utils.event_matcher import matches_event
 from localstack.utils.strings import long_uid

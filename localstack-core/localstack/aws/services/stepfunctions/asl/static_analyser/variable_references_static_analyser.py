@@ -7,15 +7,15 @@ from localstack.aws.api.stepfunctions import (
     VariableNameList,
     VariableReferences,
 )
-from localstack.services.stepfunctions.asl.antlr.runtime.ASLParser import ASLParser
-from localstack.services.stepfunctions.asl.jsonata.jsonata import (
+from localstack.aws.services.stepfunctions.asl.antlr.runtime.ASLParser import ASLParser
+from localstack.aws.services.stepfunctions.asl.jsonata.jsonata import (
     VariableReference,
     extract_jsonata_variable_references,
 )
-from localstack.services.stepfunctions.asl.static_analyser.intrinsic.variable_names_intrinsic_static_analyser import (
+from localstack.aws.services.stepfunctions.asl.static_analyser.intrinsic.variable_names_intrinsic_static_analyser import (
     VariableNamesIntrinsicStaticAnalyser,
 )
-from localstack.services.stepfunctions.asl.static_analyser.static_analyser import StaticAnalyser
+from localstack.aws.services.stepfunctions.asl.static_analyser.static_analyser import StaticAnalyser
 
 
 class VariableReferencesStaticAnalyser(StaticAnalyser):

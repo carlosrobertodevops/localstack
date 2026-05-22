@@ -1,5 +1,5 @@
 from localstack.aws.api.config import ConfigApi
-from localstack.state import StateVisitor
+from localstack.platform.state import StateVisitor
 
 
 class ConfigProvider(ConfigApi):

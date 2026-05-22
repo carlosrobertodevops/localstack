@@ -2,16 +2,16 @@ import datetime
 import logging
 from typing import Any, Final
 
-from localstack.services.stepfunctions.asl.component.state.state_choice.comparison.comparison_operator_type import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_choice.comparison.comparison_operator_type import (
     ComparisonOperatorType,
 )
-from localstack.services.stepfunctions.asl.component.state.state_choice.comparison.operator.operator import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_choice.comparison.operator.operator import (
     Operator,
 )
-from localstack.services.stepfunctions.asl.component.state.state_choice.comparison.variable import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_choice.comparison.variable import (
     NoSuchVariable,
 )
-from localstack.services.stepfunctions.asl.eval.environment import Environment
+from localstack.aws.services.stepfunctions.asl.eval.environment import Environment
 
 LOG = logging.getLogger(__name__)
 

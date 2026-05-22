@@ -14,48 +14,48 @@ from localstack.aws.api.stepfunctions import (
     StateExitedEventDetails,
     TaskFailedEventDetails,
 )
-from localstack.services.stepfunctions.asl.component.common.assign.assign_decl import AssignDecl
-from localstack.services.stepfunctions.asl.component.common.comment import Comment
-from localstack.services.stepfunctions.asl.component.common.error_name.failure_event import (
+from localstack.aws.services.stepfunctions.asl.component.common.assign.assign_decl import AssignDecl
+from localstack.aws.services.stepfunctions.asl.component.common.comment import Comment
+from localstack.aws.services.stepfunctions.asl.component.common.error_name.failure_event import (
     FailureEvent,
     FailureEventException,
 )
-from localstack.services.stepfunctions.asl.component.common.error_name.states_error_name import (
+from localstack.aws.services.stepfunctions.asl.component.common.error_name.states_error_name import (
     StatesErrorName,
 )
-from localstack.services.stepfunctions.asl.component.common.error_name.states_error_name_type import (
+from localstack.aws.services.stepfunctions.asl.component.common.error_name.states_error_name_type import (
     StatesErrorNameType,
 )
-from localstack.services.stepfunctions.asl.component.common.flow.end import End
-from localstack.services.stepfunctions.asl.component.common.flow.next import Next
-from localstack.services.stepfunctions.asl.component.common.outputdecl import Output
-from localstack.services.stepfunctions.asl.component.common.path.input_path import (
+from localstack.aws.services.stepfunctions.asl.component.common.flow.end import End
+from localstack.aws.services.stepfunctions.asl.component.common.flow.next import Next
+from localstack.aws.services.stepfunctions.asl.component.common.outputdecl import Output
+from localstack.aws.services.stepfunctions.asl.component.common.path.input_path import (
     InputPath,
 )
-from localstack.services.stepfunctions.asl.component.common.path.output_path import OutputPath
-from localstack.services.stepfunctions.asl.component.common.query_language import (
+from localstack.aws.services.stepfunctions.asl.component.common.path.output_path import OutputPath
+from localstack.aws.services.stepfunctions.asl.component.common.query_language import (
     QueryLanguage,
     QueryLanguageMode,
 )
-from localstack.services.stepfunctions.asl.component.common.string.string_expression import (
+from localstack.aws.services.stepfunctions.asl.component.common.string.string_expression import (
     JSONPATH_ROOT_PATH,
     StringJsonPath,
 )
-from localstack.services.stepfunctions.asl.component.eval_component import EvalComponent
-from localstack.services.stepfunctions.asl.component.state.state_continue_with import (
+from localstack.aws.services.stepfunctions.asl.component.eval_component import EvalComponent
+from localstack.aws.services.stepfunctions.asl.component.state.state_continue_with import (
     ContinueWith,
     ContinueWithEnd,
     ContinueWithNext,
 )
-from localstack.services.stepfunctions.asl.component.state.state_props import StateProps
-from localstack.services.stepfunctions.asl.component.state.state_type import StateType
-from localstack.services.stepfunctions.asl.eval.environment import Environment
-from localstack.services.stepfunctions.asl.eval.event.event_detail import EventDetails
-from localstack.services.stepfunctions.asl.eval.program_state import ProgramRunning
-from localstack.services.stepfunctions.asl.eval.states import StateData
-from localstack.services.stepfunctions.asl.utils.encoding import to_json_str
-from localstack.services.stepfunctions.asl.utils.json_path import NoSuchJsonPathError
-from localstack.services.stepfunctions.quotas import is_within_size_quota
+from localstack.aws.services.stepfunctions.asl.component.state.state_props import StateProps
+from localstack.aws.services.stepfunctions.asl.component.state.state_type import StateType
+from localstack.aws.services.stepfunctions.asl.eval.environment import Environment
+from localstack.aws.services.stepfunctions.asl.eval.event.event_detail import EventDetails
+from localstack.aws.services.stepfunctions.asl.eval.program_state import ProgramRunning
+from localstack.aws.services.stepfunctions.asl.eval.states import StateData
+from localstack.aws.services.stepfunctions.asl.utils.encoding import to_json_str
+from localstack.aws.services.stepfunctions.asl.utils.json_path import NoSuchJsonPathError
+from localstack.aws.services.stepfunctions.quotas import is_within_size_quota
 
 LOG = logging.getLogger(__name__)
 

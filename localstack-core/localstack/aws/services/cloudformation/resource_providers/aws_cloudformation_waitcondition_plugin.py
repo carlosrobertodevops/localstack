@@ -1,4 +1,4 @@
-from localstack.services.cloudformation.resource_provider import (
+from localstack.aws.services.cloudformation.resource_provider import (
     CloudFormationResourceProviderPlugin,
     ResourceProvider,
 )
@@ -11,7 +11,7 @@ class CloudFormationWaitConditionProviderPlugin(CloudFormationResourceProviderPl
         self.factory: type[ResourceProvider] | None = None
 
     def load(self):
-        from localstack.services.cloudformation.resource_providers.aws_cloudformation_waitcondition import (
+        from localstack.aws.services.cloudformation.resource_providers.aws_cloudformation_waitcondition import (
             CloudFormationWaitConditionProvider,
         )
 

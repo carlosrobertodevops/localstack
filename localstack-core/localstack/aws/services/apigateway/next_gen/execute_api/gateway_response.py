@@ -6,7 +6,7 @@ from localstack.aws.api.apigateway import (
     MapOfStringToString,
     StatusCode,
 )
-from localstack.constants import APPLICATION_JSON
+from localstack.platform.constants import APPLICATION_JSON
 
 
 class GatewayResponseCode(StatusCode, Enum):

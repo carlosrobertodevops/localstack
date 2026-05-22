@@ -1,5 +1,5 @@
-from localstack.http import Response
-from localstack.services.s3.presigned_url import S3PreSignedURLRequestHandler
+from localstack.platform.http import Response
+from localstack.aws.services.s3.presigned_url import S3PreSignedURLRequestHandler
 
 from ..api import RequestContext
 from ..chain import Handler, HandlerChain

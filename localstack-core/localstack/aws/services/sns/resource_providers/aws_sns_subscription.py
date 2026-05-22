@@ -5,10 +5,10 @@ import json
 from pathlib import Path
 from typing import TypedDict
 
-import localstack.services.cloudformation.provider_utils as util
-from localstack import config
+import localstack.aws.services.cloudformation.provider_utils as util
+from localstack.platform import config
 from localstack.aws.connect import ServiceLevelClientFactory
-from localstack.services.cloudformation.resource_provider import (
+from localstack.aws.services.cloudformation.resource_provider import (
     ConvertingInternalClientFactory,
     OperationStatus,
     ProgressEvent,

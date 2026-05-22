@@ -8,9 +8,9 @@ from collections.abc import Mapping, Sequence
 from pathlib import Path
 from typing import TYPE_CHECKING, Optional, overload
 
-from localstack import config
-from localstack.services.lambda_.invocation.lambda_models import InitializationType
-from localstack.services.lambda_.runtimes import RUNTIMES_AGGREGATED
+from localstack.platform import config
+from localstack.aws.services.lambda_.invocation.lambda_models import InitializationType
+from localstack.aws.services.lambda_.runtimes import RUNTIMES_AGGREGATED
 from localstack.utils.files import load_file
 from localstack.utils.platform import Arch, get_arch
 from localstack.utils.strings import short_uid

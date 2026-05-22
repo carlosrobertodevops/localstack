@@ -42,9 +42,9 @@ import dns.query
 from dns.exception import Timeout
 
 # Note: avoid adding additional imports here, to avoid import issues when running the CLI
-from localstack import config
-from localstack.constants import LOCALHOST_HOSTNAME, LOCALHOST_IP
-from localstack.dns.models import (
+from localstack.platform import config
+from localstack.platform.constants import LOCALHOST_HOSTNAME, LOCALHOST_IP
+from localstack.platform.dns.models import (
     AliasTarget,
     DnsServerProtocol,
     DynamicRecord,
@@ -53,7 +53,7 @@ from localstack.dns.models import (
     SOARecord,
     TargetRecord,
 )
-from localstack.services.edge import run_module_as_sudo
+from localstack.aws.services.edge import run_module_as_sudo
 from localstack.utils import iputils
 from localstack.utils.net import Port, port_can_be_bound
 from localstack.utils.platform import in_docker
@@ -777,7 +777,7 @@ class SeparateProcessDNSServer(Server, DnsServerProtocol):
 
         # note: running in a separate process breaks integration with Route53 (to be fixed for local dev mode!)
         thread = run_module_as_sudo(
-            "localstack.dns.server",
+            "localstack.platform.dns.server",
             asynchronous=True,
             env_vars=env_vars,
             arguments=["-p", str(self.port)],

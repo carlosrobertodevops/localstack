@@ -1,7 +1,7 @@
 import json
 
-from localstack.testing.pytest import markers
-from localstack.testing.pytest.stepfunctions.utils import create_and_record_execution
+from localstack.tooling.testing.pytest import markers
+from localstack.tooling.testing.pytest.stepfunctions.utils import create_and_record_execution
 from tests.aws.services.stepfunctions.templates.intrinsicfunctions.intrinsic_functions_templates import (
     IntrinsicFunctionTemplate as IFT,
 )

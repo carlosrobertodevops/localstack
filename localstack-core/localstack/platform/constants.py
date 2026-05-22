@@ -1,6 +1,6 @@
 import os
 
-from localstack.version import __version__
+from localstack.platform.version import __version__
 
 VERSION = __version__
 

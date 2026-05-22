@@ -5,13 +5,13 @@ from requests.models import Response as RequestsResponse
 from werkzeug.datastructures import Headers
 from werkzeug.exceptions import NotFound
 
-from localstack.constants import HEADER_LOCALSTACK_EDGE_URL
-from localstack.http import Request, Response, Router
-from localstack.http.dispatcher import Handler
-from localstack.http.request import restore_payload
-from localstack.services.apigateway.legacy.context import ApiInvocationContext
-from localstack.services.apigateway.legacy.helpers import get_api_account_id_and_region
-from localstack.services.apigateway.legacy.invocations import invoke_rest_api_from_request
+from localstack.platform.constants import HEADER_LOCALSTACK_EDGE_URL
+from localstack.platform.http import Request, Response, Router
+from localstack.platform.http.dispatcher import Handler
+from localstack.platform.http.request import restore_payload
+from localstack.aws.services.apigateway.legacy.context import ApiInvocationContext
+from localstack.aws.services.apigateway.legacy.helpers import get_api_account_id_and_region
+from localstack.aws.services.apigateway.legacy.invocations import invoke_rest_api_from_request
 from localstack.utils.aws.aws_responses import LambdaResponse
 from localstack.utils.strings import remove_leading_extra_slashes
 

@@ -11,8 +11,7 @@ from typing import Any, Generic, ParamSpec, TypeVar
 
 from plux import Plugin, PluginManager, PluginSpec  # type: ignore
 
-from localstack import config
-
+from localstack.platform import config
 LOG = logging.getLogger(__name__)
 
 
@@ -302,7 +301,7 @@ class MultiPackageInstaller(PackageInstaller):
         return self.package_installer[0]._get_install_marker_path(install_dir)
 
 
-PLUGIN_NAMESPACE = "localstack.packages"
+PLUGIN_NAMESPACE = "localstack.tooling.packages"
 
 
 class PackagesPlugin(Plugin):  # type: ignore[misc]
@@ -395,7 +394,7 @@ def package(
 ) -> Callable[[Callable[[], Package[Any] | list[Package[Any]]]], PluginSpec]:
     """
     Decorator for marking methods that create Package instances as a PackagePlugin.
-    Methods marked with this decorator are discoverable as a PluginSpec within the namespace "localstack.packages",
+    Methods marked with this decorator are discoverable as a PluginSpec within the namespace "localstack.tooling.packages",
     with the name "<name>:<scope>". If api is not explicitly specified, then the parent module name is used as
     service name.
     """

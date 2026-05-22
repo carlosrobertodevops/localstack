@@ -1,5 +1,5 @@
 from localstack.aws.api.firehose import DeliveryStreamDescription
-from localstack.services.stores import (
+from localstack.aws.services.stores import (
     AccountRegionBundle,
     BaseStore,
     LocalAttribute,

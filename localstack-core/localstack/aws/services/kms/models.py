@@ -47,9 +47,9 @@ from localstack.aws.api.kms import (
     SigningAlgorithmSpec,
     UnsupportedOperationException,
 )
-from localstack.services.kms.exceptions import ValidationException
-from localstack.services.kms.utils import is_valid_key_arn
-from localstack.services.stores import AccountRegionBundle, BaseStore, LocalAttribute
+from localstack.aws.services.kms.exceptions import ValidationException
+from localstack.aws.services.kms.utils import is_valid_key_arn
+from localstack.aws.services.stores import AccountRegionBundle, BaseStore, LocalAttribute
 from localstack.utils.aws.arns import get_partition, kms_alias_arn, kms_key_arn
 from localstack.utils.crypto import decrypt, encrypt
 from localstack.utils.strings import long_uid, to_bytes, to_str

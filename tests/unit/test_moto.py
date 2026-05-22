@@ -1,6 +1,6 @@
 import pytest
 
-from localstack.services.moto import get_dispatcher
+from localstack.aws.services.moto import get_dispatcher
 
 
 def test_get_dispatcher_for_path_with_optional_slashes():

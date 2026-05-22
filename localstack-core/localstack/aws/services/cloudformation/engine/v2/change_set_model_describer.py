@@ -5,7 +5,7 @@ from typing import Final
 
 import localstack.aws.api.cloudformation as cfn_api
 from localstack.aws.api.cloudformation import Replacement
-from localstack.services.cloudformation.engine.v2.change_set_model import (
+from localstack.aws.services.cloudformation.engine.v2.change_set_model import (
     NodeIntrinsicFunction,
     NodeProperty,
     NodeResource,
@@ -13,13 +13,13 @@ from localstack.services.cloudformation.engine.v2.change_set_model import (
     PropertiesKey,
     is_nothing,
 )
-from localstack.services.cloudformation.engine.v2.change_set_model_preproc import (
+from localstack.aws.services.cloudformation.engine.v2.change_set_model_preproc import (
     ChangeSetModelPreproc,
     PreprocEntityDelta,
     PreprocProperties,
     PreprocResource,
 )
-from localstack.services.cloudformation.v2.entities import ChangeSet
+from localstack.aws.services.cloudformation.v2.entities import ChangeSet
 from localstack.utils.numbers import is_number
 
 CHANGESET_KNOWN_AFTER_APPLY: Final[str] = "{{changeSet:KNOWN_AFTER_APPLY}}"

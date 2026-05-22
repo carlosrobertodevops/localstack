@@ -11,12 +11,12 @@ from botocore.exceptions import ClientError, ParamValidationError
 
 from localstack.aws.api.transcribe import BadRequestException, ConflictException, NotFoundException
 from localstack.aws.connect import ServiceLevelClientFactory
-from localstack.packages.ffmpeg import ffmpeg_package
-from localstack.services.transcribe.packages import vosk_package
-from localstack.services.transcribe.provider import LANGUAGE_MODELS, TranscribeProvider
-from localstack.testing import config as test_config
-from localstack.testing.aws.util import is_aws_cloud
-from localstack.testing.pytest import markers
+from localstack.tooling.packages.ffmpeg import ffmpeg_package
+from localstack.aws.services.transcribe.packages import vosk_package
+from localstack.aws.services.transcribe.provider import LANGUAGE_MODELS, TranscribeProvider
+from localstack.tooling.testing import config as test_config
+from localstack.tooling.testing.aws.util import is_aws_cloud
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.files import new_tmp_file
 from localstack.utils.run import run
 from localstack.utils.strings import short_uid, to_str

@@ -1,6 +1,6 @@
 import pytest
 
-from localstack.services.events.event_rule_engine import EventRuleEngine
+from localstack.aws.services.events.event_rule_engine import EventRuleEngine
 
 
 class TestEventRuler:

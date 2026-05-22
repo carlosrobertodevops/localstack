@@ -1,13 +1,13 @@
 from typing import Final
 
-from localstack.services.stepfunctions.asl.component.common.error_name.error_name import ErrorName
-from localstack.services.stepfunctions.asl.component.common.retry.retrier_decl import RetrierDecl
-from localstack.services.stepfunctions.asl.component.common.retry.retrier_outcome import (
+from localstack.aws.services.stepfunctions.asl.component.common.error_name.error_name import ErrorName
+from localstack.aws.services.stepfunctions.asl.component.common.retry.retrier_decl import RetrierDecl
+from localstack.aws.services.stepfunctions.asl.component.common.retry.retrier_outcome import (
     RetrierOutcome,
 )
-from localstack.services.stepfunctions.asl.component.common.retry.retry_outcome import RetryOutcome
-from localstack.services.stepfunctions.asl.component.eval_component import EvalComponent
-from localstack.services.stepfunctions.asl.eval.environment import Environment
+from localstack.aws.services.stepfunctions.asl.component.common.retry.retry_outcome import RetryOutcome
+from localstack.aws.services.stepfunctions.asl.component.eval_component import EvalComponent
+from localstack.aws.services.stepfunctions.asl.eval.environment import Environment
 
 
 class RetryDecl(EvalComponent):

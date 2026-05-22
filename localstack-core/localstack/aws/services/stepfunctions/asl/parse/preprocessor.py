@@ -5,166 +5,166 @@ from typing import Any
 from antlr4 import ParserRuleContext
 from antlr4.tree.Tree import ParseTree, TerminalNodeImpl
 
-from localstack.services.stepfunctions.asl.antlr.runtime.ASLLexer import ASLLexer
-from localstack.services.stepfunctions.asl.antlr.runtime.ASLParser import ASLParser
-from localstack.services.stepfunctions.asl.antlr.runtime.ASLParserVisitor import (
+from localstack.aws.services.stepfunctions.asl.antlr.runtime.ASLLexer import ASLLexer
+from localstack.aws.services.stepfunctions.asl.antlr.runtime.ASLParser import ASLParser
+from localstack.aws.services.stepfunctions.asl.antlr.runtime.ASLParserVisitor import (
     ASLParserVisitor,
 )
-from localstack.services.stepfunctions.asl.antlt4utils.antlr4utils import (
+from localstack.aws.services.stepfunctions.asl.antlt4utils.antlr4utils import (
     from_string_literal,
     is_production,
     is_terminal,
 )
-from localstack.services.stepfunctions.asl.component.common.assign.assign_decl import (
+from localstack.aws.services.stepfunctions.asl.component.common.assign.assign_decl import (
     AssignDecl,
 )
-from localstack.services.stepfunctions.asl.component.common.assign.assign_decl_binding import (
+from localstack.aws.services.stepfunctions.asl.component.common.assign.assign_decl_binding import (
     AssignDeclBinding,
 )
-from localstack.services.stepfunctions.asl.component.common.assign.assign_template_binding import (
+from localstack.aws.services.stepfunctions.asl.component.common.assign.assign_template_binding import (
     AssignTemplateBinding,
     AssignTemplateBindingStringExpressionSimple,
     AssignTemplateBindingValue,
 )
-from localstack.services.stepfunctions.asl.component.common.assign.assign_template_value import (
+from localstack.aws.services.stepfunctions.asl.component.common.assign.assign_template_value import (
     AssignTemplateValue,
 )
-from localstack.services.stepfunctions.asl.component.common.assign.assign_template_value_array import (
+from localstack.aws.services.stepfunctions.asl.component.common.assign.assign_template_value_array import (
     AssignTemplateValueArray,
 )
-from localstack.services.stepfunctions.asl.component.common.assign.assign_template_value_object import (
+from localstack.aws.services.stepfunctions.asl.component.common.assign.assign_template_value_object import (
     AssignTemplateValueObject,
 )
-from localstack.services.stepfunctions.asl.component.common.assign.assign_template_value_terminal import (
+from localstack.aws.services.stepfunctions.asl.component.common.assign.assign_template_value_terminal import (
     AssignTemplateValueTerminal,
     AssignTemplateValueTerminalLit,
     AssignTemplateValueTerminalStringJSONata,
 )
-from localstack.services.stepfunctions.asl.component.common.catch.catch_decl import (
+from localstack.aws.services.stepfunctions.asl.component.common.catch.catch_decl import (
     CatchDecl,
 )
-from localstack.services.stepfunctions.asl.component.common.catch.catcher_decl import (
+from localstack.aws.services.stepfunctions.asl.component.common.catch.catcher_decl import (
     CatcherDecl,
 )
-from localstack.services.stepfunctions.asl.component.common.catch.catcher_props import (
+from localstack.aws.services.stepfunctions.asl.component.common.catch.catcher_props import (
     CatcherProps,
 )
-from localstack.services.stepfunctions.asl.component.common.comment import Comment
-from localstack.services.stepfunctions.asl.component.common.error_name.custom_error_name import (
+from localstack.aws.services.stepfunctions.asl.component.common.comment import Comment
+from localstack.aws.services.stepfunctions.asl.component.common.error_name.custom_error_name import (
     CustomErrorName,
 )
-from localstack.services.stepfunctions.asl.component.common.error_name.error_equals_decl import (
+from localstack.aws.services.stepfunctions.asl.component.common.error_name.error_equals_decl import (
     ErrorEqualsDecl,
 )
-from localstack.services.stepfunctions.asl.component.common.error_name.error_name import (
+from localstack.aws.services.stepfunctions.asl.component.common.error_name.error_name import (
     ErrorName,
 )
-from localstack.services.stepfunctions.asl.component.common.error_name.states_error_name import (
+from localstack.aws.services.stepfunctions.asl.component.common.error_name.states_error_name import (
     StatesErrorName,
 )
-from localstack.services.stepfunctions.asl.component.common.error_name.states_error_name_type import (
+from localstack.aws.services.stepfunctions.asl.component.common.error_name.states_error_name_type import (
     StatesErrorNameType,
 )
-from localstack.services.stepfunctions.asl.component.common.flow.end import End
-from localstack.services.stepfunctions.asl.component.common.flow.next import Next
-from localstack.services.stepfunctions.asl.component.common.flow.start_at import StartAt
-from localstack.services.stepfunctions.asl.component.common.jsonata.jsonata_template_binding import (
+from localstack.aws.services.stepfunctions.asl.component.common.flow.end import End
+from localstack.aws.services.stepfunctions.asl.component.common.flow.next import Next
+from localstack.aws.services.stepfunctions.asl.component.common.flow.start_at import StartAt
+from localstack.aws.services.stepfunctions.asl.component.common.jsonata.jsonata_template_binding import (
     JSONataTemplateBinding,
 )
-from localstack.services.stepfunctions.asl.component.common.jsonata.jsonata_template_value import (
+from localstack.aws.services.stepfunctions.asl.component.common.jsonata.jsonata_template_value import (
     JSONataTemplateValue,
 )
-from localstack.services.stepfunctions.asl.component.common.jsonata.jsonata_template_value_array import (
+from localstack.aws.services.stepfunctions.asl.component.common.jsonata.jsonata_template_value_array import (
     JSONataTemplateValueArray,
 )
-from localstack.services.stepfunctions.asl.component.common.jsonata.jsonata_template_value_object import (
+from localstack.aws.services.stepfunctions.asl.component.common.jsonata.jsonata_template_value_object import (
     JSONataTemplateValueObject,
 )
-from localstack.services.stepfunctions.asl.component.common.jsonata.jsonata_template_value_terminal import (
+from localstack.aws.services.stepfunctions.asl.component.common.jsonata.jsonata_template_value_terminal import (
     JSONataTemplateValueTerminalLit,
     JSONataTemplateValueTerminalStringJSONata,
 )
-from localstack.services.stepfunctions.asl.component.common.outputdecl import Output
-from localstack.services.stepfunctions.asl.component.common.parargs import (
+from localstack.aws.services.stepfunctions.asl.component.common.outputdecl import Output
+from localstack.aws.services.stepfunctions.asl.component.common.parargs import (
     ArgumentsJSONataTemplateValueObject,
     ArgumentsStringJSONata,
     Parameters,
     Parargs,
 )
-from localstack.services.stepfunctions.asl.component.common.path.input_path import (
+from localstack.aws.services.stepfunctions.asl.component.common.path.input_path import (
     InputPath,
 )
-from localstack.services.stepfunctions.asl.component.common.path.items_path import (
+from localstack.aws.services.stepfunctions.asl.component.common.path.items_path import (
     ItemsPath,
 )
-from localstack.services.stepfunctions.asl.component.common.path.output_path import (
+from localstack.aws.services.stepfunctions.asl.component.common.path.output_path import (
     OutputPath,
 )
-from localstack.services.stepfunctions.asl.component.common.path.result_path import (
+from localstack.aws.services.stepfunctions.asl.component.common.path.result_path import (
     ResultPath,
 )
-from localstack.services.stepfunctions.asl.component.common.payload.payloadvalue.payload_value import (
+from localstack.aws.services.stepfunctions.asl.component.common.payload.payloadvalue.payload_value import (
     PayloadValue,
 )
-from localstack.services.stepfunctions.asl.component.common.payload.payloadvalue.payloadarr.payload_arr import (
+from localstack.aws.services.stepfunctions.asl.component.common.payload.payloadvalue.payloadarr.payload_arr import (
     PayloadArr,
 )
-from localstack.services.stepfunctions.asl.component.common.payload.payloadvalue.payloadbinding.payload_binding import (
+from localstack.aws.services.stepfunctions.asl.component.common.payload.payloadvalue.payloadbinding.payload_binding import (
     PayloadBinding,
     PayloadBindingStringExpressionSimple,
     PayloadBindingValue,
 )
-from localstack.services.stepfunctions.asl.component.common.payload.payloadvalue.payloadtmpl.payload_tmpl import (
+from localstack.aws.services.stepfunctions.asl.component.common.payload.payloadvalue.payloadtmpl.payload_tmpl import (
     PayloadTmpl,
 )
-from localstack.services.stepfunctions.asl.component.common.payload.payloadvalue.payloadvaluelit.payload_value_bool import (
+from localstack.aws.services.stepfunctions.asl.component.common.payload.payloadvalue.payloadvaluelit.payload_value_bool import (
     PayloadValueBool,
 )
-from localstack.services.stepfunctions.asl.component.common.payload.payloadvalue.payloadvaluelit.payload_value_float import (
+from localstack.aws.services.stepfunctions.asl.component.common.payload.payloadvalue.payloadvaluelit.payload_value_float import (
     PayloadValueFloat,
 )
-from localstack.services.stepfunctions.asl.component.common.payload.payloadvalue.payloadvaluelit.payload_value_int import (
+from localstack.aws.services.stepfunctions.asl.component.common.payload.payloadvalue.payloadvaluelit.payload_value_int import (
     PayloadValueInt,
 )
-from localstack.services.stepfunctions.asl.component.common.payload.payloadvalue.payloadvaluelit.payload_value_null import (
+from localstack.aws.services.stepfunctions.asl.component.common.payload.payloadvalue.payloadvaluelit.payload_value_null import (
     PayloadValueNull,
 )
-from localstack.services.stepfunctions.asl.component.common.payload.payloadvalue.payloadvaluelit.payload_value_str import (
+from localstack.aws.services.stepfunctions.asl.component.common.payload.payloadvalue.payloadvaluelit.payload_value_str import (
     PayloadValueStr,
 )
-from localstack.services.stepfunctions.asl.component.common.query_language import (
+from localstack.aws.services.stepfunctions.asl.component.common.query_language import (
     QueryLanguage,
     QueryLanguageMode,
 )
-from localstack.services.stepfunctions.asl.component.common.result_selector import (
+from localstack.aws.services.stepfunctions.asl.component.common.result_selector import (
     ResultSelector,
 )
-from localstack.services.stepfunctions.asl.component.common.retry.backoff_rate_decl import (
+from localstack.aws.services.stepfunctions.asl.component.common.retry.backoff_rate_decl import (
     BackoffRateDecl,
 )
-from localstack.services.stepfunctions.asl.component.common.retry.interval_seconds_decl import (
+from localstack.aws.services.stepfunctions.asl.component.common.retry.interval_seconds_decl import (
     IntervalSecondsDecl,
 )
-from localstack.services.stepfunctions.asl.component.common.retry.jitter_strategy_decl import (
+from localstack.aws.services.stepfunctions.asl.component.common.retry.jitter_strategy_decl import (
     JitterStrategy,
     JitterStrategyDecl,
 )
-from localstack.services.stepfunctions.asl.component.common.retry.max_attempts_decl import (
+from localstack.aws.services.stepfunctions.asl.component.common.retry.max_attempts_decl import (
     MaxAttemptsDecl,
 )
-from localstack.services.stepfunctions.asl.component.common.retry.max_delay_seconds_decl import (
+from localstack.aws.services.stepfunctions.asl.component.common.retry.max_delay_seconds_decl import (
     MaxDelaySecondsDecl,
 )
-from localstack.services.stepfunctions.asl.component.common.retry.retrier_decl import (
+from localstack.aws.services.stepfunctions.asl.component.common.retry.retrier_decl import (
     RetrierDecl,
 )
-from localstack.services.stepfunctions.asl.component.common.retry.retrier_props import (
+from localstack.aws.services.stepfunctions.asl.component.common.retry.retrier_props import (
     RetrierProps,
 )
-from localstack.services.stepfunctions.asl.component.common.retry.retry_decl import (
+from localstack.aws.services.stepfunctions.asl.component.common.retry.retry_decl import (
     RetryDecl,
 )
-from localstack.services.stepfunctions.asl.component.common.string.string_expression import (
+from localstack.aws.services.stepfunctions.asl.component.common.string.string_expression import (
     StringContextPath,
     StringExpression,
     StringExpressionSimple,
@@ -175,28 +175,28 @@ from localstack.services.stepfunctions.asl.component.common.string.string_expres
     StringSampler,
     StringVariableSample,
 )
-from localstack.services.stepfunctions.asl.component.common.timeouts.heartbeat import (
+from localstack.aws.services.stepfunctions.asl.component.common.timeouts.heartbeat import (
     HeartbeatSeconds,
     HeartbeatSecondsJSONata,
     HeartbeatSecondsPath,
 )
-from localstack.services.stepfunctions.asl.component.common.timeouts.timeout import (
+from localstack.aws.services.stepfunctions.asl.component.common.timeouts.timeout import (
     TimeoutSeconds,
     TimeoutSecondsJSONata,
     TimeoutSecondsPath,
 )
-from localstack.services.stepfunctions.asl.component.component import Component
-from localstack.services.stepfunctions.asl.component.program.program import Program
-from localstack.services.stepfunctions.asl.component.program.states import States
-from localstack.services.stepfunctions.asl.component.program.version import Version
-from localstack.services.stepfunctions.asl.component.state.state import CommonStateField
-from localstack.services.stepfunctions.asl.component.state.state_choice.choice_rule import (
+from localstack.aws.services.stepfunctions.asl.component.component import Component
+from localstack.aws.services.stepfunctions.asl.component.program.program import Program
+from localstack.aws.services.stepfunctions.asl.component.program.states import States
+from localstack.aws.services.stepfunctions.asl.component.program.version import Version
+from localstack.aws.services.stepfunctions.asl.component.state.state import CommonStateField
+from localstack.aws.services.stepfunctions.asl.component.state.state_choice.choice_rule import (
     ChoiceRule,
 )
-from localstack.services.stepfunctions.asl.component.state.state_choice.choices_decl import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_choice.choices_decl import (
     ChoicesDecl,
 )
-from localstack.services.stepfunctions.asl.component.state.state_choice.comparison.comparison import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_choice.comparison.comparison import (
     ComparisonComposite,
     ComparisonCompositeAnd,
     ComparisonCompositeNot,
@@ -205,152 +205,152 @@ from localstack.services.stepfunctions.asl.component.state.state_choice.comparis
     ConditionJSONataLit,
     ConditionStringJSONata,
 )
-from localstack.services.stepfunctions.asl.component.state.state_choice.comparison.comparison_func import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_choice.comparison.comparison_func import (
     ComparisonFunc,
     ComparisonFuncStringVariableSample,
     ComparisonFuncValue,
 )
-from localstack.services.stepfunctions.asl.component.state.state_choice.comparison.comparison_operator_type import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_choice.comparison.comparison_operator_type import (
     ComparisonOperatorType,
 )
-from localstack.services.stepfunctions.asl.component.state.state_choice.comparison.comparison_type import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_choice.comparison.comparison_type import (
     Comparison,
 )
-from localstack.services.stepfunctions.asl.component.state.state_choice.comparison.comparison_variable import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_choice.comparison.comparison_variable import (
     ComparisonVariable,
 )
-from localstack.services.stepfunctions.asl.component.state.state_choice.comparison.variable import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_choice.comparison.variable import (
     Variable,
 )
-from localstack.services.stepfunctions.asl.component.state.state_choice.default_decl import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_choice.default_decl import (
     DefaultDecl,
 )
-from localstack.services.stepfunctions.asl.component.state.state_choice.state_choice import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_choice.state_choice import (
     StateChoice,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.execution_type import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.execution_type import (
     ExecutionType,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.item_reader.item_reader_decl import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.item_reader.item_reader_decl import (
     ItemReader,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.item_reader.reader_config.csv_header_location import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.item_reader.reader_config.csv_header_location import (
     CSVHeaderLocation,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.item_reader.reader_config.csv_headers import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.item_reader.reader_config.csv_headers import (
     CSVHeaders,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.item_reader.reader_config.input_type import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.item_reader.reader_config.input_type import (
     InputType,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.item_reader.reader_config.max_items_decl import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.item_reader.reader_config.max_items_decl import (
     MaxItemsDecl,
     MaxItemsInt,
     MaxItemsPath,
     MaxItemsStringJSONata,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.item_reader.reader_config.reader_config_decl import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.item_reader.reader_config.reader_config_decl import (
     ReaderConfig,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.item_reader.reader_config.reader_config_props import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.item_reader.reader_config.reader_config_props import (
     ReaderConfigProps,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.item_selector import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.item_selector import (
     ItemSelector,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.items.items import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.items.items import (
     ItemsArray,
     ItemsJSONata,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.itemprocessor.item_processor_decl import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.itemprocessor.item_processor_decl import (
     ItemProcessorDecl,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.itemprocessor.processor_config import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.itemprocessor.processor_config import (
     ProcessorConfig,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.iterator.iterator_decl import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.iteration.iterator.iterator_decl import (
     IteratorDecl,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.label import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.label import (
     Label,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.max_concurrency import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.max_concurrency import (
     MaxConcurrency,
     MaxConcurrencyJSONata,
     MaxConcurrencyPath,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.mode import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.mode import (
     Mode,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.result_writer.result_writer_decl import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.result_writer.result_writer_decl import (
     ResultWriter,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.state_map import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.state_map import (
     StateMap,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.tolerated_failure import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.tolerated_failure import (
     ToleratedFailureCountInt,
     ToleratedFailureCountPath,
     ToleratedFailurePercentage,
     ToleratedFailurePercentagePath,
     ToleratedFailurePercentageStringJSONata,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_parallel.branches_decl import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_parallel.branches_decl import (
     BranchesDecl,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_parallel.state_parallel import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_parallel.state_parallel import (
     StateParallel,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_task.credentials import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_task.credentials import (
     Credentials,
     RoleArn,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_task.service.resource import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_task.service.resource import (
     Resource,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_task.state_task_factory import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_task.state_task_factory import (
     state_task_for,
 )
-from localstack.services.stepfunctions.asl.component.state.state_fail.cause_decl import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_fail.cause_decl import (
     Cause,
     CausePath,
 )
-from localstack.services.stepfunctions.asl.component.state.state_fail.error_decl import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_fail.error_decl import (
     Error,
     ErrorPath,
 )
-from localstack.services.stepfunctions.asl.component.state.state_fail.state_fail import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_fail.state_fail import (
     StateFail,
 )
-from localstack.services.stepfunctions.asl.component.state.state_pass.result import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_pass.result import (
     Result,
 )
-from localstack.services.stepfunctions.asl.component.state.state_pass.state_pass import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_pass.state_pass import (
     StatePass,
 )
-from localstack.services.stepfunctions.asl.component.state.state_props import StateProps
-from localstack.services.stepfunctions.asl.component.state.state_succeed.state_succeed import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_props import StateProps
+from localstack.aws.services.stepfunctions.asl.component.state.state_succeed.state_succeed import (
     StateSucceed,
 )
-from localstack.services.stepfunctions.asl.component.state.state_type import StateType
-from localstack.services.stepfunctions.asl.component.state.state_wait.state_wait import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_type import StateType
+from localstack.aws.services.stepfunctions.asl.component.state.state_wait.state_wait import (
     StateWait,
 )
-from localstack.services.stepfunctions.asl.component.state.state_wait.wait_function.seconds import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_wait.wait_function.seconds import (
     Seconds,
     SecondsJSONata,
 )
-from localstack.services.stepfunctions.asl.component.state.state_wait.wait_function.seconds_path import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_wait.wait_function.seconds_path import (
     SecondsPath,
 )
-from localstack.services.stepfunctions.asl.component.state.state_wait.wait_function.timestamp import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_wait.wait_function.timestamp import (
     Timestamp,
     TimestampPath,
 )
-from localstack.services.stepfunctions.asl.parse.intrinsic.intrinsic_parser import (
+from localstack.aws.services.stepfunctions.asl.parse.intrinsic.intrinsic_parser import (
     IntrinsicParser,
 )
-from localstack.services.stepfunctions.asl.parse.typed_props import TypedProps
+from localstack.aws.services.stepfunctions.asl.parse.typed_props import TypedProps
 
 LOG = logging.getLogger(__name__)
 

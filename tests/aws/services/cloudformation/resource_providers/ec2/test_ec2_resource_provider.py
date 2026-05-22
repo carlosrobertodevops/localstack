@@ -4,7 +4,7 @@ import pytest
 from botocore.exceptions import ClientError
 from localstack_snapshot.snapshots.transformer import SortingTransformer
 
-from localstack.testing.pytest import markers
+from localstack.tooling.testing.pytest import markers
 
 
 @markers.aws.validated

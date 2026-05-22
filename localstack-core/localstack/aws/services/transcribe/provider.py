@@ -8,7 +8,7 @@ from pathlib import Path
 from typing import Any
 from zipfile import ZipFile
 
-from localstack import config
+from localstack.platform import config
 from localstack.aws.api import RequestContext, handler
 from localstack.aws.api.transcribe import (
     BadRequestException,
@@ -30,15 +30,15 @@ from localstack.aws.api.transcribe import (
     TranscriptionJobSummary,
 )
 from localstack.aws.connect import connect_to
-from localstack.constants import HUGGING_FACE_ENDPOINT
-from localstack.packages.ffmpeg import ffmpeg_package
-from localstack.services.s3.utils import (
+from localstack.platform.constants import HUGGING_FACE_ENDPOINT
+from localstack.tooling.packages.ffmpeg import ffmpeg_package
+from localstack.aws.services.s3.utils import (
     get_bucket_and_key_from_presign_url,
     get_bucket_and_key_from_s3_uri,
 )
-from localstack.services.transcribe.models import TranscribeStore, transcribe_stores
-from localstack.services.transcribe.packages import vosk_package
-from localstack.state import StateVisitor
+from localstack.aws.services.transcribe.models import TranscribeStore, transcribe_stores
+from localstack.aws.services.transcribe.packages import vosk_package
+from localstack.platform.state import StateVisitor
 from localstack.utils.files import new_tmp_file
 from localstack.utils.http import download
 from localstack.utils.run import run

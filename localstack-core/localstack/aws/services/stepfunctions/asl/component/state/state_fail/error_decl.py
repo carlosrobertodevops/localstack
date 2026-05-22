@@ -1,15 +1,15 @@
 import abc
 from typing import Final
 
-from localstack.services.stepfunctions.asl.component.common.string.string_expression import (
+from localstack.aws.services.stepfunctions.asl.component.common.string.string_expression import (
     StringExpression,
     StringIntrinsicFunction,
 )
-from localstack.services.stepfunctions.asl.component.eval_component import EvalComponent
-from localstack.services.stepfunctions.asl.component.intrinsic.functionname.state_fuinction_name_types import (
+from localstack.aws.services.stepfunctions.asl.component.eval_component import EvalComponent
+from localstack.aws.services.stepfunctions.asl.component.intrinsic.functionname.state_fuinction_name_types import (
     StatesFunctionNameType,
 )
-from localstack.services.stepfunctions.asl.eval.environment import Environment
+from localstack.aws.services.stepfunctions.asl.eval.environment import Environment
 
 _STRING_RETURN_FUNCTIONS: Final[set[str]] = {
     typ.name()

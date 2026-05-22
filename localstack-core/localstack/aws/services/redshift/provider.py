@@ -2,15 +2,15 @@ import os
 
 from moto.redshift.models import redshift_backends
 
-from localstack import config
+from localstack.platform import config
 from localstack.aws.api import RequestContext, handler
 from localstack.aws.api.redshift import (
     ClusterSecurityGroupMessage,
     DescribeClusterSecurityGroupsMessage,
     RedshiftApi,
 )
-from localstack.services.moto import call_moto
-from localstack.state import AssetDirectory, StateVisitor
+from localstack.aws.services.moto import call_moto
+from localstack.platform.state import AssetDirectory, StateVisitor
 
 
 class RedshiftProvider(RedshiftApi):

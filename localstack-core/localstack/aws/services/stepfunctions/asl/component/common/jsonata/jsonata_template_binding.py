@@ -2,11 +2,11 @@ from __future__ import annotations
 
 from typing import Final
 
-from localstack.services.stepfunctions.asl.component.common.jsonata.jsonata_template_value import (
+from localstack.aws.services.stepfunctions.asl.component.common.jsonata.jsonata_template_value import (
     JSONataTemplateValue,
 )
-from localstack.services.stepfunctions.asl.component.eval_component import EvalComponent
-from localstack.services.stepfunctions.asl.eval.environment import Environment
+from localstack.aws.services.stepfunctions.asl.component.eval_component import EvalComponent
+from localstack.aws.services.stepfunctions.asl.eval.environment import Environment
 
 
 class JSONataTemplateBinding(EvalComponent):

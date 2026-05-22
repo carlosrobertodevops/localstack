@@ -18,18 +18,18 @@ from botocore.exceptions import ClientError
 from botocore.model import OperationModel
 from plux import Plugin, PluginManager
 
-from localstack import config
+from localstack.platform import config
 from localstack.aws.connect import InternalClientFactory, ServiceLevelClientFactory
-from localstack.services.cloudformation.deployment_utils import (
+from localstack.aws.services.cloudformation.deployment_utils import (
     check_not_found_exception,
     convert_data_types,
     fix_account_id_in_arns,
     fix_boto_parameters_based_on_report,
     remove_none_values,
 )
-from localstack.services.cloudformation.engine.quirks import PHYSICAL_RESOURCE_ID_SPECIAL_CASES
-from localstack.services.cloudformation.provider_utils import convert_request_kwargs
-from localstack.services.cloudformation.service_models import KEY_RESOURCE_STATE
+from localstack.aws.services.cloudformation.engine.quirks import PHYSICAL_RESOURCE_ID_SPECIAL_CASES
+from localstack.aws.services.cloudformation.provider_utils import convert_request_kwargs
+from localstack.aws.services.cloudformation.service_models import KEY_RESOURCE_STATE
 
 PRO_RESOURCE_PROVIDERS = False
 try:
@@ -42,7 +42,7 @@ except ImportError:
     pass
 
 if TYPE_CHECKING:
-    from localstack.services.cloudformation.engine.types import (
+    from localstack.aws.services.cloudformation.engine.types import (
         FuncDetails,
         FuncDetailsValue,
         ResourceDefinition,

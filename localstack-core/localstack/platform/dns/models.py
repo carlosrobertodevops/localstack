@@ -145,7 +145,7 @@ class DnsServerProtocol(Protocol):
 
     # TODO: support regex or wildcard?
     # need to update when custom cloudpod destination is enabled
-    # has standard list of skips: localstack.services.dns_server.SKIP_PATTERNS
+    # has standard list of skips: localstack.aws.services.dns_server.SKIP_PATTERNS
     def add_skip(self, skip_pattern: str) -> None:
         """
         Add a skip pattern to the DNS server.

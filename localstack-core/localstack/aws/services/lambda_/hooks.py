@@ -1,6 +1,6 @@
 """Definition of Plux extension points (i.e., hooks) for Lambda."""
 
-from localstack.runtime.hooks import hook_spec
+from localstack.platform.runtime.hooks import hook_spec
 
 HOOKS_LAMBDA_CREATE_FUNCTION_VERSION = "localstack.hooks.lambda_create_function_version"
 HOOKS_LAMBDA_DELETE_FUNCTION_VERSION = "localstack.hooks.lambda_delete_function_version"

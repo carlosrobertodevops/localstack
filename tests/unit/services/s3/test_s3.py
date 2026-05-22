@@ -10,22 +10,22 @@ import pytest
 
 from localstack.aws.api import RequestContext
 from localstack.aws.api.s3 import AccessDenied, AuthorizationQueryParametersError, InvalidArgument
-from localstack.config import S3_VIRTUAL_HOSTNAME
-from localstack.constants import LOCALHOST
-from localstack.http import Request
-from localstack.services.s3 import presigned_url
-from localstack.services.s3 import utils as s3_utils
-from localstack.services.s3.codec import AwsChunkedDecoder
-from localstack.services.s3.constants import S3_CHUNK_SIZE
-from localstack.services.s3.exceptions import MalformedXML
-from localstack.services.s3.headers import (
+from localstack.platform.config import S3_VIRTUAL_HOSTNAME
+from localstack.platform.constants import LOCALHOST
+from localstack.platform.http import Request
+from localstack.aws.services.s3 import presigned_url
+from localstack.aws.services.s3 import utils as s3_utils
+from localstack.aws.services.s3.codec import AwsChunkedDecoder
+from localstack.aws.services.s3.constants import S3_CHUNK_SIZE
+from localstack.aws.services.s3.exceptions import MalformedXML
+from localstack.aws.services.s3.headers import (
     decode_header_rfc2047,
     encode_header_rfc2047,
     replace_non_iso_8859_1_characters,
 )
-from localstack.services.s3.models import S3Multipart, S3Object, S3Part
-from localstack.services.s3.storage.ephemeral import EphemeralS3ObjectStore
-from localstack.services.s3.validation import validate_canned_acl
+from localstack.aws.services.s3.models import S3Multipart, S3Object, S3Part
+from localstack.aws.services.s3.storage.ephemeral import EphemeralS3ObjectStore
+from localstack.aws.services.s3.validation import validate_canned_acl
 
 
 class TestS3Utils:

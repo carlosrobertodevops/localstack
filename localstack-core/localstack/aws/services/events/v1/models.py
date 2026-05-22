@@ -1,4 +1,4 @@
-from localstack.services.stores import AccountRegionBundle, BaseStore, LocalAttribute
+from localstack.aws.services.stores import AccountRegionBundle, BaseStore, LocalAttribute
 
 
 class EventsStore(BaseStore):

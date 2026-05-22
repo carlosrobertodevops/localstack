@@ -10,9 +10,9 @@ from localstack.aws.api.s3control import (
     TagResourceResult,
     UntagResourceResult,
 )
-from localstack.services.s3.models import S3Store, s3_stores
-from localstack.services.s3control.validation import validate_arn_for_tagging, validate_tags
-from localstack.state import StateVisitor
+from localstack.aws.services.s3.models import S3Store, s3_stores
+from localstack.aws.services.s3control.validation import validate_arn_for_tagging, validate_tags
+from localstack.platform.state import StateVisitor
 
 
 class S3ControlProvider(S3ControlApi):

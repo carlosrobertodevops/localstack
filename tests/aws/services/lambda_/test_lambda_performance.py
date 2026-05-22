@@ -21,11 +21,11 @@ from datetime import datetime, timedelta
 import pytest
 from botocore.config import Config
 
-from localstack import config
+from localstack.platform import config
 from localstack.aws.api.lambda_ import InvocationType, Runtime
-from localstack.config import is_env_true
-from localstack.testing.aws.util import is_aws_cloud
-from localstack.testing.pytest import markers
+from localstack.platform.config import is_env_true
+from localstack.tooling.testing.aws.util import is_aws_cloud
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.strings import short_uid, to_bytes
 from localstack.utils.sync import poll_condition, retry
 from tests.aws.services.lambda_.test_lambda import (

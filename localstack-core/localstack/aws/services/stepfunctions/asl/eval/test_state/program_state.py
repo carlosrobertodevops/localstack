@@ -1,6 +1,6 @@
 from typing import Final
 
-from localstack.services.stepfunctions.asl.eval.program_state import ProgramState
+from localstack.aws.services.stepfunctions.asl.eval.program_state import ProgramState
 
 
 class ProgramChoiceSelected(ProgramState):

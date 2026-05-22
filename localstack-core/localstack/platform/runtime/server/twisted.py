@@ -2,7 +2,7 @@ from rolo.gateway import Gateway
 from rolo.serving.twisted import TwistedGateway
 from twisted.internet import endpoints, reactor, ssl
 
-from localstack import config
+from localstack.platform import config
 from localstack.aws.serving.twisted import TLSMultiplexerFactory, stop_thread_pool
 from localstack.utils import patch
 

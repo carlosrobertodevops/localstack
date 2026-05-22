@@ -5,7 +5,7 @@ import logging
 from rolo.gateway.handlers import EmptyResponseHandler
 from werkzeug.exceptions import HTTPException
 
-from localstack.http import Response
+from localstack.platform.http import Response
 
 from ..api import RequestContext
 from ..chain import ExceptionHandler, HandlerChain

@@ -4,14 +4,14 @@ from __future__ import annotations
 import os
 from typing import TypedDict
 
-import localstack.services.cloudformation.provider_utils as util
-from localstack.services.cloudformation.resource_provider import (
+import localstack.aws.services.cloudformation.provider_utils as util
+from localstack.aws.services.cloudformation.resource_provider import (
     OperationStatus,
     ProgressEvent,
     ResourceRequest,
 )
-from localstack.services.lambda_.lambda_utils import get_handler_file_from_name
-from localstack.services.lambda_.resource_providers.generated.aws_lambda_function_base import (
+from localstack.aws.services.lambda_.lambda_utils import get_handler_file_from_name
+from localstack.aws.services.lambda_.resource_providers.generated.aws_lambda_function_base import (
     LambdaFunctionProviderBase,
 )
 from localstack.utils.archives import is_zip_file

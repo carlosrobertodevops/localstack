@@ -16,7 +16,7 @@ from localstack.aws.api.apigateway import (
     RestApi,
     VpcLink,
 )
-from localstack.services.stores import (
+from localstack.aws.services.stores import (
     AccountRegionBundle,
     BaseStore,
     CrossAccountAttribute,

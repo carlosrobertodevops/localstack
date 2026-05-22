@@ -8,8 +8,8 @@ if TYPE_CHECKING:
     from mypy_boto3_route53 import Route53Client
     from mypy_boto3_route53.type_defs import ResourceRecordSetTypeDef
 
-import localstack.services.cloudformation.provider_utils as util
-from localstack.services.cloudformation.resource_provider import (
+import localstack.aws.services.cloudformation.provider_utils as util
+from localstack.aws.services.cloudformation.resource_provider import (
     OperationStatus,
     ProgressEvent,
     ResourceProvider,

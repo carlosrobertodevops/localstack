@@ -4,8 +4,8 @@ import threading
 from typing import Final
 
 from localstack.aws.api.stepfunctions import Timestamp
-from localstack.services.stepfunctions.asl.component.program.program import Program
-from localstack.services.stepfunctions.asl.eval.environment import Environment
+from localstack.aws.services.stepfunctions.asl.component.program.program import Program
+from localstack.aws.services.stepfunctions.asl.eval.environment import Environment
 from localstack.utils.threads import TMP_THREADS
 
 LOG = logging.getLogger(__name__)

@@ -1,18 +1,18 @@
 from typing import TYPE_CHECKING
 
 from localstack.aws.api.lambda_ import ResourceNotFoundException
-from localstack.services.lambda_.api_utils import (
+from localstack.aws.services.lambda_.api_utils import (
     function_locators_from_arn,
     lambda_arn,
     qualified_lambda_arn,
     qualifier_is_alias,
     unqualified_lambda_arn,
 )
-from localstack.services.lambda_.invocation.models import lambda_stores
+from localstack.aws.services.lambda_.invocation.models import lambda_stores
 from localstack.utils.id_generator import ExistingIds, ResourceIdentifier, Tags, localstack_id
 
 if TYPE_CHECKING:
-    from localstack.services.lambda_.invocation.lambda_models import (
+    from localstack.aws.services.lambda_.invocation.lambda_models import (
         FunctionVersion,
     )
 

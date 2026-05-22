@@ -4,10 +4,10 @@ import logging
 from jsonschema import ValidationError, validate
 
 from localstack.aws.api.apigateway import Method
-from localstack.constants import APPLICATION_JSON
-from localstack.http import Response
-from localstack.services.apigateway.helpers import EMPTY_MODEL, ModelResolver
-from localstack.services.apigateway.models import RestApiContainer
+from localstack.platform.constants import APPLICATION_JSON
+from localstack.platform.http import Response
+from localstack.aws.services.apigateway.helpers import EMPTY_MODEL, ModelResolver
+from localstack.aws.services.apigateway.models import RestApiContainer
 
 from ..api import RestApiGatewayHandler, RestApiGatewayHandlerChain
 from ..context import InvocationRequest, RestApiInvocationContext

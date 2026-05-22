@@ -1,10 +1,10 @@
 import abc
 from typing import Any
 
-from localstack.services.stepfunctions.asl.component.common.payload.payloadvalue.payload_value import (
+from localstack.aws.services.stepfunctions.asl.component.common.payload.payloadvalue.payload_value import (
     PayloadValue,
 )
-from localstack.services.stepfunctions.asl.eval.environment import Environment
+from localstack.aws.services.stepfunctions.asl.eval.environment import Environment
 
 
 class PayloadValueLit(PayloadValue, abc.ABC):

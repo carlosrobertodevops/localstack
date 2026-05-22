@@ -6,9 +6,9 @@ from typing import TypedDict
 
 from plux import PluginManager
 
-from localstack import config
-from localstack.services.lambda_.invocation.lambda_models import FunctionVersion, InvocationResult
-from localstack.services.lambda_.invocation.plugins import RuntimeExecutorPlugin
+from localstack.platform import config
+from localstack.aws.services.lambda_.invocation.lambda_models import FunctionVersion, InvocationResult
+from localstack.aws.services.lambda_.invocation.plugins import RuntimeExecutorPlugin
 
 LOG = logging.getLogger(__name__)
 

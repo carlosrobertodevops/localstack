@@ -1,6 +1,6 @@
 from unittest.mock import MagicMock
 
-from localstack import config
+from localstack.platform import config
 from localstack.utils import java
 
 

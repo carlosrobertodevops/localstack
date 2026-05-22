@@ -1,4 +1,4 @@
-from localstack.services.cloudformation.deployment_utils import fix_boto_parameters_based_on_report
+from localstack.aws.services.cloudformation.deployment_utils import fix_boto_parameters_based_on_report
 
 
 class TestFixBotoParametersBasedOnReport:

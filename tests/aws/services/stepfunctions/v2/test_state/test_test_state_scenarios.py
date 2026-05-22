@@ -5,7 +5,7 @@ from localstack_snapshot.snapshots.transformer import RegexTransformer
 
 from localstack.aws.api.lambda_ import Runtime
 from localstack.aws.api.stepfunctions import InspectionLevel
-from localstack.testing.pytest import markers
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.strings import short_uid
 from tests.aws.services.stepfunctions.templates.evaluatejsonata.evaluate_jsonata_templates import (
     EvaluateJsonataTemplate as EJT,

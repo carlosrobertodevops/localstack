@@ -24,8 +24,8 @@ from localstack.aws.api.dynamodbstreams import (
     TableName,
 )
 from localstack.aws.connect import connect_to
-from localstack.services.dynamodb.utils import change_region_in_ddb_stream_arn
-from localstack.services.dynamodbstreams.dynamodbstreams_api import (
+from localstack.aws.services.dynamodb.utils import change_region_in_ddb_stream_arn
+from localstack.aws.services.dynamodbstreams.dynamodbstreams_api import (
     get_dynamodbstreams_store,
     get_kinesis_client,
     get_kinesis_stream_name,
@@ -35,8 +35,8 @@ from localstack.services.dynamodbstreams.dynamodbstreams_api import (
     stream_name_from_stream_arn,
     table_name_from_stream_arn,
 )
-from localstack.services.plugins import ServiceLifecycleHook
-from localstack.state import StateVisitor
+from localstack.aws.services.plugins import ServiceLifecycleHook
+from localstack.platform.state import StateVisitor
 from localstack.utils.collections import select_from_typed_dict
 
 LOG = logging.getLogger(__name__)
@@ -58,7 +58,7 @@ class DynamoDBStreamsProvider(DynamodbstreamsApi, ServiceLifecycleHook):
         self.shard_to_region = {}
 
     def accept_state_visitor(self, visitor: StateVisitor):
-        from localstack.services.dynamodbstreams.models import dynamodbstreams_stores
+        from localstack.aws.services.dynamodbstreams.models import dynamodbstreams_stores
 
         visitor.visit(dynamodbstreams_stores)
 

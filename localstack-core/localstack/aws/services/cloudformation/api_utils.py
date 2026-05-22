@@ -2,10 +2,10 @@ import logging
 import re
 from urllib.parse import urlparse
 
-from localstack import config, constants
+from localstack.platform import config, constants
 from localstack.aws.connect import connect_to
-from localstack.services.cloudformation.engine.validations import ValidationError
-from localstack.services.s3.utils import (
+from localstack.aws.services.cloudformation.engine.validations import ValidationError
+from localstack.aws.services.s3.utils import (
     extract_bucket_name_and_key_from_headers_and_path,
     normalize_bucket_name,
 )
@@ -130,7 +130,7 @@ def is_local_service_url(url: str) -> bool:
 
 
 def convert_s3_to_local_url(url: str) -> str:
-    from localstack.services.cloudformation.provider import ValidationError
+    from localstack.aws.services.cloudformation.provider import ValidationError
 
     url_parsed = urlparse(url)
     path = url_parsed.path

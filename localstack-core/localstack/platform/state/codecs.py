@@ -1,8 +1,8 @@
 """Factory for encoders and decoders"""
 
-from localstack import config
-from localstack.state import Decoder, Encoder
-from localstack.state.pickle import PickleDecoder, PickleEncoder
+from localstack.platform import config
+from localstack.platform.state import Decoder, Encoder
+from localstack.platform.state.pickle import PickleDecoder, PickleEncoder
 
 ENCODERS = {
     "dill": PickleEncoder,

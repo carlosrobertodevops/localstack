@@ -4,7 +4,7 @@ from typing import TYPE_CHECKING
 
 from bson.json_util import dumps
 
-from localstack import config
+from localstack.platform import config
 from localstack.aws.api import RequestContext
 from localstack.aws.api.dynamodbstreams import (
     StreamDescription,
@@ -13,8 +13,8 @@ from localstack.aws.api.dynamodbstreams import (
     TableName,
 )
 from localstack.aws.connect import connect_to
-from localstack.services.dynamodb.v2.provider import DynamoDBProvider
-from localstack.services.dynamodbstreams.models import (
+from localstack.aws.services.dynamodb.v2.provider import DynamoDBProvider
+from localstack.aws.services.dynamodbstreams.models import (
     DynamoDbStreamsStore,
     StreamWrapper,
     dynamodbstreams_stores,

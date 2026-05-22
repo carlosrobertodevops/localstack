@@ -1,4 +1,4 @@
-from localstack.services.cloudformation.resource_provider import (
+from localstack.aws.services.cloudformation.resource_provider import (
     CloudFormationResourceProviderPlugin,
     ResourceProvider,
 )
@@ -11,7 +11,7 @@ class ECRRepositoryProviderPlugin(CloudFormationResourceProviderPlugin):
         self.factory: type[ResourceProvider] | None = None
 
     def load(self):
-        from localstack.services.ecr.resource_providers.aws_ecr_repository import (
+        from localstack.aws.services.ecr.resource_providers.aws_ecr_repository import (
             ECRRepositoryProvider,
         )
 

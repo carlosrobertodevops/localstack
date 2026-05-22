@@ -1,6 +1,6 @@
 from typing import Final
 
-from localstack.services.stepfunctions.asl.component.intrinsic.member import Member
+from localstack.aws.services.stepfunctions.asl.component.intrinsic.member import Member
 
 
 class MemberAccess(Member):

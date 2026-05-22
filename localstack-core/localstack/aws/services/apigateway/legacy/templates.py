@@ -8,10 +8,10 @@ from urllib.parse import quote_plus, unquote_plus
 
 import xmltodict
 
-from localstack import config
-from localstack.constants import APPLICATION_JSON, APPLICATION_XML
-from localstack.services.apigateway.legacy.context import ApiInvocationContext
-from localstack.services.apigateway.legacy.helpers import select_integration_response
+from localstack.platform import config
+from localstack.platform.constants import APPLICATION_JSON, APPLICATION_XML
+from localstack.aws.services.apigateway.legacy.context import ApiInvocationContext
+from localstack.aws.services.apigateway.legacy.helpers import select_integration_response
 from localstack.utils.aws.templating import APIGW_SOURCE, VelocityUtil, VtlTemplate
 from localstack.utils.json import extract_jsonpath, json_safe, try_json
 from localstack.utils.strings import to_str

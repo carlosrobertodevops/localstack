@@ -9,8 +9,8 @@ from typing import Any, Final
 import jpype
 import jpype.imports  # noqa # Required for JVM Java class imports
 
-from localstack.services.stepfunctions.asl.utils.encoding import to_json_str
-from localstack.services.stepfunctions.packages import jpype_jsonata_package
+from localstack.aws.services.stepfunctions.asl.utils.encoding import to_json_str
+from localstack.aws.services.stepfunctions.packages import jpype_jsonata_package
 from localstack.utils.objects import singleton_factory
 
 JSONataExpression = str
@@ -19,10 +19,10 @@ VariableDeclarations = str
 
 
 # TODO: move the extraction logic to a formal ANTLR-base parser, as done with legacy
-#       Intrinsic Functions in package localstack.services.stepfunctions.asl.antlr
+#       Intrinsic Functions in package localstack.aws.services.stepfunctions.asl.antlr
 #       with grammars ASLIntrinsicLexer and ASLIntrinsicParser, later used by upstream
 #       logics such as in:
-#       localstack.services.stepfunctions.asl.parse.intrinsic.preprocessor.Preprocessor
+#       localstack.aws.services.stepfunctions.asl.parse.intrinsic.preprocessor.Preprocessor
 _PATTERN_VARIABLE_REFERENCE = re.compile(
     # 1) Non-capturing branch for JSONata regex literal
     #    /.../ (slash delimited), allowing escaped slashes \/

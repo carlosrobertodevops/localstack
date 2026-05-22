@@ -1,6 +1,6 @@
 import abc
 
-from localstack.services.stepfunctions.asl.component.common.flow.next import Next
+from localstack.aws.services.stepfunctions.asl.component.common.flow.next import Next
 
 
 class ContinueWith(abc.ABC): ...

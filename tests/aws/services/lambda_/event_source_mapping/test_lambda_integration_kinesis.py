@@ -9,10 +9,10 @@ from botocore.exceptions import ClientError
 from localstack_snapshot.snapshots.transformer import KeyValueBasedTransformer, SortingTransformer
 
 from localstack.aws.api.lambda_ import Runtime
-from localstack.services.lambda_.event_source_mapping.pollers.kinesis_poller import (
+from localstack.aws.services.lambda_.event_source_mapping.pollers.kinesis_poller import (
     KinesisPoller,
 )
-from localstack.testing.aws.lambda_utils import (
+from localstack.tooling.testing.aws.lambda_utils import (
     _await_event_source_mapping_enabled,
     _await_event_source_mapping_state,
     _get_lambda_invocation_events,
@@ -20,8 +20,8 @@ from localstack.testing.aws.lambda_utils import (
     get_lambda_log_events,
     lambda_role,
 )
-from localstack.testing.aws.util import is_aws_cloud
-from localstack.testing.pytest import markers
+from localstack.tooling.testing.aws.util import is_aws_cloud
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.aws.arns import s3_bucket_arn
 from localstack.utils.strings import short_uid, to_bytes
 from localstack.utils.sync import ShortCircuitWaitException, retry, wait_until

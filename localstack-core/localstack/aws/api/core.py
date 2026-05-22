@@ -14,7 +14,7 @@ from rolo.gateway import RequestContext as RoloRequestContext
 
 from localstack.aws.connect import InternalRequestParameters
 from localstack.aws.spec import ProtocolName
-from localstack.http import Request, Response
+from localstack.platform.http import Request, Response
 from localstack.utils.strings import long_uid
 
 

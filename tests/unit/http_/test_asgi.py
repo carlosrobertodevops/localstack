@@ -10,7 +10,7 @@ import pytest
 import requests
 from werkzeug import Request, Response
 
-from localstack.http.asgi import ASGILifespanListener
+from localstack.platform.http.asgi import ASGILifespanListener
 
 LOG = logging.getLogger(__name__)
 

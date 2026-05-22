@@ -10,7 +10,7 @@ import requests
 from botocore.exceptions import ClientError
 from werkzeug.datastructures import Headers
 
-from localstack import config
+from localstack.platform import config
 from localstack.aws.connect import (
     INTERNAL_REQUEST_PARAMS_HEADER,
     InternalRequestParameters,
@@ -18,7 +18,7 @@ from localstack.aws.connect import (
     dump_dto,
 )
 from localstack.aws.spec import get_service_catalog
-from localstack.constants import APPLICATION_JSON, INTERNAL_AWS_ACCESS_KEY_ID
+from localstack.platform.constants import APPLICATION_JSON, INTERNAL_AWS_ACCESS_KEY_ID
 from localstack.utils.aws.arns import extract_region_from_arn
 from localstack.utils.aws.client_types import ServicePrincipal
 from localstack.utils.strings import to_bytes, to_str

@@ -1,4 +1,4 @@
-from localstack.services.cloudformation.resource_provider import (
+from localstack.aws.services.cloudformation.resource_provider import (
     CloudFormationResourceProviderPlugin,
     ResourceProvider,
 )
@@ -11,7 +11,7 @@ class LambdaFunctionProviderPlugin(CloudFormationResourceProviderPlugin):
         self.factory: type[ResourceProvider] | None = None
 
     def load(self):
-        from localstack.services.lambda_.resource_providers.aws_lambda_function import (
+        from localstack.aws.services.lambda_.resource_providers.aws_lambda_function import (
             LambdaFunctionProvider,
         )
 

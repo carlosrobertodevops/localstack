@@ -1,12 +1,12 @@
 from typing import Final
 
-from localstack.services.stepfunctions.asl.component.common.assign.assign_template_binding import (
+from localstack.aws.services.stepfunctions.asl.component.common.assign.assign_template_binding import (
     AssignTemplateBinding,
 )
-from localstack.services.stepfunctions.asl.component.common.assign.assign_template_value import (
+from localstack.aws.services.stepfunctions.asl.component.common.assign.assign_template_value import (
     AssignTemplateValue,
 )
-from localstack.services.stepfunctions.asl.eval.environment import Environment
+from localstack.aws.services.stepfunctions.asl.eval.environment import Environment
 
 
 class AssignTemplateValueObject(AssignTemplateValue):

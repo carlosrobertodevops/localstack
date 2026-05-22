@@ -8,7 +8,7 @@ import aws_cdk.aws_logs as logs
 import aws_cdk.aws_s3 as s3
 import pytest
 
-from localstack.testing.pytest import markers
+from localstack.tooling.testing.pytest import markers
 from tests.aws.scenario.kinesis_firehose.conftest import get_all_expected_messages_from_s3
 
 STACK_NAME = "FirehoseStack"

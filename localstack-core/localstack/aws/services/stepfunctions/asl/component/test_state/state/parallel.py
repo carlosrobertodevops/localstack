@@ -1,13 +1,13 @@
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_parallel.state_parallel import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_parallel.state_parallel import (
     StateParallel,
 )
-from localstack.services.stepfunctions.asl.component.test_state.state.base_mock import (
+from localstack.aws.services.stepfunctions.asl.component.test_state.state.base_mock import (
     MockedBaseState,
 )
-from localstack.services.stepfunctions.asl.component.test_state.state.execution import (
+from localstack.aws.services.stepfunctions.asl.component.test_state.state.execution import (
     MockedStateExecution,
 )
-from localstack.services.stepfunctions.asl.eval.test_state.environment import TestStateEnvironment
+from localstack.aws.services.stepfunctions.asl.eval.test_state.environment import TestStateEnvironment
 
 
 class MockedStateParallel(MockedBaseState[StateParallel]):

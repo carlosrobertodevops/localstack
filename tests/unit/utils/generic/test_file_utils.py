@@ -2,8 +2,8 @@ import os
 
 import pytest
 
-from localstack import config
-from localstack.testing.pytest.util import run_as_os_user
+from localstack.platform import config
+from localstack.tooling.testing.pytest.util import run_as_os_user
 from localstack.utils.common import new_tmp_file, save_file
 from localstack.utils.files import idempotent_chmod, new_tmp_dir, parse_config_file, rm_rf
 

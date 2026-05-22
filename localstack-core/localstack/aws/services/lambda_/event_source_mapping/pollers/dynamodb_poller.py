@@ -4,11 +4,11 @@ from datetime import datetime
 from botocore.client import BaseClient
 
 from localstack.aws.api.dynamodbstreams import StreamStatus
-from localstack.services.lambda_.event_source_mapping.event_processor import (
+from localstack.aws.services.lambda_.event_source_mapping.event_processor import (
     EventProcessor,
 )
-from localstack.services.lambda_.event_source_mapping.pipe_utils import get_current_time
-from localstack.services.lambda_.event_source_mapping.pollers.stream_poller import StreamPoller
+from localstack.aws.services.lambda_.event_source_mapping.pipe_utils import get_current_time
+from localstack.aws.services.lambda_.event_source_mapping.pollers.stream_poller import StreamPoller
 
 LOG = logging.getLogger(__name__)
 
@@ -85,7 +85,7 @@ class DynamoDBPoller(StreamPoller):
         events = []
         for record in records:
             # TODO: consolidate with DynamoDB event source listener:
-            #  localstack.services.lambda_.event_source_listeners.dynamodb_event_source_listener.DynamoDBEventSourceListener._create_lambda_event_payload
+            #  localstack.aws.services.lambda_.event_source_listeners.dynamodb_event_source_listener.DynamoDBEventSourceListener._create_lambda_event_payload
             dynamodb = record["dynamodb"]
 
             if creation_time := dynamodb.get("ApproximateCreationDateTime"):

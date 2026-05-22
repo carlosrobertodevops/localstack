@@ -5,9 +5,9 @@ import aws_cdk as cdk
 import pytest
 from botocore.exceptions import ClientError
 
-from localstack import config
-from localstack.testing.aws.util import is_aws_cloud
-from localstack.testing.pytest import markers
+from localstack.platform import config
+from localstack.tooling.testing.aws.util import is_aws_cloud
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.aws import arns, resources
 from localstack.utils.aws.arns import kinesis_stream_arn
 from localstack.utils.aws.queries import kinesis_get_latest_records
@@ -75,7 +75,7 @@ class TestDynamoDBStreams:
         assert len(stream_tables) == 0
 
         if not config.DDB_STREAMS_PROVIDER_V2:
-            from localstack.services.dynamodbstreams.dynamodbstreams_api import (
+            from localstack.aws.services.dynamodbstreams.dynamodbstreams_api import (
                 get_kinesis_stream_name,
             )
 

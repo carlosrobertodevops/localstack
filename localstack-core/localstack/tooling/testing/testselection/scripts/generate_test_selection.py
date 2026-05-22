@@ -1,5 +1,5 @@
 """
-USAGE: python -m localstack.testing.testselection.scripts.generate_test_selection <repo_root_path> <output_file_path> \
+USAGE: python -m localstack.tooling.testing.testselection.scripts.generate_test_selection <repo_root_path> <output_file_path> \
                                 [--base-commit-sha <base-commit-sha> \
                                  --head-commit-sha <head-commit-sha> ]
                                 [ --pr-url <pr_url> ]
@@ -13,18 +13,18 @@ import sys
 from collections.abc import Iterable
 from pathlib import Path
 
-from localstack.testing.testselection.git import (
+from localstack.tooling.testing.testselection.git import (
     find_merge_base,
     get_branch_name,
     get_changed_files_from_git_diff,
 )
-from localstack.testing.testselection.github import (
+from localstack.tooling.testing.testselection.github import (
     get_pr_details_from_branch,
     get_pr_details_from_url,
 )
-from localstack.testing.testselection.matching import MatchingRule
-from localstack.testing.testselection.opt_out import opted_out
-from localstack.testing.testselection.testselection import get_affected_tests_from_changes
+from localstack.tooling.testing.testselection.matching import MatchingRule
+from localstack.tooling.testing.testselection.opt_out import opted_out
+from localstack.tooling.testing.testselection.testselection import get_affected_tests_from_changes
 
 
 def generate_test_selection(

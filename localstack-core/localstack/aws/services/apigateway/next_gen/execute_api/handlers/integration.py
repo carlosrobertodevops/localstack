@@ -1,6 +1,6 @@
 import logging
 
-from localstack.http import Response
+from localstack.platform.http import Response
 
 from ..api import RestApiGatewayHandler, RestApiGatewayHandlerChain
 from ..context import EndpointResponse, RestApiInvocationContext

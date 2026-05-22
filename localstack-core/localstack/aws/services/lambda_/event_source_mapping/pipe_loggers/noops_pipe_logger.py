@@ -1,4 +1,4 @@
-from localstack.services.lambda_.event_source_mapping.pipe_loggers.pipe_logger import PipeLogger
+from localstack.aws.services.lambda_.event_source_mapping.pipe_loggers.pipe_logger import PipeLogger
 
 
 class NoOpsPipeLogger(PipeLogger):

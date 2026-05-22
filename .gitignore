@@ -76,3 +76,4 @@ gen/
 
 # setuptools_scm version.py
 */*/version.py
+localstack-core/localstack/platform/version.py

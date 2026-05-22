@@ -1,10 +1,10 @@
 from localstack.aws.api.apigateway import IntegrationType
-from localstack.http import Response
-from localstack.services.apigateway.next_gen.execute_api.api import (
+from localstack.platform.http import Response
+from localstack.aws.services.apigateway.next_gen.execute_api.api import (
     RestApiGatewayHandler,
     RestApiGatewayHandlerChain,
 )
-from localstack.services.apigateway.next_gen.execute_api.context import RestApiInvocationContext
+from localstack.aws.services.apigateway.next_gen.execute_api.context import RestApiInvocationContext
 from localstack.utils.strings import short_uid
 
 

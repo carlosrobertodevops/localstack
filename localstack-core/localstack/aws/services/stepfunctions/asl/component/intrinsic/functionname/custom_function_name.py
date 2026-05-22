@@ -1,4 +1,4 @@
-from localstack.services.stepfunctions.asl.component.intrinsic.functionname.function_name import (
+from localstack.aws.services.stepfunctions.asl.component.intrinsic.functionname.function_name import (
     FunctionName,
 )
 

@@ -1,11 +1,11 @@
 import logging
 
 from localstack.aws.api.cloudformation import Export, StackStatus
-from localstack.services.cloudformation.engine.entities import Stack, StackChangeSet, StackSet
-from localstack.services.cloudformation.v2.entities import ChangeSet as ChangeSetV2
-from localstack.services.cloudformation.v2.entities import Stack as StackV2
-from localstack.services.cloudformation.v2.entities import StackSet as StackSetV2
-from localstack.services.stores import AccountRegionBundle, BaseStore, LocalAttribute
+from localstack.aws.services.cloudformation.engine.entities import Stack, StackChangeSet, StackSet
+from localstack.aws.services.cloudformation.v2.entities import ChangeSet as ChangeSetV2
+from localstack.aws.services.cloudformation.v2.entities import Stack as StackV2
+from localstack.aws.services.cloudformation.v2.entities import StackSet as StackSetV2
+from localstack.aws.services.stores import AccountRegionBundle, BaseStore, LocalAttribute
 
 LOG = logging.getLogger(__name__)
 

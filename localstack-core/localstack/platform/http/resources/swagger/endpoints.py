@@ -3,8 +3,8 @@ import os
 from jinja2 import Environment, FileSystemLoader
 from rolo import Request, route
 
-from localstack.config import external_service_url
-from localstack.http import Response
+from localstack.platform.config import external_service_url
+from localstack.platform.http import Response
 
 
 def _get_service_url(request: Request) -> str:

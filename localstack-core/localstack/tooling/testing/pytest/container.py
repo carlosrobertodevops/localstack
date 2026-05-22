@@ -6,7 +6,7 @@ from collections.abc import Callable, Generator
 
 import pytest
 
-from localstack import constants
+from localstack.platform import constants
 from localstack.utils.bootstrap import Container, RunningContainer, get_docker_image_to_start
 from localstack.utils.container_utils.container_client import (
     CancellableStream,

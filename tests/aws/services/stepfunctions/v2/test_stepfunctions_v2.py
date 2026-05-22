@@ -4,13 +4,13 @@ import os
 
 import pytest
 
-from localstack.services.events.v1.provider import TEST_EVENTS_CACHE
-from localstack.testing.aws.util import is_aws_cloud
-from localstack.testing.config import (
+from localstack.aws.services.events.v1.provider import TEST_EVENTS_CACHE
+from localstack.tooling.testing.aws.util import is_aws_cloud
+from localstack.tooling.testing.config import (
     SECONDARY_TEST_AWS_ACCESS_KEY_ID,
     SECONDARY_TEST_AWS_SECRET_ACCESS_KEY,
 )
-from localstack.testing.pytest import markers
+from localstack.tooling.testing.pytest import markers
 from localstack.utils import testutil
 from localstack.utils.aws import arns
 from localstack.utils.files import load_file

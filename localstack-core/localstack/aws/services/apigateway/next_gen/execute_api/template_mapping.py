@@ -25,8 +25,8 @@ import airspeed
 from airspeed.operators import dict_to_string
 from jsonpath_rw import parse
 
-from localstack import config
-from localstack.services.apigateway.next_gen.execute_api.variables import (
+from localstack.platform import config
+from localstack.aws.services.apigateway.next_gen.execute_api.variables import (
     ContextVariableOverrides,
     ContextVariables,
     ContextVarsResponseOverride,

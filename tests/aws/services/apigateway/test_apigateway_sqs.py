@@ -5,7 +5,7 @@ import textwrap
 import pytest
 import requests
 
-from localstack.testing.pytest import markers
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.strings import short_uid, to_str
 from localstack.utils.sync import retry
 from localstack.utils.xml import is_valid_xml

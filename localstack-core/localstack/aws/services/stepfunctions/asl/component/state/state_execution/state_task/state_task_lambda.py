@@ -14,33 +14,33 @@ from localstack.aws.api.stepfunctions import (
     LambdaFunctionTimedOutEventDetails,
     TaskCredentials,
 )
-from localstack.services.stepfunctions.asl.component.common.error_name.custom_error_name import (
+from localstack.aws.services.stepfunctions.asl.component.common.error_name.custom_error_name import (
     CustomErrorName,
 )
-from localstack.services.stepfunctions.asl.component.common.error_name.failure_event import (
+from localstack.aws.services.stepfunctions.asl.component.common.error_name.failure_event import (
     FailureEvent,
     FailureEventException,
 )
-from localstack.services.stepfunctions.asl.component.common.error_name.states_error_name import (
+from localstack.aws.services.stepfunctions.asl.component.common.error_name.states_error_name import (
     StatesErrorName,
 )
-from localstack.services.stepfunctions.asl.component.common.error_name.states_error_name_type import (
+from localstack.aws.services.stepfunctions.asl.component.common.error_name.states_error_name_type import (
     StatesErrorNameType,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_task import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_task import (
     lambda_eval_utils,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_task.service.resource import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_task.service.resource import (
     LambdaResource,
     ResourceRuntimePart,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_task.state_task import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_task.state_task import (
     StateTask,
 )
-from localstack.services.stepfunctions.asl.eval.environment import Environment
-from localstack.services.stepfunctions.asl.eval.event.event_detail import EventDetails
-from localstack.services.stepfunctions.asl.utils.encoding import to_json_str
-from localstack.services.stepfunctions.quotas import is_within_size_quota
+from localstack.aws.services.stepfunctions.asl.eval.environment import Environment
+from localstack.aws.services.stepfunctions.asl.eval.event.event_detail import EventDetails
+from localstack.aws.services.stepfunctions.asl.utils.encoding import to_json_str
+from localstack.aws.services.stepfunctions.quotas import is_within_size_quota
 
 LOG = logging.getLogger(__name__)
 

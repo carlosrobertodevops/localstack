@@ -10,10 +10,10 @@ from localstack.aws.api.kinesis import StreamStatus
 from localstack.aws.api.pipes import (
     KinesisStreamStartPosition,
 )
-from localstack.services.lambda_.event_source_mapping.event_processor import (
+from localstack.aws.services.lambda_.event_source_mapping.event_processor import (
     EventProcessor,
 )
-from localstack.services.lambda_.event_source_mapping.pollers.stream_poller import StreamPoller
+from localstack.aws.services.lambda_.event_source_mapping.pollers.stream_poller import StreamPoller
 from localstack.utils.strings import to_str
 
 LOG = logging.getLogger(__name__)
@@ -107,7 +107,7 @@ class KinesisPoller(StreamPoller):
         events = []
         for record in records:
             # TODO: consolidate with Kinesis event source listener:
-            #  localstack.services.lambda_.event_source_listeners.kinesis_event_source_listener.KinesisEventSourceListener._create_lambda_event_payload
+            #  localstack.aws.services.lambda_.event_source_listeners.kinesis_event_source_listener.KinesisEventSourceListener._create_lambda_event_payload
             #  check `encryptionType` leading to serialization errors by Dotnet Lambdas
             sequence_number = record["SequenceNumber"]
             event = {

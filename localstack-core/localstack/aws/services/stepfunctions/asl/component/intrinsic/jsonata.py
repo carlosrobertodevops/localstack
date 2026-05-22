@@ -1,6 +1,6 @@
 from typing import Final
 
-from localstack.services.stepfunctions.asl.jsonata.jsonata import (
+from localstack.aws.services.stepfunctions.asl.jsonata.jsonata import (
     VariableDeclarations,
     VariableReference,
 )

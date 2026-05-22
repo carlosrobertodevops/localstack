@@ -10,31 +10,31 @@ from urllib.parse import urlencode, urljoin, urlparse
 import requests
 from requests import Response
 
-from localstack import config
+from localstack.platform import config
 from localstack.aws.api.stepfunctions import HistoryEventType, TaskFailedEventDetails
-from localstack.constants import (
+from localstack.platform.constants import (
     APPLICATION_JSON,
     HEADER_CONTENT_TYPE,
     PATH_USER_REQUEST,
 )
-from localstack.services.stepfunctions.asl.component.common.error_name.custom_error_name import (
+from localstack.aws.services.stepfunctions.asl.component.common.error_name.custom_error_name import (
     CustomErrorName,
 )
-from localstack.services.stepfunctions.asl.component.common.error_name.failure_event import (
+from localstack.aws.services.stepfunctions.asl.component.common.error_name.failure_event import (
     FailureEvent,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_task.credentials import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_task.credentials import (
     StateCredentials,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_task.service.resource import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_task.service.resource import (
     ResourceCondition,
     ResourceRuntimePart,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_task.service.state_task_service_callback import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_task.service.state_task_service_callback import (
     StateTaskServiceCallback,
 )
-from localstack.services.stepfunctions.asl.eval.environment import Environment
-from localstack.services.stepfunctions.asl.eval.event.event_detail import EventDetails
+from localstack.aws.services.stepfunctions.asl.eval.environment import Environment
+from localstack.aws.services.stepfunctions.asl.eval.event.event_detail import EventDetails
 from localstack.utils.collections import select_from_typed_dict
 from localstack.utils.strings import long_uid
 from localstack.utils.urls import localstack_host

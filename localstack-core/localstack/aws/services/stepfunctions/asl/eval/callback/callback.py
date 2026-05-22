@@ -4,7 +4,7 @@ from threading import Event, Lock
 from typing import Final
 
 from localstack.aws.api.stepfunctions import ActivityDoesNotExist, Arn
-from localstack.services.stepfunctions.backend.activity import Activity, ActivityTask
+from localstack.aws.services.stepfunctions.backend.activity import Activity, ActivityTask
 from localstack.utils.strings import long_uid
 
 CallbackId = str

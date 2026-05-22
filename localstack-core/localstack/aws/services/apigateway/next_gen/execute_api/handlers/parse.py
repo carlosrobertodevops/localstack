@@ -7,8 +7,8 @@ from urllib.parse import urlparse
 from rolo.request import restore_payload
 from werkzeug.datastructures import Headers, MultiDict
 
-from localstack.http import Response
-from localstack.services.apigateway.helpers import REQUEST_TIME_DATE_FORMAT
+from localstack.platform.http import Response
+from localstack.aws.services.apigateway.helpers import REQUEST_TIME_DATE_FORMAT
 from localstack.utils.strings import long_uid, short_uid
 from localstack.utils.time import timestamp
 

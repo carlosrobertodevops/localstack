@@ -64,8 +64,8 @@ from localstack.aws.api.secretsmanager import (
     ValidateResourcePolicyResponse,
 )
 from localstack.aws.connect import connect_to
-from localstack.services.moto import call_moto
-from localstack.state import StateVisitor
+from localstack.aws.services.moto import call_moto
+from localstack.platform.state import StateVisitor
 from localstack.utils.aws import arns
 from localstack.utils.patch import patch
 from localstack.utils.time import today_no_time

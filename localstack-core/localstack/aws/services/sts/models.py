@@ -1,7 +1,7 @@
 from typing import Any, TypedDict
 
 from localstack.aws.api.sts import Tag
-from localstack.services.stores import AccountRegionBundle, BaseStore, CrossRegionAttribute
+from localstack.aws.services.stores import AccountRegionBundle, BaseStore, CrossRegionAttribute
 
 
 class SessionConfig(TypedDict):

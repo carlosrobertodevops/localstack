@@ -19,7 +19,7 @@ from localstack.aws.api.events import (
     RuleArn,
     Timestamp,
 )
-from localstack.services.events.models import (
+from localstack.aws.services.events.models import (
     FormattedEvent,
     ResourceType,
     TransformedEvent,

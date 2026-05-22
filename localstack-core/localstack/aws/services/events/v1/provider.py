@@ -11,7 +11,7 @@ from moto.events.responses import EventsHandler as MotoEventsHandler
 from werkzeug import Request
 from werkzeug.exceptions import NotFound
 
-from localstack import config
+from localstack.platform import config
 from localstack.aws.api import RequestContext
 from localstack.aws.api.core import CommonServiceException, ServiceException
 from localstack.aws.api.events import (
@@ -38,14 +38,14 @@ from localstack.aws.api.events import (
     TargetList,
     TestEventPatternResponse,
 )
-from localstack.constants import APPLICATION_AMZ_JSON_1_1
-from localstack.http import route
-from localstack.services.edge import ROUTER
-from localstack.services.events.scheduler import JobScheduler
-from localstack.services.events.v1.models import EventsStore, events_stores
-from localstack.services.moto import call_moto
-from localstack.services.plugins import ServiceLifecycleHook
-from localstack.state import StateVisitor
+from localstack.platform.constants import APPLICATION_AMZ_JSON_1_1
+from localstack.platform.http import route
+from localstack.aws.services.edge import ROUTER
+from localstack.aws.services.events.scheduler import JobScheduler
+from localstack.aws.services.events.v1.models import EventsStore, events_stores
+from localstack.aws.services.moto import call_moto
+from localstack.aws.services.plugins import ServiceLifecycleHook
+from localstack.platform.state import StateVisitor
 from localstack.utils.aws.arns import event_bus_arn, parse_arn
 from localstack.utils.aws.client_types import ServicePrincipal
 from localstack.utils.aws.message_forwarding import send_event_to_target
@@ -87,7 +87,7 @@ class EventsProvider(EventsApi, ServiceLifecycleHook):
     def accept_state_visitor(self, visitor: StateVisitor):
         from moto.events.models import events_backends
 
-        from localstack.services.events.v1.models import events_stores
+        from localstack.aws.services.events.v1.models import events_stores
 
         visitor.visit(events_backends)
         visitor.visit(events_stores)

@@ -13,8 +13,8 @@ from localstack_snapshot.snapshots.transformer import (
 )
 
 from localstack.aws.api.stepfunctions import StateMachineType
-from localstack.testing.aws.util import is_aws_cloud
-from localstack.testing.pytest.stepfunctions.utils import await_execution_success
+from localstack.tooling.testing.aws.util import is_aws_cloud
+from localstack.tooling.testing.pytest.stepfunctions.utils import await_execution_success
 from localstack.utils.strings import short_uid
 
 LOG = logging.getLogger(__name__)

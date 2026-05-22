@@ -1,4 +1,4 @@
-from localstack.services.cloudformation.resource_provider import (
+from localstack.aws.services.cloudformation.resource_provider import (
     CloudFormationResourceProviderPlugin,
     ResourceProvider,
 )
@@ -11,6 +11,6 @@ class LambdaAliasProviderPlugin(CloudFormationResourceProviderPlugin):
         self.factory: type[ResourceProvider] | None = None
 
     def load(self):
-        from localstack.services.cdk.resource_providers.cdk_metadata import CDKMetadataProvider
+        from localstack.aws.services.cdk.resource_providers.cdk_metadata import CDKMetadataProvider
 
         self.factory = CDKMetadataProvider

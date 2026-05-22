@@ -13,8 +13,8 @@ from localstack.aws.api.sqs import (
 from localstack.aws.protocol.parser import create_parser
 from localstack.aws.protocol.serializer import aws_response_serializer
 from localstack.aws.spec import load_service
-from localstack.http import Request, route
-from localstack.services.sqs.models import (
+from localstack.platform.http import Request, route
+from localstack.aws.services.sqs.models import (
     FifoQueue,
     SqsMessage,
     SqsQueue,
@@ -22,7 +22,7 @@ from localstack.services.sqs.models import (
     sqs_stores,
     to_sqs_api_message,
 )
-from localstack.services.sqs.utils import (
+from localstack.aws.services.sqs.utils import (
     parse_queue_url,
 )
 from localstack.utils.aws.request_context import extract_region_from_headers

@@ -2,7 +2,7 @@ import unittest
 
 import pytest
 
-from localstack.services.stores import AccountRegionBundle, BaseStore
+from localstack.aws.services.stores import AccountRegionBundle, BaseStore
 
 
 class SampleStore(BaseStore):
@@ -162,7 +162,7 @@ class TestStores:
             assert stores[account1]["invalid-region"]
         exc.match("not a valid AWS region")
 
-    @unittest.mock.patch("localstack.config.ALLOW_NONSTANDARD_REGIONS", True)
+    @unittest.mock.patch("localstack.platform.config.ALLOW_NONSTANDARD_REGIONS", True)
     def test_nonstandard_regions(self):
         stores = AccountRegionBundle("sns", SampleStore)
         account1 = "696969696969"

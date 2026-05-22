@@ -1,6 +1,6 @@
 from collections.abc import Iterable
 
-from localstack.testing.testselection.matching import MATCHING_RULES, MatchingRule
+from localstack.tooling.testing.testselection.matching import MATCHING_RULES, MatchingRule
 
 
 def get_affected_tests_from_changes(

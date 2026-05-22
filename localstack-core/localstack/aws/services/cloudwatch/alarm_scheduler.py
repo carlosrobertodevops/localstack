@@ -7,7 +7,7 @@ from typing import TYPE_CHECKING
 
 from localstack.aws.api.cloudwatch import MetricAlarm, MetricDataQuery, MetricStat, StateValue
 from localstack.aws.connect import connect_to
-from localstack.runtime.shutdown import SHUTDOWN_HANDLERS
+from localstack.platform.runtime.shutdown import SHUTDOWN_HANDLERS
 from localstack.utils.aws import arns, aws_stack
 from localstack.utils.scheduler import ScheduledTask, Scheduler
 

@@ -5,8 +5,7 @@ from collections.abc import Callable
 
 from requests.models import Response
 
-from localstack import config
-
+from localstack.platform import config
 LOG = logging.getLogger(__name__)
 
 CONFIG_LISTENERS: list[Callable[[str, str], None]] = []

@@ -5,7 +5,7 @@ from queue import Queue
 
 import pytest
 
-from localstack import config
+from localstack.platform import config
 from localstack.utils.analytics.metadata import (
     get_client_metadata,
     get_localstack_edition,

@@ -10,7 +10,7 @@ from botocore.compat import HTTPHeaders
 from botocore.config import Config
 from botocore.exceptions import ClientError
 
-from localstack import config
+from localstack.platform import config
 from localstack.aws.api import RequestContext
 from localstack.aws.connect import (
     ClientFactory,
@@ -21,8 +21,8 @@ from localstack.aws.connect import (
 from localstack.aws.forwarder import create_http_request
 from localstack.aws.protocol.parser import create_parser
 from localstack.aws.spec import LOCALSTACK_BUILTIN_DATA_PATH, load_service
-from localstack.config import is_env_true
-from localstack.testing.config import (
+from localstack.platform.config import is_env_true
+from localstack.tooling.testing.config import (
     SECONDARY_TEST_AWS_ACCESS_KEY_ID,
     SECONDARY_TEST_AWS_PROFILE,
     SECONDARY_TEST_AWS_SECRET_ACCESS_KEY,

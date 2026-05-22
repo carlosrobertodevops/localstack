@@ -3,7 +3,7 @@ across the current test session.
 
 Use in your module as follows::
 
-    pytest_plugins = "localstack.testing.pytest.in_memory_localstack"
+    pytest_plugins = "localstack.tooling.testing.pytest.in_memory_localstack"
 
     @pytest.hookimpl()
     def pytest_configure(config):
@@ -21,15 +21,15 @@ from _pytest.config import PytestPluginManager
 from _pytest.config.argparsing import Parser
 from _pytest.main import Session
 
-import localstack.testing.config as test_config
-from localstack import config as localstack_config
-from localstack.constants import ENV_INTERNAL_TEST_RUN
+import localstack.tooling.testing.config as test_config
+from localstack.platform import config as localstack_config
+from localstack.platform.constants import ENV_INTERNAL_TEST_RUN
 
 LOG = logging.getLogger(__name__)
 LOG.info("Pytest plugin for in-memory-localstack session loaded.")
 
 if localstack_config.is_collect_metrics_mode():
-    pytest_plugins = "localstack.testing.pytest.metric_collection"
+    pytest_plugins = "localstack.tooling.testing.pytest.metric_collection"
 
 _started = threading.Event()
 
@@ -51,7 +51,7 @@ def pytest_runtestloop(session: Session):
     if not session.config.option.start_localstack:
         return
 
-    from localstack.testing.aws.util import is_aws_cloud
+    from localstack.tooling.testing.aws.util import is_aws_cloud
 
     if test_config.TEST_SKIP_LOCALSTACK_START:
         LOG.info("TEST_SKIP_LOCALSTACK_START is set, not starting localstack")
@@ -71,7 +71,7 @@ def pytest_runtestloop(session: Session):
     os.environ[ENV_INTERNAL_TEST_RUN] = "1"
     localstack_config.INCLUDE_STACK_TRACES_IN_HTTP_RESPONSE = True
 
-    from localstack.runtime import current
+    from localstack.platform.runtime import current
 
     _started.set()
     runtime = current.initialize_runtime()
@@ -89,7 +89,7 @@ def pytest_sessionfinish(session: Session):
     if not _started.is_set():
         return
 
-    from localstack.runtime import get_current_runtime
+    from localstack.platform.runtime import get_current_runtime
 
     try:
         get_current_runtime()

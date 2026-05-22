@@ -3,7 +3,7 @@ import aws_cdk.aws_apigateway as apigateway
 import aws_cdk.aws_lambda as awslambda
 import pytest
 
-from localstack.testing.pytest import markers
+from localstack.tooling.testing.pytest import markers
 
 FN_CODE = """
 import json

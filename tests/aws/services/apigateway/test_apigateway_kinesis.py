@@ -1,6 +1,6 @@
 import pytest
 
-from localstack.testing.pytest import markers
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.http import safe_requests as requests
 from localstack.utils.strings import short_uid
 from localstack.utils.sync import retry

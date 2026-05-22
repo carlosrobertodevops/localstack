@@ -1,4 +1,4 @@
-from localstack.services.cloudformation.resource_provider import (
+from localstack.aws.services.cloudformation.resource_provider import (
     CloudFormationResourceProviderPlugin,
     ResourceProvider,
 )
@@ -11,7 +11,7 @@ class ResourceGroupsGroupProviderPlugin(CloudFormationResourceProviderPlugin):
         self.factory: type[ResourceProvider] | None = None
 
     def load(self):
-        from localstack.services.resource_groups.resource_providers.aws_resourcegroups_group import (
+        from localstack.aws.services.resource_groups.resource_providers.aws_resourcegroups_group import (
             ResourceGroupsGroupProvider,
         )
 

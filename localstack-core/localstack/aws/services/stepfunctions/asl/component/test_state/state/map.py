@@ -1,17 +1,17 @@
-from localstack.services.stepfunctions.asl.component.common.error_name.states_error_name_type import (
+from localstack.aws.services.stepfunctions.asl.component.common.error_name.states_error_name_type import (
     StatesErrorNameType,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.state_map import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.state_map import (
     StateMap,
 )
-from localstack.services.stepfunctions.asl.component.test_state.state.base_mock import (
+from localstack.aws.services.stepfunctions.asl.component.test_state.state.base_mock import (
     MockedBaseState,
 )
-from localstack.services.stepfunctions.asl.component.test_state.state.execution import (
+from localstack.aws.services.stepfunctions.asl.component.test_state.state.execution import (
     MockedStateExecution,
 )
-from localstack.services.stepfunctions.asl.eval.test_state.environment import TestStateEnvironment
-from localstack.services.stepfunctions.backend.test_state.test_state_mock import (
+from localstack.aws.services.stepfunctions.asl.eval.test_state.environment import TestStateEnvironment
+from localstack.aws.services.stepfunctions.backend.test_state.test_state_mock import (
     TestStateResponseThrow,
 )
 

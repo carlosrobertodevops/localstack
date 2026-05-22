@@ -11,7 +11,7 @@ from botocore.exceptions import ClientError
 from moto.ses import ses_backends
 from moto.ses.models import SESBackend
 
-from localstack import config
+from localstack.platform import config
 from localstack.aws.api import RequestContext, handler
 from localstack.aws.api.core import CommonServiceException
 from localstack.aws.api.ses import (
@@ -57,12 +57,12 @@ from localstack.aws.api.ses import (
     VerificationStatus,
 )
 from localstack.aws.connect import connect_to
-from localstack.constants import INTERNAL_AWS_SECRET_ACCESS_KEY
-from localstack.http import Resource, Response
-from localstack.services.moto import call_moto
-from localstack.services.plugins import ServiceLifecycleHook
-from localstack.services.ses.models import EmailType, SentEmail, SentEmailBody
-from localstack.state import StateVisitor
+from localstack.platform.constants import INTERNAL_AWS_SECRET_ACCESS_KEY
+from localstack.platform.http import Resource, Response
+from localstack.aws.services.moto import call_moto
+from localstack.aws.services.plugins import ServiceLifecycleHook
+from localstack.aws.services.ses.models import EmailType, SentEmail, SentEmailBody
+from localstack.platform.state import StateVisitor
 from localstack.utils.aws import arns
 from localstack.utils.files import mkdir
 from localstack.utils.strings import long_uid, to_str
@@ -171,7 +171,7 @@ def register_ses_api_resource():
     global _EMAILS_ENDPOINT_REGISTERED
 
     if not _EMAILS_ENDPOINT_REGISTERED:
-        from localstack.services.edge import ROUTER
+        from localstack.aws.services.edge import ROUTER
 
         ROUTER.add(Resource(EMAILS_ENDPOINT, SesServiceApiResource()))
         _EMAILS_ENDPOINT_REGISTERED = True

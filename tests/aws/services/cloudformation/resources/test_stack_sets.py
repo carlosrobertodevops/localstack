@@ -4,8 +4,8 @@ import pytest
 from botocore.exceptions import ClientError
 from tests.aws.services.cloudformation.conftest import skip_if_legacy_engine
 
-from localstack.testing.config import SECONDARY_TEST_AWS_ACCOUNT_ID, SECONDARY_TEST_AWS_REGION_NAME
-from localstack.testing.pytest import markers
+from localstack.tooling.testing.config import SECONDARY_TEST_AWS_ACCOUNT_ID, SECONDARY_TEST_AWS_REGION_NAME
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.files import load_file
 from localstack.utils.strings import long_uid, short_uid
 from localstack.utils.sync import wait_until

@@ -1,6 +1,6 @@
 import abc
 
-from localstack.services.cloudformation.engine.v2.change_set_model import (
+from localstack.aws.services.cloudformation.engine.v2.change_set_model import (
     ChangeSetEntity,
     NodeArray,
     NodeCondition,

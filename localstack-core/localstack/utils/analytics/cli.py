@@ -4,8 +4,7 @@ from multiprocessing import Process
 
 import click
 
-from localstack import config
-
+from localstack.platform import config
 from .client import AnalyticsClient
 from .events import Event, EventMetadata
 from .metadata import get_session_id

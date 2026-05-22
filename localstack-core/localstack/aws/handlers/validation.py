@@ -13,11 +13,11 @@ from openapi_core.validation.request.exceptions import (
 from openapi_core.validation.response.exceptions import ResponseValidationError
 from plux import PluginManager
 
-from localstack import config
+from localstack.platform import config
 from localstack.aws.api import RequestContext
 from localstack.aws.chain import Handler, HandlerChain
-from localstack.constants import INTERNAL_RESOURCE_PATH
-from localstack.http import Response
+from localstack.platform.constants import INTERNAL_RESOURCE_PATH
+from localstack.platform.http import Response
 
 LOG = logging.getLogger(__name__)
 

@@ -15,7 +15,7 @@ from localstack.aws.api.dynamodb import (
     TableName,
     TimeToLiveSpecification,
 )
-from localstack.services.stores import (
+from localstack.aws.services.stores import (
     AccountRegionBundle,
     BaseStore,
     CrossRegionAttribute,

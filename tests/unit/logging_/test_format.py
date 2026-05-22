@@ -2,7 +2,7 @@ import logging
 
 import pytest
 
-from localstack.logging.format import (
+from localstack.platform.logging.format import (
     AddFormattedAttributes,
     AwsTraceLoggingFormatter,
     MaskSensitiveInputFilter,

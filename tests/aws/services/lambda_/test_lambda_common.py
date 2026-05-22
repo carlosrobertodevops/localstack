@@ -16,8 +16,8 @@ import zipfile
 import pytest
 from localstack_snapshot.snapshots.transformer import KeyValueBasedTransformer
 
-from localstack.services.lambda_.runtimes import RUNTIMES_AGGREGATED, TESTED_RUNTIMES
-from localstack.testing.pytest import markers
+from localstack.aws.services.lambda_.runtimes import RUNTIMES_AGGREGATED, TESTED_RUNTIMES
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.files import cp_r
 from localstack.utils.strings import short_uid, to_bytes
 

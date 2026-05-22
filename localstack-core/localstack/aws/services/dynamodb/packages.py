@@ -1,9 +1,9 @@
 import os
 
-from localstack import config
-from localstack.constants import ARTIFACTS_REPO, MAVEN_REPO_URL
-from localstack.packages import InstallTarget, Package, PackageInstaller
-from localstack.packages.java import java_package
+from localstack.platform import config
+from localstack.platform.constants import ARTIFACTS_REPO, MAVEN_REPO_URL
+from localstack.tooling.packages import InstallTarget, Package, PackageInstaller
+from localstack.tooling.packages.java import java_package
 from localstack.utils.archives import (
     download_and_extract_with_retry,
     update_jar_manifest,

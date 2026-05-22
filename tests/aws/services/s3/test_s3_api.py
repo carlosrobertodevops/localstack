@@ -12,7 +12,7 @@ from localstack_snapshot.snapshots.transformer import SortingTransformer
 from moto.wafv2.models import US_EAST_1_REGION
 
 from localstack.aws.api.s3 import StorageClass
-from localstack.testing.pytest import markers
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.strings import long_uid, short_uid
 from tests.aws.services.s3.conftest import TEST_S3_IMAGE
 

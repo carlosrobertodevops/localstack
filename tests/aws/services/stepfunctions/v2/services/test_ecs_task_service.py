@@ -7,8 +7,8 @@ import aws_cdk.aws_stepfunctions_tasks as tasks
 import pytest
 from localstack_snapshot.snapshots.transformer import RegexTransformer
 
-from localstack.testing.pytest import markers
-from localstack.testing.pytest.stepfunctions.utils import launch_and_record_execution
+from localstack.tooling.testing.pytest import markers
+from localstack.tooling.testing.pytest.stepfunctions.utils import launch_and_record_execution
 from localstack.utils.analytics.metadata import is_license_activated
 
 _ECS_SNAPSHOT_SKIP_PATHS: [list[str]] = [

@@ -1,5 +1,5 @@
 from localstack.aws.api.transcribe import TranscriptionJob, TranscriptionJobName
-from localstack.services.stores import AccountRegionBundle, BaseStore, LocalAttribute
+from localstack.aws.services.stores import AccountRegionBundle, BaseStore, LocalAttribute
 
 
 class TranscribeStore(BaseStore):

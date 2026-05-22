@@ -3,10 +3,10 @@ import os.path
 import pytest
 from click.testing import CliRunner
 
-from localstack.cli.lpm import cli, console
-from localstack.packages import InstallTarget, Package, PackageException, PackageInstaller
-from localstack.packages.api import PackagesPluginManager
-from localstack.testing.pytest import markers
+from localstack.tooling.cli.lpm import cli, console
+from localstack.tooling.packages import InstallTarget, Package, PackageException, PackageInstaller
+from localstack.tooling.packages.api import PackagesPluginManager
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.patch import Patch
 
 
@@ -96,7 +96,7 @@ def test_install_failure_returns_non_zero_exit_code(runner, monkeypatch):
 
 @markers.skip_offline
 def test_install_with_package(runner):
-    from localstack.services.kinesis.packages import kinesismock_package
+    from localstack.aws.services.kinesis.packages import kinesismock_package
 
     result = runner.invoke(cli, ["install", "kinesis-mock"])
     assert result.exit_code == 0
@@ -105,8 +105,8 @@ def test_install_with_package(runner):
 
 @markers.skip_offline
 def test_install_with_package_override(runner, monkeypatch):
-    from localstack import config
-    from localstack.services.kinesis.packages import kinesismock_scala_package
+    from localstack.platform import config
+    from localstack.aws.services.kinesis.packages import kinesismock_scala_package
 
     monkeypatch.setattr(config, "KINESIS_MOCK_PROVIDER_ENGINE", "scala")
 

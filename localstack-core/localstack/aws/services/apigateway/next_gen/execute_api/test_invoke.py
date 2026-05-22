@@ -7,8 +7,8 @@ from rolo.gateway.chain import HandlerChain
 from werkzeug.datastructures import Headers
 
 from localstack.aws.api.apigateway import TestInvokeMethodRequest, TestInvokeMethodResponse
-from localstack.constants import APPLICATION_JSON
-from localstack.http import Response
+from localstack.platform.constants import APPLICATION_JSON
+from localstack.platform.http import Response
 from localstack.utils.strings import to_bytes, to_str
 
 from ...models import RestApiDeployment

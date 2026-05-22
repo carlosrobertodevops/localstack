@@ -1,7 +1,7 @@
 from datetime import datetime
 
-from localstack import config
-from localstack.runtime import hooks
+from localstack.platform import config
+from localstack.platform.runtime import hooks
 from localstack.utils.analytics import get_session_id
 from localstack.utils.analytics.events import Event, EventMetadata
 from localstack.utils.analytics.publisher import AnalyticsClientPublisher

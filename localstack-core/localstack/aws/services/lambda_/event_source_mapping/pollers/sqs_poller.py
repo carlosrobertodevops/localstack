@@ -9,19 +9,19 @@ from botocore.client import BaseClient
 from localstack.aws.api.pipes import PipeSourceSqsQueueParameters
 from localstack.aws.api.sqs import MessageSystemAttributeName
 from localstack.aws.connect import connect_to
-from localstack.services.lambda_.event_source_mapping.event_processor import (
+from localstack.aws.services.lambda_.event_source_mapping.event_processor import (
     EventProcessor,
     PartialBatchFailureError,
 )
-from localstack.services.lambda_.event_source_mapping.pollers.poller import (
+from localstack.aws.services.lambda_.event_source_mapping.pollers.poller import (
     EmptyPollResultsException,
     Poller,
     parse_batch_item_failures,
 )
-from localstack.services.lambda_.event_source_mapping.senders.sender_utils import (
+from localstack.aws.services.lambda_.event_source_mapping.senders.sender_utils import (
     batched,
 )
-from localstack.services.sqs.constants import (
+from localstack.aws.services.sqs.constants import (
     HEADER_LOCALSTACK_SQS_OVERRIDE_MESSAGE_COUNT,
     HEADER_LOCALSTACK_SQS_OVERRIDE_WAIT_TIME_SECONDS,
 )
@@ -295,7 +295,7 @@ def transform_into_events(messages: list[dict]) -> list[dict]:
     events = []
     for message in messages:
         # TODO: consolidate with SQS event source listener:
-        #  localstack.services.lambda_.event_source_listeners.sqs_event_source_listener.SQSEventSourceListener._send_event_to_lambda
+        #  localstack.aws.services.lambda_.event_source_listeners.sqs_event_source_listener.SQSEventSourceListener._send_event_to_lambda
         message_attrs = message_attributes_to_lower(message.get("MessageAttributes"))
         event = {
             # Original SQS message attributes

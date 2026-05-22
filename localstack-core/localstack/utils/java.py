@@ -6,7 +6,7 @@ import logging
 from os import environ
 from urllib.parse import urlparse
 
-from localstack import config
+from localstack.platform import config
 from localstack.utils.files import new_tmp_file, rm_rf
 from localstack.utils.run import run
 

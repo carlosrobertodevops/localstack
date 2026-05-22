@@ -4,9 +4,9 @@ from typing import TypedDict
 from rolo import Request, route
 
 from localstack.aws.api.lambda_ import Runtime
-from localstack.http import Response
-from localstack.services.lambda_.packages import get_runtime_client_path
-from localstack.services.lambda_.runtimes import (
+from localstack.platform.http import Response
+from localstack.aws.services.lambda_.packages import get_runtime_client_path
+from localstack.aws.services.lambda_.runtimes import (
     ALL_RUNTIMES,
     DEPRECATED_RUNTIMES,
     SUPPORTED_RUNTIMES,

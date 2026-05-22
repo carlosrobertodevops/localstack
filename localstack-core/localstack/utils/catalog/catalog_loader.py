@@ -6,7 +6,7 @@ from pathlib import Path
 import requests
 from pydantic import BaseModel
 
-from localstack import config, constants
+from localstack.platform import config, constants
 from localstack.utils.catalog.common import AwsRemoteCatalog
 from localstack.utils.http import get_proxies
 from localstack.utils.json import FileMappedDocument
@@ -35,7 +35,7 @@ class RemoteCatalogLoader:
         catalog_doc = FileMappedDocument(self.catalog_file_path)
         cached_catalog = AwsRemoteCatalog(**catalog_doc) if catalog_doc else None
         if cached_catalog:
-            cached_catalog_version = cached_catalog.localstack.version
+            cached_catalog_version = cached_catalog.localstack.platform.version
             if not self._should_update_cached_catalog(cached_catalog_version):
                 return cached_catalog
         catalog = self._get_catalog_from_platform()

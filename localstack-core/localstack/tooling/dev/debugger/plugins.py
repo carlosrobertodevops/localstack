@@ -1,13 +1,13 @@
 import logging
 
-from localstack import config, constants
-from localstack.runtime import hooks
+from localstack.platform import config, constants
+from localstack.platform.runtime import hooks
 
 LOG = logging.getLogger(__name__)
 
 
 def enable_debugger():
-    from localstack.packages.debugpy import debugpy_package
+    from localstack.tooling.packages.debugpy import debugpy_package
 
     debugpy_package.install()
     import debugpy  # noqa: T100

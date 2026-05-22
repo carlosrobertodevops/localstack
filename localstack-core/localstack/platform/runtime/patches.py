@@ -2,7 +2,7 @@
 System-wide patches that should be applied.
 """
 
-from localstack.runtime import hooks
+from localstack.platform.runtime import hooks
 from localstack.utils.patch import patch
 
 
@@ -63,7 +63,7 @@ def apply_runtime_patches():
         return
     _applied = True
 
-    from localstack.http.duplex_socket import enable_duplex_socket
+    from localstack.platform.http.duplex_socket import enable_duplex_socket
 
     patch_urllib3_connection_pool(maxsize=128)
     patch_thread_pool()

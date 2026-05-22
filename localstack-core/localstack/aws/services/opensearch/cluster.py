@@ -8,17 +8,17 @@ from urllib.parse import urlparse
 import requests
 from werkzeug.routing import Rule
 
-from localstack import config, constants
+from localstack.platform import config, constants
 from localstack.aws.api.opensearch import (
     AdvancedSecurityOptionsInput,
     EngineType,
     ValidationException,
 )
-from localstack.http.client import SimpleRequestsClient
-from localstack.http.proxy import ProxyHandler
-from localstack.services.edge import ROUTER
-from localstack.services.opensearch import versions
-from localstack.services.opensearch.packages import (
+from localstack.platform.http.client import SimpleRequestsClient
+from localstack.platform.http.proxy import ProxyHandler
+from localstack.aws.services.edge import ROUTER
+from localstack.aws.services.opensearch import versions
+from localstack.aws.services.opensearch.packages import (
     ELASTICSEARCH_DEFAULT_VERSION,
     OPENSEARCH_DEFAULT_VERSION,
     elasticsearch_package,

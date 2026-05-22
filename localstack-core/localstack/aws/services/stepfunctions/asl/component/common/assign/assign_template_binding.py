@@ -3,14 +3,14 @@ from __future__ import annotations
 import abc
 from typing import Any, Final
 
-from localstack.services.stepfunctions.asl.component.common.assign.assign_template_value import (
+from localstack.aws.services.stepfunctions.asl.component.common.assign.assign_template_value import (
     AssignTemplateValue,
 )
-from localstack.services.stepfunctions.asl.component.common.string.string_expression import (
+from localstack.aws.services.stepfunctions.asl.component.common.string.string_expression import (
     StringExpressionSimple,
 )
-from localstack.services.stepfunctions.asl.component.eval_component import EvalComponent
-from localstack.services.stepfunctions.asl.eval.environment import Environment
+from localstack.aws.services.stepfunctions.asl.component.eval_component import EvalComponent
+from localstack.aws.services.stepfunctions.asl.eval.environment import Environment
 
 
 class AssignTemplateBinding(EvalComponent, abc.ABC):

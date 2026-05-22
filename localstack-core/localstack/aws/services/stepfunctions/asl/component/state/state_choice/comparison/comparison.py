@@ -4,18 +4,18 @@ import abc
 from enum import Enum
 from typing import Any, Final
 
-from localstack.services.stepfunctions.asl.antlr.runtime.ASLLexer import ASLLexer
-from localstack.services.stepfunctions.asl.component.common.string.string_expression import (
+from localstack.aws.services.stepfunctions.asl.antlr.runtime.ASLLexer import ASLLexer
+from localstack.aws.services.stepfunctions.asl.component.common.string.string_expression import (
     StringJSONata,
 )
-from localstack.services.stepfunctions.asl.component.state.state_choice.choice_rule import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_choice.choice_rule import (
     ChoiceRule,
 )
-from localstack.services.stepfunctions.asl.component.state.state_choice.comparison.comparison_type import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_choice.comparison.comparison_type import (
     Comparison,
 )
-from localstack.services.stepfunctions.asl.eval.environment import Environment
-from localstack.services.stepfunctions.asl.parse.typed_props import TypedProps
+from localstack.aws.services.stepfunctions.asl.eval.environment import Environment
+from localstack.aws.services.stepfunctions.asl.parse.typed_props import TypedProps
 
 
 class ComparisonCompositeProps(TypedProps):

@@ -5,7 +5,7 @@ import os
 import pytest
 from botocore.exceptions import ClientError
 
-from localstack.testing.pytest import markers
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.files import load_file
 from localstack.utils.strings import short_uid
 

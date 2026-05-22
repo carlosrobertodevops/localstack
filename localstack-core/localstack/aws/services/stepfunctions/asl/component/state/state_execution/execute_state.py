@@ -6,35 +6,35 @@ from threading import Thread
 from typing import Any
 
 from localstack.aws.api.stepfunctions import HistoryEventType, TaskFailedEventDetails
-from localstack.services.stepfunctions.asl.component.common.catch.catch_decl import CatchDecl
-from localstack.services.stepfunctions.asl.component.common.catch.catch_outcome import CatchOutcome
-from localstack.services.stepfunctions.asl.component.common.error_name.failure_event import (
+from localstack.aws.services.stepfunctions.asl.component.common.catch.catch_decl import CatchDecl
+from localstack.aws.services.stepfunctions.asl.component.common.catch.catch_outcome import CatchOutcome
+from localstack.aws.services.stepfunctions.asl.component.common.error_name.failure_event import (
     FailureEvent,
     FailureEventException,
 )
-from localstack.services.stepfunctions.asl.component.common.error_name.states_error_name import (
+from localstack.aws.services.stepfunctions.asl.component.common.error_name.states_error_name import (
     StatesErrorName,
 )
-from localstack.services.stepfunctions.asl.component.common.error_name.states_error_name_type import (
+from localstack.aws.services.stepfunctions.asl.component.common.error_name.states_error_name_type import (
     StatesErrorNameType,
 )
-from localstack.services.stepfunctions.asl.component.common.path.result_path import ResultPath
-from localstack.services.stepfunctions.asl.component.common.result_selector import ResultSelector
-from localstack.services.stepfunctions.asl.component.common.retry.retry_decl import RetryDecl
-from localstack.services.stepfunctions.asl.component.common.retry.retry_outcome import RetryOutcome
-from localstack.services.stepfunctions.asl.component.common.timeouts.heartbeat import (
+from localstack.aws.services.stepfunctions.asl.component.common.path.result_path import ResultPath
+from localstack.aws.services.stepfunctions.asl.component.common.result_selector import ResultSelector
+from localstack.aws.services.stepfunctions.asl.component.common.retry.retry_decl import RetryDecl
+from localstack.aws.services.stepfunctions.asl.component.common.retry.retry_outcome import RetryOutcome
+from localstack.aws.services.stepfunctions.asl.component.common.timeouts.heartbeat import (
     Heartbeat,
     HeartbeatSeconds,
 )
-from localstack.services.stepfunctions.asl.component.common.timeouts.timeout import (
+from localstack.aws.services.stepfunctions.asl.component.common.timeouts.timeout import (
     EvalTimeoutError,
     Timeout,
     TimeoutSeconds,
 )
-from localstack.services.stepfunctions.asl.component.state.state import CommonStateField
-from localstack.services.stepfunctions.asl.component.state.state_props import StateProps
-from localstack.services.stepfunctions.asl.eval.environment import Environment
-from localstack.services.stepfunctions.asl.eval.event.event_detail import EventDetails
+from localstack.aws.services.stepfunctions.asl.component.state.state import CommonStateField
+from localstack.aws.services.stepfunctions.asl.component.state.state_props import StateProps
+from localstack.aws.services.stepfunctions.asl.eval.environment import Environment
+from localstack.aws.services.stepfunctions.asl.eval.event.event_detail import EventDetails
 from localstack.utils.common import TMP_THREADS
 
 LOG = logging.getLogger(__name__)

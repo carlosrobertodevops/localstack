@@ -1,9 +1,9 @@
 from typing import Any, Final
 
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.item_reader.reader_config.max_items_decl import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.item_reader.reader_config.max_items_decl import (
     MaxItemsDecl,
 )
-from localstack.services.stepfunctions.asl.parse.typed_props import TypedProps
+from localstack.aws.services.stepfunctions.asl.parse.typed_props import TypedProps
 
 
 class ReaderConfigProps(TypedProps):

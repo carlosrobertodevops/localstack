@@ -8,28 +8,28 @@ from localstack.aws.api.stepfunctions import (
     HistoryEventExecutionDataDetails,
     HistoryEventType,
 )
-from localstack.services.stepfunctions.asl.component.eval_component import EvalComponent
-from localstack.services.stepfunctions.asl.eval.environment import Environment
-from localstack.services.stepfunctions.asl.eval.evaluation_details import EvaluationDetails
-from localstack.services.stepfunctions.asl.eval.event.event_detail import EventDetails
-from localstack.services.stepfunctions.asl.eval.event.event_manager import (
+from localstack.aws.services.stepfunctions.asl.component.eval_component import EvalComponent
+from localstack.aws.services.stepfunctions.asl.eval.environment import Environment
+from localstack.aws.services.stepfunctions.asl.eval.evaluation_details import EvaluationDetails
+from localstack.aws.services.stepfunctions.asl.eval.event.event_detail import EventDetails
+from localstack.aws.services.stepfunctions.asl.eval.event.event_manager import (
     EventHistoryContext,
 )
-from localstack.services.stepfunctions.asl.eval.event.logging import (
+from localstack.aws.services.stepfunctions.asl.eval.event.logging import (
     CloudWatchLoggingSession,
 )
-from localstack.services.stepfunctions.asl.eval.states import (
+from localstack.aws.services.stepfunctions.asl.eval.states import (
     ContextObjectData,
     ExecutionData,
     StateMachineData,
 )
-from localstack.services.stepfunctions.asl.parse.asl_parser import AmazonStateLanguageParser
-from localstack.services.stepfunctions.asl.utils.encoding import to_json_str
-from localstack.services.stepfunctions.backend.activity import Activity
-from localstack.services.stepfunctions.backend.execution_worker_comm import (
+from localstack.aws.services.stepfunctions.asl.parse.asl_parser import AmazonStateLanguageParser
+from localstack.aws.services.stepfunctions.asl.utils.encoding import to_json_str
+from localstack.aws.services.stepfunctions.backend.activity import Activity
+from localstack.aws.services.stepfunctions.backend.execution_worker_comm import (
     ExecutionWorkerCommunication,
 )
-from localstack.services.stepfunctions.local_mocking.mock_config import LocalMockTestCase
+from localstack.aws.services.stepfunctions.local_mocking.mock_config import LocalMockTestCase
 from localstack.utils.common import TMP_THREADS
 
 

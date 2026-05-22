@@ -4,14 +4,14 @@ from __future__ import annotations
 from pathlib import Path
 from typing import TypedDict
 
-import localstack.services.cloudformation.provider_utils as util
-from localstack.services.cloudformation.resource_provider import (
+import localstack.aws.services.cloudformation.provider_utils as util
+from localstack.aws.services.cloudformation.resource_provider import (
     OperationStatus,
     ProgressEvent,
     ResourceProvider,
     ResourceRequest,
 )
-from localstack.services.cloudformation.stores import get_cloudformation_store
+from localstack.aws.services.cloudformation.stores import get_cloudformation_store
 
 
 class CloudFormationMacroProperties(TypedDict):

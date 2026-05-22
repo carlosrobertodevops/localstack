@@ -9,11 +9,11 @@ from typing import Any, Final
 
 from botocore.exceptions import ClientError
 
-from localstack import config
+from localstack.platform import config
 from localstack.aws.api.cloudformation import ResourceStatus
 from localstack.aws.api.ec2 import AvailabilityZoneList, DescribeAvailabilityZonesResult
 from localstack.aws.connect import connect_to
-from localstack.services.cloudformation.engine.v2.change_set_model import (
+from localstack.aws.services.cloudformation.engine.v2.change_set_model import (
     ChangeSetEntity,
     ChangeType,
     Maybe,
@@ -43,23 +43,23 @@ from localstack.services.cloudformation.engine.v2.change_set_model import (
     TerminalValueUnchanged,
     is_nothing,
 )
-from localstack.services.cloudformation.engine.v2.change_set_model_visitor import (
+from localstack.aws.services.cloudformation.engine.v2.change_set_model_visitor import (
     ChangeSetModelVisitor,
 )
-from localstack.services.cloudformation.engine.v2.resolving import (
+from localstack.aws.services.cloudformation.engine.v2.resolving import (
     REGEX_DYNAMIC_REF,
     extract_dynamic_reference,
     perform_dynamic_reference_lookup,
 )
-from localstack.services.cloudformation.engine.v2.unsupported_resource import (
+from localstack.aws.services.cloudformation.engine.v2.unsupported_resource import (
     should_ignore_unsupported_resource_type,
 )
-from localstack.services.cloudformation.engine.validations import ValidationError
-from localstack.services.cloudformation.stores import (
+from localstack.aws.services.cloudformation.engine.validations import ValidationError
+from localstack.aws.services.cloudformation.stores import (
     exports_map,
 )
-from localstack.services.cloudformation.v2.entities import ChangeSet
-from localstack.services.cloudformation.v2.types import ResolvedResource
+from localstack.aws.services.cloudformation.v2.entities import ChangeSet
+from localstack.aws.services.cloudformation.v2.types import ResolvedResource
 from localstack.utils.aws.arns import get_partition
 from localstack.utils.numbers import to_number
 from localstack.utils.objects import get_value_from_path

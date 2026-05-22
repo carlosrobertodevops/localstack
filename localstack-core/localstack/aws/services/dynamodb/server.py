@@ -2,12 +2,12 @@ import logging
 import os
 import threading
 
-from localstack import config
+from localstack.platform import config
 from localstack.aws.connect import connect_externally_to
 from localstack.aws.forwarder import AwsRequestProxy
-from localstack.config import is_env_true, is_persistence_enabled
-from localstack.constants import DEFAULT_AWS_ACCOUNT_ID
-from localstack.services.dynamodb.packages import dynamodblocal_package
+from localstack.platform.config import is_env_true, is_persistence_enabled
+from localstack.platform.constants import DEFAULT_AWS_ACCOUNT_ID
+from localstack.aws.services.dynamodb.packages import dynamodblocal_package
 from localstack.utils.common import TMP_THREADS, ShellCommandThread, get_free_tcp_port, mkdir
 from localstack.utils.functions import run_safe
 from localstack.utils.net import wait_for_port_closed

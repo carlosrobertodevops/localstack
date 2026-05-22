@@ -1,15 +1,15 @@
 from typing import Final
 
-from localstack.services.stepfunctions.asl.component.common.catch.catch_outcome import (
+from localstack.aws.services.stepfunctions.asl.component.common.catch.catch_outcome import (
     CatchOutcome,
 )
-from localstack.services.stepfunctions.asl.component.common.catch.catcher_decl import CatcherDecl
-from localstack.services.stepfunctions.asl.component.common.catch.catcher_outcome import (
+from localstack.aws.services.stepfunctions.asl.component.common.catch.catcher_decl import CatcherDecl
+from localstack.aws.services.stepfunctions.asl.component.common.catch.catcher_outcome import (
     CatcherOutcome,
     CatcherOutcomeCaught,
 )
-from localstack.services.stepfunctions.asl.component.eval_component import EvalComponent
-from localstack.services.stepfunctions.asl.eval.environment import Environment
+from localstack.aws.services.stepfunctions.asl.component.eval_component import EvalComponent
+from localstack.aws.services.stepfunctions.asl.eval.environment import Environment
 
 
 class CatchDecl(EvalComponent):

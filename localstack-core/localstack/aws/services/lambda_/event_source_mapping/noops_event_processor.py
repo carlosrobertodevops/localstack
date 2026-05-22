@@ -1,6 +1,6 @@
 import logging
 
-from localstack.services.lambda_.event_source_mapping.event_processor import EventProcessor
+from localstack.aws.services.lambda_.event_source_mapping.event_processor import EventProcessor
 
 LOG = logging.getLogger(__name__)
 

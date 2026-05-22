@@ -2,8 +2,8 @@ import json
 
 import requests
 
-from localstack import config
-from localstack.testing.aws.util import is_aws_cloud
+from localstack.platform import config
+from localstack.tooling.testing.aws.util import is_aws_cloud
 from localstack.utils.aws.client_types import TypedServiceClientFactory
 
 

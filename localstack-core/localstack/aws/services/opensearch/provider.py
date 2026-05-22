@@ -7,7 +7,7 @@ from datetime import UTC, datetime
 from random import randint
 from urllib.parse import urlparse
 
-from localstack import config
+from localstack.platform import config
 from localstack.aws.api import RequestContext, handler
 from localstack.aws.api.opensearch import (
     ARN,
@@ -76,17 +76,17 @@ from localstack.aws.api.opensearch import (
     VolumeType,
     VPCDerivedInfoStatus,
 )
-from localstack.services.opensearch import versions
-from localstack.services.opensearch.cluster import SecurityOptions
-from localstack.services.opensearch.cluster_manager import (
+from localstack.aws.services.opensearch import versions
+from localstack.aws.services.opensearch.cluster import SecurityOptions
+from localstack.aws.services.opensearch.cluster_manager import (
     ClusterManager,
     DomainKey,
     create_cluster_manager,
 )
-from localstack.services.opensearch.models import OpenSearchStore, opensearch_stores
-from localstack.services.opensearch.packages import OPENSEARCH_DEFAULT_VERSION
-from localstack.services.plugins import ServiceLifecycleHook
-from localstack.state import AssetDirectory, StateVisitor
+from localstack.aws.services.opensearch.models import OpenSearchStore, opensearch_stores
+from localstack.aws.services.opensearch.packages import OPENSEARCH_DEFAULT_VERSION
+from localstack.aws.services.plugins import ServiceLifecycleHook
+from localstack.platform.state import AssetDirectory, StateVisitor
 from localstack.utils.aws.arns import parse_arn
 from localstack.utils.collections import PaginatedList, remove_none_values_from_dict
 from localstack.utils.serving import Server

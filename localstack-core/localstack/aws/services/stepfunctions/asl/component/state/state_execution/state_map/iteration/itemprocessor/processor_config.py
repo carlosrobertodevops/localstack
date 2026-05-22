@@ -2,11 +2,11 @@ from __future__ import annotations
 
 from typing import Final
 
-from localstack.services.stepfunctions.asl.component.component import Component
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.execution_type import (
+from localstack.aws.services.stepfunctions.asl.component.component import Component
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.execution_type import (
     ExecutionType,
 )
-from localstack.services.stepfunctions.asl.component.state.state_execution.state_map.mode import (
+from localstack.aws.services.stepfunctions.asl.component.state.state_execution.state_map.mode import (
     Mode,
 )
 

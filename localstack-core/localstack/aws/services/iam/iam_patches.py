@@ -11,8 +11,8 @@ from moto.iam.models import (
 from moto.iam.models import Role as MotoRole
 from moto.iam.policy_validation import VALID_STATEMENT_ELEMENTS
 
-from localstack import config
-from localstack.constants import TAG_KEY_CUSTOM_ID
+from localstack.platform import config
+from localstack.platform.constants import TAG_KEY_CUSTOM_ID
 from localstack.utils.patch import patch
 
 ADDITIONAL_MANAGED_POLICIES = {

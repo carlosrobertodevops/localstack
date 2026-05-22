@@ -8,26 +8,26 @@ from dataclasses import dataclass
 from datetime import UTC, datetime
 from typing import Final, Protocol, TypeVar
 
-from localstack import config
+from localstack.platform import config
 from localstack.aws.api.cloudformation import (
     ChangeAction,
     Output,
     ResourceStatus,
     StackStatus,
 )
-from localstack.constants import INTERNAL_AWS_SECRET_ACCESS_KEY
-from localstack.services.cloudformation.analytics import (
+from localstack.platform.constants import INTERNAL_AWS_SECRET_ACCESS_KEY
+from localstack.aws.services.cloudformation.analytics import (
     emit_stack_failure,
     track_resource_operation,
 )
-from localstack.services.cloudformation.deployment_utils import log_not_available_message
-from localstack.services.cloudformation.engine.v2.change_set_model import (
+from localstack.aws.services.cloudformation.deployment_utils import log_not_available_message
+from localstack.aws.services.cloudformation.engine.v2.change_set_model import (
     NodeDependsOn,
     NodeOutput,
     NodeResource,
     is_nothing,
 )
-from localstack.services.cloudformation.engine.v2.change_set_model_preproc import (
+from localstack.aws.services.cloudformation.engine.v2.change_set_model_preproc import (
     _AWS_URL_SUFFIX,
     MOCKED_REFERENCE,
     ChangeSetModelPreproc,
@@ -38,17 +38,17 @@ from localstack.services.cloudformation.engine.v2.change_set_model_preproc impor
     PreprocResource,
     UpdateReplacePolicy,
 )
-from localstack.services.cloudformation.engine.v2.unsupported_resource import (
+from localstack.aws.services.cloudformation.engine.v2.unsupported_resource import (
     should_ignore_unsupported_resource_type,
 )
-from localstack.services.cloudformation.resource_provider import (
+from localstack.aws.services.cloudformation.resource_provider import (
     Credentials,
     OperationStatus,
     ProgressEvent,
     ResourceProviderExecutor,
     ResourceProviderPayload,
 )
-from localstack.services.cloudformation.v2.entities import ChangeSet, ResolvedResource
+from localstack.aws.services.cloudformation.v2.entities import ChangeSet, ResolvedResource
 
 LOG = logging.getLogger(__name__)
 

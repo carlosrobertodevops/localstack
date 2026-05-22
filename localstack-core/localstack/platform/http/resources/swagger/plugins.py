@@ -2,10 +2,10 @@ import werkzeug
 import yaml
 from rolo.routing import RuleAdapter
 
-from localstack.http.resources.swagger.endpoints import SwaggerUIApi
-from localstack.runtime import hooks
-from localstack.services.edge import ROUTER
-from localstack.services.internal import get_internal_apis
+from localstack.platform.http.resources.swagger.endpoints import SwaggerUIApi
+from localstack.platform.runtime import hooks
+from localstack.aws.services.edge import ROUTER
+from localstack.aws.services.internal import get_internal_apis
 from localstack.utils.openapi import get_localstack_openapi_spec
 
 

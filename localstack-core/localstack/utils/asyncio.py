@@ -141,7 +141,7 @@ def get_named_event_loop(name):
 
 
 async def receive_from_queue(queue):
-    from localstack.runtime import events
+    from localstack.platform.runtime import events
 
     def get():
         # run in a retry loop (instead of blocking forever) to allow for graceful shutdown

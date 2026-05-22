@@ -1,6 +1,6 @@
 from abc import abstractmethod
 
-from localstack.services.lambda_.invocation.lambda_models import Layer
+from localstack.aws.services.lambda_.invocation.lambda_models import Layer
 
 
 class LayerFetcher:

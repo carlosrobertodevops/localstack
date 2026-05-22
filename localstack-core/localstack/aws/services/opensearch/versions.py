@@ -2,7 +2,7 @@
 Functions for querying opensearch versions and getting download URLs. This script is also runnable to generate
 the latest install_versions from the github repository tags. Run::
 
-    python -m localstack.services.opensearch.versions
+    python -m localstack.aws.services.opensearch.versions
 
 """
 

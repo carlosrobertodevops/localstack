@@ -6,8 +6,8 @@ from typing import TYPE_CHECKING
 import pytest
 from botocore.config import Config
 
-from localstack.config import is_env_true
-from localstack.testing.pytest import markers
+from localstack.platform.config import is_env_true
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.strings import short_uid
 from localstack.utils.sync import retry
 

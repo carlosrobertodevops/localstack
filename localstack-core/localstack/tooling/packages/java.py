@@ -3,9 +3,9 @@ import os
 
 import requests
 
-from localstack.constants import USER_AGENT_STRING
-from localstack.packages import InstallTarget, Package
-from localstack.packages.core import ArchiveDownloadAndExtractInstaller
+from localstack.platform.constants import USER_AGENT_STRING
+from localstack.tooling.packages import InstallTarget, Package
+from localstack.tooling.packages.core import ArchiveDownloadAndExtractInstaller
 from localstack.utils.files import rm_rf
 from localstack.utils.http import get_proxies
 from localstack.utils.platform import Arch, get_arch, is_linux, is_mac_os

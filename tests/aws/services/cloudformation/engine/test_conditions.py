@@ -6,9 +6,9 @@ from botocore.exceptions import ClientError
 from localstack_snapshot.snapshots.transformer import SortingTransformer
 from tests.aws.services.cloudformation.conftest import skip_if_legacy_engine
 
-from localstack.services.cloudformation.v2.utils import is_v2_engine
-from localstack.testing.aws.util import is_aws_cloud
-from localstack.testing.pytest import markers
+from localstack.aws.services.cloudformation.v2.utils import is_v2_engine
+from localstack.tooling.testing.aws.util import is_aws_cloud
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.collections import optional_list
 from localstack.utils.files import load_file
 from localstack.utils.strings import short_uid

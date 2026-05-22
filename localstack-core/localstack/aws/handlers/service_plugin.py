@@ -5,8 +5,8 @@ import threading
 
 from plux import PluginDisabled
 
-from localstack.http import Response
-from localstack.services.plugins import Service, ServiceManager
+from localstack.platform.http import Response
+from localstack.aws.services.plugins import Service, ServiceManager
 from localstack.utils.sync import SynchronizedDefaultDict
 
 from ...utils.bootstrap import is_api_enabled

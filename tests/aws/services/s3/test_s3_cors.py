@@ -6,16 +6,16 @@ import requests
 import xmltodict
 from botocore.exceptions import ClientError
 
-from localstack import config
+from localstack.platform import config
 from localstack.aws.handlers.cors import ALLOWED_CORS_ORIGINS
-from localstack.config import S3_VIRTUAL_HOSTNAME
-from localstack.constants import (
+from localstack.platform.config import S3_VIRTUAL_HOSTNAME
+from localstack.platform.constants import (
     AWS_REGION_US_EAST_1,
     LOCALHOST_HOSTNAME,
 )
-from localstack.testing.aws.util import is_aws_cloud
-from localstack.testing.config import TEST_AWS_ACCESS_KEY_ID
-from localstack.testing.pytest import markers
+from localstack.tooling.testing.aws.util import is_aws_cloud
+from localstack.tooling.testing.config import TEST_AWS_ACCESS_KEY_ID
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.aws.request_context import mock_aws_request_headers
 from localstack.utils.strings import checksum_crc32, short_uid
 

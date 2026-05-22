@@ -13,11 +13,11 @@ from botocore.auth import SigV4Auth
 from botocore.client import Config
 from botocore.exceptions import ClientError
 
-from localstack import config
-from localstack.config import S3_VIRTUAL_HOSTNAME
-from localstack.constants import AWS_REGION_US_EAST_1, LOCALHOST_HOSTNAME
-from localstack.testing.aws.util import is_aws_cloud
-from localstack.testing.pytest import markers
+from localstack.platform import config
+from localstack.platform.config import S3_VIRTUAL_HOSTNAME
+from localstack.platform.constants import AWS_REGION_US_EAST_1, LOCALHOST_HOSTNAME
+from localstack.tooling.testing.aws.util import is_aws_cloud
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.strings import short_uid
 
 

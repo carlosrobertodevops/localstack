@@ -85,16 +85,16 @@ from localstack.aws.api.ec2 import (
     scope,
 )
 from localstack.aws.connect import connect_to
-from localstack.services.ec2.exceptions import (
+from localstack.aws.services.ec2.exceptions import (
     InvalidLaunchTemplateIdError,
     InvalidLaunchTemplateNameError,
     MissingParameterError,
 )
-from localstack.services.ec2.models import get_ec2_backend
-from localstack.services.ec2.patches import apply_patches
-from localstack.services.moto import call_moto, call_moto_with_request
-from localstack.services.plugins import ServiceLifecycleHook
-from localstack.state import StateVisitor
+from localstack.aws.services.ec2.models import get_ec2_backend
+from localstack.aws.services.ec2.patches import apply_patches
+from localstack.aws.services.moto import call_moto, call_moto_with_request
+from localstack.aws.services.plugins import ServiceLifecycleHook
+from localstack.platform.state import StateVisitor
 from localstack.utils.patch import patch
 from localstack.utils.strings import first_char_to_upper, long_uid, short_uid
 

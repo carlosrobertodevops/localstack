@@ -5,9 +5,9 @@ import urllib.parse
 import pytest
 from localstack_snapshot.snapshots.transformer import JsonpathTransformer
 
-from localstack import config
-from localstack.testing.pytest import markers
-from localstack.testing.pytest.stepfunctions.utils import await_execution_terminated
+from localstack.platform import config
+from localstack.tooling.testing.pytest import markers
+from localstack.tooling.testing.pytest.stepfunctions.utils import await_execution_terminated
 from localstack.utils.strings import short_uid
 from localstack.utils.sync import wait_until
 

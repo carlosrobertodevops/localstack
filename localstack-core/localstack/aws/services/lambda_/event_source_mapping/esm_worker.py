@@ -5,18 +5,18 @@ from enum import StrEnum
 from localstack.aws.api.lambda_ import (
     EventSourceMappingConfiguration,
 )
-from localstack.config import (
+from localstack.platform.config import (
     LAMBDA_EVENT_SOURCE_MAPPING_MAX_BACKOFF_ON_EMPTY_POLL_SEC,
     LAMBDA_EVENT_SOURCE_MAPPING_MAX_BACKOFF_ON_ERROR_SEC,
     LAMBDA_EVENT_SOURCE_MAPPING_POLL_INTERVAL_SEC,
 )
-from localstack.services.lambda_.analytics import EsmExecutionStatus, esm_counter
-from localstack.services.lambda_.event_source_mapping.pollers.poller import (
+from localstack.aws.services.lambda_.analytics import EsmExecutionStatus, esm_counter
+from localstack.aws.services.lambda_.event_source_mapping.pollers.poller import (
     EmptyPollResultsException,
     Poller,
 )
-from localstack.services.lambda_.invocation.models import LambdaStore, lambda_stores
-from localstack.services.lambda_.provider_utils import get_function_version_from_arn
+from localstack.aws.services.lambda_.invocation.models import LambdaStore, lambda_stores
+from localstack.aws.services.lambda_.provider_utils import get_function_version_from_arn
 from localstack.utils.aws.arns import parse_arn
 from localstack.utils.backoff import ExponentialBackoff
 from localstack.utils.threads import FuncThread

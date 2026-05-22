@@ -12,8 +12,8 @@ from collections import defaultdict
 from collections.abc import Mapping
 from typing import Any, TypeVar
 
-from localstack import constants
-from localstack.constants import (
+from localstack.platform import constants
+from localstack.platform.constants import (
     DEFAULT_BUCKET_MARKER_LOCAL,
     DEFAULT_DEVELOP_PORT,
     DEFAULT_VOLUME_DIR,

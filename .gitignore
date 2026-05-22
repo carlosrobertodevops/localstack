@@ -13,8 +13,12 @@ htmlcov
 
 .cache
 .filesystem
+
 /infra/
 localstack/infra/
+
+/graphify-out/
+/.codegraph/
 
 /node_modules/
 package-lock.json

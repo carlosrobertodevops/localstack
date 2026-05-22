@@ -1,5 +1,5 @@
-from ...http import Response
-from ...http.proxy import Proxy
+from localstack.platform.http import Response
+from localstack.platform.http.proxy import Proxy
 from ..api import RequestContext
 from ..chain import Handler, HandlerChain
 

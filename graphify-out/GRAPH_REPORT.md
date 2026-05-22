@@ -1,16 +1,16 @@
 # Graph Report - localstack  (2026-05-22)
 
 ## Corpus Check
-- 2860 files · ~2,276,391 words
+- 2919 files · ~2,292,482 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 87760 nodes · 146843 edges · 6593 communities (4953 shown, 1640 thin omitted)
-- Extraction: 87% EXTRACTED · 13% INFERRED · 0% AMBIGUOUS · INFERRED: 19739 edges (avg confidence: 0.67)
+- 88735 nodes · 149050 edges · 6648 communities (4997 shown, 1651 thin omitted)
+- Extraction: 86% EXTRACTED · 14% INFERRED · 0% AMBIGUOUS · INFERRED: 20164 edges (avg confidence: 0.67)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `8b9a79f0`
+- Built from commit: `1b421e37`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -3409,7 +3409,6 @@
 - [[_COMMUNITY_Community 3400|Community 3400]]
 - [[_COMMUNITY_Community 3401|Community 3401]]
 - [[_COMMUNITY_Community 3402|Community 3402]]
-- [[_COMMUNITY_Community 3403|Community 3403]]
 - [[_COMMUNITY_Community 3404|Community 3404]]
 - [[_COMMUNITY_Community 3405|Community 3405]]
 - [[_COMMUNITY_Community 3406|Community 3406]]
@@ -3858,6 +3857,7 @@
 - [[_COMMUNITY_Community 3850|Community 3850]]
 - [[_COMMUNITY_Community 3851|Community 3851]]
 - [[_COMMUNITY_Community 3852|Community 3852]]
+- [[_COMMUNITY_Community 3853|Community 3853]]
 - [[_COMMUNITY_Community 3854|Community 3854]]
 - [[_COMMUNITY_Community 3855|Community 3855]]
 - [[_COMMUNITY_Community 3856|Community 3856]]
@@ -3941,6 +3941,7 @@
 - [[_COMMUNITY_Community 3934|Community 3934]]
 - [[_COMMUNITY_Community 3935|Community 3935]]
 - [[_COMMUNITY_Community 3936|Community 3936]]
+- [[_COMMUNITY_Community 3937|Community 3937]]
 - [[_COMMUNITY_Community 3938|Community 3938]]
 - [[_COMMUNITY_Community 3939|Community 3939]]
 - [[_COMMUNITY_Community 3940|Community 3940]]
@@ -4816,6 +4817,7 @@
 - [[_COMMUNITY_Community 4847|Community 4847]]
 - [[_COMMUNITY_Community 4848|Community 4848]]
 - [[_COMMUNITY_Community 4849|Community 4849]]
+- [[_COMMUNITY_Community 4850|Community 4850]]
 - [[_COMMUNITY_Community 4851|Community 4851]]
 - [[_COMMUNITY_Community 4852|Community 4852]]
 - [[_COMMUNITY_Community 4853|Community 4853]]
@@ -4840,6 +4842,7 @@
 - [[_COMMUNITY_Community 4872|Community 4872]]
 - [[_COMMUNITY_Community 4873|Community 4873]]
 - [[_COMMUNITY_Community 4878|Community 4878]]
+- [[_COMMUNITY_Community 4879|Community 4879]]
 - [[_COMMUNITY_Community 4881|Community 4881]]
 - [[_COMMUNITY_Community 4882|Community 4882]]
 - [[_COMMUNITY_Community 4883|Community 4883]]
@@ -4862,6 +4865,7 @@
 - [[_COMMUNITY_Community 4900|Community 4900]]
 - [[_COMMUNITY_Community 4901|Community 4901]]
 - [[_COMMUNITY_Community 4902|Community 4902]]
+- [[_COMMUNITY_Community 4903|Community 4903]]
 - [[_COMMUNITY_Community 4904|Community 4904]]
 - [[_COMMUNITY_Community 4905|Community 4905]]
 - [[_COMMUNITY_Community 4907|Community 4907]]
@@ -5925,6 +5929,18 @@
 - [[_COMMUNITY_Community 6579|Community 6579]]
 - [[_COMMUNITY_Community 6580|Community 6580]]
 - [[_COMMUNITY_Community 6581|Community 6581]]
+- [[_COMMUNITY_Community 6593|Community 6593]]
+- [[_COMMUNITY_Community 6594|Community 6594]]
+- [[_COMMUNITY_Community 6595|Community 6595]]
+- [[_COMMUNITY_Community 6596|Community 6596]]
+- [[_COMMUNITY_Community 6597|Community 6597]]
+- [[_COMMUNITY_Community 6640|Community 6640]]
+- [[_COMMUNITY_Community 6641|Community 6641]]
+- [[_COMMUNITY_Community 6642|Community 6642]]
+- [[_COMMUNITY_Community 6643|Community 6643]]
+- [[_COMMUNITY_Community 6644|Community 6644]]
+- [[_COMMUNITY_Community 6645|Community 6645]]
+- [[_COMMUNITY_Community 6647|Community 6647]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `short_uid()` - 1760 edges
@@ -5932,25 +5948,25 @@
 3. `ProgressEvent` - 618 edges
 4. `ResourceRequest` - 612 edges
 5. `OperationStatus` - 591 edges
-6. `sqs_create_queue()` - 373 edges
-7. `deploy_cfn_template()` - 348 edges
+6. `sqs_create_queue()` - 374 edges
+7. `deploy_cfn_template()` - 349 edges
 8. `ASLParserListener` - 316 edges
 9. `Preprocessor` - 307 edges
 10. `Environment` - 295 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `s3_vhost_client()` --calls--> `aws_client_factory()`  [INFERRED]
-  localstack-core/localstack/testing/pytest/fixtures.py → tests/conftest.py
-- `create_rest_apigw_openapi()` --calls--> `aws_client_factory()`  [INFERRED]
-  localstack-core/localstack/testing/pytest/fixtures.py → tests/conftest.py
 - `test_load_file_strict()` --calls--> `short_uid()`  [INFERRED]
   tests/unit/test_common.py → localstack-core/localstack/utils/strings.py
 - `paginated_list()` --calls--> `PaginatedList`  [INFERRED]
   tests/unit/test_common.py → localstack-core/localstack/utils/collections.py
 - `test_container_status()` --calls--> `CmdDockerClient`  [INFERRED]
   tests/unit/test_dockerclient.py → localstack-core/localstack/utils/container_utils/docker_cmd_client.py
+- `mock_arn()` --calls--> `short_uid()`  [INFERRED]
+  tests/unit/test_tagging.py → localstack-core/localstack/utils/strings.py
+- `serve_asgi_app()` --calls--> `poll_condition()`  [INFERRED]
+  tests/unit/http_/conftest.py → localstack-core/localstack/utils/sync.py
 
-## Communities (6593 total, 1640 thin omitted)
+## Communities (6648 total, 1651 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.00
@@ -5958,23 +5974,23 @@ Nodes (1601): AcceleratorCount, AcceleratorCountRequest, AcceleratorTotalMemoryM
 
 ### Community 1 - "Community 1"
 Cohesion: 0.00
-Nodes (1115): AlreadyExistsException, CancelResourceRequestInput, CancelResourceRequestOutput, ClientTokenConflictException, CloudcontrolApi, ConcurrentModificationException, ConcurrentOperationException, CreateResourceInput (+1107 more)
+Nodes (1314): AlreadyExistsException, CancelResourceRequestInput, CancelResourceRequestOutput, ClientTokenConflictException, CloudcontrolApi, ConcurrentModificationException, ConcurrentOperationException, CreateResourceInput (+1306 more)
 
 ### Community 2 - "Community 2"
 Cohesion: 0.00
-Nodes (1329): AccessAssociationSourceType, AccessLogSettings, Account, ApigatewayApi, ApiKey, ApiKeyIds, ApiKeys, ApiKeysFormat (+1321 more)
+Nodes (1438): AccessAssociationSourceType, AccessLogSettings, Account, ApigatewayApi, ApiKey, ApiKeyIds, ApiKeys, ApiKeysFormat (+1430 more)
 
 ### Community 3 - "Community 3"
 Cohesion: 0.00
-Nodes (1061): AccessDeniedException, AcmApi, AddTagsToCertificateRequest, CertificateDetail, CertificateExport, CertificateManagedBy, CertificateOptions, CertificateStatus (+1053 more)
+Nodes (782): AccountFilterType, AccountGateResult, AccountGateStatus, AccountLimit, ActivateOrganizationsAccessInput, ActivateOrganizationsAccessOutput, ActivateTypeInput, ActivateTypeOutput (+774 more)
 
 ### Community 4 - "Community 4"
 Cohesion: 0.01
-Nodes (516): test_crud_extension(), test_extension_not_complete(), test_extension_versioning(), TestExtensionsApi, # TODO: add this information back in to improve the UX, test_create_stack_from_s3_template_url(), test_create_stack_invalid_yaml_template_should_fail(), test_get_template_summary() (+508 more)
+Nodes (496): test_crud_extension(), test_extension_not_complete(), test_extension_type_configuration(), test_extension_versioning(), TestExtensionsApi, apigw_cleanup_before_run(), apigw_create_rest_api(), apigw_create_vpc_link() (+488 more)
 
 ### Community 5 - "Community 5"
 Cohesion: 0.01
-Nodes (496): Creates a change set that doesn't actually update any resources and then tries t, simple case verifying that proper exception is thrown when trying to get a delet, test_deleted_changeset(), test_empty_changeset(), test_drift_detection_on_lambda(), test_extension_type_configuration(), test_hook_deployment(), TestExtensionsHooks (+488 more)
+Nodes (504): Creates a change set that doesn't actually update any resources and then tries t, simple case verifying that proper exception is thrown when trying to get a delet, test_deleted_changeset(), test_empty_changeset(), test_drift_detection_on_lambda(), Test a user scenario with a lambda function that fails to redeploy, # TODO: work out the proper exception, Tests different cases for Fn::Sub resolving      https://docs.aws.amazon.com/AWS (+496 more)
 
 ### Community 6 - "Community 6"
 Cohesion: 0.00
@@ -5982,7 +5998,7 @@ Nodes (384): AbacStatus, AbortIncompleteMultipartUpload, AbortMultipartUploadReq
 
 ### Community 7 - "Community 7"
 Cohesion: 0.01
-Nodes (231): sqs_queue_arn(), test_sns_to_sqs(), test_sqs_queue_names(), TestNotifications, test_sns_publish_wait_for_task_token(), test_breaching_alarm_actions(), test_put_metric_alarm(), test_external_service_url() (+223 more)
+Nodes (243): sqs_queue_arn(), test_sns_to_sqs(), test_sqs_queue_names(), TestNotifications, test_sns_publish_wait_for_task_token(), test_set_alarm(), test_trigger_composite_alarm(), test_external_service_url() (+235 more)
 
 ### Community 8 - "Community 8"
 Cohesion: 0.00
@@ -5990,7 +6006,7 @@ Nodes (380): AccountAggregationSource, AggregateComplianceByConfigRule, Aggregat
 
 ### Community 9 - "Community 9"
 Cohesion: 0.01
-Nodes (371): Deploys a Stack with two nested stacks (sub1 and sub2) with a dependency between, see: TestCloudFormationConditions.test_condition_on_outputs      equivalent to t, This test confirms that after deleting a stack parent with a failed nested stack, test output handling of nested stacks incl. referencing the nested output in the, test_deletion_of_failed_nested_stack(), test_lifecycle_nested_stack(), test_nested_output_in_params(), test_nested_stack() (+363 more)
+Nodes (316): Deploys a Stack with two nested stacks (sub1 and sub2) with a dependency between, see: TestCloudFormationConditions.test_condition_on_outputs      equivalent to t, This test confirms that after deleting a stack parent with a failed nested stack, test output handling of nested stacks incl. referencing the nested output in the, test_deletion_of_failed_nested_stack(), test_lifecycle_nested_stack(), test_nested_output_in_params(), test_nested_stack() (+308 more)
 
 ### Community 10 - "Community 10"
 Cohesion: 0.00
@@ -6006,31 +6022,31 @@ Nodes (361): AcceptInboundConnectionRequest, AcceptInboundConnectionResponse, Ac
 
 ### Community 13 - "Community 13"
 Cohesion: 0.00
-Nodes (336): map_config_out(), map_layer_out(), map function version to function configuration, AccountLimit, AccountUsage, AddLayerVersionPermissionRequest, AddLayerVersionPermissionResponse, AddPermissionRequest (+328 more)
+Nodes (334): map_config_out(), map_layer_out(), map function version to function configuration, AccountLimit, AccountUsage, AddLayerVersionPermissionRequest, AddPermissionRequest, AliasRoutingConfiguration (+326 more)
 
 ### Community 14 - "Community 14"
 Cohesion: 0.03
-Nodes (240): OperationStatus, ProgressEvent, ResourceRequest, AttributeDefinition, ContributorInsightsSpecification, Csv, DynamoDBTableProperties, GlobalSecondaryIndex (+232 more)
+Nodes (227): OperationStatus, ProgressEvent, ResourceRequest, ApiGatewayUsagePlanProperties, ApiGatewayUsagePlanProvider, ApiStage, QuotaSettings, Fetch resource information          IAM permissions required:           - apigat (+219 more)
 
 ### Community 15 - "Community 15"
-Cohesion: 0.22
-Nodes (4): DeleteHealthCheckResponse, InvalidVPCId, Route53Provider, Route53Api
+Cohesion: 0.01
+Nodes (276): AcceleratedRecoveryStatus, AccountLimit, AccountLimitType, ActivateKeySigningKeyRequest, ActivateKeySigningKeyResponse, AlarmIdentifier, AliasTarget, AssociateVPCWithHostedZoneRequest (+268 more)
 
 ### Community 16 - "Community 16"
 Cohesion: 0.01
-Nodes (333): test_activity_task(), test_activity_task_failure(), test_activity_task_no_worker_name(), test_activity_task_on_deleted(), test_activity_task_start_timeout(), test_activity_task_with_heartbeat(), TestActivities, # TODO: introduce json response formatting to ensure value compatibility, there (+325 more)
+Nodes (316): test_activity_task(), test_activity_task_failure(), test_activity_task_no_worker_name(), test_activity_task_on_deleted(), test_activity_task_start_timeout(), test_activity_task_with_heartbeat(), TestActivities, # TODO: introduce json response formatting to ensure value compatibility, there (+308 more)
 
 ### Community 17 - "Community 17"
 Cohesion: 0.01
 Nodes (173): AlgorithmSpec, AliasListEntry, AlreadyExistsException, CancelKeyDeletionRequest, CancelKeyDeletionResponse, CloudHsmClusterInUseException, CloudHsmClusterInvalidConfigurationException, CloudHsmClusterNotActiveException (+165 more)
 
 ### Community 18 - "Community 18"
-Cohesion: 0.03
-Nodes (95): LambdaEphemeralStorage, AddPermissionResponse, CreateFunctionUrlConfigResponse, DeleteFunctionResponse, FunctionEventInvokeConfig, GetFunctionConcurrencyResponse, GetFunctionRecursionConfigResponse, GetLayerVersionPolicyResponse (+87 more)
+Cohesion: 0.04
+Nodes (80): LambdaEphemeralStorage, AddPermissionResponse, CreateFunctionUrlConfigResponse, PreconditionFailedException, UpdateFunctionUrlConfigResponse, add_permission(), create_event_source_mapping(), create_function() (+72 more)
 
 ### Community 19 - "Community 19"
 Cohesion: 0.01
-Nodes (75): InternalClientFactory, CloudFormationResourceProviderPlugin, convert_payload(), get_resource_type(), get_service_name(), _handler_provide_client_params(), invoke_function(), NoResourceProvider (+67 more)
+Nodes (66): CloudFormationResourceProviderPlugin, Base class for resource provider plugins., CloudFormationResourceProviderPlugin, LambdaFunctionProviderPlugin, SQSQueueProviderPlugin, SQSQueueInlinePolicyProviderPlugin, SQSQueuePolicyProviderPlugin, ApiGatewayApiKeyProviderPlugin (+58 more)
 
 ### Community 21 - "Community 21"
 Cohesion: 0.01
@@ -6038,35 +6054,35 @@ Nodes (214): AccountSendingPausedException, AddHeaderAction, AlreadyExistsExcept
 
 ### Community 22 - "Community 22"
 Cohesion: 0.02
-Nodes (108): QueryLanguageMode, EvalComponent, CustomErrorName, States MAY report errors with other names, which MUST NOT begin with the prefix, FailureEvent, FailureEventException, from_name(), StatesErrorName (+100 more)
+Nodes (106): QueryLanguageMode, EvalComponent, CustomErrorName, States MAY report errors with other names, which MUST NOT begin with the prefix, FailureEvent, FailureEventException, from_name(), StatesErrorName (+98 more)
 
 ### Community 23 - "Community 23"
 Cohesion: 0.01
-Nodes (46): from_string_literal(), is_production(), is_terminal(), AssignTemplateValueArray, AssignTemplateValueObject, AssignTemplateValueTerminal, AssignTemplateValueTerminalLit, AssignTemplateValueTerminalStringJSONata (+38 more)
+Nodes (41): from_string_literal(), is_production(), is_terminal(), AssignTemplateValueArray, AssignTemplateValueObject, AssignTemplateValueTerminal, AssignTemplateValueTerminalLit, AssignTemplateValueTerminalStringJSONata (+33 more)
 
 ### Community 24 - "Community 24"
-Cohesion: 0.00
-Nodes (545): available_regions(), AccessRequestStatus, AccessType, AccountSharingInfo, Activation, AddTagsToResourceRequest, AddTagsToResourceResult, Alarm (+537 more)
+Cohesion: 0.01
+Nodes (175): AccessDeniedException, Action, AssociateFirewallRuleGroupRequest, AssociateResolverEndpointIpAddressRequest, AssociateResolverEndpointIpAddressResponse, AssociateResolverQueryLogConfigRequest, AssociateResolverRuleRequest, AssociateResolverRuleResponse (+167 more)
 
 ### Community 25 - "Community 25"
 Cohesion: 0.01
-Nodes (193): apigateway_invocations_arn(), apigateway_restapi_arn(), cloudwatch_alarm_arn(), get_partition(), sns_topic_arn(), ip(), Providing legacy variables removed in 3.0 should not affect the default configur, We are deriving GATEWAY_LISTEN and LOCALSTACK_HOST from provided environment var (+185 more)
+Nodes (213): apigateway_invocations_arn(), apigateway_restapi_arn(), cloudwatch_alarm_arn(), get_partition(), sns_topic_arn(), ip(), Providing legacy variables removed in 3.0 should not affect the default configur, We are deriving GATEWAY_LISTEN and LOCALSTACK_HOST from provided environment var (+205 more)
 
 ### Community 26 - "Community 26"
 Cohesion: 0.01
-Nodes (193): AccessDeniedException, ActivateEventSourceRequest, ApiDestination, ApiDestinationHttpMethod, ApiDestinationState, AppSyncParameters, Archive, ArchiveState (+185 more)
+Nodes (192): AccessDeniedException, ActivateEventSourceRequest, ApiDestination, ApiDestinationHttpMethod, ApiDestinationState, AppSyncParameters, Archive, ArchiveState (+184 more)
 
 ### Community 27 - "Community 27"
-Cohesion: 0.02
-Nodes (42): # FIXME: regenerate snapshot when AWS is not raising a 500 error anymore, # FIXME: re-generate the snapshot later, AWS is returning a 500 error as of now, https://docs.aws.amazon.com/AmazonS3/latest/userguide/conditional-writes.html, # TODO: AWS started added ChecksumType to CopyObjectResult, # TODO: AWS stopped returning DisplayName (finally), # TODO: AWS started added ChecksumType to CopyObjectResult, # TODO: AWS stopped returning DisplayName (finally), # TODO: AWS started added ChecksumType to CopyObjectResult (+34 more)
+Cohesion: 0.01
+Nodes (166): client_factory(), test_account_id_namespacing_for_localstack_backends(), test_account_id_namespacing_for_moto_backends(), test_multi_accounts_dynamodb(), test_multi_accounts_kinesis(), TestMultiAccounts, test_multi_region_api_gateway(), test_multi_region_sns() (+158 more)
 
 ### Community 28 - "Community 28"
-Cohesion: 0.04
-Nodes (76): ApiGatewayStore, SFNStore, BaseStore, CloudFormationStore, CloudWatchStore, Backup, DynamoDBStore, DynamoDbStreamRecord (+68 more)
+Cohesion: 0.03
+Nodes (88): account(), ApiGatewayStore, from_rest_api_container(), MergedRestApi, # TODO: make sure API ID are unique across all accounts, # TODO: make sure API ID are unique across all accounts, Merged REST API between Moto data and LocalStack data, used in our Invocation lo, # TODO: when migrating away from Moto, RestApiContainer and MergedRestApi will h (+80 more)
 
 ### Community 29 - "Community 29"
 Cohesion: 0.02
-Nodes (188): test_api_gateway_lambda_proxy_integration_with_is_base_64_encoded(), test_apigateway_to_kinesis(), test_lambda_rust_proxy_integration(), _await_dynamodb_table_active(), _await_event_source_mapping_enabled(), _await_event_source_mapping_state(), generate_tests(), _get_lambda_invocation_events() (+180 more)
+Nodes (193): test_apigateway_to_kinesis(), _await_dynamodb_table_active(), _await_event_source_mapping_enabled(), _await_event_source_mapping_state(), concurrency_update_failed(), create_function(), generate_tests(), get_invoke_init_type() (+185 more)
 
 ### Community 30 - "Community 30"
 Cohesion: 0.01
@@ -6074,55 +6090,55 @@ Nodes (181): ActivityTask, ActivityTaskCanceledEventAttributes, ActivityTaskCanc
 
 ### Community 31 - "Community 31"
 Cohesion: 0.02
-Nodes (179): test_event_bridge_events_base(), test_event_bridge_events_failure(), test_execution_dateformat(), test_multiple_executions_and_heartbeat_notifications(), _test_sfn_scenario(), CountDownLatch, # TODO: add timeout support., test_base() (+171 more)
+Nodes (201): serve_gateway_hypercorn(), test_gateway_served_through_hypercorn_preserves_client_headers(), test_execution_dateformat(), test_multiple_executions_and_heartbeat_notifications(), _test_sfn_scenario(), CountDownLatch, # TODO: add timeout support., test_base() (+193 more)
 
 ### Community 32 - "Community 32"
-Cohesion: 0.00
-Nodes (562): ApproximateCreationDateTimePrecision, ArchivalSummary, AttributeAction, AttributeDefinition, AttributeValue, AttributeValueUpdate, AutoScalingPolicyDescription, AutoScalingPolicyUpdate (+554 more)
+Cohesion: 0.01
+Nodes (280): ApproximateCreationDateTimePrecision, ArchivalSummary, AttributeAction, AttributeDefinition, AttributeValue, AttributeValueUpdate, AutoScalingPolicyDescription, AutoScalingPolicyUpdate (+272 more)
 
 ### Community 33 - "Community 33"
-Cohesion: 0.01
-Nodes (183): test_boto_wait_for_certificate_validation(), test_certificate_for_subdomain_wildcard(), test_create_certificate_for_multiple_alternative_domains(), test_domain_validation(), test_import_certificate(), test_list_certificates_with_key_types_filter_imported_certificate(), test_list_certificates_with_key_types_filter_requested_certificate(), TestACM (+175 more)
+Cohesion: 0.03
+Nodes (82): rm_env_vars_file(), DynamoDBLocalPackage, DynamoDBLocalPackageInstaller, test_idempotent_chmod(), test_parse_config_file(), Download the code archive into a given file          :param target_file: File th, Unzips the code archive to the proper destination on disk, if not already presen, test_runtime_wrapper_invoke() (+74 more)
 
 ### Community 34 - "Community 34"
-Cohesion: 0.01
-Nodes (261): serve_gateway_hypercorn(), test_gateway_served_through_hypercorn_preserves_client_headers(), test_aws_sqs_metrics_created(), sns_create_http_endpoint(), sqs_create_queue(), sqs_queue_exists(), List of Services integrations with resourcegroups     see: https://docs.aws.amaz, resourcegroups_create_group() (+253 more)
+Cohesion: 0.02
+Nodes (214): sqs_create_queue(), sqs_queue_exists(), create_sqs_bucket_notification(), get_queue_arn(), Polls the given queue for the given amount of time and extracts and flattens fro, Returns the given Queue's ARN. Expects the Queue to exist.      :param sqs_clien, A NotificationFactory., A factory fixture for creating sqs bucket notifications. (+206 more)
 
 ### Community 35 - "Community 35"
 Cohesion: 0.01
 Nodes (157): AbsoluteTimeRange, BadRequestException, BaseModelName, CallAnalyticsFeature, CallAnalyticsJob, CallAnalyticsJobDetails, CallAnalyticsJobSettings, CallAnalyticsJobStatus (+149 more)
 
 ### Community 36 - "Community 36"
-Cohesion: 0.01
-Nodes (250): api_invoke_url(), assert_response_is_200(), assert_response_is_201(), assert_response_status(), create_rest_api_deployment(), create_rest_api_integration(), create_rest_api_integration_response(), create_rest_api_method_response() (+242 more)
+Cohesion: 0.03
+Nodes (165): api_invoke_url(), assert_response_is_200(), assert_response_is_201(), assert_response_status(), create_rest_api_deployment(), create_rest_api_integration(), create_rest_api_integration_response(), create_rest_api_method_response() (+157 more)
 
 ### Community 37 - "Community 37"
-Cohesion: 0.05
-Nodes (39): stepfunctions_express_execution_arn(), ActivityDoesNotExist, CreateActivityOutput, CreateStateMachineAliasOutput, CreateStateMachineOutput, DeleteActivityOutput, DeleteStateMachineOutput, DeleteStateMachineVersionOutput (+31 more)
+Cohesion: 0.04
+Nodes (63): stepfunctions_express_execution_arn(), stepfunctions_standard_execution_arn(), CreateActivityOutput, DeleteStateMachineOutput, ExecutionDoesNotExist, InvalidArn, InvalidExecutionInput, InvalidName (+55 more)
 
 ### Community 38 - "Community 38"
 Cohesion: 0.01
-Nodes (140): ActionsSuppressedBy, AlarmContributor, AlarmMuteRuleStatus, AlarmMuteRuleSummary, AlarmType, AnomalyDetector, AnomalyDetectorConfiguration, AnomalyDetectorStateValue (+132 more)
+Nodes (141): ActionsSuppressedBy, AlarmContributor, AlarmMuteRuleStatus, AlarmMuteRuleSummary, AlarmType, AnomalyDetector, AnomalyDetectorConfiguration, AnomalyDetectorStateValue (+133 more)
 
 ### Community 39 - "Community 39"
 Cohesion: 0.02
-Nodes (109): ActivityTemplate, ArgumentTemplates, test_base_cases(), TestArgumentsBase, AssignTemplate, TestAssignReferenceVariables, BaseTemplate, TestCallback (+101 more)
+Nodes (113): ActivityTemplate, ArgumentTemplates, test_base_cases(), TestArgumentsBase, AssignTemplate, TestAssignReferenceVariables, BaseTemplate, TestCallback (+105 more)
 
 ### Community 40 - "Community 40"
 Cohesion: 0.02
-Nodes (158): NoValueScenario, The test answers the question if the `StackName` parameter in `CreateChangeSet`, # FIXME: tackle this when fixing API parity of CloudFormation, changeset-based equivalent to tests.aws.services.cloudformation.api.test_stacks., # TODO: the error response is incorrect, however the test is otherwise validated, Test that AWS pseudoparameters (particularly AWS::NoValue) can     only be used, Test the behaviour of deleting a change set after it has been executed, Fix a bug with trying to access falsy conditions when updating (+150 more)
+Nodes (199): NoValueScenario, The test answers the question if the `StackName` parameter in `CreateChangeSet`, # FIXME: tackle this when fixing API parity of CloudFormation, changeset-based equivalent to tests.aws.services.cloudformation.api.test_stacks., # TODO: the error response is incorrect, however the test is otherwise validated, Test that AWS pseudoparameters (particularly AWS::NoValue) can     only be used, Test the behaviour of deleting a change set after it has been executed, Fix a bug with trying to access falsy conditions when updating (+191 more)
 
 ### Community 41 - "Community 41"
 Cohesion: 0.03
-Nodes (163): ChangeSetNotFoundException, ChangeSetSummary, CreateChangeSetOutput, CreateStackInstancesOutput, CreateStackOutput, CreateStackSetOutput, DeleteChangeSetOutput, DeleteStackInstancesOutput (+155 more)
+Nodes (164): ChangeSetNotFoundException, ChangeSetSummary, CreateStackInstancesOutput, CreateStackOutput, CreateStackSetOutput, DeleteChangeSetOutput, DeleteStackInstancesOutput, DeleteStackSetOutput (+156 more)
 
 ### Community 42 - "Community 42"
 Cohesion: 0.01
-Nodes (206): AddPermissionRequest, BatchEntryIdsNotDistinct, BatchRequestTooLong, BatchResultErrorEntry, CancelMessageMoveTaskRequest, CancelMessageMoveTaskResult, ChangeMessageVisibilityBatchRequest, ChangeMessageVisibilityBatchRequestEntry (+198 more)
+Nodes (152): ActivityAlreadyExists, ActivityFailedEventDetails, ActivityLimitExceeded, ActivityListItem, ActivityScheduledEventDetails, ActivityScheduleFailedEventDetails, ActivityStartedEventDetails, ActivitySucceededEventDetails (+144 more)
 
 ### Community 43 - "Community 43"
 Cohesion: 0.02
-Nodes (59): Argument, ArgumentContextPath, ArgumentFunction, ArgumentJsonPath, ArgumentList, ArgumentLiteral, ArgumentVar, _eval_argument() (+51 more)
+Nodes (56): Argument, ArgumentContextPath, ArgumentFunction, ArgumentJsonPath, ArgumentList, ArgumentLiteral, ArgumentVar, _eval_argument() (+48 more)
 
 ### Community 44 - "Community 44"
 Cohesion: 0.18
@@ -6130,43 +6146,43 @@ Nodes (5): delenv(), get_base_dir(), get_deployed_stage(), setup_and_teardown(),
 
 ### Community 45 - "Community 45"
 Cohesion: 0.02
-Nodes (59): _assert_container_state(), create_container(), create_network(), dummy_container(), _get_default_network(), _is_podman_test(), _pull_image_if_not_exists(), _random_container_name() (+51 more)
+Nodes (63): _assert_container_state(), authenticated_registry(), create_container(), create_network(), dummy_container(), _get_default_network(), _is_podman_test(), _pull_image_if_not_exists() (+55 more)
 
 ### Community 46 - "Community 46"
 Cohesion: 0.03
-Nodes (58): Queue, ReceiptHandleIsInvalid, approximate_number_of_messages(), approximate_number_of_messages_delayed(), approximate_number_of_messages_not_visible(), arn(), dead_letter_queue_source_arn(), delay_seconds() (+50 more)
+Nodes (57): Queue, approximate_number_of_messages(), approximate_number_of_messages_delayed(), approximate_number_of_messages_not_visible(), arn(), dead_letter_queue_source_arn(), delay_seconds(), FifoQueue (+49 more)
 
 ### Community 47 - "Community 47"
-Cohesion: 0.04
-Nodes (43): Delete a resource          IAM permissions required:           - sns:SetTopicAtt, BatchEntryIdsNotDistinctException, ConfirmSubscriptionResponse, CreateTopicResponse, EndpointDisabledException, GetEndpointAttributesResponse, GetSMSAttributesResponse, GetSubscriptionAttributesResponse (+35 more)
+Cohesion: 0.03
+Nodes (102): sns_platform_application_arn(), Delete a resource          IAM permissions required:           - sns:SetTopicAtt, FilterPolicyValidator, This method evaluate the filter policy recursively, and returns only a list of l, BatchEntryIdsNotDistinctException, ConfirmSubscriptionResponse, CreateTopicResponse, EndpointDisabledException (+94 more)
 
 ### Community 48 - "Community 48"
-Cohesion: 0.03
-Nodes (69): get_s3_hostname(), GatewayShortCircuit, modify_client(), TypedServiceClientFactory, attribute_name_to_service_name(), ClientFactory, config_hash_patch(), dump_dto() (+61 more)
+Cohesion: 0.02
+Nodes (78): get_s3_hostname(), _create_and_enrich_aws_request(), create_http_request(), GatewayShortCircuit, modify_client(), _patch_cbor2(), Utils to process AWS requests as a client., Patch fixing the AWS CBOR en-/decoding of datetime fields.      Unfortunately, K (+70 more)
 
 ### Community 49 - "Community 49"
-Cohesion: 0.04
-Nodes (81): This topic partition the work between workers based on Topics.     It guarantees, # TODO: the pool is not cleaned up at the moment, think about the clean-up inter, TopicPartitionedThreadPoolExecutor, _worker(), _WorkItem, SubscriptionFilter, ApplicationEndpointPublisher, ApplicationTopicPublisher (+73 more)
+Cohesion: 0.03
+Nodes (94): This topic partition the work between workers based on Topics.     It guarantees, # TODO: the pool is not cleaned up at the moment, think about the clean-up inter, TopicPartitionedThreadPoolExecutor, _worker(), _WorkItem, _evaluate_numeric_condition(), flatten_payload(), flatten_policy() (+86 more)
 
 ### Community 51 - "Community 51"
 Cohesion: 0.03
-Nodes (115): capture_update_process(), Fixture to deploy a new stack (via creating and executing a change set), then up, test_condition_add_new_negative_condition_to_existent_resource(), test_condition_add_new_positive_condition_to_existent_resource(), test_condition_update_adds_resource(), test_condition_update_removes_resource(), test_missing_condition(), TestChangeSetConditions (+107 more)
+Nodes (127): capture_update_process(), Fixture to deploy a new stack (via creating and executing a change set), then up, test_condition_add_new_negative_condition_to_existent_resource(), test_condition_add_new_positive_condition_to_existent_resource(), test_condition_update_adds_resource(), test_condition_update_removes_resource(), test_missing_condition(), TestChangeSetConditions (+119 more)
 
 ### Community 52 - "Community 52"
 Cohesion: 0.03
-Nodes (51): Alias, _get_mutex_date(), BaseExecutionWorkerCommunication, Execution, # TODO: checks exec_worker does not exists already?, SyncExecution, SyncExecutionWorkerCommunication, _to_serialized_date() (+43 more)
+Nodes (54): Alias, _get_mutex_date(), BaseExecutionWorkerCommunication, Execution, # TODO: checks exec_worker does not exists already?, SyncExecution, SyncExecutionWorkerCommunication, _to_serialized_date() (+46 more)
 
 ### Community 54 - "Community 54"
 Cohesion: 0.01
-Nodes (108): AccessDeniedException, AddTagsToStreamInput, ChildShard, Consumer, ConsumerDescription, ConsumerStatus, CreateStreamInput, DecreaseStreamRetentionPeriodInput (+100 more)
+Nodes (158): AmazonOpenSearchServerlessBufferingHints, AmazonOpenSearchServerlessDestinationConfiguration, AmazonOpenSearchServerlessDestinationDescription, AmazonOpenSearchServerlessDestinationUpdate, AmazonOpenSearchServerlessRetryOptions, AmazonOpenSearchServerlessS3BackupMode, AmazonopensearchserviceBufferingHints, AmazonopensearchserviceDestinationConfiguration (+150 more)
 
 ### Community 55 - "Community 55"
-Cohesion: 0.03
-Nodes (71): AccountSettings, AliasRoutingConfig, ArchiveCode, CapacityProvider, CodeSigningConfig, DeadLetterConfig, DesiredCapacityProviderState, destroy() (+63 more)
+Cohesion: 0.02
+Nodes (84): extract_resource_from_arn(), AccountSettings, AliasRoutingConfig, ArchiveCode, CapacityProvider, CodeSigningConfig, DeadLetterConfig, DesiredCapacityProviderState (+76 more)
 
 ### Community 56 - "Community 56"
 Cohesion: 0.04
-Nodes (102): CancellationReason, TransactionCanceledException, create_serializer(), Creates the right serializer for the given service model.      :param service: t, _botocore_error_serializer_integration_test(), _botocore_event_streaming_test(), _botocore_serializer_integration_test(), _iterable_to_stream() (+94 more)
+Nodes (82): CancellationReason, TransactionCanceledException, _botocore_error_serializer_integration_test(), _botocore_event_streaming_test(), _botocore_serializer_integration_test(), _iterable_to_stream(), Tests the serialization of attributes into a specified header key based on this, Performs an integration test for the error serialization using botocore as parse (+74 more)
 
 ### Community 57 - "Community 57"
 Cohesion: 0.01
@@ -6174,31 +6190,31 @@ Nodes (213): AcceptInboundCrossClusterSearchConnectionRequest, AcceptInboundCros
 
 ### Community 58 - "Community 58"
 Cohesion: 0.03
-Nodes (49): Comment, QueryLanguage, DistributedIterationComponent, DistributedIterationComponentEvalInput, StartAt, InlineItemProcessorWorker, InlineIterationComponent, InlineIterationComponentEvalInput (+41 more)
+Nodes (43): Comment, QueryLanguage, DistributedIterationComponent, DistributedIterationComponentEvalInput, StartAt, InlineIterationComponent, InlineIterationComponentEvalInput, Program (+35 more)
 
 ### Community 59 - "Community 59"
 Cohesion: 0.03
-Nodes (46): ServiceProviderConfig, PluginLifecycleListener, api_provider_specs(), aws_provider(), check_service_health(), create_service(), eager_load_services(), for_provider() (+38 more)
+Nodes (47): ServiceProviderConfig, ServiceProviderConfig, PluginLifecycleListener, api_provider_specs(), aws_provider(), check_service_health(), create_service(), eager_load_services() (+39 more)
 
 ### Community 60 - "Community 60"
-Cohesion: 0.07
-Nodes (69): TestVelocityUtilApiGatewayFunctions, ApiGatewayIntegrationError, LambdaResponse, Helper class to support multi_value_headers in Lambda responses, InternalRequestParameters, LocalStack Data Transfer Object.      This is sent with every internal request a, Utility class for rendering Velocity templates, VtlTemplate (+61 more)
+Cohesion: 0.04
+Nodes (95): ModelResolver, OpenAPISpecificationResolver, _pathctx(), This class allows a Model to use recursive and circular references to other Mode, Model, RestApiContainer, # TODO: remove this tests, assertion are wrong, test_openapi_resolver_given_invalid_references() (+87 more)
 
 ### Community 61 - "Community 61"
-Cohesion: 0.06
-Nodes (63): GenerateDataKeyPairResponse, InvalidGrantIdException, InvalidKeyUsageException, ListGrantsResponse, cancel_key_deletion(), create_alias(), _create_alias_if_reserved_and_not_exists(), create_grant() (+55 more)
+Cohesion: 0.04
+Nodes (81): GenerateDataKeyPairResponse, InvalidGrantIdException, InvalidKeyUsageException, ListGrantsResponse, CryptoKey, CryptoKeyVersion, KeyRing, KmsDataStore (+73 more)
 
 ### Community 62 - "Community 62"
 Cohesion: 0.04
-Nodes (120): Credentials, Point of abstraction between our integration with generic base models, and the n, ResourceProviderExecutor, ResourceProviderPayload, change_type_of(), ChangeSetEntity, ChangeSetNode, ChangeSetTerminal (+112 more)
+Nodes (96): Credentials, Point of abstraction between our integration with generic base models, and the n, ResourceProviderExecutor, ResourceProviderPayload, ChangeSetEntity, ChangeSetNode, ChangeSetTerminal, ChangeType (+88 more)
 
 ### Community 63 - "Community 63"
-Cohesion: 0.04
-Nodes (43): TestApiGatewayEndpoint, A wrapper around ``requests`` that uses botocore to sign HTTP requests using a `, SigningHttpClient, handler(), handler_dispatcher(), Replacement for ``rolo.dispatcher.handler_dispatcher`` that uses by default Loca, TestHandlerDispatcher, Creates a new Router with a handler dispatcher, serves it through a newly create (+35 more)
+Cohesion: 0.03
+Nodes (63): get_invocation_context(), get_path_from_addressing(), parse_handler_chain(), # TODO: maybe assert more regarding the data inside Resource Methods, but we don, # TODO: maybe assert more regarding the data inside Resource Methods, but we don, # TODO: maybe assert more regarding the data inside Resource Methods, but we don, # TODO: validate this with AWS, Returns a dummy chain for testing. (+55 more)
 
 ### Community 64 - "Community 64"
-Cohesion: 0.04
-Nodes (77): default_context(), https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-payload, Create a context populated with what we would expect to receive from the chain a, TestIntegrationRequestBinaryHandling, ctx(), integration_response_handler(), Create a context populated with what we would expect to receive from the chain a, Returns a dummy integration response handler invoker for testing. (+69 more)
+Cohesion: 0.05
+Nodes (52): default_context(), https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-payload, Create a context populated with what we would expect to receive from the chain a, TestIntegrationRequestBinaryHandling, ctx(), integration_response_handler(), Create a context populated with what we would expect to receive from the chain a, Returns a dummy integration response handler invoker for testing. (+44 more)
 
 ### Community 65 - "Community 65"
 Cohesion: 0.01
@@ -6206,83 +6222,83 @@ Nodes (134): tests/aws/services/sqs/test_sqs.py::TestSqsProvider::test_change_me
 
 ### Community 66 - "Community 66"
 Cohesion: 0.03
-Nodes (45): LocalstackAwsGateway, The core concepts of the HandlerChain., ExceptionHandler, Gateway, Handler, MissingAuthHeaderInjector, # FIXME: this is needed for allowing access to resources via plain URLs where ac, ContentDecoder (+37 more)
+Nodes (56): LocalstackAwsGateway, The core concepts of the HandlerChain., AwsComponents, gateway(), Runtime components specific to the AWS emulator., # FIXME: the ServiceManager should be reworked to be more generic, and then beco, BaseComponents, Handler (+48 more)
 
 ### Community 67 - "Community 67"
 Cohesion: 0.03
-Nodes (65): A router implementation which abstracts the (quite complex) routing of incoming, RestServiceOperationRouter, BaseCBORRequestParser, BaseJSONRequestParser, BaseRestRequestParser, BaseRpcV2RequestParser, CBORRequestParser, _do_parse() (+57 more)
+Nodes (54): BaseCBORRequestParser, BaseJSONRequestParser, BaseRestRequestParser, BaseRpcV2RequestParser, CBORRequestParser, _do_parse(), get_peekable_stream_from_bytes(), _handle_exceptions() (+46 more)
 
 ### Community 68 - "Community 68"
 Cohesion: 0.05
-Nodes (85): CreateRestApiRequest, PutRestApiRequest, create_authorizer(), create_custom_context(), create_domain_name(), create_rest_api(), create_stage(), create_usage_plan() (+77 more)
+Nodes (74): get_moto_rest_api(), CreateRestApiRequest, PutRestApiRequest, create_custom_context(), create_rest_api(), create_stage(), create_usage_plan(), delete_domain_name() (+66 more)
 
 ### Community 69 - "Community 69"
 Cohesion: 0.01
 Nodes (27): Assign_template_binding_string_expression_simpleContext, Assign_template_binding_valueContext, Assign_template_value_terminal_boolContext, Assign_template_value_terminal_floatContext, Assign_template_value_terminal_intContext, Assign_template_value_terminal_nullContext, Assign_template_value_terminal_string_jsonataContext, Assign_template_value_terminal_string_literalContext (+19 more)
 
 ### Community 70 - "Community 70"
-Cohesion: 0.06
-Nodes (35): EsmEventProcessor, # TODO: handle and log target invocation + stage skipped (when no records presen, # TODO: test unserializable content (e.g., byte strings), # TODO: Should 'requestContext' and 'responseContext' be defined as models?, # TODO: Allow for generating failure context where there is no responseContext i, # TODO: check whether partial batch item failures is enabled by default or need, BatchFailureError, CustomerInvocationError (+27 more)
+Cohesion: 0.07
+Nodes (32): EsmEventProcessor, # TODO: handle and log target invocation + stage skipped (when no records presen, # TODO: test unserializable content (e.g., byte strings), # TODO: Should 'requestContext' and 'responseContext' be defined as models?, # TODO: Allow for generating failure context where there is no responseContext i, # TODO: check whether partial batch item failures is enabled by default or need, BatchFailureError, CustomerInvocationError (+24 more)
 
 ### Community 71 - "Community 71"
-Cohesion: 0.06
-Nodes (37): ListDeadLetterSourceQueuesResult, ListMessageMoveTasksResult, ListMessageMoveTasksResultEntry, ListQueuesResult, ListQueueTagsResult, PurgeQueueInProgress, SendMessageBatchResult, SendMessageBatchResultEntry (+29 more)
+Cohesion: 0.03
+Nodes (60): SqsMetricBatchData, get_sqs_protocol(), InvalidAddress, list_messages(), list_messages_for_queue_url(), Retrieves from a given SqsQueue all visible messages without causing any side ef, A set of SQS developer tool endpoints:      - ``/_aws/sqs/messages``: list SQS m, sqs_auto_protocol_aws_response_serializer() (+52 more)
 
 ### Community 72 - "Community 72"
 Cohesion: 0.03
-Nodes (74): RawIOBase, TestS3TemporaryStorageBackend, get_s3_checksum(), S3ObjectStore, S3StoredMultipart, S3StoredObject, SpooledTemporaryFile, append() (+66 more)
+Nodes (73): RawIOBase, get_s3_checksum(), S3ObjectStore, S3StoredMultipart, S3StoredObject, SpooledTemporaryFile, append(), checksum() (+65 more)
 
 ### Community 73 - "Community 73"
 Cohesion: 0.03
-Nodes (47): ResourceCondition, ResourceRuntimePart, AuthType, _headers_of(), _invoke_output_of(), _invoke_url_of(), InvokeOutput, Method (+39 more)
+Nodes (50): ResourceCondition, ResourceRuntimePart, AuthType, _headers_of(), _invoke_output_of(), _invoke_url_of(), InvokeOutput, Method (+42 more)
 
 ### Community 74 - "Community 74"
 Cohesion: 0.03
-Nodes (98): create_tags(), generate_encrypted_symmetric_key_material(), _get_alias(), _get_all_key_ids(), get_signature_kwargs(), kms_client_for_region(), # TODO: this test could not work against AWS, we need to assign proper permissio, # TODO: Determine where 'context.operation.name' is being set to 'ReEncryptTo' a (+90 more)
+Nodes (99): create_tags(), generate_encrypted_symmetric_key_material(), _get_alias(), _get_all_key_ids(), get_signature_kwargs(), kms_client_for_region(), # TODO: this test could not work against AWS, we need to assign proper permissio, # TODO: Determine where 'context.operation.name' is being set to 'ReEncryptTo' a (+91 more)
 
 ### Community 75 - "Community 75"
-Cohesion: 0.04
-Nodes (68): Exception, CustomException, handler(), AssignmentException, AssignmentService, get_environment(), Callback for deleting environment after function times out, # TODO: refine scaling loop to re-use existing environments instead of re-creati (+60 more)
+Cohesion: 0.07
+Nodes (37): AssignmentException, AssignmentService, get_environment(), Callback for deleting environment after function times out, # TODO: refine scaling loop to re-use existing environments instead of re-creati, # TODO: handle case where no provisioned environment is available during scaling, # TODO: think about concurrent updates while deleting a function, scope: LocalStack global (+29 more)
 
 ### Community 76 - "Community 76"
 Cohesion: 0.03
-Nodes (55): MalformedXML, NoSuchConfiguration, AbortMultipartUploadOutput, AuthorizationHeaderMalformed, BucketNotEmpty, CommonPrefix, CrossLocationLoggingProhibitted, DeleteMarkerEntry (+47 more)
+Nodes (46): MalformedXML, NoSuchConfiguration, AbortMultipartUploadOutput, BucketNotEmpty, CrossLocationLoggingProhibitted, DeletedObject, DeleteObjectOutput, DeleteObjectTaggingOutput (+38 more)
 
 ### Community 77 - "Community 77"
-Cohesion: 0.05
-Nodes (52): FakeEndpointProxyServer, CustomEndpoint, EdgeProxiedElasticsearchCluster, EdgeProxiedOpensearchCluster, ElasticsearchCluster, EndpointProxy, FakeEndpointProxyServer, arn() (+44 more)
+Cohesion: 0.04
+Nodes (59): FakeEndpointProxyServer, CustomEndpoint, EdgeProxiedElasticsearchCluster, EdgeProxiedOpensearchCluster, ElasticsearchCluster, EndpointProxy, FakeEndpointProxyServer, arn() (+51 more)
 
 ### Community 78 - "Community 78"
 Cohesion: 0.03
 Nodes (118): errors, http, input, name, errors, http, input, name (+110 more)
 
 ### Community 79 - "Community 79"
-Cohesion: 0.04
-Nodes (42): AliasTarget, DnsServerProtocol, DynamicRecord, _DynamicRecordBase, NameRecord, Add a dns name which should be pointing to LocalStack when resolved.          :p, Removes a dns name from pointing to LocalStack          :param name: Name to be, Adds an alias to the DNS, with an optional healthcheck callback.         When a (+34 more)
+Cohesion: 0.03
+Nodes (41): AliasTarget, DnsServerProtocol, DynamicRecord, _DynamicRecordBase, NameRecord, Add a dns name which should be pointing to LocalStack when resolved.          :p, Removes a dns name from pointing to LocalStack          :param name: Name to be, Adds an alias to the DNS, with an optional healthcheck callback.         When a (+33 more)
 
 ### Community 80 - "Community 80"
-Cohesion: 0.06
-Nodes (72): ComparisonFunc, ComparisonFuncStringVariableSample, ComparisonFuncValue, ComparisonOperatorType, NoSuchVariable, Variable, as_frame_of(), as_inner_frame_of() (+64 more)
+Cohesion: 0.07
+Nodes (67): ComparisonOperatorType, NoSuchVariable, Variable, as_frame_of(), as_inner_frame_of(), Environment, next_field_name(), next_state_name() (+59 more)
 
 ### Community 81 - "Community 81"
-Cohesion: 0.03
-Nodes (132): AccessControlPolicy, BadDigest, CompleteMultipartUploadOutput, ConditionalRequestConflict, CopyObjectOutput, CopyPartResult, CreateBucketOutput, CreateMultipartUploadOutput (+124 more)
+Cohesion: 0.04
+Nodes (116): BadDigest, CompleteMultipartUploadOutput, ConditionalRequestConflict, CopyObjectOutput, CopyPartResult, CreateMultipartUploadOutput, GetObjectOutput, GetObjectTaggingOutput (+108 more)
 
 ### Community 82 - "Community 82"
 Cohesion: 0.04
-Nodes (29): apply_json_patch_safe(), get_apigateway_store(), get_moto_rest_api(), get_rest_api_container(), Apply JSONPatch operations, using some customizations for compatibility with API, Authorizers, BasePathMapping, BasePathMappings (+21 more)
+Nodes (36): apply_json_patch_safe(), get_apigateway_store(), get_rest_api_container(), Apply JSONPatch operations, using some customizations for compatibility with API, Authorizers, BasePathMapping, BasePathMappings, ClientCertificate (+28 more)
 
 ### Community 83 - "Community 83"
-Cohesion: 0.06
-Nodes (50): get_current_time(), get_datetime_from_timestamp(), get_internal_client(), get_standardized_service_name(), Return a botocore client for a given arn. Supports:     * assume role if `role_a, Convert ARN service namespace to standardized service name used for boto clients, # TODO: fixed deprecated API (timestamp snapshots fail with the below), Custom JSON encoding for events with potentially unserializable fields (e.g., by (+42 more)
+Cohesion: 0.08
+Nodes (40): get_current_time(), failure_payload_details_field_name(), format_datetime(), get_approximate_arrival_time(), get_failure_s3_object_key(), get_sequence_number(), initialize_shards(), Generalized poller for streams such as Kinesis or DynamoDB         Examples of K (+32 more)
 
 ### Community 84 - "Community 84"
 Cohesion: 0.04
-Nodes (66): CancellableStream, AccessDenied, ContainerClient, ContainerConfiguration, ContainerException, DockerContainerStats, DockerContainerStatus, DockerNotAvailable (+58 more)
+Nodes (66): CancellableStream, AccessDenied, ContainerConfiguration, ContainerException, DockerContainerStats, DockerContainerStatus, DockerNotAvailable, DockerPlatform (+58 more)
 
 ### Community 85 - "Community 85"
-Cohesion: 0.02
-Nodes (131): load_service(), Loads a service     :param service: to load, f.e. "sqs". For custom, internalize, _get_sqs_request_headers(), test_dispatch_common_service_exception(), test_dispatch_missing_method_returns_internal_failure(), test_skeleton_e2e_sqs_send_message_not_implemented(), aws_cloudwatch_client(), is_old_provider() (+123 more)
+Cohesion: 0.03
+Nodes (99): EC2RequestParser, _filter_node(), QueryRequestParser, The ``EC2RequestParser`` is responsible for parsing incoming requests for servic, SQS allows using both - the proper serialized name of a map as well as the membe, The ``QueryRequestParser`` is responsible for parsing incoming requests for serv, This is what the node looks like for a flattened map::         ::           {, Some actions take lists of parameters. These lists are specified using the param (+91 more)
 
 ### Community 87 - "Community 87"
 Cohesion: 0.02
@@ -6290,19 +6306,19 @@ Nodes (84): AccountSettings, BadRequestException, CancelTagSyncTaskInput, Create
 
 ### Community 88 - "Community 88"
 Cohesion: 0.06
-Nodes (31): # TODO: verify if raw_path is needed, _get_aws_integration_service(), IntegrationUsageCounter, ApiKeyValidationHandler, Handles Api key validation.     If an api key is required, we will validate that, https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-key, IntegrationHandler, convert_body() (+23 more)
+Nodes (32): # TODO: verify if raw_path is needed, _get_aws_integration_service(), IntegrationUsageCounter, ApiKeyValidationHandler, Handles Api key validation.     If an api key is required, we will validate that, https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-key, IntegrationHandler, convert_body() (+24 more)
 
 ### Community 89 - "Community 89"
 Cohesion: 0.02
 Nodes (104): tests/aws/services/kms/test_kms.py::TestKMS::test_all_types_of_key_id_can_be_used_for_encryption, last_validated_date, tests/aws/services/kms/test_kms.py::TestKMS::test_cant_use_disabled_or_deleted_keys, last_validated_date, tests/aws/services/kms/test_kms.py::TestKMS::test_create_alias, last_validated_date, tests/aws/services/kms/test_kms.py::TestKMS::test_create_grant_with_invalid_key, last_validated_date (+96 more)
 
 ### Community 90 - "Community 90"
-Cohesion: 0.03
-Nodes (87): build_service_index_cache(), CustomLoader, endpoint_prefix_index(), get(), _get_catalog_filename(), get_service_catalog(), get_service_model_identifier(), is_protocol_in_service_model_identifier() (+79 more)
+Cohesion: 0.05
+Nodes (46): build_service_index_cache(), CustomLoader, endpoint_prefix_index(), get(), _get_catalog_filename(), get_service_catalog(), get_service_model_identifier(), iterate_service_operations() (+38 more)
 
 ### Community 91 - "Community 91"
 Cohesion: 0.05
-Nodes (54): get_action_name_for_resource_change(), ChangeConfig, ResourceChange, NoResourceInStack, order_changes(), order_resources(), Given a dictionary of resources, topologically sort the resources based on     i, # TODO: remove resolved conditions somehow (+46 more)
+Nodes (52): ActionOptions, emit_stack_failure(), from_action(), Available actions that can be performed on a resource.      Must support both CF, Capture the stack failure reason in telemetry, track_resource_operation(), get_action_name_for_resource_change(), log_not_available_message() (+44 more)
 
 ### Community 92 - "Community 92"
 Cohesion: 0.04
@@ -6317,44 +6333,44 @@ Cohesion: 0.03
 Nodes (73): AssociateFirewallRuleGroupResponse, AssociateResolverQueryLogConfigResponse, CreateFirewallDomainListResponse, CreateFirewallRuleGroupResponse, CreateFirewallRuleResponse, CreateResolverQueryLogConfigResponse, DeleteFirewallDomainListResponse, DeleteFirewallRuleGroupResponse (+65 more)
 
 ### Community 95 - "Community 95"
-Cohesion: 0.07
-Nodes (17): Collects API call data, aggregates it into small batches, and periodically emits, Start a thread that periodically flushes HTTP response data aggregations as anal, Add an API call for aggregation and collection.          :param request_info: in, Flushes the current batch of HTTP response data as an analytics event.         T, ServiceRequestAggregator, ServiceRequestInfo, test_integration(), test_whitebox_create_analytics_payload() (+9 more)
+Cohesion: 0.06
+Nodes (21): Collects API call data, aggregates it into small batches, and periodically emits, Start a thread that periodically flushes HTTP response data aggregations as anal, Add an API call for aggregation and collection.          :param request_info: in, Flushes the current batch of HTTP response data as an analytics event.         T, ServiceRequestAggregator, ServiceRequestInfo, test_integration(), test_whitebox_create_analytics_payload() (+13 more)
 
 ### Community 96 - "Community 96"
 Cohesion: 0.05
-Nodes (77): get_valid_regions_for_service(), batch_get_item(), batch_write_item(), create_dynamodb_stream(), create_table(), ddb_region_name(), delete_expired_items(), delete_expired_messages() (+69 more)
+Nodes (75): DescribeContributorInsightsOutput, DescribeTableOutput, UpdateTableOutput, batch_get_item(), batch_write_item(), create_dynamodb_stream(), create_table(), ddb_region_name() (+67 more)
 
 ### Community 97 - "Community 97"
-Cohesion: 0.05
-Nodes (45): ContainerConfiguration, cleanup_version(), docker_platform(), DockerRuntimeExecutor, _ensure_runtime_image_present(), get_default_image_for_runtime(), get_image_name_for_function(), LambdaContainerConfiguration (+37 more)
+Cohesion: 0.08
+Nodes (26): ContainerConfiguration, cleanup_version(), docker_platform(), DockerRuntimeExecutor, _ensure_runtime_image_present(), get_default_image_for_runtime(), get_image_name_for_function(), LambdaContainerConfiguration (+18 more)
 
 ### Community 98 - "Community 98"
-Cohesion: 0.03
-Nodes (60): TestLocalstackContainerServer, CancellableStream, ContainerConfigurator, Describes a generator that can be closed. Borrowed from ``docker.types.daemon``., Protocol for functional configurators. A ContainerConfigurator modifies, when ca, Modify the given container configuration.          :param configuration: the con, RegistryResolverStrategy, Protocol (+52 more)
+Cohesion: 0.02
+Nodes (75): TestLocalstackContainerServer, CancellableStream, ContainerClient, ContainerConfigurator, inspect_image(), list_containers(), Describes a generator that can be closed. Borrowed from ``docker.types.daemon``., Protocol for functional configurators. A ContainerConfigurator modifies, when ca (+67 more)
 
 ### Community 99 - "Community 99"
-Cohesion: 0.04
-Nodes (57): BindMount, Represents a --volume argument run/create command. When using VolumeBind to bind, Looks through the volumes and returns the one where the container dir matches ``, VolumeMappings, FileSystemEventHandler, ConfigEnvironmentConfigurator, CustomEntryPointConfigurator, DependencyMountConfigurator (+49 more)
+Cohesion: 0.05
+Nodes (48): ClientMetadata, BindMount, Represents a --volume argument run/create command. When using VolumeBind to bind, Looks through the volumes and returns the one where the container dir matches ``, VolumeMappings, ConfigEnvironmentConfigurator, CustomEntryPointConfigurator, DependencyMountConfigurator (+40 more)
 
 ### Community 100 - "Community 100"
 Cohesion: 0.04
-Nodes (97): call, setup, teardown, total, tests/aws/services/kms/test_kms.py::TestKMS::test_create_key, durations_in_seconds, last_validated_date, tests/aws/services/kms/test_kms.py::TestKMS::test_derive_shared_secret_matches_openssl (+89 more)
+Nodes (94): call, setup, teardown, total, tests/aws/services/kms/test_kms.py::TestKMS::test_create_key, durations_in_seconds, last_validated_date, tests/aws/services/kms/test_kms.py::TestKMS::test_create_multi_region_key (+86 more)
 
 ### Community 101 - "Community 101"
-Cohesion: 0.13
-Nodes (4): ChangeSetModel, _safe_access_in(), _safe_keys_of(), Scope
+Cohesion: 0.12
+Nodes (7): change_type_of(), ChangeSetModel, is_created(), is_removed(), _safe_access_in(), _safe_keys_of(), Scope
 
 ### Community 102 - "Community 102"
 Cohesion: 0.02
-Nodes (53): ABC, ASLIntrinsicParserVisitor, AssignDecl, AssignDeclBinding, AssignTemplateBinding, AssignTemplateBindingStringExpressionSimple, AssignTemplateBindingValue, _eval_value() (+45 more)
+Nodes (53): ABC, ASLIntrinsicParserVisitor, AssignDeclBinding, AssignTemplateBinding, AssignTemplateBindingStringExpressionSimple, AssignTemplateBindingValue, _eval_value(), AssignTemplateValue (+45 more)
 
 ### Community 103 - "Community 103"
-Cohesion: 0.03
-Nodes (17): FirestoreDatabase, FirestoreDataStore, FirestoreDocument, FirestoreProvider, _now(), _parse_document_name(), GcpAlreadyExists, GcpNotFound (+9 more)
+Cohesion: 0.05
+Nodes (9): client(), client(), GcsBucket, GcsDataStore, GcsObject, CloudStorageProvider, _error_xml(), GCS XML (S3-compatible) router — minimal subset.  | Method | Path (+1 more)
 
 ### Community 104 - "Community 104"
 Cohesion: 0.04
-Nodes (52): EsmConfigFactory, # TODO: last modified => does state transition affect this?, # TODO: complete missing fields, # TODO: check whether we need to remove any more fields that are present in the, # TODO: test all defaults, # TODO: test all defaults, # TODO: test whether merging actually happens recursively. Examples:, # TODO: can we ignore extra parameters from the request (e.g., Kinesis params fo (+44 more)
+Nodes (48): EsmState, EsmStateReason, EsmWorker, EsmWorkerFactory, PollerHolder, # TODO: map all supported ESM to Pipe parameters, # TODO: map all supported ESM to Pipe parameters, Holds a `Callable` function `create_poller_fn` used to create a Poller. Useful w (+40 more)
 
 ### Community 105 - "Community 105"
 Cohesion: 0.07
@@ -6365,84 +6381,84 @@ Cohesion: 0.07
 Nodes (18): _create_history_event(), _create_history_log(), EventHistoryContext, EventIdGenerator, EventManager, _get_current_timestamp(), of_program_start(), _remove_data_from_history_log() (+10 more)
 
 ### Community 107 - "Community 107"
-Cohesion: 0.25
-Nodes (8): is_collect_metrics_mode(), is_env_true(), is_local_test_mode(), Returns True if we are running in the context of our local integration tests., Returns True if metric collection is enabled., Returns True if test metrics should be stored in the local filesystem (instead o, Whether the given environment variable has a truthy value., store_test_metrics_in_local_filesystem()
+Cohesion: 0.01
+Nodes (101): AddPermissionInput, AuthorizationErrorException, BatchRequestTooLongException, BatchResultErrorEntry, CheckIfPhoneNumberIsOptedOutInput, CheckIfPhoneNumberIsOptedOutResponse, ConcurrentAccessException, ConfirmSubscriptionInput (+93 more)
 
 ### Community 109 - "Community 109"
-Cohesion: 0.07
-Nodes (44): Perform the setup needed to do a POST against a Lambda Proxy Integration;, test_create_invocation_headers(), ApiGatewayIntegrationError, connect_api_gateway_to_sqs(), event_type_from_route_key(), extract_api_id_from_hostname_in_url(), extract_path_params(), extract_query_string_params() (+36 more)
+Cohesion: 0.06
+Nodes (42): Not using parametrization as testing a simple scenario, AWS validated, test_create_invocation_headers(), test_extract_path_params(), test_path_matches(), ApiGatewayIntegrationError, event_type_from_route_key(), extract_api_id_from_hostname_in_url(), extract_path_params() (+34 more)
 
 ### Community 110 - "Community 110"
 Cohesion: 0.05
 Nodes (82): call, setup, teardown, total, tests/aws/services/stepfunctions/v2/test_state/test_state_configuration.py::TestStateConfiguration::test_map_state_error_caused_by_state[DEBUG], durations_in_seconds, last_validated_date, tests/aws/services/stepfunctions/v2/test_state/test_state_configuration.py::TestStateConfiguration::test_map_state_error_caused_by_state[INFO] (+74 more)
 
 ### Community 111 - "Community 111"
-Cohesion: 0.06
+Cohesion: 0.07
 Nodes (39): change_set_id(), change_set_name(), changes(), conditions(), CreateChangeSetInput, imports(), mappings(), outputs() (+31 more)
 
 ### Community 112 - "Community 112"
-Cohesion: 0.06
-Nodes (40): TestExpandForeach, create_policy_loader(), parse_template(), # TODO: present the user with a better error message including error location, # TODO: consider moving to transformers.py as well, template_to_json(), transform_template(), apply_global_transformations() (+32 more)
+Cohesion: 0.04
+Nodes (52): TestExpandForeach, create_policy_loader(), parse_template(), # TODO: present the user with a better error message including error location, # TODO: consider moving to transformers.py as well, template_to_json(), transform_template(), apply_global_transformations() (+44 more)
 
 ### Community 113 - "Community 113"
-Cohesion: 0.05
-Nodes (26): CreateGlobalTableOutput, DescribeContinuousBackupsOutput, DescribeGlobalTableOutput, DescribeKinesisStreamingDestinationOutput, DescribeTimeToLiveOutput, GlobalTableAlreadyExistsException, GlobalTableNotFoundException, KinesisDataStreamDestination (+18 more)
+Cohesion: 0.06
+Nodes (21): CreateGlobalTableOutput, DescribeContinuousBackupsOutput, DescribeGlobalTableOutput, DescribeKinesisStreamingDestinationOutput, DescribeTimeToLiveOutput, GlobalTableAlreadyExistsException, GlobalTableNotFoundException, KinesisDataStreamDestination (+13 more)
 
 ### Community 114 - "Community 114"
-Cohesion: 0.04
-Nodes (29): FirestoreRouter, _json(), Firestore REST router (minimal).  | Method | Path, FunctionsControlRouter, _json(), Cloud Functions control plane router.  | Method | Path, GcpInvalidRequest, make_operation_name() (+21 more)
+Cohesion: 0.02
+Nodes (56): CloudRunRouter, _extract_template(), _json(), CloudSqlRouter, _json(), CloudTasksRouter, _json(), DnsRouter (+48 more)
 
 ### Community 115 - "Community 115"
-Cohesion: 0.05
-Nodes (40): OpenAPISpecificationResolver, _pathctx(), Not using parametrization as testing a simple scenario, AWS validated, # TODO: remove this tests, assertion are wrong, test_extract_path_params(), test_openapi_resolver_given_invalid_references(), test_openapi_resolver_given_list_references(), test_openapi_resolver_given_schema_list_references() (+32 more)
+Cohesion: 0.06
+Nodes (19): ApiGatewayVtlTemplate, AttributeDict, body(), build_variables_mapping(), get_passthrough_behavior(), PassthroughBehavior, Converts the given object to a string and escapes any regular single quotes ('), Simple class to mimic the behavior of variable '$input' in AWS API Gateway integ (+11 more)
 
 ### Community 116 - "Community 116"
 Cohesion: 0.03
-Nodes (36): append_without_latest(), copy_into_container(), create_container(), create_env_vars_file_flag(), DockerRunFlags, format_env_vars(), get_container_logs(), get_system_info() (+28 more)
+Nodes (34): append_without_latest(), copy_into_container(), create_container(), create_env_vars_file_flag(), DockerRunFlags, format_env_vars(), get_container_logs(), get_system_info() (+26 more)
 
 ### Community 117 - "Community 117"
-Cohesion: 0.05
-Nodes (53): Class containing defined service principals.     To add to this list, please loo, ServicePrincipal, ApiGatewayTargetSender, AppSyncTargetSender, arn(), BatchTargetSender, client(), ECSTargetSender (+45 more)
+Cohesion: 0.04
+Nodes (62): Class containing defined service principals.     To add to this list, please loo, ServicePrincipal, ApiGatewayTargetSender, AppSyncTargetSender, arn(), BatchTargetSender, client(), ECSTargetSender (+54 more)
 
 ### Community 118 - "Community 118"
 Cohesion: 0.03
 Nodes (63): AddAttachmentsToSetRequest, AddAttachmentsToSetResponse, AddCommunicationToCaseRequest, AddCommunicationToCaseResponse, Attachment, AttachmentDetails, AttachmentIdNotFound, AttachmentLimitExceeded (+55 more)
 
 ### Community 119 - "Community 119"
-Cohesion: 0.08
-Nodes (40): capacity_provider_arn(), cloudformation_change_set_arn(), cloudformation_stack_arn(), cloudwatch_dashboard_arn(), cognito_user_pool_arn(), ecr_repository_arn(), elasticsearch_domain_arn(), event_bus_arn() (+32 more)
+Cohesion: 0.06
+Nodes (48): ArnData, capacity_provider_arn(), cloudformation_change_set_arn(), cloudformation_stack_arn(), cloudwatch_dashboard_arn(), cognito_user_pool_arn(), ecr_repository_arn(), elasticsearch_domain_arn() (+40 more)
 
 ### Community 120 - "Community 120"
 Cohesion: 0.05
-Nodes (60): HmacV1Auth, HmacV1QueryAuth, AuthorizationQueryParametersError, EntityTooLarge, SignatureDoesNotMatch, add_headers_to_original_request(), create_signature_does_not_match_sig_v2(), create_signature_does_not_match_sig_v4() (+52 more)
+Nodes (60): HmacV1Auth, HmacV1QueryAuth, AuthorizationQueryParametersError, EntityTooLarge, EntityTooSmall, SignatureDoesNotMatch, add_headers_to_original_request(), create_signature_does_not_match_sig_v2() (+52 more)
 
 ### Community 121 - "Community 121"
 Cohesion: 0.05
-Nodes (50): opensearch_domain_name(), s3_bucket_name(), CreateDeliveryStreamOutput, DeleteDeliveryStreamOutput, DescribeDeliveryStreamOutput, DestinationDescription, ListDeliveryStreamsOutput, ListTagsForDeliveryStreamOutput (+42 more)
+Nodes (51): CreateDeliveryStreamOutput, DeleteDeliveryStreamOutput, DescribeDeliveryStreamOutput, DestinationDescription, ListDeliveryStreamsOutput, ListTagsForDeliveryStreamOutput, PutRecordBatchOutput, PutRecordBatchResponseEntry (+43 more)
 
 ### Community 122 - "Community 122"
-Cohesion: 0.11
-Nodes (23): ShapeGraph, create_dispatch_table(), create_skeleton(), HandlerAttributes, Called by invoke if the handler of the operation raised a ServiceException., Called by invoke if either the dispatch table did not contain an entry for the o, Holder object of the attributes added to a function by the @handler decorator., Creates a dispatch table for a given object. First, the entire class tree of the (+15 more)
+Cohesion: 0.10
+Nodes (28): ShapeGraph, create_dispatch_table(), create_skeleton(), HandlerAttributes, Called by invoke if the handler of the operation raised a ServiceException., Called by invoke if either the dispatch table did not contain an entry for the o, Holder object of the attributes added to a function by the @handler decorator., Creates a dispatch table for a given object. First, the entire class tree of the (+20 more)
 
 ### Community 123 - "Community 123"
-Cohesion: 0.09
-Nodes (33): test_create_stack_with_custom_id(), test_apigateway_custom_ids(), test_apigateway_invalid_rest_api_custom_id(), create_flow_logs(), create_launch_template(), create_vpc(), # TODO: write an IAM test if the bucket exists but there are no permissions:, test_create_route_table_association() (+25 more)
+Cohesion: 0.12
+Nodes (27): create_flow_logs(), create_launch_template(), create_vpc(), # TODO: write an IAM test if the bucket exists but there are no permissions:, test_create_route_table_association(), test_create_security_group_with_custom_id(), test_create_specific_vpc_id(), test_create_subnet_with_custom_id() (+19 more)
 
 ### Community 124 - "Community 124"
 Cohesion: 0.02
 Nodes (14): ParserRuleContext, Assign_decl_bodyContext, Assign_declContext, Assign_template_bindingContext, Choice_operatorContext, End_declContext, Error_nameContext, Execution_typeContext (+6 more)
 
 ### Community 125 - "Community 125"
-Cohesion: 0.06
-Nodes (61): DescribeContributorInsightsOutput, DescribeTableOutput, ReplicaDescription, UpdateTableOutput, describe_contributor_insights(), batch_get_item(), batch_write_item(), create_table() (+53 more)
+Cohesion: 0.05
+Nodes (64): KinesisStreamingDestinationOutput, ReplicaDescription, BytesEncoder, Specialized JSON encoder that encode bytes into Base64 strings., batch_get_item(), batch_write_item(), create_table(), ddb_region_name() (+56 more)
 
 ### Community 126 - "Community 126"
 Cohesion: 0.04
-Nodes (57): Stages, is_arn(), get_ec2_backend(), create_flow_logs(), create_launch_template(), create_subnet(), create_transit_gateway(), delete_transit_gateway_vpc_attachment() (+49 more)
+Nodes (57): Stages, get_ec2_backend(), create_flow_logs(), create_launch_template(), create_subnet(), create_transit_gateway(), delete_transit_gateway_vpc_attachment(), describe_availability_zones() (+49 more)
 
 ### Community 127 - "Community 127"
-Cohesion: 0.05
-Nodes (39): AttachedPermissionsBoundary, CreateServiceLinkedRoleResponse, CreateServiceSpecificCredentialResponse, DeleteConflictException, DeleteServiceLinkedRoleResponse, GetUserResponse, InvalidInputException, ListInstanceProfileTagsResponse (+31 more)
+Cohesion: 0.04
+Nodes (41): AttachedPermissionsBoundary, CreateServiceLinkedRoleResponse, CreateServiceSpecificCredentialResponse, DeleteConflictException, DeleteServiceLinkedRoleResponse, GetUserResponse, InvalidInputException, ListInstanceProfileTagsResponse (+33 more)
 
 ### Community 128 - "Community 128"
 Cohesion: 0.06
@@ -6461,12 +6477,12 @@ Cohesion: 0.03
 Nodes (65): skip_if_legacy_engine(), skipped_v2_items(), dict, GenericDictUtilsTest, Mapping, ListVersionsResponse, Create a new resource.          Primary identifier fields:           - /properti, AccessTrackingDict (+57 more)
 
 ### Community 132 - "Community 132"
-Cohesion: 0.06
-Nodes (6): is_nothing(), ChangeSetModelPreproc, PreprocEntityDelta, Skip resources where they conditionally evaluate to False, Applies the resolver function to the given input delta if and only if the requir, ChangeSetModelTransform
+Cohesion: 0.07
+Nodes (5): is_nothing(), ChangeSetModelPreproc, PreprocEntityDelta, Skip resources where they conditionally evaluate to False, Applies the resolver function to the given input delta if and only if the requir
 
 ### Community 133 - "Community 133"
-Cohesion: 0.03
-Nodes (34): ApiGatewayApiKeyProperties, ApiGatewayApiKeyProvider, Delete a resource          IAM permissions required:           - apigateway:DELE, Update a resource          IAM permissions required:           - apigateway:GET, Create a new resource.          Primary identifier fields:           - /properti, Fetch resource information          IAM permissions required:           - apigat, StageKey, Tag (+26 more)
+Cohesion: 0.15
+Nodes (5): ApiGatewayUsagePlanKeyProperties, ApiGatewayUsagePlanKeyProvider, ApiGatewayUsagePlanKeyProviderPlugin, Fetch resource information          IAM permissions required:           - apigat, Delete a resource          IAM permissions required:           - apigateway:DELE
 
 ### Community 134 - "Community 134"
 Cohesion: 0.04
@@ -6477,24 +6493,24 @@ Cohesion: 0.03
 Nodes (59): ActionAfterCompletion, AssignPublicIp, AwsVpcConfiguration, CapacityProviderStrategyItem, ConflictException, CreateScheduleGroupInput, CreateScheduleGroupOutput, CreateScheduleInput (+51 more)
 
 ### Community 136 - "Community 136"
-Cohesion: 0.06
-Nodes (25): after_mock(), _apply_patches(), before_mock(), do_mock(), _eval_with_inspect(), MockedBaseState, wrap(), wrap_with_mock() (+17 more)
+Cohesion: 0.08
+Nodes (15): Environment, ProgramState, before_mock(), as_frame_of(), as_inner_frame_of(), TestStateEnvironment, TestStateMockedResponse, TestStateResponseReturn (+7 more)
 
 ### Community 137 - "Community 137"
 Cohesion: 0.03
 Nodes (71): states, states, states, states, states, states, states, states (+63 more)
 
 ### Community 138 - "Community 138"
-Cohesion: 0.02
-Nodes (49): external_service_ports_manager(), TestCommon, ExternalServicePortsManager, # TODO: remove imports from here (need to update any client code that imports th, # TODO: remove imports from here (need to update any client code that imports th, # TODO: remove imports from here (need to update any client code that imports th, # TODO: remove imports from here (need to update any client code that imports th, # TODO: remove imports from here (need to update any client code that imports th (+41 more)
+Cohesion: 0.03
+Nodes (36): Create a new resource.          Primary identifier fields:           - /properti, Create a new resource.          Primary identifier fields:           - /properti, Create a new resource.          Primary identifier fields:           - /properti, Create a new resource.          Primary identifier fields:           - /properti, Create a new resource.          Primary identifier fields:           - /properti, Create a new resource.          Primary identifier fields:           - /properti, external_service_ports_manager(), TestExternalServicePortsManager (+28 more)
 
 ### Community 139 - "Community 139"
 Cohesion: 0.05
 Nodes (69): Error, ResponseMetadata, CopyObjectResult, CopySourceVersionId, Error, ResponseMetadata, ResponseMetadata, ServerSideEncryption (+61 more)
 
 ### Community 140 - "Community 140"
-Cohesion: 0.06
-Nodes (27): AlarmHistoryItem, DeleteDashboardsOutput, DescribeAlarmHistoryOutput, DescribeAlarmsForMetricOutput, DescribeAlarmsOutput, GetDashboardOutput, InvalidParameterCombinationException, ListDashboardsOutput (+19 more)
+Cohesion: 0.08
+Nodes (13): AlarmHistoryItem, DeleteDashboardsOutput, DescribeAlarmHistoryOutput, DescribeAlarmsForMetricOutput, DescribeAlarmsOutput, GetDashboardOutput, ListDashboardsOutput, PutDashboardOutput (+5 more)
 
 ### Community 141 - "Community 141"
 Cohesion: 0.03
@@ -6502,11 +6518,11 @@ Nodes (69): states, states, states, states, states, states, states, states (+61 
 
 ### Community 142 - "Community 142"
 Cohesion: 0.04
-Nodes (75): VersionIdentifier, Get the lambda event manager for the given arn         :param function_arn: qual, Invokes a specific version of a lambda          :param request_id: context reque, build_statement(), construct_validation_exception_message(), format_lambda_date(), function_locators_from_arn(), generate_lambda_date() (+67 more)
+Nodes (74): Get the lambda event manager for the given arn         :param function_arn: qual, Invokes a specific version of a lambda          :param request_id: context reque, build_statement(), construct_validation_exception_message(), format_lambda_date(), function_locators_from_arn(), generate_lambda_date(), generate_random_url_id() (+66 more)
 
 ### Community 143 - "Community 143"
-Cohesion: 0.03
-Nodes (64): FuncThread, EventFileReaderThread, _generate_processor_script(), KinesisProcessor, KinesisProcessorThread, listen_to_kinesis(), High-level function that allows to subscribe to a Kinesis stream     and receive, run_processor() (+56 more)
+Cohesion: 0.04
+Nodes (45): FuncThread, EventFileReaderThread, _generate_processor_script(), KinesisProcessor, KinesisProcessorThread, listen_to_kinesis(), High-level function that allows to subscribe to a Kinesis stream     and receive, run_processor() (+37 more)
 
 ### Community 144 - "Community 144"
 Cohesion: 0.09
@@ -6522,7 +6538,7 @@ Nodes (64): call, setup, teardown, total, tests/aws/services/apigateway/test_api
 
 ### Community 147 - "Community 147"
 Cohesion: 0.06
-Nodes (49): create_default_context(), TestMockIntegration, call_lambda(), _format_body(), _format_headers(), format_response_content_legacy(), get_internal_mocked_headers(), get_payload_from_query_string() (+41 more)
+Nodes (48): create_default_context(), TestMockIntegration, call_lambda(), _format_body(), _format_headers(), format_response_content_legacy(), get_internal_mocked_headers(), get_payload_from_query_string() (+40 more)
 
 ### Community 148 - "Community 148"
 Cohesion: 0.06
@@ -6533,8 +6549,8 @@ Cohesion: 0.03
 Nodes (63): type, type, type, $ref, $ref, type, type, $ref (+55 more)
 
 ### Community 150 - "Community 150"
-Cohesion: 0.07
-Nodes (26): CommonServiceException, IncorrectInstanceStateError, InternalError, InvalidAMIIdError, InvalidInstanceIdError, InvalidLaunchTemplateIdError, InvalidLaunchTemplateNameError, InvalidSecurityGroupDuplicateCustomIdError (+18 more)
+Cohesion: 0.05
+Nodes (32): CommonServiceException, IncorrectInstanceStateError, InternalError, InvalidAMIIdError, InvalidInstanceIdError, InvalidLaunchTemplateIdError, InvalidLaunchTemplateNameError, InvalidSecurityGroupDuplicateCustomIdError (+24 more)
 
 ### Community 151 - "Community 151"
 Cohesion: 0.07
@@ -6542,7 +6558,7 @@ Nodes (61): call, setup, teardown, total, tests/aws/services/stepfunctions/v2/te
 
 ### Community 152 - "Community 152"
 Cohesion: 0.06
-Nodes (24): get_intrinsic_functions_declarations(), # TODO: add support for $hash., # TODO: add support for $uuid, process_and_get(), # TODO: the extraction logic is not always in the same order as AWS's, VariableNamesIntrinsicStaticAnalyser, IntrinsicStaticAnalyser, compose_jsonata_expression() (+16 more)
+Nodes (25): get_intrinsic_functions_declarations(), # TODO: add support for $hash., # TODO: add support for $uuid, process_and_get(), # TODO: the extraction logic is not always in the same order as AWS's, VariableNamesIntrinsicStaticAnalyser, IntrinsicStaticAnalyser, compose_jsonata_expression() (+17 more)
 
 ### Community 153 - "Community 153"
 Cohesion: 0.07
@@ -6557,20 +6573,20 @@ Cohesion: 0.07
 Nodes (47): CloneReceiptRuleSetResponse, ConfigurationSetDoesNotExistException, DeleteConfigurationSetEventDestinationResponse, DeleteConfigurationSetResponse, DeleteTemplateResponse, EventDestinationDoesNotExistException, InvalidSNSDestinationException, MessageRejected (+39 more)
 
 ### Community 156 - "Community 156"
-Cohesion: 0.05
-Nodes (70): GetObjectAttributesOutput, GetObjectAttributesParts, InvalidPartNumber, MissingSecurityHeader, PutObjectAclOutput, get_access_control_policy_from_acl_request(), get_acl_headers_from_request(), get_object_attributes() (+62 more)
+Cohesion: 0.06
+Nodes (66): GetObjectAttributesOutput, GetObjectAttributesParts, InvalidPartNumber, PutObjectAclOutput, get_object_attributes(), get_part_range(), put_object_acl(), # TODO: we either apply the lifecycle to existing objects when we set the new ru (+58 more)
 
 ### Community 157 - "Community 157"
 Cohesion: 0.05
-Nodes (60): ResponseMetadata, Stacks, ResponseMetadata, Stacks, ResponseMetadata, Stacks, ResponseMetadata, ResponseMetadata (+52 more)
+Nodes (57): ResponseMetadata, Stacks, ResponseMetadata, Stacks, ResponseMetadata, Stacks, ResponseMetadata, ResponseMetadata (+49 more)
 
 ### Community 158 - "Community 158"
-Cohesion: 0.07
-Nodes (21): NotImplementedAvoidFallbackError, FakeNoSuchBucket, FakeS3Provider, FakeSqsApi, FakeSqsProvider, list_objects(), This test checks if the error handling (marshalling / unmarshalling) works corre, Whitebox test to check that moto backends are populated correctly (+13 more)
+Cohesion: 0.02
+Nodes (124): AssignPublicIp, AwsVpcConfiguration, BatchArrayProperties, BatchContainerOverrides, BatchEnvironmentVariable, BatchJobDependency, BatchJobDependencyType, BatchResourceRequirement (+116 more)
 
 ### Community 159 - "Community 159"
-Cohesion: 0.05
-Nodes (35): _publish_cmd_as_analytics_event(), publish_invocation(), Decorator for capturing CLI commands from Click and publishing them to the backe, AnalyticsClient, Client for the analytics backend., # TODO: Add response type to analytics client, # FIXME: re-using Event as request object this way is kind of a hack, # TODO: naming seems confusing since this doesn't actually append, but directly (+27 more)
+Cohesion: 0.06
+Nodes (32): _publish_cmd_as_analytics_event(), publish_invocation(), Decorator for capturing CLI commands from Click and publishing them to the backe, Decorator for capturing CLI commands from Click and publishing them to the backe, AnalyticsClient, Client for the analytics backend., # TODO: Add response type to analytics client, # FIXME: re-using Event as request object this way is kind of a hack (+24 more)
 
 ### Community 160 - "Community 160"
 Cohesion: 0.06
@@ -6578,7 +6594,7 @@ Nodes (58): Count, Items, ScannedCount, Error, message, ResponseMetadata, Code, 
 
 ### Community 161 - "Community 161"
 Cohesion: 0.03
-Nodes (41): CommonStateField, ExecutionState, End, Next, _common_state_field_of(), # TODO: check for empty headers behaviour., # TODO: add tests for arguments in jsonata blocks using result writer, # TODO: use subtype loading strategy. (+33 more)
+Nodes (42): CommonStateField, End, Next, _common_state_field_of(), # TODO: check for empty headers behaviour., # TODO: add tests for arguments in jsonata blocks using result writer, # TODO: use subtype loading strategy., after_mock() (+34 more)
 
 ### Community 162 - "Community 162"
 Cohesion: 0.02
@@ -6593,36 +6609,36 @@ Cohesion: 0.07
 Nodes (58): call, setup, teardown, total, tests/aws/services/stepfunctions/v2/test_state/test_state_mock_validation.py::TestStateMockValidation::test_both_mock_result_and_mock_error_output_are_set, durations_in_seconds, last_validated_date, tests/aws/services/stepfunctions/v2/test_state/test_state_mock_validation.py::TestStateMockValidation::test_map_iteration_failure_count_exceeds_mock_result_items (+50 more)
 
 ### Community 165 - "Community 165"
-Cohesion: 0.04
-Nodes (40): test_counter_raises_if_label_values_off(), test_custom_schema_version_for_labeled_counter(), test_default_schema_version_for_labeled_counter(), test_label_kwargs_order_independent(), test_labeled_counter_increment(), test_labeled_counter_reset(), test_labeled_counter_schema_version_non_int_raises_type_error(), test_labeled_counter_schema_version_non_positive_raises_value_error() (+32 more)
+Cohesion: 0.03
+Nodes (52): test_counter_raises_if_label_values_off(), test_custom_schema_version_for_labeled_counter(), test_default_schema_version_for_labeled_counter(), test_label_kwargs_order_independent(), test_labeled_counter_increment(), test_labeled_counter_reset(), test_labeled_counter_schema_version_non_int_raises_type_error(), test_labeled_counter_schema_version_non_positive_raises_value_error() (+44 more)
 
 ### Community 166 - "Community 166"
-Cohesion: 0.29
-Nodes (7): _get_s3_client(), _handle_get_object(), _handle_list_objects_v2(), _handle_put_object(), # TODO: generate result files and upload them to s3., ResourceEvalS3, ResourceEval
+Cohesion: 0.03
+Nodes (27): BigQueryDataset, BigQueryDataStore, BigQueryJob, BigQueryTable, BigQueryProvider, _now(), BigQueryRouter, _json() (+19 more)
 
 ### Community 167 - "Community 167"
-Cohesion: 0.05
-Nodes (54): authenticated_registry(), Creates and starts an authenticated Docker registry for testing.     Returns a d, test_push_invalid_registry(), ProxyServer, Proxy server implementation which uses the localstack.platform.http.proxy module.     The, server_context(), test_gateway_server(), test_proxy_server() (+46 more)
+Cohesion: 0.04
+Nodes (54): PortRange, CustomExpiryTTLCache, TTLCache that allows to set custom expiry times for individual keys., Set the expiry of the given key in a TTLCache to (<current_time> + <ttl>), get_addressable_container_host(), get_docker_host_from_container(), get_free_tcp_port_range(), is_ip_address() (+46 more)
 
 ### Community 168 - "Community 168"
 Cohesion: 0.05
-Nodes (65): _convert_to_request_dict_with_protocol(), ForwardingFallbackDispatcher(), get_request_forwarder_http(), HttpFallbackDispatcher(), This module contains utilities to call a backend (e.g., an external service proc, Wraps a provider with a request forwarder. It does by creating a new DispatchTab, Returns a ServiceRequestHandler that creates for each invocation a new AwsReques, # TODO: remove this once every usage upstream has been removed (+57 more)
+Nodes (63): ForwardingFallbackDispatcher(), get_request_forwarder_http(), HttpFallbackDispatcher(), This module contains utilities to call a backend (e.g., an external service proc, Wraps a provider with a request forwarder. It does by creating a new DispatchTab, Returns a ServiceRequestHandler that creates for each invocation a new AwsReques, # TODO: remove this once every usage upstream has been removed, _wrap_with_fallthrough() (+55 more)
 
 ### Community 169 - "Community 169"
 Cohesion: 0.03
 Nodes (64): description, $ref, description, enum, type, description, examples, $ref (+56 more)
 
 ### Community 170 - "Community 170"
-Cohesion: 0.05
-Nodes (57): ResponseMetadata, createdDate, id, ResponseMetadata, ResponseMetadata, responseTemplates, selectionPattern, statusCode (+49 more)
+Cohesion: 0.06
+Nodes (47): ResponseMetadata, createdDate, id, ResponseMetadata, ResponseMetadata, responseTemplates, selectionPattern, statusCode (+39 more)
 
 ### Community 171 - "Community 171"
 Cohesion: 0.06
-Nodes (26): AmazonStateLanguageParser, Comparison, ChoiceOp, ComparisonComposite, ComparisonCompositeAnd, ComparisonCompositeMulti, ComparisonCompositeNot, ComparisonCompositeOr (+18 more)
+Nodes (24): AmazonStateLanguageParser, Comparison, ChoiceOp, ComparisonComposite, ComparisonCompositeAnd, ComparisonCompositeMulti, ComparisonCompositeNot, ComparisonCompositeOr (+16 more)
 
 ### Community 172 - "Community 172"
-Cohesion: 0.07
-Nodes (33): add_cors_headers(), CorsEnforcer, CorsResponseEnricher, _get_allowed_cors_internal_domains(), _get_allowed_cors_origins(), _get_allowed_cors_ports(), is_cors_origin_allowed(), is_execute_api_call() (+25 more)
+Cohesion: 0.05
+Nodes (36): add_cors_headers(), CorsEnforcer, CorsResponseEnricher, _get_allowed_cors_internal_domains(), _get_allowed_cors_origins(), _get_allowed_cors_ports(), is_cors_origin_allowed(), is_execute_api_call() (+28 more)
 
 ### Community 173 - "Community 173"
 Cohesion: 0.05
@@ -6630,7 +6646,7 @@ Nodes (56): Id, Status, SubmittedAt, Comment, PrivateZone, ChangeInfo, Delegatio
 
 ### Community 174 - "Community 174"
 Cohesion: 0.06
-Nodes (50): Code, Error, ResponseMetadata, Message, Error, ResponseMetadata, Error, ResponseMetadata (+42 more)
+Nodes (43): Code, Error, ResponseMetadata, Error, ResponseMetadata, Error, ResponseMetadata, Error (+35 more)
 
 ### Community 175 - "Community 175"
 Cohesion: 0.07
@@ -6661,8 +6677,8 @@ Cohesion: 0.06
 Nodes (49): # TODO: test for validation errors, and boundary testing., test_boolean_equals(), test_boolean_equals_path(), TestBooleanEquals, # TODO: test for validation errors, and boundary testing., test_is_boolean(), test_is_null(), test_is_numeric() (+41 more)
 
 ### Community 182 - "Community 182"
-Cohesion: 0.13
-Nodes (23): assert_hot_reloading_path_absolute(), create_hot_reloading_code(), create_image_code(), destroy_code_if_not_used(), is_code_used(), # TODO: switch shutdown order? yes, shutdown starting versions before the runnin, Simulates async function cleanup after function deletion API is called         b, # HACK: trying to match the AWS timing behavior of Lambda Managed Instances for (+15 more)
+Cohesion: 0.11
+Nodes (26): assert_hot_reloading_path_absolute(), create_hot_reloading_code(), create_image_code(), destroy_code_if_not_used(), is_code_used(), # TODO: switch shutdown order? yes, shutdown starting versions before the runnin, # HACK: trying to match the AWS timing behavior of Lambda Managed Instances for, # NOTE: consider making the trace_context mandatory once we update all usages (s (+18 more)
 
 ### Community 183 - "Community 183"
 Cohesion: 0.06
@@ -6673,8 +6689,8 @@ Cohesion: 0.05
 Nodes (53): Code, Error, ResponseMetadata, Error, ResponseMetadata, Error, ResponseMetadata, Error (+45 more)
 
 ### Community 185 - "Community 185"
-Cohesion: 0.04
-Nodes (27): Component, Component, ErrorName, FunctionName, CustomFunctionName, FunctionName, MemberAccess, DollarMember (+19 more)
+Cohesion: 0.05
+Nodes (24): Component, Component, ErrorName, MemberAccess, DollarMember, IdentifiedMember, Member, Member (+16 more)
 
 ### Community 186 - "Community 186"
 Cohesion: 0.06
@@ -6698,11 +6714,11 @@ Nodes (52): id, parentId, path, pathPart, ResponseMetadata, id, parentId, path (
 
 ### Community 191 - "Community 191"
 Cohesion: 0.06
-Nodes (49): ResponseMetadata, UnprocessedItems, ResponseMetadata, UnprocessedItems, ResponseMetadata, UnprocessedItems, ResponseMetadata, ResponseMetadata (+41 more)
+Nodes (52): ResponseMetadata, UnprocessedItems, ResponseMetadata, UnprocessedItems, ResponseMetadata, ResponseMetadata, ResponseMetadata, ResponseMetadata (+44 more)
 
 ### Community 192 - "Community 192"
 Cohesion: 0.02
-Nodes (181): allow_event_rule_to_sqs_queue(), Call the internal /_aws/events/rules/<rule_arn>/trigger endpoint to expire the d, Creates an SQS Queue Policy that allows te given eventbus rule to write tho the, trigger_scheduled_rule(), add_resource_policy_logs_events_access(), connection_name(), create_api_destination(), create_connection() (+173 more)
+Nodes (175): allow_event_rule_to_sqs_queue(), Call the internal /_aws/events/rules/<rule_arn>/trigger endpoint to expire the d, Creates an SQS Queue Policy that allows te given eventbus rule to write tho the, trigger_scheduled_rule(), add_resource_policy_logs_events_access(), connection_name(), create_api_destination(), create_connection() (+167 more)
 
 ### Community 193 - "Community 193"
 Cohesion: 0.04
@@ -6730,15 +6746,15 @@ Nodes (49): call, setup, teardown, total, tests/aws/services/stepfunctions/v2/te
 
 ### Community 199 - "Community 199"
 Cohesion: 0.04
-Nodes (49): description, pattern, type, description, maxLength, type, description, minLength (+41 more)
+Nodes (49): description, pattern, type, description, maxLength, type, $ref, description (+41 more)
 
 ### Community 200 - "Community 200"
-Cohesion: 0.05
-Nodes (16): # TODO: clean up this function, once all references have been removed (differenc, Simple class to mimic the behavior of variable '$util' in AWS velocity templates, No-op util function, often used as wrapper around other functions to suppress ou, Render the given VTL template against the dict of variables. Note that this is a, render_velocity_template(), VelocityUtil, do_test(), handler() (+8 more)
+Cohesion: 0.09
+Nodes (7): # TODO: clean up this function, once all references have been removed (differenc, Render the given VTL template against the dict of variables. Note that this is a, render_velocity_template(), do_test(), handler(), TestMessageTransformationApiGateway, TestMessageTransformationBasic
 
 ### Community 201 - "Community 201"
-Cohesion: 0.06
-Nodes (37): extract_resource_from_arn(), lambda_function_name(), parse_arn(), Uses a botocore ArnParser to parse an arn.      :param arn: the arn string to pa, s3_bucket_arn(), sqs_queue_name(), stepfunctions_standard_execution_arn(), TestArn (+29 more)
+Cohesion: 0.05
+Nodes (39): is_arn(), lambda_function_name(), parse_arn(), Uses a botocore ArnParser to parse an arn.      :param arn: the arn string to pa, s3_bucket_arn(), s3_bucket_name(), sqs_queue_name(), TestArn (+31 more)
 
 ### Community 202 - "Community 202"
 Cohesion: 0.04
@@ -6750,7 +6766,7 @@ Nodes (11): permissions, permissions, handlers, create, delete, list, read, upda
 
 ### Community 204 - "Community 204"
 Cohesion: 0.05
-Nodes (27): # NOTE: AWS will behave as staged deletion for a small number of seconds (<10)., # TODO: moto is rounding time.time() but `secretsmanager`return a timestamp with, secret_name(), secretsmanager_http_json_headers(), secretsmanager_http_put_pending_secret_value_val_res(), setup_invalid_rotation_secret(), setup_rotation_secret(), test_call_lists_secrets_multiple_times() (+19 more)
+Nodes (28): # NOTE: AWS will behave as staged deletion for a small number of seconds (<10)., # TODO: moto is rounding time.time() but `secretsmanager`return a timestamp with, secret_name(), secretsmanager_http_put_pending_secret_value_val_res(), secretsmanager_http_put_secret_value_with_val_res(), secretsmanager_http_put_secret_value_with_version_val_res(), setup_invalid_rotation_secret(), setup_rotation_secret() (+20 more)
 
 ### Community 205 - "Community 205"
 Cohesion: 0.04
@@ -6766,7 +6782,7 @@ Nodes (47): BillingMode, LastUpdateToPayPerRequestDateTime, Code, Message, Respo
 
 ### Community 208 - "Community 208"
 Cohesion: 0.08
-Nodes (57): CancelReplayResponse, CreateEventBusResponse, ListArchivesResponse, ListConnectionsResponse, ListEventBusesResponse, ListReplaysResponse, ListTargetsByRuleResponse, PutRuleResponse (+49 more)
+Nodes (54): CreateArchiveResponse, CreateEventBusResponse, ListApiDestinationsResponse, ListArchivesResponse, ListReplaysResponse, ListRulesResponse, UpdateArchiveResponse, cancel_replay() (+46 more)
 
 ### Community 209 - "Community 209"
 Cohesion: 0.07
@@ -6801,16 +6817,16 @@ Cohesion: 0.09
 Nodes (46): call, setup, teardown, total, tests/aws/services/logs/test_logs_groups.py::TestLogsGroups::test_create_and_delete_log_group, durations_in_seconds, last_validated_date, tests/aws/services/logs/test_logs_groups.py::TestLogsGroups::test_create_log_group_duplicate_error (+38 more)
 
 ### Community 217 - "Community 217"
-Cohesion: 0.04
-Nodes (49): Options, Options, Options, Options, Options, Options, Options, Options (+41 more)
+Cohesion: 0.05
+Nodes (47): Options, Options, Options, Options, Options, Options, Options, Options (+39 more)
 
 ### Community 218 - "Community 218"
 Cohesion: 0.08
-Nodes (17): Endpoint, executor_router(), ExecutorEndpoint, ExecutorRouter, invocation_error(), invocation_logs(), invocation_response(), InvokeSendError (+9 more)
+Nodes (19): Endpoint, executor_router(), ExecutorEndpoint, ExecutorRouter, invocation_error(), invocation_logs(), invocation_response(), InvokeSendError (+11 more)
 
 ### Community 219 - "Community 219"
-Cohesion: 0.11
-Nodes (27): get_queue_url(), is_fifo_queue(), message_attributes_to_lower(), The API call to sqs:GetQueueAttributes is required for IAM policy streamsing., # TODO: Handle exceptions differently i.e QueueNotExist or ConnectionFailed shou, # TODO: implement invocation payload size quota, # NOTE: Split up a batch into mini-batches of up to 2.5K records each. This is t, # TODO: think about starvation behavior because once failing message could block (+19 more)
+Cohesion: 0.08
+Nodes (32): Poller, get_queue_url(), is_fifo_queue(), message_attributes_to_lower(), The API call to sqs:GetQueueAttributes is required for IAM policy streamsing., # TODO: Handle exceptions differently i.e QueueNotExist or ConnectionFailed shou, # TODO: implement invocation payload size quota, # NOTE: Split up a batch into mini-batches of up to 2.5K records each. This is t (+24 more)
 
 ### Community 220 - "Community 220"
 Cohesion: 0.04
@@ -6830,7 +6846,7 @@ Nodes (46): Error, message, ResponseMetadata, Error, message, ResponseMetadata, 
 
 ### Community 224 - "Community 224"
 Cohesion: 0.05
-Nodes (15): InvocationStatus, PutTargetsResponse, EventsProvider, put_events(), put_targets(), Delete all rule services associated to the input from the store.         Accepts, Return a converted dict of EventBus model objects as a list of event buses in AP, Return a converted dict of Rule model objects as a list of rules in API type Rul (+7 more)
+Nodes (15): InvocationStatus, PutEventsResponse, PutTargetsResponse, EventsProvider, put_events(), put_targets(), Return a converted dict of Rule model objects as a list of rules in API type Rul, Return a converted dict of Archive model objects as a list of archives in API ty (+7 more)
 
 ### Community 225 - "Community 225"
 Cohesion: 0.27
@@ -6838,7 +6854,7 @@ Nodes (6): ChangeSetModelVisitor, _build_resource_failure_message(), ChangeSetRe
 
 ### Community 226 - "Community 226"
 Cohesion: 0.07
-Nodes (39): items, ResponseMetadata, items, ResponseMetadata, items, ResponseMetadata, items, ResponseMetadata (+31 more)
+Nodes (40): items, ResponseMetadata, items, ResponseMetadata, items, ResponseMetadata, apiKeyRequired, authorizationType (+32 more)
 
 ### Community 227 - "Community 227"
 Cohesion: 0.06
@@ -6885,20 +6901,20 @@ Cohesion: 0.06
 Nodes (44): events, ResponseMetadata, get_execution_history, HTTPHeaders, HTTPStatusCode, tests/aws/services/stepfunctions/v2/services/test_apigetway_task_service.py::TestTaskApiGateway::test_invoke_base, recorded-content, recorded-date (+36 more)
 
 ### Community 239 - "Community 239"
-Cohesion: 0.10
-Nodes (19): _cleanup_describe_output(), CloudwatchProvider, create_message_response_update_state_lambda(), create_message_response_update_state_sns(), create_metric_data_query_from_alarm(), describe_alarms(), disable_alarm_actions(), enable_alarm_actions() (+11 more)
+Cohesion: 0.27
+Nodes (16): _cleanup_describe_output(), create_message_response_update_state_lambda(), create_message_response_update_state_sns(), create_metric_data_query_from_alarm(), describe_alarms(), disable_alarm_actions(), enable_alarm_actions(), get_metric_data() (+8 more)
 
 ### Community 240 - "Community 240"
 Cohesion: 0.05
 Nodes (42): Options, Options, Options, Options, Options, DomainConfig, AccessPolicies, AdvancedOptions (+34 more)
 
 ### Community 241 - "Community 241"
-Cohesion: 0.08
-Nodes (17): default_endpoint_response(), default_invocation_request(), # TODO: write more AWS validated tests about this, Only `method.response` headers can be mapping from `responseParameters`.     htt, TestApigatewayRequestParametersMapping, TestApigatewayResponseParametersMapping, build_multi_value_headers(), _get_json_path_from_dict() (+9 more)
+Cohesion: 0.05
+Nodes (43): apigw_response(), ctx(), Create a context populated with what we would expect to receive from the chain a, Returns a dummy integration response handler invoker for testing., response_enricher_handler(), TestResponseEnricherHandler, default_context_variables(), default_endpoint_response() (+35 more)
 
 ### Community 242 - "Community 242"
-Cohesion: 0.10
-Nodes (20): test_non_ascii_chars(), test_expiration_date_format(), assign_to_path(), extract_from_jsonpointer_path(), fix_json_keys(), json_safe(), Return a copy of the given object (e.g., dict) that is safe for JSON dumping, make sure the keys of a JSON are strings (not binary type or other) (+12 more)
+Cohesion: 0.05
+Nodes (36): ErrorResponse, is_invalid_html_response(), is_json_request(), parse_query_string(), request_response_stream(), requests_error_response(), requests_error_response_json(), requests_error_response_xml() (+28 more)
 
 ### Community 243 - "Community 243"
 Cohesion: 0.10
@@ -6933,28 +6949,28 @@ Cohesion: 0.06
 Nodes (43): validation_response, HTTPHeaders, HTTPStatusCode, tests/aws/services/stepfunctions/v2/test_sfn_api_validation.py::TestSfnApiValidation::test_validate_state_machine_definition_not_a_definition[EMPTY_DICT], recorded-content, recorded-date, tests/aws/services/stepfunctions/v2/test_sfn_api_validation.py::TestSfnApiValidation::test_validate_state_machine_definition_not_a_definition[EMPTY_STRING], recorded-content (+35 more)
 
 ### Community 251 - "Community 251"
-Cohesion: 0.06
-Nodes (45): Error, message, ResponseMetadata, createdDate, id, ResponseMetadata, items, ResponseMetadata (+37 more)
+Cohesion: 0.07
+Nodes (43): Error, message, ResponseMetadata, createdDate, id, ResponseMetadata, items, ResponseMetadata (+35 more)
 
 ### Community 252 - "Community 252"
 Cohesion: 0.06
-Nodes (42): ARN, CreatedDate, Name, ResponseMetadata, VersionId, VersionStages, ConnectionArn, ConnectionState (+34 more)
+Nodes (45): ARN, CreatedDate, Name, ResponseMetadata, VersionId, VersionStages, ConnectionArn, ConnectionState (+37 more)
 
 ### Community 253 - "Community 253"
 Cohesion: 0.05
 Nodes (42): tests/aws/services/events/test_events_targets.py::test_put_events_with_target_lambda_list_entries_partial_match, last_validated_date, tests/aws/services/events/test_events_targets.py::test_put_events_with_target_lambda_list_entry, last_validated_date, tests/aws/services/events/test_events_targets.py::test_put_events_with_target_sqs, tests/aws/services/events/test_events_targets.py::test_put_events_with_target_sqs_event_detail_match, last_validated_date, last_validated_date (+34 more)
 
 ### Community 254 - "Community 254"
-Cohesion: 0.09
-Nodes (17): _check_skip(), docker_client(), docker_client_class(), is_env_not_false(), Whether the given environment variable is empty or has a truthy value., get_enabled_apis(), get_gateway_port(), get_preloaded_services() (+9 more)
+Cohesion: 0.08
+Nodes (21): _check_skip(), docker_client(), docker_client_class(), is_podman_test(), test_build_image(), is_env_not_false(), Whether the given environment variable is empty or has a truthy value., is_env_not_false() (+13 more)
 
 ### Community 255 - "Community 255"
 Cohesion: 0.06
 Nodes (42): CreateEventSourceMappingResponse, ExecutedVersion, FunctionError, Payload, StatusCode, errorMessage, errorType, create-result (+34 more)
 
 ### Community 256 - "Community 256"
-Cohesion: 0.08
-Nodes (17): CLIError, A ClickException with a red error message, cli(), _do_install_package(), install(), list_packages(), List available packages of all repositories, The LocalStack Package Manager (lpm) CLI is a set of commands to install third-p (+9 more)
+Cohesion: 0.33
+Nodes (7): cli(), _do_install_package(), install(), list_packages(), List available packages of all repositories, The LocalStack Package Manager (lpm) CLI is a set of commands to install third-p, Install one or more packages.
 
 ### Community 257 - "Community 257"
 Cohesion: 0.05
@@ -6962,7 +6978,7 @@ Nodes (42): additionalProperties, permissions, definitions, Tag, permissions, de
 
 ### Community 258 - "Community 258"
 Cohesion: 0.08
-Nodes (25): properties, type, type, type, type, $ref, type, type (+17 more)
+Nodes (25): EcsParameters, additionalProperties, properties, required, type, type, type, type (+17 more)
 
 ### Community 260 - "Community 260"
 Cohesion: 0.06
@@ -6981,8 +6997,8 @@ Cohesion: 0.05
 Nodes (41): call, setup, teardown, total, tests/aws/services/apigateway/test_apigateway_common.py::TestApiGatewayCommon::test_api_gateway_request_validator, last_validated_date, tests/aws/services/apigateway/test_apigateway_common.py::TestApiGatewayCommon::test_api_gateway_request_validator_with_ref_models, last_validated_date (+33 more)
 
 ### Community 264 - "Community 264"
-Cohesion: 0.06
-Nodes (42): basePath, components, definitions, host, info, openapi, paths, schemes (+34 more)
+Cohesion: 0.11
+Nodes (18): definitions, Empty, NewPet, NewPetResponse, Pet, Pets, PetType, type (+10 more)
 
 ### Community 265 - "Community 265"
 Cohesion: 0.06
@@ -6997,8 +7013,8 @@ Cohesion: 0.05
 Nodes (41): executionArn, input, inputDetails, name, output, outputDetails, redriveCount, redriveStatus (+33 more)
 
 ### Community 268 - "Community 268"
-Cohesion: 0.05
-Nodes (35): PackageException, InstallTarget, NoSuchVersionException, PackageException, Basic exception indicating that a package-specific exception occurred., Exception indicating that a requested installer version is not available / suppo, Different installation targets.     Attention:     - These targets are directly, ArchiveDownloadAndExtractInstaller (+27 more)
+Cohesion: 0.03
+Nodes (65): PackageException, InstallTarget, NoSuchPackageException, NoSuchVersionException, PackageException, PackagesPlugin, PackagesPluginManager, Basic exception indicating that a package-specific exception occurred. (+57 more)
 
 ### Community 269 - "Community 269"
 Cohesion: 0.06
@@ -7013,8 +7029,8 @@ Cohesion: 0.05
 Nodes (41): name, Arn, CreatedBy, EventBusName, Name, ResponseMetadata, ScheduleExpression, State (+33 more)
 
 ### Community 272 - "Community 272"
-Cohesion: 0.08
-Nodes (24): init_script_manager(), InitScriptManager, main(), PythonScriptRunner, Module for initialization hooks https://docs.localstack.cloud/references/init-ho, Runs all scripts in the given stage.          :param stage: the stage to run, Run the init scripts for a particular stage. For example, to run all boot script, Interface for running scripts. (+16 more)
+Cohesion: 0.09
+Nodes (25): init_script_manager(), InitScriptManager, main(), PythonScriptRunner, Module for initialization hooks https://docs.localstack.cloud/references/init-ho, Runs all scripts in the given stage.          :param stage: the stage to run, Run the init scripts for a particular stage. For example, to run all boot script, Run the init scripts for a particular stage. For example, to run all boot script (+17 more)
 
 ### Community 273 - "Community 273"
 Cohesion: 0.05
@@ -7034,23 +7050,23 @@ Nodes (41): events, ResponseMetadata, get_execution_history, HTTPHeaders, HTTPSt
 
 ### Community 277 - "Community 277"
 Cohesion: 0.08
-Nodes (26): _create_global_analytics_bus(), get_hash(), hash(), _anonymize_physical_id(), ClientMetadata, _generate_machine_id(), get_api_key_or_auth_token(), get_client_metadata() (+18 more)
+Nodes (27): _anonymize_physical_id(), _generate_machine_id(), _generate_session_id(), get_api_key_or_auth_token(), get_client_metadata(), get_localstack_edition(), get_localstack_product(), get_machine_id() (+19 more)
 
 ### Community 278 - "Community 278"
-Cohesion: 0.10
-Nodes (33): _load_sfn_raw_mock_config(), # TODO: add tests to ensure the hot-reloading of the mock configuration, # TODO: add tests to ensure the hot-reloading of the mock configuration, Represents a return response.     Accepts any fields., Represents an error response.     Both 'Error' and 'Cause' are required., A response step must include exactly one of:       - 'Return': a ReturnResponse, Represents an individual test case.     The keys are state names (e.g., 'LambdaS, Represents a state machine configuration containing multiple test cases. (+25 more)
+Cohesion: 0.08
+Nodes (42): _load_sfn_raw_mock_config(), # TODO: add tests to ensure the hot-reloading of the mock configuration, # TODO: add tests to ensure the hot-reloading of the mock configuration, # TODO: add tests to ensure the hot-reloading of the mock configuration, # TODO: add tests to ensure the hot-reloading of the mock configuration, Represents a return response.     Accepts any fields., Represents a return response.     Accepts any fields., Represents an error response.     Both 'Error' and 'Cause' are required. (+34 more)
 
 ### Community 279 - "Community 279"
 Cohesion: 0.05
 Nodes (40): tests/aws/services/cloudformation/api/test_stacks.py::test_blocked_stack_deletion, last_validated_date, tests/aws/services/cloudformation/api/test_stacks.py::test_describe_stack_events_errors, last_validated_date, tests/aws/services/cloudformation/api/test_stacks.py::test_stack_deploy_order2, tests/aws/services/cloudformation/api/test_stacks.py::test_stack_deploy_order2[B-A-C], last_validated_date, tests/aws/services/cloudformation/api/test_stacks.py::test_stack_deploy_order2[C-B-A] (+32 more)
 
 ### Community 280 - "Community 280"
-Cohesion: 0.07
-Nodes (37): Error, message, ResponseMetadata, Error, message, ResponseMetadata, Code, Message (+29 more)
+Cohesion: 0.06
+Nodes (41): Error, message, ResponseMetadata, Error, message, ResponseMetadata, Code, Message (+33 more)
 
 ### Community 281 - "Community 281"
-Cohesion: 0.07
-Nodes (40): BatchSize, EventSourceArn, EventSourceMappingArn, FilterCriteria, FunctionArn, FunctionResponseTypes, LastModified, MaximumBatchingWindowInSeconds (+32 more)
+Cohesion: 0.06
+Nodes (44): BatchSize, EventSourceArn, BatchSize, EventSourceArn, EventSourceMappingArn, FilterCriteria, FunctionArn, FunctionResponseTypes (+36 more)
 
 ### Community 282 - "Community 282"
 Cohesion: 0.05
@@ -7069,12 +7085,12 @@ Cohesion: 0.07
 Nodes (40): logStreams, ResponseMetadata, logStreams, ResponseMetadata, logStreams, ResponseMetadata, logStreams, ResponseMetadata (+32 more)
 
 ### Community 286 - "Community 286"
-Cohesion: 0.07
-Nodes (18): GitHubReleaseInstaller, JavaInstallerMixin, _get_installer(), KinesisMockNodePackage, KinesisMockNodePackageInstaller, KinesisMockScalaPackage, KinesisMockScalaPackageInstaller, _missing_() (+10 more)
+Cohesion: 0.05
+Nodes (32): GitHubReleaseInstaller, JavaInstallerMixin, _get_installer(), KinesisMockEngine, KinesisMockNodePackage, KinesisMockNodePackageInstaller, KinesisMockScalaPackage, KinesisMockScalaPackageInstaller (+24 more)
 
 ### Community 287 - "Community 287"
 Cohesion: 0.06
-Nodes (31): ApiGatewayMethodRule, get_router_for_deployment(), get_rule_map_for_resources(), Small extension to Werkzeug's Rule class which reverts unwanted assumptions made, A router implementation which abstracts the routing of incoming REST API Context, Matches the given request to the resource it targets (or raises an exception if, RestAPIResourceRouter, update_context_variables_with_resource() (+23 more)
+Nodes (27): An HTTP Response object, which simply extends werkzeug's Response object with a, Serializes the given dictionary using localstack's ``CustomEncoder`` into a json, Response, GreedyPathConverter, This converter makes sure that the path ``/mybucket//mykey`` can be matched to t, PathConverter, _create_service_map(), from_operation() (+19 more)
 
 ### Community 288 - "Community 288"
 Cohesion: 0.06
@@ -7106,7 +7122,7 @@ Nodes (39): PolicyDocument, PolicyName, ResponseMetadata, RoleName, Statement, V
 
 ### Community 295 - "Community 295"
 Cohesion: 0.05
-Nodes (42): ResponseMetadata, StackEvents, events, resource_types, tests/aws/services/cloudformation/api/test_stacks.py::test_blocked_stack_deletion, recorded-date, tests/aws/services/cloudformation/api/test_stacks.py::test_describe_stack_events_errors, recorded-content (+34 more)
+Nodes (41): ResponseMetadata, ResponseMetadata, StackEvents, describe_stack_events_stack_not_found, events, resource_types, tests/aws/services/cloudformation/api/test_stacks.py::test_blocked_stack_deletion, recorded-date (+33 more)
 
 ### Community 296 - "Community 296"
 Cohesion: 0.09
@@ -7118,7 +7134,7 @@ Nodes (40): items, ResponseMetadata, items, ResponseMetadata, items, ResponseMet
 
 ### Community 298 - "Community 298"
 Cohesion: 0.12
-Nodes (39): ProgressEvent, ResponseMetadata, ProgressEvent, ResponseMetadata, ProgressEvent, ResponseMetadata, ProgressEvent, ResponseMetadata (+31 more)
+Nodes (40): ProgressEvent, ResponseMetadata, ProgressEvent, ResponseMetadata, ProgressEvent, ResponseMetadata, ProgressEvent, ResponseMetadata (+32 more)
 
 ### Community 299 - "Community 299"
 Cohesion: 0.08
@@ -7137,8 +7153,8 @@ Cohesion: 0.06
 Nodes (39): additionalProperties, permissions, createOnlyProperties, permissions, description, handlers, create, delete (+31 more)
 
 ### Community 303 - "Community 303"
-Cohesion: 0.06
-Nodes (50): Error, ResponseMetadata, Error, ResponseMetadata, Error, ResponseMetadata, Error, ResponseMetadata (+42 more)
+Cohesion: 0.07
+Nodes (54): Error, ResponseMetadata, Error, ResponseMetadata, Error, ResponseMetadata, Error, ResponseMetadata (+46 more)
 
 ### Community 304 - "Community 304"
 Cohesion: 0.06
@@ -7166,11 +7182,11 @@ Nodes (14): Internal representation of a task (a callable) and its scheduling pa
 
 ### Community 310 - "Community 310"
 Cohesion: 0.08
-Nodes (24): This class controls the main path of an API Gateway REST API. It contains the de, RestApiGateway, get_api_key(), get_resources_from_moto_rest_api(), get_stage_configuration(), get_stage_variables(), get_usage_plan_keys(), get_usage_plans() (+16 more)
+Nodes (25): This class controls the main path of an API Gateway REST API. It contains the de, RestApiGateway, get_api_key(), get_resources_from_moto_rest_api(), get_stage_configuration(), get_stage_variables(), get_usage_plan_keys(), get_usage_plans() (+17 more)
 
 ### Community 311 - "Community 311"
-Cohesion: 0.10
-Nodes (27): cli(), Console, ensure_python_init_files(), FileType, FileWriter, from_name(), generate(), get_formatted_template_output() (+19 more)
+Cohesion: 0.08
+Nodes (31): cli(), Console, ensure_python_init_files(), FileType, FileWriter, from_name(), generate(), get_formatted_template_output() (+23 more)
 
 ### Community 312 - "Community 312"
 Cohesion: 0.18
@@ -7205,12 +7221,12 @@ Cohesion: 0.05
 Nodes (38): tests/aws/services/route53resolver/test_route53resolver.py::TestRoute53Resolver::test_associate_and_disassociate_resolver_rule, last_validated_date, tests/aws/services/route53resolver/test_route53resolver.py::TestRoute53Resolver::test_create_resolver_endpoint[INBOUND-5], last_validated_date, tests/aws/services/route53resolver/test_route53resolver.py::TestRoute53Resolver::test_create_resolver_endpoint[OUTBOUND-10], last_validated_date, tests/aws/services/route53resolver/test_route53resolver.py::TestRoute53Resolver::test_create_resolver_query_log_config, last_validated_date (+30 more)
 
 ### Community 320 - "Community 320"
-Cohesion: 0.05
-Nodes (41): aws_logger(), ExceptionLogger, http_logger(), internal_aws_logger(), internal_http_logger(), Handlers for logging., Logs exceptions into a logger., ResponseLogger (+33 more)
+Cohesion: 0.10
+Nodes (19): AddFormattedAttributes, AwsTraceLoggingFormatter, compress_logger_name(), _get_compressed_logger_name(), MaskSensitiveInputFilter, Tools for formatting localstack logs., Replaces large payloads in the logs with placeholders to avoid cluttering the lo, Filter that adds three attributes to a log record:      - ls_level: the abbrevia (+11 more)
 
 ### Community 321 - "Community 321"
 Cohesion: 0.04
-Nodes (37): AwsComponents, gateway(), Runtime components specific to the AWS emulator., # FIXME: the ServiceManager should be reworked to be more generic, and then beco, Gateway, Exposes the same interface as ``HandlerChain.handle``., BaseComponents, CoreOASPlugin (+29 more)
+Nodes (38): Gateway, Exposes the same interface as ``HandlerChain.handle``., ProtocolWrapper, RoloGateway, RuntimeServer, RuntimeServerPlugin, Registers the Gateway and the port configuration into the server. Some servers l, Registers the Gateway and the port configuration into the server. Some servers l (+30 more)
 
 ### Community 322 - "Community 322"
 Cohesion: 0.08
@@ -7229,8 +7245,8 @@ Cohesion: 0.07
 Nodes (32): crypto, data, { DynamoDBClient, PutItemCommand }, localStackConfig, { marshall, unmarshall }, params, { success, failure }, { DynamoDBClient, DeleteItemCommand } (+24 more)
 
 ### Community 326 - "Community 326"
-Cohesion: 0.06
-Nodes (31): eval_log_type(), get_edge_port_http(), get_edge_url(), get_protocol(), in_docker(), internal_service_url(), is_ipv6_address(), is_windows() (+23 more)
+Cohesion: 0.05
+Nodes (45): defaults(), Directories, eval_log_type(), external_service_url(), for_cli(), for_container(), for_host(), get_edge_port_http() (+37 more)
 
 ### Community 327 - "Community 327"
 Cohesion: 0.11
@@ -7257,8 +7273,8 @@ Cohesion: 0.11
 Nodes (37): call, setup, teardown, total, tests/aws/services/sqs/resource_providers/test_aws_sqs_queue.py::test_create_fifo_queue_with_all_properties, durations_in_seconds, last_validated_date, tests/aws/services/sqs/resource_providers/test_aws_sqs_queue.py::test_create_fifo_queue_with_required_properties (+29 more)
 
 ### Community 333 - "Community 333"
-Cohesion: 0.08
-Nodes (39): ResponseMetadata, ResponseMetadata, ResponseMetadata, ResponseMetadata, ResponseMetadata, ResponseMetadata, ResponseMetadata, AttachedPolicies (+31 more)
+Cohesion: 0.09
+Nodes (38): ResponseMetadata, ResponseMetadata, ResponseMetadata, ResponseMetadata, ResponseMetadata, RevisionId, ResponseMetadata, ResponseMetadata (+30 more)
 
 ### Community 334 - "Community 334"
 Cohesion: 0.12
@@ -7289,8 +7305,8 @@ Cohesion: 0.06
 Nodes (36): StackResourceDriftStatus, Code, Error, Message, ResponseMetadata, Type, ResponseMetadata, StackResourceDetail (+28 more)
 
 ### Community 341 - "Community 341"
-Cohesion: 0.12
-Nodes (16): stack_updated, ChangeSetId, CreationTime, DisableRollback, EnableTerminationProtection, LastUpdatedTime, NotificationARNs, Parameters (+8 more)
+Cohesion: 0.10
+Nodes (20): DriftInformation, DriftInformation, DriftInformation, StackDriftStatus, stack_updated, DriftInformation, ChangeSetId, CreationTime (+12 more)
 
 ### Community 342 - "Community 342"
 Cohesion: 0.08
@@ -7301,7 +7317,7 @@ Cohesion: 0.08
 Nodes (37): Code, Message, Error, message, Error, message, ResponseMetadata, ResponseMetadata (+29 more)
 
 ### Community 344 - "Community 344"
-Cohesion: 0.06
+Cohesion: 0.07
 Nodes (25): Activity, ActivityTask, ActivityCallbackEndpoint, ActivityTaskStartEndpoint, ActivityTaskStartOutcome, CallbackConsumerError, CallbackConsumerLeft, CallbackConsumerTimeout (+17 more)
 
 ### Community 345 - "Community 345"
@@ -7318,7 +7334,7 @@ Nodes (36): content, description, headers, components, schemas, application/json
 
 ### Community 348 - "Community 348"
 Cohesion: 0.04
-Nodes (44): Part, EntityTooSmall, InvalidPart, MethodNotAllowed, NoSuchVersion, BucketCorsIndex, buckets(), _build_index() (+36 more)
+Nodes (44): Part, InvalidPart, MethodNotAllowed, NoSuchVersion, BucketCorsIndex, buckets(), _build_index(), cors() (+36 more)
 
 ### Community 349 - "Community 349"
 Cohesion: 0.05
@@ -7370,7 +7386,7 @@ Nodes (36): tests/aws/services/stepfunctions/v2/test_sfn_api_aliasing.py::TestSf
 
 ### Community 361 - "Community 361"
 Cohesion: 0.07
-Nodes (40): creationDate, stateMachineArn, creationDate, name, roleArn, stateMachineArn, status, type (+32 more)
+Nodes (37): creationDate, stateMachineArn, creationDate, name, roleArn, stateMachineArn, status, type (+29 more)
 
 ### Community 362 - "Community 362"
 Cohesion: 0.05
@@ -7381,8 +7397,8 @@ Cohesion: 0.07
 Nodes (36): statusCode, apiKeyRequired, authorizationType, httpMethod, methodIntegration, methodResponses, requestModels, requestParameters (+28 more)
 
 ### Community 364 - "Community 364"
-Cohesion: 0.08
-Nodes (29): Container volume information., VolumeDirMount, VolumeInfo, test_inspect_container_volumes(), create_policy_doc(), TestDockerUtils, ensure_list(), Wrap the given object in a list, or return the object itself if it already is a (+21 more)
+Cohesion: 0.09
+Nodes (26): Container volume information., VolumeDirMount, VolumeInfo, test_inspect_container_volumes(), TestDockerUtils, container_ports_can_be_bound(), create_docker_client(), get_current_container_id() (+18 more)
 
 ### Community 365 - "Community 365"
 Cohesion: 0.06
@@ -7393,24 +7409,24 @@ Cohesion: 0.07
 Nodes (35): CreateEventSourceMappingResponse, ExecutedVersion, Payload, StatusCode, bucket, key, validated, create-result (+27 more)
 
 ### Community 367 - "Community 367"
-Cohesion: 0.07
-Nodes (46): _add_paths(), _BaseOpenApiExporter, export(), _get_integration(), OpenApiExporter, _OpenApiOAS30Exporter, _OpenApiSwaggerExporter, # TODO: other type? (+38 more)
+Cohesion: 0.09
+Nodes (35): add_documentation_parts(), AuthorizerConfig, current_path(), get_apigateway_store_for_invocation(), get_domain_name_hash(), get_execute_api_endpoint(), get_moto_backend(), get_regional_domain_name() (+27 more)
 
 ### Community 368 - "Community 368"
 Cohesion: 0.11
-Nodes (32): LambdaFunctionProviderBase, LambdaFunctionProviderBase, CapacityProviderConfig, Code, DeadLetterConfig, Environment, EphemeralStorage, FileSystemConfig (+24 more)
+Nodes (31): LambdaFunctionProviderBase, LambdaFunctionProviderBase, CapacityProviderConfig, Code, DeadLetterConfig, Environment, EphemeralStorage, FileSystemConfig (+23 more)
 
 ### Community 369 - "Community 369"
-Cohesion: 0.11
-Nodes (34): Properties, Type, Properties, Type, Properties, Type, Properties, Type (+26 more)
+Cohesion: 0.10
+Nodes (36): Properties, Type, Properties, Type, Properties, Type, Properties, Type (+28 more)
 
 ### Community 370 - "Community 370"
-Cohesion: 0.05
-Nodes (26): Environment, ContextObject, ContextObjectData, ExecutionData, _extract(), ItemData, MapData, StateData (+18 more)
+Cohesion: 0.10
+Nodes (14): ContextObject, ContextObjectData, ExecutionData, _extract(), ItemData, MapData, StateData, StateMachineData (+6 more)
 
 ### Community 371 - "Community 371"
 Cohesion: 0.10
-Nodes (22): cloudwatched(), dimension_lambda(), _func_name(), publish_error(), publish_lambda_duration(), publish_lambda_error(), publish_lambda_metric(), publish_lambda_result() (+14 more)
+Nodes (21): cloudwatched(), dimension_lambda(), _func_name(), publish_error(), publish_lambda_duration(), publish_lambda_error(), publish_lambda_metric(), publish_lambda_result() (+13 more)
 
 ### Community 372 - "Community 372"
 Cohesion: 0.06
@@ -7422,7 +7438,7 @@ Nodes (35): call, setup, teardown, total, tests/aws/services/s3/test_s3_cors.py:
 
 ### Community 374 - "Community 374"
 Cohesion: 0.05
-Nodes (19): decode_header_rfc2047(), encode_header_rfc2047(), encode_header_rfc2047_quote_printable(), encoder_header_rfc2047_base64(), Encode the header value in an RFC 2047 Quote-printable format. By default, Pytho, Sanitize the header value to not contain any character which cannot be encoded t, replace_non_iso_8859_1_characters(), _create_fake_context_from_path() (+11 more)
+Nodes (20): decode_header_rfc2047(), encode_header_rfc2047(), encode_header_rfc2047_quote_printable(), encoder_header_rfc2047_base64(), Encode the header value in an RFC 2047 Quote-printable format. By default, Pytho, Sanitize the header value to not contain any character which cannot be encoded t, replace_non_iso_8859_1_characters(), _create_fake_context_from_path() (+12 more)
 
 ### Community 375 - "Community 375"
 Cohesion: 0.06
@@ -7449,16 +7465,16 @@ Cohesion: 0.07
 Nodes (34): description, headers, responseParameters, responseTemplates, statusCode, responses, x-amazon-apigateway-integration, Access-Control-Allow-Headers (+26 more)
 
 ### Community 381 - "Community 381"
-Cohesion: 0.06
-Nodes (57): sns_platform_application_arn(), GetPlatformApplicationAttributesResponse, PlatformApplication, SetSMSAttributesResponse, _check_empty_attributes(), count_usage(), _create_default_effective_delivery_policy(), _create_topic() (+49 more)
+Cohesion: 0.03
+Nodes (72): test_boto_wait_for_certificate_validation(), test_certificate_for_subdomain_wildcard(), test_create_certificate_for_multiple_alternative_domains(), test_domain_validation(), test_import_certificate(), test_list_certificates_with_key_types_filter_imported_certificate(), test_list_certificates_with_key_types_filter_requested_certificate(), TestACM (+64 more)
 
 ### Community 382 - "Community 382"
 Cohesion: 0.12
 Nodes (34): call, setup, teardown, total, tests/aws/services/stepfunctions/v2/local_mocking/test_base_scenarios.py::TestBaseScenarios::test_dynamodb_put_get_item, durations_in_seconds, last_validated_date, tests/aws/services/stepfunctions/v2/local_mocking/test_base_scenarios.py::TestBaseScenarios::test_events_put_events (+26 more)
 
 ### Community 383 - "Community 383"
-Cohesion: 0.08
-Nodes (31): test_generate_trace_id(), test_parse_trace_id(), test_uri_stage_variables_interpolation(), TestUriInterpolationPathParameters, TestUriInterpolationStageVariables, generate_trace_id(), generate_trace_parent(), get_lambda_function_arn_from_invocation_uri() (+23 more)
+Cohesion: 0.06
+Nodes (49): test_generate_trace_id(), test_parse_trace_id(), test_uri_stage_variables_interpolation(), TestUriInterpolationPathParameters, TestUriInterpolationStageVariables, build_multi_value_headers(), drop_headers(), These headers are not making it to the invocation requests. Even Proxy integrati (+41 more)
 
 ### Community 384 - "Community 384"
 Cohesion: 0.12
@@ -7473,16 +7489,16 @@ Cohesion: 0.09
 Nodes (22): create_code_directory(), dependencies(), _do_generate_code(), generate(), generate_code(), generate_service_api(), generate_service_types(), html_to_rst() (+14 more)
 
 ### Community 387 - "Community 387"
-Cohesion: 0.06
-Nodes (38): additionalProperties, $ref, additionalProperties, $ref, required, type, type, definitions (+30 more)
+Cohesion: 0.05
+Nodes (39): additionalProperties, $ref, additionalProperties, $ref, required, type, type, definitions (+31 more)
 
 ### Community 388 - "Community 388"
 Cohesion: 0.06
 Nodes (34): logGroups, ResponseMetadata, StackDriftStatus, Capabilities, CreationTime, DeletionTime, DisableRollback, DriftInformation (+26 more)
 
 ### Community 389 - "Community 389"
-Cohesion: 0.12
-Nodes (6): CosmosAccountDataPlaneState, CosmosDataPlaneStore, CosmosSqlContainerState, CosmosSqlDatabaseState, _account_id(), MicrosoftDocumentDBProvider
+Cohesion: 0.02
+Nodes (71): AccessDeniedException, AcmApi, AddTagsToCertificateRequest, CertificateDetail, CertificateExport, CertificateManagedBy, CertificateOptions, CertificateStatus (+63 more)
 
 ### Community 390 - "Community 390"
 Cohesion: 0.08
@@ -7509,12 +7525,12 @@ Cohesion: 0.06
 Nodes (34): tests/aws/services/transcribe/test_transcribe.py::TestTranscribe::test_failing_deletion, last_validated_date, tests/aws/services/transcribe/test_transcribe.py::TestTranscribe::test_failing_start_transcription_job, last_validated_date, tests/aws/services/transcribe/test_transcribe.py::TestTranscribe::test_get_transcription_job, last_validated_date, tests/aws/services/transcribe/test_transcribe.py::TestTranscribe::test_list_transcription_jobs, last_validated_date (+26 more)
 
 ### Community 396 - "Community 396"
-Cohesion: 0.11
-Nodes (21): AlarmScheduler, calculate_alarm_state(), collect_metric_data(), generate_metric_query(), get_cloudwatch_client_for_region_of_alarm(), get_metric_alarm_details_for_alarm_arn(), is_threshold_exceeded(), is_triggering_premature_alarm() (+13 more)
+Cohesion: 0.24
+Nodes (15): calculate_alarm_state(), collect_metric_data(), generate_metric_query(), get_cloudwatch_client_for_region_of_alarm(), get_metric_alarm_details_for_alarm_arn(), is_threshold_exceeded(), is_triggering_premature_alarm(), Creates the dict with the required data for MetricDataQueries when calling clien (+7 more)
 
 ### Community 397 - "Community 397"
 Cohesion: 0.11
-Nodes (22): Process rules asynchronously in a background thread.          TODO: Use a worker, Process rules for an event. Note that we no longer handle entries here as AWS re, test_is_nested_in_string(), event_time_to_time_string(), EventJSONEncoder, extract_archive_name(), extract_region_and_account_id(), format_event() (+14 more)
+Nodes (23): Return a converted dict of EventBus model objects as a list of event buses in AP, test_is_nested_in_string(), convert_to_timezone_aware_datetime(), event_time_to_time_string(), EventJSONEncoder, extract_archive_name(), extract_connection_name(), extract_region_and_account_id() (+15 more)
 
 ### Community 398 - "Community 398"
 Cohesion: 0.07
@@ -7537,8 +7553,8 @@ Cohesion: 0.07
 Nodes (11): ChangeSetModelPreproc, ChangeSetModelDescriber, # TODO: what about other places?, # TODO: should this be put in the preproc?, # TODO: should this not _ALWAYS_ return CHANGESET_KNOWN_AFTER_APPLY?, # TODO: remove default, # TODO: handle "Conditional" case, # TODO: Add test to assert that on type change the resources are replaced. (+3 more)
 
 ### Community 403 - "Community 403"
-Cohesion: 0.05
-Nodes (21): Server, Server based TCP proxy abstraction.     This uses a ThreadPoolExecutor, so the m, TCPProxy, is_port_open(), Attempts to shut down the server by calling the internal do_shutdown method. It, Starts the server by calling the internal do_run method in a new thread, and the, Waits for the given amount of time until the thread running the server returns., Runs a health check on the server. The default implementation performs is_port_o (+13 more)
+Cohesion: 0.12
+Nodes (9): Server, Server based TCP proxy abstraction.     This uses a ThreadPoolExecutor, so the m, TCPProxy, is_port_open(), Runs a health check on the server. The default implementation performs is_port_o, Checks whether the server is up by executing the health check function., tcp_echo_server_port(), tcp_proxy() (+1 more)
 
 ### Community 404 - "Community 404"
 Cohesion: 0.07
@@ -7573,8 +7589,8 @@ Cohesion: 0.07
 Nodes (33): Properties, Type, Value, AWSTemplateFormatVersion, DependsOn, Properties, Type, IntegrationResponses (+25 more)
 
 ### Community 412 - "Community 412"
-Cohesion: 0.06
-Nodes (23): SqsMetricBatchData, get_sqs_protocol(), InvalidAddress, list_messages(), list_messages_for_queue_url(), Retrieves from a given SqsQueue all visible messages without causing any side ef, A set of SQS developer tool endpoints:      - ``/_aws/sqs/messages``: list SQS m, sqs_auto_protocol_aws_response_serializer() (+15 more)
+Cohesion: 0.05
+Nodes (57): load_service(), Loads a service     :param service: to load, f.e. "sqs". For custom, internalize, aws_cloudwatch_client(), is_old_provider(), # TODO: remove once Botocore countains the new CloudWatch spec, A router implementation which abstracts the (quite complex) routing of incoming, RestServiceOperationRouter, create_parser() (+49 more)
 
 ### Community 413 - "Community 413"
 Cohesion: 0.07
@@ -7605,8 +7621,8 @@ Cohesion: 0.11
 Nodes (30): convert_lower_camelcase_to_pascalcase(), convert_pascalcase_to_lower_camelcase(), convert_request_kwargs(), convert_values_to_numbers(), deselect_attributes(), fix_boto_parameters_based_on_report(), generate_default_name(), generate_default_name_without_stack() (+22 more)
 
 ### Community 420 - "Community 420"
-Cohesion: 0.07
-Nodes (29): Error, FirstNameNotMissing, ValidationException, tests/aws/services/dynamodb/test_dynamodb.py::TestDynamoDB::test_batch_write_items, recorded-content, recorded-date, tests/aws/services/dynamodb/test_dynamodb.py::TestDynamoDB::test_batch_write_not_matching_schema, recorded-content (+21 more)
+Cohesion: 0.06
+Nodes (32): Error, FirstNameNotMissing, ValidationException, tests/aws/services/dynamodb/test_dynamodb.py::TestDynamoDB::test_batch_write_items, recorded-content, recorded-date, tests/aws/services/dynamodb/test_dynamodb.py::TestDynamoDB::test_batch_write_not_matching_schema, recorded-content (+24 more)
 
 ### Community 421 - "Community 421"
 Cohesion: 0.08
@@ -7614,7 +7630,7 @@ Nodes (32): events, ResponseMetadata, get_execution_history, HTTPHeaders, HTTPSt
 
 ### Community 422 - "Community 422"
 Cohesion: 0.06
-Nodes (32): tests/aws/services/events/test_archive_and_replay.py::TestArchive::test_create_archive_error_duplicate[custom], recorded-date, tests/aws/services/events/test_archive_and_replay.py::TestArchive::test_create_archive_error_unknown_event_bus, recorded-content, recorded-date, tests/aws/services/events/test_archive_and_replay.py::TestArchive::test_delete_archive_error_unknown_archive, recorded-content, recorded-date (+24 more)
+Nodes (32): tests/aws/services/events/test_archive_and_replay.py::TestArchive::test_create_archive_error_duplicate[default], recorded-date, tests/aws/services/events/test_archive_and_replay.py::TestArchive::test_create_archive_error_unknown_event_bus, recorded-content, recorded-date, tests/aws/services/events/test_archive_and_replay.py::TestArchive::test_delete_archive_error_unknown_archive, recorded-content, recorded-date (+24 more)
 
 ### Community 423 - "Community 423"
 Cohesion: 0.07
@@ -7633,8 +7649,8 @@ Cohesion: 0.09
 Nodes (33): Error, ResponseMetadata, Code, Message, Type, Error, ResponseMetadata, Error (+25 more)
 
 ### Community 427 - "Community 427"
-Cohesion: 0.10
-Nodes (33): requestContext, requestPayload, responseContext, responsePayload, timestamp, version, requestContext, requestPayload (+25 more)
+Cohesion: 0.18
+Nodes (17): requestContext, requestPayload, responseContext, timestamp, version, requestContext, responseContext, Body (+9 more)
 
 ### Community 428 - "Community 428"
 Cohesion: 0.09
@@ -7645,8 +7661,8 @@ Cohesion: 0.10
 Nodes (15): ElasticsearchLegacyPackageInstaller, ElasticsearchPackageInstaller, OpensearchPackage, OpensearchPackageInstaller, Prepares the usage of the SecurityPlugin for the different versions of OpenSearc, Specialised package installer for ElasticSearch 5.x and 6.x      It installs Jav, build_trust_store(), java_system_properties_proxy() (+7 more)
 
 ### Community 430 - "Community 430"
-Cohesion: 0.11
-Nodes (25): serve_asgi_adapter(), serve_asgi_app(), test_chunked_transfer_encoding_client_timeout(), test_chunked_transfer_encoding_request(), test_chunked_transfer_encoding_response(), test_close_iterable_response(), test_input_stream_methods(), test_input_stream_readlines() (+17 more)
+Cohesion: 0.09
+Nodes (27): serve_asgi_adapter(), serve_asgi_app(), test_chunked_transfer_encoding_client_timeout(), test_chunked_transfer_encoding_request(), test_chunked_transfer_encoding_response(), test_close_iterable_response(), test_input_stream_methods(), test_input_stream_readlines() (+19 more)
 
 ### Community 431 - "Community 431"
 Cohesion: 0.16
@@ -7669,8 +7685,8 @@ Cohesion: 0.07
 Nodes (32): additionalProperties, description, maxLength, minLength, pattern, type, permissions, createOnlyProperties (+24 more)
 
 ### Community 436 - "Community 436"
-Cohesion: 0.06
-Nodes (33): NoncurrentVersionExpiration, NoncurrentVersionTransition, Transition, description, type, description, type, additionalProperties (+25 more)
+Cohesion: 0.10
+Nodes (21): NoncurrentVersionTransition, Transition, additionalProperties, description, properties, required, type, StorageClass (+13 more)
 
 ### Community 437 - "Community 437"
 Cohesion: 0.07
@@ -7717,12 +7733,12 @@ Cohesion: 0.08
 Nodes (31): cases, tests/aws/services/stepfunctions/v2/choice_operators/test_timestamp_operators.py::TestTimestamps::test_timestamp_equals, tests/aws/services/stepfunctions/v2/choice_operators/test_timestamp_operators.py::TestTimestamps::test_timestamp_equals_path, recorded-content, recorded-date, recorded-content, recorded-date, tests/aws/services/stepfunctions/v2/choice_operators/test_timestamp_operators.py::TestTimestamps::test_timestamp_greater_than (+23 more)
 
 ### Community 448 - "Community 448"
-Cohesion: 0.09
-Nodes (32): ApiDestinationArn, ApiDestinationState, CreationTime, LastModifiedTime, ResponseMetadata, ResponseMetadata, Error, ResponseMetadata (+24 more)
+Cohesion: 0.10
+Nodes (23): ApiDestinationArn, ApiDestinationState, CreationTime, LastModifiedTime, ResponseMetadata, ResponseMetadata, ApiDestinations, ResponseMetadata (+15 more)
 
 ### Community 449 - "Community 449"
-Cohesion: 0.03
-Nodes (36): CatchOutcome, Enum, _error_name(), from_name(), _reverse_error_name_lookup(), StatesFunctionNameType, HashAlgorithm, EsmExecutionStatus (+28 more)
+Cohesion: 0.02
+Nodes (50): UrlType, CatchOutcome, Enum, _error_name(), from_name(), _reverse_error_name_lookup(), ExecutionState, StatesFunctionNameType (+42 more)
 
 ### Community 450 - "Community 450"
 Cohesion: 0.12
@@ -7745,8 +7761,8 @@ Cohesion: 0.09
 Nodes (15): DownloadInstaller, get_runtime_client_path(), LambdaJavaPackage, LambdaJavaPackageInstaller, LambdaRuntimePackage, LambdaRuntimePackageInstaller, Package installers for external Lambda dependencies., Golang binary containing the lambda-runtime-init. (+7 more)
 
 ### Community 455 - "Community 455"
-Cohesion: 0.05
-Nodes (29): add_resolv_entry(), DnsServer, exclude_from_resolution(), _fetch_interfaces(), get_available_dns_server(), get_fallback_dns_server(), _is_gateway(), list_network_interface_details() (+21 more)
+Cohesion: 0.09
+Nodes (31): add_resolv_entry(), exclude_from_resolution(), _fetch_interfaces(), get_available_dns_server(), get_dns_server(), get_fallback_dns_server(), _is_gateway(), is_server_running() (+23 more)
 
 ### Community 456 - "Community 456"
 Cohesion: 0.42
@@ -7758,11 +7774,11 @@ Nodes (31): additionalProperties, createOnlyProperties, description, type, items
 
 ### Community 458 - "Community 458"
 Cohesion: 0.07
-Nodes (32): maxLength, minLength, pattern, type, enum, type, $ref, ExtendedS3DestinationConfiguration (+24 more)
+Nodes (34): maxLength, minLength, pattern, type, enum, type, $ref, ExtendedS3DestinationConfiguration (+26 more)
 
 ### Community 459 - "Community 459"
-Cohesion: 0.06
-Nodes (37): description, insertionOrder, items, type, uniqueItems, description, insertionOrder, items (+29 more)
+Cohesion: 0.05
+Nodes (42): description, insertionOrder, items, type, uniqueItems, description, insertionOrder, items (+34 more)
 
 ### Community 460 - "Community 460"
 Cohesion: 0.10
@@ -7781,8 +7797,8 @@ Cohesion: 0.06
 Nodes (32): Choices, Default, Type, End, Type, States, Type, Type (+24 more)
 
 ### Community 464 - "Community 464"
-Cohesion: 0.09
-Nodes (29): ARN, Name, VersionId, ARN, DeletionDate, Name, ARN, Name (+21 more)
+Cohesion: 0.08
+Nodes (32): ARN, Name, VersionId, ARN, CreatedDate, Name, SecretString, VersionId (+24 more)
 
 ### Community 465 - "Community 465"
 Cohesion: 0.08
@@ -7809,8 +7825,8 @@ Cohesion: 0.07
 Nodes (31): ReplayArn, ResponseMetadata, State, Description, EventEndTime, EventLastReplayedTime, EventSourceArn, EventStartTime (+23 more)
 
 ### Community 471 - "Community 471"
-Cohesion: 0.17
-Nodes (17): drop_headers(), These headers are not making it to the invocation requests. Even Proxy integrati, Will modify the provided headers in-place. Dropping matching headers from the pr, set_default_headers(), should_drop_header_from_invocation(), _apply_header_transforms(), convert_body(), get_request_template() (+9 more)
+Cohesion: 0.04
+Nodes (40): AssumedRoleUser, AssumeRoleRequest, AssumeRoleResponse, AssumeRoleWithSAMLRequest, AssumeRoleWithSAMLResponse, AssumeRoleWithWebIdentityRequest, AssumeRoleWithWebIdentityResponse, AssumeRootRequest (+32 more)
 
 ### Community 472 - "Community 472"
 Cohesion: 0.09
@@ -7821,8 +7837,8 @@ Cohesion: 0.06
 Nodes (31): CreateFunctionResponse, Architectures, CodeSha256, CodeSize, DeadLetterConfig, Description, EphemeralStorage, FunctionArn (+23 more)
 
 ### Community 474 - "Community 474"
-Cohesion: 0.12
-Nodes (21): test_events_written_to_disk_are_timestamp_prefixed_for_chronological_ordering(), EventsApi, apply_patches(), convert_schedule_to_cron(), _create_and_register_temp_dir(), _dump_events_to_files(), events_handler_put_events(), EventsProvider (+13 more)
+Cohesion: 0.13
+Nodes (20): EventsApi, apply_patches(), convert_schedule_to_cron(), _create_and_register_temp_dir(), _dump_events_to_files(), events_handler_put_events(), EventsProvider, filter_event_based_on_event_format() (+12 more)
 
 ### Community 475 - "Community 475"
 Cohesion: 0.07
@@ -7837,8 +7853,8 @@ Cohesion: 0.05
 Nodes (37): DeleteMarker, ResponseMetadata, VersionId, DeleteMarker, ResponseMetadata, VersionId, ResponseMetadata, VersionId (+29 more)
 
 ### Community 478 - "Community 478"
-Cohesion: 0.11
-Nodes (28): Error, ResponseMetadata, ResponseMetadata, Messages, ResponseMetadata, Messages, ResponseMetadata, error-numeric-empty (+20 more)
+Cohesion: 0.09
+Nodes (34): Error, ResponseMetadata, Error, ResponseMetadata, Error, ResponseMetadata, ResponseMetadata, Messages (+26 more)
 
 ### Community 479 - "Community 479"
 Cohesion: 0.09
@@ -7905,7 +7921,7 @@ Cohesion: 0.07
 Nodes (29): call, setup, teardown, total, tests/aws/services/cloudformation/resources/test_ec2.py::test_cfn_update_ec2_instance_type, last_validated_date, tests/aws/services/cloudformation/resources/test_ec2.py::test_cfn_with_multiple_route_table_associations, last_validated_date (+21 more)
 
 ### Community 495 - "Community 495"
-Cohesion: 0.07
+Cohesion: 0.06
 Nodes (15): BaseExtension, Extension, Called when LocalStack is ready and the Ready marker has been printed., Called when LocalStack is shutting down. Can be used to close any resources (thr, Provided to plux to load the plugins. Do NOT overwrite! PluginManagers managing, Called when LocalStack loads the extension., An extension that is loaded into LocalStack dynamically.      The method executi, Called when LocalStack loads the extension. (+7 more)
 
 ### Community 496 - "Community 496"
@@ -7921,8 +7937,8 @@ Cohesion: 0.09
 Nodes (30): Error, Error, Code, Message, Type, set-headers-error-invalidtype, set-headers-error-unknown-identity-bounce, set-headers-error-unknown-identity-complaint (+22 more)
 
 ### Community 499 - "Community 499"
-Cohesion: 0.07
-Nodes (29): tests/aws/services/sqs/test_sqs.py::TestSqsProvider::test_change_message_visibility_after_visibility_timeout_expiration[sqs], tests/aws/services/sqs/test_sqs.py::TestSqsProvider::test_change_message_visibility_after_visibility_timeout_expiration[sqs_query], recorded-date, recorded-content, recorded-date, tests/aws/services/sqs/test_sqs.py::TestSqsProvider::test_create_fifo_queue_with_different_attributes_raises_error[sqs], tests/aws/services/sqs/test_sqs.py::TestSqsProvider::test_create_fifo_queue_with_different_attributes_raises_error[sqs_query], recorded-content (+21 more)
+Cohesion: 0.09
+Nodes (22): send_max_number_of_messages, visibility_timeout_expired, ResponseMetadata, tests/aws/services/sqs/test_sqs.py::TestSqsProvider::test_change_message_visibility_after_visibility_timeout_expiration[sqs], tests/aws/services/sqs/test_sqs.py::TestSqsProvider::test_change_message_visibility_after_visibility_timeout_expiration[sqs_query], recorded-content, recorded-date, recorded-content (+14 more)
 
 ### Community 500 - "Community 500"
 Cohesion: 0.20
@@ -7942,19 +7958,19 @@ Nodes (28): tests/aws/services/cloudformation/api/test_stack_policies.py::TestSt
 
 ### Community 504 - "Community 504"
 Cohesion: 0.07
-Nodes (29): apiStages, id, name, ResponseMetadata, items, ResponseMetadata, items, ResponseMetadata (+21 more)
+Nodes (27): items, ResponseMetadata, items, ResponseMetadata, items, ResponseMetadata, items, ResponseMetadata (+19 more)
 
 ### Community 505 - "Community 505"
 Cohesion: 0.10
-Nodes (29): responseModels, responseParameters, responseParameters, responseParameters, ResponseMetadata, responseModels, responseParameters, statusCode (+21 more)
+Nodes (29): responseModels, responseParameters, responseParameters, responseParameters, responseModels, ResponseMetadata, responseModels, responseParameters (+21 more)
 
 ### Community 506 - "Community 506"
 Cohesion: 0.10
 Nodes (28): call, setup, teardown, total, tests/aws/services/cloudformation/test_change_set_fn_select.py::TestChangeSetFnSelect::test_fn_select_add_to_static_property, last_validated_date, tests/aws/services/cloudformation/test_change_set_fn_select.py::TestChangeSetFnSelect::test_fn_select_change_get_att_reference, last_validated_date (+20 more)
 
 ### Community 507 - "Community 507"
-Cohesion: 0.05
-Nodes (19): AzureSubscriptionStore, CaseInsensitiveDict, _normalize(), IamDataStore, ServiceAccount, PubSubDataStore, PubsubMessage, Subscription (+11 more)
+Cohesion: 0.02
+Nodes (47): CaseInsensitiveDict, _normalize(), CloudSqlDataStore, SqlDatabase, SqlInstance, SqlUser, CloudTask, CloudTasksDataStore (+39 more)
 
 ### Community 508 - "Community 508"
 Cohesion: 0.07
@@ -7977,16 +7993,16 @@ Cohesion: 0.09
 Nodes (28): events, get_execution_history, tests/aws/services/stepfunctions/v2/local_mocking/test_base_scenarios.py::TestBaseScenarios::test_dynamodb_put_get_item, recorded-content, recorded-date, tests/aws/services/stepfunctions/v2/local_mocking/test_base_scenarios.py::TestBaseScenarios::test_events_put_events, recorded-content, recorded-date (+20 more)
 
 ### Community 513 - "Community 513"
-Cohesion: 0.12
-Nodes (19): GatewayResponses, ApigatewayProvider, ApigatewayNextGenProvider, create_stage(), delete_rest_api(), _get_gateway_response_or_default(), is_canary_settings_update_patch_valid(), # TODO: check if there are other boolean, maybe add a global step in _patch_api_ (+11 more)
+Cohesion: 0.09
+Nodes (24): GatewayResponses, deployment_with_any_routes(), deployment_with_routes(), dummy_deployment(), ApigatewayProvider, freeze_rest_api(), Snapshot a REST API in time to create a deployment     This will merge the Moto, ApigatewayNextGenProvider (+16 more)
 
 ### Community 514 - "Community 514"
 Cohesion: 0.10
 Nodes (18): create(), delete(), list(), read(), SQSQueueProperties, SQSQueueProviderBase, Tag, update() (+10 more)
 
 ### Community 515 - "Community 515"
-Cohesion: 0.07
-Nodes (29): ActionOptions, emit_stack_failure(), from_action(), Available actions that can be performed on a resource.      Must support both CF, Capture the stack failure reason in telemetry, track_resource_operation(), log_not_available_message(), ChangeSetModelExecutor (+21 more)
+Cohesion: 0.17
+Nodes (20): # TODO: correct status, # TODO: differentiate between update and create, # TODO: errors will stop all rollbacks; get parity on this behaviour, # TODO: differentiate between update and create, # TODO: this logic is a POC and should be revised., # TODO: handle other update replace policy values, # TODO: Add test to assert that on type change the resources are replaced., # TODO: other deletion policies (+12 more)
 
 ### Community 516 - "Community 516"
 Cohesion: 0.07
@@ -8013,12 +8029,12 @@ Cohesion: 0.09
 Nodes (28): response, ResponseMetadata, tests/aws/services/ses/test_ses.py::TestSES::test_cannot_create_event_for_no_topic, recorded-date, tests/aws/services/ses/test_ses.py::TestSES::test_invalid_tags_send_email[-], recorded-content, recorded-date, tests/aws/services/ses/test_ses.py::TestSES::test_invalid_tags_send_email[-test] (+20 more)
 
 ### Community 523 - "Community 523"
-Cohesion: 0.10
-Nodes (29): ResponseMetadata, ResponseMetadata, ResponseMetadata, Messages, ResponseMetadata, Messages, ResponseMetadata, after-update (+21 more)
+Cohesion: 0.11
+Nodes (26): ResponseMetadata, ResponseMetadata, ResponseMetadata, Messages, ResponseMetadata, Messages, ResponseMetadata, after-update (+18 more)
 
 ### Community 524 - "Community 524"
 Cohesion: 0.12
-Nodes (21): allow_bucket_acl(), _bucket_url_vhost(), match_headers(), # TODO: fix me? supposed to be chunked, fully missing for OPTIONS with body (to, # TODO: fix me? supposed to be chunked, fully missing for OPTIONS with body (to, # TODO: fix me? supposed to be chunked, fully missing for OPTIONS with body (to, # TODO: fix me? supposed to be chunked, fully missing for OPTIONS with body (to, # Since April 2023, AWS will by default block setting ACL to your bucket and obj (+13 more)
+Nodes (22): allow_bucket_acl(), _bucket_url_vhost(), match_headers(), # TODO: fix me? supposed to be chunked, fully missing for OPTIONS with body (to, # TODO: fix me? supposed to be chunked, fully missing for OPTIONS with body (to, # TODO: fix me? supposed to be chunked, fully missing for OPTIONS with body (to, # TODO: fix me? supposed to be chunked, fully missing for OPTIONS with body (to, # Since April 2023, AWS will by default block setting ACL to your bucket and obj (+14 more)
 
 ### Community 525 - "Community 525"
 Cohesion: 0.07
@@ -8030,11 +8046,11 @@ Nodes (27): activityArn, creationDate, ResponseMetadata, events, ResponseMetadat
 
 ### Community 527 - "Community 527"
 Cohesion: 0.13
-Nodes (28): call, setup, teardown, total, tests/aws/services/cloudformation/api/test_changesets.py::test_create_and_then_update_refreshes_template_metadata, durations_in_seconds, last_validated_date, tests/aws/services/cloudformation/api/test_changesets.py::test_create_change_set_missing_stackname (+20 more)
+Nodes (28): call, setup, teardown, total, tests/aws/services/cloudformation/api/test_changesets.py::test_changeset_for_deleted_stack, durations_in_seconds, last_validated_date, tests/aws/services/cloudformation/api/test_changesets.py::test_create_and_then_update_refreshes_template_metadata (+20 more)
 
 ### Community 528 - "Community 528"
-Cohesion: 0.10
-Nodes (30): Error, ResponseMetadata, Error, ResponseMetadata, Error, ResponseMetadata, Error, ResponseMetadata (+22 more)
+Cohesion: 0.09
+Nodes (31): Error, ResponseMetadata, Error, ResponseMetadata, Error, ResponseMetadata, Error, ResponseMetadata (+23 more)
 
 ### Community 529 - "Community 529"
 Cohesion: 0.09
@@ -8054,7 +8070,7 @@ Nodes (28): responseTemplates, selectionPattern, statusCode, apiKeyRequired, aut
 
 ### Community 533 - "Community 533"
 Cohesion: 0.05
-Nodes (39): body, httpMethod, isBase64Encoded, multiValueQueryStringParameters, path, pathParameters, queryStringParameters, resource (+31 more)
+Nodes (40): body, httpMethod, isBase64Encoded, multiValueQueryStringParameters, path, pathParameters, queryStringParameters, resource (+32 more)
 
 ### Community 534 - "Community 534"
 Cohesion: 0.12
@@ -8070,7 +8086,7 @@ Nodes (28): BillingMode, LastUpdateToPayPerRequestDateTime, TableDescription, Ta
 
 ### Community 537 - "Community 537"
 Cohesion: 0.09
-Nodes (28): Rules, RuleArn, list-rules, put-rule, tests/aws/services/events/test_events_schedule.py::TestScheduleCron::tests_put_rule_with_schedule_cron, tests/aws/services/events/test_events_schedule.py::TestScheduleCron::tests_put_rule_with_schedule_cron[cron(0 12 * * ? *)], recorded-content, recorded-date (+20 more)
+Nodes (28): Rules, RuleArn, list-rules, put-rule, tests/aws/services/events/test_events_schedule.py::TestScheduleCron::tests_put_rule_with_schedule_cron[cron(0 12 * * ? *)], recorded-content, recorded-date, tests/aws/services/events/test_events_schedule.py::TestScheduleCron::tests_put_rule_with_schedule_cron[cron(0/15 * * * ? *)] (+20 more)
 
 ### Community 538 - "Community 538"
 Cohesion: 0.07
@@ -8093,12 +8109,12 @@ Cohesion: 0.30
 Nodes (28): Architectures, CodeSha256, CodeSize, Description, Environment, EphemeralStorage, FunctionArn, FunctionName (+20 more)
 
 ### Community 543 - "Community 543"
-Cohesion: 0.08
-Nodes (28): RuntimeVersionConfig, SnapStart, Architectures, CodeSha256, CodeSize, Description, FunctionArn, FunctionName (+20 more)
+Cohesion: 0.09
+Nodes (23): RuntimeVersionConfig, Architectures, CodeSha256, CodeSize, Description, FunctionArn, FunctionName, Handler (+15 more)
 
 ### Community 544 - "Community 544"
-Cohesion: 0.09
-Nodes (31): Utility function to convert an SQS message from LocalStack's internal representa, to_sqs_api_message(), test_list_messages_with_queue_url_in_path(), test_cancel_with_invalid_source_arn_in_task_handle(), test_guess_endpoint_strategy_and_host(), test_is_sqs_queue_url(), test_parse_queue_url_invalid(), test_parse_queue_url_valid() (+23 more)
+Cohesion: 0.08
+Nodes (30): Return queue URL which depending on the endpoint strategy returns e.g.:, test_list_messages_with_queue_url_in_path(), test_cancel_with_invalid_source_arn_in_task_handle(), test_guess_endpoint_strategy_and_host(), test_is_sqs_queue_url(), test_parse_queue_url_invalid(), test_parse_queue_url_valid(), test_sqs_message_attrs_md5() (+22 more)
 
 ### Community 545 - "Community 545"
 Cohesion: 0.08
@@ -8109,8 +8125,8 @@ Cohesion: 0.09
 Nodes (15): Extension, get_extension_module_root(), This method can be overwritten to add more routes to the controller. Everything, Factory method to create the jinja2 template environment.         :return: a new, Uses the ``template_env`` to render a template and return the string value., Uses the ``template_env`` to render a template into an HTTP response. It guesses, Default pre-processor, which implements a default behavior to add a trailing sla, EXPERIMENTAL! This class is experimental and the API may change without notice. (+7 more)
 
 ### Community 547 - "Community 547"
-Cohesion: 0.06
-Nodes (31): description, type, description, type, description, type, MethodSetting, description (+23 more)
+Cohesion: 0.07
+Nodes (28): description, type, description, type, description, type, description, type (+20 more)
 
 ### Community 548 - "Community 548"
 Cohesion: 0.07
@@ -8118,7 +8134,7 @@ Nodes (28): description, type, description, type, description, enum, type, descr
 
 ### Community 549 - "Community 549"
 Cohesion: 0.07
-Nodes (28): $ref, description, maximum, minimum, type, description, type, description (+20 more)
+Nodes (28): $ref, description, type, description, type, description, maximum, minimum (+20 more)
 
 ### Community 550 - "Community 550"
 Cohesion: 0.08
@@ -8129,8 +8145,8 @@ Cohesion: 0.07
 Nodes (4): Heartbeat_seconds_declContext, Heartbeat_seconds_intContext, Heartbeat_seconds_jsonataContext, Heartbeat_seconds_pathContext
 
 ### Community 552 - "Community 552"
-Cohesion: 0.08
-Nodes (39): ExecutionDoesNotExist, GetActivityTaskOutput, InvalidArn, InvalidName, ListMapRunsOutput, StopExecutionOutput, _get_local_mock_test_case(), _get_state_machine_arn() (+31 more)
+Cohesion: 0.05
+Nodes (43): defaults(), Directories, eval_log_type(), for_cli(), for_container(), for_host(), get_edge_port_http(), get_edge_url() (+35 more)
 
 ### Community 553 - "Community 553"
 Cohesion: 0.07
@@ -8158,15 +8174,15 @@ Nodes (28): ConfirmationWasAuthenticated, ContentBasedDeduplication, DisplayName
 
 ### Community 559 - "Community 559"
 Cohesion: 0.11
-Nodes (21): MessageId, ResponseMetadata, duplicate-json-keys, sub, sub-attrs, sub-not-found, subscriptions-for-topic-after-unsub, subscriptions-for-topic-before-unsub (+13 more)
+Nodes (21): ResponseMetadata, TopicArn, create-topic, sub, sub-attrs, sub-not-found, subscriptions-for-topic-after-unsub, subscriptions-for-topic-before-unsub (+13 more)
 
 ### Community 560 - "Community 560"
-Cohesion: 0.32
-Nodes (15): add_dynamodb_stream(), delete_streams(), forward_events(), get_and_increment_sequence_number_counter(), get_dynamodbstreams_store(), get_kinesis_client(), get_kinesis_stream_name(), get_shard_id() (+7 more)
+Cohesion: 0.10
+Nodes (31): dynamodb_stream_arn(), change_region_in_ddb_stream_arn(), Modify the ARN or a DynamoDB Stream by changing its region.     We need this log, add_dynamodb_stream(), delete_streams(), forward_events(), get_and_increment_sequence_number_counter(), get_dynamodbstreams_store() (+23 more)
 
 ### Community 561 - "Community 561"
-Cohesion: 0.08
-Nodes (27): creationDate, ResponseMetadata, stateMachineArn, stateMachineVersionArn, creationDate, ResponseMetadata, stateMachineVersionArn, creation_resp_1 (+19 more)
+Cohesion: 0.29
+Nodes (7): creationDate, ResponseMetadata, stateMachineVersionArn, publish_res_v2_2, tests/aws/services/stepfunctions/v2/test_sfn_api_versioning.py::TestSnfApiVersioning::test_version_ids_between_deletions, recorded-content, recorded-date
 
 ### Community 562 - "Community 562"
 Cohesion: 0.07
@@ -8205,8 +8221,8 @@ Cohesion: 0.08
 Nodes (27): Code, Message, Error, message, ResponseMetadata, id, price, product (+19 more)
 
 ### Community 571 - "Community 571"
-Cohesion: 0.06
-Nodes (11): ResultSelector, ItemsPath, Preprocessor, TestStateProgram, Result, TestStateStateProps, StateProps, _decorate_state_field() (+3 more)
+Cohesion: 0.04
+Nodes (19): Arguments, ArgumentsJSONataTemplateValueObject, ArgumentsStringJSONata, Parameters, Parargs, ResultSelector, JSONataTemplateValueObject, ItemsPath (+11 more)
 
 ### Community 572 - "Community 572"
 Cohesion: 0.11
@@ -8233,24 +8249,24 @@ Cohesion: 0.08
 Nodes (27): Environment, LoggingConfig, Architectures, CodeSha256, CodeSize, Description, Environment, FunctionArn (+19 more)
 
 ### Community 578 - "Community 578"
-Cohesion: 0.11
-Nodes (11): InfraProvisioner, provisioner(), Execute all previously added custom provisioning steps and deploy added CDK stac, A simple helper function to extract outputs of a deployed stack in a simple <key, Reverse operation of `InfraProvisioner.provision`.         First performs any re, Register a CDK stack to be deployed in a later `InfraProvisioner.provision` call, Register a custom teardown task.         Anything registered here will be execut, Register a custom setup task.         Anything registered here will be executed (+3 more)
+Cohesion: 0.10
+Nodes (13): test_adding_tags(), cleanup_s3_bucket(), InfraProvisioner, provisioner(), Execute all previously added custom provisioning steps and deploy added CDK stac, A simple helper function to extract outputs of a deployed stack in a simple <key, Reverse operation of `InfraProvisioner.provision`.         First performs any re, Register a CDK stack to be deployed in a later `InfraProvisioner.provision` call (+5 more)
 
 ### Community 579 - "Community 579"
-Cohesion: 0.09
-Nodes (35): AzureError, AzureInvalidRequest, AzureUnsupportedOperation, Raised when an Azure provider, resource type, or operation is not implemented., Base exception for Azure emulation errors., Raised when an Azure request is syntactically valid but unsupported or inconsist, AuthHandler, AzureRequestContext (+27 more)
+Cohesion: 0.03
+Nodes (57): AzureError, AzureInvalidRequest, AzureNotFound, AzureUnsupportedOperation, Raised when an Azure provider, resource type, or operation is not implemented., Base exception for Azure emulation errors., Raised when an Azure request is syntactically valid but unsupported or inconsist, Raised when an Azure resource cannot be found. (+49 more)
 
 ### Community 580 - "Community 580"
-Cohesion: 0.09
-Nodes (12): ModelResolver, This class allows a Model to use recursive and circular references to other Mode, Model, RestApiContainer, TestApiGatewayRequestValidator, TestModelResolver, ApiInvocationContext, Whether this is an API Gateway v1 request (+4 more)
+Cohesion: 0.07
+Nodes (22): test_render_custom_template(), test_render_custom_template_in_xml(), TestApiGatewayRequestValidator, requests_response(), ApiGatewayVersion, ApiInvocationContext, auth_identity(), authorizer_result() (+14 more)
 
 ### Community 581 - "Community 581"
 Cohesion: 0.08
 Nodes (23): auth(), bin_name(), build_cluster_run_command(), default_version(), Directories, from_input(), get_cluster_health_status(), init_directories() (+15 more)
 
 ### Community 582 - "Community 582"
-Cohesion: 0.07
-Nodes (22): test_ignore_architecture(), arch(), JavaInstallerMixin, JavaPackage, JavaPackageInstaller, os_name(), Get JAVA_HOME for this installation of Java., Return the download URL for latest stable JDK build. (+14 more)
+Cohesion: 0.05
+Nodes (31): ArchiveDownloadAndExtractInstaller, _es_url(), fetch_latest_versions(), get_download_url(), get_engine_type(), get_install_type_and_version(), get_install_version(), _opensearch_url() (+23 more)
 
 ### Community 583 - "Community 583"
 Cohesion: 0.06
@@ -8261,8 +8277,8 @@ Cohesion: 0.07
 Nodes (27): type, type, type, type, type, type, type, type (+19 more)
 
 ### Community 585 - "Community 585"
-Cohesion: 0.08
-Nodes (27): $ref, ReplicaGlobalSecondaryIndexSpecification, type, insertionOrder, items, type, uniqueItems, $ref (+19 more)
+Cohesion: 0.11
+Nodes (20): $ref, ReplicaGlobalSecondaryIndexSpecification, type, $ref, $ref, ContributorInsightsSpecification, DeletionProtectionEnabled, KinesisStreamSpecification (+12 more)
 
 ### Community 586 - "Community 586"
 Cohesion: 0.07
@@ -8270,7 +8286,7 @@ Nodes (27): type, type, additionalProperties, properties, type, definitions, Cre
 
 ### Community 587 - "Community 587"
 Cohesion: 0.07
-Nodes (29): $ref, $ref, $ref, $ref, type, type, $ref, $ref (+21 more)
+Nodes (27): $ref, $ref, $ref, $ref, type, type, $ref, $ref (+19 more)
 
 ### Community 588 - "Community 588"
 Cohesion: 0.09
@@ -8282,15 +8298,15 @@ Nodes (26): type, additionalProperties, createOnlyProperties, description, type,
 
 ### Community 590 - "Community 590"
 Cohesion: 0.09
-Nodes (20): disable_analytics(), enable_analytics(), mock_runtime(), MockComponents, MockRuntime, Makes sure that all tests in this package are executed with analytics enabled., Makes sure that all tests in this package are executed with analytics enabled., Ensures each test starts with a fresh MetricRegistry. (+12 more)
+Nodes (21): disable_analytics(), enable_analytics(), mock_runtime(), MockComponents, MockRuntime, Makes sure that all tests in this package are executed with analytics enabled., Makes sure that all tests in this package are executed with analytics enabled., Ensures each test starts with a fresh MetricRegistry. (+13 more)
 
 ### Community 591 - "Community 591"
 Cohesion: 0.07
 Nodes (27): DeleteMarkers, EncodingType, IsTruncated, KeyMarker, MaxKeys, Name, Prefix, ResponseMetadata (+19 more)
 
 ### Community 592 - "Community 592"
-Cohesion: 0.15
-Nodes (22): Error, Code, Message, Type, Error, ResponseMetadata, Error, ResponseMetadata (+14 more)
+Cohesion: 0.18
+Nodes (19): Error, Code, Message, Type, Error, Error, Error, ResponseMetadata (+11 more)
 
 ### Community 593 - "Community 593"
 Cohesion: 0.07
@@ -8321,8 +8337,8 @@ Cohesion: 0.10
 Nodes (25): call, setup, teardown, total, tests/aws/services/cloudformation/test_change_set_mappings.py::TestChangeSetMappings::test_fn_find_in_map_with_multiple_nested_functions, durations_in_seconds, last_validated_date, tests/aws/services/cloudformation/test_change_set_mappings.py::TestChangeSetMappings::test_fn_find_in_map_with_nested_ref (+17 more)
 
 ### Community 600 - "Community 600"
-Cohesion: 0.15
-Nodes (23): ResponseMetadata, ResponseMetadata, ResponseMetadata, ResponseMetadata, ResponseMetadata, ResponseMetadata, Messages, ResponseMetadata (+15 more)
+Cohesion: 0.12
+Nodes (26): ResponseMetadata, ResponseMetadata, ResponseMetadata, ResponseMetadata, ResponseMetadata, ResponseMetadata, Messages, ResponseMetadata (+18 more)
 
 ### Community 601 - "Community 601"
 Cohesion: 0.12
@@ -8345,8 +8361,8 @@ Cohesion: 0.15
 Nodes (25): call, setup, teardown, total, tests/aws/services/lambda_/test_lambda_destinations.py::TestLambdaDestinationEventbridge::test_invoke_lambda_eventbridge, durations_in_seconds, last_validated_date, tests/aws/services/lambda_/test_lambda_destinations.py::TestLambdaDestinationSqs::test_assess_lambda_destination_invocation[payload0] (+17 more)
 
 ### Community 606 - "Community 606"
-Cohesion: 0.10
-Nodes (10): ProxyHandler, Directly serves a localstack.platform.http.proxy.Proxy as a HandlerChain Handler.     Thi, GatewayServer, HypercornServer, Creates a new ProxyServer instance.          :param forward_base_url: URL of the, A sync wrapper around Hypercorn that implements the ``Server`` interface., Create a new Hypercorn server instance. Note that, if you pass an event loop to, A Hypercorn-based server implementation which serves a given Gateway.     It can (+2 more)
+Cohesion: 0.14
+Nodes (7): ProxyHandler, Directly serves a localstack.platform.http.proxy.Proxy as a HandlerChain Handler, HypercornServer, Creates a new ProxyServer instance.          :param forward_base_url: URL of the, A sync wrapper around Hypercorn that implements the ``Server`` interface., Create a new Hypercorn server instance. Note that, if you pass an event loop to, TestPathForwarder
 
 ### Community 608 - "Community 608"
 Cohesion: 0.15
@@ -8361,8 +8377,8 @@ Cohesion: 0.15
 Nodes (25): call, setup, teardown, total, tests/aws/services/logs/test_logs_resource_policies.py::TestResourcePolicies::test_delete_resource_policy, durations_in_seconds, last_validated_date, tests/aws/services/logs/test_logs_resource_policies.py::TestResourcePolicies::test_delete_resource_policy_not_found (+17 more)
 
 ### Community 611 - "Community 611"
-Cohesion: 0.09
-Nodes (32): S3Bucket, S3Key, DependsOn, Properties, Type, DependsOn, Properties, Type (+24 more)
+Cohesion: 0.13
+Nodes (26): S3Bucket, S3Key, Properties, DependsOn, Properties, Type, Variables, DependsOn (+18 more)
 
 ### Community 612 - "Community 612"
 Cohesion: 0.11
@@ -8374,7 +8390,7 @@ Nodes (15): type, type, type, type, type, properties, type, type (+7 more)
 
 ### Community 614 - "Community 614"
 Cohesion: 0.09
-Nodes (26): type, additionalProperties, properties, type, definitions, ColdStorageOptions, ElasticsearchClusterConfig, EncryptionAtRestOptions (+18 more)
+Nodes (26): type, additionalProperties, properties, type, definitions, ColdStorageOptions, DomainEndpointOptions, EncryptionAtRestOptions (+18 more)
 
 ### Community 615 - "Community 615"
 Cohesion: 0.09
@@ -8385,8 +8401,8 @@ Cohesion: 0.08
 Nodes (26): $ref, $ref, type, type, type, type, type, type (+18 more)
 
 ### Community 617 - "Community 617"
-Cohesion: 0.08
-Nodes (26): cacheDataEncrypted, cacheTtlInSeconds, cachingEnabled, dataTraceEnabled, cacheClusterEnabled, cacheClusterStatus, createdDate, deploymentId (+18 more)
+Cohesion: 0.14
+Nodes (14): cacheClusterEnabled, cacheClusterStatus, createdDate, deploymentId, description, lastUpdatedDate, ResponseMetadata, stageName (+6 more)
 
 ### Community 618 - "Community 618"
 Cohesion: 0.08
@@ -8401,20 +8417,20 @@ Cohesion: 0.08
 Nodes (26): Arn, CreationTime, CreatorRequestId, Direction, HostVPCId, Id, IpAddressCount, ModificationTime (+18 more)
 
 ### Community 621 - "Community 621"
-Cohesion: 0.05
-Nodes (36): CloudProvider, Meta-types shared by every cloud module under `localstack-core/localstack/<cloud, Metadata + lazy factories describing a registered cloud implementation., Register the cloud providers shipped in this repo.      Idempotent: safe to call, Register the cloud providers shipped in this repo.      Idempotent: safe to call, register_builtins(), MultiCloudEdge, _not_found() (+28 more)
+Cohesion: 0.15
+Nodes (10): MultiCloudEdge, _not_found(), Cross-cloud edge dispatcher.  Picks a registered cloud by host suffix and proxie, WSGI app routing per-host to the matching cloud gateway., client(), edge(), registry(), test_default_cloud_fallback() (+2 more)
 
 ### Community 622 - "Community 622"
 Cohesion: 0.08
-Nodes (26): Contents, ContinuationToken, Delimiter, EncodingType, IsTruncated, KeyCount, MaxKeys, Name (+18 more)
+Nodes (24): Contents, EncodingType, IsTruncated, KeyCount, MaxKeys, Name, Prefix, ResponseMetadata (+16 more)
 
 ### Community 623 - "Community 623"
-Cohesion: 0.08
-Nodes (26): Delimiter, EncodingType, IsTruncated, KeyMarker, MaxKeys, Name, NextKeyMarker, NextVersionIdMarker (+18 more)
+Cohesion: 0.07
+Nodes (27): Delimiter, EncodingType, IsTruncated, KeyMarker, MaxKeys, Name, NextKeyMarker, NextVersionIdMarker (+19 more)
 
 ### Community 624 - "Community 624"
-Cohesion: 0.20
-Nodes (19): clone(), assert_machine_created(), assert_machine_deleted(), _assert_machine_instances(), cleanup(), get_machine_arn(), # TODO: implement list_tags_for_resource, # TODO: add support for loggingConfiguration. (+11 more)
+Cohesion: 0.16
+Nodes (22): test_api_gateway_authorizer_crud(), clone(), assert_machine_created(), assert_machine_deleted(), _assert_machine_instances(), cleanup(), get_machine_arn(), # TODO: implement list_tags_for_resource (+14 more)
 
 ### Community 625 - "Community 625"
 Cohesion: 0.08
@@ -8501,8 +8517,8 @@ Cohesion: 0.08
 Nodes (25): TracingConfig, TracingConfig, Architectures, CodeSha256, CodeSize, Description, FunctionArn, FunctionName (+17 more)
 
 ### Community 646 - "Community 646"
-Cohesion: 0.11
-Nodes (24): CreateEventSourceMappingResponse, CreateEventSourceMappingResponse, ResponseMetadata, ExecutedVersion, Payload, ResponseMetadata, StatusCode, ResponseMetadata (+16 more)
+Cohesion: 0.10
+Nodes (25): CreateEventSourceMappingResponse, CreateEventSourceMappingResponse, ResponseMetadata, ResponseMetadata, ExecutedVersion, Payload, ResponseMetadata, StatusCode (+17 more)
 
 ### Community 647 - "Community 647"
 Cohesion: 0.08
@@ -8513,8 +8529,8 @@ Cohesion: 0.16
 Nodes (19): ResponseMetadata, ResponseMetadata, ResponseMetadata, tags, ResponseMetadata, ResponseMetadata, ResponseMetadata, tags (+11 more)
 
 ### Community 649 - "Community 649"
-Cohesion: 0.16
-Nodes (5): BranchWorker, BranchWorkerComm, on_terminated(), BranchesDecl, BranchWorkerPool
+Cohesion: 0.07
+Nodes (45): is_protocol_in_service_model_identifier(), :param protocol: the protocol name to check     :param service_model_identifier:, Identifies a specific service model.     If the protocol is not given, the defau, ServiceModelIdentifier, _botocore_request_to_localstack_request(), _collect_operations(), _create_dummy_request_args(), _generate_test_name() (+37 more)
 
 ### Community 650 - "Community 650"
 Cohesion: 0.12
@@ -8525,12 +8541,12 @@ Cohesion: 0.12
 Nodes (10): BaseCloudWatchHttpClient, CloudWatchCBORHTTPClient, CloudWatchJSONHTTPClient, CloudWatchQueryHTTPClient, get_cloudwatch_client(), host(), # FIXME: the snapshot library doesn't deal well with ResponseMetadata in raw res, Simple HTTP client for making CloudWatch requests manually using different proto (+2 more)
 
 ### Community 652 - "Community 652"
-Cohesion: 0.12
-Nodes (8): Once, once_func(), An object that will perform an action exactly once.     Inspired by Golang's [sy, `do` calls the function `fn()` if-and-only-if `do` has never been called before., Wraps and returns a function that can only ever execute once.      The first cal, test_synchronized_defaultdict(), TestOnce, TestOnceDecorator
+Cohesion: 0.07
+Nodes (19): decrypt(), encrypt(), pad(), pkcs7_envelope_encrypt(), Create a PKCS7 wrapper of some plaintext decryptable by recipient_pubkey.  Uses, # TODO: Cleaner code to load the cert dynamically, unpad(), Once (+11 more)
 
 ### Community 653 - "Community 653"
-Cohesion: 0.07
-Nodes (28): description, $ref, description, type, description, type, description, type (+20 more)
+Cohesion: 0.08
+Nodes (25): description, $ref, description, type, description, type, description, $ref (+17 more)
 
 ### Community 654 - "Community 654"
 Cohesion: 0.08
@@ -8541,8 +8557,8 @@ Cohesion: 0.08
 Nodes (25): type, type, type, type, type, type, type, type (+17 more)
 
 ### Community 656 - "Community 656"
-Cohesion: 0.07
-Nodes (28): additionalProperties, properties, type, CognitoOptions, EncryptionAtRestOptions, NodeToNodeEncryptionOptions, OffPeakWindowOptions, type (+20 more)
+Cohesion: 0.08
+Nodes (24): type, EncryptionAtRestOptions, LogPublishingOption, NodeToNodeEncryptionOptions, OffPeakWindowOptions, type, additionalProperties, properties (+16 more)
 
 ### Community 657 - "Community 657"
 Cohesion: 0.08
@@ -8557,20 +8573,20 @@ Cohesion: 0.11
 Nodes (25): ResponseMetadata, ResponseMetadata, ResponseMetadata, managed_policy, role_inline_policy, role_updated_inline_policy, user_inline_policy, user_updated_inline_policy (+17 more)
 
 ### Community 660 - "Community 660"
-Cohesion: 0.06
-Nodes (31): main(), Serve the LocalstackGateway with the default configuration directly through hype, Creates a new GatewayServer instance.          :param gateway: which will be ser, custom_httpserver_with_ssl(), test_http_clients_respect_verify(), delete_cached_certificate(), ProtocolWrapper, # FIXME: but the infrastructure shutdown should be much cleaner, core components (+23 more)
+Cohesion: 0.10
+Nodes (21): main(), Serve the LocalstackGateway with the default configuration directly through hype, Creates a new GatewayServer instance.          :param gateway: which will be ser, custom_httpserver_with_ssl(), test_http_clients_respect_verify(), delete_cached_certificate(), # FIXME: but the infrastructure shutdown should be much cleaner, core components, Implementation of the edge.do_start_edge_proxy interface to start a Hypercorn se (+13 more)
 
 ### Community 661 - "Community 661"
 Cohesion: 0.08
-Nodes (25): CommonPrefixes, Contents, Delimiter, EncodingType, IsTruncated, KeyCount, MaxKeys, Name (+17 more)
+Nodes (25): CommonPrefixes, Delimiter, EncodingType, IsTruncated, KeyCount, MaxKeys, Name, NextContinuationToken (+17 more)
 
 ### Community 662 - "Community 662"
-Cohesion: 0.14
-Nodes (18): ResponseMetadata, Metadata, ResponseMetadata, Rules, ResponseMetadata, CreatedTimestamp, Name, Metadata (+10 more)
+Cohesion: 0.10
+Nodes (25): ResponseMetadata, Metadata, ResponseMetadata, Rules, ResponseMetadata, CreatedTimestamp, Name, Metadata (+17 more)
 
 ### Community 663 - "Community 663"
-Cohesion: 0.08
-Nodes (29): ResponseMetadata, TopicArn, ResponseMetadata, ResponseMetadata, create-topic, delete-topic, get-topic-attrs, response-created (+21 more)
+Cohesion: 0.12
+Nodes (19): MessageId, ResponseMetadata, duplicate-json-keys, response-created, response-same-arn-0, response-same-arn-1, response-same-arn-2, ResponseMetadata (+11 more)
 
 ### Community 664 - "Community 664"
 Cohesion: 0.08
@@ -8617,24 +8633,24 @@ Cohesion: 0.12
 Nodes (23): Id, ResponseMetadata, StackId, ResponseMetadata, ResponseMetadata, <stack-name:1>, Topic1, create-change-set-2 (+15 more)
 
 ### Community 675 - "Community 675"
-Cohesion: 0.16
-Nodes (16): ResponseMetadata, ResponseMetadata, <stack-name:1>, Topic1, execute-change-set-1, execute-change-set-2, per-resource-events, tests/aws/services/cloudformation/test_change_set_fn_sub.py::TestChangeSetFnSub::test_fn_sub_addition_string_pseudo (+8 more)
+Cohesion: 0.13
+Nodes (23): Id, StackId, Id, StackId, <stack-name:1>, Topic1, create-change-set-1, create-change-set-2 (+15 more)
 
 ### Community 676 - "Community 676"
 Cohesion: 0.13
 Nodes (23): Id, StackId, Id, StackId, Foo, <stack-name:1>, create-change-set-1, create-change-set-2 (+15 more)
 
 ### Community 677 - "Community 677"
-Cohesion: 0.10
-Nodes (21): ResponseMetadata, ResponseMetadata, StreamDescription, Records, create-table, describe-stream, get-records, CreationRequestDateTime (+13 more)
+Cohesion: 0.09
+Nodes (24): ResponseMetadata, UnprocessedItems, ResponseMetadata, ResponseMetadata, StreamDescription, Records, batch-write-response-delete, create-table (+16 more)
 
 ### Community 678 - "Community 678"
 Cohesion: 0.11
 Nodes (23): call, setup, teardown, total, tests/aws/services/cloudformation/engine/test_references.py::test_aws_novalue[no], durations_in_seconds, last_validated_date, tests/aws/services/cloudformation/engine/test_references.py::test_aws_novalue[yes] (+15 more)
 
 ### Community 679 - "Community 679"
-Cohesion: 0.10
-Nodes (20): BatchSize, BisectBatchOnFunctionError, EventSourceArn, EventSourceMappingArn, FilterCriteria, FunctionArn, FunctionResponseTypes, LastModified (+12 more)
+Cohesion: 0.08
+Nodes (24): BatchSize, BisectBatchOnFunctionError, EventSourceArn, EventSourceMappingArn, FilterCriteria, FunctionArn, FunctionResponseTypes, LastModified (+16 more)
 
 ### Community 680 - "Community 680"
 Cohesion: 0.08
@@ -8658,19 +8674,19 @@ Nodes (13): generate_ir_for_type(), IR, Item, new(), PrimitiveStruct, PropertyTy
 
 ### Community 685 - "Community 685"
 Cohesion: 0.08
-Nodes (23): tests/aws/services/lambda_/test_lambda.py::TestLambdaBehavior::test_lambda_invoke_timed_out_environment_reuse, last_validated_date, tests/aws/services/lambda_/test_lambda.py::TestLambdaConcurrency::test_lambda_provisioned_concurrency_moves_with_alias, last_validated_date, tests/aws/services/lambda_/test_lambda.py::TestLambdaErrors::test_lambda_runtime_exit, durations_in_seconds, last_validated_date, tests/aws/services/lambda_/test_lambda.py::TestLambdaFeatures::test_invocation_type_dry_run[nodejs16.x] (+15 more)
+Nodes (23): tests/aws/services/lambda_/test_lambda.py::TestLambdaBehavior::test_lambda_invoke_timed_out_environment_reuse, last_validated_date, tests/aws/services/lambda_/test_lambda.py::TestLambdaConcurrency::test_lambda_provisioned_concurrency_moves_with_alias, last_validated_date, tests/aws/services/lambda_/test_lambda.py::TestLambdaConcurrency::test_reserved_concurrency, durations_in_seconds, last_validated_date, tests/aws/services/lambda_/test_lambda.py::TestLambdaErrors::test_lambda_runtime_error (+15 more)
 
 ### Community 686 - "Community 686"
-Cohesion: 0.08
-Nodes (19): query_dns(), Check if deletion with and without ids works as expected, Test whether the dns server correctly works when multiple hosts are added, Check if server resolves aliases with wildcards, Check if soa records work with suffix matching, Test a wildcard matching and the skip bypass, Test adding records pointing to LS at all times, End to end tests of our DNS server implementation.     These tests use the `exam (+11 more)
+Cohesion: 0.09
+Nodes (23): TargetRecord, dns_server(), query_dns(), Check if deletion with and without ids works as expected, Test whether the dns server correctly works when multiple hosts are added, Check if server resolves aliases with wildcards, Check if soa records work with suffix matching, Test a wildcard matching and the skip bypass (+15 more)
 
 ### Community 687 - "Community 687"
 Cohesion: 0.08
 Nodes (24): DedicatedMasterEnabled, InstanceCount, InstanceType, ZoneAwarenessEnabled, DeletionPolicy, Properties, Type, UpdateReplacePolicy (+16 more)
 
 ### Community 688 - "Community 688"
-Cohesion: 0.09
-Nodes (29): Statement, Version, Properties, Type, Properties, Type, DeletionPolicy, Properties (+21 more)
+Cohesion: 0.10
+Nodes (24): Statement, Version, Properties, Type, Properties, Type, DeletionPolicy, Properties (+16 more)
 
 ### Community 689 - "Community 689"
 Cohesion: 0.34
@@ -8733,8 +8749,8 @@ Cohesion: 0.08
 Nodes (24): Arn, AssociationCount, CreationTime, CreatorRequestId, DestinationArn, Id, Name, OwnerId (+16 more)
 
 ### Community 704 - "Community 704"
-Cohesion: 0.13
-Nodes (9): create_from_environment(), LocalstackRuntime, The localstack runtime. It has the following responsibilities:        - Manage l, Creates a new runtime instance from the current environment. It uses a plugin ma, # TODO: move away from `localstack.platform.runtime.events` and instantiate new `threadin, Start the main control loop of the runtime and block the thread. This will initi, # TODO: ideally we pass down a `shutdown` event that can be waited on so we can, Sets the exit code and runs ``shutdown``. It does not actually call ``sys.exit`` (+1 more)
+Cohesion: 0.07
+Nodes (26): Plugin, PluginManager, BaseComponents, Components, gateway(), This package contains code to define and manage the core components that make up, A Plugin that allows a specific localstack runtime implementation (aws, snowflak, A component base, which includes a ``RuntimeServer`` created from the config var (+18 more)
 
 ### Community 705 - "Community 705"
 Cohesion: 0.08
@@ -8746,7 +8762,7 @@ Nodes (24): Body, StatusCode, Body, StatusCode, Body, Body, StatusCode, StatusCo
 
 ### Community 707 - "Community 707"
 Cohesion: 0.08
-Nodes (24): EncodingType, IsTruncated, KeyMarker, MaxKeys, Name, Prefix, ResponseMetadata, VersionIdMarker (+16 more)
+Nodes (24): EncodingType, IsTruncated, KeyMarker, MaxKeys, Name, NextKeyMarker, NextVersionIdMarker, Prefix (+16 more)
 
 ### Community 708 - "Community 708"
 Cohesion: 0.08
@@ -8765,20 +8781,20 @@ Cohesion: 0.09
 Nodes (23): exception_typename, exception_value, events, ResponseMetadata, exception, get_execution_history, HTTPHeaders, HTTPStatusCode (+15 more)
 
 ### Community 712 - "Community 712"
-Cohesion: 0.10
-Nodes (18): Encoder, dump(), dumps(), get_default_decoder(), get_default_encoder(), load(), loads(), PickleEncoder (+10 more)
+Cohesion: 0.05
+Nodes (49): Decoder, Encoder, MetaCatchingDict, create_decoder(), create_encoder(), get_default_decoder(), get_default_encoder(), Factory for encoders and decoders (+41 more)
 
 ### Community 713 - "Community 713"
 Cohesion: 0.10
 Nodes (23): test_case_response, cause, error, output, status, tests/aws/services/stepfunctions/v2/test_state/test_state_configuration.py::TestStateConfiguration::test_map_state_error_caused_by_state[DEBUG], recorded-content, recorded-date (+15 more)
 
 ### Community 714 - "Community 714"
-Cohesion: 0.10
-Nodes (22): message, ResponseMetadata, creationDate, ResponseMetadata, stateMachineArn, creationDate, name, ResponseMetadata (+14 more)
+Cohesion: 0.09
+Nodes (24): message, ResponseMetadata, creationDate, ResponseMetadata, stateMachineArn, creationDate, name, ResponseMetadata (+16 more)
 
 ### Community 715 - "Community 715"
-Cohesion: 0.09
-Nodes (23): creationDate, ResponseMetadata, stateMachineArn, events, ResponseMetadata, executionArn, ResponseMetadata, startDate (+15 more)
+Cohesion: 0.11
+Nodes (24): creationDate, ResponseMetadata, stateMachineArn, events, ResponseMetadata, executions, ResponseMetadata, executionArn (+16 more)
 
 ### Community 716 - "Community 716"
 Cohesion: 0.11
@@ -8805,8 +8821,8 @@ Cohesion: 0.09
 Nodes (23): responseParameters, statusCode, data, cacheKeyParameters, cacheNamespace, contentHandling, credentials, httpMethod (+15 more)
 
 ### Community 722 - "Community 722"
-Cohesion: 0.13
-Nodes (23): S3Bucket, S3Key, ZipFile, Properties, DependsOn, Properties, Type, DependsOn (+15 more)
+Cohesion: 0.10
+Nodes (31): S3Bucket, S3Key, ZipFile, Variables, Fn::GetAtt, Properties, DependsOn, Properties (+23 more)
 
 ### Community 723 - "Community 723"
 Cohesion: 0.10
@@ -8817,28 +8833,28 @@ Cohesion: 0.09
 Nodes (23): ResponseMetadata, StagesAvailable, StagesAvailable, original_template, processed_template, tests/aws/services/cloudformation/test_template_engine.py::TestMacros::test_capabilities_requirements, recorded-content, recorded-date (+15 more)
 
 ### Community 725 - "Community 725"
-Cohesion: 0.09
-Nodes (20): extract_account_id_from_access_key_id(), get_account_id_from_access_key_id(), Functionality related to AWS Accounts, Extract account id from access key id      Example:         "ASIAQAAAAAAAGMKEM7X, Return the Account ID associated the Access Key ID., extract_access_key_id_from_auth_header(), extract_account_id_from_auth_header(), extract_account_id_from_headers() (+12 more)
+Cohesion: 0.12
+Nodes (16): extract_account_id_from_access_key_id(), get_account_id_from_access_key_id(), Functionality related to AWS Accounts, Extract account id from access key id      Example:         "ASIAQAAAAAAAGMKEM7X, Return the Account ID associated the Access Key ID., extract_access_key_id_from_auth_header(), extract_account_id_from_auth_header(), extract_account_id_from_headers() (+8 more)
 
 ### Community 726 - "Community 726"
 Cohesion: 0.09
 Nodes (23): BatchSize, BisectBatchOnFunctionError, EventSourceArn, EventSourceMappingArn, FilterCriteria, FunctionArn, FunctionResponseTypes, LastModified (+15 more)
 
 ### Community 727 - "Community 727"
-Cohesion: 0.12
-Nodes (23): ResponseMetadata, ResponseMetadata, ResponseMetadata, message, ResponseMetadata, Type, message, ResponseMetadata (+15 more)
+Cohesion: 0.19
+Nodes (20): ResponseMetadata, ResponseMetadata, ResponseMetadata, ResponseMetadata, ResponseMetadata, ResponseMetadata, ResponseMetadata, ResponseMetadata (+12 more)
 
 ### Community 728 - "Community 728"
-Cohesion: 0.11
-Nodes (21): TestEventPatternResponse, test_event_pattern(), Filter events using the EventBridge event patterns:         https://docs.aws.ama, matches_event(), Match events based on configured rule engine.      Note: Different services hand, validate_event_pattern(), Test with mixed string/dict inputs, Test with non-matching pattern (+13 more)
+Cohesion: 0.12
+Nodes (20): TestEventPatternResponse, test_event_pattern(), matches_event(), Match events based on configured rule engine.      Note: Different services hand, validate_event_pattern(), Test with mixed string/dict inputs, Test with non-matching pattern, Test with invalid JSON strings (+12 more)
 
 ### Community 729 - "Community 729"
 Cohesion: 0.09
 Nodes (22): content, description, components, schemas, application/json, title, type, get (+14 more)
 
 ### Community 730 - "Community 730"
-Cohesion: 0.10
-Nodes (21): description, enum, type, SnapStart, SnapStartResponse, description, enum, type (+13 more)
+Cohesion: 0.09
+Nodes (23): description, enum, type, SnapStart, SnapStartResponse, description, enum, type (+15 more)
 
 ### Community 731 - "Community 731"
 Cohesion: 0.10
@@ -8853,12 +8869,12 @@ Cohesion: 0.17
 Nodes (23): CreateFunctionResponse, Architectures, CodeSha256, CodeSize, Description, Environment, EphemeralStorage, FunctionArn (+15 more)
 
 ### Community 734 - "Community 734"
-Cohesion: 0.09
-Nodes (23): TracingConfig, TracingConfig, Architectures, CodeSha256, CodeSize, Description, FunctionArn, FunctionName (+15 more)
+Cohesion: 0.11
+Nodes (19): Architectures, CodeSha256, CodeSize, Description, FunctionArn, FunctionName, Handler, LastModified (+11 more)
 
 ### Community 735 - "Community 735"
-Cohesion: 0.20
-Nodes (18): ResponseMetadata, ResponseMetadata, ResponseMetadata, ResponseMetadata, ResponseMetadata, ResponseMetadata, ResponseMetadata, delete_item (+10 more)
+Cohesion: 0.15
+Nodes (23): ResponseMetadata, ResponseMetadata, ResponseMetadata, ResponseMetadata, ResponseMetadata, ResponseMetadata, ResponseMetadata, delete_item (+15 more)
 
 ### Community 736 - "Community 736"
 Cohesion: 0.17
@@ -8881,12 +8897,12 @@ Cohesion: 0.17
 Nodes (13): EC2VPCProperties, EC2VPCProvider, generate_vpc_read_payload(), _get_default_acl_for_vpc(), _get_default_security_group_for_vpc(), # TODO: validations, # TODO: defaults, # TODO: idempotency (+5 more)
 
 ### Community 742 - "Community 742"
-Cohesion: 0.13
-Nodes (18): ResponseMetadata, deliverySources, ResponseMetadata, ResponseMetadata, ResponseMetadata, create-delivery, describe-delivery-sources, get-delivery (+10 more)
+Cohesion: 0.10
+Nodes (23): ResponseMetadata, deliverySources, ResponseMetadata, ResponseMetadata, ResponseMetadata, ResponseMetadata, create-delivery, describe-delivery-sources (+15 more)
 
 ### Community 743 - "Community 743"
-Cohesion: 0.18
-Nodes (11): ResponseMetadata, error-not-found, tests/aws/services/logs/test_logs_delivery.py::TestDeliveryDestinations::test_delete_delivery_destination_not_found, recorded-content, recorded-date, tests/aws/services/logs/test_logs_delivery.py::TestDeliveryDestinations::test_get_delivery_destination_not_found, recorded-content, recorded-date (+3 more)
+Cohesion: 0.09
+Nodes (22): describe-deliveries, describe-delivery-destinations, tests/aws/services/logs/test_logs_delivery.py::TestDeliveries::test_create_delivery, recorded-date, tests/aws/services/logs/test_logs_delivery.py::TestDeliveries::test_describe_deliveries, recorded-content, recorded-date, tests/aws/services/logs/test_logs_delivery.py::TestDeliveryDestinationPolicies::test_delete_delivery_destination_policy (+14 more)
 
 ### Community 744 - "Community 744"
 Cohesion: 0.17
@@ -8897,8 +8913,8 @@ Cohesion: 0.11
 Nodes (22): Value, Value, Value, Value, Outputs, ClicksBucketDestinationName, DeliveryStreamArn, DeliveryStreamName (+14 more)
 
 ### Community 746 - "Community 746"
-Cohesion: 0.14
-Nodes (10): _create_shell_command(), _environment_variables(), KinesisMockNodeServer, KinesisMockScalaServer, KinesisMockServer, KinesisServerManager, Creates a new Kinesis Mock server instance. Installs Kinesis Mock on the host fi, Server abstraction for controlling Kinesis Mock in a separate thread (+2 more)
+Cohesion: 0.07
+Nodes (19): LogEntry, LoggingDataStore, LogSink, LoggingProvider, _match_filter(), _now(), _project_from_log_name(), _json() (+11 more)
 
 ### Community 747 - "Community 747"
 Cohesion: 0.21
@@ -8909,20 +8925,20 @@ Cohesion: 0.25
 Nodes (5): EdgeRouterHandler, Handlers for compatibility with legacy thread local storages., This is a hack to work around performance issues with h11 and boto. See     http, set_close_connection_header(), RouterHandler
 
 ### Community 749 - "Community 749"
-Cohesion: 0.11
-Nodes (10): PythonPackageInstaller, Package installer which allows the runtime-installation of additional python pac, Normalized the Python package name according to PEP440.         https://packagin, If the venv is already present, it just needs to be initialized once., exists(), Encapsulates methods to operate and navigate on a python virtual environment., Uses the virtualenv cli to create the virtual environment.         :return:, Add a <name>.pth file into the virtual environment and append the given path to (+2 more)
+Cohesion: 0.07
+Nodes (14): AssignDecl, CatchDecl, CatcherDecl, CatcherOutput, from_catcher_props(), CatcherOutcome, CatcherOutcomeCaught, CatcherOutcomeNotCaught (+6 more)
 
 ### Community 750 - "Community 750"
-Cohesion: 0.25
-Nodes (12): ApiGatewayVersion, auth_identity(), authorizer_result(), authorizer_type(), domain_name(), domain_prefix(), integration_uri(), invocation_path() (+4 more)
+Cohesion: 0.05
+Nodes (42): # TODO: remove imports from here (need to update any client code that imports th, # TODO: remove imports from here (need to update any client code that imports th, # TODO: remove imports from here (need to update any client code that imports th, # TODO: remove imports from here (need to update any client code that imports th, # TODO: remove imports from here (need to update any client code that imports th, # TODO: remove imports from here (need to update any client code that imports th, # TODO: remove imports from here (need to update any client code that imports th, # TODO: remove imports from here (need to update any client code that imports th (+34 more)
 
 ### Community 751 - "Community 751"
-Cohesion: 0.14
-Nodes (17): decode(), get_sqs_client(), has_enough_time_for_retry(), Poller, # TODO: optimize this client configuration. Do we need to consider client cachin, # TODO: think about scaling, test it, make it configurable?!, # TODO: consider replacing with short polling instead of long polling to prevent, # NOTE: queueing within the thread pool executor could lead to double executions (+9 more)
+Cohesion: 0.10
+Nodes (22): decode(), get_sqs_client(), has_enough_time_for_retry(), LambdaEventManager, LegacyInvocationException, Poller, # TODO: optimize this client configuration. Do we need to consider client cachin, # TODO: think about scaling, test it, make it configurable?! (+14 more)
 
 ### Community 752 - "Community 752"
-Cohesion: 0.08
-Nodes (18): get_aws_catalog(), OpenAPIResponseValidator, OpenAPIValidator, Handlers for validating request and response schema against OpenAPI specs., Load the openapi spec plugins iff at least one between request and response vali, PluginManager, runtime_server(), hook() (+10 more)
+Cohesion: 0.22
+Nodes (7): hook(), hook_spec(), HookManager, Decorator for creating functional plugins that have a hook_priority attribute. H, Creates a new hook decorator bound to a namespace.      on_infra_start = hook_sp, Loads all hook plugins and sorts them by their hook_priority attribute., Loads and runs all plugins in order them with the given arguments.
 
 ### Community 753 - "Community 753"
 Cohesion: 0.11
@@ -8937,8 +8953,8 @@ Cohesion: 0.05
 Nodes (41): type, items, type, uniqueItems, type, type, items, type (+33 more)
 
 ### Community 756 - "Community 756"
-Cohesion: 0.09
-Nodes (23): $ref, type, type, type, properties, type, type, ColdStorageOptions (+15 more)
+Cohesion: 0.08
+Nodes (26): $ref, type, type, type, ElasticsearchClusterConfig, additionalProperties, properties, type (+18 more)
 
 ### Community 757 - "Community 757"
 Cohesion: 0.10
@@ -8993,12 +9009,12 @@ Cohesion: 0.11
 Nodes (23): Message, ResponseMetadata, ResponseMetadata, GetError, GetJob, same-transcription-job-name, TranscribeErrorInvalidLength, TranscriptionJob (+15 more)
 
 ### Community 770 - "Community 770"
-Cohesion: 0.11
-Nodes (29): activityArn, creationDate, activityArn, creationDate, create_activity_response, create_activity_response_duplicate, delete_activity_response, delete_activity_response_2 (+21 more)
+Cohesion: 0.10
+Nodes (32): activityArn, creationDate, activityArn, creationDate, create_activity_response, create_activity_response_duplicate, delete_activity_response, delete_activity_response_2 (+24 more)
 
 ### Community 771 - "Community 771"
-Cohesion: 0.06
-Nodes (16): AzureNotFound, Raised when an Azure resource cannot be found., ServiceBusDataPlaneStore, ServiceBusMessage, ServiceBusNamespaceState, ServiceBusQueue, ServiceBusSubscription, ServiceBusTopic (+8 more)
+Cohesion: 0.08
+Nodes (20): _provider_with_resource_group(), _provider_with_storage_account(), test_blob_container_requires_existing_storage_account(), test_blob_requires_existing_container(), test_create_get_list_and_delete_blob_container(), test_create_get_list_and_delete_storage_account(), test_create_list_and_delete_queue(), test_delete_storage_account_clears_blob_and_queue_data_plane() (+12 more)
 
 ### Community 772 - "Community 772"
 Cohesion: 0.09
@@ -9017,8 +9033,8 @@ Cohesion: 0.14
 Nodes (22): events, ResponseMetadata, events, ResponseMetadata, events, ResponseMetadata, events, ResponseMetadata (+14 more)
 
 ### Community 776 - "Community 776"
-Cohesion: 0.11
-Nodes (22): ResponseMetadata, ProgressEvent, ResponseMetadata, cancel_in_success_exc, create_response, tests/aws/services/cloudcontrol/test_cloudcontrol_api.py::TestCloudControlResourceApi::test_create_exceptions, recorded-date, tests/aws/services/cloudcontrol/test_cloudcontrol_api.py::TestCloudControlResourceApi::test_double_create_with_client_token (+14 more)
+Cohesion: 0.12
+Nodes (21): ResponseMetadata, ResponseMetadata, cancel_in_success_exc, create_response, tests/aws/services/cloudcontrol/test_cloudcontrol_api.py::TestCloudControlResourceApi::test_create_exceptions, recorded-date, tests/aws/services/cloudcontrol/test_cloudcontrol_api.py::TestCloudControlResourceApi::test_double_create_with_client_token, recorded-content (+13 more)
 
 ### Community 777 - "Community 777"
 Cohesion: 0.09
@@ -9033,24 +9049,24 @@ Cohesion: 0.09
 Nodes (22): CompositeAlarms, LogAlarms, MetricAlarms, describe-alarms, tests/aws/services/cloudwatch/test_cloudwatch.py::TestCloudwatch::test_describe_alarms_converts_date_format_correctly[json], recorded-content, recorded-date, tests/aws/services/cloudwatch/test_cloudwatch.py::TestCloudwatch::test_describe_alarms_converts_date_format_correctly[query] (+14 more)
 
 ### Community 780 - "Community 780"
-Cohesion: 0.12
-Nodes (24): ResponseMetadata, VpcPeeringConnections, GroupId, ResponseMetadata, SecurityGroupArn, ResponseMetadata, ResponseMetadata, SecurityGroupForVpcs (+16 more)
+Cohesion: 0.13
+Nodes (22): ResponseMetadata, VpcPeeringConnections, GroupId, ResponseMetadata, SecurityGroupArn, ResponseMetadata, ResponseMetadata, SecurityGroupForVpcs (+14 more)
 
 ### Community 781 - "Community 781"
 Cohesion: 0.09
 Nodes (22): CreationTimestamp, DnsEntries, DnsOptions, Groups, IpAddressType, NetworkInterfaceIds, OwnerId, PolicyDocument (+14 more)
 
 ### Community 782 - "Community 782"
-Cohesion: 0.09
-Nodes (26): message, Type, exception_event_source_creation, lambda-log-events, lambda-multiple-log-events, table_creation_response, tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_dynamodbstreams.py::TestDynamoDBEventSourceMapping::test_deletion_event_source_mapping_with_dynamodb, recorded-date (+18 more)
+Cohesion: 0.12
+Nodes (21): lambda-log-events, lambda-multiple-log-events, table_creation_response, ResponseMetadata, tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_dynamodbstreams.py::TestDynamoDBEventSourceMapping::test_deletion_event_source_mapping_with_dynamodb, recorded-date, tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_dynamodbstreams.py::TestDynamoDBEventSourceMapping::test_disabled_dynamodb_event_source_mapping, recorded-content (+13 more)
 
 ### Community 783 - "Community 783"
 Cohesion: 0.08
 Nodes (28): MultiRegionConfiguration, MultiRegionKeyType, PrimaryKey, ReplicaKeys, Arn, Region, replicate-key, Arn (+20 more)
 
 ### Community 784 - "Community 784"
-Cohesion: 0.14
-Nodes (14): stack_created, Capabilities, ChangeSetId, CreationTime, DisableRollback, EnableTerminationProtection, LastUpdatedTime, NotificationARNs (+6 more)
+Cohesion: 0.10
+Nodes (20): stack_created, stack_resources, Capabilities, ChangeSetId, CreationTime, DisableRollback, EnableTerminationProtection, LastUpdatedTime (+12 more)
 
 ### Community 785 - "Community 785"
 Cohesion: 0.25
@@ -9061,20 +9077,20 @@ Cohesion: 0.09
 Nodes (22): BillingMode, LastUpdateToPayPerRequestDateTime, Table, NumberOfDecreasesToday, ReadCapacityUnits, WriteCapacityUnits, AttributeDefinitions, BillingModeSummary (+14 more)
 
 ### Community 787 - "Community 787"
-Cohesion: 0.16
-Nodes (12): ArnData, CloudWatchLoggingConfiguration, CloudWatchLoggingSession, extract_log_arn_parts_from(), from_logging_configuration(), HistoryLog, is_logging_enabled_for(), # TODO: AWS appears to append a date and a serial number to the log (+4 more)
+Cohesion: 0.05
+Nodes (39): 0. Pré-requisitos, 1. Ambiente Python, 1a. Make + venv (caminho oficial), 1b. Conda (alternativa), 2. Sanidade do ambiente, 3. Rodar testes, 4. Lint / format antes de commitar, 5. Subir o container LocalStack (+31 more)
 
 ### Community 788 - "Community 788"
 Cohesion: 0.13
 Nodes (16): ConfigurationSetAttributes, DkimAttributes, DkimSigningAttributes, FeedbackAttributes, MailFromAttributes, # TODO: idempotency, # TODO: actually create the resource, # TODO: check the status of the resource (+8 more)
 
 ### Community 789 - "Community 789"
-Cohesion: 0.22
-Nodes (14): ResponseMetadata, ResponseMetadata, ResponseMetadata, ResponseMetadata, ResponseMetadata, StackResources, ResponseMetadata, describe_stack_resources (+6 more)
+Cohesion: 0.15
+Nodes (22): ResponseMetadata, ResponseMetadata, Code, ResponseMetadata, Tags, Code, ResponseMetadata, Tags (+14 more)
 
 ### Community 790 - "Community 790"
-Cohesion: 0.13
-Nodes (20): _(), create_mocking_dispatch_table(), generate_arn(), generate_instance(), generate_request(), generate_response(), get_mocking_skeleton(), populate_graph() (+12 more)
+Cohesion: 0.08
+Nodes (31): _(), create_mocking_dispatch_table(), generate_arn(), generate_instance(), generate_request(), generate_response(), get_mocking_skeleton(), populate_graph() (+23 more)
 
 ### Community 791 - "Community 791"
 Cohesion: 0.12
@@ -9085,16 +9101,16 @@ Cohesion: 0.08
 Nodes (24): $ref, description, type, description, type, description, type, description (+16 more)
 
 ### Community 793 - "Community 793"
-Cohesion: 0.10
-Nodes (21): additionalProperties, properties, required, type, type, type, AttributeDefinition, DeprecatedHashKeyElement (+13 more)
+Cohesion: 0.15
+Nodes (14): additionalProperties, properties, required, type, type, type, AttributeDefinition, DeprecatedHashKeyElement (+6 more)
 
 ### Community 794 - "Community 794"
-Cohesion: 0.12
-Nodes (19): additionalProperties, createOnlyProperties, description, type, type, type, type, primaryIdentifier (+11 more)
+Cohesion: 0.08
+Nodes (25): type, additionalProperties, properties, type, DeadLetterConfig, type, type, type (+17 more)
 
 ### Community 795 - "Community 795"
-Cohesion: 0.08
-Nodes (25): type, HttpParameters, InputTransformer, patternProperties, type, additionalProperties, properties, type (+17 more)
+Cohesion: 0.10
+Nodes (22): type, InputTransformer, patternProperties, type, properties, patternProperties, type, type (+14 more)
 
 ### Community 796 - "Community 796"
 Cohesion: 0.09
@@ -9102,11 +9118,11 @@ Nodes (22): FilterCriteria, additionalProperties, description, properties, $ref,
 
 ### Community 797 - "Community 797"
 Cohesion: 0.12
-Nodes (22): description, items, maxLength, minLength, type, uniqueItems, description, enum (+14 more)
+Nodes (22): items, description, enum, maxLength, minLength, pattern, type, items (+14 more)
 
 ### Community 798 - "Community 798"
 Cohesion: 0.08
-Nodes (25): type, type, additionalProperties, type, definitions, ClusterConfig, EBSOptions, LogPublishingOption (+17 more)
+Nodes (25): additionalProperties, type, type, type, additionalProperties, type, definitions, AdvancedSecurityOptionsInput (+17 more)
 
 ### Community 799 - "Community 799"
 Cohesion: 0.08
@@ -9114,11 +9130,11 @@ Nodes (25): $ref, type, maxLength, type, properties, type, maxLength, pattern (+
 
 ### Community 800 - "Community 800"
 Cohesion: 0.08
-Nodes (26): maxLength, minLength, type, $ref, $ref, maxLength, minLength, type (+18 more)
+Nodes (26): maxLength, minLength, type, $ref, $ref, $ref, $ref, maxLength (+18 more)
 
 ### Community 801 - "Community 801"
-Cohesion: 0.15
-Nodes (14): responseModels, responseTemplates, selectionPattern, statusCode, responseModels, responseTemplates, selectionPattern, statusCode (+6 more)
+Cohesion: 0.10
+Nodes (22): responseModels, responseTemplates, selectionPattern, statusCode, responseModels, responseTemplates, selectionPattern, statusCode (+14 more)
 
 ### Community 802 - "Community 802"
 Cohesion: 0.13
@@ -9134,27 +9150,27 @@ Nodes (3): Choice_rule_comparison_compositeContext, Choice_rule_comparison_varia
 
 ### Community 806 - "Community 806"
 Cohesion: 0.10
-Nodes (22): Contents, EncodingType, IsTruncated, Marker, MaxKeys, Name, Prefix, ResponseMetadata (+14 more)
+Nodes (21): Contents, EncodingType, IsTruncated, Marker, MaxKeys, Name, Prefix, ResponseMetadata (+13 more)
 
 ### Community 807 - "Community 807"
-Cohesion: 0.08
-Nodes (25): items, type, uniqueItems, SageMakerPipelineParameters, $ref, items, type, uniqueItems (+17 more)
+Cohesion: 0.10
+Nodes (21): items, type, uniqueItems, $ref, items, type, uniqueItems, items (+13 more)
 
 ### Community 808 - "Community 808"
 Cohesion: 0.16
 Nodes (22): call, setup, teardown, total, tests/aws/services/scheduler/test_scheduler.py::test_create_schedule_with_valid_cron_expressions[cron(0-15/1 8-8 ? * 2,3,4,5,6,7 *)], durations_in_seconds, last_validated_date, tests/aws/services/scheduler/test_scheduler.py::test_create_schedule_with_valid_cron_expressions[cron(0 18 ? * MON-FRI *)] (+14 more)
 
 ### Community 809 - "Community 809"
-Cohesion: 0.29
-Nodes (12): secretsmanager_http_delete_secret_val_res(), secretsmanager_http_get_secret_value_val_res(), secretsmanager_http_get_secret_value_with_val_res(), secretsmanager_http_list_secret_version_ids_val_res(), secretsmanager_http_put_secret_value_val_res(), test_http_put_secret_value_custom_client_request_token_new_version_stages(), test_http_put_secret_value_duplicate_req(), test_http_put_secret_value_null_client_request_token_new_version_stages() (+4 more)
+Cohesion: 0.46
+Nodes (11): secretsmanager_http_delete_secret_val_res(), secretsmanager_http_get_secret_value_val_res(), secretsmanager_http_get_secret_value_with_val_res(), secretsmanager_http_list_secret_version_ids_val_res(), secretsmanager_http_put_secret_value_val_res(), test_http_put_secret_value_custom_client_request_token_new_version_stages(), test_http_put_secret_value_duplicate_req(), test_http_put_secret_value_null_client_request_token_new_version_stages() (+3 more)
 
 ### Community 810 - "Community 810"
 Cohesion: 0.11
 Nodes (22): ResponseMetadata, ResponseMetadata, TemplatesMetadata, ResponseMetadata, TemplatesMetadata, ResponseMetadata, TemplatesMetadata, delete-template (+14 more)
 
 ### Community 811 - "Community 811"
-Cohesion: 0.12
-Nodes (14): Decoder, MetaCatchingDict, Decoder, Encoder, Encode an object into bytes.          :param obj: the object to encode         :, Encode an object into bytes.          :param obj: the object to encode         :, Decode a previously encoded object.          :param data: the encoded object to, Decode a previously encoded object.          :param file: the io object containi (+6 more)
+Cohesion: 0.08
+Nodes (26): get_all_container_networks_for_lambda(), get_main_container_network_for_lambda(), get_main_endpoint_from_container(), test_lambda_docker_networks(), main(), print_runtime_information(), This is the entrypoint used to start the localstack runtime. It starts the infra, # FIXME: this is legacy code from the old CLI, reconcile with new CLI and runtim (+18 more)
 
 ### Community 812 - "Community 812"
 Cohesion: 0.10
@@ -9233,8 +9249,8 @@ Cohesion: 0.13
 Nodes (21): RequestId, @xmlns, ErrorResponse, message, __type, ErrorResponse, ErrorResponse, __type (+13 more)
 
 ### Community 831 - "Community 831"
-Cohesion: 0.13
-Nodes (16): AvailabilityZones, ResponseMetadata, availability_zones, tests/aws/services/ec2/test_ec2.py::test_describe_availability_zones_filter_with_zone_ids, recorded-content, recorded-date, tests/aws/services/ec2/test_ec2.py::test_describe_availability_zones_filter_with_zone_names, recorded-content (+8 more)
+Cohesion: 0.09
+Nodes (23): AvailabilityZones, ResponseMetadata, availability_zones, request-missing-size, ResponseMetadata, tests/aws/services/ec2/test_ec2.py::test_describe_availability_zones_filter_with_zone_ids, recorded-content, recorded-date (+15 more)
 
 ### Community 832 - "Community 832"
 Cohesion: 0.11
@@ -9253,12 +9269,12 @@ Cohesion: 0.10
 Nodes (21): VpcConfig, description, type, Ipv6AllowedForDualStack, SecurityGroupIds, SubnetIds, VpcConfig, description (+13 more)
 
 ### Community 836 - "Community 836"
-Cohesion: 0.05
-Nodes (33): run_and_assert_calculate_alarm_state(), test_calculate_alarm_state_2_out_of_3(), test_calculate_alarm_state_3_out_of_3(), TestAlarmScheduler, Action, HandlerTrace, header_actions(), _log_method_call() (+25 more)
+Cohesion: 0.13
+Nodes (17): Action, handler_module(), handler_name(), HandlerTrace, header_actions(), _log_method_call(), ModifyHeadersAction, Creates a wrapper around the original method `_fn`. It appends an action to the (+9 more)
 
 ### Community 837 - "Community 837"
 Cohesion: 0.04
-Nodes (29): AzureGateway, _not_found(), Azure edge gateway — dispatches requests to ARM / data-plane routers by host.  P, Single WSGI entrypoint mounting every Azure router., AzureStateStore, Pickle-based snapshot/restore for the in-memory Azure state.  Snapshots all gate, Persist and rehydrate `AzureGateway` state from a single pickle file., gateway() (+21 more)
+Nodes (30): AzureGateway, _not_found(), Azure edge gateway — dispatches requests to ARM / data-plane routers by host.  P, Single WSGI entrypoint mounting every Azure router., AzureStateStore, Pickle-based snapshot/restore for the in-memory Azure state.  Snapshots all gate, Persist and rehydrate `AzureGateway` state from a single pickle file., gateway() (+22 more)
 
 ### Community 838 - "Community 838"
 Cohesion: 0.11
@@ -9269,8 +9285,8 @@ Cohesion: 0.13
 Nodes (20): events, ResponseMetadata, events, ResponseMetadata, events, ResponseMetadata, events, ResponseMetadata (+12 more)
 
 ### Community 840 - "Community 840"
-Cohesion: 0.10
-Nodes (21): account, detail-type, id, region, resources, source, time, version (+13 more)
+Cohesion: 0.17
+Nodes (12): account, detail-type, id, region, resources, source, time, version (+4 more)
 
 ### Community 841 - "Community 841"
 Cohesion: 0.15
@@ -9281,16 +9297,16 @@ Cohesion: 0.10
 Nodes (20): Backers, Binary download (macOS, Linux, Windows), Brew (macOS or Linux with Homebrew), code:bash (brew install localstack/tap/localstack-cli), code:bash (python3 -m pip install localstack), code:bash (% localstack start -d), code:bash (% localstack status services), code:shell (% awslocal sqs create-queue --queue-name sample-queue) (+12 more)
 
 ### Community 843 - "Community 843"
-Cohesion: 0.09
-Nodes (19): test_setup(), test_adding_tags(), cleanup_s3_bucket(), # TODO: return "sub-view" on InfraProvisioner here for clearer API, # TODO: in localstack we might want to do a delete/create, # TODO: move this to a CFn testing utility, # TODO: dependency detection (coming with proper synth support), # TODO: also clean up s3 bucket on localstack? (+11 more)
+Cohesion: 0.20
+Nodes (17): get_asset_bucket_cdk(), # TODO: return "sub-view" on InfraProvisioner here for clearer API, # TODO: in localstack we might want to do a delete/create, # TODO: move this to a CFn testing utility, # TODO: dependency detection (coming with proper synth support), # TODO: also clean up s3 bucket on localstack?, # TODO: unify this after refactoring existing usage, # TODO: remove after removing any usage (+9 more)
 
 ### Community 844 - "Community 844"
-Cohesion: 0.13
-Nodes (11): SubscribeToShardOutput, find_stream_for_consumer(), get_store(), is_valid_kinesis_arn(), KinesisProvider, # TODO: This will suffice for now but does not properly capture checkpointing wh, # TODO: Ensure use of `stream_arn` works. Currently kinesis-mock only works with, # TODO: Ensure use of `stream_arn` works. Currently kinesis-mock only works with (+3 more)
+Cohesion: 0.07
+Nodes (19): SubscribeToShardOutput, _create_shell_command(), _environment_variables(), KinesisMockNodeServer, KinesisMockScalaServer, KinesisMockServer, KinesisServerManager, Creates a new Kinesis Mock server instance. Installs Kinesis Mock on the host fi (+11 more)
 
 ### Community 845 - "Community 845"
 Cohesion: 0.06
-Nodes (24): get_installer(), MultiPackageInstaller, Package, PackageInstaller, Checks if the package is already installed.          :return: True if the packag, Returns the directory of an existing installation. The directory can differ base, Builds the installation directory for a specific target.         :param target:, Builds the path for a specific "marker" whose presence indicates that the packag (+16 more)
+Nodes (28): MultiPackageInstaller, PackageInstaller, Checks if the package is already installed.          :return: True if the packag, Checks if the package is already installed.          :return: True if the packag, Returns the directory of an existing installation. The directory can differ base, Returns the directory of an existing installation. The directory can differ base, Builds the installation directory for a specific target.         :param target:, Builds the installation directory for a specific target.         :param target: (+20 more)
 
 ### Community 846 - "Community 846"
 Cohesion: 0.40
@@ -9309,32 +9325,32 @@ Cohesion: 0.10
 Nodes (21): type, type, type, type, type, type, type, type (+13 more)
 
 ### Community 850 - "Community 850"
-Cohesion: 0.10
-Nodes (21): $ref, additionalProperties, properties, type, definitions, BatchArrayProperties, EcsParameters, NetworkConfiguration (+13 more)
+Cohesion: 0.11
+Nodes (18): $ref, definitions, HttpParameters, NetworkConfiguration, SageMakerPipelineParameters, Target, additionalProperties, type (+10 more)
 
 ### Community 851 - "Community 851"
 Cohesion: 0.12
 Nodes (20): additionalProperties, type, type, type, type, createOnlyProperties, description, type (+12 more)
 
 ### Community 852 - "Community 852"
-Cohesion: 0.10
-Nodes (21): maxLength, minLength, type, $ref, RedshiftDestinationConfiguration, maxLength, minLength, type (+13 more)
+Cohesion: 0.11
+Nodes (19): maxLength, minLength, type, $ref, RedshiftDestinationConfiguration, maxLength, minLength, type (+11 more)
 
 ### Community 853 - "Community 853"
 Cohesion: 0.10
 Nodes (21): properties, type, type, type, type, type, DedicatedMasterCount, DedicatedMasterEnabled (+13 more)
 
 ### Community 854 - "Community 854"
-Cohesion: 0.09
-Nodes (23): InventoryConfiguration, $ref, description, type, description, enum, type, additionalProperties (+15 more)
+Cohesion: 0.07
+Nodes (28): additionalProperties, description, properties, required, type, DataExport, InventoryConfiguration, $ref (+20 more)
 
 ### Community 855 - "Community 855"
 Cohesion: 0.10
 Nodes (21): description, insertionOrder, items, maxItems, type, $ref, items, description (+13 more)
 
 ### Community 856 - "Community 856"
-Cohesion: 0.12
-Nodes (22): RedriveAllowPolicy, ResponseMetadata, Attributes, ResponseMetadata, attributes, dlq_attributes, tags, redrivePermission (+14 more)
+Cohesion: 0.13
+Nodes (16): RedriveAllowPolicy, ResponseMetadata, Attributes, attributes, dlq_attributes, redrivePermission, recorded-content, tests/aws/services/sqs/resource_providers/test_aws_sqs_queue.py::test_create_fifo_queue_with_required_properties (+8 more)
 
 ### Community 857 - "Community 857"
 Cohesion: 0.20
@@ -9377,7 +9393,7 @@ Cohesion: 0.11
 Nodes (21): modifiedData, resultKey, unrelatedData, Value, unrelatedData, afterResultPath, inputValue, resultKey (+13 more)
 
 ### Community 867 - "Community 867"
-Cohesion: 0.06
+Cohesion: 0.07
 Nodes (43): extract_account_id_from_arn(), extract_region_from_arn(), Return the SQS queue URL for the given queue ARN., sqs_queue_url_for_arn(), create_sqs_system_attributes(), sns_error_to_dead_letter_queue(), add_api_destination_authorization(), add_target_http_parameters() (+35 more)
 
 ### Community 868 - "Community 868"
@@ -9401,8 +9417,8 @@ Cohesion: 0.18
 Nodes (19): call, setup, teardown, total, tests/aws/services/cloudformation/api/test_resources.py::test_describe_deleted_resource_on_update, durations_in_seconds, last_validated_date, tests/aws/services/cloudformation/api/test_resources.py::test_describe_failed_resource (+11 more)
 
 ### Community 873 - "Community 873"
-Cohesion: 0.10
-Nodes (21): statusCode, methodResponses, apiKeyRequired, authorizationType, httpMethod, methodResponses, operationName, requestParameters (+13 more)
+Cohesion: 0.08
+Nodes (26): statusCode, methodResponses, apiKeyRequired, authorizationType, httpMethod, methodResponses, ResponseMetadata, apiKeyRequired (+18 more)
 
 ### Community 874 - "Community 874"
 Cohesion: 0.10
@@ -9429,8 +9445,8 @@ Cohesion: 0.10
 Nodes (19): call, setup, teardown, total, tests/aws/services/cloudformation/test_change_set_fn_split.py::TestChangeSetFnSplit::test_fn_split_add_to_static_property, last_validated_date, tests/aws/services/cloudformation/test_change_set_fn_split.py::TestChangeSetFnSplit::test_fn_split_change_delimiter, last_validated_date (+11 more)
 
 ### Community 880 - "Community 880"
-Cohesion: 0.11
-Nodes (20): accountId, Event, FunctionValue, params, region, requestId, templateParameterValues, transformId (+12 more)
+Cohesion: 0.08
+Nodes (27): accountId, Event, fragment, FunctionValue, params, region, requestId, templateParameterValues (+19 more)
 
 ### Community 881 - "Community 881"
 Cohesion: 0.11
@@ -9457,8 +9473,8 @@ Cohesion: 0.10
 Nodes (20): Message, approximateArrivalOfFirstRecord, approximateArrivalOfLastRecord, batchSize, endSequenceNumber, shardId, startSequenceNumber, streamArn (+12 more)
 
 ### Community 887 - "Community 887"
-Cohesion: 0.10
-Nodes (20): events, events_postupdate, updated_esm, tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_sqs.py::TestSQSEventSourceMapping::test_sqs_event_source_mapping, recorded-content, recorded-date, tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_sqs.py::TestSQSEventSourceMapping::test_sqs_event_source_mapping_update, recorded-content (+12 more)
+Cohesion: 0.18
+Nodes (11): updated_esm, BatchSize, EventSourceArn, EventSourceMappingArn, FunctionArn, FunctionResponseTypes, LastModified, MaximumBatchingWindowInSeconds (+3 more)
 
 ### Community 888 - "Community 888"
 Cohesion: 0.16
@@ -9466,7 +9482,7 @@ Nodes (5): archive_arn(), archive_name(), ArchiveService, create_archive_service
 
 ### Community 889 - "Community 889"
 Cohesion: 0.10
-Nodes (20): ARN, CreatedDate, Name, ResponseMetadata, VersionId, VersionStages, AuthorizationType, ConnectionArn (+12 more)
+Nodes (20): AuthorizationType, ConnectionArn, ConnectionState, CreationTime, LastAuthorizedTime, LastModifiedTime, Name, ResponseMetadata (+12 more)
 
 ### Community 890 - "Community 890"
 Cohesion: 0.11
@@ -9500,6 +9516,10 @@ Nodes (20): update_func_conf_response, Architectures, CodeSha256, CodeSize, Desc
 Cohesion: 0.10
 Nodes (20): Architectures, CodeSha256, CodeSize, Description, FunctionArn, FunctionName, Handler, LastModified (+12 more)
 
+### Community 898 - "Community 898"
+Cohesion: 0.18
+Nodes (3): PropertyRenderer, Generate an output for each property in the schema, TemplateRenderer
+
 ### Community 899 - "Community 899"
 Cohesion: 0.13
 Nodes (19): FunctionArn, LastModified, MaximumRetryAttempts, Messages, ResponseMetadata, put_function_event_invoke_config, receive_message_result, tests/aws/services/lambda_/test_lambda_destinations.py::TestLambdaDestinationSqs::test_assess_lambda_destination_invocation[payload0] (+11 more)
@@ -9509,12 +9529,12 @@ Cohesion: 0.16
 Nodes (20): ResponseMetadata, ResponseMetadata, ResponseMetadata, ResponseMetadata, ExecutedVersion, Payload, ResponseMetadata, StatusCode (+12 more)
 
 ### Community 901 - "Community 901"
-Cohesion: 0.16
-Nodes (21): DependsOn, Properties, Type, Properties, DependsOn, Properties, Type, ZipFile (+13 more)
+Cohesion: 0.26
+Nodes (16): DependsOn, Properties, Type, Properties, Properties, ZipFile, Properties, Code (+8 more)
 
 ### Community 902 - "Community 902"
-Cohesion: 0.11
-Nodes (27): Statement, Version, Properties, Type, Properties, Type, Properties, Type (+19 more)
+Cohesion: 0.10
+Nodes (26): Statement, Version, Properties, Type, DependsOn, Type, Properties, Type (+18 more)
 
 ### Community 903 - "Community 903"
 Cohesion: 0.15
@@ -9538,19 +9558,23 @@ Nodes (19): call, setup, teardown, total, tests/aws/services/opensearch/test_ope
 
 ### Community 908 - "Community 908"
 Cohesion: 0.10
-Nodes (16): API Transformer, code:python (def test_invocation(self, aws_client, snapshot):), code:python (snapshot.add_transformer(snapshot.transform.key_value("logGr), code:json ({), code:bash (localstack.tooling.testing.snapshots.transformer: Registering regex ), Debugging the Transformers, Examples, How to write Parity tests (+8 more)
+Nodes (16): API Transformer, code:python (def test_invocation(self, aws_client, snapshot):), code:python (snapshot.add_transformer(snapshot.transform.key_value("logGr), code:json ({), code:bash (localstack.tooling.testing.snapshots.transformer: Registerin), Debugging the Transformers, Examples, How to write Parity tests (+8 more)
 
 ### Community 909 - "Community 909"
 Cohesion: 0.26
 Nodes (9): init(), LambdaCustomEndpoints, LambdaRuntimesResponse, runtimes(), lambda_java_libs(), lambda_runtime_package(), register_custom_endpoints(), remove_custom_endpoints() (+1 more)
+
+### Community 910 - "Community 910"
+Cohesion: 0.06
+Nodes (30): AttributeValue, DescribeStreamInput, DescribeStreamOutput, DynamodbstreamsApi, ExpiredIteratorException, GetRecordsInput, GetRecordsOutput, GetShardIteratorInput (+22 more)
 
 ### Community 911 - "Community 911"
 Cohesion: 0.12
 Nodes (17): type, additionalProperties, properties, required, type, AwsVpcConfiguration, type, items (+9 more)
 
 ### Community 912 - "Community 912"
-Cohesion: 0.14
-Nodes (14): ProcessingConfiguration, $ref, additionalProperties, properties, type, items, type, uniqueItems (+6 more)
+Cohesion: 0.10
+Nodes (20): DynamicPartitioningConfiguration, ProcessingConfiguration, additionalProperties, properties, type, type, $ref, additionalProperties (+12 more)
 
 ### Community 913 - "Community 913"
 Cohesion: 0.10
@@ -9581,8 +9605,8 @@ Cohesion: 0.18
 Nodes (19): call, setup, teardown, total, tests/aws/services/route53/resource_providers/test_aws_route53_recordset.py::test_create_multiple_weighted_alias_target_record_sets, durations_in_seconds, last_validated_date, tests/aws/services/route53/resource_providers/test_aws_route53_recordset.py::test_create_record_set_via_id (+11 more)
 
 ### Community 920 - "Community 920"
-Cohesion: 0.11
-Nodes (20): responseParameters, responseTemplates, statusCode, apiKeyRequired, authorizationType, httpMethod, methodResponses, requestModels (+12 more)
+Cohesion: 0.12
+Nodes (17): responseParameters, responseTemplates, statusCode, methodResponses, methodResponses, 200, apiKeyRequired, authorizationType (+9 more)
 
 ### Community 921 - "Community 921"
 Cohesion: 0.11
@@ -9591,10 +9615,6 @@ Nodes (19): get-topic-attrs, subscription-1, topic-archive-policy, ResponseMetad
 ### Community 922 - "Community 922"
 Cohesion: 0.10
 Nodes (19): call, setup, teardown, total, tests/aws/services/route53/test_route53.py::TestRoute53::test_associate_vpc_with_hosted_zone, last_validated_date, tests/aws/services/route53/test_route53.py::TestRoute53::test_create_hosted_zone, tests/aws/services/route53/test_route53.py::TestRoute53::test_create_hosted_zone_in_non_existent_vpc (+11 more)
-
-### Community 923 - "Community 923"
-Cohesion: 0.09
-Nodes (12): Minimal CloudResourceManager.projects.* CRUD., ResourceManagerProvider, CaseInsensitiveDict, GcpGenericResource, GcpProject, GcpProjectStore, GcpStores, _normalize() (+4 more)
 
 ### Community 924 - "Community 924"
 Cohesion: 0.10
@@ -9606,15 +9626,15 @@ Nodes (3): Payload_binding_sampleContext, Payload_binding_valueContext, Payload_
 
 ### Community 926 - "Community 926"
 Cohesion: 0.10
-Nodes (19): Contents, ContinuationToken, EncodingType, IsTruncated, KeyCount, MaxKeys, Name, Prefix (+11 more)
+Nodes (19): Contents, EncodingType, IsTruncated, KeyCount, MaxKeys, Name, Prefix, ResponseMetadata (+11 more)
 
 ### Community 927 - "Community 927"
 Cohesion: 0.12
 Nodes (19): ResponseMetadata, ResponseMetadata, exc, expected_error, tests/aws/services/s3/test_s3.py::TestS3::test_delete_bucket_no_such_bucket, recorded-content, recorded-date, tests/aws/services/s3/test_s3.py::TestS3::test_get_bucket_notification_configuration_no_such_bucket (+11 more)
 
 ### Community 928 - "Community 928"
-Cohesion: 0.07
-Nodes (7): EventGridEvent, EventGridSubscription, EventGridTopic, MicrosoftEventGridProvider, Microsoft.EventGrid provider — topics + event subscriptions + publish., client(), provider()
+Cohesion: 0.11
+Nodes (8): _error(), EventGridRouter, _json(), _json_body(), Event Grid REST adapter (subset of 2023-12-15-preview)., Path layout:     /topics/{t}     /topics/{t}:publish     /topics/{t}/eventSubscr, client(), provider()
 
 ### Community 929 - "Community 929"
 Cohesion: 0.09
@@ -9654,26 +9674,26 @@ Nodes (20): Error, Code, Message, Error, start_exec_not_json_inp, start_exec_of_
 
 ### Community 938 - "Community 938"
 Cohesion: 0.11
-Nodes (18): ResponseMetadata, message, ResponseMetadata, deletion_resp_1, invalid_definition_1, tests/aws/services/stepfunctions/v2/test_sfn_api.py::TestSnfApi::test_create_delete_invalid_sm, recorded-content, recorded-date (+10 more)
+Nodes (19): ResponseMetadata, message, ResponseMetadata, deletion_resp_1, invalid_definition_1, tests/aws/services/stepfunctions/v2/test_sfn_api.py::TestSnfApi::test_create_delete_invalid_sm, recorded-content, recorded-date (+11 more)
 
 ### Community 939 - "Community 939"
-Cohesion: 0.11
-Nodes (19): creationDate, ResponseMetadata, stateMachineArn, creationDate, name, ResponseMetadata, roleArn, stateMachineArn (+11 more)
+Cohesion: 0.10
+Nodes (20): creationDate, ResponseMetadata, stateMachineArn, creationDate, name, ResponseMetadata, revisionId, roleArn (+12 more)
 
 ### Community 940 - "Community 940"
-Cohesion: 0.12
-Nodes (16): creationDate, name, ResponseMetadata, revisionId, roleArn, stateMachineArn, status, type (+8 more)
+Cohesion: 0.10
+Nodes (20): creationDate, name, ResponseMetadata, revisionId, roleArn, stateMachineArn, status, type (+12 more)
 
 ### Community 941 - "Community 941"
-Cohesion: 0.13
-Nodes (20): ResponseMetadata, ResponseMetadata, message, ResponseMetadata, ResponseMetadata, stateMachineVersions, ResponseMetadata, stateMachineVersions (+12 more)
+Cohesion: 0.09
+Nodes (28): ResponseMetadata, ResponseMetadata, ResponseMetadata, stateMachineVersions, ResponseMetadata, stateMachineVersions, creationDate, ResponseMetadata (+20 more)
 
 ### Community 942 - "Community 942"
 Cohesion: 0.18
 Nodes (18): call, setup, teardown, total, tests/aws/services/acm/test_acm.py::TestACM::test_certificate_for_subdomain_wildcard, last_validated_date, tests/aws/services/acm/test_acm.py::TestACM::test_create_certificate_for_multiple_alternative_domains, durations_in_seconds (+10 more)
 
 ### Community 943 - "Community 943"
-Cohesion: 0.18
+Cohesion: 0.16
 Nodes (10): EventLogger, High-level interface over analytics event abstraction. Expose specific event typ, collector(), EventCollector, test_event_with_kwargs_and_payload_raises_error(), test_event_with_kwargs_produces_dict_payload(), test_event_with_payload(), test_logger_can_overwrite_session_id() (+2 more)
 
 ### Community 944 - "Community 944"
@@ -9734,11 +9754,11 @@ Nodes (32): Location, RepositoryType, ResponseMetadata, ResponseMetadata, Respon
 
 ### Community 958 - "Community 958"
 Cohesion: 0.11
-Nodes (19): call, tests/aws/services/lambda_/test_lambda_api.py::TestLambdaAccountSettings::test_account_settings, durations_in_seconds, last_validated_date, tests/aws/services/lambda_/test_lambda_api.py::TestLambdaAccountSettings::test_account_settings_total_code_size, durations_in_seconds, last_validated_date, tests/aws/services/lambda_/test_lambda_api.py::TestLambdaAlias::test_notfound_and_invalid_routingconfigs (+11 more)
+Nodes (19): call, tests/aws/services/lambda_/test_lambda_api.py::TestLambdaAccountSettings::test_account_settings, durations_in_seconds, last_validated_date, tests/aws/services/lambda_/test_lambda_api.py::TestLambdaAlias::test_notfound_and_invalid_routingconfigs, durations_in_seconds, last_validated_date, tests/aws/services/lambda_/test_lambda_api.py::TestLambdaEventSourceMappings::test_create_event_source_validation_kinesis (+11 more)
 
 ### Community 959 - "Community 959"
-Cohesion: 0.11
-Nodes (19): Architectures, CodeSha256, CodeSize, Description, FunctionArn, FunctionName, Handler, LastModified (+11 more)
+Cohesion: 0.09
+Nodes (23): TracingConfig, Architectures, CodeSha256, CodeSize, Description, FunctionArn, FunctionName, Handler (+15 more)
 
 ### Community 960 - "Community 960"
 Cohesion: 0.14
@@ -9761,16 +9781,16 @@ Cohesion: 0.08
 Nodes (18): BaseModel, AwsCatalogLoaderException, RemoteCatalogLoader, RemoteCatalogVersionResponse, AwsRemoteCatalog, AwsServiceCatalog, AwsServiceOperationsSupportInLatest, AwsServicesSupportInLatest (+10 more)
 
 ### Community 966 - "Community 966"
-Cohesion: 0.09
-Nodes (28): InvalidBucketName, InvalidEncryptionAlgorithmError, KeyTooLongError, test_validate_canned_acl(), is_valid_canonical_id(), Validate that the string is a hex string with 64 char, parse_grants_in_headers(), # TODO: check validation here (+20 more)
+Cohesion: 0.06
+Nodes (39): AccessControlPolicy, CommonPrefix, DeleteMarkerEntry, Grant, InvalidBucketName, KeyTooLongError, ListMultipartUploadsOutput, ListObjectsOutput (+31 more)
 
 ### Community 967 - "Community 967"
 Cohesion: 0.11
 Nodes (18): tests/aws/services/stepfunctions/v2/query_language/test_mixed_query_language.py::TestMixedQueryLanguageFlow::test_lambda_task_resource_data_flow[TASK_LAMBDA_LEGACY_RESOURCE_JSONATA_TO_JSONPATH], last_validated_date, tests/aws/services/stepfunctions/v2/query_language/test_mixed_query_language.py::TestMixedQueryLanguageFlow::test_lambda_task_resource_data_flow[TASK_LAMBDA_LEGACY_RESOURCE_JSONPATH_TO_JSONATA], last_validated_date, tests/aws/services/stepfunctions/v2/query_language/test_mixed_query_language.py::TestMixedQueryLanguageFlow::test_lambda_task_resource_data_flow[TASK_LAMBDA_SDK_RESOURCE_JSONATA_TO_JSONPATH], last_validated_date, tests/aws/services/stepfunctions/v2/query_language/test_mixed_query_language.py::TestMixedQueryLanguageFlow::test_lambda_task_resource_data_flow[TASK_LAMBDA_SDK_RESOURCE_JSONPATH_TO_JSONATA], last_validated_date (+10 more)
 
 ### Community 968 - "Community 968"
-Cohesion: 0.11
-Nodes (19): items, $ref, items, insertionOrder, items, type, uniqueItems, LocalSecondaryIndexes (+11 more)
+Cohesion: 0.08
+Nodes (24): items, insertionOrder, items, type, uniqueItems, $ref, items, insertionOrder (+16 more)
 
 ### Community 969 - "Community 969"
 Cohesion: 0.14
@@ -9809,8 +9829,8 @@ Cohesion: 0.11
 Nodes (18): AlarmArnFromAtt, AlarmName, alarm_outputs, composite_alarm, metric_alarm, simple_alarm, tests/aws/services/cloudformation/resources/test_cloudwatch.py::test_alarm_creation, recorded-content (+10 more)
 
 ### Community 978 - "Community 978"
-Cohesion: 0.11
-Nodes (19): Location, RepositoryType, Code, Code, ResponseMetadata, ExecutedVersion, Payload, ResponseMetadata (+11 more)
+Cohesion: 0.14
+Nodes (14): Location, RepositoryType, Code, Code, ResponseMetadata, get_function_version, versions_by_fn, tests/aws/services/cloudformation/resources/test_lambda.py::test_lambda_version (+6 more)
 
 ### Community 979 - "Community 979"
 Cohesion: 0.14
@@ -9842,19 +9862,19 @@ Nodes (18): events, ResponseMetadata, get_execution_history, stepfunctions_event
 
 ### Community 986 - "Community 986"
 Cohesion: 0.11
-Nodes (19): call, tests/aws/services/sns/test_sns.py::TestSNSPlatformApplicationCrud::test_create_platform_application, durations_in_seconds, last_validated_date, tests/aws/services/sns/test_sns.py::TestSNSPlatformEndpointCrud::test_create_platform_endpoint_with_invalid_attributes[Invalid_Name_Credential], durations_in_seconds, last_validated_date, tests/aws/services/sns/test_sns.py::TestSNSPlatformEndpointCrud::test_delete_platform_endpoint_with_subscription (+11 more)
+Nodes (19): call, tests/aws/services/sns/test_sns.py::TestSNSPlatformApplicationCrud::test_create_platform_application_invalid_attributes[missing-credential], durations_in_seconds, last_validated_date, tests/aws/services/sns/test_sns.py::TestSNSPlatformEndpointCrud::test_create_platform_endpoint_with_invalid_attributes[Invalid_Name_Credential], durations_in_seconds, last_validated_date, tests/aws/services/sns/test_sns.py::TestSNSPlatformEndpointCrud::test_delete_platform_endpoint_with_subscription (+11 more)
 
 ### Community 987 - "Community 987"
 Cohesion: 0.12
 Nodes (18): Value, Value, Mappings, Outputs, ClusterArn, ClusterName, StateMachineArn, StateMachineRoleArn (+10 more)
 
 ### Community 988 - "Community 988"
-Cohesion: 0.27
-Nodes (11): ResponseMetadata, Error, ResponseMetadata, ResponseMetadata, duplicate-tag-keys-different-casing, invalid-transitive-tag-keys, role-1, HTTPHeaders (+3 more)
+Cohesion: 0.15
+Nodes (19): ResponseMetadata, ResponseMetadata, Error, ResponseMetadata, Error, ResponseMetadata, duplicate-tag-keys-different-casing, no-partition (+11 more)
 
 ### Community 989 - "Community 989"
-Cohesion: 0.11
-Nodes (22): Statement, Version, Properties, Type, Type, DependsOn, Type, Properties (+14 more)
+Cohesion: 0.13
+Nodes (19): Statement, Version, Properties, Type, Type, Properties, Type, Properties (+11 more)
 
 ### Community 990 - "Community 990"
 Cohesion: 0.11
@@ -9873,11 +9893,11 @@ Cohesion: 0.11
 Nodes (19): fieldFromInput, inputData, otherField, type, Value, inputData, inputValue, staticValue (+11 more)
 
 ### Community 994 - "Community 994"
-Cohesion: 0.18
-Nodes (10): collect_affected_deprecations(), deprecated_endpoint(), EnvVarDeprecation, log_deprecation_warnings(), log_env_warning(), Simple class defining a deprecation of an environment variable config.     It he, Collects all deprecations which are used in the OS environ.     :param deprecati, Logs warnings for the given deprecations.     :param deprecations: list of affec (+2 more)
+Cohesion: 0.06
+Nodes (27): collect_affected_deprecations(), deprecated_endpoint(), EnvVarDeprecation, log_deprecation_warnings(), log_env_warning(), Simple class defining a deprecation of an environment variable config.     It he, Collects all deprecations which are used in the OS environ.     :param deprecati, Logs warnings for the given deprecations.     :param deprecations: list of affec (+19 more)
 
 ### Community 995 - "Community 995"
-Cohesion: 0.11
+Cohesion: 0.13
 Nodes (18): exception_typename, exception_value, exception, tests/aws/services/stepfunctions/v2/test_sfn_api_logs.py::TestSnfApiLogs::test_deleted_log_group, recorded-content, recorded-date, tests/aws/services/stepfunctions/v2/test_sfn_api_logs.py::TestSnfApiLogs::test_invalid_logging_configuration[logging_configuration0], recorded-content (+10 more)
 
 ### Community 996 - "Community 996"
@@ -9901,8 +9921,8 @@ Cohesion: 0.11
 Nodes (18): apiKeySource, createdDate, disableExecuteApiEndpoint, endpointConfiguration, id, name, rootResourceId, tags (+10 more)
 
 ### Community 1001 - "Community 1001"
-Cohesion: 0.17
-Nodes (12): cacheClusterEnabled, cacheClusterStatus, createdDate, deploymentId, description, documentationVersion, lastUpdatedDate, methodSettings (+4 more)
+Cohesion: 0.11
+Nodes (17): cacheClusterEnabled, cacheClusterStatus, createdDate, deploymentId, description, documentationVersion, lastUpdatedDate, methodSettings (+9 more)
 
 ### Community 1002 - "Community 1002"
 Cohesion: 0.11
@@ -9949,8 +9969,8 @@ Cohesion: 0.11
 Nodes (18): BatchSize, BisectBatchOnFunctionError, EventSourceArn, EventSourceMappingArn, FunctionArn, FunctionResponseTypes, LastModified, LastProcessingResult (+10 more)
 
 ### Community 1013 - "Community 1013"
-Cohesion: 0.08
-Nodes (26): BatchSize, BisectBatchOnFunctionError, EventSourceArn, EventSourceMappingArn, FunctionArn, FunctionResponseTypes, LastModified, LastProcessingResult (+18 more)
+Cohesion: 0.11
+Nodes (18): BatchSize, BisectBatchOnFunctionError, EventSourceArn, EventSourceMappingArn, FunctionArn, FunctionResponseTypes, LastModified, LastProcessingResult (+10 more)
 
 ### Community 1014 - "Community 1014"
 Cohesion: 0.11
@@ -9965,16 +9985,20 @@ Cohesion: 0.11
 Nodes (18): BatchSize, BisectBatchOnFunctionError, EventSourceArn, EventSourceMappingArn, FunctionArn, FunctionResponseTypes, LastModified, LastProcessingResult (+10 more)
 
 ### Community 1017 - "Community 1017"
-Cohesion: 0.12
-Nodes (10): create_aws_request_context(), This is a stripped-down version of what the botocore client does to perform an H, Exception handler that serializes the exception of AWS services., ServiceExceptionSerializer, TestResponseMetadataEnricher, Returns a dummy chain for testing., service_response_handler_chain(), test_not_implemented_error_uses_catalog_when_message_is_empty() (+2 more)
+Cohesion: 0.07
+Nodes (20): _convert_to_request_dict_with_protocol(), create_aws_request_context(), This is a stripped-down version of what the botocore client does to perform an H, This function is taken from botocore Client._convert_to_request_dict, but we are, get_aws_catalog(), ExceptionHandler, InternalFailureHandler, Exception handler that returns a generic error message if there was an exception (+12 more)
 
 ### Community 1018 - "Community 1018"
-Cohesion: 0.12
-Nodes (18): Messages, ResponseMetadata, Messages, ResponseMetadata, dlq_response, first_invocation, second_invocation, Messages (+10 more)
+Cohesion: 0.08
+Nodes (32): Messages, Messages, Messages, QueueUrl, dlq_response, first_attempt, first_invocation, get_destination_queue_url (+24 more)
 
 ### Community 1019 - "Community 1019"
 Cohesion: 0.18
 Nodes (17): list_files_with_suffix(), load_request_template(), load_request_templates(), # TODO: devise better testing strategy for * because the wildcard matches everyt, # TODO: unsupported in LocalStack, # TODO: extend these test cases based on the open source docs + tests: https://g, test_array_event_payload(), test_event_pattern() (+9 more)
+
+### Community 1020 - "Community 1020"
+Cohesion: 0.23
+Nodes (4): ConnectionService, Extract public parameters (without secrets) based on auth type., CreateConnectionResponse, create_connection()
 
 ### Community 1021 - "Community 1021"
 Cohesion: 0.12
@@ -9993,8 +10017,8 @@ Cohesion: 0.11
 Nodes (18): additionalProperties, description, $ref, type, definitions, Code, LambdaManagedInstancesCapacityProviderConfig, RecursiveLoop (+10 more)
 
 ### Community 1025 - "Community 1025"
-Cohesion: 0.06
-Nodes (17): AzureInvalidResourceId, Raised when an Azure Resource ID cannot be parsed., AzureResourceId, parse(), _require(), AzureScope, GcpError, GcpInvalidResourceName (+9 more)
+Cohesion: 0.14
+Nodes (3): GcpResourceName, GcpScope, test_full_name_without_location()
 
 ### Community 1026 - "Community 1026"
 Cohesion: 0.30
@@ -10017,12 +10041,12 @@ Cohesion: 0.11
 Nodes (17): tests/aws/scenario/loan_broker/test_loan_broker.py::TestLoanBrokerScenario::test_prefill_dynamodb_table, recorded-date, tests/aws/scenario/loan_broker/test_loan_broker.py::TestLoanBrokerScenario::test_stepfunctions_input_recipient_list[step_function_input0-SUCCEEDED], recorded-content, recorded-date, tests/aws/scenario/loan_broker/test_loan_broker.py::TestLoanBrokerScenario::test_stepfunctions_input_recipient_list[step_function_input1-SUCCEEDED], recorded-content, recorded-date (+9 more)
 
 ### Community 1031 - "Community 1031"
-Cohesion: 0.67
-Nodes (3): DependsOn, Type, BankRecipientPremium36050019
+Cohesion: 0.09
+Nodes (7): FirestoreDatabase, FirestoreDataStore, FirestoreDocument, FirestoreProvider, _now(), _parse_document_name(), client()
 
 ### Community 1032 - "Community 1032"
-Cohesion: 0.15
-Nodes (17): RegexConverter, call_moto_with_request(), dispatch_to_moto(), get_dispatcher(), get_moto_routing_table(), load_moto_routing_table(), _PartIsolatingRegexConverter, _proxy_moto() (+9 more)
+Cohesion: 0.16
+Nodes (15): RegexConverter, dispatch_to_moto(), get_dispatcher(), get_moto_routing_table(), load_moto_routing_table(), _PartIsolatingRegexConverter, _proxy_moto(), This module provides tools to call Moto service implementations. (+7 more)
 
 ### Community 1033 - "Community 1033"
 Cohesion: 0.16
@@ -10045,8 +10069,8 @@ Cohesion: 0.12
 Nodes (18): additionalProperties, properties, type, CanarySetting, DeploymentCanarySettings, additionalProperties, properties, type (+10 more)
 
 ### Community 1038 - "Community 1038"
-Cohesion: 0.22
-Nodes (9): list, properties, required, handlerSchema, permissions, RestApiId, description, $ref (+1 more)
+Cohesion: 0.11
+Nodes (18): permissions, permissions, handlers, create, delete, list, read, update (+10 more)
 
 ### Community 1039 - "Community 1039"
 Cohesion: 0.12
@@ -10073,16 +10097,16 @@ Cohesion: 0.12
 Nodes (18): LocalSecondaryIndex, properties, maxLength, minLength, type, maxItems, minItems, uniqueItems (+10 more)
 
 ### Community 1045 - "Community 1045"
-Cohesion: 0.11
-Nodes (18): type, insertionOrder, minItems, type, uniqueItems, type, properties, Arn (+10 more)
+Cohesion: 0.10
+Nodes (20): type, insertionOrder, minItems, type, uniqueItems, type, properties, Arn (+12 more)
 
 ### Community 1046 - "Community 1046"
 Cohesion: 0.10
 Nodes (21): additionalProperties, properties, type, Csv, Projection, type, items, type (+13 more)
 
 ### Community 1047 - "Community 1047"
-Cohesion: 0.11
-Nodes (7): EventQueueUpdateWorker, FakeSqsClient, get_fake_sqs_client(), QueueManager, Regularly re-queues inflight and delayed messages whose visibility timeout has e, Creates a queue.         :param queue_name: Queue name, has to be unique, QueueUpdateWorker
+Cohesion: 0.07
+Nodes (14): EventQueueUpdateWorker, FakeSqsClient, get_fake_sqs_client(), QueueManager, Regularly re-queues inflight and delayed messages whose visibility timeout has e, Creates a queue.         :param queue_name: Queue name, has to be unique, QueueUpdateWorker, iso1806_to_epoch() (+6 more)
 
 ### Community 1048 - "Community 1048"
 Cohesion: 0.17
@@ -10130,7 +10154,7 @@ Nodes (7): create_local_file(), Metric, MetricHandler, MetricHandlerItem, Metric
 
 ### Community 1059 - "Community 1059"
 Cohesion: 0.11
-Nodes (17): tests/aws/services/s3/test_s3_api.py::TestS3BucketEncryption::test_s3_bucket_encryption_sse_s3, last_validated_date, tests/aws/services/s3/test_s3_api.py::TestS3MetricsConfiguration::test_overwrite_bucket_metrics_configuration, durations_in_seconds, last_validated_date, tests/aws/services/s3/test_s3_api.py::TestS3Multipart::test_upload_part_copy_with_copy_source_if_modified_since_in_future_success, durations_in_seconds, last_validated_date (+9 more)
+Nodes (17): tests/aws/services/s3/test_s3_api.py::TestS3BucketEncryption::test_s3_bucket_encryption_sse_s3, last_validated_date, tests/aws/services/s3/test_s3_api.py::TestS3BucketObjectTagging::test_put_object_with_tags, durations_in_seconds, last_validated_date, tests/aws/services/s3/test_s3_api.py::TestS3MetricsConfiguration::test_overwrite_bucket_metrics_configuration, durations_in_seconds, last_validated_date (+9 more)
 
 ### Community 1060 - "Community 1060"
 Cohesion: 0.15
@@ -10142,7 +10166,7 @@ Nodes (16): Azure Core Foundation Implementation Plan, code:python (def test_loc
 
 ### Community 1062 - "Community 1062"
 Cohesion: 0.11
-Nodes (17): tests/aws/services/s3/test_s3.py::TestS3::test_bucket_operation_between_regions, last_validated_date, tests/aws/services/s3/test_s3.py::TestS3::test_get_bucket_policy, durations_in_seconds, last_validated_date, tests/aws/services/s3/test_s3.py::TestS3::test_metadata_header_character_unicode_encoding, durations_in_seconds, last_validated_date (+9 more)
+Nodes (17): tests/aws/services/s3/test_s3.py::TestS3::test_bucket_operation_between_regions, last_validated_date, tests/aws/services/s3/test_s3.py::TestS3::test_get_bucket_policy, durations_in_seconds, last_validated_date, tests/aws/services/s3/test_s3.py::TestS3::test_get_object_no_such_bucket, durations_in_seconds, last_validated_date (+9 more)
 
 ### Community 1063 - "Community 1063"
 Cohesion: 0.19
@@ -10153,16 +10177,16 @@ Cohesion: 0.13
 Nodes (17): events, ResponseMetadata, get_execution_history, HTTPHeaders, HTTPStatusCode, tests/aws/services/stepfunctions/v2/services/test_ecs_task_service.py::TestTaskServiceECS::test_run_task, tests/aws/services/stepfunctions/v2/services/test_ecs_task_service.py::TestTaskServiceECS::test_run_task_raise_failure, recorded-content (+9 more)
 
 ### Community 1065 - "Community 1065"
-Cohesion: 0.10
-Nodes (20): ApproximateNumberOfMessages, ResponseMetadata, Error, Attributes, ResponseMetadata, empty-unsubscribe, invalid-token, queue-attrs (+12 more)
+Cohesion: 0.11
+Nodes (18): ApproximateNumberOfMessages, ResponseMetadata, Error, ResponseMetadata, Attributes, ResponseMetadata, empty-unsubscribe, exception-duplicate (+10 more)
 
 ### Community 1066 - "Community 1066"
 Cohesion: 0.11
 Nodes (18): exception_typename, exception_value, exception, tests/aws/services/stepfunctions/v2/test_state/test_state_context_object.py::TestStateContextObject::test_state_context_object_invalid_states[INVALID_STATE_PASS], recorded-content, recorded-date, tests/aws/services/stepfunctions/v2/test_state/test_state_context_object.py::TestStateContextObject::test_state_context_object_invalid_states[TOKEN_TASK_NOT_SYNC], recorded-content (+10 more)
 
 ### Community 1067 - "Community 1067"
-Cohesion: 0.14
-Nodes (11): get_directory(), get_test_dir_for_service(), glob(), Matcher, Matchers, prefix(), # TODO: consider API_COMPOSITES, # TODO: might want to cache that, but for now it shouldn't be too much overhead (+3 more)
+Cohesion: 0.13
+Nodes (19): get_directory(), get_test_dir_for_service(), glob(), _map_to_module_name(), _map_to_service_name(), Matcher, Matchers, prefix() (+11 more)
 
 ### Community 1068 - "Community 1068"
 Cohesion: 0.19
@@ -10261,12 +10285,12 @@ Cohesion: 0.12
 Nodes (16): Outputs, TableName, AttributeDefinitions, BillingMode, KeySchema, TimeToLiveSpecification, Resources, TableCD117FA1 (+8 more)
 
 ### Community 1092 - "Community 1092"
-Cohesion: 0.07
-Nodes (36): create_default_registry(), _resource_group_id(), ResourceManagerProvider, AzureServiceSpec, AzureServiceSpecRegistry, _key(), AzureGenericResource, AzureResourceGroup (+28 more)
+Cohesion: 0.04
+Nodes (52): create_default_registry(), AzureInvalidResourceId, Raised when an Azure Resource ID cannot be parsed., AzureResourceId, parse(), _require(), _resource_group_id(), ResourceManagerProvider (+44 more)
 
 ### Community 1093 - "Community 1093"
-Cohesion: 0.11
-Nodes (18): AmazonSideAsn, State, Tags, Type, VpcAttachments, VpnGatewayId, ResponseMetadata, VpnGateway (+10 more)
+Cohesion: 0.12
+Nodes (17): AmazonSideAsn, State, Tags, Type, VpcAttachments, VpnGatewayId, ResponseMetadata, VpnGateway (+9 more)
 
 ### Community 1094 - "Community 1094"
 Cohesion: 0.12
@@ -10321,8 +10345,8 @@ Cohesion: 0.12
 Nodes (17): CreateEventSourceMappingResponse, ExecutedVersion, FunctionError, LogResult, Payload, StatusCode, result, errorMessage (+9 more)
 
 ### Community 1107 - "Community 1107"
-Cohesion: 0.12
-Nodes (18): CreateEventSourceMappingResponse, ExecutedVersion, Payload, ResponseMetadata, StatusCode, body, statusCode, creation-result (+10 more)
+Cohesion: 0.13
+Nodes (17): CreateEventSourceMappingResponse, ExecutedVersion, Payload, StatusCode, body, statusCode, creation-result, invocation-result (+9 more)
 
 ### Community 1108 - "Community 1108"
 Cohesion: 0.12
@@ -10337,8 +10361,8 @@ Cohesion: 0.21
 Nodes (16): call, setup, teardown, total, tests/aws/services/stepfunctions/v2/local_mocking/test_base_callbacks.py::TestBaseScenarios::test_sfn_start_execution_sync[SFN_SYNC], tests/aws/services/stepfunctions/v2/local_mocking/test_base_callbacks.py::TestBaseScenarios::test_sfn_start_execution_sync[SFN_SYNC2], durations_in_seconds, last_validated_date (+8 more)
 
 ### Community 1111 - "Community 1111"
-Cohesion: 0.10
-Nodes (13): Helper function to retrieve the message content for the right protocol if the St, SnsMessage, create_sns_message_body(), is_raw_message_delivery(), Returns the message formatted in the base SNS message format. The base SNS messa, TestSns, iso1806_to_epoch(), mktime() (+5 more)
+Cohesion: 0.09
+Nodes (20): extract_service_from_arn(), EsmConfigFactory, # TODO: last modified => does state transition affect this?, # TODO: complete missing fields, # TODO: check whether we need to remove any more fields that are present in the, Creates an Event Source Mapping (ESM) configuration based on a create ESM reques, # TODO: test all defaults, # TODO: test all defaults (+12 more)
 
 ### Community 1112 - "Community 1112"
 Cohesion: 0.21
@@ -10357,12 +10381,12 @@ Cohesion: 0.15
 Nodes (16): Code, Error, ResponseMetadata, Message, Error, ResponseMetadata, error-limit-exceeded, invalid-token (+8 more)
 
 ### Community 1116 - "Community 1116"
-Cohesion: 0.25
-Nodes (8): Contents, EncodingType, IsTruncated, KeyCount, MaxKeys, Name, Prefix, list-objects
+Cohesion: 0.12
+Nodes (17): goodevil, lawchaos, mysfitId, species, userId, Contents, EncodingType, IsTruncated (+9 more)
 
 ### Community 1117 - "Community 1117"
-Cohesion: 0.13
-Nodes (15): AzureProviderPlugin, AzureProviderRegistry, iter_builtin_plugins(), Azure provider plugin registry — analog of `localstack.aws.services.plugins`., Describes how to instantiate a provider for a `(namespace, resource_type)` pair., In-memory registry. Plux-compatible: `load_builtins()` mirrors entry-point disco, Static list of providers shipped in this repo. Replaces Plux entry-points for no, _StubProvider (+7 more)
+Cohesion: 0.10
+Nodes (18): MemorystoreDataStore, RedisInstance, MemorystoreProvider, _now(), client(), _create(), test_create_instance(), test_delete() (+10 more)
 
 ### Community 1118 - "Community 1118"
 Cohesion: 0.11
@@ -10377,8 +10401,8 @@ Cohesion: 0.14
 Nodes (16): additionalProperties, type, type, description, type, type, primaryIdentifier, properties (+8 more)
 
 ### Community 1121 - "Community 1121"
-Cohesion: 0.13
-Nodes (17): $ref, LocalSecondaryIndex, properties, type, oneOf, uniqueItems, additionalProperties, properties (+9 more)
+Cohesion: 0.08
+Nodes (28): $ref, GlobalSecondaryIndex, KeySchema, LocalSecondaryIndex, additionalProperties, properties, required, type (+20 more)
 
 ### Community 1122 - "Community 1122"
 Cohesion: 0.17
@@ -10425,20 +10449,20 @@ Cohesion: 0.21
 Nodes (16): call, setup, teardown, total, tests/aws/services/sqs/resource_providers/test_aws_sqs_queuepolicy.py::test_sqs_queue_policy, durations_in_seconds, last_validated_date, tests/aws/services/sqs/resource_providers/test_aws_sqs_queuepolicy.py::test_update_add_two_additional_queues_to_policy (+8 more)
 
 ### Community 1133 - "Community 1133"
-Cohesion: 0.18
-Nodes (11): apiKeyRequired, authorizationType, httpMethod, operationName, requestParameters, ResponseMetadata, get-method-post, method.request.path.account (+3 more)
+Cohesion: 0.12
+Nodes (17): apiKeyRequired, authorizationType, httpMethod, requestModels, requestValidatorId, ResponseMetadata, items, ResponseMetadata (+9 more)
 
 ### Community 1134 - "Community 1134"
 Cohesion: 0.15
 Nodes (16): table_description, tests/aws/services/cloudformation/resources/test_dynamodb.py::test_billing_mode_as_conditional[PAY_PER_REQUEST], recorded-content, recorded-date, tests/aws/services/cloudformation/resources/test_dynamodb.py::test_billing_mode_as_conditional[PROVISIONED], recorded-content, recorded-date, tests/aws/services/cloudformation/resources/test_dynamodb.py::test_global_table (+8 more)
 
 ### Community 1135 - "Community 1135"
-Cohesion: 0.11
-Nodes (20): DisplayName, EffectiveDeliveryPolicy, Owner, Policy, SubscriptionsConfirmed, SubscriptionsDeleted, SubscriptionsPending, TopicArn (+12 more)
+Cohesion: 0.13
+Nodes (17): DisplayName, EffectiveDeliveryPolicy, Owner, Policy, SubscriptionsConfirmed, SubscriptionsDeleted, SubscriptionsPending, TopicArn (+9 more)
 
 ### Community 1136 - "Community 1136"
-Cohesion: 0.12
-Nodes (17): AliasArn, Description, FunctionVersion, Name, ResponseMetadata, RevisionId, AllocatedProvisionedConcurrentExecutions, AvailableProvisionedConcurrentExecutions (+9 more)
+Cohesion: 0.08
+Nodes (24): AliasArn, Description, FunctionVersion, Name, ResponseMetadata, RevisionId, ExecutedVersion, Payload (+16 more)
 
 ### Community 1137 - "Community 1137"
 Cohesion: 0.12
@@ -10497,8 +10521,8 @@ Cohesion: 0.07
 Nodes (23): ArmRouter, _error(), _json_body(), _json_response(), _notfound_code(), WSGI router exposing the Azure Resource Manager subset over HTTP., Minimal ARM REST surface for resource groups + generic resources., deserialize_resource_body() (+15 more)
 
 ### Community 1151 - "Community 1151"
-Cohesion: 0.20
-Nodes (10): get_original_region(), In DDB Global tables, we forward all the requests to the original region, instea, describe_stream(), DynamoDBStreamsProvider, get_records(), get_shard_iterator(), list_streams(), # TODO: look into `ExclusiveStartStreamArn` param (+2 more)
+Cohesion: 0.13
+Nodes (25): _compare_conditions(), # TODO: add further support for schema validation, # TODO: add type checking/validation for result unit?, # TODO: validate the parameter type at template parse time (or whatever is in pa, # TODO: typing around resolved resources is needed and should be reflected here., # TODO: typing around resolved resources is needed and should be reflected here., # TODO: typing, # TODO: this could be improved with hashmap lookups if the Node contained bindin (+17 more)
 
 ### Community 1152 - "Community 1152"
 Cohesion: 0.17
@@ -10525,12 +10549,12 @@ Cohesion: 0.14
 Nodes (17): executionArn, mapRunArn, maxConcurrency, ResponseMetadata, startDate, status, stopDate, toleratedFailureCount (+9 more)
 
 ### Community 1158 - "Community 1158"
-Cohesion: 0.13
-Nodes (19): creationDate, stateMachineArn, creation_resp_1, error, tests/aws/services/stepfunctions/v2/test_sfn_api_tagging.py::TestSnfApiTagging::test_tag_invalid_state_machine[None], recorded-content, recorded-date, tests/aws/services/stepfunctions/v2/test_sfn_api_tagging.py::TestSnfApiTagging::test_tag_invalid_state_machine[tag_list1] (+11 more)
+Cohesion: 0.15
+Nodes (17): creationDate, stateMachineArn, creation_resp_1, error, recorded-content, tests/aws/services/stepfunctions/v2/test_sfn_api_tagging.py::TestSnfApiTagging::test_tag_invalid_state_machine[tag_list1], recorded-content, recorded-date (+9 more)
 
 ### Community 1159 - "Community 1159"
-Cohesion: 0.06
-Nodes (37): DriftInformation, Capabilities, CreationTime, DeletionTime, DisableRollback, DriftInformation, LastUpdatedTime, NotificationARNs (+29 more)
+Cohesion: 0.12
+Nodes (16): Capabilities, CreationTime, DeletionTime, DisableRollback, LastUpdatedTime, NotificationARNs, Parameters, RollbackConfiguration (+8 more)
 
 ### Community 1160 - "Community 1160"
 Cohesion: 0.15
@@ -10541,20 +10565,20 @@ Cohesion: 0.23
 Nodes (16): endpointConfiguration, endpointConfiguration, endpointConfiguration, endpointConfiguration, endpointConfiguration, endpointConfiguration, endpointConfiguration, endpointConfiguration (+8 more)
 
 ### Community 1162 - "Community 1162"
-Cohesion: 0.14
-Nodes (11): DynamodbServer, get(), in_memory(), jar_path(), library_path(), _log_listener(), Checks if DynamoDB server is up, Creates a DynamoDB server from the local configuration.          :param port: op (+3 more)
+Cohesion: 0.08
+Nodes (21): AwsRequestProxy, Implements the ``ServiceRequestHandler`` protocol to forward AWS requests to a b, Method to satisfy the ``ServiceRequestHandler`` protocol., Forwards the given request to the backend configured by ``endpoint_url``., DynamoDBDeveloperEndpoints, Developer endpoints for DynamoDB     DELETE /_aws/dynamodb/expired - delete expi, DynamodbServer, get() (+13 more)
 
 ### Community 1163 - "Community 1163"
 Cohesion: 0.12
-Nodes (16): teardown, tests/aws/services/apigateway/test_apigateway_api.py::TestApiGatewayApiRestApi::test_create_rest_api_verify_defaults, durations_in_seconds, last_validated_date, tests/aws/services/apigateway/test_apigateway_api.py::TestApigatewayIntegration::test_put_integration_response_templates, durations_in_seconds, last_validated_date, tests/aws/services/apigateway/test_apigateway_api.py::TestApigatewayIntegrationResponse::test_integration_response_invalid_statuscode (+8 more)
+Nodes (16): teardown, tests/aws/services/apigateway/test_apigateway_api.py::TestApiGatewayApiRequestValidator::test_request_validator_lifecycle, durations_in_seconds, last_validated_date, tests/aws/services/apigateway/test_apigateway_api.py::TestApigatewayIntegration::test_put_integration_response_templates, durations_in_seconds, last_validated_date, tests/aws/services/apigateway/test_apigateway_api.py::TestApigatewayIntegrationResponse::test_integration_response_invalid_statuscode (+8 more)
 
 ### Community 1164 - "Community 1164"
 Cohesion: 0.12
-Nodes (16): setup, tests/aws/services/apigateway/test_apigateway_api.py::TestApiGatewayApiRequestValidator::test_invalid_update_request_validator_operations, durations_in_seconds, last_validated_date, tests/aws/services/apigateway/test_apigateway_api.py::TestApiGatewayApiRequestValidator::test_request_validator_lifecycle, durations_in_seconds, last_validated_date, tests/aws/services/apigateway/test_apigateway_api.py::TestApiGatewayApiRestApi::test_create_rest_api_private_type (+8 more)
+Nodes (16): setup, tests/aws/services/apigateway/test_apigateway_api.py::TestApiGatewayApiRequestValidator::test_invalid_update_request_validator_operations, durations_in_seconds, last_validated_date, tests/aws/services/apigateway/test_apigateway_api.py::TestApiGatewayApiResource::test_update_resource_on_root, durations_in_seconds, last_validated_date, tests/aws/services/apigateway/test_apigateway_api.py::TestApiGatewayApiRestApi::test_update_rest_api_behaviour (+8 more)
 
 ### Community 1165 - "Community 1165"
 Cohesion: 0.12
-Nodes (16): total, tests/aws/services/apigateway/test_apigateway_api.py::TestApiGatewayApiRestApi::test_create_rest_api_with_optional_params, durations_in_seconds, last_validated_date, tests/aws/services/apigateway/test_apigateway_api.py::TestApiGatewayApiRestApi::test_update_rest_api_compression, durations_in_seconds, last_validated_date, tests/aws/services/apigateway/test_apigateway_api.py::TestApiGatewayApiRestApi::test_update_rest_api_ip_address_type (+8 more)
+Nodes (16): total, tests/aws/services/apigateway/test_apigateway_api.py::TestApiGatewayApiRestApi::test_create_rest_api_private_type, durations_in_seconds, last_validated_date, tests/aws/services/apigateway/test_apigateway_api.py::TestApiGatewayApiRestApi::test_create_rest_api_with_optional_params, durations_in_seconds, last_validated_date, tests/aws/services/apigateway/test_apigateway_api.py::TestApiGatewayApiRestApi::test_list_and_delete_apis (+8 more)
 
 ### Community 1166 - "Community 1166"
 Cohesion: 0.14
@@ -10569,8 +10593,8 @@ Cohesion: 0.12
 Nodes (16): apiKeySource, createdDate, disableExecuteApiEndpoint, endpointConfiguration, id, name, policy, ResponseMetadata (+8 more)
 
 ### Community 1169 - "Community 1169"
-Cohesion: 0.12
-Nodes (16): rest.action.multi.allow_explicit_index, Properties, EnforceHTTPS, TLSSecurityPolicy, EBSEnabled, VolumeSize, VolumeType, Enabled (+8 more)
+Cohesion: 0.10
+Nodes (21): rest.action.multi.allow_explicit_index, DedicatedMasterEnabled, InstanceCount, InstanceType, ZoneAwarenessEnabled, Properties, EnforceHTTPS, TLSSecurityPolicy (+13 more)
 
 ### Community 1170 - "Community 1170"
 Cohesion: 0.12
@@ -10594,19 +10618,19 @@ Nodes (15): tests/aws/services/cloudwatch/test_cloudwatch.py::TestCloudwatch::te
 
 ### Community 1175 - "Community 1175"
 Cohesion: 0.12
-Nodes (16): total, tests/aws/services/cloudwatch/test_cloudwatch.py::TestCloudwatch::test_anomaly_detector_lifecycle[query], durations_in_seconds, last_validated_date, tests/aws/services/cloudwatch/test_cloudwatch.py::TestCloudwatch::test_create_metric_stream[query], durations_in_seconds, last_validated_date, tests/aws/services/cloudwatch/test_cloudwatch.py::TestCloudwatch::test_create_metric_stream[smithy-rpc-v2-cbor] (+8 more)
+Nodes (16): total, tests/aws/services/cloudwatch/test_cloudwatch.py::TestCloudwatch::test_breaching_alarm_actions[json], durations_in_seconds, last_validated_date, tests/aws/services/cloudwatch/test_cloudwatch.py::TestCloudwatch::test_create_metric_stream[smithy-rpc-v2-cbor], durations_in_seconds, last_validated_date, tests/aws/services/cloudwatch/test_cloudwatch.py::TestCloudwatch::test_get_metric_data_different_units_no_unit_in_query[query-metric_data1] (+8 more)
 
 ### Community 1176 - "Community 1176"
 Cohesion: 0.12
-Nodes (16): call, tests/aws/services/cloudwatch/test_cloudwatch.py::TestCloudwatch::test_breaching_alarm_actions[query], durations_in_seconds, last_validated_date, tests/aws/services/cloudwatch/test_cloudwatch.py::TestCloudwatch::test_delete_alarm[query], durations_in_seconds, last_validated_date, tests/aws/services/cloudwatch/test_cloudwatch.py::TestCloudwatch::test_get_metric_data_different_units_no_unit_in_query[smithy-rpc-v2-cbor-metric_data2] (+8 more)
+Nodes (16): call, tests/aws/services/cloudwatch/test_cloudwatch.py::TestCloudwatch::test_anomaly_detector_lifecycle[query], durations_in_seconds, last_validated_date, tests/aws/services/cloudwatch/test_cloudwatch.py::TestCloudwatch::test_delete_alarm[query], durations_in_seconds, last_validated_date, tests/aws/services/cloudwatch/test_cloudwatch.py::TestCloudwatch::test_get_metric_data_different_units_no_unit_in_query[smithy-rpc-v2-cbor-metric_data2] (+8 more)
 
 ### Community 1177 - "Community 1177"
 Cohesion: 0.12
-Nodes (16): setup, tests/aws/services/cloudwatch/test_cloudwatch.py::TestCloudwatch::test_anomaly_detector_lifecycle[json], durations_in_seconds, last_validated_date, tests/aws/services/cloudwatch/test_cloudwatch.py::TestCloudwatch::test_default_ordering[smithy-rpc-v2-cbor], durations_in_seconds, last_validated_date, tests/aws/services/cloudwatch/test_cloudwatch.py::TestCloudwatch::test_describe_minimal_metric_alarm[json] (+8 more)
+Nodes (16): setup, tests/aws/services/cloudwatch/test_cloudwatch.py::TestCloudwatch::test_aws_sqs_metrics_created, durations_in_seconds, last_validated_date, tests/aws/services/cloudwatch/test_cloudwatch.py::TestCloudwatch::test_default_ordering[smithy-rpc-v2-cbor], durations_in_seconds, last_validated_date, tests/aws/services/cloudwatch/test_cloudwatch.py::TestCloudwatch::test_describe_minimal_metric_alarm[json] (+8 more)
 
 ### Community 1178 - "Community 1178"
 Cohesion: 0.12
-Nodes (16): teardown, tests/aws/services/cloudwatch/test_cloudwatch.py::TestCloudwatch::test_anomaly_detector_lifecycle[smithy-rpc-v2-cbor], durations_in_seconds, last_validated_date, tests/aws/services/cloudwatch/test_cloudwatch.py::TestCloudwatch::test_describe_minimal_metric_alarm[query], durations_in_seconds, last_validated_date, tests/aws/services/cloudwatch/test_cloudwatch.py::TestCloudwatch::test_get_metric_data_pagination[query] (+8 more)
+Nodes (16): teardown, tests/aws/services/cloudwatch/test_cloudwatch.py::TestCloudwatch::test_anomaly_detector_lifecycle[json], durations_in_seconds, last_validated_date, tests/aws/services/cloudwatch/test_cloudwatch.py::TestCloudwatch::test_describe_minimal_metric_alarm[query], durations_in_seconds, last_validated_date, tests/aws/services/cloudwatch/test_cloudwatch.py::TestCloudwatch::test_get_metric_data_pagination[query] (+8 more)
 
 ### Community 1179 - "Community 1179"
 Cohesion: 0.12
@@ -10617,12 +10641,12 @@ Cohesion: 0.12
 Nodes (16): ListRefGetAtt, ListRefGetAttMapping, ListRefMultipleMix, ListRefParam, ListRefPseudoParam, ListRefResourceDirect, ListRefResourceMappingRef, ListStatic (+8 more)
 
 ### Community 1181 - "Community 1181"
-Cohesion: 0.12
-Nodes (16): message, ResponseMetadata, Type, create_event_source_mapping_exception, tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_sqs.py::TestSQSEventSourceMapping::test_sqs_invalid_event_filter[invalid_filter2], recorded-content, recorded-date, tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_sqs.py::TestSQSEventSourceMapping::test_sqs_invalid_event_filter[invalid_filter3] (+8 more)
+Cohesion: 0.13
+Nodes (15): message, Type, create_event_source_mapping_exception, tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_sqs.py::TestSQSEventSourceMapping::test_sqs_invalid_event_filter[invalid_filter2], recorded-content, recorded-date, tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_sqs.py::TestSQSEventSourceMapping::test_sqs_invalid_event_filter[invalid_filter3], recorded-content (+7 more)
 
 ### Community 1182 - "Community 1182"
-Cohesion: 0.25
-Nodes (6): CreateApiDestinationResponse, DeleteConnectionResponse, create_api_destination(), delete_connection(), update_api_destination(), extract_connection_name()
+Cohesion: 0.22
+Nodes (6): CreateApiDestinationResponse, DeleteApiDestinationResponse, UpdateApiDestinationResponse, create_api_destination(), delete_api_destination(), update_api_destination()
 
 ### Community 1183 - "Community 1183"
 Cohesion: 0.12
@@ -10630,7 +10654,7 @@ Nodes (16): ConnectionArn, ConnectionState, CreationTime, LastModifiedTime, Resp
 
 ### Community 1184 - "Community 1184"
 Cohesion: 0.12
-Nodes (16): input-transformed-messages, tests/aws/services/events/test_events_inputs.py::TestInputTransformer::test_input_transformer_nested_keys_replacement[\"Command is <valid>!\"], recorded-content, recorded-date, tests/aws/services/events/test_events_inputs.py::TestInputTransformer::test_input_transformer_nested_keys_replacement[\"<listsingle> single list item\"\\n\"<listmulti> multiple list items\"\\n\"<systemstring> system account id\"\\n\"<payload> payload\"\\n\"<userId> user id\"], recorded-content, recorded-date, tests/aws/services/events/test_events_inputs.py::TestInputTransformer::test_input_transformer_nested_keys_replacement[{\"method\": \"PUT\", \"path\": \"users-service/users/<userId>\", \"bod\": [<userId>, \"hardcoded\"]}] (+8 more)
+Nodes (16): input-transformed-messages, tests/aws/services/events/test_events_inputs.py::TestInputTransformer::test_input_transformer_nested_keys_replacement[\"Command is <valid>!\"], recorded-content, recorded-date, tests/aws/services/events/test_events_inputs.py::TestInputTransformer::test_input_transformer_nested_keys_replacement[{\"id\" : <userId>}], recorded-content, recorded-date, tests/aws/services/events/test_events_inputs.py::TestInputTransformer::test_input_transformer_nested_keys_replacement[\"<listsingle> single list item <listmulti> multiple list items <systemstring> system account id <payload> payload <userId> user id\"] (+8 more)
 
 ### Community 1185 - "Community 1185"
 Cohesion: 0.12
@@ -10638,23 +10662,23 @@ Nodes (15): tests/aws/services/events/test_events_patterns.py::TestEventPattern:
 
 ### Community 1186 - "Community 1186"
 Cohesion: 0.12
-Nodes (16): setup, tests/aws/services/events/test_events_patterns.py::TestEventPattern::test_event_pattern[arrays_NEG], durations_in_seconds, last_validated_date, tests/aws/services/events/test_events_patterns.py::TestEventPattern::test_event_pattern[content_anything_but_ignorecase_list_missing_NEG], durations_in_seconds, last_validated_date, tests/aws/services/events/test_events_patterns.py::TestEventPattern::test_event_pattern[content_anything_but_number_list] (+8 more)
+Nodes (16): setup, tests/aws/services/events/test_events_patterns.py::TestEventPattern::test_event_pattern[boolean_NEG], durations_in_seconds, last_validated_date, tests/aws/services/events/test_events_patterns.py::TestEventPattern::test_event_pattern[content_anything_but_ignorecase_list_missing_NEG], durations_in_seconds, last_validated_date, tests/aws/services/events/test_events_patterns.py::TestEventPattern::test_event_pattern[content_anything_but_number_list] (+8 more)
 
 ### Community 1187 - "Community 1187"
 Cohesion: 0.12
-Nodes (16): teardown, tests/aws/services/events/test_events_patterns.py::TestEventPattern::test_event_pattern[complex_multi_match], durations_in_seconds, last_validated_date, tests/aws/services/events/test_events_patterns.py::TestEventPattern::test_event_pattern[content_anything_prefix_list_int], durations_in_seconds, last_validated_date, tests/aws/services/events/test_events_patterns.py::TestEventPattern::test_event_pattern[content_anything_suffix] (+8 more)
+Nodes (16): teardown, tests/aws/services/events/test_events_patterns.py::TestEventPattern::test_event_pattern[arrays], durations_in_seconds, last_validated_date, tests/aws/services/events/test_events_patterns.py::TestEventPattern::test_event_pattern[content_anything_but_number_list_NEG], durations_in_seconds, last_validated_date, tests/aws/services/events/test_events_patterns.py::TestEventPattern::test_event_pattern[content_anything_prefix_list_int] (+8 more)
 
 ### Community 1188 - "Community 1188"
 Cohesion: 0.12
-Nodes (16): total, tests/aws/services/events/test_events_patterns.py::TestEventPattern::test_event_pattern[boolean_NEG], durations_in_seconds, last_validated_date, tests/aws/services/events/test_events_patterns.py::TestEventPattern::test_event_pattern[complex_or], durations_in_seconds, last_validated_date, tests/aws/services/events/test_events_patterns.py::TestEventPattern::test_event_pattern[content_anything_but_number_list_NEG] (+8 more)
+Nodes (16): total, tests/aws/services/events/test_events_patterns.py::TestEventPattern::test_event_pattern[arrays_empty_EXC], durations_in_seconds, last_validated_date, tests/aws/services/events/test_events_patterns.py::TestEventPattern::test_event_pattern[complex_or], durations_in_seconds, last_validated_date, tests/aws/services/events/test_events_patterns.py::TestEventPattern::test_event_pattern[content_anything_but_ignorecase_null] (+8 more)
 
 ### Community 1189 - "Community 1189"
 Cohesion: 0.12
-Nodes (16): call, tests/aws/services/events/test_events_patterns.py::TestEventPattern::test_event_pattern[arrays], durations_in_seconds, last_validated_date, tests/aws/services/events/test_events_patterns.py::TestEventPattern::test_event_pattern[complex_multi_match_NEG], durations_in_seconds, last_validated_date, tests/aws/services/events/test_events_patterns.py::TestEventPattern::test_event_pattern[content_anything_but_ignorecase_list_null] (+8 more)
+Nodes (16): call, tests/aws/services/events/test_events_patterns.py::TestEventPattern::test_event_pattern[complex_multi_match], durations_in_seconds, last_validated_date, tests/aws/services/events/test_events_patterns.py::TestEventPattern::test_event_pattern[content_anything_but_ignorecase_list_null], durations_in_seconds, last_validated_date, tests/aws/services/events/test_events_patterns.py::TestEventPattern::test_event_pattern[content_anything_prefix] (+8 more)
 
 ### Community 1190 - "Community 1190"
-Cohesion: 0.10
-Nodes (21): Code, Message, Error, ResponseMetadata, Error, invalid-put-rule, tests/aws/services/events/test_events_schedule.py::TestScheduleCron::tests_put_rule_with_invalid_schedule_cron[cron(0 1 * * * *)], recorded-content (+13 more)
+Cohesion: 0.12
+Nodes (16): invalid-put-rule, tests/aws/services/events/test_events_schedule.py::TestScheduleCron::tests_put_rule_with_invalid_schedule_cron[cron(0 1 * * * *)], recorded-content, recorded-date, tests/aws/services/events/test_events_schedule.py::TestScheduleCron::tests_put_rule_with_invalid_schedule_cron[cron(0 dummy ? * MON-FRI *)], recorded-content, recorded-date, tests/aws/services/events/test_events_schedule.py::TestScheduleCron::tests_put_rule_with_invalid_schedule_cron[cron(71 8 1 * ? *)] (+8 more)
 
 ### Community 1191 - "Community 1191"
 Cohesion: 0.12
@@ -10681,8 +10705,8 @@ Cohesion: 0.12
 Nodes (16): Tag, description, maxLength, minLength, type, Key, Value, additionalProperties (+8 more)
 
 ### Community 1197 - "Community 1197"
-Cohesion: 0.16
-Nodes (21): ParameterDeclaration, convert_stack_parameters_to_dict(), convert_stack_parameters_to_list(), extract_stack_parameter_declarations(), LegacyParameter, LegacyParameterProperties, map_to_legacy_structure(), mask_no_echo() (+13 more)
+Cohesion: 0.14
+Nodes (23): CreateChangeSetOutput, ParameterDeclaration, create_change_set(), convert_stack_parameters_to_dict(), convert_stack_parameters_to_list(), extract_stack_parameter_declarations(), LegacyParameter, LegacyParameterProperties (+15 more)
 
 ### Community 1198 - "Community 1198"
 Cohesion: 0.12
@@ -10698,35 +10722,35 @@ Nodes (8): _body(), _error(), _json(), Azure Service Bus REST adapter (subset of
 
 ### Community 1201 - "Community 1201"
 Cohesion: 0.12
-Nodes (16): teardown, tests/aws/services/lambda_/test_lambda_api.py::TestCodeSigningConfig::test_code_signing_not_found_excs, durations_in_seconds, last_validated_date, tests/aws/services/lambda_/test_lambda_api.py::TestLambdaFunction::test_delete_on_nonexisting_version, durations_in_seconds, last_validated_date, tests/aws/services/lambda_/test_lambda_api.py::TestLambdaFunction::test_function_name_and_qualifier_validation[function_name_is_single_invalid-get_function] (+8 more)
+Nodes (16): setup, tests/aws/services/lambda_/test_lambda_api.py::TestCodeSigningConfig::test_code_signing_not_found_excs, durations_in_seconds, last_validated_date, tests/aws/services/lambda_/test_lambda_api.py::TestLambdaEventInvokeConfig::test_lambda_eventinvokeconfig_exceptions, durations_in_seconds, last_validated_date, tests/aws/services/lambda_/test_lambda_api.py::TestLambdaFunction::test_delete_on_nonexisting_version (+8 more)
 
 ### Community 1202 - "Community 1202"
 Cohesion: 0.12
-Nodes (16): total, tests/aws/services/lambda_/test_lambda_api.py::TestCodeSigningConfig::test_function_code_signing_config, durations_in_seconds, last_validated_date, tests/aws/services/lambda_/test_lambda_api.py::TestLambdaEventSourceMappings::test_event_source_mapping_lifecycle, durations_in_seconds, last_validated_date, tests/aws/services/lambda_/test_lambda_api.py::TestLambdaEventSourceMappings::test_function_name_variations (+8 more)
+Nodes (16): teardown, tests/aws/services/lambda_/test_lambda_api.py::TestCodeSigningConfig::test_function_code_signing_config, durations_in_seconds, last_validated_date, tests/aws/services/lambda_/test_lambda_api.py::TestLambdaEventSourceMappings::test_event_source_mapping_lifecycle, durations_in_seconds, last_validated_date, tests/aws/services/lambda_/test_lambda_api.py::TestLambdaFunction::test_function_name_and_qualifier_validation[function_name_is_single_invalid-get_function] (+8 more)
 
 ### Community 1203 - "Community 1203"
 Cohesion: 0.12
-Nodes (16): setup, tests/aws/services/lambda_/test_lambda_common.py::TestLambdaCallingLocalstack::test_manual_endpoint_injection[java17], durations_in_seconds, last_validated_date, tests/aws/services/lambda_/test_lambda_common.py::TestLambdaCallingLocalstack::test_manual_endpoint_injection[python3.8], durations_in_seconds, last_validated_date, tests/aws/services/lambda_/test_lambda_common.py::TestLambdaCallingLocalstack::test_manual_endpoint_injection[python3.9] (+8 more)
+Nodes (16): setup, tests/aws/services/lambda_/test_lambda_common.py::TestLambdaCallingLocalstack::test_manual_endpoint_injection[dotnet10], durations_in_seconds, last_validated_date, tests/aws/services/lambda_/test_lambda_common.py::TestLambdaCallingLocalstack::test_manual_endpoint_injection[python3.8], durations_in_seconds, last_validated_date, tests/aws/services/lambda_/test_lambda_common.py::TestLambdaCallingLocalstack::test_manual_endpoint_injection[python3.9] (+8 more)
 
 ### Community 1204 - "Community 1204"
 Cohesion: 0.12
-Nodes (16): teardown, tests/aws/services/lambda_/test_lambda_common.py::TestLambdaCallingLocalstack::test_manual_endpoint_injection[dotnet10], durations_in_seconds, last_validated_date, tests/aws/services/lambda_/test_lambda_common.py::TestLambdaCallingLocalstack::test_manual_endpoint_injection[python3.14], durations_in_seconds, last_validated_date, tests/aws/services/lambda_/test_lambda_common.py::TestLambdaRuntimesCommon::test_echo_invoke[provided.al2023] (+8 more)
+Nodes (16): teardown, tests/aws/services/lambda_/test_lambda_common.py::TestLambdaCallingLocalstack::test_manual_endpoint_injection[dotnet6], durations_in_seconds, last_validated_date, tests/aws/services/lambda_/test_lambda_common.py::TestLambdaCallingLocalstack::test_manual_endpoint_injection[python3.14], durations_in_seconds, last_validated_date, tests/aws/services/lambda_/test_lambda_common.py::TestLambdaRuntimesCommon::test_echo_invoke[provided.al2023] (+8 more)
 
 ### Community 1205 - "Community 1205"
 Cohesion: 0.12
-Nodes (16): total, tests/aws/services/lambda_/test_lambda_common.py::TestLambdaCallingLocalstack::test_manual_endpoint_injection[dotnet6], durations_in_seconds, last_validated_date, tests/aws/services/lambda_/test_lambda_common.py::TestLambdaCallingLocalstack::test_manual_endpoint_injection[python3.12], durations_in_seconds, last_validated_date, tests/aws/services/lambda_/test_lambda_common.py::TestLambdaCallingLocalstack::test_manual_endpoint_injection[ruby3.4] (+8 more)
+Nodes (16): total, tests/aws/services/lambda_/test_lambda_common.py::TestLambdaCallingLocalstack::test_manual_endpoint_injection[dotnet8], durations_in_seconds, last_validated_date, tests/aws/services/lambda_/test_lambda_common.py::TestLambdaCallingLocalstack::test_manual_endpoint_injection[python3.12], durations_in_seconds, last_validated_date, tests/aws/services/lambda_/test_lambda_common.py::TestLambdaCallingLocalstack::test_manual_endpoint_injection[ruby3.4] (+8 more)
 
 ### Community 1206 - "Community 1206"
 Cohesion: 0.12
-Nodes (16): total, tests/aws/services/lambda_/test_lambda.py::TestLambdaBaseFeatures::test_assume_role[1], durations_in_seconds, last_validated_date, tests/aws/services/lambda_/test_lambda.py::TestLambdaBaseFeatures::test_large_payloads, durations_in_seconds, last_validated_date, tests/aws/services/lambda_/test_lambda.py::TestLambdaBehavior::test_runtime_introspection_x86 (+8 more)
+Nodes (16): teardown, tests/aws/services/lambda_/test_lambda.py::TestLambdaAliases::test_alias_routingconfig, durations_in_seconds, last_validated_date, tests/aws/services/lambda_/test_lambda.py::TestLambdaBehavior::test_runtime_introspection_x86, durations_in_seconds, last_validated_date, tests/aws/services/lambda_/test_lambda.py::TestLambdaBehavior::test_runtime_ulimits (+8 more)
 
 ### Community 1207 - "Community 1207"
-Cohesion: 0.11
-Nodes (19): call, tests/aws/services/lambda_/test_lambda.py::TestLambdaBehavior::test_lambda_cache_local[nodejs], durations_in_seconds, last_validated_date, tests/aws/services/lambda_/test_lambda.py::TestLambdaBehavior::test_lambda_host_prefix_api_operation, durations_in_seconds, last_validated_date, tests/aws/services/lambda_/test_lambda.py::TestLambdaCleanup::test_recreate_function (+11 more)
+Cohesion: 0.12
+Nodes (16): total, tests/aws/services/lambda_/test_lambda.py::TestLambdaAliases::test_lambda_alias_moving, durations_in_seconds, last_validated_date, tests/aws/services/lambda_/test_lambda.py::TestLambdaBehavior::test_lambda_cache_local[nodejs], durations_in_seconds, last_validated_date, tests/aws/services/lambda_/test_lambda.py::TestLambdaErrors::test_lambda_handler_error (+8 more)
 
 ### Community 1208 - "Community 1208"
 Cohesion: 0.12
-Nodes (16): teardown, tests/aws/services/lambda_/test_lambda.py::TestLambdaAliases::test_alias_routingconfig, durations_in_seconds, last_validated_date, tests/aws/services/lambda_/test_lambda.py::TestLambdaBehavior::test_runtime_ulimits, durations_in_seconds, last_validated_date, tests/aws/services/lambda_/test_lambda.py::TestLambdaConcurrency::test_lambda_concurrency_update (+8 more)
+Nodes (16): setup, tests/aws/services/lambda_/test_lambda.py::TestLambdaBaseFeatures::test_lambda_too_large_response, durations_in_seconds, last_validated_date, tests/aws/services/lambda_/test_lambda.py::TestLambdaBehavior::test_lambda_cache_local[python], durations_in_seconds, last_validated_date, tests/aws/services/lambda_/test_lambda.py::TestLambdaConcurrency::test_lambda_concurrency_update (+8 more)
 
 ### Community 1209 - "Community 1209"
 Cohesion: 0.21
@@ -10746,7 +10770,7 @@ Nodes (16): DependsOn, Properties, Type, S3Bucket, S3Key, DependsOn, Properties,
 
 ### Community 1213 - "Community 1213"
 Cohesion: 0.15
-Nodes (16): Error, Code, Error, ResponseMetadata, Error, ResponseMetadata, Message, Error (+8 more)
+Nodes (16): Error, Code, Error, ResponseMetadata, Error, Message, Error, ResponseMetadata (+8 more)
 
 ### Community 1214 - "Community 1214"
 Cohesion: 0.17
@@ -10765,8 +10789,8 @@ Cohesion: 0.12
 Nodes (16): Table, NumberOfDecreasesToday, ReadCapacityUnits, WriteCapacityUnits, AttributeDefinitions, CreationDateTime, DeletionProtectionEnabled, GlobalSecondaryIndexes (+8 more)
 
 ### Community 1218 - "Community 1218"
-Cohesion: 0.20
-Nodes (10): ClicksBucketDestinationName, DeliveryStreamArn, DeliveryStreamName, <physical-resource-id:1>Name, PopulateDbFunctionName, StreamProcessorFunctionName, UserClicksServiceAPIEndpoint, UserClicksServiceAPIEndpoint1DA4E100 (+2 more)
+Cohesion: 0.12
+Nodes (15): StackResources, ClicksBucketDestinationName, DeliveryStreamArn, DeliveryStreamName, <physical-resource-id:1>Name, PopulateDbFunctionName, StreamProcessorFunctionName, UserClicksServiceAPIEndpoint (+7 more)
 
 ### Community 1219 - "Community 1219"
 Cohesion: 0.12
@@ -10794,7 +10818,7 @@ Nodes (16): additionalProperties, properties, required, type, CapacityAutoScalin
 
 ### Community 1225 - "Community 1225"
 Cohesion: 0.12
-Nodes (17): description, insertionOrder, type, description, type, description, type, description (+9 more)
+Nodes (17): description, type, description, insertionOrder, type, description, type, description (+9 more)
 
 ### Community 1226 - "Community 1226"
 Cohesion: 0.16
@@ -10849,28 +10873,28 @@ Cohesion: 0.12
 Nodes (16): Errors, ResponseMetadata, Deleted, ResponseMetadata, ChecksumCRC32, ChecksumType, ETag, ResponseMetadata (+8 more)
 
 ### Community 1239 - "Community 1239"
-Cohesion: 0.67
-Nodes (3): tests/aws/services/s3/test_s3_api.py::TestS3BucketAccelerateConfiguration::test_bucket_acceleration_configuration_crud, durations_in_seconds, last_validated_date
+Cohesion: 0.14
+Nodes (15): _add_paths(), _BaseOpenApiExporter, export(), _get_integration(), OpenApiExporter, _OpenApiOAS30Exporter, _OpenApiSwaggerExporter, # TODO: other type? (+7 more)
 
 ### Community 1240 - "Community 1240"
 Cohesion: 0.12
-Nodes (16): teardown, tests/aws/services/s3/test_s3_api.py::TestS3BucketAccelerateConfiguration::test_bucket_acceleration_configuration_exc, durations_in_seconds, last_validated_date, tests/aws/services/s3/test_s3_api.py::TestS3BucketEncryption::test_s3_bucket_encryption_sse_kms, durations_in_seconds, last_validated_date, tests/aws/services/s3/test_s3_api.py::TestS3BucketObjectTagging::test_object_tagging_crud (+8 more)
+Nodes (16): teardown, tests/aws/services/s3/test_s3_api.py::TestS3BucketAccelerateConfiguration::test_bucket_acceleration_configuration_crud, durations_in_seconds, last_validated_date, tests/aws/services/s3/test_s3_api.py::TestS3BucketObjectTagging::test_create_bucket_with_tags_us_east_1_idempotency, durations_in_seconds, last_validated_date, tests/aws/services/s3/test_s3_api.py::TestS3MetricsConfiguration::test_delete_metrics_configuration (+8 more)
 
 ### Community 1241 - "Community 1241"
 Cohesion: 0.12
-Nodes (16): setup, tests/aws/services/s3/test_s3_api.py::TestS3BucketEncryption::test_s3_default_bucket_encryption, durations_in_seconds, last_validated_date, tests/aws/services/s3/test_s3_api.py::TestS3BucketObjectTagging::test_object_tagging_exc, durations_in_seconds, last_validated_date, tests/aws/services/s3/test_s3_api.py::TestS3BucketObjectTagging::test_object_tagging_versioned (+8 more)
+Nodes (16): setup, tests/aws/services/s3/test_s3_api.py::TestS3BucketAccelerateConfiguration::test_bucket_acceleration_configuration_exc, durations_in_seconds, last_validated_date, tests/aws/services/s3/test_s3_api.py::TestS3BucketObjectTagging::test_object_tagging_exc, durations_in_seconds, last_validated_date, tests/aws/services/s3/test_s3_api.py::TestS3BucketObjectTagging::test_object_tagging_versioned (+8 more)
 
 ### Community 1242 - "Community 1242"
 Cohesion: 0.12
-Nodes (16): teardown, tests/aws/services/s3/test_s3.py::TestS3::test_bucket_constraint_aws_global[us-east-1], durations_in_seconds, last_validated_date, tests/aws/services/s3/test_s3.py::TestS3::test_bucket_does_not_exist, durations_in_seconds, last_validated_date, tests/aws/services/s3/test_s3.py::TestS3::test_bucket_exists (+8 more)
+Nodes (16): setup, tests/aws/services/s3/test_s3.py::TestS3::test_bucket_exists, durations_in_seconds, last_validated_date, tests/aws/services/s3/test_s3.py::TestS3::test_copy_object_special_character, durations_in_seconds, last_validated_date, tests/aws/services/s3/test_s3.py::TestS3::test_create_bucket_with_invalid_location_constraint[eu-west-1-bar] (+8 more)
 
 ### Community 1243 - "Community 1243"
 Cohesion: 0.12
-Nodes (16): total, tests/aws/services/s3/test_s3.py::TestS3::test_bucket_constraint_aws_global[us-west-1], durations_in_seconds, last_validated_date, tests/aws/services/s3/test_s3.py::TestS3::test_create_bucket_with_existing_name, durations_in_seconds, last_validated_date, tests/aws/services/s3/test_s3.py::TestS3::test_create_bucket_with_invalid_location_constraint[eu-west-1-bar] (+8 more)
+Nodes (16): total, tests/aws/services/s3/test_s3.py::TestS3::test_bucket_availability, durations_in_seconds, last_validated_date, tests/aws/services/s3/test_s3.py::TestS3::test_create_bucket_head_bucket, durations_in_seconds, last_validated_date, tests/aws/services/s3/test_s3.py::TestS3::test_create_bucket_with_existing_name (+8 more)
 
 ### Community 1244 - "Community 1244"
 Cohesion: 0.12
-Nodes (16): setup, tests/aws/services/s3/test_s3.py::TestS3::test_bucket_availability, durations_in_seconds, last_validated_date, tests/aws/services/s3/test_s3.py::TestS3::test_create_bucket_with_invalid_location_constraint[us-east-1-foo], durations_in_seconds, last_validated_date, tests/aws/services/s3/test_s3.py::TestS3::test_get_object_attributes (+8 more)
+Nodes (16): call, tests/aws/services/s3/test_s3.py::TestS3::test_bucket_constraint_aws_global[us-east-1], durations_in_seconds, last_validated_date, tests/aws/services/s3/test_s3.py::TestS3::test_create_bucket_with_invalid_location_constraint[us-east-1-foo], durations_in_seconds, last_validated_date, tests/aws/services/s3/test_s3.py::TestS3::test_get_object_attributes (+8 more)
 
 ### Community 1245 - "Community 1245"
 Cohesion: 0.12
@@ -10878,11 +10902,11 @@ Nodes (16): outputDetails, outputDetails, outputDetails, message, included, succ
 
 ### Community 1246 - "Community 1246"
 Cohesion: 0.12
-Nodes (16): setup, tests/aws/services/sns/test_sns.py::TestSNSPlatformApplicationCrud::test_create_platform_application_invalid_attributes[invalid-cred-first1], durations_in_seconds, last_validated_date, tests/aws/services/sns/test_sns.py::TestSNSPlatformApplicationCrud::test_create_platform_application_invalid_name[too-long], durations_in_seconds, last_validated_date, tests/aws/services/sns/test_sns.py::TestSNSPlatformApplicationCrud::test_set_platform_application_attributes_non_existing_app (+8 more)
+Nodes (16): setup, tests/aws/services/sns/test_sns.py::TestSNSPlatformApplicationCrud::test_create_platform_application_invalid_name[empty], durations_in_seconds, last_validated_date, tests/aws/services/sns/test_sns.py::TestSNSPlatformApplicationCrud::test_create_platform_application_invalid_name[too-long], durations_in_seconds, last_validated_date, tests/aws/services/sns/test_sns.py::TestSNSPlatformApplicationCrud::test_set_platform_application_attributes_non_existing_app (+8 more)
 
 ### Community 1247 - "Community 1247"
 Cohesion: 0.12
-Nodes (16): total, tests/aws/services/sns/test_sns.py::TestSNSPlatformApplicationCrud::test_create_platform_application_invalid_attributes[missing-credential], durations_in_seconds, last_validated_date, tests/aws/services/sns/test_sns.py::TestSNSPlatformApplicationCrud::test_set_platform_application_attributes, durations_in_seconds, last_validated_date, tests/aws/services/sns/test_sns.py::TestSNSPlatformEndpointCrud::test_set_platform_endpoint_attributes_invalid_attributes[attributes0] (+8 more)
+Nodes (16): total, tests/aws/services/sns/test_sns.py::TestSNSPlatformApplicationCrud::test_create_platform_application, durations_in_seconds, last_validated_date, tests/aws/services/sns/test_sns.py::TestSNSPlatformApplicationCrud::test_set_platform_application_attributes, durations_in_seconds, last_validated_date, tests/aws/services/sns/test_sns.py::TestSNSPlatformEndpointCrud::test_set_platform_endpoint_attributes_invalid_attributes[attributes0] (+8 more)
 
 ### Community 1248 - "Community 1248"
 Cohesion: 0.12
@@ -10893,12 +10917,12 @@ Cohesion: 0.17
 Nodes (16): ApproximateNumberOfMessagesMoved, ResponseMetadata, ResponseMetadata, ResponseMetadata, Results, ResponseMetadata, Results, ResponseMetadata (+8 more)
 
 ### Community 1250 - "Community 1250"
-Cohesion: 0.30
-Nodes (16): Error, Error, Code, Detail, Message, QueryErrorCode, Type, Error (+8 more)
+Cohesion: 0.48
+Nodes (12): Error, Error, Code, Detail, Message, QueryErrorCode, Type, Error (+4 more)
 
 ### Community 1251 - "Community 1251"
-Cohesion: 0.13
-Nodes (9): Core concepts of the persistence API., While a StateContainer can in principle be anything, localstack currently suppor, Visit (=do something with) a given state container. A state container can be any, Accept a StateVisitor. The implementing method should call visit not necessarily, StateContainer, StateVisitable, StateVisitor, A plugin for the snapshot persistence mechanism, which allows you to return cust (+1 more)
+Cohesion: 0.05
+Nodes (23): describe_cluster_security_groups(), RedshiftProvider, RedshiftApi, AssetDirectory, Core concepts of the persistence API., While a StateContainer can in principle be anything, localstack currently suppor, There are three well-known state manipulation operations for a service provider:, Hook triggered before the provider's state containers are reset/cleared. (+15 more)
 
 ### Community 1252 - "Community 1252"
 Cohesion: 0.13
@@ -10906,11 +10930,11 @@ Nodes (15): targetExecutionResult, test_state_response, HTTPHeaders, HTTPStatusC
 
 ### Community 1253 - "Community 1253"
 Cohesion: 0.12
-Nodes (15): tests/aws/services/stepfunctions/v2/test_state/test_state_context_object.py::TestStateContextObject::test_state_context_object_edge_cases[EMPTY_OBJECTS], recorded-content, recorded-date, tests/aws/services/stepfunctions/v2/test_state/test_state_context_object.py::TestStateContextObject::test_state_context_object_validation_failures[INVALID_FIELD], recorded-content, recorded-date, tests/aws/services/stepfunctions/v2/test_state/test_state_context_object.py::TestStateContextObject::test_state_map_context_object[ALL], recorded-content (+7 more)
+Nodes (15): tests/aws/services/stepfunctions/v2/test_state/test_state_context_object.py::TestStateContextObject::test_state_context_object_edge_cases[EMPTY_OBJECTS], recorded-content, recorded-date, tests/aws/services/stepfunctions/v2/test_state/test_state_context_object.py::TestStateContextObject::test_state_context_object_validation_failures[INVALID_EXECUTION_ID_TYPE], recorded-content, recorded-date, tests/aws/services/stepfunctions/v2/test_state/test_state_context_object.py::TestStateContextObject::test_state_map_context_object[ALL], recorded-content (+7 more)
 
 ### Community 1254 - "Community 1254"
-Cohesion: 0.20
-Nodes (4): An HTTP Response object, which simply extends werkzeug's Response object with a, Serializes the given dictionary using localstack's ``CustomEncoder`` into a json, Response, RoloResponse
+Cohesion: 0.11
+Nodes (15): AdaptiveThreadPool, AsyncThread, DaemonAwareThreadPool, ensure_event_loop(), get_main_event_loop(), get_named_event_loop(), Run an async coroutine in a threadsafe way in the main event loop, Ensure that an event loop is defined for the currently running thread (+7 more)
 
 ### Community 1255 - "Community 1255"
 Cohesion: 0.16
@@ -10925,16 +10949,16 @@ Cohesion: 0.17
 Nodes (16): activityArn, creationDate, ResponseMetadata, ResponseMetadata, message, ResponseMetadata, ResponseMetadata, message (+8 more)
 
 ### Community 1258 - "Community 1258"
-Cohesion: 0.11
-Nodes (24): creationDate, ResponseMetadata, stateMachineArn, creationDate, ResponseMetadata, stateMachineArn, ResponseMetadata, ResponseMetadata (+16 more)
+Cohesion: 0.15
+Nodes (16): creationDate, ResponseMetadata, stateMachineArn, creationDate, ResponseMetadata, stateMachineArn, ResponseMetadata, ResponseMetadata (+8 more)
 
 ### Community 1259 - "Community 1259"
 Cohesion: 0.17
-Nodes (16): creationDate, loggingConfiguration, name, ResponseMetadata, roleArn, stateMachineArn, status, type (+8 more)
+Nodes (16): loggingConfiguration, loggingConfiguration, creationDate, loggingConfiguration, name, ResponseMetadata, roleArn, stateMachineArn (+8 more)
 
 ### Community 1260 - "Community 1260"
-Cohesion: 0.13
-Nodes (16): update_resp_1, update_resp_2, tests/aws/services/stepfunctions/v2/test_sfn_api_versioning.py::TestSnfApiVersioning::test_empty_revision_with_publish_and_no_publish_on_creation, recorded-content, recorded-date, tests/aws/services/stepfunctions/v2/test_sfn_api_versioning.py::TestSnfApiVersioning::test_empty_revision_with_publish_and_publish_on_creation, recorded-content, recorded-date (+8 more)
+Cohesion: 0.08
+Nodes (32): creationDate, ResponseMetadata, stateMachineArn, stateMachineVersionArn, creation_resp_1, update_resp_1, update_resp_2, tests/aws/services/stepfunctions/v2/test_sfn_api_versioning.py::TestSnfApiVersioning::test_create_publish_describe_with_version_description (+24 more)
 
 ### Community 1261 - "Community 1261"
 Cohesion: 0.13
@@ -10965,8 +10989,8 @@ Cohesion: 0.13
 Nodes (15): Capabilities, Changes, ChangeSetId, ChangeSetName, CreationTime, ExecutionStatus, IncludeNestedStacks, NotificationARNs (+7 more)
 
 ### Community 1268 - "Community 1268"
-Cohesion: 0.13
-Nodes (15): api_id, authorizerUri, authType, id, identitySource, name, type, apiKeyRequired (+7 more)
+Cohesion: 0.20
+Nodes (10): api_id, authorizerUri, authType, id, identitySource, name, type, api-id (+2 more)
 
 ### Community 1269 - "Community 1269"
 Cohesion: 0.13
@@ -11061,8 +11085,8 @@ Cohesion: 0.19
 Nodes (5): arn(), create_rule_service(), RuleService, state(), _validate_input()
 
 ### Community 1292 - "Community 1292"
-Cohesion: 0.15
-Nodes (15): Error, ResponseMetadata, Error, ResponseMetadata, Error, ResponseMetadata, Code, Message (+7 more)
+Cohesion: 0.12
+Nodes (24): Error, ResponseMetadata, Error, ResponseMetadata, Error, ResponseMetadata, ResponseMetadata, Error (+16 more)
 
 ### Community 1293 - "Community 1293"
 Cohesion: 0.13
@@ -11089,7 +11113,7 @@ Cohesion: 0.13
 Nodes (15): RuntimeManagementConfig, RuntimeManagementConfig, RuntimeVersionArn, UpdateRuntimeOn, additionalProperties, description, properties, $ref (+7 more)
 
 ### Community 1299 - "Community 1299"
-Cohesion: 0.16
+Cohesion: 0.18
 Nodes (12): DuplexSocket, enable_duplex_socket(), is_ssl_socket(), Simple duplex socket wrapper that allows serving HTTP/HTTPS over the same port., Function which replaces the ssl.SSLContext.sslsocket_class with the DuplexSocket, apply_runtime_patches(), patch_thread_pool(), patch_urllib3_connection_pool() (+4 more)
 
 ### Community 1300 - "Community 1300"
@@ -11113,12 +11137,12 @@ Cohesion: 0.15
 Nodes (15): ExecutedVersion, Payload, SdkResponseMetadata, StatusCode, FunctionName, Payload, ExecutedVersion, final (+7 more)
 
 ### Community 1305 - "Community 1305"
-Cohesion: 0.25
-Nodes (13): execute_deployment(), generate_helm_command(), generate_k3d_command(), generate_k8s_cluster_config(), generate_k8s_helm_overrides(), generate_mount_points(), main(), MountPoint (+5 more)
+Cohesion: 0.32
+Nodes (14): execute_deployment(), generate_helm_command(), generate_k3d_command(), generate_k8s_cluster_config(), generate_k8s_helm_overrides(), generate_mount_points(), main(), MountPoint (+6 more)
 
 ### Community 1306 - "Community 1306"
-Cohesion: 0.13
-Nodes (25): deployment_with_any_routes(), deployment_with_routes(), dummy_deployment(), get_invocation_context(), get_path_from_addressing(), parse_handler_chain(), # TODO: maybe assert more regarding the data inside Resource Methods, but we don, # TODO: maybe assert more regarding the data inside Resource Methods, but we don (+17 more)
+Cohesion: 0.09
+Nodes (18): get_installer(), Package, A Package defines a specific kind of software, mostly used as backends or suppor, A Package defines a specific kind of software, mostly used as backends or suppor, :param name: Human readable name of the package, f.e. "PostgreSQL"         :para, :param name: Human readable name of the package, f.e. "PostgreSQL"         :para, Finds a directory where the package (in the specific version) is installed., Finds a directory where the package (in the specific version) is installed. (+10 more)
 
 ### Community 1307 - "Community 1307"
 Cohesion: 0.18
@@ -11133,8 +11157,8 @@ Cohesion: 0.21
 Nodes (6): Content, LambdaLayerVersionProperties, LambdaLayerVersionProvider, Delete a resource          IAM permissions required:           - lambda:GetLayer, List resources          IAM permissions required:           - lambda:ListLayerVe, Create a new resource.          Primary identifier fields:           - /properti
 
 ### Community 1310 - "Community 1310"
-Cohesion: 0.12
-Nodes (7): ApiGatewayModelProperties, ApiGatewayModelProvider, ApiGatewayModelProviderPlugin, Delete a resource          IAM permissions required:           - apigateway:GET, Update a resource          IAM permissions required:           - apigateway:PATC, Create a new resource.          Primary identifier fields:           - /properti, Fetch resource information          IAM permissions required:           - apigat
+Cohesion: 0.18
+Nodes (6): ApiGatewayModelProperties, ApiGatewayModelProvider, Delete a resource          IAM permissions required:           - apigateway:GET, Update a resource          IAM permissions required:           - apigateway:PATC, Create a new resource.          Primary identifier fields:           - /properti, Fetch resource information          IAM permissions required:           - apigat
 
 ### Community 1311 - "Community 1311"
 Cohesion: 0.17
@@ -11153,8 +11177,8 @@ Cohesion: 0.18
 Nodes (9): IAMUserProperties, IAMUserProvider, LoginProfile, Policy, Fetch resource information, Create a new resource.          Primary identifier fields:           - /properti, # TODO: validations, # TODO: idempotency (+1 more)
 
 ### Community 1315 - "Community 1315"
-Cohesion: 0.12
-Nodes (7): LogsSubscriptionFilterProperties, LogsSubscriptionFilterProvider, LogsSubscriptionFilterProviderPlugin, Update a resource          IAM permissions required:           - logs:PutSubscri, Create a new resource.          Primary identifier fields:           - /properti, Fetch resource information          IAM permissions required:           - logs:D, Delete a resource          IAM permissions required:           - logs:DeleteSubs
+Cohesion: 0.18
+Nodes (6): LogsSubscriptionFilterProperties, LogsSubscriptionFilterProvider, Update a resource          IAM permissions required:           - logs:PutSubscri, Create a new resource.          Primary identifier fields:           - /properti, Fetch resource information          IAM permissions required:           - logs:D, Delete a resource          IAM permissions required:           - logs:DeleteSubs
 
 ### Community 1316 - "Community 1316"
 Cohesion: 0.19
@@ -11250,7 +11274,7 @@ Nodes (8): type, additionalProperties, properties, type, type, CloudWatchOutputC
 
 ### Community 1339 - "Community 1339"
 Cohesion: 0.13
-Nodes (14): Statement, Version, Statement, Version, inline_policy_document, policy_with_arrays, tests/aws/services/iam/resource_providers/test_iam.py::test_iam_user_access_key, recorded-date (+6 more)
+Nodes (14): Statement, Version, Statement, Version, inline_policy_document, policy_document, tests/aws/services/iam/resource_providers/test_iam.py::test_iam_user_access_key, recorded-date (+6 more)
 
 ### Community 1340 - "Community 1340"
 Cohesion: 0.13
@@ -11341,8 +11365,8 @@ Cohesion: 0.13
 Nodes (15): send_oversized_message_batch, ResponseMetadata, Successful, tests/aws/services/sqs/test_sqs.py::TestSqsProvider::test_send_message_batch_with_oversized_contents[sqs], tests/aws/services/sqs/test_sqs.py::TestSqsProvider::test_send_message_batch_with_oversized_contents[sqs_query], recorded-content, recorded-date, recorded-content (+7 more)
 
 ### Community 1362 - "Community 1362"
-Cohesion: 0.17
-Nodes (8): add_dispatch_entry(), ObjectStateReducer, A generalization of the following pattern::          def _create_something(cls:, Registers this ObjectStateReducer's reducer function. See ``pickle.register``., Return the objects state. Can be overwritten by subclasses to return custom stat, Set the state of the object. Can be overwritten by subclasses to set custom stat, Can be overwritten by subclasses to prepare the object state for pickling., Can be overwritten by subclasses to modify the object state to restore any previ
+Cohesion: 0.16
+Nodes (5): CloudRunDataStore, CloudRunService, Revision, CloudRunProvider, _now()
 
 ### Community 1363 - "Community 1363"
 Cohesion: 0.13
@@ -11373,12 +11397,12 @@ Cohesion: 0.13
 Nodes (15): transcribe_speaker_diarization, audio_segments, items, speaker_labels, transcripts, channel_label, segments, speakers (+7 more)
 
 ### Community 1370 - "Community 1370"
-Cohesion: 0.18
-Nodes (9): Test cases for ApacheBSDFormat parser., Test detection of Apache BSD checksum format., Test parsing Apache BSD format with single-line checksums., Test parsing Apache BSD format with multi-line checksums., Test parsing Apache BSD format with various spacing., Test parsing Apache BSD format with invalid checksums., TestApacheBSDFormat, ApacheBSDFormat (+1 more)
+Cohesion: 0.04
+Nodes (45): Test cases for StandardFormat parser., Test parsing of BSD checksum format., Test detection of standard checksum format., Test parsing BSD format with mixed algorithms., Test cases for ApacheBSDFormat parser., Test detection of Apache BSD checksum format., Test parsing Apache BSD format with single-line checksums., Test parsing Apache BSD format with multi-line checksums. (+37 more)
 
 ### Community 1371 - "Community 1371"
 Cohesion: 0.20
-Nodes (10): total, tests/aws/services/stepfunctions/v2/test_state/test_test_state_scenarios.py::TestStateCaseScenarios::test_base_inspection_level_debug[BASE_PASS_STATE], durations_in_seconds, last_validated_date, tests/aws/services/stepfunctions/v2/test_state/test_test_state_scenarios.py::TestStateCaseScenarios::test_base_inspection_level_trace[BASE_PASS_STATE], durations_in_seconds, last_validated_date, tests/aws/services/stepfunctions/v2/test_state/test_test_state_scenarios.py::TestStateCaseScenarios::test_base_map_state_inspect[TOLERATED_FAILURE_PERCENTAGE-DEBUG] (+2 more)
+Nodes (10): total, tests/aws/services/stepfunctions/v2/test_state/test_test_state_scenarios.py::TestStateCaseScenarios::test_base_inspection_level_debug[BASE_CHOICE_STATE], durations_in_seconds, last_validated_date, tests/aws/services/stepfunctions/v2/test_state/test_test_state_scenarios.py::TestStateCaseScenarios::test_base_inspection_level_trace[BASE_PASS_STATE], durations_in_seconds, last_validated_date, tests/aws/services/stepfunctions/v2/test_state/test_test_state_scenarios.py::TestStateCaseScenarios::test_base_map_state_inspect[TOLERATED_FAILURE_PERCENTAGE-DEBUG] (+2 more)
 
 ### Community 1372 - "Community 1372"
 Cohesion: 0.14
@@ -11394,7 +11418,7 @@ Nodes (15): start_res_null, start_res_num, start_res_str, executionArn, Response
 
 ### Community 1375 - "Community 1375"
 Cohesion: 0.13
-Nodes (15): tracingConfiguration, tracingConfiguration, creationDate, name, ResponseMetadata, roleArn, stateMachineArn, status (+7 more)
+Nodes (15): creationDate, name, ResponseMetadata, roleArn, stateMachineArn, status, tracingConfiguration, type (+7 more)
 
 ### Community 1376 - "Community 1376"
 Cohesion: 0.14
@@ -11453,8 +11477,8 @@ Cohesion: 0.14
 Nodes (14): Id, Statement, Version, topic-attributes, tests/aws/services/cloudformation/api/test_update_stack.py::test_update_with_previous_parameter_value, recorded-content, recorded-date, DisplayName (+6 more)
 
 ### Community 1390 - "Community 1390"
-Cohesion: 0.19
-Nodes (14): createdDate, description, id, ResponseMetadata, ResponseMetadata, ResponseMetadata, after-update, HTTPHeaders (+6 more)
+Cohesion: 0.23
+Nodes (12): ResponseMetadata, ResponseMetadata, apiKeyRequired, authorizationType, authorizerId, httpMethod, ResponseMetadata, put-method-response (+4 more)
 
 ### Community 1391 - "Community 1391"
 Cohesion: 0.35
@@ -11585,8 +11609,8 @@ Cohesion: 0.14
 Nodes (14): Capabilities, ChangeSetId, CreationTime, DisableRollback, EnableTerminationProtection, LastUpdatedTime, NotificationARNs, Parameters (+6 more)
 
 ### Community 1423 - "Community 1423"
-Cohesion: 0.08
-Nodes (5): CloudFunction, FunctionsDataStore, RegisteredHandler, CloudFunctionsProvider, provider()
+Cohesion: 0.17
+Nodes (7): as_inner_scope_of(), IllegalOuterScopeWrite, NoSuchVariable, # TODO: add typing when this available in service init., _to_variable_declarations(), VariableStore, VariableStoreError
 
 ### Community 1424 - "Community 1424"
 Cohesion: 0.14
@@ -11626,7 +11650,7 @@ Nodes (14): custom-variables-match-all, custom-variables-not-match-all, tests/aw
 
 ### Community 1433 - "Community 1433"
 Cohesion: 0.14
-Nodes (13): message, tests/aws/services/events/test_events_schedule.py::TestScheduleCron::test_schedule_cron_target_sqs, recorded-content, recorded-date, tests/aws/services/events/test_events_schedule.py::TestScheduleCron::tests_put_rule_with_schedule_cron[cron(0/15 * * * ? *)], recorded-content, recorded-date, tests/aws/services/events/test_events_schedule.py::TestScheduleCron::tests_put_rule_with_schedule_cron[cron(0/30 20-23 ? * MON-FRI *)] (+5 more)
+Nodes (13): message, tests/aws/services/events/test_events_schedule.py::TestScheduleCron::test_schedule_cron_target_sqs, recorded-content, recorded-date, tests/aws/services/events/test_events_schedule.py::TestScheduleCron::tests_put_rule_with_schedule_cron[cron(0/5 5 ? JAN 1-5 2022)], recorded-content, recorded-date, tests/aws/services/events/test_events_schedule.py::TestScheduleRate::test_put_rule_with_schedule_rate (+5 more)
 
 ### Community 1434 - "Community 1434"
 Cohesion: 0.14
@@ -11641,8 +11665,8 @@ Cohesion: 0.22
 Nodes (14): x-amazon-apigateway-integration, x-amazon-apigateway-integration, x-amazon-apigateway-integration, integration.request.path.petId, integration.request.querystring.page, integration.request.querystring.type, application/json, httpMethod (+6 more)
 
 ### Community 1437 - "Community 1437"
-Cohesion: 0.14
-Nodes (14): type, Environment, additionalProperties, description, properties, $ref, type, [a-zA-Z][a-zA-Z0-9_]+ (+6 more)
+Cohesion: 0.17
+Nodes (12): type, Environment, additionalProperties, description, properties, type, [a-zA-Z][a-zA-Z0-9_]+, Variables (+4 more)
 
 ### Community 1438 - "Community 1438"
 Cohesion: 0.22
@@ -11653,8 +11677,8 @@ Cohesion: 0.15
 Nodes (16): packages, packages, invocation_result_payload, invocation_result_payload_qualified, tests/aws/services/lambda_/test_lambda_common.py::TestLambdaRuntimesCommon::test_introspection_invoke[java11], recorded-content, recorded-date, tests/aws/services/lambda_/test_lambda_common.py::TestLambdaRuntimesCommon::test_introspection_invoke[java8.al2] (+8 more)
 
 ### Community 1440 - "Community 1440"
-Cohesion: 0.13
-Nodes (16): AuthHandler, _build(), ErrorSerializerHandler, GcpRequestContext, Handler, HandlerChain, Reusable handler chain for the GCP gateway.  Analogous to ``localstack.azure.han, RequestContextHandler (+8 more)
+Cohesion: 0.12
+Nodes (17): AuthHandler, _build(), ErrorSerializerHandler, GcpRequestContext, Handler, HandlerChain, Reusable handler chain for the GCP gateway.  Analogous to ``localstack.azure.han, RequestContextHandler (+9 more)
 
 ### Community 1441 - "Community 1441"
 Cohesion: 0.23
@@ -11665,8 +11689,8 @@ Cohesion: 0.14
 Nodes (14): billedDurationInMilliseconds, billedMemoryUsedInMB, included, included, start_execution_sync_response, billingDetails, executionArn, inputDetails (+6 more)
 
 ### Community 1443 - "Community 1443"
-Cohesion: 0.10
-Nodes (27): CreateKeyRequest, DryRunOperationException, provider(), test_alias_name_validator(), test_execute_dry_run_capable_raises_when_dry(), test_execute_dry_run_capable_runs_when_not_dry(), test_generate_data_key_pair_dry_run(), test_generate_data_key_pair_invalid_spec_raises_unsupported_exception() (+19 more)
+Cohesion: 0.19
+Nodes (14): CreateKeyRequest, DryRunOperationException, provider(), test_alias_name_validator(), test_execute_dry_run_capable_raises_when_dry(), test_execute_dry_run_capable_runs_when_not_dry(), test_generate_data_key_pair_dry_run(), test_generate_data_key_pair_invalid_spec_raises_unsupported_exception() (+6 more)
 
 ### Community 1444 - "Community 1444"
 Cohesion: 0.24
@@ -11701,8 +11725,8 @@ Cohesion: 0.19
 Nodes (14): ResponseMetadata, destinations, destinations, ResponseMetadata, ResponseMetadata, destinations, ResponseMetadata, delete-destination (+6 more)
 
 ### Community 1453 - "Community 1453"
-Cohesion: 0.16
-Nodes (8): Register / unregister shutdown handlers. All registered shutdown handlers should, Register shutdown handler. Handler should not block or take more than a couple s, Unregister a handler. Idempotent operation.          :param shutdown_handler: Sh, Execute shutdown handlers in reverse order of registration.         Should only, # TODO: this belongs into the shutdown procedure of a `Platform` or `RuntimeCont, run_on_after_service_shutdown_handlers(), run_shutdown_handlers(), ShutdownHandlers
+Cohesion: 0.19
+Nodes (9): Register / unregister shutdown handlers. All registered shutdown handlers should, Register shutdown handler. Handler should not block or take more than a couple s, Unregister a handler. Idempotent operation.          :param shutdown_handler: Sh, Execute shutdown handlers in reverse order of registration.         Should only, # TODO: this belongs into the shutdown procedure of a `Platform` or `RuntimeCont, run_on_after_service_shutdown_handlers(), run_shutdown_handlers(), shutdown_services() (+1 more)
 
 ### Community 1454 - "Community 1454"
 Cohesion: 0.15
@@ -11738,11 +11762,11 @@ Nodes (14): permissions, timeoutInMinutes, permissions, timeoutInMinutes, handle
 
 ### Community 1462 - "Community 1462"
 Cohesion: 0.12
-Nodes (17): type, type, description, type, description, type, properties, CreationTimestamp (+9 more)
+Nodes (17): type, type, description, type, properties, CreationTimestamp, Id, PrivateDnsEnabled (+9 more)
 
 ### Community 1463 - "Community 1463"
-Cohesion: 0.14
-Nodes (14): type, type, type, DomainEndpointOptions, additionalProperties, properties, type, type (+6 more)
+Cohesion: 0.18
+Nodes (11): type, type, type, properties, type, CustomEndpoint, CustomEndpointCertificateArn, CustomEndpointEnabled (+3 more)
 
 ### Community 1464 - "Community 1464"
 Cohesion: 0.14
@@ -11765,12 +11789,12 @@ Cohesion: 0.14
 Nodes (14): type, type, type, DomainEndpointOptions, additionalProperties, properties, type, type (+6 more)
 
 ### Community 1469 - "Community 1469"
-Cohesion: 0.14
-Nodes (14): additionalProperties, properties, type, type, type, AdvancedSecurityOptionsInput, type, $ref (+6 more)
+Cohesion: 0.18
+Nodes (11): properties, type, type, type, $ref, AnonymousAuthDisableDate, AnonymousAuthEnabled, InternalUserDatabaseEnabled (+3 more)
 
 ### Community 1470 - "Community 1470"
-Cohesion: 0.18
-Nodes (11): type, properties, type, EBSEnabled, Iops, Throughput, VolumeSize, VolumeType (+3 more)
+Cohesion: 0.14
+Nodes (14): EBSOptions, type, additionalProperties, properties, type, type, EBSEnabled, Iops (+6 more)
 
 ### Community 1471 - "Community 1471"
 Cohesion: 0.36
@@ -11782,7 +11806,7 @@ Nodes (14): type, $ref, type, Rule, type, $ref, ApproveAfterDays, ApproveUntilDa
 
 ### Community 1473 - "Community 1473"
 Cohesion: 0.12
-Nodes (16): PatchFilter, Tag, type, additionalProperties, properties, type, Key, Value (+8 more)
+Nodes (17): PatchFilter, Tag, type, additionalProperties, properties, type, Key, Value (+9 more)
 
 ### Community 1474 - "Community 1474"
 Cohesion: 0.23
@@ -11814,7 +11838,7 @@ Nodes (14): Arn, CreationTime, CreatorRequestId, DomainName, Id, ModificationTim
 
 ### Community 1483 - "Community 1483"
 Cohesion: 0.09
-Nodes (24): State, UseOffPeakWindow, AutoTuneOptions, EncryptionAtRestOptions, AccessPolicies, ARN, AutoTuneOptions, Created (+16 more)
+Nodes (24): State, UseOffPeakWindow, AutoTuneOptions, SoftwareUpdateOptions, AccessPolicies, ARN, AutoTuneOptions, Created (+16 more)
 
 ### Community 1484 - "Community 1484"
 Cohesion: 0.14
@@ -11838,7 +11862,7 @@ Nodes (14): AcceptRanges, ContentLength, ContentType, ETag, LastModified, Metada
 
 ### Community 1489 - "Community 1489"
 Cohesion: 0.14
-Nodes (14): call, durations_in_seconds, tests/aws/services/s3/test_s3.py::TestS3::test_create_bucket_with_eu_location_constraint, durations_in_seconds, last_validated_date, tests/aws/services/s3/test_s3.py::TestS3::test_get_object_content_length_with_virtual_host[True], durations_in_seconds, last_validated_date (+6 more)
+Nodes (14): teardown, durations_in_seconds, tests/aws/services/s3/test_s3.py::TestS3::test_create_bucket_with_eu_location_constraint, durations_in_seconds, last_validated_date, tests/aws/services/s3/test_s3.py::TestS3::test_get_object_part, durations_in_seconds, last_validated_date (+6 more)
 
 ### Community 1490 - "Community 1490"
 Cohesion: 0.14
@@ -11857,8 +11881,8 @@ Cohesion: 0.23
 Nodes (13): call, setup, teardown, total, tests/aws/services/stepfunctions/v2/services/test_sqs_task_service.py::TestTaskServiceSqs::test_send_message, tests/aws/services/stepfunctions/v2/services/test_sqs_task_service.py::TestTaskServiceSqs::test_send_message_attributes, durations_in_seconds, last_validated_date (+5 more)
 
 ### Community 1494 - "Community 1494"
-Cohesion: 0.14
-Nodes (8): There are three well-known state manipulation operations for a service provider:, Hook triggered before the provider's state containers are reset/cleared., Hook triggered after the provider's state containers have been reset/cleared., Hook triggered before the provider's state containers are saved., Hook triggered after the provider's state containers have been saved., Hook triggered before a previously serialized state is loaded into the provider', Hook triggered after a previously serialized state has been loaded into the prov, StateLifecycleHook
+Cohesion: 0.11
+Nodes (18): 1. Arquitetura e Inicialização (DevOps & Docker), 2. AWS no LocalStack, 3. Azure no LocalStack (Experimental), 4. GCP (Google Cloud) e Orquestração Multi-Cloud, code:bash (# 1. Cria o virtual environment (.venv) e instala dependênci), code:bash (# Subir via Docker Compose (recomendado para testes integrad), code:bash (DEBUG=1 TEST_DISABLE_RETRIES_AND_TIMEOUTS=1 \), code:bash (pytest tests/aws/services/<service>/test_meu_servico.py) (+10 more)
 
 ### Community 1495 - "Community 1495"
 Cohesion: 0.14
@@ -11877,8 +11901,8 @@ Cohesion: 0.15
 Nodes (13): AWSTemplateFormatVersion, Description, Name, Outputs, ServerlessDeploymentBucketName, ServiceEndpoint, Export, Value (+5 more)
 
 ### Community 1499 - "Community 1499"
-Cohesion: 0.24
-Nodes (11): ZipFile, Properties, DependsOn, Properties, Type, Code, Handler, Role (+3 more)
+Cohesion: 0.18
+Nodes (14): ZipFile, DependsOn, Properties, Type, DependsOn, Properties, Type, Code (+6 more)
 
 ### Community 1500 - "Community 1500"
 Cohesion: 0.14
@@ -11909,16 +11933,16 @@ Cohesion: 0.14
 Nodes (3): test_delete_connection(), TestEventBridgeApiDestinations, TestEventBridgeConnections
 
 ### Community 1508 - "Community 1508"
-Cohesion: 0.10
-Nodes (15): add_path_parameters_to_url(), canonicalize_headers(), create_chunked_data(), download_github_artifact(), make_http_request(), NetrcBypassAuth, parse_chunked_data(), parse_request_data() (+7 more)
+Cohesion: 0.08
+Nodes (19): add_path_parameters_to_url(), canonicalize_headers(), create_chunked_data(), download_github_artifact(), NetrcBypassAuth, parse_chunked_data(), parse_request_data(), Wrapper around requests library, which can prevent it from verifying     SSL cer (+11 more)
 
 ### Community 1509 - "Community 1509"
-Cohesion: 0.04
-Nodes (32): _add_modeled_error_fields(), _create_and_enrich_aws_request(), create_http_request(), parse_response(), parse_service_exception(), _patch_cbor2(), raise_service_exception(), Utils to process AWS requests as a client. (+24 more)
+Cohesion: 0.07
+Nodes (16): _add_modeled_error_fields(), parse_response(), parse_service_exception(), raise_service_exception(), This is a compatibility adapter for the raw_stream attribute passed to botocore', This function adds additional error shape members (other than message, code, and, Parses an HTTP Response object into an AWS response object using botocore. It do, Creates a ServiceException (one ASF can handle) from a parsed response (one that (+8 more)
 
 ### Community 1510 - "Community 1510"
 Cohesion: 0.22
-Nodes (9): Error, ResponseMetadata, Error, ResponseMetadata, invalid-json, missing-default-key, tests/aws/services/sns/test_sns.py::TestSNSPublishCrud::test_message_structure_json_exc, recorded-content (+1 more)
+Nodes (9): Error, ResponseMetadata, Error, ResponseMetadata, invalid-json, key-is-not-string, tests/aws/services/sns/test_sns.py::TestSNSPublishCrud::test_message_structure_json_exc, recorded-content (+1 more)
 
 ### Community 1511 - "Community 1511"
 Cohesion: 0.19
@@ -11953,16 +11977,12 @@ Cohesion: 0.14
 Nodes (14): Code, Message, Error, message, map_state_label_invalid_char_fail, tests/aws/services/stepfunctions/v2/test_sfn_api_map_run.py::TestSnfApiMapRun::test_map_state_label_invalid_char_fail[\\n], recorded-content, recorded-date (+6 more)
 
 ### Community 1519 - "Community 1519"
-Cohesion: 0.16
-Nodes (14): Code, Message, Error, Error, message, ResponseMetadata, invalid_arn_2, validation_exception (+6 more)
+Cohesion: 0.13
+Nodes (17): Code, Message, Error, message, ResponseMetadata, Error, message, ResponseMetadata (+9 more)
 
 ### Community 1520 - "Community 1520"
 Cohesion: 0.14
 Nodes (14): ResponseMetadata, stateMachineVersions, creationDate, ResponseMetadata, stateMachineVersionArn, creationDate, ResponseMetadata, stateMachineVersionArn (+6 more)
-
-### Community 1521 - "Community 1521"
-Cohesion: 0.14
-Nodes (8): _evaluate_numeric_condition(), FilterPolicyValidator, flatten_payload(), flatten_policy(), This method evaluate the filter policy recursively, and returns only a list of l, # TODO: AWS says they support only from -10^9 to 10^9 but seems to accept it, so, This method evaluates the filter policy against the JSON decoded payload., # TODO: maybe save/cache the flattened/expanded policy?
 
 ### Community 1522 - "Community 1522"
 Cohesion: 0.15
@@ -12237,8 +12257,8 @@ Cohesion: 0.17
 Nodes (13): N, ResponseMetadata, Responses, Username, Age, Username, ExecutedStatement, ItemUser1 (+5 more)
 
 ### Community 1590 - "Community 1590"
-Cohesion: 0.14
-Nodes (14): association_id, dns-suffix, host, network-interface-id, route_table_id, route_tables, subnet_id, vpc_id (+6 more)
+Cohesion: 0.15
+Nodes (13): association_id, dns-suffix, host, network-interface-id, route_table_id, route_tables, subnet_id, tests/aws/services/ec2/test_ec2.py::TestEc2Integrations::test_create_route_table_association (+5 more)
 
 ### Community 1591 - "Community 1591"
 Cohesion: 0.15
@@ -12285,8 +12305,8 @@ Cohesion: 0.15
 Nodes (13): EphemeralStorage, additionalProperties, description, properties, $ref, required, type, EphemeralStorage (+5 more)
 
 ### Community 1602 - "Community 1602"
-Cohesion: 0.32
-Nodes (5): is_none_or_empty(), locked(), SynchronizedTest, test_is_none_or_empty_lists(), test_is_none_or_empty_strings()
+Cohesion: 0.28
+Nodes (6): is_none_or_empty(), locked(), SynchronizedTest, test_generate_ssl_cert(), test_is_none_or_empty_lists(), test_is_none_or_empty_strings()
 
 ### Community 1603 - "Community 1603"
 Cohesion: 0.23
@@ -12305,8 +12325,8 @@ Cohesion: 0.15
 Nodes (12): 1. Correction, 2. Warning, 3. Temporary Ban, 4. Permanent Ban, Attribution, Contributor Covenant Code of Conduct, Enforcement, Enforcement Guidelines (+4 more)
 
 ### Community 1607 - "Community 1607"
-Cohesion: 0.13
-Nodes (8): PackageInstaller, LockingTestPackageInstaller, Package installer class used for testing the locking behavior., test_package(), test_package_installer_custom_lock(), test_package_installer_default_lock(), TestPackage, TestPackageInstaller
+Cohesion: 0.08
+Nodes (12): PackageInstaller, DebugPyPackage, DebugPyPackageInstaller, # TODO: migrate this to the upcoming pip installer, # TODO: This method currently does not provide the actual install_marker., LockingTestPackageInstaller, Package installer class used for testing the locking behavior., test_package() (+4 more)
 
 ### Community 1608 - "Community 1608"
 Cohesion: 0.11
@@ -12317,8 +12337,8 @@ Cohesion: 0.18
 Nodes (7): ApiGatewayResourceProperties, ApiGatewayResourceProvider, # TODO: parity, Delete a resource          IAM permissions required:           - apigateway:DELE, Update a resource          IAM permissions required:           - apigateway:GET, Create a new resource.          Primary identifier fields:           - /properti, Fetch resource information          IAM permissions required:           - apigat
 
 ### Community 1610 - "Community 1610"
-Cohesion: 0.14
-Nodes (6): CloudWatchCompositeAlarmProperties, CloudWatchCompositeAlarmProvider, CloudWatchCompositeAlarmProviderPlugin, Fetch resource information          IAM permissions required:           - cloudw, Delete a resource          IAM permissions required:           - cloudwatch:Desc, Update a resource          IAM permissions required:           - cloudwatch:Desc
+Cohesion: 0.22
+Nodes (5): CloudWatchCompositeAlarmProperties, CloudWatchCompositeAlarmProvider, Fetch resource information          IAM permissions required:           - cloudw, Delete a resource          IAM permissions required:           - cloudwatch:Desc, Update a resource          IAM permissions required:           - cloudwatch:Desc
 
 ### Community 1611 - "Community 1611"
 Cohesion: 0.14
@@ -12341,20 +12361,20 @@ Cohesion: 0.17
 Nodes (10): ECRRepositoryProperties, ECRRepositoryProvider, EncryptionConfiguration, ImageScanningConfiguration, LifecyclePolicy, Fetch resource information          IAM permissions required:           - ecr:De, Delete a resource          IAM permissions required:           - ecr:DeleteRepos, Update a resource          IAM permissions required:           - ecr:PutLifecycl (+2 more)
 
 ### Community 1616 - "Community 1616"
-Cohesion: 0.11
-Nodes (14): ApiKeyAuthParameters, AuthParameters, BasicAuthParameters, ClientParameters, ConnectionHttpParameters, EventsConnectionProperties, EventsConnectionProvider, OAuthParameters (+6 more)
+Cohesion: 0.15
+Nodes (13): ApiKeyAuthParameters, AuthParameters, BasicAuthParameters, ClientParameters, ConnectionHttpParameters, EventsConnectionProperties, EventsConnectionProvider, OAuthParameters (+5 more)
 
 ### Community 1617 - "Community 1617"
-Cohesion: 0.14
-Nodes (5): IAMManagedPolicyProperties, IAMManagedPolicyProvider, IAMManagedPolicyProviderPlugin, Create a new resource.          Primary identifier fields:           - /properti, Fetch resource information
+Cohesion: 0.22
+Nodes (4): IAMManagedPolicyProperties, IAMManagedPolicyProvider, Create a new resource.          Primary identifier fields:           - /properti, Fetch resource information
 
 ### Community 1618 - "Community 1618"
 Cohesion: 0.18
 Nodes (8): AllowedPublishers, CodeSigningPolicies, LambdaCodeSigningConfigProperties, LambdaCodeSigningConfigProvider, Update a resource          IAM permissions required:           - lambda:UpdateCo, Create a new resource.          Primary identifier fields:           - /properti, Fetch resource information          IAM permissions required:           - lambda, Delete a resource          IAM permissions required:           - lambda:DeleteCo
 
 ### Community 1619 - "Community 1619"
-Cohesion: 0.05
-Nodes (76): This provides a base class onto which service-specific resource providers are bu, ResourceProvider, CapacityProviderConfig, Code, create(), DeadLetterConfig, delete(), DurableConfig (+68 more)
+Cohesion: 0.04
+Nodes (84): This provides a base class onto which service-specific resource providers are bu, ResourceProvider, CapacityProviderConfig, Code, create(), DeadLetterConfig, delete(), DurableConfig (+76 more)
 
 ### Community 1620 - "Community 1620"
 Cohesion: 0.14
@@ -12381,16 +12401,16 @@ Cohesion: 0.18
 Nodes (13): Code, Error, ResponseMetadata, Error, ResponseMetadata, Message, Error, error-duplicate-log-group (+5 more)
 
 ### Community 1626 - "Community 1626"
-Cohesion: 0.50
-Nodes (4): Properties, Type, Name, endpointE7B9679B
+Cohesion: 0.15
+Nodes (13): DependsOn, Type, Properties, Type, Type, DependsOn, Type, Name (+5 more)
 
 ### Community 1627 - "Community 1627"
 Cohesion: 0.22
 Nodes (13): NaturalLanguageQueryGenerationOptions, Options, S3VectorsEngine, AIMLOptions, AIMLOptions, AIMLOptions, CurrentState, DesiredState (+5 more)
 
 ### Community 1628 - "Community 1628"
-Cohesion: 0.11
-Nodes (13): ErrorResponse, is_invalid_html_response(), is_json_request(), parse_query_string(), requests_error_response(), requests_error_response_json(), requests_error_response_xml(), requests_error_response_xml_signature_calculation() (+5 more)
+Cohesion: 0.27
+Nodes (17): _create_db(), _create_inst(), test_create_database(), test_create_database_via_create_statement(), test_create_instance(), test_create_session(), test_delete_database(), test_delete_instance() (+9 more)
 
 ### Community 1629 - "Community 1629"
 Cohesion: 0.24
@@ -12421,8 +12441,8 @@ Cohesion: 0.15
 Nodes (13): $ref, description, insertionOrder, items, type, uniqueItems, MethodSettings, Tags (+5 more)
 
 ### Community 1636 - "Community 1636"
-Cohesion: 0.21
-Nodes (12): additionalProperties, description, primaryIdentifier, readOnlyProperties, sourceUrl, tagging, cloudFormationSystemTags, taggable (+4 more)
+Cohesion: 0.26
+Nodes (10): additionalProperties, additionalProperties, type, definitions, ApiStage, description, primaryIdentifier, readOnlyProperties (+2 more)
 
 ### Community 1637 - "Community 1637"
 Cohesion: 0.15
@@ -12449,8 +12469,8 @@ Cohesion: 0.15
 Nodes (13): additionalProperties, properties, required, type, BlockDeviceMapping, type, $ref, $ref (+5 more)
 
 ### Community 1643 - "Community 1643"
-Cohesion: 0.11
-Nodes (18): description, type, default, description, enum, type, description, type (+10 more)
+Cohesion: 0.15
+Nodes (13): description, type, description, type, description, type, properties, KeyFingerprint (+5 more)
 
 ### Community 1644 - "Community 1644"
 Cohesion: 0.12
@@ -12485,8 +12505,8 @@ Cohesion: 0.22
 Nodes (12): additionalProperties, createOnlyProperties, description, primaryIdentifier, readOnlyProperties, required, tagging, cloudFormationSystemTags (+4 more)
 
 ### Community 1652 - "Community 1652"
-Cohesion: 0.14
-Nodes (14): definitions, EncryptionType, RegistryId, ScanOnPush, description, enum, type, description (+6 more)
+Cohesion: 0.15
+Nodes (13): definitions, EncryptionType, LifecyclePolicyText, ScanOnPush, description, enum, type, description (+5 more)
 
 ### Community 1653 - "Community 1653"
 Cohesion: 0.17
@@ -12505,7 +12525,7 @@ Cohesion: 0.15
 Nodes (13): type, type, $ref, type, type, properties, Arn, Id (+5 more)
 
 ### Community 1657 - "Community 1657"
-Cohesion: 0.16
+Cohesion: 0.17
 Nodes (12): MotoIdManager, generate_short_uid(), generate_str_id(), generate_uid(), LocalstackIdManager, configure_custom_id(), test_generate_from_unique_identifier_string(), test_generate_short_id() (+4 more)
 
 ### Community 1658 - "Community 1658"
@@ -12541,16 +12561,16 @@ Cohesion: 0.15
 Nodes (13): permissions, timeoutInMinutes, permissions, handlers, create, delete, list, read (+5 more)
 
 ### Community 1666 - "Community 1666"
-Cohesion: 0.14
-Nodes (14): items, type, uniqueItems, type, items, type, uniqueItems, ApprovedPatches (+6 more)
+Cohesion: 0.15
+Nodes (13): items, type, uniqueItems, type, items, type, uniqueItems, ApprovedPatches (+5 more)
 
 ### Community 1667 - "Community 1667"
-Cohesion: 0.33
-Nodes (6): TracingConfiguration, type, Enabled, additionalProperties, properties, type
+Cohesion: 0.15
+Nodes (13): minProperties, type, definitions, Definition, LoggingConfiguration, TracingConfiguration, type, additionalProperties (+5 more)
 
 ### Community 1668 - "Community 1668"
-Cohesion: 0.22
-Nodes (9): type, maxLength, minLength, type, Bucket, Key, Version, properties (+1 more)
+Cohesion: 0.15
+Nodes (13): type, S3Location, maxLength, minLength, type, Bucket, Key, Version (+5 more)
 
 ### Community 1669 - "Community 1669"
 Cohesion: 0.15
@@ -12565,8 +12585,8 @@ Cohesion: 0.15
 Nodes (13): ApproximateNumberOfMessages, ApproximateNumberOfMessagesDelayed, ApproximateNumberOfMessagesNotVisible, CreatedTimestamp, DelaySeconds, LastModifiedTimestamp, MaximumMessageSize, MessageRetentionPeriod (+5 more)
 
 ### Community 1672 - "Community 1672"
-Cohesion: 0.18
-Nodes (11): StackResourceDriftStatus, DriftInformation, LastUpdatedTimestamp, LogicalResourceId, Metadata, PhysicalResourceId, ResourceStatus, ResourceType (+3 more)
+Cohesion: 0.15
+Nodes (13): StackResourceDriftStatus, url_resource, DriftInformation, LastUpdatedTimestamp, LogicalResourceId, Metadata, PhysicalResourceId, ResourceStatus (+5 more)
 
 ### Community 1673 - "Community 1673"
 Cohesion: 0.15
@@ -12585,8 +12605,8 @@ Cohesion: 0.15
 Nodes (13): AcceptRanges, Body, ChecksumCRC32, ChecksumType, ContentLength, ContentType, ETag, LastModified (+5 more)
 
 ### Community 1678 - "Community 1678"
-Cohesion: 0.15
-Nodes (13): Delimiter, EncodingType, IsTruncated, KeyMarker, MaxKeys, Name, NextKeyMarker, NextVersionIdMarker (+5 more)
+Cohesion: 0.14
+Nodes (6): AlarmScheduler, Only used re-create persistent state. Reschedules alarms that already exist, Creates a new AlarmScheduler, with a Scheduler, that will be started in a new th, Shutdown the scheduler, must be called before application stops, (Re-)schedules the alarm, if the alarm is re-scheduled, the running alarm schedu, Deletes the recurring scheduler for an alarm          :param alarm_arn: the arn
 
 ### Community 1679 - "Community 1679"
 Cohesion: 0.15
@@ -12761,19 +12781,19 @@ Cohesion: 0.17
 Nodes (12): AcceptRanges, Body, ChecksumCRC64NVME, ChecksumType, ContentLength, ContentType, ETag, LastModified (+4 more)
 
 ### Community 1722 - "Community 1722"
-Cohesion: 0.18
-Nodes (12): Statement, Version, Properties, Type, AssumeRolePolicyDocument, ManagedPolicyArns, backendServiceRole77A15DC8, restapiCloudWatchRole2D9E2F10 (+4 more)
+Cohesion: 0.22
+Nodes (10): Statement, Version, Properties, AssumeRolePolicyDocument, ManagedPolicyArns, restapiCloudWatchRole2D9E2F10, DeletionPolicy, Properties (+2 more)
 
 ### Community 1723 - "Community 1723"
-Cohesion: 0.20
-Nodes (10): IntegrationHttpMethod, Type, Uri, AuthorizationType, HttpMethod, Integration, ResourceId, Ref (+2 more)
+Cohesion: 0.17
+Nodes (12): IntegrationHttpMethod, Type, Uri, AuthorizationType, HttpMethod, Integration, ResourceId, Ref (+4 more)
 
 ### Community 1724 - "Community 1724"
 Cohesion: 0.17
 Nodes (12): events, ResponseMetadata, get_execution_history, HTTPHeaders, HTTPStatusCode, recorded-content, tests/aws/services/stepfunctions/v2/assign/test_assign_reference_variables.py::TestAssignReferenceVariables::test_undefined_reference[BASE_UNDEFINED_ARGUMENTS_FIELD], recorded-content (+4 more)
 
 ### Community 1725 - "Community 1725"
-Cohesion: 0.21
+Cohesion: 0.24
 Nodes (10): test_provider_signatures(), check_provider_signature(), collect_implemented_provider_operations(), _collect_provider_classes(), _import_submodules(), Imports all submodules of the given package with the defined (optional) module_s, Collects all provider implementation classes which should be tested.     :param, Collects all implemented operations on all provider classes together with their (+2 more)
 
 ### Community 1726 - "Community 1726"
@@ -12869,8 +12889,8 @@ Cohesion: 0.30
 Nodes (12): ResponseMetadata, ResponseMetadata, ResponseMetadata, ResponseMetadata, ResponseMetadata, ResponseMetadata, ResponseMetadata, ResponseMetadata (+4 more)
 
 ### Community 1749 - "Community 1749"
-Cohesion: 0.11
-Nodes (12): _load_attribute_from_module(), Utilities to inspect services and their state containers., Attempts at getting an attribute from a given module.     :return the attribute, Wrapper of the possible type of backends that a service can use., Implementation of StateVisitor meant to collect the backends that a given servic, ServiceBackend, ServiceBackendCollectorVisitor, visit() (+4 more)
+Cohesion: 0.13
+Nodes (13): _(), _load_attribute_from_module(), Utilities to inspect services and their state containers., Attempts at getting an attribute from a given module.     :return the attribute, Wrapper of the possible type of backends that a service can use., Implementation of StateVisitor meant to collect the backends that a given servic, ServiceBackend, ServiceBackendCollectorVisitor (+5 more)
 
 ### Community 1750 - "Community 1750"
 Cohesion: 0.18
@@ -12893,16 +12913,16 @@ Cohesion: 0.17
 Nodes (12): MessageId, Signature, SignatureVersion, SigningCertURL, Timestamp, TopicArn, Type, UnsubscribeURL (+4 more)
 
 ### Community 1755 - "Community 1755"
-Cohesion: 0.17
-Nodes (12): BatchSize, EventSourceArn, EventSourceMappingArn, FunctionArn, FunctionResponseTypes, LastModified, MaximumBatchingWindowInSeconds, ResponseMetadata (+4 more)
+Cohesion: 0.18
+Nodes (11): BatchSize, EventSourceArn, EventSourceMappingArn, FunctionArn, FunctionResponseTypes, LastModified, MaximumBatchingWindowInSeconds, State (+3 more)
 
 ### Community 1756 - "Community 1756"
 Cohesion: 0.17
 Nodes (12): ApiDestinationArn, ApiDestinationState, ConnectionArn, CreationTime, Description, HttpMethod, InvocationEndpoint, InvocationRateLimitPerSecond (+4 more)
 
 ### Community 1757 - "Community 1757"
-Cohesion: 0.17
-Nodes (11): tests/aws/services/events/test_events_inputs.py::test_put_event_input_path_and_input_transformer, recorded-date, tests/aws/services/events/test_events_inputs.py::TestInputTransformer::test_input_transformer_nested_keys_replacement[<listsingle> single list item], recorded-content, recorded-date, tests/aws/services/events/test_events_inputs.py::TestInputTransformer::test_input_transformer_nested_keys_replacement[\"Payload of <payload> with path users-service/users/<userId> and <userId>\"], recorded-content, recorded-date (+3 more)
+Cohesion: 0.22
+Nodes (8): tests/aws/services/events/test_events_inputs.py::test_put_event_input_path_and_input_transformer, recorded-date, tests/aws/services/events/test_events_inputs.py::TestInputTransformer::test_input_transformer_nested_keys_replacement[\"Payload of <payload> with path users-service/users/<userId> and <userId>\"], recorded-content, recorded-date, tests/aws/services/events/test_events_inputs.py::TestInputTransformer::test_input_transformer_nested_keys_replacement[{\"singlelistitem\": \"<listsingle>\", \"multiplelistitems\": \"<listmulti>\"}], recorded-content, recorded-date
 
 ### Community 1758 - "Community 1758"
 Cohesion: 0.21
@@ -12965,8 +12985,8 @@ Cohesion: 0.17
 Nodes (12): events, ResponseMetadata, events, ResponseMetadata, events, ResponseMetadata, exec_hist_resp_0, exec_hist_resp_1 (+4 more)
 
 ### Community 1773 - "Community 1773"
-Cohesion: 0.50
-Nodes (4): Tags, Key, Value, recorded-content
+Cohesion: 0.17
+Nodes (11): Tags, Key, Value, tests/aws/services/kinesis/test_kinesis.py::TestKinesis::test_add_tags_to_stream, recorded-content, recorded-date, tests/aws/services/kinesis/test_kinesis.py::TestKinesis::test_resource_policy_crud, recorded-date (+3 more)
 
 ### Community 1774 - "Community 1774"
 Cohesion: 0.20
@@ -12981,32 +13001,32 @@ Cohesion: 0.18
 Nodes (12): SdkHttpMetadata, Connection, Content-Length, Content-Type, Date, X-Amz-Executed-Version, x-amzn-Remapped-Content-Length, x-amzn-RequestId (+4 more)
 
 ### Community 1777 - "Community 1777"
-Cohesion: 0.18
-Nodes (11): updated_event_source_mapping, BatchSize, EventSourceArn, EventSourceMappingArn, FunctionArn, FunctionResponseTypes, LastModified, MaximumBatchingWindowInSeconds (+3 more)
+Cohesion: 0.11
+Nodes (19): events, events_postupdate, updated_event_source_mapping, tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_sqs.py::TestSQSEventSourceMapping::test_sqs_event_source_mapping, recorded-content, recorded-date, tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_sqs.py::TestSQSEventSourceMapping::test_sqs_event_source_mapping_update, recorded-content (+11 more)
 
 ### Community 1778 - "Community 1778"
-Cohesion: 0.19
-Nodes (16): Error thrown on a programming error from the user, TemplateError, fn_equals_type_conversion(), get_deps_for_resource(), :param resource: the resource definition to be checked for dependencies     :par, TODO: this function needs access to more stack context, # TODO: add util function for resolving individual refs (e.g. one util for resol, # TODO: pseudo-parameters like AWS::Region (+8 more)
+Cohesion: 0.17
+Nodes (18): Error thrown on a programming error from the user, TemplateError, fn_equals_type_conversion(), get_deps_for_resource(), :param resource: the resource definition to be checked for dependencies     :par, TODO: this function needs access to more stack context, # TODO: add util function for resolving individual refs (e.g. one util for resol, # TODO: pseudo-parameters like AWS::Region (+10 more)
 
 ### Community 1779 - "Community 1779"
-Cohesion: 0.12
-Nodes (8): ApiGatewayBasePathMappingProperties, ApiGatewayBasePathMappingProvider, ApiGatewayBasePathMappingProviderPlugin, Update a resource          IAM permissions required:           - apigateway:GET, Create a new resource.          Primary identifier fields:           - /properti, # TODO: validations, Fetch resource information          IAM permissions required:           - apigat, Delete a resource          IAM permissions required:           - apigateway:DELE
+Cohesion: 0.18
+Nodes (7): ApiGatewayBasePathMappingProperties, ApiGatewayBasePathMappingProvider, Update a resource          IAM permissions required:           - apigateway:GET, Create a new resource.          Primary identifier fields:           - /properti, # TODO: validations, Fetch resource information          IAM permissions required:           - apigat, Delete a resource          IAM permissions required:           - apigateway:DELE
 
 ### Community 1780 - "Community 1780"
-Cohesion: 0.18
-Nodes (7): EC2DHCPOptionsProperties, EC2DHCPOptionsProvider, Fetch resource information          IAM permissions required:           - ec2:De, Delete a resource          IAM permissions required:           - ec2:DeleteDhcpO, Update a resource          IAM permissions required:           - ec2:CreateTags, Create a new resource.          Primary identifier fields:           - /properti, Tag
+Cohesion: 0.12
+Nodes (8): EC2DHCPOptionsProperties, EC2DHCPOptionsProvider, EC2DHCPOptionsProviderPlugin, Fetch resource information          IAM permissions required:           - ec2:De, Delete a resource          IAM permissions required:           - ec2:DeleteDhcpO, Update a resource          IAM permissions required:           - ec2:CreateTags, Create a new resource.          Primary identifier fields:           - /properti, Tag
 
 ### Community 1781 - "Community 1781"
 Cohesion: 0.12
 Nodes (8): EC2InternetGatewayProperties, EC2InternetGatewayProvider, EC2InternetGatewayProviderPlugin, Update a resource          IAM permissions required:           - ec2:DeleteTags, Create a new resource.          Primary identifier fields:           - /properti, Fetch resource information          IAM permissions required:           - ec2:De, Delete a resource          IAM permissions required:           - ec2:DeleteInter, Tag
 
 ### Community 1782 - "Community 1782"
-Cohesion: 0.18
-Nodes (7): EC2TransitGatewayProperties, EC2TransitGatewayProvider, Fetch resource information          IAM permissions required:           - ec2:De, Delete a resource          IAM permissions required:           - ec2:DeleteTrans, Update a resource          IAM permissions required:           - ec2:ModifyTrans, Create a new resource.          Primary identifier fields:           - /properti, Tag
+Cohesion: 0.12
+Nodes (8): EC2TransitGatewayProperties, EC2TransitGatewayProvider, EC2TransitGatewayProviderPlugin, Fetch resource information          IAM permissions required:           - ec2:De, Delete a resource          IAM permissions required:           - ec2:DeleteTrans, Update a resource          IAM permissions required:           - ec2:ModifyTrans, Create a new resource.          Primary identifier fields:           - /properti, Tag
 
 ### Community 1783 - "Community 1783"
-Cohesion: 0.18
-Nodes (7): EC2TransitGatewayAttachmentProperties, EC2TransitGatewayAttachmentProvider, Delete a resource          IAM permissions required:           - ec2:DeleteTrans, Update a resource          IAM permissions required:           - ec2:ModifyTrans, Create a new resource.          Primary identifier fields:           - /properti, Fetch resource information          IAM permissions required:           - ec2:De, Tag
+Cohesion: 0.12
+Nodes (8): EC2TransitGatewayAttachmentProperties, EC2TransitGatewayAttachmentProvider, EC2TransitGatewayAttachmentProviderPlugin, Delete a resource          IAM permissions required:           - ec2:DeleteTrans, Update a resource          IAM permissions required:           - ec2:ModifyTrans, Create a new resource.          Primary identifier fields:           - /properti, Fetch resource information          IAM permissions required:           - ec2:De, Tag
 
 ### Community 1784 - "Community 1784"
 Cohesion: 0.12
@@ -13021,16 +13041,16 @@ Cohesion: 0.12
 Nodes (8): LogsLogGroupProperties, LogsLogGroupProvider, LogsLogGroupProviderPlugin, Delete a resource          IAM permissions required:           - logs:DescribeLo, Update a resource          IAM permissions required:           - logs:DescribeLo, Create a new resource.          Primary identifier fields:           - /properti, Fetch resource information          IAM permissions required:           - logs:D, Tag
 
 ### Community 1787 - "Community 1787"
-Cohesion: 0.12
-Nodes (8): HealthCheckTag, Route53HealthCheckProviderPlugin, Update a resource          IAM permissions required:           - route53:UpdateH, Create a new resource.          Primary identifier fields:           - /properti, Fetch resource information          IAM permissions required:           - route5, Delete a resource          IAM permissions required:           - route53:DeleteH, Route53HealthCheckProperties, Route53HealthCheckProvider
+Cohesion: 0.18
+Nodes (7): HealthCheckTag, Update a resource          IAM permissions required:           - route53:UpdateH, Create a new resource.          Primary identifier fields:           - /properti, Fetch resource information          IAM permissions required:           - route5, Delete a resource          IAM permissions required:           - route53:DeleteH, Route53HealthCheckProperties, Route53HealthCheckProvider
 
 ### Community 1788 - "Community 1788"
-Cohesion: 0.18
-Nodes (7): Update a resource          IAM permissions required:           - scheduler:TagRe, Create a new resource.          Primary identifier fields:           - /properti, Fetch resource information          IAM permissions required:           - schedu, Delete a resource          IAM permissions required:           - scheduler:Delet, SchedulerScheduleGroupProperties, SchedulerScheduleGroupProvider, Tag
+Cohesion: 0.12
+Nodes (8): SchedulerScheduleGroupProviderPlugin, Update a resource          IAM permissions required:           - scheduler:TagRe, Create a new resource.          Primary identifier fields:           - /properti, Fetch resource information          IAM permissions required:           - schedu, Delete a resource          IAM permissions required:           - scheduler:Delet, SchedulerScheduleGroupProperties, SchedulerScheduleGroupProvider, Tag
 
 ### Community 1789 - "Community 1789"
-Cohesion: 0.19
-Nodes (10): ConvertingInternalClientFactory, Register handlers that modify the passed properties to make them compatible with, InternalClientFactory, attr_val(), _get_client(), # FIXME: this is hacky, maybe we should have access to the original parameters f, Create a new resource.          Primary identifier fields:           - /properti, Fetch resource information (+2 more)
+Cohesion: 0.08
+Nodes (28): InternalClientFactory, convert_payload(), ConvertingInternalClientFactory, get_resource_type(), get_service_name(), _handler_provide_client_params(), invoke_function(), NoResourceProvider (+20 more)
 
 ### Community 1790 - "Community 1790"
 Cohesion: 0.12
@@ -13041,7 +13061,7 @@ Cohesion: 0.18
 Nodes (11): Tag, description, type, Key, Value, additionalProperties, properties, required (+3 more)
 
 ### Community 1792 - "Community 1792"
-Cohesion: 0.26
+Cohesion: 0.32
 Nodes (10): _get_aws_marker_from_markers(), _get_svc_from_node_id(), MarkerReport, MarkerReportEntry, pytest_addoption(), pytest_collection_modifyitems(), Standard usage. Will create a report for all markers under ./target/marker-repor, # TODO: --marker-report-* flags should imply --marker-report (+2 more)
 
 ### Community 1793 - "Community 1793"
@@ -13077,12 +13097,12 @@ Cohesion: 0.13
 Nodes (8): DynamoDBPoller, # TODO: validate whether the default should be now, # TODO: parse float properly if present from ApproximateCreationDateTime -> now, # TODO: update upon re-sharding, maybe using a cache and call every time?!, # TODO: consolidate with DynamoDB event source listener:, # TODO: add this metadata after filtering (these are based on the original recor, stream_parameters(), StreamPoller
 
 ### Community 1801 - "Community 1801"
-Cohesion: 0.13
-Nodes (8): NoOpsPipeLogger, include_execution_data(), log_levels(), log_msg(), PipeLogger, Logger interface designed for EventBridge pipes logging:     https://docs.aws.am, Filters a message payload to ensure it is formatted correcly for EventBridge Pip, PipeLogger
+Cohesion: 0.23
+Nodes (6): include_execution_data(), log_levels(), log_msg(), PipeLogger, Logger interface designed for EventBridge pipes logging:     https://docs.aws.am, Filters a message payload to ensure it is formatted correcly for EventBridge Pip
 
 ### Community 1802 - "Community 1802"
-Cohesion: 0.27
-Nodes (10): find_validation_data_for_item(), _makereport_call(), _makereport_setup(), _makereport_teardown(), pytest_collection_modifyitems(), pytest_runtest_makereport(), When a test (in tests/aws) is executed against AWS, we want to track the date of, Collect only items that have a validation timestamp earlier than the user-provid (+2 more)
+Cohesion: 0.35
+Nodes (11): find_validation_data_for_item(), _makereport_call(), _makereport_setup(), _makereport_teardown(), pytest_addoption(), pytest_collection_modifyitems(), pytest_runtest_makereport(), When a test (in tests/aws) is executed against AWS, we want to track the date of (+3 more)
 
 ### Community 1803 - "Community 1803"
 Cohesion: 0.17
@@ -13105,12 +13125,12 @@ Cohesion: 0.17
 Nodes (12): description, minimum, type, ThrottleSettings, BurstLimit, RateLimit, description, minimum (+4 more)
 
 ### Community 1808 - "Community 1808"
-Cohesion: 0.17
-Nodes (12): description, minimum, type, description, minimum, type, description, type (+4 more)
+Cohesion: 0.13
+Nodes (15): QuotaSettings, description, minimum, type, description, minimum, type, description (+7 more)
 
 ### Community 1809 - "Community 1809"
-Cohesion: 0.14
-Nodes (15): apigw_create_api_key(), # TODO: find a more meaningful name for this file, further refactor tests into d, test_create_domain_names(), test_create_usage_plan_with_throttle(), test_export_oas30_openapi(), test_export_swagger_openapi(), test_get_api_keys(), test_get_domain_name() (+7 more)
+Cohesion: 0.02
+Nodes (141): import_apigw(), test_import_documentation_parts(), apigw_create_api_key(), # TODO: find a more meaningful name for this file, further refactor tests into d, test_create_domain_names(), test_create_usage_plan_with_throttle(), test_export_oas30_openapi(), test_export_swagger_openapi() (+133 more)
 
 ### Community 1810 - "Community 1810"
 Cohesion: 0.15
@@ -13137,8 +13157,8 @@ Cohesion: 0.17
 Nodes (12): permissions, permissions, handlers, create, delete, list, read, update (+4 more)
 
 ### Community 1816 - "Community 1816"
-Cohesion: 0.13
-Nodes (15): description, type, properties, Arn, RetentionPeriodHours, ShardCount, StreamEncryption, description (+7 more)
+Cohesion: 0.17
+Nodes (12): description, type, properties, Arn, RetentionPeriodHours, ShardCount, description, minimum (+4 more)
 
 ### Community 1817 - "Community 1817"
 Cohesion: 0.18
@@ -13153,8 +13173,8 @@ Cohesion: 0.14
 Nodes (14): additionalProperties, properties, type, ConfigurationParameter, TagFilter, description, maxLength, type (+6 more)
 
 ### Community 1820 - "Community 1820"
-Cohesion: 0.20
-Nodes (10): additionalProperties, description, properties, required, type, DataExport, const, description (+2 more)
+Cohesion: 0.24
+Nodes (13): _create_ds(), _create_table(), test_create_dataset(), test_create_table(), test_delete_dataset(), test_delete_dataset_cascades_tables(), test_delete_table(), test_duplicate_dataset() (+5 more)
 
 ### Community 1821 - "Community 1821"
 Cohesion: 0.17
@@ -13245,8 +13265,8 @@ Cohesion: 0.17
 Nodes (12): EncodingType, IsTruncated, KeyMarker, MaxKeys, Name, NextKeyMarker, NextVersionIdMarker, Prefix (+4 more)
 
 ### Community 1854 - "Community 1854"
-Cohesion: 0.17
-Nodes (12): EncodingType, IsTruncated, KeyMarker, MaxKeys, Name, NextKeyMarker, NextVersionIdMarker, Prefix (+4 more)
+Cohesion: 0.21
+Nodes (14): _create(), test_create_database(), test_create_instance(), test_create_user(), test_delete_database(), test_delete_instance(), test_delete_user(), test_duplicate_database() (+6 more)
 
 ### Community 1855 - "Community 1855"
 Cohesion: 0.17
@@ -13297,8 +13317,8 @@ Cohesion: 0.17
 Nodes (12): Error, ResponseMetadata, Error, ResponseMetadata, Error, ResponseMetadata, error-condition-list, error-condition-operator (+4 more)
 
 ### Community 1867 - "Community 1867"
-Cohesion: 0.22
-Nodes (9): sub-filter-policy-max-attr-keys, sub-filter-policy-rule-no-list, Error, ResponseMetadata, Error, ResponseMetadata, tests/aws/services/sns/test_sns_filter_policy.py::TestSNSFilterPolicyCrud::test_sub_filter_policy_nested_property_constraints, recorded-content (+1 more)
+Cohesion: 0.17
+Nodes (12): sub-filter-policy-max-attr-keys, sub-filter-policy-nested-error-too-many-combinations, sub-filter-policy-rule-no-list, Error, ResponseMetadata, Error, ResponseMetadata, Error (+4 more)
 
 ### Community 1868 - "Community 1868"
 Cohesion: 0.17
@@ -13321,8 +13341,8 @@ Cohesion: 0.17
 Nodes (12): AssumedRoleUser, ResponseMetadata, Arn, AssumedRoleId, ResponseMetadata, assume-role, create-role, role-session-name (+4 more)
 
 ### Community 1873 - "Community 1873"
-Cohesion: 0.22
-Nodes (9): Arn, FederatedUserId, FederatedUser, PackedPolicySize, ResponseMetadata, get-federation-token, tests/aws/services/sts/test_sts.py::TestSTSIntegrations::test_get_federation_token, recorded-content (+1 more)
+Cohesion: 0.17
+Nodes (11): Arn, FederatedUserId, FederatedUser, PackedPolicySize, ResponseMetadata, get-federation-token, tests/aws/services/sts/test_sts.py::TestSTSAssumeRoleTagging::test_assume_role_tag_validation, recorded-date (+3 more)
 
 ### Community 1874 - "Community 1874"
 Cohesion: 0.17
@@ -13429,8 +13449,8 @@ Cohesion: 0.18
 Nodes (11): cacheClusterEnabled, cacheClusterStatus, createdDate, deploymentId, description, lastUpdatedDate, methodSettings, ResponseMetadata (+3 more)
 
 ### Community 1900 - "Community 1900"
-Cohesion: 0.11
-Nodes (18): Error, message, ResponseMetadata, error-update-doc-version, update-stage, tests/aws/services/apigateway/test_apigateway_common.py::TestStages::test_create_update_stages, recorded-content, recorded-date (+10 more)
+Cohesion: 0.18
+Nodes (11): update-stage, cacheClusterEnabled, cacheClusterStatus, createdDate, deploymentId, description, documentationVersion, lastUpdatedDate (+3 more)
 
 ### Community 1901 - "Community 1901"
 Cohesion: 0.18
@@ -13481,8 +13501,8 @@ Cohesion: 0.25
 Nodes (10): call, setup, teardown, total, tests/aws/services/cloudformation/test_change_set_global_macros.py::TestChangeSetGlobalMacros::test_base_global_macro, durations_in_seconds, last_validated_date, tests/aws/services/cloudformation/test_change_set_global_macros.py::TestChangeSetGlobalMacros::test_update_after_macro_for_before_version_is_deleted (+2 more)
 
 ### Community 1913 - "Community 1913"
-Cohesion: 0.18
-Nodes (3): AssetDirectory, A state container manifested as a directory on the file system., test_asset_directory()
+Cohesion: 0.24
+Nodes (14): _change(), _create(), test_add_a_record(), test_add_duplicate_record(), test_create_zone(), test_delete_empty_zone(), test_delete_missing_record(), test_delete_record() (+6 more)
 
 ### Community 1914 - "Community 1914"
 Cohesion: 0.18
@@ -13497,8 +13517,8 @@ Cohesion: 0.18
 Nodes (11): Vpc, CidrBlock, CidrBlockAssociationSet, DhcpOptionsId, InstanceTenancy, Ipv6CidrBlockAssociationSet, IsDefault, OwnerId (+3 more)
 
 ### Community 1917 - "Community 1917"
-Cohesion: 0.12
-Nodes (16): ResponseMetadata, VpcPeeringConnections, peering-connection-id, pending-acceptance, requester-peer, vpc1, vpc2, ResponseMetadata (+8 more)
+Cohesion: 0.15
+Nodes (13): peering-connection-id, requester-peer, vpc1, vpc2, ResponseMetadata, VpcPeeringConnections, tests/aws/services/ec2/test_ec2.py::TestEc2Integrations::test_vcp_peering_difference_regions, recorded-content (+5 more)
 
 ### Community 1918 - "Community 1918"
 Cohesion: 0.18
@@ -13541,16 +13561,16 @@ Cohesion: 0.20
 Nodes (8): Architecture, code:bash (make install              # full dev install (= install-dev)), code:bash (pytest <path>                                   # run a file), code:bash (localstack start          # CLI (preferred for users)), Common Commands, Conventions, Overview, References
 
 ### Community 1928 - "Community 1928"
-Cohesion: 0.18
-Nodes (11): BatchSize, EventSourceArn, EventSourceMappingArn, FunctionArn, FunctionResponseTypes, LastModified, MaximumBatchingWindowInSeconds, State (+3 more)
+Cohesion: 0.12
+Nodes (17): BatchSize, EventSourceArn, EventSourceMappingArn, FunctionArn, FunctionResponseTypes, LastModified, MaximumBatchingWindowInSeconds, State (+9 more)
 
 ### Community 1929 - "Community 1929"
 Cohesion: 0.18
 Nodes (10): tests/aws/services/events/test_events_inputs.py::TestInputTransformer::test_input_transformer_nested_keys_replacement, last_validated_date, tests/aws/services/events/test_events_inputs.py::TestInputTransformer::test_input_transformer_nested_keys_replacement[\"<listsingle> single list item\"\\n\"<listmulti> multiple list items\"\\n\"<systemstring> system account id\"\\n\"<payload> payload\"\\n\"<userId> user id\"], last_validated_date, tests/aws/services/events/test_events_inputs.py::TestInputTransformer::test_input_transformer_nested_keys_replacement[{\"method\": \"PUT\", \"path\": \"users-service/users/<userId>\", \"bod\": \"<userId>\"}], last_validated_date, tests/aws/services/events/test_events_inputs.py::TestInputTransformer::test_input_transformer_nested_keys_replacement[\"Payload of <payload> with path users-service/users/<userId>\"], last_validated_date (+2 more)
 
 ### Community 1930 - "Community 1930"
-Cohesion: 0.15
-Nodes (16): ResponseMetadata, ResponseMetadata, Targets, ResponseMetadata, ResponseMetadata, list-targets, messages, put-rule-with-custom-event-bus-error (+8 more)
+Cohesion: 0.18
+Nodes (11): Targets, list-targets, messages, messages-first, messages-second, tests/aws/services/events/test_events_schedule.py::TestScheduleRate::tests_schedule_rate_custom_input_target_sqs, recorded-content, recorded-date (+3 more)
 
 ### Community 1931 - "Community 1931"
 Cohesion: 0.18
@@ -13589,8 +13609,8 @@ Cohesion: 0.18
 Nodes (11): TracingConfig, description, enum, type, Mode, TracingConfig, additionalProperties, description (+3 more)
 
 ### Community 1940 - "Community 1940"
-Cohesion: 0.25
-Nodes (3): BooksApi, infrastructure(), TestBookstoreApplication
+Cohesion: 0.22
+Nodes (4): BooksApi, infrastructure(), test_setup(), TestBookstoreApplication
 
 ### Community 1941 - "Community 1941"
 Cohesion: 0.25
@@ -13601,8 +13621,8 @@ Cohesion: 0.18
 Nodes (11): Policy, Arn, AttachmentCount, CreateDate, DefaultVersionId, IsAttachable, Path, PermissionsBoundaryUsageCount (+3 more)
 
 ### Community 1943 - "Community 1943"
-Cohesion: 0.18
-Nodes (11): Properties, Properties, Type, Ref, version, EventBusName, EventPattern, Name (+3 more)
+Cohesion: 0.15
+Nodes (13): Properties, Type, Properties, Type, Ref, version, EventBusName, EventPattern (+5 more)
 
 ### Community 1944 - "Community 1944"
 Cohesion: 0.22
@@ -13617,7 +13637,7 @@ Cohesion: 0.25
 Nodes (8): MaintenanceWindowAutomationParameters, type, additionalProperties, properties, type, type, DocumentVersion, Parameters
 
 ### Community 1947 - "Community 1947"
-Cohesion: 0.25
+Cohesion: 0.30
 Nodes (10): generate_ecr_image_from_docker_image(), generate_ecr_image_from_dockerfile(), load_nodejs_lambda_to_s3(), load_python_lambda_to_s3(), Helper function to generate an ECR image from a dockerfile.      :param ecr_clie, Parameters     ----------     ecr_client     repository_name     image_name, Helper function to setup Lambdas that need additional python libs.     Will crea, Helper function to setup nodeJS Lambdas that need additional libs.     Will crea (+2 more)
 
 ### Community 1948 - "Community 1948"
@@ -13625,8 +13645,8 @@ Cohesion: 0.10
 Nodes (3): Cause_declContext, Cause_pathContext, CauseContext
 
 ### Community 1949 - "Community 1949"
-Cohesion: 0.06
-Nodes (33): StackEvent, StackResource, UpdateTerminationProtectionOutput, CloudformationProvider, InternalFailure, CloudformationApi, CloudformationProvider, outputs_have_values() (+25 more)
+Cohesion: 0.07
+Nodes (30): StackEvent, StackResource, UpdateTerminationProtectionOutput, CloudformationProvider, InternalFailure, ResourceNotFoundException, CloudformationApi, CloudformationProvider (+22 more)
 
 ### Community 1950 - "Community 1950"
 Cohesion: 0.18
@@ -13661,12 +13681,12 @@ Cohesion: 0.12
 Nodes (7): EC2VPCEndpointProperties, EC2VPCEndpointProvider, EC2VPCEndpointProviderPlugin, Fetch resource information          IAM permissions required:           - ec2:De, Delete a resource          IAM permissions required:           - ec2:DeleteVpcEn, Update a resource          IAM permissions required:           - ec2:ModifyVpcEn, Create a new resource.          Primary identifier fields:           - /properti
 
 ### Community 1958 - "Community 1958"
-Cohesion: 0.14
-Nodes (7): EC2VPCGatewayAttachmentProperties, EC2VPCGatewayAttachmentProvider, EC2VPCGatewayAttachmentProviderPlugin, # TODO: validations, Create a new resource.          Primary identifier fields:           - /properti, # TODO: idempotency, Fetch resource information
+Cohesion: 0.21
+Nodes (6): EC2VPCGatewayAttachmentProperties, EC2VPCGatewayAttachmentProvider, # TODO: validations, Create a new resource.          Primary identifier fields:           - /properti, # TODO: idempotency, Fetch resource information
 
 ### Community 1959 - "Community 1959"
-Cohesion: 0.12
-Nodes (7): EventsApiDestinationProperties, EventsApiDestinationProvider, EventsApiDestinationProviderPlugin, Update a resource          IAM permissions required:           - events:UpdateAp, Create a new resource.          Primary identifier fields:           - /properti, Fetch resource information          IAM permissions required:           - events, Delete a resource          IAM permissions required:           - events:DeleteAp
+Cohesion: 0.18
+Nodes (6): EventsApiDestinationProperties, EventsApiDestinationProvider, Update a resource          IAM permissions required:           - events:UpdateAp, Create a new resource.          Primary identifier fields:           - /properti, Fetch resource information          IAM permissions required:           - events, Delete a resource          IAM permissions required:           - events:DeleteAp
 
 ### Community 1960 - "Community 1960"
 Cohesion: 0.21
@@ -13685,8 +13705,8 @@ Cohesion: 0.11
 Nodes (9): KMSKeyProperties, KMSKeyProvider, KMSKeyProviderPlugin, Fetch resource information          IAM permissions required:           - kms:De, Delete a resource          IAM permissions required:           - kms:DescribeKey, Update a resource          IAM permissions required:           - kms:DescribeKey, List a resource          IAM permissions required:           - kms:ListKeys, Create a new resource.          Primary identifier fields:           - /properti (+1 more)
 
 ### Community 1964 - "Community 1964"
-Cohesion: 0.21
-Nodes (7): DestinationConfig, LambdaEventInvokeConfigProperties, LambdaEventInvokeConfigProvider, OnFailure, OnSuccess, Create a new resource.          Primary identifier fields:           - /properti, Fetch resource information
+Cohesion: 0.14
+Nodes (8): DestinationConfig, LambdaEventInvokeConfigProperties, LambdaEventInvokeConfigProvider, OnFailure, OnSuccess, LambdaEventInvokeConfigProviderPlugin, Create a new resource.          Primary identifier fields:           - /properti, Fetch resource information
 
 ### Community 1965 - "Community 1965"
 Cohesion: 0.17
@@ -13697,8 +13717,8 @@ Cohesion: 0.21
 Nodes (6): HostedRotationLambda, Create a new resource.          Primary identifier fields:           - /properti, Fetch resource information, RotationRules, SecretsManagerRotationScheduleProperties, SecretsManagerRotationScheduleProvider
 
 ### Community 1967 - "Community 1967"
-Cohesion: 0.16
-Nodes (13): CloudWatchOutputConfig, LoggingInfo, MaintenanceWindowAutomationParameters, MaintenanceWindowLambdaParameters, MaintenanceWindowRunCommandParameters, MaintenanceWindowStepFunctionsParameters, NotificationConfig, Create a new resource.          Primary identifier fields:           - /properti (+5 more)
+Cohesion: 0.12
+Nodes (14): CloudWatchOutputConfig, LoggingInfo, MaintenanceWindowAutomationParameters, MaintenanceWindowLambdaParameters, MaintenanceWindowRunCommandParameters, MaintenanceWindowStepFunctionsParameters, NotificationConfig, SSMMaintenanceWindowTaskProviderPlugin (+6 more)
 
 ### Community 1968 - "Community 1968"
 Cohesion: 0.10
@@ -13709,8 +13729,8 @@ Cohesion: 0.18
 Nodes (11): permissions, permissions, handlers, create, delete, list, read, update (+3 more)
 
 ### Community 1970 - "Community 1970"
-Cohesion: 0.11
-Nodes (19): ResponseMetadata, error-after-delete, tests/aws/services/logs/test_logs_delivery.py::TestDeliveries::test_create_delivery, recorded-date, tests/aws/services/logs/test_logs_delivery.py::TestDeliveries::test_delete_delivery, recorded-content, recorded-date, tests/aws/services/logs/test_logs_delivery.py::TestDeliveryDestinationPolicies::test_delete_delivery_destination_policy (+11 more)
+Cohesion: 0.18
+Nodes (11): ResponseMetadata, error-after-delete, tests/aws/services/logs/test_logs_delivery.py::TestDeliveries::test_delete_delivery, recorded-content, recorded-date, tests/aws/services/logs/test_logs_delivery.py::TestDeliveryDestinations::test_delete_delivery_destination, recorded-content, recorded-date (+3 more)
 
 ### Community 1971 - "Community 1971"
 Cohesion: 0.18
@@ -13733,8 +13753,8 @@ Cohesion: 0.18
 Nodes (11): DeliveryStreamDescription, CreateTimestamp, DeliveryStreamARN, DeliveryStreamEncryptionConfiguration, DeliveryStreamName, DeliveryStreamStatus, DeliveryStreamType, Destinations (+3 more)
 
 ### Community 1976 - "Community 1976"
-Cohesion: 0.12
-Nodes (16): Access-Control-Allow-Credentials, Access-Control-Allow-Headers, Access-Control-Allow-Methods, Access-Control-Allow-Origin, Connection, Content-Length, Content-Type, Date (+8 more)
+Cohesion: 0.18
+Nodes (11): Access-Control-Allow-Credentials, Access-Control-Allow-Headers, Access-Control-Allow-Methods, Access-Control-Allow-Origin, Connection, Content-Length, Content-Type, Date (+3 more)
 
 ### Community 1977 - "Community 1977"
 Cohesion: 0.18
@@ -13781,8 +13801,8 @@ Cohesion: 0.20
 Nodes (10): StageKey, RestApiId, StageName, description, type, additionalProperties, properties, type (+2 more)
 
 ### Community 1988 - "Community 1988"
-Cohesion: 0.14
-Nodes (20): additionalProperties, permissions, createOnlyProperties, definitions, permissions, description, handlers, create (+12 more)
+Cohesion: 0.30
+Nodes (10): additionalProperties, createOnlyProperties, description, primaryIdentifier, readOnlyProperties, required, sourceUrl, taggable (+2 more)
 
 ### Community 1989 - "Community 1989"
 Cohesion: 0.18
@@ -13901,8 +13921,8 @@ Cohesion: 0.18
 Nodes (11): description, maxLength, minLength, type, Key, Value, properties, description (+3 more)
 
 ### Community 2019 - "Community 2019"
-Cohesion: 0.18
-Nodes (11): description, maxLength, minLength, type, Key, Value, properties, description (+3 more)
+Cohesion: 0.12
+Nodes (16): Tag, description, maxLength, minLength, type, Key, Value, additionalProperties (+8 more)
 
 ### Community 2020 - "Community 2020"
 Cohesion: 0.18
@@ -13961,8 +13981,8 @@ Cohesion: 0.18
 Nodes (11): permissions, permissions, handlers, create, delete, list, read, update (+3 more)
 
 ### Community 2034 - "Community 2034"
-Cohesion: 0.13
-Nodes (18): Messages, ResponseMetadata, QueueUrl, ResponseMetadata, first_attempt, get_destination_queue_url, second_attempt, Messages (+10 more)
+Cohesion: 0.26
+Nodes (14): _add_version(), _create(), test_access_decodes_payload(), test_access_latest_alias(), test_add_version_and_list(), test_create_secret(), test_delete_secret(), test_destroy_clears_payload() (+6 more)
 
 ### Community 2035 - "Community 2035"
 Cohesion: 0.18
@@ -14121,8 +14141,8 @@ Cohesion: 0.36
 Nodes (11): Statement, Version, Role, Role, Role, Arn, AssumeRolePolicyDocument, CreateDate (+3 more)
 
 ### Community 2077 - "Community 2077"
-Cohesion: 0.18
-Nodes (14): Metadata, Type, Metadata, Type, Metadata, Type, Metadata, Type (+6 more)
+Cohesion: 0.22
+Nodes (11): Metadata, Type, Metadata, Type, Metadata, Type, aws:cdk:path, Resources (+3 more)
 
 ### Community 2078 - "Community 2078"
 Cohesion: 0.18
@@ -14162,15 +14182,15 @@ Nodes (11): Connection, Content-Length, Content-Type, Date, X-Amz-Executed-Versi
 
 ### Community 2087 - "Community 2087"
 Cohesion: 0.18
-Nodes (11): call, durations_in_seconds, tests/aws/services/stepfunctions/v2/test_state/test_test_state_scenarios.py::TestStateCaseScenarios::test_base_inspection_level_info[BASE_CHOICE_STATE], durations_in_seconds, last_validated_date, tests/aws/services/stepfunctions/v2/test_state/test_test_state_scenarios.py::TestStateCaseScenarios::test_base_lambda_service_task_state[DEBUG], durations_in_seconds, last_validated_date (+3 more)
+Nodes (11): setup, durations_in_seconds, tests/aws/services/stepfunctions/v2/test_state/test_test_state_scenarios.py::TestStateCaseScenarios::test_base_inspection_level_info[BASE_CHOICE_STATE], durations_in_seconds, last_validated_date, tests/aws/services/stepfunctions/v2/test_state/test_test_state_scenarios.py::TestStateCaseScenarios::test_base_lambda_service_task_state[DEBUG], durations_in_seconds, last_validated_date (+3 more)
 
 ### Community 2088 - "Community 2088"
 Cohesion: 0.18
 Nodes (10): Anti-pattern, Anti-pattern, Best practice, Best practice, code:python, R01, R08, Rules for stable tests (+2 more)
 
 ### Community 2090 - "Community 2090"
-Cohesion: 0.22
-Nodes (8): generate_test_selection(), USAGE: python -m localstack.tooling.testing.testselection.scripts.generate_test_selectio, find_merge_base(), get_branch_name(), get_changed_files_from_git_diff(), Find list of files that are affected by changes made on head_ref in comparison t, opted_out(), Do not perform test selection if at least one file is opted out      :param chan
+Cohesion: 0.20
+Nodes (8): generate_test_selection(), USAGE: python -m localstack.tooling.testing.testselection.scripts.generate_test_, find_merge_base(), get_branch_name(), get_changed_files_from_git_diff(), Find list of files that are affected by changes made on head_ref in comparison t, opted_out(), Do not perform test selection if at least one file is opted out      :param chan
 
 ### Community 2091 - "Community 2091"
 Cohesion: 0.18
@@ -14190,11 +14210,11 @@ Nodes (11): Comment, StartAt, States, definition, definition, definition, defini
 
 ### Community 2095 - "Community 2095"
 Cohesion: 0.11
-Nodes (17): 1. Verdict de viabilidade, 2. Estado alvo (mapa), 3. Analogia AWS ↔ Azure ↔ GCP, 4. Tiers (MVP → completo), 5. Architecture, 6. Roadmap (sprints), 7. Guardrails, 8. Critérios de conclusão Sprint A+B+C (+9 more)
+Nodes (18): 1. Verdict de viabilidade, 2. Estado alvo (mapa), 3. Analogia AWS ↔ Azure ↔ GCP, 4. Tiers (MVP → completo), 5. Architecture, 6. Roadmap (sprints), 7. Guardrails, 8. Critérios de conclusão Sprint A+B+C (+10 more)
 
 ### Community 2096 - "Community 2096"
 Cohesion: 0.18
-Nodes (10): tests/aws/services/stepfunctions/v2/test_sfn_api.py::TestSnfApi::test_cloudformation_definition_create_describe[dump], last_validated_date, tests/aws/services/stepfunctions/v2/test_sfn_api.py::TestSnfApi::test_cloudformation_definition_create_describe[dumps], last_validated_date, tests/aws/services/stepfunctions/v2/test_sfn_api.py::TestSnfApi::test_create_update_state_machine_base_definition_and_role, last_validated_date, tests/aws/services/stepfunctions/v2/test_sfn_api.py::TestSnfApi::test_get_execution_history_reversed, last_validated_date (+2 more)
+Nodes (10): tests/aws/services/stepfunctions/v2/test_sfn_api.py::TestSnfApi::test_cloudformation_definition_create_describe[dump], last_validated_date, tests/aws/services/stepfunctions/v2/test_sfn_api.py::TestSnfApi::test_create_update_state_machine_base_definition_and_role, last_validated_date, tests/aws/services/stepfunctions/v2/test_sfn_api.py::TestSnfApi::test_create_update_state_machine_same_parameters, last_validated_date, tests/aws/services/stepfunctions/v2/test_sfn_api.py::TestSnfApi::test_get_execution_history_reversed, last_validated_date (+2 more)
 
 ### Community 2097 - "Community 2097"
 Cohesion: 0.29
@@ -14250,7 +14270,7 @@ Nodes (10): DependsOn, Properties, Type, ZipFile, Code, Handler, Role, Runtime (
 
 ### Community 2110 - "Community 2110"
 Cohesion: 0.20
-Nodes (10): setup, tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_sqs.py::test_message_body_and_attributes_passed_correctly, durations_in_seconds, last_validated_date, tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_sqs.py::TestSQSEventSourceMapping::test_sqs_event_filter[valid-json-filter], durations_in_seconds, last_validated_date, tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_sqs.py::TestSQSEventSourceMapping::test_sqs_event_source_mapping_batching_reserved_concurrency (+2 more)
+Nodes (10): setup, tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_sqs.py::TestSQSEventSourceMapping::test_sqs_event_filter[and], durations_in_seconds, last_validated_date, tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_sqs.py::TestSQSEventSourceMapping::test_sqs_event_filter[valid-json-filter], durations_in_seconds, last_validated_date, tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_sqs.py::TestSQSEventSourceMapping::test_sqs_event_source_mapping_batching_reserved_concurrency (+2 more)
 
 ### Community 2111 - "Community 2111"
 Cohesion: 0.36
@@ -14281,8 +14301,8 @@ Cohesion: 0.29
 Nodes (10): Id, ResponseMetadata, StackId, ResponseMetadata, ResponseMetadata, ResponseMetadata, ResponseMetadata, create-change-set-1 (+2 more)
 
 ### Community 2118 - "Community 2118"
-Cohesion: 0.20
-Nodes (14): Id, ResponseMetadata, StackId, Id, ResponseMetadata, StackId, ResponseMetadata, ResponseMetadata (+6 more)
+Cohesion: 0.36
+Nodes (10): ResponseMetadata, ResponseMetadata, ResponseMetadata, ResponseMetadata, ResponseMetadata, ResponseMetadata, ResponseMetadata, ResponseMetadata (+2 more)
 
 ### Community 2119 - "Community 2119"
 Cohesion: 0.36
@@ -14318,23 +14338,23 @@ Nodes (10): teardown, tests/aws/services/dynamodb/test_dynamodb.py::TestDynamoDB
 
 ### Community 2128 - "Community 2128"
 Cohesion: 0.20
-Nodes (10): setup, tests/aws/services/dynamodb/test_dynamodb.py::TestDynamoDB::test_batch_write_items_streaming, durations_in_seconds, last_validated_date, tests/aws/services/dynamodb/test_dynamodb.py::TestDynamoDB::test_dynamodb_create_table_with_partial_sse_specification, durations_in_seconds, last_validated_date, tests/aws/services/dynamodb/test_dynamodb.py::TestDynamoDB::test_gsi_with_billing_mode[PAY_PER_REQUEST] (+2 more)
+Nodes (10): setup, tests/aws/services/dynamodb/test_dynamodb.py::TestDynamoDB::test_data_encoding_consistency, durations_in_seconds, last_validated_date, tests/aws/services/dynamodb/test_dynamodb.py::TestDynamoDB::test_dynamodb_describe_contributor_insights, durations_in_seconds, last_validated_date, tests/aws/services/dynamodb/test_dynamodb.py::TestDynamoDB::test_gsi_with_billing_mode[PAY_PER_REQUEST] (+2 more)
 
 ### Community 2129 - "Community 2129"
 Cohesion: 0.20
-Nodes (10): total, tests/aws/services/dynamodb/test_dynamodb.py::TestDynamoDB::test_batch_write_items, durations_in_seconds, last_validated_date, tests/aws/services/dynamodb/test_dynamodb.py::TestDynamoDB::test_dynamodb_stream_stream_view_type, durations_in_seconds, last_validated_date, tests/aws/services/dynamodb/test_dynamodb.py::TestDynamoDB::test_transact_write_items_streaming (+2 more)
+Nodes (10): total, tests/aws/services/dynamodb/test_dynamodb.py::TestDynamoDB::test_continuous_backup_update, durations_in_seconds, last_validated_date, tests/aws/services/dynamodb/test_dynamodb.py::TestDynamoDB::test_dynamodb_stream_stream_view_type, durations_in_seconds, last_validated_date, tests/aws/services/dynamodb/test_dynamodb.py::TestDynamoDB::test_transact_write_items_streaming (+2 more)
 
 ### Community 2130 - "Community 2130"
 Cohesion: 0.20
-Nodes (10): call, tests/aws/services/dynamodb/test_dynamodb.py::TestDynamoDB::test_batch_write_not_matching_schema, durations_in_seconds, last_validated_date, tests/aws/services/dynamodb/test_dynamodb.py::TestDynamoDB::test_create_duplicate_table, durations_in_seconds, last_validated_date, tests/aws/services/dynamodb/test_dynamodb.py::TestDynamoDB::test_data_encoding_consistency (+2 more)
+Nodes (10): call, tests/aws/services/dynamodb/test_dynamodb.py::TestDynamoDB::test_batch_write_items, durations_in_seconds, last_validated_date, tests/aws/services/dynamodb/test_dynamodb.py::TestDynamoDB::test_create_duplicate_table, durations_in_seconds, last_validated_date, tests/aws/services/dynamodb/test_dynamodb.py::TestDynamoDB::test_dynamodb_create_table_with_partial_sse_specification (+2 more)
 
 ### Community 2131 - "Community 2131"
 Cohesion: 0.20
 Nodes (9): code:block1 ({), Disclaimers and Limitations on Liability, End-User License Agreement (EULA), Examples of Anonymized Usage Data, Miscellanea, Privacy Notices, Summary, The Agreement (+1 more)
 
 ### Community 2132 - "Community 2132"
-Cohesion: 0.16
-Nodes (14): Code, Error, Message, Type, Error, create-table-result, error, event_logs (+6 more)
+Cohesion: 0.24
+Nodes (10): Code, Error, Message, ResponseMetadata, Type, Error, error, tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_dynamodbstreams.py::TestDynamoDBEventSourceMapping::test_duplicate_event_source_mappings (+2 more)
 
 ### Community 2133 - "Community 2133"
 Cohesion: 0.16
@@ -14342,7 +14362,7 @@ Nodes (12): ConfigurationItem, ConfigurationParameter, Query, Fetch resource inf
 
 ### Community 2134 - "Community 2134"
 Cohesion: 0.20
-Nodes (10): teardown, tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_sqs.py::test_fifo_message_group_parallelism, durations_in_seconds, last_validated_date, tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_sqs.py::TestSQSEventSourceMapping::test_sqs_event_source_mapping_batch_size[100], durations_in_seconds, last_validated_date, tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_sqs.py::TestSQSEventSourceMapping::test_sqs_invalid_event_filter[invalid_filter3] (+2 more)
+Nodes (10): teardown, tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_sqs.py::test_esm_with_not_existing_sqs_queue, durations_in_seconds, last_validated_date, tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_sqs.py::test_fifo_message_group_parallelism, durations_in_seconds, last_validated_date, tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_sqs.py::TestSQSEventSourceMapping::test_sqs_invalid_event_filter[invalid_filter3] (+2 more)
 
 ### Community 2135 - "Community 2135"
 Cohesion: 0.20
@@ -14350,10 +14370,10 @@ Nodes (10): call, tests/aws/services/lambda_/event_source_mapping/test_lambda_in
 
 ### Community 2136 - "Community 2136"
 Cohesion: 0.20
-Nodes (10): total, tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_sqs.py::test_esm_with_not_existing_sqs_queue, durations_in_seconds, last_validated_date, tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_sqs.py::test_report_batch_item_failures_empty_json_batch_succeeds, durations_in_seconds, last_validated_date, tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_sqs.py::TestSQSEventSourceMapping::test_sqs_event_filter[numeric-range] (+2 more)
+Nodes (10): total, tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_sqs.py::test_redrive_policy_with_failing_lambda, durations_in_seconds, last_validated_date, tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_sqs.py::test_report_batch_item_failures_empty_json_batch_succeeds, durations_in_seconds, last_validated_date, tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_sqs.py::TestSQSEventSourceMapping::test_sqs_event_source_mapping_batch_size[100] (+2 more)
 
 ### Community 2137 - "Community 2137"
-Cohesion: 0.18
+Cohesion: 0.19
 Nodes (11): calculate_provisioned_concurrency_sum(), ConcurrencyTracker, CountingService, get_invocation_lease(), # HACK: skip reserved and provisioned concurrency if function not available (e.g, # TODO: test updating provisioned concurrency? Does AWS serve on-demand during u, # HACK: skip reserved if function not available (e.g., in Lambda@Edge), # TODO: Consider a dedicated counter for unavailable concurrency with locks for (+3 more)
 
 ### Community 2138 - "Community 2138"
@@ -14362,7 +14382,7 @@ Nodes (5): arn(), create_event_bus_service(), EventBusService, # TODO: cover via
 
 ### Community 2139 - "Community 2139"
 Cohesion: 0.20
-Nodes (10): call, tests/aws/services/events/test_events_inputs.py::test_put_event_input_path_and_input_transformer, durations_in_seconds, last_validated_date, tests/aws/services/events/test_events_inputs.py::TestInputTransformer::test_input_transformer_nested_keys_replacement[{\"method\": \"PUT\", \"path\": \"users-service/users/<userId>\", \"bod\": [<userId>, \"hardcoded\"]}], durations_in_seconds, last_validated_date, tests/aws/services/events/test_events_inputs.py::TestInputTransformer::test_input_transformer_predefined_variables[{\"originalEvent\": <aws.events.event>, \"originalEventJson\": <aws.events.event.json>}] (+2 more)
+Nodes (10): call, tests/aws/services/events/test_events_inputs.py::test_put_event_input_path_and_input_transformer, durations_in_seconds, last_validated_date, tests/aws/services/events/test_events_inputs.py::TestInputPath::test_put_events_with_input_path, durations_in_seconds, last_validated_date, tests/aws/services/events/test_events_inputs.py::TestInputTransformer::test_input_transformer_nested_keys_replacement[{\"method\": \"PUT\", \"path\": \"users-service/users/<userId>\", \"bod\": [<userId>, \"hardcoded\"]}] (+2 more)
 
 ### Community 2140 - "Community 2140"
 Cohesion: 0.20
@@ -14401,16 +14421,16 @@ Cohesion: 0.20
 Nodes (10): additionalProperties, description, properties, $ref, required, type, CapacityProviderConfig, $ref (+2 more)
 
 ### Community 2149 - "Community 2149"
-Cohesion: 0.26
-Nodes (15): TestInvokeMethodResponse, create_test_chain(), _dump_headers(), log_failed_template(), log_mock_template(), log_template(), # TODO: measure integration latency, # TODO: fix the error message (+7 more)
+Cohesion: 0.12
+Nodes (23): TestInvokeMethodResponse, create_test_chain(), _dump_headers(), log_failed_template(), log_mock_template(), log_template(), # TODO: measure integration latency, # TODO: fix the error message (+15 more)
 
 ### Community 2150 - "Community 2150"
 Cohesion: 0.20
 Nodes (10): ConsumerARN, ConsumerCreationTimestamp, ConsumerName, ConsumerStatus, StreamARN, One_consumer_by_describe_stream, One_consumer_by_list_stream, tests/aws/services/kinesis/test_kinesis.py::TestKinesis::test_stream_consumers (+2 more)
 
 ### Community 2151 - "Community 2151"
-Cohesion: 0.15
-Nodes (14): Records, tests/aws/services/kinesis/test_kinesis.py::TestKinesis::test_add_tags_to_stream, recorded-date, tests/aws/services/kinesis/test_kinesis.py::TestKinesis::test_record_lifecycle_data_integrity, recorded-content, recorded-date, tests/aws/services/kinesis/test_kinesis.py::TestKinesis::test_resource_policy_crud, recorded-date (+6 more)
+Cohesion: 0.20
+Nodes (10): Records, tests/aws/services/kinesis/test_kinesis.py::TestKinesis::test_record_lifecycle_data_integrity, recorded-content, recorded-date, tests/aws/services/kinesis/test_kinesis.py::TestKinesis::test_subscribe_to_shard_with_at_timestamp, recorded-content, recorded-date, tests/aws/services/kinesis/test_kinesis.py::TestKinesis::test_subscribe_to_shard_with_sequence_number_as_iterator (+2 more)
 
 ### Community 2152 - "Community 2152"
 Cohesion: 0.20
@@ -14425,16 +14445,16 @@ Cohesion: 0.31
 Nodes (3): func(), HandleRequest(), main()
 
 ### Community 2155 - "Community 2155"
-Cohesion: 0.67
-Nodes (3): tests/aws/services/lambda_/test_lambda_runtimes.py::TestJavaRuntimes::test_stream_handler[java21], durations_in_seconds, last_validated_date
+Cohesion: 0.23
+Nodes (11): CloudProvider, Meta-types shared by every cloud module under `localstack-core/localstack/<cloud, Metadata + lazy factories describing a registered cloud implementation., _stub_factory(), test_build_gateway_invokes_factory(), test_iter_yields_providers_in_sorted_order(), test_list_returns_sorted_names(), test_provider_with_optional_factories() (+3 more)
 
 ### Community 2156 - "Community 2156"
 Cohesion: 0.20
-Nodes (10): teardown, tests/aws/services/lambda_/test_lambda_runtimes.py::TestJavaRuntimes::test_java_lambda_subscribe_sns_topic, durations_in_seconds, last_validated_date, tests/aws/services/lambda_/test_lambda_runtimes.py::TestJavaRuntimes::test_stream_handler[java25], durations_in_seconds, last_validated_date, tests/aws/services/lambda_/test_lambda_runtimes.py::TestPythonRuntimes::test_python_runtime_correct_versions[python3.14] (+2 more)
+Nodes (10): teardown, tests/aws/services/lambda_/test_lambda_runtimes.py::TestJavaRuntimes::test_java_custom_handler_method_specification[cloud.localstack.sample.LambdaHandlerWithInterfaceAndCustom-INTERFACE], durations_in_seconds, last_validated_date, tests/aws/services/lambda_/test_lambda_runtimes.py::TestJavaRuntimes::test_serializable_input_object[java21], durations_in_seconds, last_validated_date, tests/aws/services/lambda_/test_lambda_runtimes.py::TestPythonRuntimes::test_python_runtime_correct_versions[python3.14] (+2 more)
 
 ### Community 2157 - "Community 2157"
-Cohesion: 0.67
-Nodes (3): tests/aws/services/lambda_/test_lambda_runtimes.py::TestJavaRuntimes::test_serializable_input_object[java11], durations_in_seconds, last_validated_date
+Cohesion: 0.24
+Nodes (11): create_message_response_update_composite_alarm_state_sns(), create_message_response_update_state_lambda(), create_message_response_update_state_sns(), create_metric_data_query_from_alarm(), put_metric_alarm(), # TODO: does this happen even if a label is set in the query?, # TODO: support other actions, # TODO: Pagination (+3 more)
 
 ### Community 2158 - "Community 2158"
 Cohesion: 0.22
@@ -14445,8 +14465,8 @@ Cohesion: 0.22
 Nodes (10): Statement, Version, Properties, Type, Properties, Type, AssumeRolePolicyDocument, ManagedPolicyArns (+2 more)
 
 ### Community 2160 - "Community 2160"
-Cohesion: 0.15
-Nodes (15): client_factory(), test_account_id_namespacing_for_localstack_backends(), test_account_id_namespacing_for_moto_backends(), test_multi_accounts_dynamodb(), test_multi_accounts_kinesis(), TestMultiAccounts, base_testing_aws_client(), aws_client() (+7 more)
+Cohesion: 0.12
+Nodes (16): total, tests/aws/services/lambda_/test_lambda_api.py::TestLambdaAccountSettings::test_account_settings_total_code_size, durations_in_seconds, last_validated_date, tests/aws/services/lambda_/test_lambda_api.py::TestLambdaEventSourceMappings::test_function_name_variations, durations_in_seconds, last_validated_date, tests/aws/services/lambda_/test_lambda_api.py::TestLambdaFunction::test_function_name_and_qualifier_validation[full_arn_and_qualifier_too_long_and_invalid_region-invoke] (+8 more)
 
 ### Community 2161 - "Community 2161"
 Cohesion: 0.20
@@ -14481,20 +14501,20 @@ Cohesion: 0.15
 Nodes (6): Condition, EventsEventBusPolicyProperties, EventsEventBusPolicyProvider, EventsEventBusPolicyProviderPlugin, Fetch resource information, Create a new resource.          Primary identifier fields:           - /properti
 
 ### Community 2170 - "Community 2170"
-Cohesion: 0.14
-Nodes (6): IAMPolicyProperties, IAMPolicyProvider, IAMPolicyProviderPlugin, # FIXME: this wasn't properly implemented before as well, still needs to be rewr, Create a new resource.          Primary identifier fields:           - /properti, Fetch resource information
+Cohesion: 0.22
+Nodes (5): IAMPolicyProperties, IAMPolicyProvider, # FIXME: this wasn't properly implemented before as well, still needs to be rewr, Create a new resource.          Primary identifier fields:           - /properti, Fetch resource information
 
 ### Community 2171 - "Community 2171"
-Cohesion: 0.14
-Nodes (6): KinesisStreamConsumerProperties, KinesisStreamConsumerProvider, KinesisStreamConsumerProviderPlugin, Create a new resource.          Primary identifier fields:           - /properti, # TODO: idempotency, Fetch resource information
+Cohesion: 0.22
+Nodes (5): KinesisStreamConsumerProperties, KinesisStreamConsumerProvider, Create a new resource.          Primary identifier fields:           - /properti, # TODO: idempotency, Fetch resource information
 
 ### Community 2172 - "Community 2172"
-Cohesion: 0.16
-Nodes (6): LambdaLayerVersionPermissionProperties, LambdaLayerVersionPermissionProvider, layer_name_and_version(), LambdaLayerVersionPermissionProviderPlugin, Create a new resource.          Primary identifier fields:           - /properti, Fetch resource information
+Cohesion: 0.25
+Nodes (5): LambdaLayerVersionPermissionProperties, LambdaLayerVersionPermissionProvider, layer_name_and_version(), Create a new resource.          Primary identifier fields:           - /properti, Fetch resource information
 
 ### Community 2173 - "Community 2173"
-Cohesion: 0.14
-Nodes (6): LambdaVersionProperties, LambdaVersionProvider, LambdaVersionProviderPlugin, ProvisionedConcurrencyConfiguration, Fetch resource information, Create a new resource.          Primary identifier fields:           - /properti
+Cohesion: 0.22
+Nodes (5): LambdaVersionProperties, LambdaVersionProvider, ProvisionedConcurrencyConfiguration, Fetch resource information, Create a new resource.          Primary identifier fields:           - /properti
 
 ### Community 2174 - "Community 2174"
 Cohesion: 0.14
@@ -14533,12 +14553,12 @@ Cohesion: 0.47
 Nodes (10): ColdStorageOptions, DedicatedMasterEnabled, InstanceCount, InstanceType, MultiAZWithStandbyEnabled, WarmEnabled, ZoneAwarenessEnabled, ClusterConfig (+2 more)
 
 ### Community 2183 - "Community 2183"
-Cohesion: 0.07
-Nodes (8): KeyVaultDataPlaneState, KeyVaultDataPlaneStore, KeyVaultSecret, KeyVaultSecretVersion, MicrosoftKeyVaultProvider, Microsoft.KeyVault provider — ARM metadata + secret data plane (subset)., _vault_id(), provider()
+Cohesion: 0.05
+Nodes (21): AzureProviderPlugin, AzureProviderRegistry, iter_builtin_plugins(), Azure provider plugin registry — analog of `localstack.aws.services.plugins`., Describes how to instantiate a provider for a `(namespace, resource_type)` pair., In-memory registry. Plux-compatible: `load_builtins()` mirrors entry-point disco, Static list of providers shipped in this repo. Replaces Plux entry-points for no, _StubProvider (+13 more)
 
 ### Community 2184 - "Community 2184"
-Cohesion: 0.13
-Nodes (12): AwsCompatibilityMarkers, enforce_single_aws_marker(), filter_by_markers(), Markers, MultiRuntimeMarker, ParityMarkers, pytest_collection_modifyitems(), Custom pytest mark typings (+4 more)
+Cohesion: 0.17
+Nodes (16): AwsCompatibilityMarkers, enforce_single_aws_marker(), filter_by_markers(), Markers, MultiRuntimeMarker, ParityMarkers, pytest_addoption(), pytest_collection_modifyitems() (+8 more)
 
 ### Community 2185 - "Community 2185"
 Cohesion: 0.20
@@ -14601,12 +14621,12 @@ Cohesion: 0.22
 Nodes (9): Policy, additionalProperties, properties, required, type, type, type, PolicyDocument (+1 more)
 
 ### Community 2200 - "Community 2200"
-Cohesion: 0.14
-Nodes (14): StreamEncryption, description, enum, type, description, maxLength, minLength, type (+6 more)
+Cohesion: 0.20
+Nodes (10): description, enum, type, description, maxLength, minLength, type, EncryptionType (+2 more)
 
 ### Community 2201 - "Community 2201"
-Cohesion: 0.17
-Nodes (5): # TODO: add snapshot tests to verify AWS's behaviour about non integer values., Seconds, SecondsJSONata, _get_wait_seconds(), WaitFunction
+Cohesion: 0.20
+Nodes (12): DefaultFormatter, A formatter that uses ``LOG_FORMAT`` and ``LOG_DATE_FORMAT``., create_default_handler(), get_log_level_from_config(), Configures the python logging environment for LocalStack.      :param log_level:, Configures the python logging environment for LocalStack.      :param log_level:, Sets the hypercorn loggers, which are created in a peculiar way, to the localsta, Sets the hypercorn loggers, which are created in a peculiar way, to the localsta (+4 more)
 
 ### Community 2202 - "Community 2202"
 Cohesion: 0.33
@@ -14665,16 +14685,16 @@ Cohesion: 0.15
 Nodes (13): description, type, description, type, description, type, description, type (+5 more)
 
 ### Community 2216 - "Community 2216"
-Cohesion: 0.12
-Nodes (16): setup, tests/aws/services/lambda_/test_lambda.py::TestLambdaAliases::test_lambda_alias_moving, durations_in_seconds, last_validated_date, tests/aws/services/lambda_/test_lambda.py::TestLambdaBehavior::test_lambda_cache_local[python], durations_in_seconds, last_validated_date, tests/aws/services/lambda_/test_lambda.py::TestLambdaFeatures::test_invocation_type_request_response[python3.10] (+8 more)
+Cohesion: 0.11
+Nodes (19): call, tests/aws/services/lambda_/test_lambda.py::TestLambdaBaseFeatures::test_assume_role[1], durations_in_seconds, last_validated_date, tests/aws/services/lambda_/test_lambda.py::TestLambdaCleanup::test_recreate_function, durations_in_seconds, last_validated_date, tests/aws/services/lambda_/test_lambda.py::TestLambdaErrors::test_lambda_handler_exit (+11 more)
 
 ### Community 2217 - "Community 2217"
 Cohesion: 0.20
 Nodes (10): $ref, items, Sources, Tags, items, type, uniqueItems, items (+2 more)
 
 ### Community 2218 - "Community 2218"
-Cohesion: 0.22
-Nodes (9): LoggingConfiguration, type, enum, type, additionalProperties, properties, type, IncludeExecutionData (+1 more)
+Cohesion: 0.27
+Nodes (14): _create_q(), _create_task(), test_create_queue(), test_create_task_autogen_id(), test_create_task_in_missing_queue_404(), test_create_task_named(), test_delete_queue(), test_delete_task() (+6 more)
 
 ### Community 2219 - "Community 2219"
 Cohesion: 0.20
@@ -14709,16 +14729,16 @@ Cohesion: 0.20
 Nodes (9): call, setup, teardown, total, tests/aws/services/cloudformation/resources/test_stack_sets.py::test_create_stack_set_with_stack_instances, last_validated_date, tests/aws/services/cloudformation/resources/test_stack_sets.py::test_fetch_non_existent_stack_set_instances, durations_in_seconds (+1 more)
 
 ### Community 2227 - "Community 2227"
-Cohesion: 0.13
-Nodes (14): Bloqueios técnicos conhecidos, Critérios de "feito" (cada phase), Dirty state Git, Master Roadmap — Multi-Cloud LocalStack, Phase 0 — Validação (em curso), Phase 1 — Reorg `platform/` + `tooling/` (alto risco), Phase 2 — Azure Sprint B finalização, Phase 3 — Azure Sprint C completar (+6 more)
+Cohesion: 0.12
+Nodes (16): Bloqueios técnicos conhecidos, Critérios de "feito" (cada phase), Dirty state Git, Master Roadmap — Multi-Cloud LocalStack, Phase 0 — Validação (em curso), Phase 1 — Reorg `platform/` + `tooling/` (alto risco), Phase 2 — Azure Sprint B finalização, Phase 3 — Azure Sprint C completar (+8 more)
 
 ### Community 2230 - "Community 2230"
-Cohesion: 0.32
-Nodes (6): _error(), EventGridRouter, _json(), _json_body(), Event Grid REST adapter (subset of 2023-12-15-preview)., Path layout:     /topics/{t}     /topics/{t}:publish     /topics/{t}/eventSubscr
+Cohesion: 0.27
+Nodes (13): _create_ck(), _create_kr(), test_create_cryptokey_auto_v1(), test_create_cryptokey_version(), test_create_keyring(), test_duplicate_cryptokey(), test_duplicate_keyring(), test_encrypt_decrypt_roundtrip() (+5 more)
 
 ### Community 2231 - "Community 2231"
-Cohesion: 0.16
-Nodes (8): Test parsing of BSD checksum format., Test parsing BSD format with mixed algorithms., Test cases for BSDFormat parser., Test detection of BSD checksum format., TestBSDFormat, BSDFormat, Initialize parser with available format parsers., Handles BSD-style checksum format.      Format: ``SHA512 (filename) = checksum``
+Cohesion: 0.13
+Nodes (3): CloudwatchProvider, Cloudwatch provider.      LIMITATIONS:         - no alarm rule evaluation, CloudwatchApi
 
 ### Community 2234 - "Community 2234"
 Cohesion: 0.10
@@ -14745,12 +14765,12 @@ Cohesion: 0.20
 Nodes (10): EncodingType, IsTruncated, KeyMarker, MaxKeys, Name, Prefix, ResponseMetadata, VersionIdMarker (+2 more)
 
 ### Community 2249 - "Community 2249"
-Cohesion: 0.20
-Nodes (10): Contents, EncodingType, IsTruncated, Marker, MaxKeys, Name, Prefix, ResponseMetadata (+2 more)
+Cohesion: 0.12
+Nodes (21): ArgumentName, ArgumentValue, Code, Message, Error, ResponseMetadata, Contents, EncodingType (+13 more)
 
 ### Community 2250 - "Community 2250"
-Cohesion: 0.20
-Nodes (10): Contents, EncodingType, IsTruncated, KeyCount, MaxKeys, Name, Prefix, ResponseMetadata (+2 more)
+Cohesion: 0.19
+Nodes (10): FileSystemEventHandler, ChangeHandler, collect_watch_directories(), File watcher that monitors source directories and signals container restart on c, Collect host-side source directories that are bind-mounted into the container., Handles file system events for .py files, debouncing and signalling the containe, Send SIGUSR1 to PID 1 inside the container to trigger supervisor restart., Start a watchdog observer that watches directories for .py changes and signals t (+2 more)
 
 ### Community 2251 - "Community 2251"
 Cohesion: 0.20
@@ -14761,16 +14781,16 @@ Cohesion: 0.20
 Nodes (10): Contents, ContinuationToken, EncodingType, IsTruncated, KeyCount, MaxKeys, Name, Prefix (+2 more)
 
 ### Community 2253 - "Community 2253"
-Cohesion: 0.12
-Nodes (12): export_bucket(), Tests for CloudWatch Logs - Export Task operations., Tests for export tasks with actual log data., Create an S3 bucket configured for CloudWatch Logs export., Tests for export task operations., test_cancel_export_task_not_found(), test_create_export_task_bucket_not_found(), test_create_export_task_log_group_not_found() (+4 more)
+Cohesion: 0.15
+Nodes (15): requestPayload, timestamp, version, account, detail, detail-type, id, region (+7 more)
 
 ### Community 2254 - "Community 2254"
 Cohesion: 0.20
-Nodes (10): setup, tests/aws/services/s3/test_s3_list_operations.py::TestS3ListBuckets::test_list_buckets_with_continuation_token, durations_in_seconds, last_validated_date, tests/aws/services/s3/test_s3_list_operations.py::TestS3ListMultipartUploads::test_s3_list_multiparts_timestamp_precision, durations_in_seconds, last_validated_date, tests/aws/services/s3/test_s3_list_operations.py::TestS3ListObjectsV2::test_list_objects_v2_with_prefix (+2 more)
+Nodes (10): total, tests/aws/services/s3/test_s3_list_operations.py::TestS3ListBuckets::test_list_buckets_with_continuation_token, durations_in_seconds, last_validated_date, tests/aws/services/s3/test_s3_list_operations.py::TestS3ListBuckets::test_list_buckets_with_max_buckets, durations_in_seconds, last_validated_date, tests/aws/services/s3/test_s3_list_operations.py::TestS3ListMultipartUploads::test_s3_list_multiparts_timestamp_precision (+2 more)
 
 ### Community 2255 - "Community 2255"
 Cohesion: 0.20
-Nodes (10): total, tests/aws/services/s3/test_s3_list_operations.py::TestS3ListBuckets::test_list_buckets_region_validation, durations_in_seconds, last_validated_date, tests/aws/services/s3/test_s3_list_operations.py::TestS3ListObjectsV2::test_list_objects_v2_continuation_start_after, durations_in_seconds, last_validated_date, tests/aws/services/s3/test_s3_list_operations.py::TestS3ListObjectVersions::test_list_objects_versions_markers (+2 more)
+Nodes (10): teardown, tests/aws/services/s3/test_s3_list_operations.py::TestS3ListBuckets::test_list_buckets_region_validation, durations_in_seconds, last_validated_date, tests/aws/services/s3/test_s3_list_operations.py::TestS3ListObjectsV2::test_list_objects_v2_continuation_start_after, durations_in_seconds, last_validated_date, tests/aws/services/s3/test_s3_list_operations.py::TestS3ListObjectsV2::test_list_objects_v2_with_prefix (+2 more)
 
 ### Community 2256 - "Community 2256"
 Cohesion: 0.31
@@ -14786,7 +14806,7 @@ Nodes (10): original-source, original-source-1, original-source-2, source-arn, t
 
 ### Community 2259 - "Community 2259"
 Cohesion: 0.25
-Nodes (13): _provider_with_resource_group(), _provider_with_storage_account(), test_blob_container_requires_existing_storage_account(), test_blob_requires_existing_container(), test_create_get_list_and_delete_blob_container(), test_create_get_list_and_delete_storage_account(), test_create_list_and_delete_queue(), test_delete_storage_account_clears_blob_and_queue_data_plane() (+5 more)
+Nodes (13): _create(), test_create_service(), test_delete_latest_revision_blocked(), test_delete_service(), test_duplicate_service(), test_env_preserved(), test_get_revision(), test_get_service() (+5 more)
 
 ### Community 2260 - "Community 2260"
 Cohesion: 0.14
@@ -14805,8 +14825,8 @@ Cohesion: 0.20
 Nodes (10): properties, type, class, number, salesPrice, Schema, items, $schema (+2 more)
 
 ### Community 2264 - "Community 2264"
-Cohesion: 0.17
-Nodes (12): type, Properties, ContentType, integer_field, Schema, string_field, properties, required (+4 more)
+Cohesion: 0.20
+Nodes (10): type, integer_field, Schema, string_field, properties, required, $schema, title (+2 more)
 
 ### Community 2265 - "Community 2265"
 Cohesion: 0.20
@@ -14866,23 +14886,23 @@ Nodes (10): Code, Message, validation-exception, HTTPHeaders, HTTPStatusCode, Re
 
 ### Community 2279 - "Community 2279"
 Cohesion: 0.20
-Nodes (10): teardown, tests/aws/services/stepfunctions/v2/test_state/test_test_state_scenarios.py::TestStateCaseScenarios::test_base_inspection_level_debug[BASE_CHOICE_STATE], durations_in_seconds, last_validated_date, tests/aws/services/stepfunctions/v2/test_state/test_test_state_scenarios.py::TestStateCaseScenarios::test_base_inspection_level_info[IO_PASS_STATE], durations_in_seconds, last_validated_date, tests/aws/services/stepfunctions/v2/test_state/test_test_state_scenarios.py::TestStateCaseScenarios::test_base_lambda_service_task_state[TRACE] (+2 more)
+Nodes (10): teardown, tests/aws/services/stepfunctions/v2/test_state/test_test_state_scenarios.py::TestStateCaseScenarios::test_base_inspection_level_debug[IO_RESULT_PASS_STATE], durations_in_seconds, last_validated_date, tests/aws/services/stepfunctions/v2/test_state/test_test_state_scenarios.py::TestStateCaseScenarios::test_base_inspection_level_info[IO_PASS_STATE], durations_in_seconds, last_validated_date, tests/aws/services/stepfunctions/v2/test_state/test_test_state_scenarios.py::TestStateCaseScenarios::test_base_lambda_service_task_state[TRACE] (+2 more)
 
 ### Community 2280 - "Community 2280"
 Cohesion: 0.20
-Nodes (10): setup, tests/aws/services/stepfunctions/v2/test_state/test_test_state_scenarios.py::TestStateCaseScenarios::test_base_inspection_level_debug[BASE_RESULT_PASS_STATE], durations_in_seconds, last_validated_date, tests/aws/services/stepfunctions/v2/test_state/test_test_state_scenarios.py::TestStateCaseScenarios::test_base_inspection_level_debug[IO_PASS_STATE], durations_in_seconds, last_validated_date, tests/aws/services/stepfunctions/v2/test_state/test_test_state_scenarios.py::TestStateCaseScenarios::test_base_map_state_inspect_trace[MAX_CONCURRENCY] (+2 more)
+Nodes (10): call, tests/aws/services/stepfunctions/v2/test_state/test_test_state_scenarios.py::TestStateCaseScenarios::test_base_inspection_level_debug[BASE_PASS_STATE], durations_in_seconds, last_validated_date, tests/aws/services/stepfunctions/v2/test_state/test_test_state_scenarios.py::TestStateCaseScenarios::test_base_inspection_level_debug[BASE_SUCCEED_STATE], durations_in_seconds, last_validated_date, tests/aws/services/stepfunctions/v2/test_state/test_test_state_scenarios.py::TestStateCaseScenarios::test_base_map_state_inspect_trace[MAX_CONCURRENCY] (+2 more)
 
 ### Community 2281 - "Community 2281"
-Cohesion: 0.26
-Nodes (9): execute_lambda_function_integration(), _from_payload(), _invoke_lambda_function(), LambdaFunctionErrorException, _local_mocked_invoke_lambda_function(), This method extracts the lambda payload. The payload may be a string or a JSON s, to_payload_type(), eval_local_mocked_response() (+1 more)
+Cohesion: 0.08
+Nodes (24): _get_s3_client(), _handle_get_object(), _handle_list_objects_v2(), _handle_put_object(), # TODO: generate result files and upload them to s3., ResourceEvalS3, ResourceEval, _eval_service_task() (+16 more)
 
 ### Community 2282 - "Community 2282"
 Cohesion: 0.36
 Nodes (10): ResponseMetadata, ResponseMetadata, ResponseMetadata, ResponseMetadata, ResponseMetadata, ResponseMetadata, ResponseMetadata, ResponseMetadata (+2 more)
 
 ### Community 2283 - "Community 2283"
-Cohesion: 0.67
-Nodes (3): tests/aws/services/stepfunctions/v2/test_sfn_api_activities.py::TestSnfApiActivities::test_create_describe_delete_activity[activityName.with.dots], recorded-content, recorded-date
+Cohesion: 0.24
+Nodes (12): _create(), test_create_job(), test_create_pubsub_target(), test_delete_job(), test_duplicate(), test_get_job(), test_list_jobs(), test_patch_job() (+4 more)
 
 ### Community 2284 - "Community 2284"
 Cohesion: 0.29
@@ -14897,16 +14917,16 @@ Cohesion: 0.29
 Nodes (10): ResponseMetadata, ResponseMetadata, creationDate, ResponseMetadata, stateMachineVersionArn, publish_resp, HTTPHeaders, HTTPStatusCode (+2 more)
 
 ### Community 2287 - "Community 2287"
-Cohesion: 0.06
-Nodes (21): _gcp_plugin_registry_factory(), create_default_registry(), GcpProviderPlugin, GcpProviderRegistry, iter_builtin_plugins(), GCP provider plugin registry — analog of ``localstack.azure.plugins``., GcpServiceSpec, GcpServiceSpecRegistry (+13 more)
+Cohesion: 0.17
+Nodes (7): create_default_registry(), GcpServiceSpec, GcpServiceSpecRegistry, _key(), test_register_get(), test_register_validates(), test_unknown_raises()
 
 ### Community 2288 - "Community 2288"
-Cohesion: 0.12
-Nodes (26): tags, list_resources_res, tag_resource_resp, untag_resource_resp, tests/aws/services/stepfunctions/v2/test_sfn_api_tagging.py::TestSnfApiTagging::test_tag_state_machine[tag_keys0], recorded-content, recorded-date, tests/aws/services/stepfunctions/v2/test_sfn_api_tagging.py::TestSnfApiTagging::test_tag_state_machine[tag_keys1] (+18 more)
+Cohesion: 0.14
+Nodes (18): tags, list_resources_res, untag_resource_resp, tests/aws/services/stepfunctions/v2/test_sfn_api_tagging.py::TestSnfApiTagging::test_tag_state_machine[tag_keys0], recorded-content, recorded-date, tests/aws/services/stepfunctions/v2/test_sfn_api_tagging.py::TestSnfApiTagging::test_tag_state_machine[tag_keys2], recorded-content (+10 more)
 
 ### Community 2289 - "Community 2289"
-Cohesion: 0.16
-Nodes (10): check_rule_has_matches(), maintenance utility to check if a rule has any matches at all in the given direc, Test to validate that we don't encounter issue when services are co-dependent on, test_directory_rules_no_match(), test_directory_rules_no_paths(), test_directory_rules_with_paths(), test_rules_are_matching_at_least_one_file(), test_service_dependency_resolving_with_co_dependencies() (+2 more)
+Cohesion: 0.11
+Nodes (16): check_rule_has_matches(), generic_service_test_matching_rule(), Generic matching of changes in service files to their tests      :param api_depe, maintenance utility to check if a rule has any matches at all in the given direc, Test that the generic service test matching rule uses both API_DEPENDENCIES and, Test to validate that we don't encounter issue when services are co-dependent on, test_directory_rules_no_match(), test_directory_rules_no_paths() (+8 more)
 
 ### Community 2290 - "Community 2290"
 Cohesion: 0.22
@@ -14949,16 +14969,16 @@ Cohesion: 0.22
 Nodes (9): apiKeyRequired, authorizationType, authorizerId, httpMethod, requestParameters, ResponseMetadata, method-pets-get, method.request.querystring.page (+1 more)
 
 ### Community 2300 - "Community 2300"
-Cohesion: 0.25
-Nodes (8): apiKeyRequired, authorizationType, httpMethod, operationName, requestModels, ResponseMetadata, method-pets-post, application/json
+Cohesion: 0.22
+Nodes (9): apiKeyRequired, authorizationType, httpMethod, methodResponses, operationName, requestModels, ResponseMetadata, method-pets-post (+1 more)
 
 ### Community 2301 - "Community 2301"
-Cohesion: 0.19
-Nodes (8): Test cases for StandardFormat parser., Test detection of standard checksum format., Test parsing of standard checksum format., Test parsing empty content., Test parsing content with only comments., TestStandardFormat, Handles standard checksum format.      Supports formats like:      * ``checksum, StandardFormat
+Cohesion: 0.14
+Nodes (14): update, Capabilities, ChangeSetId, CreationTime, DisableRollback, EnableTerminationProtection, LastUpdatedTime, NotificationARNs (+6 more)
 
 ### Community 2302 - "Community 2302"
 Cohesion: 0.07
-Nodes (25): cacheKeyParameters, cacheNamespace, httpMethod, passthroughBehavior, cacheKeyParameters, cacheNamespace, httpMethod, passthroughBehavior (+17 more)
+Nodes (26): cacheKeyParameters, cacheNamespace, httpMethod, passthroughBehavior, ResponseMetadata, timeoutInMillis, type, uri (+18 more)
 
 ### Community 2303 - "Community 2303"
 Cohesion: 0.22
@@ -14966,7 +14986,7 @@ Nodes (9): body, httpMethod, isBase64Encoded, multiValueQueryStringParameters, p
 
 ### Community 2304 - "Community 2304"
 Cohesion: 0.20
-Nodes (9): Test cases for the main ChecksumParser., Test parser with standard format., Test parser with BSD format., Test parser with Apache BSD format., Test parser with empty content., Test parser with unknown format., TestChecksumParser, ChecksumParser (+1 more)
+Nodes (4): DebuggingHandlerChain - A subclass of HandlerChain for logging and tracing handl, Overrides HandlerChain's handle method and adds tracing handler to request handl, TracingHandler, TracingHandlerChain
 
 ### Community 2305 - "Community 2305"
 Cohesion: 0.22
@@ -14974,7 +14994,7 @@ Nodes (9): AcceptRanges, Body, ChecksumCRC64NVME, ChecksumType, ContentLength, C
 
 ### Community 2306 - "Community 2306"
 Cohesion: 0.18
-Nodes (11): Name, Resources, restapi39D779F7, restapidefault5xxresponseF0B821D8, restapiv1GET285EA5B5, restapiv1GETApiPermissionApiGatewayStackrestapi8187B2CCGETv1E8B7485D, Properties, Type (+3 more)
+Nodes (11): Type, Name, Resources, backendServiceRole77A15DC8, restapi39D779F7, restapidefault5xxresponseF0B821D8, restapiv1GETApiPermissionApiGatewayStackrestapi8187B2CCGETv1E8B7485D, Properties (+3 more)
 
 ### Community 2307 - "Community 2307"
 Cohesion: 0.28
@@ -15050,11 +15070,11 @@ Nodes (8): tests/aws/services/stepfunctions/v2/error_handling/test_task_service_
 
 ### Community 2325 - "Community 2325"
 Cohesion: 0.22
-Nodes (8): tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_dynamodbstreams.py::TestDynamoDBEventSourceMapping::test_dynamodb_event_filter[content_multiple_filters], last_validated_date, tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_dynamodbstreams.py::TestDynamoDBEventSourceMapping::test_dynamodb_invalid_event_filter[[{\"eventName\": [\"INSERT\"=123}]], durations_in_seconds, last_validated_date, tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_dynamodbstreams.py::TestDynamoDBEventSourceMapping::test_dynamodb_report_batch_item_failure_scenarios[unhandled_exception_in_function], durations_in_seconds, last_validated_date
+Nodes (8): tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_dynamodbstreams.py::TestDynamoDBEventSourceMapping::test_dynamodb_event_filter[content_multiple_filters], last_validated_date, tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_dynamodbstreams.py::TestDynamoDBEventSourceMapping::test_dynamodb_invalid_event_filter[[{\"eventName\": [\"INSERT\"=123}]], durations_in_seconds, last_validated_date, tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_dynamodbstreams.py::TestDynamoDBEventSourceMapping::test_dynamodb_invalid_event_filter[single-string], durations_in_seconds, last_validated_date
 
 ### Community 2326 - "Community 2326"
-Cohesion: 0.33
-Nodes (9): Error, Code, Error, Message, ResponseMetadata, Type, Error, Error (+1 more)
+Cohesion: 0.25
+Nodes (11): Error, Code, Error, Message, Type, Error, Error, message (+3 more)
 
 ### Community 2327 - "Community 2327"
 Cohesion: 0.36
@@ -15138,7 +15158,7 @@ Nodes (9): description, headers, schema, Access-Control-Allow-Headers, Access-Co
 
 ### Community 2347 - "Community 2347"
 Cohesion: 0.28
-Nodes (9): Properties, Type, Properties, Statement, Version, PolicyDocument, PolicyName, Roles (+1 more)
+Nodes (9): Properties, Properties, Type, Statement, Version, PolicyDocument, PolicyName, Roles (+1 more)
 
 ### Community 2348 - "Community 2348"
 Cohesion: 0.22
@@ -15174,11 +15194,11 @@ Nodes (8): events, ResponseMetadata, exec_hist_resp, HTTPHeaders, HTTPStatusCode
 
 ### Community 2356 - "Community 2356"
 Cohesion: 0.25
-Nodes (8): call, durations_in_seconds, tests/aws/services/lambda_/test_lambda_runtimes.py::TestNodeJSRuntimes::test_invoke_nodejs_es6_lambda[nodejs24.x], durations_in_seconds, last_validated_date, tests/aws/services/lambda_/test_lambda_runtimes.py::TestPythonRuntimes::test_handler_in_submodule[python3.10], durations_in_seconds, last_validated_date
+Nodes (8): call, durations_in_seconds, tests/aws/services/lambda_/test_lambda_runtimes.py::TestJavaRuntimes::test_serializable_input_object[java11], durations_in_seconds, last_validated_date, tests/aws/services/lambda_/test_lambda_runtimes.py::TestNodeJSRuntimes::test_invoke_nodejs_es6_lambda[nodejs24.x], durations_in_seconds, last_validated_date
 
 ### Community 2357 - "Community 2357"
 Cohesion: 0.22
-Nodes (9): Type, DependsOn, Type, Resources, CustomEventBusEC0C3CB8, InputLambda695C9911, TriggeredLambdaBE2D8BDA, DependsOn (+1 more)
+Nodes (9): Type, DependsOn, Type, Resources, EmptyFilterRuleAllowEventRuleEventbridgeStackTriggeredLambda3DD76C6517715217, InputLambda695C9911, TriggeredLambdaBE2D8BDA, DependsOn (+1 more)
 
 ### Community 2358 - "Community 2358"
 Cohesion: 0.28
@@ -15197,8 +15217,8 @@ Cohesion: 0.22
 Nodes (9): Connection, Content-Length, Content-Type, Date, X-Amz-Executed-Version, x-amzn-Remapped-Content-Length, x-amzn-RequestId, X-Amzn-Trace-Id (+1 more)
 
 ### Community 2362 - "Community 2362"
-Cohesion: 0.19
-Nodes (10): calculate_file_checksum(), ChecksumException, ChecksumFormat, parse_checksum_file_from_url(), Base exception for checksum errors., Parse a SHA checksum file from a URL using multiple format parsers.      :param, Abstract base class for checksum format parsers., Calculate checksum of a local file.      :param file_path: Path to the file (+2 more)
+Cohesion: 0.16
+Nodes (3): CloudRegistry, Singleton registry of `CloudProvider` instances., test_require_missing_raises()
 
 ### Community 2363 - "Community 2363"
 Cohesion: 0.29
@@ -15225,24 +15245,24 @@ Cohesion: 0.14
 Nodes (5): CloudFormationWaitConditionProperties, CloudFormationWaitConditionProvider, CloudFormationWaitConditionProviderPlugin, Create a new resource.          Primary identifier fields:           - /properti, Fetch resource information
 
 ### Community 2369 - "Community 2369"
-Cohesion: 0.12
-Nodes (8): EC2NetworkAclProperties, EC2NetworkAclProvider, EC2NetworkAclProviderPlugin, Update a resource          IAM permissions required:           - ec2:DescribeNet, Create a new resource.          Primary identifier fields:           - /properti, Fetch resource information          IAM permissions required:           - ec2:De, Delete a resource          IAM permissions required:           - ec2:DeleteNetwo, Tag
+Cohesion: 0.18
+Nodes (7): EC2NetworkAclProperties, EC2NetworkAclProvider, Update a resource          IAM permissions required:           - ec2:DescribeNet, Create a new resource.          Primary identifier fields:           - /properti, Fetch resource information          IAM permissions required:           - ec2:De, Delete a resource          IAM permissions required:           - ec2:DeleteNetwo, Tag
 
 ### Community 2370 - "Community 2370"
 Cohesion: 0.18
 Nodes (8): EC2PrefixListProperties, EC2PrefixListProvider, Entry, Fetch resource information          IAM permissions required:           - EC2:Ge, Delete a resource          IAM permissions required:           - EC2:DeleteManag, Update a resource          IAM permissions required:           - EC2:DescribeMan, Create a new resource.          Primary identifier fields:           - /properti, Tag
 
 ### Community 2371 - "Community 2371"
-Cohesion: 0.22
-Nodes (11): main(), _make_api_call(), map_to_notimplemented(), # TODO: investigate further;for now assuming not implemented, # TODO: this is actually a bit tricky and might have to be handled on a service, Some simple heuristics to check the API responses and classify them into impleme, send requests against all APIs, generates a mock request based on the service and operation model and sends it t (+3 more)
+Cohesion: 0.20
+Nodes (8): aws_logger(), ExceptionLogger, http_logger(), internal_aws_logger(), internal_http_logger(), Handlers for logging., Logs exceptions into a logger., ResponseLogger
 
 ### Community 2372 - "Community 2372"
 Cohesion: 0.22
 Nodes (4): IAMServiceLinkedRoleProperties, IAMServiceLinkedRoleProvider, Create a new resource.          Primary identifier fields:           - /properti, Fetch resource information
 
 ### Community 2373 - "Community 2373"
-Cohesion: 0.23
-Nodes (5): RestApi, dummy_context(), method_request_handler(), Returns a dummy request handler invoker for testing., TestMethodRequestHandler
+Cohesion: 0.29
+Nodes (3): method_request_handler(), Returns a dummy request handler invoker for testing., TestMethodRequestHandler
 
 ### Community 2374 - "Community 2374"
 Cohesion: 0.22
@@ -15253,24 +15273,24 @@ Cohesion: 0.14
 Nodes (5): LogsLogStreamProperties, LogsLogStreamProvider, LogsLogStreamProviderPlugin, Create a new resource.          Primary identifier fields:           - /properti, Fetch resource information
 
 ### Community 2377 - "Community 2377"
-Cohesion: 0.12
-Nodes (10): Endpoint, LoggingProperties, RedshiftClusterProviderPlugin, Fetch resource information          IAM permissions required:           - redshi, Delete a resource          IAM permissions required:           - redshift:Descri, Update a resource          IAM permissions required:           - redshift:Descri, Create a new resource.          Primary identifier fields:           - /properti, RedshiftClusterProperties (+2 more)
+Cohesion: 0.17
+Nodes (9): Endpoint, LoggingProperties, Fetch resource information          IAM permissions required:           - redshi, Delete a resource          IAM permissions required:           - redshift:Descri, Update a resource          IAM permissions required:           - redshift:Descri, Create a new resource.          Primary identifier fields:           - /properti, RedshiftClusterProperties, RedshiftClusterProvider (+1 more)
 
 ### Community 2378 - "Community 2378"
 Cohesion: 0.14
-Nodes (14): creationDate, ResponseMetadata, stateMachineVersionArn, creationDate, ResponseMetadata, stateMachineVersionArn, conflict_exception, publish_v1 (+6 more)
+Nodes (6): DynamoDBGlobalTableProvider, DynamoDBGlobalTableProviderPlugin, Create a new resource.          Primary identifier fields:           - /properti, Fetch resource information          IAM permissions required:           - dynamo, Delete a resource          IAM permissions required:           - dynamodb:Descri, Update a resource          IAM permissions required:           - dynamodb:Descri
 
 ### Community 2379 - "Community 2379"
-Cohesion: 0.14
-Nodes (5): SecretsManagerResourcePolicyProviderPlugin, Create a new resource.          Primary identifier fields:           - /properti, Fetch resource information, SecretsManagerResourcePolicyProperties, SecretsManagerResourcePolicyProvider
+Cohesion: 0.22
+Nodes (4): Create a new resource.          Primary identifier fields:           - /properti, Fetch resource information, SecretsManagerResourcePolicyProperties, SecretsManagerResourcePolicyProvider
 
 ### Community 2380 - "Community 2380"
-Cohesion: 0.22
-Nodes (4): Create a new resource.          Primary identifier fields:           - /properti, Fetch resource information, SecretsManagerSecretTargetAttachmentProperties, SecretsManagerSecretTargetAttachmentProvider
+Cohesion: 0.14
+Nodes (5): SecretsManagerSecretTargetAttachmentProviderPlugin, Create a new resource.          Primary identifier fields:           - /properti, Fetch resource information, SecretsManagerSecretTargetAttachmentProperties, SecretsManagerSecretTargetAttachmentProvider
 
 ### Community 2381 - "Community 2381"
-Cohesion: 0.14
-Nodes (5): CDKMetadataProperties, CDKMetadataProvider, LambdaAliasProviderPlugin, Create a new resource.          Primary identifier fields:           - /properti, Fetch resource information
+Cohesion: 0.22
+Nodes (4): CDKMetadataProperties, CDKMetadataProvider, Create a new resource.          Primary identifier fields:           - /properti, Fetch resource information
 
 ### Community 2382 - "Community 2382"
 Cohesion: 0.22
@@ -15309,8 +15329,8 @@ Cohesion: 0.22
 Nodes (9): events, ResponseMetadata, get_execution_history, HTTPHeaders, HTTPStatusCode, tests/aws/services/stepfunctions/v2/outputdecl/test_output.py::TestArgumentsBase::test_base_cases[BASE_DIRECT_EXPR], recorded-content, recorded-date (+1 more)
 
 ### Community 2391 - "Community 2391"
-Cohesion: 0.11
-Nodes (14): ArchiveDownloadAndExtractInstaller, _es_url(), fetch_latest_versions(), get_download_url(), get_engine_type(), get_install_type_and_version(), get_install_version(), _opensearch_url() (+6 more)
+Cohesion: 0.14
+Nodes (6): LambdaEventSourceMappingProvider, LambdaEventSourceMappingProviderPlugin, Create a new resource.          Primary identifier fields:           - /properti, Fetch resource information          IAM permissions required:           - lambda, Delete a resource          IAM permissions required:           - lambda:DeleteEv, Update a resource          IAM permissions required:           - lambda:UpdateEv
 
 ### Community 2392 - "Community 2392"
 Cohesion: 0.22
@@ -15597,40 +15617,40 @@ Cohesion: 0.31
 Nodes (9): Comment, StartAt, States, definition, definition, definition, End, Type (+1 more)
 
 ### Community 2463 - "Community 2463"
-Cohesion: 0.20
-Nodes (9): get_boto3_region(), get_local_service_url(), inject_test_credentials_into_env(), # FIXME: AWS recommends use of SSM parameter store to determine per region avail, Return the region name, as determined from the environment when creating a new b, Return the local service URL for the given service name or port., test_inject_test_credentials_into_env_already_with_access_key_does_nothing(), test_inject_test_credentials_into_env_already_with_none_adds_both() (+1 more)
+Cohesion: 0.15
+Nodes (12): fix_account_id_in_arns(), get_boto3_region(), get_local_service_url(), get_valid_regions_for_service(), inject_test_credentials_into_env(), # FIXME: AWS recommends use of SSM parameter store to determine per region avail, Return the region name, as determined from the environment when creating a new b, Return the local service URL for the given service name or port. (+4 more)
 
 ### Community 2464 - "Community 2464"
-Cohesion: 0.24
-Nodes (8): ApiGatewayUsagePlanProperties, ApiGatewayUsagePlanProvider, ApiStage, QuotaSettings, Fetch resource information          IAM permissions required:           - apigat, Delete a resource          IAM permissions required:           - apigateway:DELE, Tag, ThrottleSettings
+Cohesion: 0.14
+Nodes (14): send_oversized_message, ResponseMetadata, tests/aws/services/sqs/test_sqs.py::TestSqsProvider::test_send_message_with_updated_maximum_message_size[sqs], tests/aws/services/sqs/test_sqs.py::TestSqsProvider::test_send_message_with_updated_maximum_message_size[sqs_query], recorded-content, recorded-date, recorded-content, recorded-date (+6 more)
 
 ### Community 2465 - "Community 2465"
 Cohesion: 0.17
 Nodes (4): SSMPatchBaselineProviderPlugin, Fetch resource information, Create a new resource.          Primary identifier fields:           - /properti, SSMPatchBaselineProvider
 
 ### Community 2467 - "Community 2467"
-Cohesion: 0.17
-Nodes (4): generate_random_id(), # TODO: remove this hack once LocalStack supports X-Ray integration., Ensures that a parent segment link exists by generating a random one.         Re, Generate a random 16-digit hex str.     This is used for generating segment/subs
+Cohesion: 0.21
+Nodes (8): ApiGatewayDomainNameProperties, ApiGatewayDomainNameProvider, EndpointConfiguration, MutualTlsAuthentication, Fetch resource information          IAM permissions required:           - apigat, Delete a resource          IAM permissions required:           - apigateway:*, Update a resource          IAM permissions required:           - apigateway:*, Tag
 
 ### Community 2469 - "Community 2469"
-Cohesion: 0.20
-Nodes (4): DebugPyPackage, DebugPyPackageInstaller, # TODO: migrate this to the upcoming pip installer, # TODO: This method currently does not provide the actual install_marker.
+Cohesion: 0.21
+Nodes (9): create_patch_proxy(), extend_class(), function(), Patch, Function decorator to create a patch via Patch.function and immediately apply it, Creates a string that helps humans understand where the given object comes from., # TODO: distinguish bound method, Creates a proxy that calls `new` but passes as first argument the target. (+1 more)
 
 ### Community 2471 - "Community 2471"
 Cohesion: 0.02
 Nodes (11): Input_type_declContext, Result_selector_declContext, Result_writer_fieldContext, State_declContext, State_machineContext, String_jsonataContext, String_variable_sampleContext, Tolerated_failure_percentage_declContext (+3 more)
 
 ### Community 2472 - "Community 2472"
-Cohesion: 0.15
-Nodes (13): apiKeyRequired, authorizationType, httpMethod, ResponseMetadata, apiKeyRequired, authorizationType, httpMethod, ResponseMetadata (+5 more)
+Cohesion: 0.26
+Nodes (11): Register the cloud providers shipped in this repo.      Idempotent: safe to call, Register the cloud providers shipped in this repo.      Idempotent: safe to call, register_builtins(), test_aws_provider_registered_with_sigv4_marker(), test_azure_factory_builds_gateway(), test_azure_plugin_registry_loads_builtins(), test_azure_provider_metadata_shape(), test_azure_state_store_factory_builds_store() (+3 more)
 
 ### Community 2476 - "Community 2476"
-Cohesion: 0.25
-Nodes (11): Code, Tags, Code, Tags, Location, RepositoryType, AWS::Lambda::Function-1, AWS::Lambda::Function-2 (+3 more)
+Cohesion: 0.21
+Nodes (7): ApiGatewayApiKeyProperties, ApiGatewayApiKeyProvider, Delete a resource          IAM permissions required:           - apigateway:DELE, Update a resource          IAM permissions required:           - apigateway:GET, Fetch resource information          IAM permissions required:           - apigat, StageKey, Tag
 
 ### Community 2478 - "Community 2478"
-Cohesion: 0.17
-Nodes (12): body, httpMethod, isBase64Encoded, multiValueQueryStringParameters, path, pathParameters, queryStringParameters, resource (+4 more)
+Cohesion: 0.18
+Nodes (11): body, httpMethod, isBase64Encoded, multiValueQueryStringParameters, path, queryStringParameters, resource, stageVariables (+3 more)
 
 ### Community 2479 - "Community 2479"
 Cohesion: 0.22
@@ -15638,15 +15658,15 @@ Nodes (11): OffPeakWindowOptions, OffPeakWindowOptions, WindowStartTime, Enabled
 
 ### Community 2480 - "Community 2480"
 Cohesion: 0.17
-Nodes (3): Test DISABLE_CORS_CHECKS=1 (most restrictive setting, not sending any CORS heade, Test DISABLE_CORS_CHECKS=1 (most permissive setting), TestCSRF
+Nodes (4): EC2InstanceProvider, EC2InstanceProviderPlugin, Create a new resource.          Primary identifier fields:           - /properti, Fetch resource information
 
 ### Community 2481 - "Community 2481"
 Cohesion: 0.17
 Nodes (11): Additional Freetype Attributions, code:block1 (FreeType comes with two licenses from which you can choose t), code:block2, code:block3 (GNU GENERAL PUBLIC LICENSE), code:block4, code:block5, FreeType License, FreeType Notice (+3 more)
 
 ### Community 2482 - "Community 2482"
-Cohesion: 0.20
-Nodes (10): cacheKeyParameters, cacheNamespace, connectionType, httpMethod, passthroughBehavior, ResponseMetadata, timeoutInMillis, type (+2 more)
+Cohesion: 0.21
+Nodes (7): collect_config_items(), populate_edge_configuration(), Returns a list of key-value tuples of LocalStack configuration values., Container type that ensures that ports added to the list are unique based     on, Ensure that all bindings on the same port are de-duped., Populate the LocalStack edge configuration from environment variables., UniqueHostAndPortList
 
 ### Community 2485 - "Community 2485"
 Cohesion: 0.20
@@ -15657,12 +15677,12 @@ Cohesion: 0.22
 Nodes (9): EncodingType, IsTruncated, KeyMarker, MaxKeys, Name, Prefix, ResponseMetadata, VersionIdMarker (+1 more)
 
 ### Community 2488 - "Community 2488"
-Cohesion: 0.22
-Nodes (9): Contents, EncodingType, IsTruncated, KeyCount, MaxKeys, Name, Prefix, ResponseMetadata (+1 more)
+Cohesion: 0.17
+Nodes (12): NoncurrentVersionExpiration, description, type, description, type, additionalProperties, description, properties (+4 more)
 
 ### Community 2489 - "Community 2489"
 Cohesion: 0.22
-Nodes (8): tests/aws/services/s3/test_s3_list_operations.py::TestS3ListBuckets::test_list_buckets_by_bucket_region, last_validated_date, tests/aws/services/s3/test_s3_list_operations.py::TestS3ListObjectVersions::test_list_object_versions_pagination_common_prefixes, durations_in_seconds, last_validated_date, tests/aws/services/s3/test_s3_list_operations.py::TestS3ListParts::test_list_parts_pagination, durations_in_seconds, last_validated_date
+Nodes (8): tests/aws/services/s3/test_s3_list_operations.py::TestS3ListBuckets::test_list_buckets_by_bucket_region, last_validated_date, tests/aws/services/s3/test_s3_list_operations.py::TestS3ListBuckets::test_list_buckets_when_continuation_token_is_empty, durations_in_seconds, last_validated_date, tests/aws/services/s3/test_s3_list_operations.py::TestS3ListObjectVersions::test_list_object_versions_pagination_common_prefixes, durations_in_seconds, last_validated_date
 
 ### Community 2490 - "Community 2490"
 Cohesion: 0.22
@@ -15685,8 +15705,8 @@ Cohesion: 0.22
 Nodes (9): QueueConfigurations, ResponseMetadata, bucket_notification_configuration, tests/aws/services/s3/test_s3_notifications_sqs.py::TestS3NotificationsToSQS::test_filter_rules_case_insensitive, recorded-content, recorded-date, tests/aws/services/s3/test_s3_notifications_sqs.py::TestS3NotificationsToSQS::test_filter_rules_empty_value, recorded-content (+1 more)
 
 ### Community 2495 - "Community 2495"
-Cohesion: 0.29
-Nodes (3): LocalStackCompositeAlarm, LocalStackDashboard, LocalStackMetricAlarm
+Cohesion: 0.17
+Nodes (12): cacheDataEncrypted, cacheTtlInSeconds, cachingEnabled, dataTraceEnabled, methodSettings, loggingLevel, */*, metricsEnabled (+4 more)
 
 ### Community 2496 - "Community 2496"
 Cohesion: 0.22
@@ -15733,8 +15753,8 @@ Cohesion: 0.22
 Nodes (9): Error, ResponseMetadata, Error, ResponseMetadata, error-condition-none, error-condition-string, tests/aws/services/sns/test_sns_filter_policy.py::TestSNSFilterPolicyConditions::test_validate_policy_exists_operator, recorded-content (+1 more)
 
 ### Community 2507 - "Community 2507"
-Cohesion: 0.22
-Nodes (9): Error, ResponseMetadata, Error, ResponseMetadata, get-attrs-malformed-topic, get-attrs-nonexistent-topic, tests/aws/services/sns/test_sns.py::TestSNSTopicCrud::test_create_topic_with_attributes, recorded-content (+1 more)
+Cohesion: 0.10
+Nodes (21): ResponseMetadata, Error, ResponseMetadata, ResponseMetadata, Error, delete-topic, get-attrs-malformed-topic, get-topic-attrs (+13 more)
 
 ### Community 2508 - "Community 2508"
 Cohesion: 0.22
@@ -15865,16 +15885,16 @@ Cohesion: 0.22
 Nodes (8): account, detail, location, detail-type, id, region, source, time
 
 ### Community 2540 - "Community 2540"
-Cohesion: 0.28
-Nodes (5): Complicated test, since we have a wait condition that must signal     a successf, # TODO: more stringent tests, SignalSuccess, test_create_macro(), test_waitcondition()
+Cohesion: 0.17
+Nodes (12): CommonPrefixes, Delimiter, EncodingType, IsTruncated, KeyMarker, MaxKeys, Name, NextKeyMarker (+4 more)
 
 ### Community 2541 - "Community 2541"
-Cohesion: 0.67
-Nodes (4): Department, Environment, Tags, Tags
+Cohesion: 0.27
+Nodes (10): ResponseMetadata, tags, HTTPHeaders, HTTPStatusCode, Department, Environment, ResponseMetadata, Tags (+2 more)
 
 ### Community 2542 - "Community 2542"
 Cohesion: 0.22
-Nodes (9): activityArn, creationDate, encryptionConfiguration, name, type, describe_activity_response, tests/aws/services/stepfunctions/v2/test_sfn_api_activities.py::TestSnfApiActivities::test_create_describe_delete_activity[Activity1], recorded-content (+1 more)
+Nodes (9): activityArn, creationDate, encryptionConfiguration, name, type, describe_activity_response, tests/aws/services/stepfunctions/v2/test_sfn_api_activities.py::TestSnfApiActivities::test_create_describe_delete_activity[activity.name.v2], recorded-content (+1 more)
 
 ### Community 2543 - "Community 2543"
 Cohesion: 0.22
@@ -15894,7 +15914,7 @@ Nodes (9): itemCounts, aborted, failed, pending, resultsWritten, running, succee
 
 ### Community 2547 - "Community 2547"
 Cohesion: 0.22
-Nodes (8): tests/aws/services/stepfunctions/v2/test_sfn_api_tagging.py::TestSnfApiTagging::test_create_state_machine, recorded-content, recorded-date, tests/aws/services/stepfunctions/v2/test_sfn_api_tagging.py::TestSnfApiTagging::test_tag_state_machine[tag_list3], recorded-content, recorded-date, tests/aws/services/stepfunctions/v2/test_sfn_api_tagging.py::TestSnfApiTagging::test_untag_state_machine[tag_keys0], recorded-date
+Nodes (8): tests/aws/services/stepfunctions/v2/test_sfn_api_tagging.py::TestSnfApiTagging::test_create_state_machine, recorded-content, recorded-date, tests/aws/services/stepfunctions/v2/test_sfn_api_tagging.py::TestSnfApiTagging::test_tag_invalid_state_machine[None], recorded-date, tests/aws/services/stepfunctions/v2/test_sfn_api_tagging.py::TestSnfApiTagging::test_tag_state_machine[tag_list3], recorded-content, recorded-date
 
 ### Community 2548 - "Community 2548"
 Cohesion: 0.25
@@ -15925,8 +15945,8 @@ Cohesion: 0.25
 Nodes (8): Properties, Type, Statement, Version, PolicyDocument, PolicyName, Roles, BooksApiLambdaRoleDefaultPolicyCB8FFCFD
 
 ### Community 2555 - "Community 2555"
-Cohesion: 0.25
-Nodes (8): Variables, Fn::GetAtt, Environment, Ref, ESENDPOINT, FILE_NAME, S3_BUCKET, TABLE_NAME
+Cohesion: 0.36
+Nodes (3): DnsProvider, _ensure_dot(), _now()
 
 ### Community 2556 - "Community 2556"
 Cohesion: 0.29
@@ -15994,7 +16014,7 @@ Nodes (7): set-headers-delivery-enabled-False, set-headers-delivery-enabled-Fals
 
 ### Community 2572 - "Community 2572"
 Cohesion: 0.25
-Nodes (8): ResponseMetadata, events, ResponseMetadata, events, ResponseMetadata, exec_hist_resp_18, exec_hist_resp_19, HTTPHeaders
+Nodes (8): ResponseMetadata, events, ResponseMetadata, events, ResponseMetadata, exec_hist_resp_18, exec_hist_resp_19, HTTPStatusCode
 
 ### Community 2573 - "Community 2573"
 Cohesion: 0.25
@@ -16013,16 +16033,16 @@ Cohesion: 0.43
 Nodes (8): LoggingConfig, LoggingConfig, LoggingConfig, LogFormat, LogGroup, LoggingConfig, LoggingConfig, LoggingConfig
 
 ### Community 2577 - "Community 2577"
-Cohesion: 0.67
-Nodes (3): tests/aws/services/lambda_/test_lambda_runtimes.py::TestJavaRuntimes::test_serializable_input_object[java21], durations_in_seconds, last_validated_date
+Cohesion: 0.22
+Nodes (6): ApiGatewayGatewayResponseProperties, ApiGatewayGatewayResponseProvider, Update a resource          IAM permissions required:           - apigateway:GET, # TODO: validations, Fetch resource information, Delete a resource          IAM permissions required:           - apigateway:GET
 
 ### Community 2578 - "Community 2578"
 Cohesion: 0.36
 Nodes (8): ZipFile, Properties, Code, Handler, Role, Runtime, Fn::GetAtt, Properties
 
 ### Community 2579 - "Community 2579"
-Cohesion: 0.25
-Nodes (8): Fn::GetAtt, Ref, Properties, Type, FunctionName, MaximumRetryAttempts, Qualifier, InputLambdaEventInvokeConfig580A3D5F
+Cohesion: 0.20
+Nodes (9): Tests if the serializer can serialize an error which is not explicitly defined a, test_restxml_protocol_error_serialization_not_specified_for_operation(), AuthorizationHeaderMalformed, CreateBucketOutput, HeadBucketOutput, ListBucketsOutput, NoSuchBucket, create_bucket() (+1 more)
 
 ### Community 2580 - "Community 2580"
 Cohesion: 0.25
@@ -16065,8 +16085,8 @@ Cohesion: 0.25
 Nodes (8): Fn::GetAtt, DeletionPolicy, DependsOn, Properties, Type, UpdateReplacePolicy, CloudWatchRoleArn, endpointAccount6DA1D142
 
 ### Community 2591 - "Community 2591"
-Cohesion: 0.06
-Nodes (39): fix_account_id_in_arns(), Fix the account ID in the ARNs returned in the given Flask response or string, message_attributes_to_upper(), _prepare_messages_to_dlq(), Convert message attribute details (first characters) to upper case (e.g., String, _send_to_dead_letter_queue(), test_s3_cors_disabled(), test_complete_multipart_parts_checksum_default() (+31 more)
+Cohesion: 0.07
+Nodes (29): Update a resource          IAM permissions required:           - apigateway:GET, test_s3_cors_disabled(), test_complete_multipart_parts_checksum_default(), test_multipart_parts_checksum_exceptions_full_object(), base64_decode(), checksum_crc32(), checksum_crc32c(), checksum_crc64nvme() (+21 more)
 
 ### Community 2592 - "Community 2592"
 Cohesion: 0.31
@@ -16233,8 +16253,8 @@ Cohesion: 0.25
 Nodes (8): creationDate, name, revisionId, roleArn, stateMachineArn, status, type, describe_state_machine_output_on_update
 
 ### Community 2637 - "Community 2637"
-Cohesion: 0.32
-Nodes (8): ArgumentName, ArgumentValue, Code, Message, Error, ResponseMetadata, Error, exc-continuation-token
+Cohesion: 0.18
+Nodes (11): Contents, ContinuationToken, Delimiter, EncodingType, IsTruncated, KeyCount, MaxKeys, Name (+3 more)
 
 ### Community 2638 - "Community 2638"
 Cohesion: 0.22
@@ -16252,21 +16272,13 @@ Nodes (8): Name, ConfigurationSet, EventDestinations, ResponseMetadata, event_de
 Cohesion: 0.25
 Nodes (8): Max24HourSend, MaxSendRate, ResponseMetadata, SentLast24Hours, get-quota-0, tests/aws/services/ses/test_ses.py::TestSES::test_sent_message_counter, recorded-content, recorded-date
 
-### Community 2642 - "Community 2642"
-Cohesion: 0.22
-Nodes (9): TransactGetItems, TransactGetItems-with-TableArn, tests/aws/services/dynamodb/test_dynamodb.py::TestDynamoDB::test_transact_get_items, recorded-content, recorded-date, ResponseMetadata, Responses, ResponseMetadata (+1 more)
-
 ### Community 2643 - "Community 2643"
 Cohesion: 0.18
-Nodes (11): Error, ResponseMetadata, ResponseMetadata, get-attrs, get-attrs-nonexistent-sub, subscribe, ResponseMetadata, SubscriptionArn (+3 more)
-
-### Community 2644 - "Community 2644"
-Cohesion: 0.25
-Nodes (8): send_max_number_of_messages, ResponseMetadata, tests/aws/services/sqs/test_sqs.py::TestSqsProvider::test_send_receive_max_number_of_messages[sqs], tests/aws/services/sqs/test_sqs.py::TestSqsProvider::test_send_receive_max_number_of_messages[sqs_query], recorded-content, recorded-date, recorded-content, recorded-date
+Nodes (11): ResponseMetadata, get-attrs, subscribe, subscribe-wrong-attr, ResponseMetadata, SubscriptionArn, Error, ResponseMetadata (+3 more)
 
 ### Community 2645 - "Community 2645"
-Cohesion: 0.32
-Nodes (7): create_decoder(), create_encoder(), get_default_decoder(), get_default_encoder(), Factory for encoders and decoders, Gets the default encoder based on the state serialization backend defined in the, Gets the default decoder based on the state serialization backend defined in the
+Cohesion: 0.20
+Nodes (10): paths, get, /, /pets, /pets/{petId}, get, options, get (+2 more)
 
 ### Community 2646 - "Community 2646"
 Cohesion: 0.25
@@ -16345,8 +16357,8 @@ Cohesion: 0.29
 Nodes (6): Entries, FailedEntryCount, eventbridge-put-events-response, tests/aws/services/apigateway/test_apigateway_eventbridge.py::test_apigateway_to_eventbridge, recorded-content, recorded-date
 
 ### Community 2667 - "Community 2667"
-Cohesion: 0.29
-Nodes (7): schemas, Empty, NewPet, NewPetResponse, Pet, Pets, PetType
+Cohesion: 0.13
+Nodes (21): basePath, components, host, info, openapi, schemes, servers, swagger (+13 more)
 
 ### Community 2668 - "Community 2668"
 Cohesion: 0.31
@@ -16398,15 +16410,15 @@ Nodes (7): post, consumes, operationId, parameters, produces, summary, tags
 
 ### Community 2680 - "Community 2680"
 Cohesion: 0.29
-Nodes (7): total, tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_dynamodbstreams.py::TestDynamoDBEventSourceMapping::test_deletion_event_source_mapping_with_dynamodb, durations_in_seconds, last_validated_date, tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_dynamodbstreams.py::TestDynamoDBEventSourceMapping::test_duplicate_event_source_mappings, durations_in_seconds, last_validated_date
+Nodes (7): total, tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_dynamodbstreams.py::TestDynamoDBEventSourceMapping::test_duplicate_event_source_mappings, durations_in_seconds, last_validated_date, tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_dynamodbstreams.py::TestDynamoDBEventSourceMapping::test_dynamodb_report_batch_item_failure_scenarios[unhandled_exception_in_function], durations_in_seconds, last_validated_date
 
 ### Community 2681 - "Community 2681"
 Cohesion: 0.29
-Nodes (7): setup, tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_dynamodbstreams.py::TestDynamoDBEventSourceMapping::test_dynamodb_event_filter[content_or_filter], durations_in_seconds, last_validated_date, tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_dynamodbstreams.py::TestDynamoDBEventSourceMapping::test_dynamodb_report_batch_item_success_scenarios[empty_dict_success], durations_in_seconds, last_validated_date
+Nodes (7): teardown, tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_dynamodbstreams.py::TestDynamoDBEventSourceMapping::test_deletion_event_source_mapping_with_dynamodb, durations_in_seconds, last_validated_date, tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_dynamodbstreams.py::TestDynamoDBEventSourceMapping::test_dynamodb_report_batch_item_success_scenarios[empty_dict_success], durations_in_seconds, last_validated_date
 
 ### Community 2682 - "Community 2682"
 Cohesion: 0.29
-Nodes (7): teardown, tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_dynamodbstreams.py::TestDynamoDBEventSourceMapping::test_disabled_dynamodb_event_source_mapping, durations_in_seconds, last_validated_date, tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_dynamodbstreams.py::TestDynamoDBEventSourceMapping::test_dynamodb_event_filter[date_time_conversion], durations_in_seconds, last_validated_date
+Nodes (7): call, tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_dynamodbstreams.py::TestDynamoDBEventSourceMapping::test_disabled_dynamodb_event_source_mapping, durations_in_seconds, last_validated_date, tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_dynamodbstreams.py::TestDynamoDBEventSourceMapping::test_dynamodb_event_filter[exists_filter_type], durations_in_seconds, last_validated_date
 
 ### Community 2683 - "Community 2683"
 Cohesion: 0.29
@@ -16418,15 +16430,15 @@ Nodes (8): create_config_file(), get_dir_of_file(), get_kcl_app_command(), get_k
 
 ### Community 2685 - "Community 2685"
 Cohesion: 0.25
-Nodes (8): Error, ResponseMetadata, ResponseMetadata, invalid-session-name, no-service, tests/aws/services/sts/test_sts.py::TestSTSIntegrations::test_sts_invalid_parameters, recorded-content, recorded-date
+Nodes (8): ResponseMetadata, Error, ResponseMetadata, invalid-session-name, not-enough-colons, tests/aws/services/sts/test_sts.py::TestSTSIntegrations::test_sts_invalid_parameters, recorded-content, recorded-date
 
 ### Community 2686 - "Community 2686"
 Cohesion: 0.29
-Nodes (7): call, tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_kinesis.py::TestKinesisSource::test_create_kinesis_event_source_mapping_multiple_lambdas_single_kinesis_event_stream, durations_in_seconds, last_validated_date, tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_kinesis.py::TestKinesisSource::test_kinesis_event_source_mapping_with_async_invocation, durations_in_seconds, last_validated_date
+Nodes (7): call, tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_kinesis.py::TestKinesisSource::test_create_kinesis_event_source_mapping, durations_in_seconds, last_validated_date, tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_kinesis.py::TestKinesisSource::test_kinesis_event_source_mapping_with_async_invocation, durations_in_seconds, last_validated_date
 
 ### Community 2687 - "Community 2687"
 Cohesion: 0.29
-Nodes (7): setup, tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_kinesis.py::TestKinesisSource::test_disable_kinesis_event_source_mapping, durations_in_seconds, last_validated_date, tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_kinesis.py::TestKinesisSource::test_kinesis_report_batch_item_success_scenarios[empty_dict_success], durations_in_seconds, last_validated_date
+Nodes (7): teardown, tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_kinesis.py::TestKinesisSource::test_create_kinesis_event_source_mapping_multiple_lambdas_single_kinesis_event_stream, durations_in_seconds, last_validated_date, tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_kinesis.py::TestKinesisSource::test_kinesis_report_batch_item_success_scenarios[empty_dict_success], durations_in_seconds, last_validated_date
 
 ### Community 2688 - "Community 2688"
 Cohesion: 0.29
@@ -16434,7 +16446,7 @@ Nodes (7): Phase 1: Discover Existing Azure Implementation, Phase 2: Establish B
 
 ### Community 2689 - "Community 2689"
 Cohesion: 0.29
-Nodes (7): Error, ResponseMetadata, create-archive-duplicate-error, recorded-content, tests/aws/services/events/test_archive_and_replay.py::TestArchive::test_create_archive_error_duplicate[default], recorded-content, recorded-date
+Nodes (7): Error, ResponseMetadata, create-archive-duplicate-error, tests/aws/services/events/test_archive_and_replay.py::TestArchive::test_create_archive_error_duplicate[custom], recorded-content, recorded-date, recorded-content
 
 ### Community 2690 - "Community 2690"
 Cohesion: 0.29
@@ -16446,15 +16458,15 @@ Nodes (7): messages, tests/aws/services/events/test_events_inputs.py::TestInputT
 
 ### Community 2692 - "Community 2692"
 Cohesion: 0.29
-Nodes (7): total, tests/aws/services/events/test_events_inputs.py::TestInputPath::test_put_events_with_input_path_max_level_depth, durations_in_seconds, last_validated_date, tests/aws/services/events/test_events_inputs.py::TestInputPath::test_put_events_with_input_path_multiple_targets, durations_in_seconds, last_validated_date
+Nodes (7): total, tests/aws/services/events/test_events_inputs.py::TestInputPath::test_put_events_with_input_path_max_level_depth, durations_in_seconds, last_validated_date, tests/aws/services/events/test_events_inputs.py::TestInputTransformer::test_input_transformer_nested_keys_replacement[{\"method\": \"PUT\", \"path\": \"users-service/users/<userId>\", \"id\": \"<userId>\", \"body\": <payload>}], durations_in_seconds, last_validated_date
 
 ### Community 2693 - "Community 2693"
-Cohesion: 0.22
-Nodes (5): Ensures that a root trace id exists by generating one if None.         Return se, A trace ID tracks the path of a request through your application.     A trace co, Generate a random trace id., Convert TraceId object to a string., TraceId
+Cohesion: 0.20
+Nodes (10): cacheKeyParameters, cacheNamespace, connectionType, httpMethod, passthroughBehavior, ResponseMetadata, timeoutInMillis, type (+2 more)
 
 ### Community 2694 - "Community 2694"
 Cohesion: 0.29
-Nodes (7): teardown, tests/aws/services/events/test_events_inputs.py::TestInputPath::test_put_events_with_input_path, durations_in_seconds, last_validated_date, tests/aws/services/events/test_events_inputs.py::TestInputTransformer::test_input_transformer_nested_keys_replacement_not_valid[{\"singlelistitem\": \"<listsingle>\"}], durations_in_seconds, last_validated_date
+Nodes (7): setup, tests/aws/services/events/test_events_inputs.py::TestInputPath::test_put_events_with_input_path_nested[event_detail1], durations_in_seconds, last_validated_date, tests/aws/services/events/test_events_inputs.py::TestInputTransformer::test_input_transformer_nested_keys_replacement_not_valid[{\"singlelistitem\": \"<listsingle>\"}], durations_in_seconds, last_validated_date
 
 ### Community 2696 - "Community 2696"
 Cohesion: 0.29
@@ -16529,12 +16541,12 @@ Cohesion: 0.29
 Nodes (7): NewPetResponse, type, properties, type, $ref, message, pet
 
 ### Community 2714 - "Community 2714"
-Cohesion: 0.20
-Nodes (6): dynamodb_stream_arn(), change_region_in_ddb_stream_arn(), Modify the ARN or a DynamoDB Stream by changing its region.     We need this log, DynamoDBStreamsProvider, get_records(), DynamodbstreamsApi
+Cohesion: 0.22
+Nodes (9): create_api_gateway(), create_api_gateway_integrations(), create_dynamodb_table(), create_kinesis_stream(), get_or_create_bucket(), # TODO: Harmonise the return value, Utility method to create a DynamoDB table, # TODO: make s3_client mandatory (+1 more)
 
 ### Community 2715 - "Community 2715"
 Cohesion: 0.29
-Nodes (7): events, ResponseMetadata, events, ResponseMetadata, exec_hist_resp_10, exec_hist_resp_5, HTTPStatusCode
+Nodes (7): events, ResponseMetadata, events, ResponseMetadata, exec_hist_resp_10, exec_hist_resp_5, HTTPHeaders
 
 ### Community 2716 - "Community 2716"
 Cohesion: 0.29
@@ -16549,12 +16561,12 @@ Cohesion: 0.29
 Nodes (7): RuntimeVersionConfig, RuntimeVersionConfig, RuntimeVersionConfig, RuntimeVersionConfig, RuntimeVersionArn, RuntimeVersionConfig, RuntimeVersionConfig
 
 ### Community 2719 - "Community 2719"
-Cohesion: 0.19
-Nodes (5): LiveSchemaProvider, PropertyRenderer, Provides CloudFormation resource schemas by fetching them from the live AWS Clou, Return the names of available CloudFormation resource types. `pattern` should be, Given a CloudFormation ResourceName (representing something like "AWS::S3::Bucke
+Cohesion: 0.20
+Nodes (10): message, ResponseMetadata, Type, exception_event_source_creation, tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_dynamodbstreams.py::TestDynamoDBEventSourceMapping::test_dynamodb_invalid_event_filter[[{\"eventName\": [\"INSERT\"=123}]], recorded-content, recorded-date, tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_dynamodbstreams.py::TestDynamoDBEventSourceMapping::test_dynamodb_invalid_event_filter[single-string] (+2 more)
 
 ### Community 2720 - "Community 2720"
-Cohesion: 0.29
-Nodes (7): Properties, Type, Action, Principal, SourceArn, EmptyFilterRuleAllowEventRuleEventbridgeStackTriggeredLambda3DD76C6517715217, Fn::GetAtt
+Cohesion: 0.25
+Nodes (8): Properties, Fn::GetAtt, Ref, Action, FunctionName, Principal, SourceArn, Fn::GetAtt
 
 ### Community 2721 - "Community 2721"
 Cohesion: 0.29
@@ -16569,8 +16581,8 @@ Cohesion: 0.18
 Nodes (5): CloudFormationMacroProperties, CloudFormationMacroProvider, CloudFormationMacroProviderPlugin, # TODO: fix or validate that we want to keep this here., Fetch resource information
 
 ### Community 2724 - "Community 2724"
-Cohesion: 0.14
-Nodes (8): AliasRoutingConfiguration, LambdaAliasProperties, LambdaAliasProvider, LambdaAliasProviderPlugin, ProvisionedConcurrencyConfiguration, Fetch resource information, Create a new resource.          Primary identifier fields:           - /properti, VersionWeight
+Cohesion: 0.21
+Nodes (7): AliasRoutingConfiguration, LambdaAliasProperties, LambdaAliasProvider, ProvisionedConcurrencyConfiguration, Fetch resource information, Create a new resource.          Primary identifier fields:           - /properti, VersionWeight
 
 ### Community 2725 - "Community 2725"
 Cohesion: 0.29
@@ -16629,8 +16641,8 @@ Cohesion: 0.18
 Nodes (11): additionalProperties, description, properties, type, AccessLogSetting, description, type, description (+3 more)
 
 ### Community 2739 - "Community 2739"
-Cohesion: 0.12
-Nodes (16): additionalProperties, properties, type, DataFormatConversionConfiguration, DynamicPartitioningConfiguration, additionalProperties, properties, type (+8 more)
+Cohesion: 0.20
+Nodes (10): additionalProperties, properties, type, DataFormatConversionConfiguration, $ref, $ref, InputFormatConfiguration, OutputFormatConfiguration (+2 more)
 
 ### Community 2741 - "Community 2741"
 Cohesion: 0.18
@@ -16657,8 +16669,8 @@ Cohesion: 0.29
 Nodes (7): DeprecatedKeySchema, additionalProperties, properties, required, type, $ref, HashKeyElement
 
 ### Community 2748 - "Community 2748"
-Cohesion: 0.29
-Nodes (7): KinesisStreamSpecification, additionalProperties, properties, required, type, StreamArn, type
+Cohesion: 0.27
+Nodes (10): responsePayload, responsePayload, errorMessage, errorType, hello, requestId, stackTrace, success (+2 more)
 
 ### Community 2749 - "Community 2749"
 Cohesion: 0.29
@@ -16713,8 +16725,8 @@ Cohesion: 0.17
 Nodes (12): Tag, description, type, Key, Value, additionalProperties, description, properties (+4 more)
 
 ### Community 2763 - "Community 2763"
-Cohesion: 0.29
-Nodes (7): $ref, properties, Tags, insertionOrder, items, type, uniqueItems
+Cohesion: 0.17
+Nodes (12): $ref, maxLength, minLength, pattern, type, properties, PrivateKey, Tags (+4 more)
 
 ### Community 2764 - "Community 2764"
 Cohesion: 0.39
@@ -16761,8 +16773,8 @@ Cohesion: 0.29
 Nodes (7): anyOf, DefinitionSubstitutions, additionalProperties, minProperties, patternProperties, type, .*
 
 ### Community 2776 - "Community 2776"
-Cohesion: 0.18
-Nodes (11): insertionOrder, items, minItems, type, $ref, Destinations, Tags, insertionOrder (+3 more)
+Cohesion: 0.12
+Nodes (17): insertionOrder, items, minItems, type, type, $ref, enum, type (+9 more)
 
 ### Community 2777 - "Community 2777"
 Cohesion: 0.29
@@ -16826,7 +16838,7 @@ Nodes (6): tests/aws/services/s3/test_s3_notifications_lambda.py::TestS3Notifica
 
 ### Community 2793 - "Community 2793"
 Cohesion: 0.20
-Nodes (10): teardown, tests/aws/services/s3/test_s3_list_operations.py::TestS3ListBuckets::test_list_buckets_with_max_buckets, durations_in_seconds, last_validated_date, tests/aws/services/s3/test_s3_list_operations.py::TestS3ListObjectsV2::test_list_objects_v2_continuation_token_safe_chars, durations_in_seconds, last_validated_date, tests/aws/services/s3/test_s3_list_operations.py::TestS3ListObjectsV2::test_list_ops_encoding_type_validation[list_objects_v2] (+2 more)
+Nodes (10): setup, tests/aws/services/s3/test_s3_list_operations.py::TestS3ListBuckets::test_list_buckets_by_prefix_with_case_sensitivity, durations_in_seconds, last_validated_date, tests/aws/services/s3/test_s3_list_operations.py::TestS3ListObjects::test_list_objects_with_prefix[/], durations_in_seconds, last_validated_date, tests/aws/services/s3/test_s3_list_operations.py::TestS3ListObjectsV2::test_list_objects_v2_continuation_token_safe_chars (+2 more)
 
 ### Community 2794 - "Community 2794"
 Cohesion: 0.29
@@ -16838,7 +16850,7 @@ Nodes (6): tests/aws/services/stepfunctions/v2/scenarios/test_sfn_scenarios.py::
 
 ### Community 2796 - "Community 2796"
 Cohesion: 0.20
-Nodes (10): ARN, CreatedDate, Name, SecretString, VersionId, VersionStages, get_secret_value_rs_3, tests/aws/services/secretsmanager/test_secretsmanager.py::TestSecretsManager::test_create_and_update_secret[Valid/_+=.@-Name-a1b2c3--True] (+2 more)
+Nodes (10): additionalProperties, properties, type, CognitoOptions, type, IdentityPoolId, RoleArn, UserPoolId (+2 more)
 
 ### Community 2797 - "Community 2797"
 Cohesion: 0.29
@@ -16893,8 +16905,8 @@ Cohesion: 0.29
 Nodes (7): Ref, Statement, Bucket, PolicyDocument, ServerlessDeploymentBucketPolicy, Properties, Type
 
 ### Community 2810 - "Community 2810"
-Cohesion: 0.29
-Nodes (7): Properties, Type, Types, EndpointConfiguration, Name, Policy, ApiGatewayRestApi
+Cohesion: 0.40
+Nodes (5): Properties, Types, EndpointConfiguration, Name, Policy
 
 ### Community 2811 - "Community 2811"
 Cohesion: 0.29
@@ -16933,8 +16945,8 @@ Cohesion: 0.29
 Nodes (7): End, InputPath, OutputPath, Parameters, ResultPath, Type, State1
 
 ### Community 2820 - "Community 2820"
-Cohesion: 0.20
-Nodes (10): additionalProperties, properties, type, AccessLogSetting, description, type, description, type (+2 more)
+Cohesion: 0.12
+Nodes (17): additionalProperties, properties, type, definitions, AccessLogSetting, MethodSetting, StageDescription, description (+9 more)
 
 ### Community 2821 - "Community 2821"
 Cohesion: 0.33
@@ -16981,12 +16993,12 @@ Cohesion: 0.33
 Nodes (6): id, name, ResponseMetadata, type, value, create-up-key-2
 
 ### Community 2832 - "Community 2832"
-Cohesion: 0.33
-Nodes (7): defaults(), Directories, for_cli(), for_container(), for_host(), init_directories(), Holds different directories available to localstack. Some directories are shared
+Cohesion: 0.20
+Nodes (10): EncodingType, IsTruncated, KeyMarker, MaxKeys, Name, Prefix, ResponseMetadata, VersionIdMarker (+2 more)
 
 ### Community 2833 - "Community 2833"
-Cohesion: 0.33
-Nodes (6): apiKeyRequired, authorizationType, httpMethod, methodResponses, ResponseMetadata, method-pets-options
+Cohesion: 0.20
+Nodes (10): Contents, ContinuationToken, EncodingType, IsTruncated, KeyCount, MaxKeys, Name, Prefix (+2 more)
 
 ### Community 2834 - "Community 2834"
 Cohesion: 0.33
@@ -17129,8 +17141,8 @@ Cohesion: 0.33
 Nodes (6): message, __type, cbor-error, tests/aws/services/kinesis/test_kinesis.py::TestKinesis::test_cbor_exceptions, recorded-content, recorded-date
 
 ### Community 2869 - "Community 2869"
-Cohesion: 0.40
-Nodes (6): Fn::GetAtt, OnFailure, OnSuccess, Destination, Destination, DestinationConfig
+Cohesion: 0.20
+Nodes (11): Fn::GetAtt, OnFailure, OnSuccess, Properties, Type, Destination, Destination, DestinationConfig (+3 more)
 
 ### Community 2870 - "Community 2870"
 Cohesion: 0.40
@@ -17149,7 +17161,7 @@ Cohesion: 0.33
 Nodes (6): tagging, cloudFormationSystemTags, taggable, tagOnCreate, tagProperty, tagUpdatable
 
 ### Community 2875 - "Community 2875"
-Cohesion: 0.40
+Cohesion: 0.33
 Nodes (3): Encapsulation for stores across all regions for a specific AWS account ID., Clear all store data.          This only deletes the data held in the stores. Al, RegionBundle
 
 ### Community 2877 - "Community 2877"
@@ -17182,7 +17194,7 @@ Nodes (6): BucketName, UserClicksServiceClicksBucketDestinationDF882499, Deletio
 
 ### Community 2884 - "Community 2884"
 Cohesion: 0.21
-Nodes (12): code:markdown (# Azure Gap Decision), code:markdown (# Azure Gap Decision), code:markdown (# Azure Gap Decision), code:bash (git add docs/superpowers/plans/azure-discovery/gap-decision.), code:python (from localstack.tooling.testing.azure.util import is_azure_alpha, is), code:python (import os), code:python (AZURE_ALPHA = "azure_alpha"), code:bash (python -m pytest tests/unit/testing/test_azure_testing_util.) (+4 more)
+Nodes (12): code:markdown (# Azure Gap Decision), code:markdown (# Azure Gap Decision), code:markdown (# Azure Gap Decision), code:bash (git add docs/superpowers/plans/azure-discovery/gap-decision.), code:python (from localstack.tooling.testing.azure.util import is_azure_a), code:python (import os), code:python (AZURE_ALPHA = "azure_alpha"), code:bash (python -m pytest tests/unit/testing/test_azure_testing_util.) (+4 more)
 
 ### Community 2885 - "Community 2885"
 Cohesion: 0.60
@@ -17205,8 +17217,8 @@ Cohesion: 0.33
 Nodes (5): tests/aws/services/stepfunctions/v2/outputdecl/test_output.py::TestArgumentsBase::test_base_output_any_non_dict[FLOAT], recorded-content, recorded-date, tests/aws/services/stepfunctions/v2/outputdecl/test_output.py::TestArgumentsBase::test_base_output_any_non_dict[LIST_RICH], recorded-date
 
 ### Community 2892 - "Community 2892"
-Cohesion: 0.33
-Nodes (3): pytest_sessionfinish(), A pytest plugin that limits test selection based on an input file. The input fil, Tests might be split and thus there can be splits which don't select any tests r
+Cohesion: 0.43
+Nodes (5): pytest_addoption(), pytest_collection_modifyitems(), pytest_sessionfinish(), A pytest plugin that limits test selection based on an input file. The input fil, Tests might be split and thus there can be splits which don't select any tests r
 
 ### Community 2893 - "Community 2893"
 Cohesion: 0.33
@@ -17266,7 +17278,7 @@ Nodes (6): type, SnapshotOptions, AutomatedSnapshotStartHour, additionalProperti
 
 ### Community 2909 - "Community 2909"
 Cohesion: 0.22
-Nodes (9): Error, ResponseMetadata, Error, ResponseMetadata, error-complexity-or-flat, error-complexity-or-nested, tests/aws/services/sns/test_sns_filter_policy.py::TestSNSFilterPolicyConditions::test_policy_complexity_with_or, recorded-content (+1 more)
+Nodes (9): cacheKeyParameters, cacheNamespace, httpMethod, passthroughBehavior, ResponseMetadata, timeoutInMillis, type, uri (+1 more)
 
 ### Community 2910 - "Community 2910"
 Cohesion: 0.22
@@ -17301,8 +17313,8 @@ Cohesion: 0.33
 Nodes (6): description, maxLength, minLength, pattern, type, Id
 
 ### Community 2918 - "Community 2918"
-Cohesion: 0.12
-Nodes (17): $ref, definitions, GlobalSecondaryIndex, InputFormatOptions, PointInTimeRecoverySpecification, additionalProperties, required, type (+9 more)
+Cohesion: 0.10
+Nodes (20): $ref, definitions, InputFormatOptions, KinesisStreamSpecification, PointInTimeRecoverySpecification, additionalProperties, properties, type (+12 more)
 
 ### Community 2919 - "Community 2919"
 Cohesion: 0.33
@@ -17333,8 +17345,8 @@ Cohesion: 0.33
 Nodes (6): additionalProperties, patternProperties, type, ^.*$, DomainEndpoints, type
 
 ### Community 2926 - "Community 2926"
-Cohesion: 0.33
-Nodes (6): type, SnapshotOptions, AutomatedSnapshotStartHour, additionalProperties, properties, type
+Cohesion: 0.28
+Nodes (8): message_attributes_to_upper(), _prepare_messages_to_dlq(), Convert message attribute details (first characters) to upper case (e.g., String, _send_to_dead_letter_queue(), test_convert_non_printable_chars(), convert_to_printable_chars(), first_char_to_upper(), Removes all unprintable characters from the given string.
 
 ### Community 2927 - "Community 2927"
 Cohesion: 0.33
@@ -17342,7 +17354,7 @@ Nodes (6): $ref, Tags, description, items, type, uniqueItems
 
 ### Community 2928 - "Community 2928"
 Cohesion: 0.22
-Nodes (9): creationDate, name, ResponseMetadata, revisionId, roleArn, stateMachineArn, status, type (+1 more)
+Nodes (9): item, ResponseMetadata, get-stages, tests/aws/services/cloudformation/resources/test_apigateway.py::test_apigateway_deployment_canary_settings, recorded-content, recorded-date, tests/aws/services/cloudformation/resources/test_apigateway.py::test_apigateway_stage_with_access_log_settings, recorded-content (+1 more)
 
 ### Community 2929 - "Community 2929"
 Cohesion: 0.36
@@ -17373,8 +17385,8 @@ Cohesion: 0.53
 Nodes (6): Statement, Version, PolicyDocument, PolicyDocument, PolicyDocument, PolicyDocument
 
 ### Community 2937 - "Community 2937"
-Cohesion: 0.14
-Nodes (14): $ref, minProperties, type, definitions, Definition, LogDestination, S3Location, additionalProperties (+6 more)
+Cohesion: 0.33
+Nodes (6): $ref, LogDestination, additionalProperties, properties, type, CloudWatchLogsLogGroup
 
 ### Community 2938 - "Community 2938"
 Cohesion: 0.33
@@ -17433,16 +17445,16 @@ Cohesion: 0.33
 Nodes (6): ResponseMetadata, create-error, recorded-content, tests/aws/services/ses/test_ses.py::TestSES::test_creating_event_destination_without_configuration_set, recorded-content, recorded-date
 
 ### Community 2952 - "Community 2952"
-Cohesion: 0.25
-Nodes (7): role-2, ResponseMetadata, tests/aws/services/sts/test_sts.py::TestSTSAssumeRoleTagging::test_assume_role_tag_validation, recorded-date, tests/aws/services/sts/test_sts.py::TestSTSAssumeRoleTagging::test_iam_role_chaining_override_transitive_tags, recorded-content, recorded-date
+Cohesion: 0.29
+Nodes (8): Code, Message, Error, Error, put-rule-with-custom-event-bus-error, tests/aws/services/events/test_events_schedule.py::TestScheduleRate::tests_put_rule_with_schedule_custom_event_bus, recorded-content, recorded-date
 
 ### Community 2953 - "Community 2953"
 Cohesion: 0.33
 Nodes (6): Error, ResponseMetadata, non-existent-endpoint, tests/aws/services/sns/test_sns.py::TestSNSPublishCrud::test_publish_non_existent_target, recorded-content, recorded-date
 
 ### Community 2954 - "Community 2954"
-Cohesion: 0.23
-Nodes (8): account(), from_rest_api_container(), MergedRestApi, # TODO: make sure API ID are unique across all accounts, # TODO: make sure API ID are unique across all accounts, Merged REST API between Moto data and LocalStack data, used in our Invocation lo, # TODO: when migrating away from Moto, RestApiContainer and MergedRestApi will h, RestApiDeployment
+Cohesion: 0.43
+Nodes (6): additionalProperties, createOnlyProperties, description, primaryIdentifier, readOnlyProperties, typeName
 
 ### Community 2955 - "Community 2955"
 Cohesion: 0.33
@@ -17473,8 +17485,8 @@ Cohesion: 0.33
 Nodes (6): Properties, Ref, DeploymentId, RestApiId, StageName, Ref
 
 ### Community 2963 - "Community 2963"
-Cohesion: 0.50
-Nodes (4): Properties, Fn::GetAtt, ParentId, PathPart
+Cohesion: 0.33
+Nodes (6): Properties, Type, Fn::GetAtt, ParentId, PathPart, ApiGatewayResourceAnyVar
 
 ### Community 2964 - "Community 2964"
 Cohesion: 0.33
@@ -17506,7 +17518,7 @@ Nodes (5): AWS, dynamoDb, headers, params, response
 
 ### Community 2972 - "Community 2972"
 Cohesion: 0.25
-Nodes (8): generic_service_test_matching_rule(), _map_to_module_name(), Generic matching of changes in service files to their tests      :param api_depe, sanitize a service name like we're doing when scaffolding, e.g. lambda => lambda, Test that the generic service test matching rule uses both API_DEPENDENCIES and, test_generic_service_matching_rule(), test_generic_service_matching_rule_defaults_to_api_deps(), test_generic_service_matching_rule_with_dependencies()
+Nodes (8): ResponseMetadata, queue-already-exists, tests/aws/services/sqs/test_sqs.py::TestSqsProvider::test_create_fifo_queue_with_different_attributes_raises_error[sqs], tests/aws/services/sqs/test_sqs.py::TestSqsProvider::test_create_fifo_queue_with_different_attributes_raises_error[sqs_query], recorded-content, recorded-date, recorded-content, recorded-date
 
 ### Community 2973 - "Community 2973"
 Cohesion: 0.53
@@ -17558,7 +17570,7 @@ Nodes (5): Description, restapiDeploymentD3722A4C7fa862ab267efa33d754561c3a45f9f
 
 ### Community 2985 - "Community 2985"
 Cohesion: 0.25
-Nodes (8): apiKeyRequired, authorizationType, httpMethod, ResponseMetadata, method, tests/aws/services/cloudformation/resources/test_apigateway.py::test_cfn_deploy_apigateway_integration, recorded-content, recorded-date
+Nodes (8): creationDate, name, ResponseMetadata, roleArn, stateMachineArn, status, type, describe_resp_t0
 
 ### Community 2986 - "Community 2986"
 Cohesion: 0.40
@@ -17566,7 +17578,7 @@ Nodes (5): Statement, Version, Properties, AssumeRolePolicyDocument, ManagedPoli
 
 ### Community 2987 - "Community 2987"
 Cohesion: 0.29
-Nodes (7): fragment, Parameters, Resources, Properties, Type, ExampleParameter, Parameter
+Nodes (7): createdDate, description, id, after-update, tests/aws/services/apigateway/test_apigateway_basic.py::TestAPIGateway::test_update_rest_api_deployment, recorded-content, recorded-date
 
 ### Community 2988 - "Community 2988"
 Cohesion: 0.40
@@ -17601,12 +17613,12 @@ Cohesion: 0.40
 Nodes (4): tests/aws/services/stepfunctions/v2/comments/test_comments.py::TestComments::test_comment_in_parameters, last_validated_date, tests/aws/services/stepfunctions/v2/comments/test_comments.py::TestComments::test_comments_as_per_docs, last_validated_date
 
 ### Community 2996 - "Community 2996"
-Cohesion: 0.29
-Nodes (7): update-connection, ConnectionArn, ConnectionState, CreationTime, LastAuthorizedTime, LastModifiedTime, ResponseMetadata
+Cohesion: 0.43
+Nodes (4): run_and_assert_calculate_alarm_state(), test_calculate_alarm_state_2_out_of_3(), test_calculate_alarm_state_3_out_of_3(), TestAlarmScheduler
 
 ### Community 2997 - "Community 2997"
-Cohesion: 0.40
-Nodes (5): request-missing-size, ResponseMetadata, tests/aws/services/ec2/test_ec2.py::test_raise_create_volume_without_size, recorded-content, recorded-date
+Cohesion: 0.29
+Nodes (7): ARN, CreatedDate, Name, ResponseMetadata, VersionId, VersionStages, connection-secret-after-update
 
 ### Community 2998 - "Community 2998"
 Cohesion: 0.40
@@ -17625,12 +17637,12 @@ Cohesion: 0.40
 Nodes (4): queue-events, tests/aws/services/cloudformation/engine/test_replacement.py::test_requires_replacement, recorded-content, recorded-date
 
 ### Community 3002 - "Community 3002"
-Cohesion: 0.40
-Nodes (5): TargetArn, lambda-response-dlq-config, tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_sqs.py::test_sqs_queue_as_lambda_dead_letter_queue, recorded-content, recorded-date
+Cohesion: 0.29
+Nodes (7): TargetArn, Messages, lambda-response-dlq-config, messages, tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_sqs.py::test_sqs_queue_as_lambda_dead_letter_queue, recorded-content, recorded-date
 
 ### Community 3003 - "Community 3003"
-Cohesion: 0.48
-Nodes (5): # HACK: trying to match the AWS timing behavior of Lambda Managed Instances for, # TODO: this sleep has side-effects and we should be looking into alternatives, # TODO: check whether available changes with active invokes while updating, # TODO: potential race condition when changing provisioned concurrency after get, # TODO: consider using the same prefix logging as in error case for execution en
+Cohesion: 0.08
+Nodes (24): VersionState, Creates a new function version (manager), and puts it in the startup dict, Simulates async function cleanup after function deletion API is called         b, Simulates async function version cleanup after function deletion API is called, Updates a given version. Will perform a rollover, so the old version will be act, cleanup_version(), get_address(), get_endpoint_from_executor() (+16 more)
 
 ### Community 3004 - "Community 3004"
 Cohesion: 0.40
@@ -17696,12 +17708,20 @@ Nodes (5): input, Amount, SSN, Term, unexpected
 Cohesion: 0.40
 Nodes (5): scan, Count, Items, ResponseMetadata, ScannedCount
 
+### Community 3020 - "Community 3020"
+Cohesion: 0.53
+Nodes (4): # TODO: consider extracting these priorities into some static configuration, setup_dns_configuration_on_host(), start_dns_server(), stop_server()
+
 ### Community 3021 - "Community 3021"
 Cohesion: 0.60
 Nodes (3): DynamicReference, extract_dynamic_reference(), perform_dynamic_reference_lookup()
 
+### Community 3022 - "Community 3022"
+Cohesion: 0.53
+Nodes (4): pytest_addoption(), pytest_collection_modifyitems(), We want to detect a few things  1. Tests that use the snapshot fixture but don't, # TODO: add more sophisticated combinations (=> like pytest -m and -k)
+
 ### Community 3023 - "Community 3023"
-Cohesion: 0.50
+Cohesion: 0.53
 Nodes (4): filter_test_files(), main(), Filter list of test files by test selection file. Result is written to stdout, # TODO: SENTINEL_NO_TESTS ... not sure how we'd handle it here without failing t
 
 ### Community 3024 - "Community 3024"
@@ -17737,7 +17757,7 @@ Cohesion: 0.25
 Nodes (11): code:python (SERVICES = [), code:bash (python scripts/azure_service_coverage.py > docs/superpowers/), code:bash (git add scripts/azure_service_coverage.py docs/superpowers/p), code:python (import json), code:markdown (# Resource Manager Coverage), code:bash (AZURE_ALPHA_LIVE_TEST=1 python -m pytest tests/azure/service), code:bash (git add tests/azure/services/resource_manager docs/superpowe), Task 11: Gateway Integration Spike (+3 more)
 
 ### Community 3032 - "Community 3032"
-Cohesion: 0.33
+Cohesion: 0.36
 Nodes (6): get_pr_details_from_branch(), get_pr_details_from_number(), get_pr_details_from_url(), Fetch the base commit SHA, and the head commit SHA of a given pull request numbe, Fetch the base commit SHA, and the head commit SHA of a given branch from a GitH, Extract base and head sha from a given PR URL     Example pr_url: https://github
 
 ### Community 3033 - "Community 3033"
@@ -17757,8 +17777,8 @@ Cohesion: 0.12
 Nodes (17): description, enum, type, IntegrationResponse, additionalProperties, properties, required, type (+9 more)
 
 ### Community 3037 - "Community 3037"
-Cohesion: 0.33
-Nodes (4): init_response_mutation_handler(), A handler that adds extra metadata to a Response., ResponseMetadataEnricher, response_handler_chain()
+Cohesion: 0.29
+Nodes (7): teardown, tests/aws/services/events/test_events_inputs.py::TestInputPath::test_put_events_with_input_path_multiple_targets, durations_in_seconds, last_validated_date, tests/aws/services/events/test_events_inputs.py::TestInputTransformer::test_input_transformer_predefined_variables[{\"originalEvent\": <aws.events.event>, \"originalEventJson\": <aws.events.event.json>}], durations_in_seconds, last_validated_date
 
 ### Community 3038 - "Community 3038"
 Cohesion: 0.40
@@ -17793,8 +17813,8 @@ Cohesion: 0.40
 Nodes (5): description, maxLength, minLength, type, AlarmDescription
 
 ### Community 3046 - "Community 3046"
-Cohesion: 0.43
-Nodes (4): create_schedule(), SchedulerProvider, _validate_schedule_expression(), SchedulerApi
+Cohesion: 0.12
+Nodes (8): SchedulerDataStore, SchedulerJob, create_schedule(), _infer_target(), _now(), SchedulerProvider, _validate_schedule_expression(), SchedulerApi
 
 ### Community 3047 - "Community 3047"
 Cohesion: 0.29
@@ -17865,8 +17885,8 @@ Cohesion: 0.40
 Nodes (5): description, maxLength, minLength, type, Arn
 
 ### Community 3064 - "Community 3064"
-Cohesion: 0.40
-Nodes (5): maxLength, minLength, pattern, type, PrivateKey
+Cohesion: 0.48
+Nodes (7): ResponseMetadata, ResponseMetadata, ResponseMetadata, ResponseMetadata, ResponseMetadata, HTTPHeaders, HTTPStatusCode
 
 ### Community 3065 - "Community 3065"
 Cohesion: 0.40
@@ -17894,7 +17914,7 @@ Nodes (9): additionalProperties, required, type, maxLength, minLength, pattern, 
 
 ### Community 3071 - "Community 3071"
 Cohesion: 0.29
-Nodes (7): additionalProperties, type, definitions, ApiStage, QuotaSettings, additionalProperties, type
+Nodes (7): StreamEncryption, StreamEncryption, additionalProperties, description, $ref, required, type
 
 ### Community 3072 - "Community 3072"
 Cohesion: 0.25
@@ -18058,7 +18078,7 @@ Nodes (5): Properties, Type, GroupDescription, SecurityGroupEgress, ecstaskSecur
 
 ### Community 3112 - "Community 3112"
 Cohesion: 0.29
-Nodes (7): set-headers-bounce-enabled-True, set-headers-bounce-enabled-True-idempotent, ResponseMetadata, ResponseMetadata, tests/aws/services/ses/test_ses.py::TestSES::test_set_identity_headers_in_notifications_enabled_success[True-Bounce], recorded-content, recorded-date
+Nodes (7): ARN, DeletionDate, Name, delete_secret_res_1, tests/aws/services/secretsmanager/test_secretsmanager.py::TestSecretsManager::test_create_and_update_secret[Invalid/_+=.@-Name-a1b2c3-False], recorded-content, recorded-date
 
 ### Community 3113 - "Community 3113"
 Cohesion: 0.40
@@ -18285,8 +18305,8 @@ Cohesion: 0.33
 Nodes (6): tagging, cloudFormationSystemTags, taggable, tagOnCreate, tagProperty, tagUpdatable
 
 ### Community 3172 - "Community 3172"
-Cohesion: 0.27
-Nodes (6): tests/aws/services/kms/test_kms.py::TestKMS::test_create_multi_region_key, durations_in_seconds, last_validated_date, tests/aws/services/kms/test_kms.py::TestKMS::test_encrypt_decrypt_encryption_context, durations_in_seconds, last_validated_date
+Cohesion: 0.29
+Nodes (7): update_resp, tests/aws/services/stepfunctions/v2/test_sfn_api_versioning.py::TestSnfApiVersioning::test_describe_state_machine_for_execution_of_version_with_revision, recorded-content, recorded-date, revisionId, stateMachineVersionArn, updateDate
 
 ### Community 3173 - "Community 3173"
 Cohesion: 0.67
@@ -18299,10 +18319,6 @@ Nodes (3): tests/aws/services/lambda_/test_lambda_integration_xray.py::test_xray
 ### Community 3175 - "Community 3175"
 Cohesion: 0.50
 Nodes (3): apigateway/2015-07-09/service-2, apigatewayv2/2018-11-29/service-2, s3/2006-03-01/service-2
-
-### Community 3177 - "Community 3177"
-Cohesion: 0.40
-Nodes (3): describe_cluster_security_groups(), RedshiftProvider, RedshiftApi
 
 ### Community 3178 - "Community 3178"
 Cohesion: 0.50
@@ -18320,6 +18336,14 @@ Nodes (4): description, maxLength, type, MasterUsername
 Cohesion: 0.50
 Nodes (4): description, maxLength, type, MasterUserPassword
 
+### Community 3182 - "Community 3182"
+Cohesion: 0.60
+Nodes (3): pytest_addoption(), pytest_collection_modifyitems(), # TODO: add more sophisticated combinations (=> like pytest -m and -k)
+
+### Community 3183 - "Community 3183"
+Cohesion: 0.60
+Nodes (3): pytest_addoption(), pytest_runtest_setup(), This pytest plugin makes sure there's only a single fixture definition for each
+
 ### Community 3184 - "Community 3184"
 Cohesion: 0.50
 Nodes (4): metricFilters, ResponseMetadata, describe-by-log-group, recorded-content
@@ -18329,7 +18353,7 @@ Cohesion: 0.67
 Nodes (3): handler(), This macro takes the incoming fragment (i.e. the sibling nodes of the `Fn::Trans, walk()
 
 ### Community 3186 - "Community 3186"
-Cohesion: 0.40
+Cohesion: 0.36
 Nodes (4): _get_service_url(), server_swagger_ui(), SwaggerUIApi, register_swagger_endpoints()
 
 ### Community 3187 - "Community 3187"
@@ -18341,8 +18365,8 @@ Cohesion: 0.50
 Nodes (4): $ref, Tags, items, type
 
 ### Community 3189 - "Community 3189"
-Cohesion: 0.40
-Nodes (5): DedicatedMasterEnabled, InstanceCount, InstanceType, ZoneAwarenessEnabled, ClusterConfig
+Cohesion: 0.33
+Nodes (6): DeletionPolicy, Properties, Type, UpdateReplacePolicy, RetentionInDays, LoanBrokerLogGroup0AC7392D
 
 ### Community 3190 - "Community 3190"
 Cohesion: 0.50
@@ -18362,7 +18386,7 @@ Nodes (4): description, type, uniqueItems, DomainNameServers
 
 ### Community 3194 - "Community 3194"
 Cohesion: 0.33
-Nodes (6): goodevil, lawchaos, mysfitId, species, userId, get-first-click
+Nodes (6): Options, DesiredState, MaintenanceSchedules, RollbackOnDisable, UseOffPeakWindow, AutoTuneOptions
 
 ### Community 3195 - "Community 3195"
 Cohesion: 0.50
@@ -18390,7 +18414,7 @@ Nodes (4): HttpEndpointDestinationConfiguration, additionalProperties, required,
 
 ### Community 3201 - "Community 3201"
 Cohesion: 0.33
-Nodes (6): StartingPosition, description, maxLength, minLength, pattern, type
+Nodes (6): tagging, cloudFormationSystemTags, taggable, tagOnCreate, tagProperty, tagUpdatable
 
 ### Community 3202 - "Community 3202"
 Cohesion: 0.33
@@ -18398,7 +18422,7 @@ Nodes (6): tagging, cloudFormationSystemTags, taggable, tagOnCreate, tagProperty
 
 ### Community 3203 - "Community 3203"
 Cohesion: 0.33
-Nodes (6): Topics, description, maxItems, minItems, type, uniqueItems
+Nodes (6): RegistryId, description, maxLength, minLength, pattern, type
 
 ### Community 3204 - "Community 3204"
 Cohesion: 0.40
@@ -18410,7 +18434,7 @@ Nodes (4): maximum, minimum, type, HealthThreshold
 
 ### Community 3206 - "Community 3206"
 Cohesion: 0.33
-Nodes (6): type, additionalProperties, properties, type, DeadLetterConfig, Arn
+Nodes (6): additionalProperties, properties, type, BatchArrayProperties, Size, type
 
 ### Community 3207 - "Community 3207"
 Cohesion: 0.50
@@ -18449,8 +18473,8 @@ Cohesion: 0.50
 Nodes (4): RoleArn, maxLength, minLength, type
 
 ### Community 3216 - "Community 3216"
-Cohesion: 0.50
-Nodes (4): Options, Statement, Version, AccessPolicies
+Cohesion: 0.33
+Nodes (6): description, maxLength, minLength, pattern, type, FunctionName
 
 ### Community 3217 - "Community 3217"
 Cohesion: 0.40
@@ -18577,12 +18601,12 @@ Cohesion: 0.33
 Nodes (6): type, SoftwareUpdateOptions, AutoSoftwareUpdateEnabled, additionalProperties, properties, type
 
 ### Community 3255 - "Community 3255"
-Cohesion: 0.53
-Nodes (5): deploy_stack(), Helper function to deploy a CloudFormation stack using a template file. This exi, test_create_sqs_with_inlinepolicy(), test_update_sqs_remove_inlinepolicy(), test_update_sqs_with_inlinepolicy()
+Cohesion: 0.33
+Nodes (6): description, maxLength, minLength, type, uniqueItems, FunctionResponseTypes
 
 ### Community 3259 - "Community 3259"
 Cohesion: 0.33
-Nodes (6): Statement, Version, policy_document, tests/aws/services/iam/resource_providers/test_iam.py::test_managedpolicy_with_fn_sub_json_string, recorded-content, recorded-date
+Nodes (6): Statement, Version, policy_with_arrays, tests/aws/services/iam/resource_providers/test_iam.py::test_managedpolicy_with_fn_sub_and_arrays, recorded-content, recorded-date
 
 ### Community 3260 - "Community 3260"
 Cohesion: 0.67
@@ -18598,11 +18622,11 @@ Nodes (3): tests/aws/services/cloudformation/api/test_stack_policies.py::TestSta
 
 ### Community 3263 - "Community 3263"
 Cohesion: 0.40
-Nodes (5): create_case(), https://docs.aws.amazon.com/awssupport/latest/user/about-support-api.html     >, support_client(), test_support_case_lifecycle(), TestConfigService
+Nodes (5): "Account <...> should have 'AWSCloudFormationStackSetAdministrationRole' role wi, test_create_stack_set_with_stack_instances(), test_delete_nonexistent_stack_set(), test_fetch_non_existent_stack_set_instances(), wait_stack_set_operation()
 
 ### Community 3264 - "Community 3264"
-Cohesion: 0.50
-Nodes (4): StateMachineRevisionId, maxLength, minLength, type
+Cohesion: 0.40
+Nodes (5): apiStages, id, name, ResponseMetadata, create-usage-plan
 
 ### Community 3266 - "Community 3266"
 Cohesion: 0.67
@@ -18610,15 +18634,15 @@ Nodes (3): tests/aws/services/cloudformation/api/test_templates.py::test_validat
 
 ### Community 3268 - "Community 3268"
 Cohesion: 0.12
-Nodes (16): call, tests/aws/services/apigateway/test_apigateway_api.py::TestApiGatewayApiResource::test_update_resource_on_root, durations_in_seconds, last_validated_date, tests/aws/services/apigateway/test_apigateway_api.py::TestApigatewayIntegration::test_create_integration_with_vpc_link, durations_in_seconds, last_validated_date, tests/aws/services/apigateway/test_apigateway_api.py::TestApigatewayIntegrationResponse::test_integration_response_wrong_status_code (+8 more)
+Nodes (16): call, tests/aws/services/apigateway/test_apigateway_api.py::TestApiGatewayApiRestApi::test_create_rest_api_verify_defaults, durations_in_seconds, last_validated_date, tests/aws/services/apigateway/test_apigateway_api.py::TestApigatewayIntegration::test_create_integration_with_vpc_link, durations_in_seconds, last_validated_date, tests/aws/services/apigateway/test_apigateway_api.py::TestApigatewayIntegrationResponse::test_integration_response_wrong_status_code (+8 more)
 
 ### Community 3269 - "Community 3269"
 Cohesion: 0.33
 Nodes (9): code:python (import os), code:`markdown (# Azure Alpha Smoke), code:block22, code:block23, code:bash (LOCALSTACK_AUTH_TOKEN=test python -m pytest tests/azure/inte), code:bash (git add tests/azure docs/superpowers/plans/azure-discovery/a), Task 2: Azure Alpha Docker Smoke Test, Task 6: Azure REST Router Skeleton (+1 more)
 
 ### Community 3270 - "Community 3270"
-Cohesion: 0.33
-Nodes (6): _map_to_service_name(), map a sanitized module name to a service name, e.g. lambda_ => lambda, Resolves dependencies for a given service module name      :param module_name: t, The current API_DEPENDENCIES actually maps the services to their own dependencie, resolve_dependencies(), _reverse_dependency_map()
+Cohesion: 0.40
+Nodes (5): ClientToken, FlowLogIds, ResponseMetadata, Unsuccessful, non-existent-bucket
 
 ### Community 3271 - "Community 3271"
 Cohesion: 0.67
@@ -18681,8 +18705,8 @@ Cohesion: 0.67
 Nodes (3): tests/aws/services/apigateway/test_apigateway_api.py::TestApigatewayMethodResponse::test_update_method_response_wrong_operations, durations_in_seconds, last_validated_date
 
 ### Community 3287 - "Community 3287"
-Cohesion: 0.40
-Nodes (5): messages-first, messages-second, tests/aws/services/events/test_events_schedule.py::TestScheduleRate::tests_schedule_rate_target_sqs, recorded-content, recorded-date
+Cohesion: 0.60
+Nodes (5): SnapStart, SnapStart, SnapStart, ApplyOn, OptimizationStatus
 
 ### Community 3288 - "Community 3288"
 Cohesion: 0.67
@@ -18878,7 +18902,7 @@ Nodes (3): tests/aws/services/stepfunctions/v2/base/test_base.py::TestSnfBase::t
 
 ### Community 3341 - "Community 3341"
 Cohesion: 0.40
-Nodes (5): Type, Type, Resources, FirehoseDeliveryStream, FirehoseS3Policy3A414B80
+Nodes (5): Type, Type, Resources, FirehoseDeliveryStream, FirehoseKinesisPolicy67670C20
 
 ### Community 3342 - "Community 3342"
 Cohesion: 0.67
@@ -19089,8 +19113,8 @@ Cohesion: 0.67
 Nodes (3): tests/aws/services/cloudwatch/test_cloudwatch.py::TestCloudWatchMultiProtocol::test_exception_serializing_with_no_shape_in_spec[smithy-rpc-v2-cbor], durations_in_seconds, last_validated_date
 
 ### Community 3398 - "Community 3398"
-Cohesion: 0.67
-Nodes (3): items, ResponseMetadata, get-up-keys-bad-query
+Cohesion: 0.40
+Nodes (5): load_environment(), Loads the environment variables from ~/.localstack/{profile}.env, for each profi, load_environment(), Loads the environment variables from ~/.localstack/{profile}.env, for each profi, config_env_vars()
 
 ### Community 3399 - "Community 3399"
 Cohesion: 0.67
@@ -19104,17 +19128,13 @@ Nodes (4): AUTHORS File Information, code:block1 (PNG REFERENCE LIBRARY AUTHORS)
 Cohesion: 0.40
 Nodes (4): code:block1 (Copyright 1996-2015 by Scott Hudson, Frank Flannery, C. Scot), code:block2 (This is an open source license. It is also GPL-Compatible (s), CUP Parser Generator for Java v 0.11b, CUP Parser Generator License
 
-### Community 3403 - "Community 3403"
-Cohesion: 0.40
-Nodes (3): # NOTE: X-Ray sampling might require service-specific decisions:, A handler that parses trace context headers, including:     * AWS X-Ray trace he, TraceContextParser
-
 ### Community 3404 - "Community 3404"
 Cohesion: 0.67
 Nodes (3): tests/aws/services/dynamodb/test_dynamodb.py::TestDynamoDB::test_dynamodb_batch_execute_statement, durations_in_seconds, last_validated_date
 
 ### Community 3405 - "Community 3405"
-Cohesion: 0.67
-Nodes (3): tests/aws/services/dynamodb/test_dynamodb.py::TestDynamoDB::test_dynamodb_describe_contributor_insights, durations_in_seconds, last_validated_date
+Cohesion: 0.40
+Nodes (5): default, description, enum, type, KeyFormat
 
 ### Community 3406 - "Community 3406"
 Cohesion: 0.67
@@ -19254,19 +19274,19 @@ Nodes (3): tests/aws/services/stepfunctions/v2/evaluate_jsonata/test_base_evalua
 
 ### Community 3443 - "Community 3443"
 Cohesion: 0.40
-Nodes (5): scan_2, Count, Items, ResponseMetadata, ScannedCount
+Nodes (5): description, maximum, minimum, type, BatchSize
 
 ### Community 3444 - "Community 3444"
 Cohesion: 0.40
 Nodes (5): TimeoutInMillis, description, maximum, minimum, type
 
 ### Community 3445 - "Community 3445"
-Cohesion: 0.67
-Nodes (3): tests/aws/services/dynamodb/test_dynamodb.py::TestDynamoDB::test_continuous_backup_update, durations_in_seconds, last_validated_date
+Cohesion: 0.40
+Nodes (5): Metadata, Properties, Type, ContentType, jsonmodelCE5E769A
 
 ### Community 3446 - "Community 3446"
-Cohesion: 0.67
-Nodes (3): tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_dynamodbstreams.py::TestDynamoDBEventSourceMapping::test_dynamodb_event_filter[exists_filter_type], durations_in_seconds, last_validated_date
+Cohesion: 0.50
+Nodes (4): ElasticsearchDestinationConfiguration, additionalProperties, required, type
 
 ### Community 3447 - "Community 3447"
 Cohesion: 0.67
@@ -19274,11 +19294,11 @@ Nodes (3): tests/aws/services/lambda_/event_source_mapping/test_lambda_integrati
 
 ### Community 3448 - "Community 3448"
 Cohesion: 0.29
-Nodes (7): call, tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_dynamodbstreams.py::TestDynamoDBEventSourceMapping::test_dynamodb_event_filter[prefix_filter], durations_in_seconds, last_validated_date, tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_dynamodbstreams.py::TestDynamoDBEventSourceMapping::test_dynamodb_report_batch_item_failure_scenarios[item_identifier_not_present_failure], durations_in_seconds, last_validated_date
+Nodes (7): setup, tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_dynamodbstreams.py::TestDynamoDBEventSourceMapping::test_dynamodb_event_filter[content_filter_type], durations_in_seconds, last_validated_date, tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_dynamodbstreams.py::TestDynamoDBEventSourceMapping::test_dynamodb_report_batch_item_failure_scenarios[item_identifier_not_present_failure], durations_in_seconds, last_validated_date
 
 ### Community 3449 - "Community 3449"
-Cohesion: 0.40
-Nodes (5): LifecyclePolicyText, description, maxLength, minLength, type
+Cohesion: 0.50
+Nodes (4): maxLength, minLength, type, DefinitionString
 
 ### Community 3450 - "Community 3450"
 Cohesion: 0.67
@@ -19334,7 +19354,7 @@ Nodes (3): tests/aws/services/lambda_/event_source_mapping/test_lambda_integrati
 
 ### Community 3463 - "Community 3463"
 Cohesion: 0.29
-Nodes (7): teardown, tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_kinesis.py::TestKinesisEventFiltering::test_kinesis_event_filtering_json_pattern, durations_in_seconds, last_validated_date, tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_kinesis.py::TestKinesisSource::test_duplicate_event_source_mappings, durations_in_seconds, last_validated_date
+Nodes (7): setup, tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_kinesis.py::TestKinesisEventFiltering::test_kinesis_event_filtering_json_pattern, durations_in_seconds, last_validated_date, tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_kinesis.py::TestKinesisSource::test_kinesis_maximum_record_age_exceeded[expire-before-ingestion], durations_in_seconds, last_validated_date
 
 ### Community 3464 - "Community 3464"
 Cohesion: 0.67
@@ -19355,10 +19375,6 @@ Nodes (3): tests/aws/services/lambda_/event_source_mapping/test_lambda_integrati
 ### Community 3468 - "Community 3468"
 Cohesion: 0.40
 Nodes (5): tagging, cloudFormationSystemTags, taggable, tagOnCreate, tagUpdatable
-
-### Community 3469 - "Community 3469"
-Cohesion: 0.67
-Nodes (3): tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_kinesis.py::TestKinesisSource::test_kinesis_maximum_record_age_exceeded[expire-before-ingestion], durations_in_seconds, last_validated_date
 
 ### Community 3470 - "Community 3470"
 Cohesion: 0.67
@@ -19386,7 +19402,7 @@ Nodes (3): tests/aws/services/lambda_/event_source_mapping/test_lambda_integrati
 
 ### Community 3476 - "Community 3476"
 Cohesion: 0.29
-Nodes (7): total, tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_kinesis.py::TestKinesisSource::test_create_kinesis_event_source_mapping, durations_in_seconds, last_validated_date, tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_kinesis.py::TestKinesisSource::test_esm_with_not_existing_kinesis_stream, durations_in_seconds, last_validated_date
+Nodes (7): total, tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_kinesis.py::TestKinesisSource::test_esm_with_not_existing_kinesis_stream, durations_in_seconds, last_validated_date, tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_kinesis.py::TestKinesisSource::test_kinesis_event_source_mapping_with_on_failure_destination_config, durations_in_seconds, last_validated_date
 
 ### Community 3477 - "Community 3477"
 Cohesion: 0.67
@@ -19404,14 +19420,6 @@ Nodes (3): tests/aws/services/lambda_/event_source_mapping/test_lambda_integrati
 Cohesion: 0.67
 Nodes (3): tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_kinesis.py::TestKinesisSource::test_kinesis_report_batch_item_success_scenarios[null_success], durations_in_seconds, last_validated_date
 
-### Community 3481 - "Community 3481"
-Cohesion: 0.67
-Nodes (3): tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_sqs.py::test_redrive_policy_with_failing_lambda, durations_in_seconds, last_validated_date
-
-### Community 3482 - "Community 3482"
-Cohesion: 0.40
-Nodes (5): Tag, additionalProperties, description, required, type
-
 ### Community 3483 - "Community 3483"
 Cohesion: 0.67
 Nodes (3): tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_kinesis.py::TestKinesisSource::test_kinesis_report_batch_item_failure_scenarios[unhandled_exception_in_function], durations_in_seconds, last_validated_date
@@ -19423,10 +19431,6 @@ Nodes (3): tests/aws/services/lambda_/event_source_mapping/test_lambda_integrati
 ### Community 3485 - "Community 3485"
 Cohesion: 0.67
 Nodes (3): tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_sqs.py::TestSQSEventSourceMapping::test_duplicate_event_source_mappings, durations_in_seconds, last_validated_date
-
-### Community 3486 - "Community 3486"
-Cohesion: 0.67
-Nodes (3): tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_sqs.py::TestSQSEventSourceMapping::test_sqs_event_filter[and], durations_in_seconds, last_validated_date
 
 ### Community 3488 - "Community 3488"
 Cohesion: 0.67
@@ -19490,7 +19494,7 @@ Nodes (3): tests/aws/services/lambda_/event_source_mapping/test_lambda_integrati
 
 ### Community 3503 - "Community 3503"
 Cohesion: 0.67
-Nodes (3): tests/aws/services/events/test_events_inputs.py::TestInputTransformer::test_input_transformer_nested_keys_replacement[{\"method\": \"PUT\", \"nested\": {\"level1\": {\"level2\": {\"level3\": \"users-service/users/<userId>\"} } }, \"bod\": \"<userId>\"}], recorded-content, recorded-date
+Nodes (3): tests/aws/services/cloudformation/api/test_changesets.py::test_describe_changeset_after_delete, durations_in_seconds, last_validated_date
 
 ### Community 3504 - "Community 3504"
 Cohesion: 0.67
@@ -19498,11 +19502,11 @@ Nodes (3): tests/aws/services/events/test_events_inputs.py::TestInputTransformer
 
 ### Community 3505 - "Community 3505"
 Cohesion: 0.67
-Nodes (3): tests/aws/services/events/test_events_inputs.py::TestInputTransformer::test_input_transformer_nested_keys_replacement[{\"method\": \"PUT\", \"path\": \"users-service/users/<userId>\", \"id\": <userId>, \"body\": <payload>}], recorded-content, recorded-date
+Nodes (3): tests/aws/services/cloudformation/api/test_stack_policies.py::TestStackPolicy::test_different_principal_attribute, recorded-content, recorded-date
 
 ### Community 3506 - "Community 3506"
-Cohesion: 0.40
-Nodes (5): maxLength, minLength, pattern, type, DeliveryStreamName
+Cohesion: 0.67
+Nodes (3): tests/aws/services/apigateway/test_apigateway_api.py::TestApiGatewayApiRestApi::test_update_rest_api_compression, durations_in_seconds, last_validated_date
 
 ### Community 3507 - "Community 3507"
 Cohesion: 0.67
@@ -19821,8 +19825,8 @@ Cohesion: 0.67
 Nodes (3): tests/aws/services/events/test_events_patterns.py::TestEventPattern::test_event_pattern[string_empty], recorded-content, recorded-date
 
 ### Community 3588 - "Community 3588"
-Cohesion: 0.40
-Nodes (5): description, maximum, minimum, type, ParallelizationFactor
+Cohesion: 0.67
+Nodes (3): tests/aws/services/cloudwatch/test_cloudwatch.py::TestCloudwatch::test_anomaly_detector_lifecycle[smithy-rpc-v2-cbor], durations_in_seconds, last_validated_date
 
 ### Community 3589 - "Community 3589"
 Cohesion: 0.67
@@ -19837,8 +19841,8 @@ Cohesion: 0.67
 Nodes (3): tests/aws/services/events/test_events_patterns.py::TestEventPattern::test_event_pattern[complex_many_rules], durations_in_seconds, last_validated_date
 
 ### Community 3592 - "Community 3592"
-Cohesion: 0.50
-Nodes (4): BatchSize, EventSourceArn, create_esm_disabled, recorded-content
+Cohesion: 0.67
+Nodes (3): tests/aws/services/cloudwatch/test_cloudwatch.py::TestCloudwatch::test_breaching_alarm_actions[query], durations_in_seconds, last_validated_date
 
 ### Community 3593 - "Community 3593"
 Cohesion: 0.67
@@ -19862,7 +19866,7 @@ Nodes (3): tests/aws/services/events/test_events_patterns.py::TestEventPattern::
 
 ### Community 3598 - "Community 3598"
 Cohesion: 0.67
-Nodes (3): tests/aws/services/events/test_events_patterns.py::TestEventPattern::test_event_pattern[content_anything_but_ignorecase_null], durations_in_seconds, last_validated_date
+Nodes (3): tests/aws/services/cloudwatch/test_cloudwatch.py::TestCloudwatch::test_create_metric_stream[query], durations_in_seconds, last_validated_date
 
 ### Community 3599 - "Community 3599"
 Cohesion: 0.67
@@ -20024,6 +20028,10 @@ Nodes (3): tests/aws/services/events/test_events_schedule.py::TestScheduleCron::
 Cohesion: 0.67
 Nodes (3): tests/aws/services/events/test_events_schedule.py::TestScheduleCron::tests_put_rule_with_schedule_cron[cron(0/30 0-2 ? * MON-FRI *)], recorded-content, recorded-date
 
+### Community 3639 - "Community 3639"
+Cohesion: 0.67
+Nodes (3): tests/aws/services/dynamodb/test_dynamodb.py::TestDynamoDB::test_batch_write_items_streaming, durations_in_seconds, last_validated_date
+
 ### Community 3640 - "Community 3640"
 Cohesion: 0.67
 Nodes (3): tests/aws/services/events/test_events_schedule.py::TestScheduleCron::tests_put_rule_with_schedule_cron[cron(15 12 * * ? *)], recorded-content, recorded-date
@@ -20033,8 +20041,8 @@ Cohesion: 0.67
 Nodes (3): tests/aws/services/events/test_events_schedule.py::TestScheduleCron::tests_put_rule_with_schedule_cron[cron(* * ? * SAT#3 *)], recorded-content, recorded-date
 
 ### Community 3642 - "Community 3642"
-Cohesion: 0.50
-Nodes (4): describe-deliveries, tests/aws/services/logs/test_logs_delivery.py::TestDeliveries::test_describe_deliveries, recorded-content, recorded-date
+Cohesion: 0.67
+Nodes (3): tests/aws/services/dynamodb/test_dynamodb.py::TestDynamoDB::test_batch_write_not_matching_schema, durations_in_seconds, last_validated_date
 
 ### Community 3643 - "Community 3643"
 Cohesion: 0.67
@@ -20149,8 +20157,8 @@ Cohesion: 0.67
 Nodes (3): events, ResponseMetadata, exec_hist_resp_7
 
 ### Community 3683 - "Community 3683"
-Cohesion: 0.50
-Nodes (4): describe-delivery-destinations, tests/aws/services/logs/test_logs_delivery.py::TestDeliveryDestinations::test_describe_delivery_destinations, recorded-content, recorded-date
+Cohesion: 0.67
+Nodes (3): tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_dynamodbstreams.py::TestDynamoDBEventSourceMapping::test_dynamodb_event_filter[content_or_filter], durations_in_seconds, last_validated_date
 
 ### Community 3684 - "Community 3684"
 Cohesion: 0.50
@@ -20170,11 +20178,11 @@ Nodes (3): tests/aws/services/lambda_/test_lambda_api.py::TestLambdaAlias::test_
 
 ### Community 3689 - "Community 3689"
 Cohesion: 0.67
-Nodes (3): tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_kinesis.py::TestKinesisSource::test_kinesis_event_source_mapping_with_on_failure_destination_config, durations_in_seconds, last_validated_date
+Nodes (3): tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_dynamodbstreams.py::TestDynamoDBEventSourceMapping::test_dynamodb_event_filter[date_time_conversion], durations_in_seconds, last_validated_date
 
 ### Community 3690 - "Community 3690"
-Cohesion: 0.12
-Nodes (16): setup, tests/aws/services/lambda_/test_lambda_api.py::TestLambdaAlias::test_non_existent_alias_deletion, durations_in_seconds, last_validated_date, tests/aws/services/lambda_/test_lambda_api.py::TestLambdaEventInvokeConfig::test_lambda_eventinvokeconfig_exceptions, durations_in_seconds, last_validated_date, tests/aws/services/lambda_/test_lambda_api.py::TestLambdaEventSourceMappings::test_create_event_source_validation_kinesis (+8 more)
+Cohesion: 0.67
+Nodes (3): tests/aws/services/lambda_/test_lambda_api.py::TestLambdaAlias::test_non_existent_alias_deletion, durations_in_seconds, last_validated_date
 
 ### Community 3691 - "Community 3691"
 Cohesion: 0.67
@@ -20194,7 +20202,7 @@ Nodes (3): ReceiveMessageWaitTimeSeconds, description, type
 
 ### Community 3695 - "Community 3695"
 Cohesion: 0.67
-Nodes (3): tests/aws/services/events/test_events_inputs.py::TestInputTransformer::test_input_transformer_nested_keys_replacement[{\"id\" : <userId>}], recorded-content, recorded-date
+Nodes (3): tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_dynamodbstreams.py::TestDynamoDBEventSourceMapping::test_dynamodb_event_filter[prefix_filter], durations_in_seconds, last_validated_date
 
 ### Community 3696 - "Community 3696"
 Cohesion: 0.67
@@ -20362,7 +20370,7 @@ Nodes (3): tests/aws/services/lambda_/test_lambda_common.py::TestLambdaCallingLo
 
 ### Community 3737 - "Community 3737"
 Cohesion: 0.67
-Nodes (3): tests/aws/services/events/test_events_inputs.py::TestInputTransformer::test_input_transformer_nested_keys_replacement[\"<listsingle> single list item <listmulti> multiple list items <systemstring> system account id <payload> payload <userId> user id\"], recorded-content, recorded-date
+Nodes (3): tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_kinesis.py::TestKinesisSource::test_disable_kinesis_event_source_mapping, durations_in_seconds, last_validated_date
 
 ### Community 3738 - "Community 3738"
 Cohesion: 0.67
@@ -20550,7 +20558,7 @@ Nodes (3): tests/aws/services/lambda_/test_lambda_runtimes.py::TestJavaRuntimes:
 
 ### Community 3784 - "Community 3784"
 Cohesion: 0.67
-Nodes (3): tests/aws/services/cloudformation/api/test_changesets.py::test_changeset_for_deleted_stack, durations_in_seconds, last_validated_date
+Nodes (3): tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_kinesis.py::TestKinesisSource::test_duplicate_event_source_mappings, durations_in_seconds, last_validated_date
 
 ### Community 3785 - "Community 3785"
 Cohesion: 0.67
@@ -20561,20 +20569,20 @@ Cohesion: 0.67
 Nodes (3): tests/aws/services/lambda_/test_lambda_runtimes.py::TestJavaRuntimes::test_java_runtime_with_lib, durations_in_seconds, last_validated_date
 
 ### Community 3787 - "Community 3787"
-Cohesion: 0.20
-Nodes (10): setup, tests/aws/services/lambda_/test_lambda_runtimes.py::TestJavaRuntimes::test_java_custom_handler_method_specification[cloud.localstack.sample.LambdaHandlerWithInterfaceAndCustom-INTERFACE], durations_in_seconds, last_validated_date, tests/aws/services/lambda_/test_lambda_runtimes.py::TestJavaRuntimes::test_serializable_input_object[java17], durations_in_seconds, last_validated_date, tests/aws/services/lambda_/test_lambda_runtimes.py::TestJavaRuntimes::test_serializable_input_object[java25] (+2 more)
+Cohesion: 0.67
+Nodes (3): tests/aws/services/lambda_/test_lambda_runtimes.py::TestJavaRuntimes::test_serializable_input_object[java17], durations_in_seconds, last_validated_date
 
 ### Community 3788 - "Community 3788"
 Cohesion: 0.20
-Nodes (10): total, tests/aws/services/lambda_/test_lambda_runtimes.py::TestGoProvidedRuntimes::test_manual_endpoint_injection[provided.al2023], durations_in_seconds, last_validated_date, tests/aws/services/lambda_/test_lambda_runtimes.py::TestGoProvidedRuntimes::test_uncaught_exception_invoke[provided.al2023], durations_in_seconds, last_validated_date, tests/aws/services/lambda_/test_lambda_runtimes.py::TestJavaRuntimes::test_stream_handler[java11] (+2 more)
+Nodes (10): total, tests/aws/services/lambda_/test_lambda_runtimes.py::TestGoProvidedRuntimes::test_uncaught_exception_invoke[provided.al2023], durations_in_seconds, last_validated_date, tests/aws/services/lambda_/test_lambda_runtimes.py::TestJavaRuntimes::test_serializable_input_object[java8.al2], durations_in_seconds, last_validated_date, tests/aws/services/lambda_/test_lambda_runtimes.py::TestJavaRuntimes::test_stream_handler[java21] (+2 more)
 
 ### Community 3789 - "Community 3789"
 Cohesion: 0.67
 Nodes (3): tests/aws/services/lambda_/test_lambda_runtimes.py::TestJavaRuntimes::test_stream_handler[java17], durations_in_seconds, last_validated_date
 
 ### Community 3790 - "Community 3790"
-Cohesion: 0.29
-Nodes (7): setup, tests/aws/services/events/test_events_inputs.py::TestInputPath::test_put_events_with_input_path_nested[event_detail0], durations_in_seconds, last_validated_date, tests/aws/services/events/test_events_inputs.py::TestInputTransformer::test_input_transformer_nested_keys_replacement[{\"method\": \"PUT\", \"path\": \"users-service/users/<userId>\", \"id\": \"<userId>\", \"body\": <payload>}], durations_in_seconds, last_validated_date
+Cohesion: 0.67
+Nodes (3): tests/aws/services/events/test_events_inputs.py::TestInputPath::test_put_events_with_input_path_nested[event_detail0], durations_in_seconds, last_validated_date
 
 ### Community 3791 - "Community 3791"
 Cohesion: 0.67
@@ -20594,7 +20602,7 @@ Nodes (3): tests/aws/services/lambda_/test_lambda_runtimes.py::TestNodeJSRuntime
 
 ### Community 3795 - "Community 3795"
 Cohesion: 0.22
-Nodes (8): tests/aws/services/lambda_/test_lambda_runtimes.py::TestCloudwatchLogs::test_multi_line_prints, last_validated_date, tests/aws/services/lambda_/test_lambda_runtimes.py::TestPythonRuntimes::test_handler_in_submodule[python3.11], durations_in_seconds, last_validated_date, tests/aws/services/lambda_/test_lambda_runtimes.py::TestPythonRuntimes::test_python_runtime_correct_versions[python3.13], durations_in_seconds, last_validated_date
+Nodes (8): tests/aws/services/lambda_/test_lambda_runtimes.py::TestCloudwatchLogs::test_multi_line_prints, last_validated_date, tests/aws/services/lambda_/test_lambda_runtimes.py::TestNodeJSRuntimes::test_invoke_nodejs_es6_lambda[nodejs22.x], durations_in_seconds, last_validated_date, tests/aws/services/lambda_/test_lambda_runtimes.py::TestPythonRuntimes::test_python_runtime_correct_versions[python3.13], durations_in_seconds, last_validated_date
 
 ### Community 3796 - "Community 3796"
 Cohesion: 0.67
@@ -20654,7 +20662,7 @@ Nodes (3): tests/aws/services/lambda_/test_lambda.py::TestLambdaBaseFeatures::te
 
 ### Community 3810 - "Community 3810"
 Cohesion: 0.67
-Nodes (3): tests/aws/services/lambda_/test_lambda.py::TestLambdaBaseFeatures::test_lambda_too_large_response, durations_in_seconds, last_validated_date
+Nodes (3): tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_sqs.py::test_message_body_and_attributes_passed_correctly, durations_in_seconds, last_validated_date
 
 ### Community 3811 - "Community 3811"
 Cohesion: 0.67
@@ -20850,7 +20858,7 @@ Nodes (3): description, type, EnhancedVpcRouting
 
 ### Community 3860 - "Community 3860"
 Cohesion: 0.67
-Nodes (3): tests/aws/services/apigateway/test_apigateway_api.py::TestApiGatewayApiRestApi::test_list_and_delete_apis, durations_in_seconds, last_validated_date
+Nodes (3): tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_sqs.py::TestSQSEventSourceMapping::test_sqs_event_filter[numeric-range], durations_in_seconds, last_validated_date
 
 ### Community 3861 - "Community 3861"
 Cohesion: 0.67
@@ -21128,10 +21136,6 @@ Nodes (3): tests/aws/services/stepfunctions/v2/outputdecl/test_output.py::TestAr
 Cohesion: 0.67
 Nodes (3): tests/aws/services/stepfunctions/v2/outputdecl/test_output.py::TestArgumentsBase::test_output_in_choice[CONDITION_TRUE], recorded-content, recorded-date
 
-### Community 3939 - "Community 3939"
-Cohesion: 0.67
-Nodes (3): tests/aws/services/cloudformation/test_change_set_fn_sub.py::TestChangeSetFnSub::test_fn_sub_addition_parameter_literal, recorded-content, recorded-date
-
 ### Community 3940 - "Community 3940"
 Cohesion: 0.50
 Nodes (4): description, enum, type, InvokeMode
@@ -21162,19 +21166,19 @@ Nodes (3): tests/aws/services/lambda_/test_lambda_common.py::TestLambdaCallingLo
 
 ### Community 3947 - "Community 3947"
 Cohesion: 0.67
-Nodes (3): tests/aws/services/cloudwatch/test_cloudwatch.py::TestCloudwatch::test_aws_sqs_metrics_created, durations_in_seconds, last_validated_date
+Nodes (3): tests/aws/services/events/test_events_inputs.py::TestInputTransformer::test_input_transformer_nested_keys_replacement[<listsingle> single list item], recorded-content, recorded-date
 
 ### Community 3949 - "Community 3949"
 Cohesion: 0.67
-Nodes (3): tests/aws/services/lambda_/test_lambda_runtimes.py::TestJavaRuntimes::test_serializable_input_object[java8.al2], durations_in_seconds, last_validated_date
+Nodes (3): tests/aws/services/events/test_events_inputs.py::TestInputTransformer::test_input_transformer_nested_keys_replacement[\"<listsingle> single list item\"\\n\"<listmulti> multiple list items\"\\n\"<systemstring> system account id\"\\n\"<payload> payload\"\\n\"<userId> user id\"], recorded-content, recorded-date
 
 ### Community 3950 - "Community 3950"
 Cohesion: 0.67
-Nodes (3): tests/aws/services/cloudwatch/test_cloudwatch.py::TestCloudWatchMultiProtocol::test_multi_protocol_client_fixture[json], durations_in_seconds, last_validated_date
+Nodes (3): tests/aws/services/events/test_events_inputs.py::TestInputTransformer::test_input_transformer_nested_keys_replacement[{\"method\": \"PUT\", \"path\": \"users-service/users/<userId>\", \"bod\": [<userId>, \"hardcoded\"]}], recorded-content, recorded-date
 
 ### Community 3952 - "Community 3952"
 Cohesion: 0.67
-Nodes (3): tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_dynamodbstreams.py::TestDynamoDBEventSourceMapping::test_dynamodb_event_filter[content_filter_type], durations_in_seconds, last_validated_date
+Nodes (3): tests/aws/services/events/test_events_inputs.py::TestInputTransformer::test_input_transformer_nested_keys_replacement[{\"multi_replacement\": \"users/<userId>/second/<userId>\"}], recorded-content, recorded-date
 
 ### Community 3953 - "Community 3953"
 Cohesion: 0.67
@@ -21182,7 +21186,7 @@ Nodes (3): description, type, ContentBasedDeduplication
 
 ### Community 3954 - "Community 3954"
 Cohesion: 0.67
-Nodes (3): tests/aws/services/cloudformation/api/test_stack_policies.py::TestStackPolicy::test_not_json_policy, recorded-content, recorded-date
+Nodes (3): tests/aws/services/events/test_events_inputs.py::TestInputTransformer::test_input_transformer_nested_keys_replacement[{\"singlelistitem\": \"<listsingle>\"}], recorded-content, recorded-date
 
 ### Community 3955 - "Community 3955"
 Cohesion: 0.67
@@ -21242,7 +21246,7 @@ Nodes (3): tests/aws/services/lambda_/test_lambda_runtimes.py::TestNodeJSRuntime
 
 ### Community 3976 - "Community 3976"
 Cohesion: 0.67
-Nodes (3): tests/aws/services/lambda_/test_lambda_runtimes.py::TestNodeJSRuntimes::test_invoke_nodejs_es6_lambda[nodejs22.x], durations_in_seconds, last_validated_date
+Nodes (3): tests/aws/services/events/test_events_patterns.py::TestEventPattern::test_event_pattern[arrays_NEG], durations_in_seconds, last_validated_date
 
 ### Community 3977 - "Community 3977"
 Cohesion: 0.67
@@ -21250,7 +21254,7 @@ Nodes (3): tests/aws/services/s3/test_s3_api.py::TestS3BucketEncryption::test_s3
 
 ### Community 3978 - "Community 3978"
 Cohesion: 0.67
-Nodes (3): ServiceName, description, type
+Nodes (3): tests/aws/services/events/test_events_patterns.py::TestEventPattern::test_event_pattern[complex_multi_match_NEG], durations_in_seconds, last_validated_date
 
 ### Community 3979 - "Community 3979"
 Cohesion: 0.67
@@ -21270,7 +21274,7 @@ Nodes (3): tests/aws/services/apigateway/test_apigateway_api.py::TestApiGatewayA
 
 ### Community 3983 - "Community 3983"
 Cohesion: 0.12
-Nodes (16): total, tests/aws/services/s3/test_s3_api.py::TestS3BucketObjectTagging::test_create_bucket_with_empty_tags, durations_in_seconds, last_validated_date, tests/aws/services/s3/test_s3_api.py::TestS3BucketObjectTagging::test_create_bucket_with_tags_us_east_1_idempotency, durations_in_seconds, last_validated_date, tests/aws/services/s3/test_s3_api.py::TestS3BucketObjectTagging::test_put_object_tagging_none_value (+8 more)
+Nodes (16): total, tests/aws/services/s3/test_s3_api.py::TestS3BucketObjectTagging::test_object_tagging_crud, durations_in_seconds, last_validated_date, tests/aws/services/s3/test_s3_api.py::TestS3BucketObjectTagging::test_put_object_tagging_none_value, durations_in_seconds, last_validated_date, tests/aws/services/s3/test_s3_api.py::TestS3BucketPolicy::test_bucket_policy_crud (+8 more)
 
 ### Community 3984 - "Community 3984"
 Cohesion: 0.67
@@ -21290,7 +21294,7 @@ Nodes (3): tests/aws/services/s3/test_s3_api.py::TestS3BucketObjectTagging::test
 
 ### Community 3988 - "Community 3988"
 Cohesion: 0.67
-Nodes (3): tests/aws/services/s3/test_s3_api.py::TestS3BucketObjectTagging::test_put_object_with_tags, durations_in_seconds, last_validated_date
+Nodes (3): tests/aws/services/events/test_events_schedule.py::TestScheduleCron::tests_put_rule_with_schedule_cron, recorded-content, recorded-date
 
 ### Community 3989 - "Community 3989"
 Cohesion: 0.67
@@ -21438,7 +21442,7 @@ Nodes (3): description, type, DeferMaintenanceDuration
 
 ### Community 4025 - "Community 4025"
 Cohesion: 0.25
-Nodes (8): call, durations_in_seconds, tests/aws/services/s3/test_s3_list_operations.py::TestS3ListObjects::test_list_objects_with_prefix[/], durations_in_seconds, last_validated_date, tests/aws/services/s3/test_s3_list_operations.py::TestS3ListObjectsV2::test_list_objects_v2_with_prefix_and_delimiter, durations_in_seconds, last_validated_date
+Nodes (8): call, durations_in_seconds, tests/aws/services/s3/test_s3_list_operations.py::TestS3ListObjectsV2::test_list_objects_v2_with_prefix_and_delimiter, durations_in_seconds, last_validated_date, tests/aws/services/s3/test_s3_list_operations.py::TestS3ListParts::test_list_parts_pagination, durations_in_seconds, last_validated_date
 
 ### Community 4026 - "Community 4026"
 Cohesion: 0.67
@@ -21478,7 +21482,7 @@ Nodes (3): tests/aws/services/lambda_/event_source_mapping/test_lambda_integrati
 
 ### Community 4036 - "Community 4036"
 Cohesion: 0.67
-Nodes (3): tests/aws/services/events/test_api_destinations_and_connection.py::TestEventBridgeConnections::test_list_connections, recorded-content, recorded-date
+Nodes (3): tests/aws/services/events/test_events_schedule.py::TestScheduleCron::tests_put_rule_with_schedule_cron[cron(15 10 ? * 6L 2002-2005)], recorded-content, recorded-date
 
 ### Community 4037 - "Community 4037"
 Cohesion: 0.67
@@ -21530,7 +21534,7 @@ Nodes (3): tests/aws/services/s3/test_s3.py::TestS3::test_copy_object_kms, durat
 
 ### Community 4049 - "Community 4049"
 Cohesion: 0.67
-Nodes (3): tests/aws/services/events/test_events_patterns.py::TestEventPattern::test_event_pattern[arrays_empty_EXC], durations_in_seconds, last_validated_date
+Nodes (3): tests/aws/services/kms/test_kms.py::TestKMS::test_get_parameters_for_import_raises_for_non_external_kms_keys, durations_in_seconds, last_validated_date
 
 ### Community 4050 - "Community 4050"
 Cohesion: 0.67
@@ -21538,7 +21542,7 @@ Nodes (3): tests/aws/services/s3/test_s3.py::TestS3::test_create_bucket_aws_glob
 
 ### Community 4051 - "Community 4051"
 Cohesion: 0.67
-Nodes (3): tests/aws/services/cloudwatch/test_cloudwatch.py::TestCloudwatch::test_breaching_alarm_actions[json], durations_in_seconds, last_validated_date
+Nodes (3): tests/aws/services/kms/test_kms.py::TestKMS::test_key_rotations_encryption_decryption, durations_in_seconds, last_validated_date
 
 ### Community 4052 - "Community 4052"
 Cohesion: 0.67
@@ -21940,6 +21944,10 @@ Nodes (3): tests/aws/services/scheduler/test_scheduler.py::tests_create_schedule
 Cohesion: 0.67
 Nodes (3): tests/aws/services/scheduler/test_scheduler.py::tests_create_schedule_with_invalid_schedule_expression[rate(10 years)], recorded-content, recorded-date
 
+### Community 4154 - "Community 4154"
+Cohesion: 0.31
+Nodes (3): secretsmanager_http_update_secret_val_res(), test_update_secret_with_non_provided_client_request_token(), TestSecretsManager
+
 ### Community 4155 - "Community 4155"
 Cohesion: 0.67
 Nodes (3): test_rotate_secret_multiple_times_with_lambda_success(), test_rotate_secret_with_lambda_success(), _wait_rotation()
@@ -22010,11 +22018,11 @@ Nodes (3): tests/aws/services/sns/test_sns.py::TestSNSPlatformApplicationCrud::t
 
 ### Community 4172 - "Community 4172"
 Cohesion: 0.67
-Nodes (3): tests/aws/services/lambda_/event_source_mapping/test_lambda_integration_dynamodbstreams.py::TestDynamoDBEventSourceMapping::test_dynamodb_invalid_event_filter[single-string], durations_in_seconds, last_validated_date
+Nodes (3): tests/aws/services/kms/test_kms.py::TestKMS::test_rotate_key_on_demand_for_external_keys_decrypts_with_previous_material, durations_in_seconds, last_validated_date
 
 ### Community 4173 - "Community 4173"
 Cohesion: 0.67
-Nodes (3): tests/aws/services/s3/test_s3.py::TestS3::test_create_bucket_head_bucket, durations_in_seconds, last_validated_date
+Nodes (3): tests/aws/services/lambda_/test_lambda_common.py::TestLambdaCallingLocalstack::test_manual_endpoint_injection[java17], durations_in_seconds, last_validated_date
 
 ### Community 4174 - "Community 4174"
 Cohesion: 0.67
@@ -22186,11 +22194,11 @@ Nodes (3): tests/aws/services/sqs/test_sqs_move_task.py::test_cancel_with_invali
 
 ### Community 4216 - "Community 4216"
 Cohesion: 0.67
-Nodes (3): tests/aws/services/events/test_events_schedule.py::TestScheduleCron::tests_put_rule_with_schedule_cron[cron(0/5 5 ? JAN 1-5 2022)], recorded-content, recorded-date
+Nodes (3): tests/aws/services/lambda_/test_lambda_runtimes.py::TestJavaRuntimes::test_java_lambda_subscribe_sns_topic, durations_in_seconds, last_validated_date
 
 ### Community 4217 - "Community 4217"
 Cohesion: 0.67
-Nodes (3): tests/aws/services/events/test_events_schedule.py::TestScheduleCron::tests_put_rule_with_schedule_cron[cron(0 8 1 * ? *)], recorded-content, recorded-date
+Nodes (3): tests/aws/services/lambda_/test_lambda_runtimes.py::TestJavaRuntimes::test_serializable_input_object[java25], durations_in_seconds, last_validated_date
 
 ### Community 4218 - "Community 4218"
 Cohesion: 0.67
@@ -22554,11 +22562,11 @@ Nodes (3): tests/aws/services/stepfunctions/v2/test_state/test_test_state_scenar
 
 ### Community 4310 - "Community 4310"
 Cohesion: 0.67
-Nodes (3): tests/aws/services/kinesis/test_kinesis.py::TestKinesis::test_subscribe_to_shard_cbor_at_timestamp, recorded-content, recorded-date
+Nodes (3): tests/aws/services/lambda_/test_lambda_runtimes.py::TestJavaRuntimes::test_stream_handler[java11], durations_in_seconds, last_validated_date
 
 ### Community 4311 - "Community 4311"
 Cohesion: 0.67
-Nodes (3): tests/aws/services/stepfunctions/v2/test_state/test_test_state_scenarios.py::TestStateCaseScenarios::test_base_inspection_level_debug[IO_RESULT_PASS_STATE], durations_in_seconds, last_validated_date
+Nodes (3): tests/aws/services/lambda_/test_lambda_runtimes.py::TestJavaRuntimes::test_stream_handler[java25], durations_in_seconds, last_validated_date
 
 ### Community 4312 - "Community 4312"
 Cohesion: 0.67
@@ -22682,7 +22690,7 @@ Nodes (3): LoggingConfig, LogFormat, LogGroup
 
 ### Community 4352 - "Community 4352"
 Cohesion: 0.67
-Nodes (3): tests/aws/services/events/test_events_inputs.py::TestInputPath::test_put_events_with_input_path_nested[event_detail1], durations_in_seconds, last_validated_date
+Nodes (3): tests/aws/services/lambda_/test_lambda_runtimes.py::TestPythonRuntimes::test_handler_in_submodule[python3.11], durations_in_seconds, last_validated_date
 
 ### Community 4353 - "Community 4353"
 Cohesion: 0.67
@@ -22746,7 +22754,7 @@ Nodes (3): tests/aws/services/stepfunctions/v2/test_sfn_api_map_run.py::TestSnfA
 
 ### Community 4368 - "Community 4368"
 Cohesion: 0.67
-Nodes (3): tests/aws/services/lambda_/test_lambda_api.py::TestLambdaFunction::test_function_name_and_qualifier_validation[function_name_is_single_invalid-create_function], durations_in_seconds, last_validated_date
+Nodes (3): tests/aws/services/lambda_/test_lambda.py::TestLambdaBaseFeatures::test_large_payloads, durations_in_seconds, last_validated_date
 
 ### Community 4369 - "Community 4369"
 Cohesion: 0.67
@@ -22760,9 +22768,13 @@ Nodes (3): tests/aws/services/events/test_events_patterns.py::TestEventPattern::
 Cohesion: 0.67
 Nodes (3): tests/aws/services/events/test_events_patterns.py::TestEventPattern::test_event_pattern[content_anything_but_number_NEG], recorded-content, recorded-date
 
+### Community 4839 - "Community 4839"
+Cohesion: 0.67
+Nodes (3): tests/aws/services/lambda_/test_lambda.py::TestLambdaBehavior::test_lambda_host_prefix_api_operation, durations_in_seconds, last_validated_date
+
 ### Community 4843 - "Community 4843"
 Cohesion: 0.67
-Nodes (3): tests/aws/services/lambda_/test_lambda_common.py::TestLambdaCallingLocalstack::test_manual_endpoint_injection[dotnet8], durations_in_seconds, last_validated_date
+Nodes (3): DependsOn, Type, CreditBureauLambda41F5F0B1
 
 ### Community 4844 - "Community 4844"
 Cohesion: 0.67
@@ -22820,6 +22832,10 @@ Nodes (3): tests/aws/services/events/test_events_patterns.py::TestEventPattern::
 Cohesion: 0.67
 Nodes (3): tests/aws/services/stepfunctions/v2/test_state/test_test_state_scenarios.py::TestStateCaseScenarios::test_base_inspection_level_trace[IO_PASS_STATE], durations_in_seconds, last_validated_date
 
+### Community 5209 - "Community 5209"
+Cohesion: 0.67
+Nodes (3): description, type, EnableDnsSupport
+
 ### Community 6326 - "Community 6326"
 Cohesion: 0.67
 Nodes (3): tests/aws/services/stepfunctions/v2/test_state/test_test_state_scenarios.py::TestStateCaseScenarios::test_base_lambda_task_state[INFO], durations_in_seconds, last_validated_date
@@ -22866,11 +22882,11 @@ Nodes (3): tests/aws/services/lambda_/test_lambda_common.py::TestLambdaCallingLo
 
 ### Community 6351 - "Community 6351"
 Cohesion: 0.67
-Nodes (3): description, type, CidrBlock
+Nodes (3): description, type, PolicyDocument
 
 ### Community 6352 - "Community 6352"
 Cohesion: 0.67
-Nodes (3): description, type, MaxSessionDuration
+Nodes (3): description, type, Path
 
 ### Community 6353 - "Community 6353"
 Cohesion: 0.67
@@ -22885,8 +22901,8 @@ Cohesion: 0.67
 Nodes (3): tests/aws/services/s3/test_s3_api.py::TestS3BucketNotificationConfiguration::test_bucket_notification_with_invalid_filter_rules, durations_in_seconds, last_validated_date
 
 ### Community 6356 - "Community 6356"
-Cohesion: 0.67
-Nodes (3): tests/aws/services/lambda_/test_lambda_runtimes.py::TestPythonRuntimes::test_handler_in_submodule[python3.14], durations_in_seconds, last_validated_date
+Cohesion: 0.20
+Nodes (10): setup, tests/aws/services/lambda_/test_lambda_runtimes.py::TestGoProvidedRuntimes::test_manual_endpoint_injection[provided.al2023], durations_in_seconds, last_validated_date, tests/aws/services/lambda_/test_lambda_runtimes.py::TestPythonRuntimes::test_handler_in_submodule[python3.10], durations_in_seconds, last_validated_date, tests/aws/services/lambda_/test_lambda_runtimes.py::TestPythonRuntimes::test_handler_in_submodule[python3.14] (+2 more)
 
 ### Community 6357 - "Community 6357"
 Cohesion: 0.67
@@ -22894,7 +22910,7 @@ Nodes (3): tests/aws/services/s3/test_s3_api.py::TestS3BucketObjectTagging::test
 
 ### Community 6358 - "Community 6358"
 Cohesion: 0.67
-Nodes (3): tests/aws/services/lambda_/test_lambda.py::TestLambdaConcurrency::test_reserved_concurrency, durations_in_seconds, last_validated_date
+Nodes (3): tests/aws/services/s3/test_s3_api.py::TestS3BucketEncryption::test_s3_bucket_encryption_sse_kms, durations_in_seconds, last_validated_date
 
 ### Community 6359 - "Community 6359"
 Cohesion: 0.67
@@ -22930,7 +22946,7 @@ Nodes (3): TopicName, description, type
 
 ### Community 6367 - "Community 6367"
 Cohesion: 0.67
-Nodes (3): tests/aws/services/s3/test_s3_api.py::TestS3DeletePrecondition::test_delete_object_if_match_all_non_express, durations_in_seconds, last_validated_date
+Nodes (3): tests/aws/services/s3/test_s3_api.py::TestS3BucketEncryption::test_s3_default_bucket_encryption, durations_in_seconds, last_validated_date
 
 ### Community 6368 - "Community 6368"
 Cohesion: 0.67
@@ -22938,19 +22954,19 @@ Nodes (3): tests/aws/services/s3/test_s3_api.py::TestS3BucketCRUD::test_delete_b
 
 ### Community 6369 - "Community 6369"
 Cohesion: 0.67
-Nodes (3): tests/aws/services/s3/test_s3_api.py::TestS3DeletePrecondition::test_delete_object_if_match_non_express, durations_in_seconds, last_validated_date
+Nodes (3): tests/aws/services/s3/test_s3_api.py::TestS3BucketObjectTagging::test_create_bucket_with_empty_tags, durations_in_seconds, last_validated_date
 
 ### Community 6370 - "Community 6370"
 Cohesion: 0.67
-Nodes (3): tests/aws/services/s3/test_s3_list_operations.py::TestS3ListBuckets::test_list_buckets_by_prefix_with_case_sensitivity, durations_in_seconds, last_validated_date
+Nodes (3): tests/aws/services/s3/test_s3_api.py::TestS3DeletePrecondition::test_delete_object_if_match_modified_non_express, durations_in_seconds, last_validated_date
 
 ### Community 6371 - "Community 6371"
 Cohesion: 0.67
-Nodes (3): tests/aws/services/s3/test_s3_list_operations.py::TestS3ListBuckets::test_list_buckets_when_continuation_token_is_empty, durations_in_seconds, last_validated_date
+Nodes (3): tests/aws/services/s3/test_s3_api.py::TestS3DeletePrecondition::test_delete_object_if_match_size_non_express, durations_in_seconds, last_validated_date
 
 ### Community 6372 - "Community 6372"
 Cohesion: 0.67
-Nodes (3): tests/aws/services/s3/test_s3_api.py::TestS3BucketPolicy::test_bucket_policy_crud, durations_in_seconds, last_validated_date
+Nodes (3): tests/aws/services/s3/test_s3_list_operations.py::TestS3ListObjectsV2::test_list_ops_encoding_type_validation[list_objects_v2], durations_in_seconds, last_validated_date
 
 ### Community 6373 - "Community 6373"
 Cohesion: 0.67
@@ -22966,7 +22982,7 @@ Nodes (3): tests/aws/services/s3/test_s3.py::TestS3::test_create_bucket_with_eu_
 
 ### Community 6376 - "Community 6376"
 Cohesion: 0.67
-Nodes (3): tests/aws/services/s3/test_s3.py::TestS3::test_multipart_complete_multipart_wrong_part, durations_in_seconds, last_validated_date
+Nodes (3): tests/aws/services/s3/test_s3_list_operations.py::TestS3ListObjectVersions::test_list_objects_versions_markers, durations_in_seconds, last_validated_date
 
 ### Community 6377 - "Community 6377"
 Cohesion: 0.67
@@ -22994,19 +23010,23 @@ Nodes (3): tests/aws/services/sns/test_sns.py::TestSNSPlatformApplicationCrud::t
 
 ### Community 6383 - "Community 6383"
 Cohesion: 0.67
-Nodes (3): tests/aws/services/sns/test_sns.py::TestSNSPlatformApplicationCrud::test_create_platform_application_invalid_name[empty], durations_in_seconds, last_validated_date
+Nodes (3): tests/aws/services/s3/test_s3.py::TestS3::test_bucket_constraint_aws_global[us-west-1], durations_in_seconds, last_validated_date
 
 ### Community 6384 - "Community 6384"
 Cohesion: 0.67
-Nodes (3): tests/aws/services/sqs/test_sqs.py::TestSqsProvider::test_create_and_update_queue_attributes[sqs], durations_in_seconds, last_validated_date
+Nodes (3): tests/aws/services/s3/test_s3.py::TestS3::test_bucket_does_not_exist, durations_in_seconds, last_validated_date
 
 ### Community 6385 - "Community 6385"
 Cohesion: 0.67
-Nodes (3): tests/aws/services/stepfunctions/v2/test_sfn_api_tagging.py::TestSnfApiTagging::test_untag_state_machine[tag_keys1], recorded-content, recorded-date
+Nodes (3): Error, ResponseMetadata, error-numeric-type
 
 ### Community 6386 - "Community 6386"
 Cohesion: 0.67
 Nodes (3): tests/aws/services/stepfunctions/v2/test_state/test_field_validation_mode_present.py::TestFieldValidationModePresent::test_present_mode_aws_sdk_lambda_get_function_task[integer_less_than_minimum_allowed], recorded-content, recorded-date
+
+### Community 6392 - "Community 6392"
+Cohesion: 0.67
+Nodes (3): tests/aws/services/sns/test_sns.py::TestSNSPlatformApplicationCrud::test_create_platform_application_invalid_attributes[invalid-cred-first1], durations_in_seconds, last_validated_date
 
 ### Community 6393 - "Community 6393"
 Cohesion: 0.67
@@ -23014,43 +23034,59 @@ Nodes (3): tests/aws/services/stepfunctions/v2/test_state/test_field_validation_
 
 ### Community 6394 - "Community 6394"
 Cohesion: 0.67
-Nodes (3): tests/aws/services/stepfunctions/v2/test_state/test_test_state_scenarios.py::TestStateCaseScenarios::test_base_inspection_level_debug[BASE_SUCCEED_STATE], durations_in_seconds, last_validated_date
+Nodes (3): tests/aws/services/sqs/test_sqs.py::TestSqsProvider::test_create_and_update_queue_attributes[sqs_query], durations_in_seconds, last_validated_date
+
+### Community 6395 - "Community 6395"
+Cohesion: 0.67
+Nodes (3): tests/aws/services/stepfunctions/v2/test_state/test_test_state_scenarios.py::TestStateCaseScenarios::test_base_inspection_level_debug[BASE_RESULT_PASS_STATE], durations_in_seconds, last_validated_date
 
 ### Community 6572 - "Community 6572"
 Cohesion: 0.67
 Nodes (3): tests/aws/services/stepfunctions/v2/test_state/test_test_state_scenarios.py::TestStateCaseScenarios::test_base_inspection_level_trace[IO_RESULT_PASS_STATE], durations_in_seconds, last_validated_date
 
-### Community 6574 - "Community 6574"
+### Community 6573 - "Community 6573"
 Cohesion: 0.67
-Nodes (3): tests/aws/services/stepfunctions/v2/test_sfn_api_tagging.py::TestSnfApiTagging::test_tag_state_machine[tag_list0], recorded-content, recorded-date
+Nodes (3): tests/aws/services/stepfunctions/v2/test_state/test_test_state_scenarios.py::TestStateCaseScenarios::test_base_inspection_level_debug[IO_PASS_STATE], durations_in_seconds, last_validated_date
+
+### Community 6574 - "Community 6574"
+Cohesion: 0.15
+Nodes (13): tag_resource_resp, tests/aws/services/stepfunctions/v2/test_sfn_api_tagging.py::TestSnfApiTagging::test_tag_state_machine[tag_list0], recorded-content, recorded-date, tests/aws/services/stepfunctions/v2/test_sfn_api_tagging.py::TestSnfApiTagging::test_tag_state_machine[tag_list1], recorded-content, recorded-date, tests/aws/services/stepfunctions/v2/test_sfn_api_tagging.py::TestSnfApiTagging::test_tag_state_machine[tag_list2] (+5 more)
 
 ### Community 6575 - "Community 6575"
 Cohesion: 0.67
-Nodes (3): tests/aws/services/stepfunctions/v2/test_sfn_api_tagging.py::TestSnfApiTagging::test_tag_state_machine[tag_list1], recorded-content, recorded-date
+Nodes (3): tests/aws/services/stepfunctions/v2/test_sfn_api_logs.py::TestSnfApiLogs::test_incomplete_logging_configuration[logging_configuration0], recorded-content, recorded-date
 
 ### Community 6576 - "Community 6576"
 Cohesion: 0.67
-Nodes (3): tests/aws/services/stepfunctions/v2/test_sfn_api_tagging.py::TestSnfApiTagging::test_tag_state_machine[tag_list4], recorded-content, recorded-date
+Nodes (3): tests/aws/services/stepfunctions/v2/test_sfn_api_tagging.py::TestSnfApiTagging::test_tag_state_machine[tag_keys1], recorded-content, recorded-date
+
+### Community 6593 - "Community 6593"
+Cohesion: 0.67
+Nodes (3): tests/aws/services/stepfunctions/v2/test_sfn_api_tagging.py::TestSnfApiTagging::test_tag_state_machine[tag_keys3], recorded-content, recorded-date
+
+### Community 6594 - "Community 6594"
+Cohesion: 0.67
+Nodes (3): tests/aws/services/stepfunctions/v2/test_sfn_api_tagging.py::TestSnfApiTagging::test_untag_state_machine[tag_keys0], recorded-content, recorded-date
 
 ## Knowledge Gaps
-- **21607 isolated node(s):** `@opencode-ai/plugin`, `_StubProvider`, `TestDiagnoseEndpoint`, `SomeClass`, `MockComponents` (+21602 more)
+- **21636 isolated node(s):** `@opencode-ai/plugin`, `TestDiagnoseEndpoint`, `SomeClass`, `MockComponents`, `recorded-date` (+21631 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **1640 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **1651 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `short_uid()` connect `Community 4` to `Community 5`, `Community 7`, `Community 9`, `Community 524`, `Community 16`, `Community 18`, `Community 25`, `Community 27`, `Community 29`, `Community 2591`, `Community 31`, `Community 33`, `Community 34`, `Community 1058`, `Community 36`, `Community 37`, `Community 39`, `Community 40`, `Community 41`, `Community 45`, `Community 47`, `Community 48`, `Community 562`, `Community 51`, `Community 55`, `Community 61`, `Community 578`, `Community 68`, `Community 580`, `Community 582`, `Community 583`, `Community 74`, `Community 75`, `Community 76`, `Community 77`, `Community 2126`, `Community 82`, `Community 84`, `Community 88`, `Community 1628`, `Community 96`, `Community 97`, `Community 98`, `Community 99`, `Community 111`, `Community 2160`, `Community 624`, `Community 116`, `Community 2169`, `Community 121`, `Community 1657`, `Community 123`, `Community 125`, `Community 126`, `Community 143`, `Community 148`, `Community 158`, `Community 167`, `Community 172`, `Community 181`, `Community 182`, `Community 192`, `Community 201`, `Community 204`, `Community 2253`, `Community 739`, `Community 2814`, `Community 768`, `Community 1809`, `Community 1307`, `Community 1309`, `Community 1317`, `Community 843`, `Community 338`, `Community 358`, `Community 364`, `Community 367`, `Community 383`, `Community 2950`, `Community 1949`, `Community 440`, `Community 960`, `Community 474`, `Community 479`, `Community 2540`, `Community 2550`?**
-  _High betweenness centrality (0.034) - this node is a cross-community bridge._
+- **Why does `short_uid()` connect `Community 4` to `Community 5`, `Community 7`, `Community 9`, `Community 524`, `Community 16`, `Community 18`, `Community 25`, `Community 27`, `Community 29`, `Community 2591`, `Community 31`, `Community 33`, `Community 34`, `Community 1058`, `Community 36`, `Community 37`, `Community 39`, `Community 40`, `Community 41`, `Community 45`, `Community 47`, `Community 48`, `Community 562`, `Community 51`, `Community 55`, `Community 61`, `Community 62`, `Community 578`, `Community 580`, `Community 583`, `Community 74`, `Community 76`, `Community 77`, `Community 2126`, `Community 82`, `Community 84`, `Community 88`, `Community 96`, `Community 97`, `Community 98`, `Community 99`, `Community 111`, `Community 624`, `Community 116`, `Community 2169`, `Community 121`, `Community 1657`, `Community 123`, `Community 125`, `Community 126`, `Community 142`, `Community 143`, `Community 148`, `Community 2714`, `Community 167`, `Community 172`, `Community 181`, `Community 182`, `Community 3263`, `Community 192`, `Community 201`, `Community 204`, `Community 739`, `Community 242`, `Community 2814`, `Community 254`, `Community 768`, `Community 1809`, `Community 1307`, `Community 1309`, `Community 1317`, `Community 811`, `Community 338`, `Community 358`, `Community 364`, `Community 367`, `Community 381`, `Community 383`, `Community 2950`, `Community 440`, `Community 960`, `Community 474`, `Community 479`, `Community 2550`?**
+  _High betweenness centrality (0.041) - this node is a cross-community bridge._
 - **Why does `ASLParser` connect `Community 53` to `Community 161`, `Community 357`, `Community 69`, `Community 2471`, `Community 171`, `Community 50`, `Community 20`, `Community 2165`, `Community 22`, `Community 23`, `Community 52`, `Community 571`, `Community 93`?**
-  _High betweenness centrality (0.021) - this node is a cross-community bridge._
-- **Why does `Preprocessor` connect `Community 23` to `Community 161`, `Community 2201`, `Community 449`, `Community 102`, `Community 649`, `Community 171`, `Community 80`, `Community 50`, `Community 53`, `Community 22`, `Community 185`, `Community 58`, `Community 571`, `Community 93`?**
-  _High betweenness centrality (0.007) - this node is a cross-community bridge._
+  _High betweenness centrality (0.023) - this node is a cross-community bridge._
+- **Why does `now()` connect `Community 1047` to `Community 358`, `Community 143`, `Community 660`, `Community 885`, `Community 159`?**
+  _High betweenness centrality (0.013) - this node is a cross-community bridge._
 - **Are the 1758 inferred relationships involving `short_uid()` (e.g. with `test_save_load_file()` and `test_load_file_strict()`) actually correct?**
   _`short_uid()` has 1758 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `@opencode-ai/plugin`, `This fixture returns the Boto Session instance for testing.`, `This fixture returns the Boto Session instance for testing a secondary account.` to the rest of the system?**
-  _25339 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _25470 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
   _Cohesion score 0.001423583334862714 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**
-  _Cohesion score 0.0017050638861324542 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.0014616256226994482 - nodes in this community are weakly interconnected._

@@ -135,7 +135,16 @@
     "**/docs/_build/**",
     "**/site/**"
   ],
-  "languages": [],
+  "languages": [
+    "python",
+    "typescript",
+    "make",
+    "terraform",
+    "hcl",
+    "docker",
+    "bash",
+    "javascript"
+  ],
   "frameworks": [],
   "maxFileSize": 1048576,
   "extractDocstrings": true,

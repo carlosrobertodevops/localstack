@@ -2,14 +2,14 @@ from unittest.mock import patch
 
 import pytest
 
-from localstack.services.dynamodb.provider import DynamoDBProvider, get_store
-from localstack.services.dynamodb.utils import (
+from localstack.aws.services.dynamodb.provider import DynamoDBProvider, get_store
+from localstack.aws.services.dynamodb.utils import (
     SCHEMA_CACHE,
     ItemSet,
     SchemaExtractor,
     dynamize_value,
 )
-from localstack.testing.config import (
+from localstack.tooling.testing.config import (
     TEST_AWS_ACCESS_KEY_ID,
     TEST_AWS_ACCOUNT_ID,
     TEST_AWS_REGION_NAME,
@@ -63,7 +63,7 @@ def test_lookup_via_item_set():
             assert not item_set.find_item({**item, "id": {"S": item["id"]["S"] + "-new"}})
 
 
-@patch("localstack.services.dynamodb.utils.SchemaExtractor.get_table_schema")
+@patch("localstack.aws.services.dynamodb.utils.SchemaExtractor.get_table_schema")
 def test_get_key_schema_without_table_definition(mock_get_table_schema):
     schema_extractor = SchemaExtractor()
 

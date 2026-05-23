@@ -10,7 +10,7 @@ import zipfile
 from subprocess import Popen
 from typing import IO, Literal
 
-from localstack.constants import MAVEN_REPO_URL
+from localstack.platform.constants import MAVEN_REPO_URL
 from localstack.utils.files import load_file, mkdir, new_tmp_file, rm_rf, save_file
 from localstack.utils.http import download
 from localstack.utils.run import run

@@ -3,8 +3,8 @@ import logging
 import platform
 import random
 
-from localstack import config
-from localstack.constants import DEFAULT_VOLUME_DIR, DOCKER_IMAGE_NAME
+from localstack.platform import config
+from localstack.platform.constants import DEFAULT_VOLUME_DIR, DOCKER_IMAGE_NAME
 from localstack.utils.collections import ensure_list
 from localstack.utils.container_utils.container_client import (
     ContainerClient,

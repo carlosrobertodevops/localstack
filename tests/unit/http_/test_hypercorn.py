@@ -8,9 +8,9 @@ from werkzeug.wrappers import Request as WerkzeugRequest
 from localstack.aws.api import RequestContext
 from localstack.aws.chain import HandlerChain
 from localstack.aws.gateway import Gateway
-from localstack.config import HostAndPort
-from localstack.http import Response
-from localstack.http.hypercorn import GatewayServer, ProxyServer
+from localstack.platform.config import HostAndPort
+from localstack.platform.http import Response
+from localstack.platform.http.hypercorn import GatewayServer, ProxyServer
 from localstack.utils.net import IP_REGEX, get_free_tcp_port
 from localstack.utils.serving import Server
 

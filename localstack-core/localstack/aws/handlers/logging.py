@@ -5,10 +5,10 @@ from functools import cached_property
 
 from localstack.aws.api import RequestContext, ServiceException
 from localstack.aws.chain import ExceptionHandler, HandlerChain
-from localstack.http import Response
-from localstack.http.request import restore_payload
-from localstack.logging.format import AwsTraceLoggingFormatter, TraceLoggingFormatter
-from localstack.logging.setup import create_default_handler
+from localstack.platform.http import Response
+from localstack.platform.http.request import restore_payload
+from localstack.platform.logging.format import AwsTraceLoggingFormatter, TraceLoggingFormatter
+from localstack.platform.logging.setup import create_default_handler
 
 LOG = logging.getLogger(__name__)
 

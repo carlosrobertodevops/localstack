@@ -4,8 +4,8 @@ import os
 import botocore.exceptions
 import pytest
 
-from localstack.testing.aws.cloudformation_utils import load_template_file
-from localstack.testing.pytest import markers
+from localstack.tooling.testing.aws.cloudformation_utils import load_template_file
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.strings import short_uid
 
 

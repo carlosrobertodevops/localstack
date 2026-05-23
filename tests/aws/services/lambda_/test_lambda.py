@@ -19,23 +19,23 @@ from botocore.config import Config
 from botocore.response import StreamingBody
 from localstack_snapshot.snapshots.transformer import KeyValueBasedTransformer
 
-from localstack import config
+from localstack.platform import config
 from localstack.aws.api.lambda_ import Architecture, InvocationType, InvokeMode, Runtime
 from localstack.aws.connect import ServiceLevelClientFactory
-from localstack.services.lambda_.provider import TAG_KEY_CUSTOM_URL
-from localstack.services.lambda_.runtimes import RUNTIMES_AGGREGATED
-from localstack.testing.aws.lambda_utils import (
+from localstack.aws.services.lambda_.provider import TAG_KEY_CUSTOM_URL
+from localstack.aws.services.lambda_.runtimes import RUNTIMES_AGGREGATED
+from localstack.tooling.testing.aws.lambda_utils import (
     concurrency_update_done,
     concurrency_update_failed,
     get_invoke_init_type,
     update_done,
 )
-from localstack.testing.aws.util import (
+from localstack.tooling.testing.aws.util import (
     create_client_with_keys,
     is_aws_cloud,
 )
-from localstack.testing.pytest import markers
-from localstack.testing.snapshots.transformer_utility import PATTERN_UUID
+from localstack.tooling.testing.pytest import markers
+from localstack.tooling.testing.snapshots.transformer_utility import PATTERN_UUID
 from localstack.utils import files, platform, testutil
 from localstack.utils.aws import arns
 from localstack.utils.aws.arns import get_partition, lambda_function_name

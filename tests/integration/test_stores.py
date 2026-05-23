@@ -6,7 +6,7 @@ def test_nonstandard_regions(monkeypatch, aws_client_factory):
     Ensure that non-standard AWS regions can be used vertically.
     """
     monkeypatch.setenv("MOTO_ALLOW_NONEXISTENT_REGION", "true")
-    monkeypatch.setattr("localstack.config.ALLOW_NONSTANDARD_REGIONS", True)
+    monkeypatch.setattr("localstack.platform.config.ALLOW_NONSTANDARD_REGIONS", True)
 
     # Create a resource in Moto backend
     ec2_client = aws_client_factory(region_name="uranus-south-1").ec2

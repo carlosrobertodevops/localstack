@@ -3,10 +3,10 @@ from typing import Literal
 
 import pytest
 
-from localstack.config import S3_STATIC_WEBSITE_HOSTNAME
-from localstack.constants import AWS_REGION_US_EAST_1
-from localstack.testing.aws.util import is_aws_cloud
-from localstack.testing.pytest import markers
+from localstack.platform.config import S3_STATIC_WEBSITE_HOSTNAME
+from localstack.platform.constants import AWS_REGION_US_EAST_1
+from localstack.tooling.testing.aws.util import is_aws_cloud
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.strings import short_uid
 from localstack.utils.urls import localstack_host
 

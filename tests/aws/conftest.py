@@ -5,10 +5,10 @@ from _pytest.config import Config
 from localstack_snapshot.snapshots import SnapshotSession
 from localstack_snapshot.snapshots.transformer import RegexTransformer
 
-from localstack import config as localstack_config
-from localstack import constants
-from localstack.testing import config as test_config
-from localstack.testing.snapshots.transformer_utility import (
+from localstack.platform import config as localstack_config
+from localstack.platform import constants
+from localstack.tooling.testing import config as test_config
+from localstack.tooling.testing.snapshots.transformer_utility import (
     SNAPSHOT_BASIC_TRANSFORMER,
     SNAPSHOT_BASIC_TRANSFORMER_NEW,
     TransformerUtility,
@@ -42,7 +42,7 @@ def pytest_runtestloop(session):
     if test_config.TEST_SKIP_LOCALSTACK_START:
         return
 
-    from localstack.testing.aws.util import is_aws_cloud
+    from localstack.tooling.testing.aws.util import is_aws_cloud
 
     if is_aws_cloud() and not test_config.TEST_FORCE_LOCALSTACK_START:
         return
@@ -91,7 +91,7 @@ def cdk_template_path():
 @pytest.fixture(scope="session")
 def infrastructure_setup(cdk_template_path, aws_client):
     # Note: import needs to be local to avoid CDK import on every test run, which takes quite some time
-    from localstack.testing.scenario.provisioning import InfraProvisioner
+    from localstack.tooling.testing.scenario.provisioning import InfraProvisioner
 
     def _infrastructure_setup(namespace: str, force_synth: bool | None = False) -> InfraProvisioner:
         """
@@ -166,7 +166,7 @@ def pytest_addhooks(pluginmanager):
         # This is only relevant when running Community Tests against Pro pipeline
         from localstack.pro.core.testing.pytest.store import StoreSerializationCheckerPlugin
 
-        from localstack.testing.aws.util import is_aws_cloud
+        from localstack.tooling.testing.aws.util import is_aws_cloud
 
         if not test_config.TEST_SKIP_LOCALSTACK_START and not is_aws_cloud():
             # this directly accesses LocalStack state in memory, so it is not worth running in tests against external

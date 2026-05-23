@@ -12,8 +12,8 @@ from localstack.aws.api.stepfunctions import (
     LoggingConfiguration,
     LogLevel,
 )
-from localstack.testing.pytest import markers
-from localstack.testing.pytest.stepfunctions.utils import create_state_machine_with_iam_role
+from localstack.tooling.testing.pytest import markers
+from localstack.tooling.testing.pytest.stepfunctions.utils import create_state_machine_with_iam_role
 from localstack.utils.strings import short_uid
 from localstack.utils.sync import poll_condition
 from tests.aws.services.stepfunctions.templates.base.base_templates import BaseTemplate

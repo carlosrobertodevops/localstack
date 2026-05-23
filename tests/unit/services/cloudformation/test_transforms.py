@@ -1,6 +1,6 @@
 from unittest.mock import MagicMock
 
-from localstack.services.cloudformation.engine.transformers import (
+from localstack.aws.services.cloudformation.engine.transformers import (
     expand_fn_foreach,
 )
 

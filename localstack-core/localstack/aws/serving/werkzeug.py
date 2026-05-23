@@ -9,9 +9,7 @@ from werkzeug.serving import WSGIRequestHandler
 if TYPE_CHECKING:
     from _typeshed.wsgi import WSGIEnvironment
 
-from localstack import constants
-
-
+from localstack.platform import constants
 def serve(
     gateway: Gateway,
     host: str = "localhost",

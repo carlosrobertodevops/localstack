@@ -1,5 +1,5 @@
-from localstack.http import Request
-from localstack.services.apigateway.next_gen.execute_api.router import ApiGatewayEndpoint
+from localstack.platform.http import Request
+from localstack.aws.services.apigateway.next_gen.execute_api.router import ApiGatewayEndpoint
 
 
 class TestApiGatewayEndpoint:

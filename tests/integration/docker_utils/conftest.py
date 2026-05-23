@@ -2,7 +2,7 @@ import os
 
 import pytest
 
-from localstack.config import is_env_not_false
+from localstack.platform.config import is_env_not_false
 from localstack.utils.container_utils.container_client import ContainerClient
 from localstack.utils.container_utils.docker_cmd_client import CmdDockerClient
 from localstack.utils.container_utils.docker_sdk_client import SdkDockerClient

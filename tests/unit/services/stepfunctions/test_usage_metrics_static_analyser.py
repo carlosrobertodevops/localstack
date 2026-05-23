@@ -2,8 +2,8 @@ import json
 
 import pytest
 
-from localstack.services.stepfunctions.asl.component.common.query_language import QueryLanguageMode
-from localstack.services.stepfunctions.asl.static_analyser.usage_metrics_static_analyser import (
+from localstack.aws.services.stepfunctions.asl.component.common.query_language import QueryLanguageMode
+from localstack.aws.services.stepfunctions.asl.static_analyser.usage_metrics_static_analyser import (
     UsageMetricsStaticAnalyser,
 )
 

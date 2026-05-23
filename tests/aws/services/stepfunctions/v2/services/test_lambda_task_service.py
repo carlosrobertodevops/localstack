@@ -4,9 +4,9 @@ import pytest
 from localstack_snapshot.snapshots.transformer import JsonpathTransformer, RegexTransformer
 
 from localstack.aws.api.lambda_ import LogType, Runtime
-from localstack.testing.aws.util import is_aws_cloud
-from localstack.testing.pytest import markers
-from localstack.testing.pytest.stepfunctions.utils import (
+from localstack.tooling.testing.aws.util import is_aws_cloud
+from localstack.tooling.testing.pytest import markers
+from localstack.tooling.testing.pytest.stepfunctions.utils import (
     create_and_record_execution,
 )
 from localstack.utils.strings import short_uid

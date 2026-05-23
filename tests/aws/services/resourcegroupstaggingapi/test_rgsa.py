@@ -1,6 +1,6 @@
 import pytest
 
-from localstack.testing.pytest import markers
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.analytics.metadata import is_license_activated
 
 

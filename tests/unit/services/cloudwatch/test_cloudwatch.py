@@ -2,8 +2,8 @@ from unittest.mock import ANY, Mock, call
 
 import pytest
 
-from localstack.services.cloudwatch import alarm_scheduler
-from localstack.services.cloudwatch.alarm_scheduler import COMPARISON_OPS
+from localstack.aws.services.cloudwatch import alarm_scheduler
+from localstack.aws.services.cloudwatch.alarm_scheduler import COMPARISON_OPS
 from localstack.utils.patch import Patch, Patches
 
 

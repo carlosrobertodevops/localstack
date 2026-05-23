@@ -2,14 +2,14 @@ import pytest
 from werkzeug.datastructures.headers import Headers
 
 from localstack.aws.api.apigateway import Integration, IntegrationType
-from localstack.http import Request
-from localstack.services.apigateway.next_gen.execute_api.api import RestApiGatewayHandlerChain
-from localstack.services.apigateway.next_gen.execute_api.context import (
+from localstack.platform.http import Request
+from localstack.aws.services.apigateway.next_gen.execute_api.api import RestApiGatewayHandlerChain
+from localstack.aws.services.apigateway.next_gen.execute_api.context import (
     InvocationResponse,
     RestApiInvocationContext,
 )
-from localstack.services.apigateway.next_gen.execute_api.handlers import MethodResponseHandler
-from localstack.services.apigateway.next_gen.execute_api.router import ApiGatewayEndpoint
+from localstack.aws.services.apigateway.next_gen.execute_api.handlers import MethodResponseHandler
+from localstack.aws.services.apigateway.next_gen.execute_api.router import ApiGatewayEndpoint
 
 
 @pytest.fixture

@@ -11,6 +11,7 @@ from . import (
     internal_requests,
     legacy,
     logging,
+    multi_cloud,
     presigned_url,
     region,
     service,
@@ -39,6 +40,7 @@ handle_service_exception = service.ServiceExceptionSerializer()
 handle_internal_failure = fallback.InternalFailureHandler()
 serve_custom_service_request_handlers = chain.CompositeHandler()
 serve_localstack_resources = internal.LocalstackResourceHandler()
+serve_multi_cloud_routes = multi_cloud.MultiCloudRouterHandler()
 run_custom_response_handlers = chain.CompositeResponseHandler()
 modify_service_response = service.ServiceResponseHandlers()
 parse_service_response = service.ServiceResponseParser()

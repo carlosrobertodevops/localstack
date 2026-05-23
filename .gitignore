@@ -13,8 +13,12 @@ htmlcov
 
 .cache
 .filesystem
+
 /infra/
 localstack/infra/
+
+/graphify-out/
+/.codegraph/
 
 /node_modules/
 package-lock.json
@@ -76,3 +80,4 @@ gen/
 
 # setuptools_scm version.py
 */*/version.py
+localstack-core/localstack/platform/version.py

@@ -3,7 +3,7 @@ from operator import itemgetter
 
 import pytest
 
-from localstack.testing.pytest import markers
+from localstack.tooling.testing.pytest import markers
 
 
 @pytest.mark.skip(reason="flaky")

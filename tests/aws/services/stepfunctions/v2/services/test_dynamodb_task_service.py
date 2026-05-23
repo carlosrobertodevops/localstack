@@ -5,8 +5,8 @@ from localstack_snapshot.snapshots.transformer import (
     RegexTransformer,
 )
 
-from localstack.testing.pytest import markers
-from localstack.testing.pytest.stepfunctions.utils import (
+from localstack.tooling.testing.pytest import markers
+from localstack.tooling.testing.pytest.stepfunctions.utils import (
     create_and_record_execution,
     create_state_machine_with_iam_role,
 )

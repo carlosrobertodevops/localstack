@@ -4,8 +4,8 @@ import pytest
 from localstack_snapshot.snapshots.transformer import RegexTransformer
 
 from localstack.aws.api.stepfunctions import StateMachineType
-from localstack.testing.pytest import markers
-from localstack.testing.pytest.stepfunctions.utils import (
+from localstack.tooling.testing.pytest import markers
+from localstack.tooling.testing.pytest.stepfunctions.utils import (
     create_and_record_express_async_execution,
     create_and_record_express_sync_execution,
 )

@@ -1,9 +1,9 @@
-from localstack.services.lambda_.api_utils import (
+from localstack.aws.services.lambda_.api_utils import (
     is_qualifier_expression,
     qualifier_is_alias,
     qualifier_is_version,
 )
-from localstack.services.lambda_.runtimes import (
+from localstack.aws.services.lambda_.runtimes import (
     ALL_RUNTIMES,
     IMAGE_MAPPING,
     MISSING_RUNTIMES,

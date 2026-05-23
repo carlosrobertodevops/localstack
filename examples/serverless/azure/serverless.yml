@@ -1,0 +1,46 @@
+# Azure Functions via Serverless Framework, pointed at LocalStack.
+# Note: serverless-azure-functions targets ARM (Microsoft.Web/sites). Our
+# emulator hosts the Functions runtime under the AzureGateway. Limited
+# coverage today: HTTP triggers only.
+service: sls-localstack-azure
+frameworkVersion: ">=3.30.0 <4.0.0"
+
+provider:
+  name: azure
+  region: eastus
+  runtime: python3.11
+  stage: dev
+  subscriptionId: 00000000-0000-0000-0000-000000000000
+  tenantId: localstack-tenant
+  appServicePlanName: sls-localstack-plan
+  prefix: ${self:service}
+  # Hits the ARM endpoint via metadata_host override applied by env vars
+  # (see env.sh).
+
+plugins:
+  - serverless-azure-functions
+
+# How to deploy against LocalStack:
+#
+#   source env.sh   # exports AZURE_CLIENT_ID/SECRET/TENANT + ARM_METADATA_HOST
+#   serverless deploy
+#
+# env.sh content:
+#   export AZURE_CLIENT_ID=00000000-0000-0000-0000-000000000001
+#   export AZURE_CLIENT_SECRET=test-secret
+#   export AZURE_TENANT_ID=localstack-tenant
+#   export AZURE_SUBSCRIPTION_ID=00000000-0000-0000-0000-000000000000
+#   export ARM_METADATA_HOST=localhost:4569
+#   export NODE_EXTRA_CA_CERTS="$PWD/../../../localstack-tls/certs/cert.pem"
+#   export NODE_TLS_REJECT_UNAUTHORIZED=0
+
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - http: true
+        x-azure-settings:
+          methods:
+            - GET
+          authLevel: anonymous
+          route: hello

@@ -7,10 +7,10 @@ from localstack_snapshot.snapshots.transformer import SortingTransformer
 from tests.aws.services.apigateway.apigateway_fixtures import api_invoke_url
 from tests.aws.services.cloudformation.conftest import skipped_v2_items
 
-from localstack import constants
+from localstack.platform import constants
 from localstack.aws.api.lambda_ import Runtime
-from localstack.testing.aws.util import is_aws_cloud
-from localstack.testing.pytest import markers
+from localstack.tooling.testing.aws.util import is_aws_cloud
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.common import short_uid
 from localstack.utils.files import load_file
 from localstack.utils.run import to_str

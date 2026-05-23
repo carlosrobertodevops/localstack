@@ -132,7 +132,7 @@ from werkzeug.http import parse_accept_header
 
 from localstack.aws.api import CommonServiceException, ServiceException
 from localstack.aws.spec import ProtocolName, load_service
-from localstack.constants import (
+from localstack.platform.constants import (
     APPLICATION_AMZ_CBOR_1_1,
     APPLICATION_AMZ_JSON_1_0,
     APPLICATION_AMZ_JSON_1_1,
@@ -141,7 +141,7 @@ from localstack.constants import (
     APPLICATION_XML,
     TEXT_XML,
 )
-from localstack.http import Response
+from localstack.platform.http import Response
 from localstack.utils.common import to_bytes, to_str
 from localstack.utils.strings import long_uid
 from localstack.utils.xml import strip_xmlns
@@ -2419,7 +2419,7 @@ def aws_response_serializer(
     A decorator for an HTTP route that can serialize return values or exceptions into AWS responses.
     This can be used to create AWS request handlers in a convenient way. Example usage::
 
-        from localstack.http import route, Request
+        from localstack.platform.http import route, Request
         from localstack.aws.api.sqs import ListQueuesResult
 
         @route("/_aws/sqs/queues")

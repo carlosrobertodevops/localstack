@@ -10,39 +10,39 @@ import pytest
 import xmltodict
 
 from localstack.aws.api.apigateway import Model
-from localstack.constants import (
+from localstack.platform.constants import (
     APPLICATION_JSON,
     APPLICATION_XML,
     AWS_REGION_US_EAST_1,
     DEFAULT_AWS_ACCOUNT_ID,
 )
-from localstack.services.apigateway.helpers import (
+from localstack.aws.services.apigateway.helpers import (
     ModelResolver,
     OpenAPISpecificationResolver,
     apply_json_patch_safe,
 )
-from localstack.services.apigateway.legacy.helpers import (
+from localstack.aws.services.apigateway.legacy.helpers import (
     RequestParametersResolver,
     extract_path_params,
     extract_query_string_params,
     get_resource_for_path,
 )
-from localstack.services.apigateway.legacy.integration import (
+from localstack.aws.services.apigateway.legacy.integration import (
     LambdaProxyIntegration,
     apply_request_parameters,
 )
-from localstack.services.apigateway.legacy.invocations import (
+from localstack.aws.services.apigateway.legacy.invocations import (
     ApiInvocationContext,
     BadRequestBody,
     RequestValidator,
 )
-from localstack.services.apigateway.legacy.templates import (
+from localstack.aws.services.apigateway.legacy.templates import (
     RequestTemplates,
     ResponseTemplates,
     VelocityUtilApiGateway,
 )
-from localstack.services.apigateway.models import ApiGatewayStore, RestApiContainer
-from localstack.testing.config import TEST_AWS_REGION_NAME
+from localstack.aws.services.apigateway.models import ApiGatewayStore, RestApiContainer
+from localstack.tooling.testing.config import TEST_AWS_REGION_NAME
 from localstack.utils.aws.aws_responses import requests_response
 from localstack.utils.common import clone
 

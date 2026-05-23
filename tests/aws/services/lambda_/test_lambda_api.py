@@ -27,28 +27,28 @@ from botocore.config import Config
 from botocore.exceptions import ClientError, ParamValidationError
 from localstack_snapshot.snapshots.transformer import SortingTransformer
 
-from localstack import config
+from localstack.platform import config
 from localstack.aws.api.lambda_ import (
     Architecture,
     LogFormat,
     Runtime,
 )
-from localstack.config import HostAndPort
-from localstack.services.lambda_.api_utils import ARCHITECTURES
-from localstack.services.lambda_.provider import TAG_KEY_CUSTOM_URL
-from localstack.services.lambda_.provider_utils import LambdaLayerVersionIdentifier
-from localstack.services.lambda_.runtimes import (
+from localstack.platform.config import HostAndPort
+from localstack.aws.services.lambda_.api_utils import ARCHITECTURES
+from localstack.aws.services.lambda_.provider import TAG_KEY_CUSTOM_URL
+from localstack.aws.services.lambda_.provider_utils import LambdaLayerVersionIdentifier
+from localstack.aws.services.lambda_.runtimes import (
     ALL_RUNTIMES,
     DEPRECATED_RUNTIMES,
     SNAP_START_SUPPORTED_RUNTIMES,
 )
-from localstack.testing.aws.lambda_utils import (
+from localstack.tooling.testing.aws.lambda_utils import (
     _await_dynamodb_table_active,
     _await_event_source_mapping_enabled,
     is_docker_runtime_executor,
 )
-from localstack.testing.aws.util import is_aws_cloud
-from localstack.testing.pytest import markers
+from localstack.tooling.testing.aws.util import is_aws_cloud
+from localstack.tooling.testing.pytest import markers
 from localstack.utils import testutil
 from localstack.utils.aws import arns
 from localstack.utils.aws.arns import (
@@ -1454,8 +1454,8 @@ class TestLambdaFunction:
     ):
         # patch a function necessary for the lambda update to wait until we release it
         # to be able to reliably capture the in-progress update state in LocalStack
-        from localstack.services.lambda_.invocation import docker_runtime_executor
-        from localstack.services.lambda_.invocation.docker_runtime_executor import (
+        from localstack.aws.services.lambda_.invocation import docker_runtime_executor
+        from localstack.aws.services.lambda_.invocation.docker_runtime_executor import (
             get_runtime_client_path,
         )
 
@@ -1507,8 +1507,8 @@ class TestLambdaFunction:
     ):
         # patch a function necessary for the lambda update to wait until we release it
         # to be able to reliably capture the in-progress update state in LocalStack
-        from localstack.services.lambda_.invocation import docker_runtime_executor
-        from localstack.services.lambda_.invocation.docker_runtime_executor import (
+        from localstack.aws.services.lambda_.invocation import docker_runtime_executor
+        from localstack.aws.services.lambda_.invocation.docker_runtime_executor import (
             get_runtime_client_path,
         )
 

@@ -11,8 +11,8 @@ from localstack.aws.api.stepfunctions import (
     LoggingConfiguration,
     LogLevel,
 )
-from localstack.testing.pytest import markers
-from localstack.testing.pytest.stepfunctions.utils import (
+from localstack.tooling.testing.pytest import markers
+from localstack.tooling.testing.pytest.stepfunctions.utils import (
     await_execution_terminated,
     create_and_record_logs,
     create_state_machine_with_iam_role,

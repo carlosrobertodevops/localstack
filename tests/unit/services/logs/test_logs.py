@@ -1,4 +1,4 @@
-from localstack.services.logs.provider import get_pattern_matcher
+from localstack.aws.services.logs.provider import get_pattern_matcher
 
 
 class TestCloudWatchLogs:

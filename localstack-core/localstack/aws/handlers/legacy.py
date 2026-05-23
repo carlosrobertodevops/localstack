@@ -2,8 +2,8 @@
 
 import logging
 
-from localstack import config
-from localstack.http import Response
+from localstack.platform import config
+from localstack.platform.http import Response
 
 from ..api import RequestContext
 from ..chain import HandlerChain
@@ -28,6 +28,6 @@ def set_close_connection_header(_chain: HandlerChain, context: RequestContext, r
 
 class EdgeRouterHandler(RouterHandler):
     def __init__(self, respond_not_found=False) -> None:
-        from localstack.services.edge import ROUTER
+        from localstack.aws.services.edge import ROUTER
 
         super().__init__(ROUTER, respond_not_found)

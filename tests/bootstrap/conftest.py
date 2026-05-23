@@ -2,11 +2,11 @@ import os
 
 import pytest
 
-from localstack import constants
-from localstack.testing.scenario.provisioning import InfraProvisioner
+from localstack.platform import constants
+from localstack.tooling.testing.scenario.provisioning import InfraProvisioner
 
 pytest_plugins = [
-    "localstack.testing.pytest.bootstrap",
+    "localstack.tooling.testing.pytest.bootstrap",
 ]
 
 

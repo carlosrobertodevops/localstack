@@ -7,10 +7,10 @@ import pytest
 from localstack_snapshot.snapshots.transformer import SortingTransformer
 from tests.aws.services.events.helper_functions import is_v2_provider
 
-from localstack import config
+from localstack.platform import config
 from localstack.aws.api.lambda_ import InvocationType, Runtime, State
-from localstack.testing.aws.util import in_default_partition
-from localstack.testing.pytest import markers
+from localstack.tooling.testing.aws.util import in_default_partition
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.aws.arns import get_partition
 from localstack.utils.common import short_uid
 from localstack.utils.files import load_file

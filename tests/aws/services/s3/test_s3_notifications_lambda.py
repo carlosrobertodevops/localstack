@@ -5,9 +5,9 @@ import pytest
 from botocore.config import Config
 from botocore.exceptions import ClientError
 
-from localstack.testing.aws.lambda_utils import _await_dynamodb_table_active
-from localstack.testing.aws.util import in_default_partition
-from localstack.testing.pytest import markers
+from localstack.tooling.testing.aws.lambda_utils import _await_dynamodb_table_active
+from localstack.tooling.testing.aws.util import in_default_partition
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.aws import arns
 from localstack.utils.aws.arns import get_partition
 from localstack.utils.http import safe_requests as requests

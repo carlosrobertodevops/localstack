@@ -7,7 +7,7 @@ from typing import Any
 
 import requests
 
-from localstack import config, constants
+from localstack.platform import config, constants
 from localstack.utils.http import get_proxies
 from localstack.utils.time import now
 

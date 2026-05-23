@@ -2,7 +2,7 @@ import pytest
 from localstack_snapshot.snapshots import SnapshotSession
 from localstack_snapshot.snapshots.transformer import RegexTransformer
 
-from localstack.testing.snapshots.transformer_utility import (
+from localstack.tooling.testing.snapshots.transformer_utility import (
     SNAPSHOT_BASIC_TRANSFORMER_NEW,
     TransformerUtility,
 )

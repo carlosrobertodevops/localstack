@@ -1,0 +1,239 @@
+AGENTS.md
+CLAUDE.md
+GEMINI.md
+.github/copilot-instructions.md
+.gemini/
+.opencode/
+.codex/
+graphify-out/cache/
+# =========================
+# Dependency directories
+# =========================
+task_modules/
+tasks/
+prompts/
+public/
+public/node_modules/
+reports/
+.claide/
+.github/
+.opencode/
+node_modules/
+bower_components/
+vendor/
+packages/*/node_modules/
+.serena/
+.graphify*.json
+.pnpm-store/
+.npm/
+.yarn/
+.yarn-cache/
+.yarn/unplugged/
+.yarn/install-state.gz
+*.md/
+*.json/
+# =========================
+# Build / distribution
+# =========================
+dist/
+build/
+out/
+target/
+release/
+debug/
+bin/
+obj/
+public/build/
+storybook-static/
+.next/
+.nuxt/
+.svelte-kit/
+.vercel/
+.netlify/
+.parcel-cache/
+.cache/
+.tmp/
+temp/
+tmp/
+compiled/
+generated/
+
+# =========================
+# Python
+# =========================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.python-version
+.venv/
+venv/
+env/
+ENV/
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+.tox/
+.nox/
+.ipynb_checkpoints/
+
+# =========================
+# Java / Kotlin / Gradle
+# =========================
+.gradle/
+.gradle-cache/
+*.class
+*.jar
+*.war
+*.ear
+
+# =========================
+# Go / Rust / C / C++
+# =========================
+target/
+Cargo.lock
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+Makefile
+*.o
+*.so
+*.a
+*.dll
+*.exe
+
+# =========================
+# Logs / temp / reports
+# =========================
+*.log
+logs/
+log/
+*.tmp
+*.temp
+*.pid
+*.seed
+*.stackdump
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+coverage/
+.nyc_output/
+*.lcov
+
+# =========================
+# Version control / editor / OS junk
+# =========================
+.git/
+.gitignore
+.gitattributes
+.github/
+.gitlab/
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# =========================
+# Lockfiles (optional)
+# =========================
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+bun.lockb
+poetry.lock
+Pipfile.lock
+Cargo.lock
+
+# =========================
+# Archives / binaries
+# =========================
+*.zip
+*.tar
+*.gz
+*.tgz
+*.bz2
+*.7z
+*.rar
+*.iso
+*.dmg
+*.bin
+*.dat
+*.sqlite
+*.db
+
+# =========================
+# Media files (heavy, low semantic value)
+# Remove these lines if they matter in your workflow
+# =========================
+*.mp3
+*.wav
+*.flac
+*.m4a
+*.aac
+*.mp4
+*.mkv
+*.mov
+*.avi
+*.webm
+*.psd
+*.ai
+
+# =========================
+# Minified / generated frontend artifacts
+# =========================
+*.min.js
+*.min.css
+*.map
+
+# =========================
+# Obsidian local/cache files
+# =========================
+.obsidian/workspace.json
+.obsidian/workspaces.json
+.obsidian/cache/
+.trash/
+
+# =========================
+# Graphify outputs (avoid self-reindex loops)
+# =========================
+graphify-out/
+graph.json
+GRAPH_REPORT.md
+*.graph.html
+
+# =========================
+# Data folders often too large / noisy
+# =========================
+data/cache/
+data/tmp/
+data/temp/
+archive/
+archives/
+backups/
+backup/
+exports/
+export/
+snapshots/
+
+# .graphifyignore
+node_modules/
+dist/
+build/
+coverage/
+.next/
+tmp/
+*.log
+
+# instruções de agentes
+AGENTS.md
+CLAUDE.md
+GEMINI.md
+.opencode/
+.claude/
+
+# artefatos grandes que não ajudam
+public/uploads/
+public/videos/
+*.generated.py

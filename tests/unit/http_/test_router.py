@@ -6,8 +6,8 @@ import werkzeug
 from werkzeug.exceptions import MethodNotAllowed, NotFound
 from werkzeug.routing import RequestRedirect, Submount
 
-from localstack.http import Request, Response, Router
-from localstack.http.router import (
+from localstack.platform.http import Request, Response, Router
+from localstack.platform.http.router import (
     E,
     GreedyPathConverter,
     RequestArguments,

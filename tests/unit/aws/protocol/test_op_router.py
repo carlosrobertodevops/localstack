@@ -4,8 +4,8 @@ from werkzeug.routing import Map, Rule
 
 from localstack.aws.protocol.op_router import RestServiceOperationRouter
 from localstack.aws.spec import list_services, load_service
-from localstack.http import Request
-from localstack.http.router import GreedyPathConverter
+from localstack.platform.http import Request
+from localstack.platform.http.router import GreedyPathConverter
 
 
 def _collect_services():

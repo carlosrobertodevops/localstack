@@ -14,9 +14,9 @@ from localstack.aws.protocol.routing import (
     post_process_arg_name,
     transform_path_params_to_rule_vars,
 )
-from localstack.http import Request
-from localstack.http.request import get_raw_path
-from localstack.http.router import GreedyPathConverter
+from localstack.platform.http import Request
+from localstack.platform.http.request import get_raw_path
+from localstack.platform.http.router import GreedyPathConverter
 
 
 class _HttpOperation(NamedTuple):

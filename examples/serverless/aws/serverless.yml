@@ -1,0 +1,50 @@
+service: sls-localstack-aws
+frameworkVersion: ">=3.30.0 <4.0.0"
+
+provider:
+  name: aws
+  runtime: python3.11
+  region: us-east-1
+  stage: dev
+  environment:
+    DEMO_BUCKET: ${self:service}-${sls:stage}
+
+plugins:
+  - serverless-localstack
+
+custom:
+  localstack:
+    stages:
+      - dev
+    host: http://localhost
+    edgePort: 4566
+    autostart: false
+    lambda:
+      mountCode: false
+    docker:
+      sudo: false
+
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - http:
+          path: /hello
+          method: get
+      - s3:
+          bucket: ${self:provider.environment.DEMO_BUCKET}
+          event: s3:ObjectCreated:*
+
+resources:
+  Resources:
+    DemoTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: ${self:service}-${sls:stage}-table
+        BillingMode: PAY_PER_REQUEST
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH

@@ -19,8 +19,8 @@ from docker.models.containers import Container
 from docker.types import LogConfig as DockerLogConfig
 from docker.utils.socket import STDERR, STDOUT, frames_iter
 
-from localstack.config import LS_LOG
-from localstack.constants import TRACE_LOG_LEVELS
+from localstack.platform.config import LS_LOG
+from localstack.platform.constants import TRACE_LOG_LEVELS
 from localstack.utils.collections import ensure_list
 from localstack.utils.container_utils.container_client import (
     AccessDenied,
@@ -75,7 +75,7 @@ class SdkDockerClient(ContainerClient):
 
     @staticmethod
     def _create_client():
-        from localstack.config import DOCKER_SDK_DEFAULT_RETRIES, DOCKER_SDK_DEFAULT_TIMEOUT_SECONDS
+        from localstack.platform.config import DOCKER_SDK_DEFAULT_RETRIES, DOCKER_SDK_DEFAULT_TIMEOUT_SECONDS
 
         for attempt in range(0, DOCKER_SDK_DEFAULT_RETRIES + 1):
             try:

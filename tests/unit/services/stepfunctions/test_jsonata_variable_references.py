@@ -5,7 +5,7 @@ Regression tests for https://github.com/localstack/localstack/issues/13579
 
 import pytest
 
-from localstack.services.stepfunctions.asl.jsonata.jsonata import (
+from localstack.aws.services.stepfunctions.asl.jsonata.jsonata import (
     IllegalJSONataVariableReference,
     extract_jsonata_variable_references,
 )

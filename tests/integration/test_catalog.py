@@ -3,14 +3,14 @@ import json
 import pytest
 from botocore.exceptions import WaiterError
 
-from localstack import config
-from localstack.services.cloudformation.engine.v2 import (
+from localstack.platform import config
+from localstack.aws.services.cloudformation.engine.v2 import (
     change_set_resource_support_checker as support_checker_module,
 )
-from localstack.services.cloudformation.engine.v2.change_set_resource_support_checker import (
+from localstack.aws.services.cloudformation.engine.v2.change_set_resource_support_checker import (
     ChangeSetResourceSupportChecker,
 )
-from localstack.testing.pytest import markers
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.catalog.catalog import (
     AwsServicesSupportStatus,
     CatalogPlugin,

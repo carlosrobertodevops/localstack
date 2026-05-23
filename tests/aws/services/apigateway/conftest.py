@@ -4,9 +4,9 @@ from typing import TYPE_CHECKING
 import pytest
 from botocore.config import Config
 
-from localstack import config
-from localstack.constants import APPLICATION_JSON
-from localstack.testing.aws.util import is_aws_cloud
+from localstack.platform import config
+from localstack.platform.constants import APPLICATION_JSON
+from localstack.tooling.testing.aws.util import is_aws_cloud
 from localstack.utils.strings import short_uid
 from tests.aws.services.apigateway.apigateway_fixtures import (
     create_rest_api_deployment,

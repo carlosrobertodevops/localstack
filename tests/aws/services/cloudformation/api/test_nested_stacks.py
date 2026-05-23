@@ -3,9 +3,9 @@ import os
 import pytest
 from botocore.exceptions import ClientError, WaiterError
 
-from localstack import config
-from localstack.testing.aws.util import is_aws_cloud
-from localstack.testing.pytest import markers
+from localstack.platform import config
+from localstack.tooling.testing.aws.util import is_aws_cloud
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.files import load_file
 from localstack.utils.strings import short_uid
 from localstack.utils.sync import retry

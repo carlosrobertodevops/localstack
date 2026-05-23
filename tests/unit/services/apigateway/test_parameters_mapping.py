@@ -5,18 +5,18 @@ import pytest
 from rolo import Request
 from werkzeug.datastructures import Headers
 
-from localstack.services.apigateway.next_gen.execute_api.context import (
+from localstack.aws.services.apigateway.next_gen.execute_api.context import (
     EndpointResponse,
     InvocationRequest,
     RestApiInvocationContext,
 )
-from localstack.services.apigateway.next_gen.execute_api.gateway_response import (
+from localstack.aws.services.apigateway.next_gen.execute_api.gateway_response import (
     Default4xxError,
     Default5xxError,
 )
-from localstack.services.apigateway.next_gen.execute_api.handlers import InvocationRequestParser
-from localstack.services.apigateway.next_gen.execute_api.parameters_mapping import ParametersMapper
-from localstack.services.apigateway.next_gen.execute_api.variables import (
+from localstack.aws.services.apigateway.next_gen.execute_api.handlers import InvocationRequestParser
+from localstack.aws.services.apigateway.next_gen.execute_api.parameters_mapping import ParametersMapper
+from localstack.aws.services.apigateway.next_gen.execute_api.variables import (
     ContextVariables,
     ContextVarsIdentity,
 )

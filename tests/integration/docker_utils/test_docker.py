@@ -12,9 +12,9 @@ from typing import NamedTuple
 import pytest
 from docker.models.containers import Container
 
-from localstack import config
-from localstack.config import in_docker
-from localstack.testing.pytest import markers
+from localstack.platform import config
+from localstack.platform.config import in_docker
+from localstack.tooling.testing.pytest import markers
 from localstack.utils import docker_utils
 from localstack.utils.common import is_ipv4_address, save_file, short_uid, to_str
 from localstack.utils.container_utils.container_client import (

@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+# gcloudlocal — `gcloud` CLI wrapper pointing at the LocalStack GCP gateway.
+#
+# Requires: `gcloud` CLI installed locally.
+# Env overrides:
+#   LOCALSTACK_ENDPOINT       (default: http://localhost:4566)
+#   LOCALSTACK_GCP_PROJECT    (default: localstack-project)
+set -euo pipefail
+
+if ! command -v gcloud >/dev/null 2>&1; then
+  echo "gcloudlocal: 'gcloud' CLI not found on PATH. Install: https://cloud.google.com/sdk/docs/install" >&2
+  exit 127
+fi
+
+ENDPOINT="${LOCALSTACK_ENDPOINT:-http://localhost:4566}"
+PROJECT="${LOCALSTACK_GCP_PROJECT:-localstack-project}"
+
+EP="${ENDPOINT%/}/"
+
+# Per-API endpoint overrides — list mirrors `localstack/gcp/services/*`.
+# gcloud reads CLOUDSDK_API_ENDPOINT_OVERRIDES_<API> uppercased.
+export CLOUDSDK_API_ENDPOINT_OVERRIDES_STORAGE="$EP"
+export CLOUDSDK_API_ENDPOINT_OVERRIDES_PUBSUB="$EP"
+export CLOUDSDK_API_ENDPOINT_OVERRIDES_FIRESTORE="$EP"
+export CLOUDSDK_API_ENDPOINT_OVERRIDES_CLOUDFUNCTIONS="$EP"
+export CLOUDSDK_API_ENDPOINT_OVERRIDES_IAM="$EP"
+export CLOUDSDK_API_ENDPOINT_OVERRIDES_BIGQUERY="$EP"
+export CLOUDSDK_API_ENDPOINT_OVERRIDES_SECRETMANAGER="$EP"
+export CLOUDSDK_API_ENDPOINT_OVERRIDES_CLOUDKMS="$EP"
+export CLOUDSDK_API_ENDPOINT_OVERRIDES_CLOUDTASKS="$EP"
+export CLOUDSDK_API_ENDPOINT_OVERRIDES_RUN="$EP"
+export CLOUDSDK_API_ENDPOINT_OVERRIDES_LOGGING="$EP"
+export CLOUDSDK_API_ENDPOINT_OVERRIDES_SQLADMIN="$EP"
+export CLOUDSDK_API_ENDPOINT_OVERRIDES_CLOUDSCHEDULER="$EP"
+export CLOUDSDK_API_ENDPOINT_OVERRIDES_DNS="$EP"
+export CLOUDSDK_API_ENDPOINT_OVERRIDES_SPANNER="$EP"
+export CLOUDSDK_API_ENDPOINT_OVERRIDES_REDIS="$EP"
+export CLOUDSDK_API_ENDPOINT_OVERRIDES_CLOUDRESOURCEMANAGER="$EP"
+
+# Disable credential-based auth — our gateway accepts any bearer token.
+export CLOUDSDK_AUTH_DISABLE_CREDENTIALS=true
+export CLOUDSDK_CORE_PROJECT="$PROJECT"
+export CLOUDSDK_CORE_DISABLE_PROMPTS=true
+export CLOUDSDK_CORE_DISABLE_USAGE_REPORTING=true
+# Skip verifying our self-signed/no-TLS edge; gcloud honors httplib2 env.
+export CLOUDSDK_CORE_DISABLE_SSL_VALIDATION=true
+
+exec gcloud "$@"

@@ -9,7 +9,7 @@ from typing import TYPE_CHECKING
 import requests
 
 from localstack.aws.api.lambda_ import Runtime
-from localstack.testing.pytest import markers
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.strings import short_uid
 
 if TYPE_CHECKING:

@@ -1,9 +1,7 @@
 import pytest
 import requests
 
-from localstack import config
-
-
+from localstack.platform import config
 @pytest.mark.usefixtures("openapi_validate")
 class TestInitScriptsResource:
     def test_stages_have_completed(self):
@@ -53,7 +51,7 @@ class TestInfoEndpoint:
         assert response.ok
         doc = response.json()
 
-        from localstack.constants import VERSION
+        from localstack.platform.constants import VERSION
 
         # we're being specifically vague here since we want this test to be robust against pro or community
         assert doc["version"].startswith(str(VERSION))

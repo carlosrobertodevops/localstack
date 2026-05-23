@@ -3,8 +3,7 @@ from collections import defaultdict
 from dataclasses import dataclass
 from typing import Any
 
-from localstack import config
-
+from localstack.platform import config
 from .api import Metric
 from .registry import MetricRegistry
 

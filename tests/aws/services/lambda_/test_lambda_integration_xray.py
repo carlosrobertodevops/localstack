@@ -5,7 +5,7 @@ import time
 import pytest
 
 from localstack.aws.api.lambda_ import Runtime
-from localstack.testing.pytest import markers
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.strings import short_uid
 from localstack.utils.xray.trace_header import TraceHeader
 

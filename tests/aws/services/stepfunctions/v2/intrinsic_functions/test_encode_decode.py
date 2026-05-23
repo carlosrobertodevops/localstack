@@ -1,4 +1,4 @@
-from localstack.testing.pytest import markers
+from localstack.tooling.testing.pytest import markers
 from tests.aws.services.stepfunctions.templates.intrinsicfunctions.intrinsic_functions_templates import (
     IntrinsicFunctionTemplate as IFT,
 )

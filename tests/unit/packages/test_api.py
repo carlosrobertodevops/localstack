@@ -6,7 +6,7 @@ from typing import Optional
 
 import pytest
 
-from localstack.packages import InstallTarget, Package, PackageInstaller
+from localstack.tooling.packages import InstallTarget, Package, PackageInstaller
 from localstack.utils.files import rm_rf
 from localstack.utils.threads import FuncThread
 

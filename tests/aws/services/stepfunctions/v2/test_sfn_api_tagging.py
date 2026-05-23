@@ -4,7 +4,7 @@ import pytest
 from localstack_snapshot.snapshots.transformer import RegexTransformer
 
 from localstack.aws.api.stepfunctions import Tag
-from localstack.testing.pytest import markers
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.strings import short_uid
 from tests.aws.services.stepfunctions.templates.base.base_templates import BaseTemplate
 

@@ -5,7 +5,7 @@ from unittest.mock import patch
 
 import pytest
 
-from localstack import config
+from localstack.platform import config
 from localstack.utils.bootstrap import extract_port_flags
 from localstack.utils.container_utils.container_client import (
     DockerContainerStatus,

@@ -3,11 +3,11 @@ import logging
 from localstack.aws.accounts import (
     get_account_id_from_access_key_id,
 )
-from localstack.constants import (
+from localstack.platform.constants import (
     AWS_REGION_US_EAST_1,
     DEFAULT_AWS_ACCOUNT_ID,
 )
-from localstack.http import Response
+from localstack.platform.http import Response
 from localstack.utils.aws.request_context import (
     extract_access_key_id_from_auth_header,
     mock_aws_request_headers,

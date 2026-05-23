@@ -1,12 +1,12 @@
-from ...http import Response
-from ...http.proxy import Proxy
+from localstack.platform.http import Response
+from localstack.platform.http.proxy import Proxy
 from ..api import RequestContext
 from ..chain import Handler, HandlerChain
 
 
 class ProxyHandler(Handler):
     """
-    Directly serves a localstack.http.proxy.Proxy as a HandlerChain Handler.
+    Directly serves a localstack.platform.http.proxy.Proxy as a HandlerChain Handler.
     This handler does not command the handler chain to stop or terminate.
     """
 

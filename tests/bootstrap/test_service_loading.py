@@ -2,8 +2,8 @@ import pytest
 import requests
 from botocore.exceptions import ClientError
 
-from localstack.config import in_docker
-from localstack.testing.pytest.container import ContainerFactory
+from localstack.platform.config import in_docker
+from localstack.tooling.testing.pytest.container import ContainerFactory
 from localstack.utils.bootstrap import ContainerConfigurators, get_gateway_url
 
 pytestmarks = pytest.mark.skipif(

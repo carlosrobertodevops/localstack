@@ -11,7 +11,7 @@ from localstack.aws.protocol.validate import (
     validate_request,
 )
 from localstack.aws.spec import load_service
-from localstack.http import Request as HttpRequest
+from localstack.platform.http import Request as HttpRequest
 
 
 class TestExceptions:

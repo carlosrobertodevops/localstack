@@ -13,12 +13,12 @@ import requests
 from botocore.exceptions import ClientError
 from localstack_snapshot.snapshots.transformer import SortingTransformer
 
-from localstack import config
-from localstack.services.cloudwatch.provider import PATH_GET_RAW_METRICS
-from localstack.testing.aws.util import is_aws_cloud
-from localstack.testing.config import TEST_AWS_ACCESS_KEY_ID
-from localstack.testing.pytest import markers
-from localstack.testing.snapshots.transformer_utility import TransformerUtility
+from localstack.platform import config
+from localstack.aws.services.cloudwatch.provider import PATH_GET_RAW_METRICS
+from localstack.tooling.testing.aws.util import is_aws_cloud
+from localstack.tooling.testing.config import TEST_AWS_ACCESS_KEY_ID
+from localstack.tooling.testing.pytest import markers
+from localstack.tooling.testing.snapshots.transformer_utility import TransformerUtility
 from localstack.utils.aws import arns
 from localstack.utils.aws.request_context import mock_aws_request_headers
 from localstack.utils.common import retry, short_uid, to_str

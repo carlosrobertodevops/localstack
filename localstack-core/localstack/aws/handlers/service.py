@@ -8,8 +8,8 @@ from typing import Any
 
 from botocore.model import OperationModel, ServiceModel
 
-from localstack import config
-from localstack.http import Response
+from localstack.platform import config
+from localstack.platform.http import Response
 
 from ...utils.catalog.plugins import get_aws_catalog
 from ..api import CommonServiceException, RequestContext, ServiceException

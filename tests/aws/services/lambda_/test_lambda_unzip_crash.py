@@ -4,8 +4,8 @@ from unittest.mock import patch
 
 import pytest
 
-from localstack.services.lambda_.invocation.lambda_models import S3Code
-from localstack.testing.pytest import markers
+from localstack.aws.services.lambda_.invocation.lambda_models import S3Code
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.strings import short_uid
 
 
@@ -50,7 +50,7 @@ class TestLambdaUnzipCrash:
 
         # Patch unzip and download
         with patch(
-            "localstack.services.lambda_.invocation.lambda_models.unzip", side_effect=crashing_unzip
+            "localstack.aws.services.lambda_.invocation.lambda_models.unzip", side_effect=crashing_unzip
         ):
             with patch.object(S3Code, "_download_archive_to_file", mock_download):
                 # This will trigger the unzip operation (which will crash)

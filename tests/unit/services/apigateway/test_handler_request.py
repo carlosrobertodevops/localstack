@@ -3,25 +3,25 @@ from moto.apigateway.models import APIGatewayBackend, Stage, apigateway_backends
 from moto.apigateway.models import RestAPI as MotoRestAPI
 from werkzeug.datastructures import Headers
 
-from localstack.http import Request, Response
-from localstack.services.apigateway.models import RestApiContainer
-from localstack.services.apigateway.next_gen.execute_api.api import RestApiGatewayHandlerChain
-from localstack.services.apigateway.next_gen.execute_api.context import RestApiInvocationContext
-from localstack.services.apigateway.next_gen.execute_api.gateway_response import (
+from localstack.platform.http import Request, Response
+from localstack.aws.services.apigateway.models import RestApiContainer
+from localstack.aws.services.apigateway.next_gen.execute_api.api import RestApiGatewayHandlerChain
+from localstack.aws.services.apigateway.next_gen.execute_api.context import RestApiInvocationContext
+from localstack.aws.services.apigateway.next_gen.execute_api.gateway_response import (
     MissingAuthTokenError,
 )
-from localstack.services.apigateway.next_gen.execute_api.handlers.parse import (
+from localstack.aws.services.apigateway.next_gen.execute_api.handlers.parse import (
     InvocationRequestParser,
 )
-from localstack.services.apigateway.next_gen.execute_api.handlers.resource_router import (
+from localstack.aws.services.apigateway.next_gen.execute_api.handlers.resource_router import (
     InvocationRequestRouter,
 )
-from localstack.services.apigateway.next_gen.execute_api.helpers import (
+from localstack.aws.services.apigateway.next_gen.execute_api.helpers import (
     freeze_rest_api,
     parse_trace_id,
 )
-from localstack.services.apigateway.next_gen.execute_api.moto_helpers import get_stage_configuration
-from localstack.testing.config import TEST_AWS_ACCOUNT_ID, TEST_AWS_REGION_NAME
+from localstack.aws.services.apigateway.next_gen.execute_api.moto_helpers import get_stage_configuration
+from localstack.tooling.testing.config import TEST_AWS_ACCOUNT_ID, TEST_AWS_REGION_NAME
 
 TEST_API_ID = "testapi"
 TEST_API_STAGE = "dev"

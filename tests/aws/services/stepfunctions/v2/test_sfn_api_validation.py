@@ -3,7 +3,7 @@ import json
 import pytest
 
 from localstack.aws.api.stepfunctions import StateMachineType
-from localstack.testing.pytest import markers
+from localstack.tooling.testing.pytest import markers
 from tests.aws.services.stepfunctions.templates.callbacks.callback_templates import (
     CallbackTemplates,
 )

@@ -10,10 +10,10 @@ from botocore.serialize import create_serializer
 from cbor2 import loads as cbor2_loads
 from requests import Response
 
-from localstack import constants
+from localstack.platform import constants
 from localstack.aws.spec import get_service_catalog
-from localstack.config import LOCALSTACK_HOST
-from localstack.testing.aws.util import is_aws_cloud
+from localstack.platform.config import LOCALSTACK_HOST
+from localstack.tooling.testing.aws.util import is_aws_cloud
 
 
 class BaseCloudWatchHttpClient(abc.ABC):

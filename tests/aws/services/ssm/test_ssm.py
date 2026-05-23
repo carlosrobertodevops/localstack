@@ -3,9 +3,9 @@ import json
 import pytest
 from botocore.exceptions import ClientError
 
-from localstack import config
-from localstack.testing.config import TEST_AWS_ACCOUNT_ID, TEST_AWS_REGION_NAME
-from localstack.testing.pytest import markers
+from localstack.platform import config
+from localstack.tooling.testing.config import TEST_AWS_ACCOUNT_ID, TEST_AWS_REGION_NAME
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.aws import arns
 from localstack.utils.common import retry, short_uid
 from localstack.utils.strings import to_str

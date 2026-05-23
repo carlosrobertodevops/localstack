@@ -2,7 +2,7 @@ import re
 
 import pytest
 
-from localstack.services.events.utils import is_nested_in_string
+from localstack.aws.services.events.utils import is_nested_in_string
 
 
 @pytest.mark.parametrize(

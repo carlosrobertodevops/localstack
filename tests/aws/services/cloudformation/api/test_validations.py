@@ -2,7 +2,7 @@ import json
 
 import pytest
 
-from localstack.testing.pytest import markers
+from localstack.tooling.testing.pytest import markers
 
 pytestmark = pytest.mark.skip("Validations are currently disabled")
 

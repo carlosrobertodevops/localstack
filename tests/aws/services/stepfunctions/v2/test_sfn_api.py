@@ -7,8 +7,8 @@ from localstack_snapshot.snapshots.transformer import JsonpathTransformer, Regex
 
 from localstack.aws.api.lambda_ import Runtime
 from localstack.aws.api.stepfunctions import HistoryEventList, StateMachineType
-from localstack.testing.pytest import markers
-from localstack.testing.pytest.stepfunctions.utils import (
+from localstack.tooling.testing.pytest import markers
+from localstack.tooling.testing.pytest.stepfunctions.utils import (
     await_execution_aborted,
     await_execution_started,
     await_execution_success,

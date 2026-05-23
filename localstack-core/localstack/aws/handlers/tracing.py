@@ -1,6 +1,6 @@
 from localstack.aws.api import RequestContext
 from localstack.aws.chain import Handler, HandlerChain
-from localstack.http import Response
+from localstack.platform.http import Response
 from localstack.utils.xray.trace_header import TraceHeader
 
 

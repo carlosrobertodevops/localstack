@@ -1,7 +1,7 @@
 import logging
 from types import MappingProxyType
 
-from localstack.http import Response
+from localstack.platform.http import Response
 
 from ..api import RequestContext
 from ..chain import Handler, HandlerChain

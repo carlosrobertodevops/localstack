@@ -4,11 +4,11 @@ import os
 from datetime import datetime
 from pathlib import Path
 
-from localstack import config
+from localstack.platform import config
 from localstack.aws.api import RequestContext
 from localstack.aws.chain import HandlerChain
-from localstack.constants import ENV_INTERNAL_TEST_STORE_METRICS_PATH
-from localstack.http import Response
+from localstack.platform.constants import ENV_INTERNAL_TEST_STORE_METRICS_PATH
+from localstack.platform.http import Response
 from localstack.utils.strings import short_uid
 
 LOG = logging.getLogger(__name__)

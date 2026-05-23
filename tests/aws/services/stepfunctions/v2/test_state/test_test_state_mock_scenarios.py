@@ -5,7 +5,7 @@ import pytest
 from localstack_snapshot.snapshots.transformer import JsonpathTransformer, RegexTransformer
 
 from localstack.aws.api.stepfunctions import InspectionLevel
-from localstack.testing.pytest import markers
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.aws import arns
 from localstack.utils.strings import long_uid, md5, short_uid
 from tests.aws.services.stepfunctions.templates.test_state.test_state_templates import (

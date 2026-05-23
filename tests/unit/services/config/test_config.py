@@ -2,8 +2,8 @@ import textwrap
 
 import pytest
 
-from localstack import config
-from localstack.config import HostAndPort, external_service_url, internal_service_url
+from localstack.platform import config
+from localstack.platform.config import HostAndPort, external_service_url, internal_service_url
 
 
 class TestProviderConfig:

@@ -12,9 +12,9 @@ from localstack.aws.spec import (
     get_service_catalog,
     is_protocol_in_service_model_identifier,
 )
-from localstack.http import Request
-from localstack.services.s3.utils import uses_host_addressing
-from localstack.services.sqs.utils import is_sqs_queue_url
+from localstack.platform.http import Request
+from localstack.aws.services.s3.utils import uses_host_addressing
+from localstack.aws.services.sqs.utils import is_sqs_queue_url
 from localstack.utils.strings import to_bytes
 
 LOG = logging.getLogger(__name__)

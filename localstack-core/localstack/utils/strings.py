@@ -9,7 +9,7 @@ import uuid
 import zlib
 from typing import TYPE_CHECKING, Any
 
-from localstack.config import DEFAULT_ENCODING
+from localstack.platform.config import DEFAULT_ENCODING
 
 if TYPE_CHECKING:
     from localstack.utils.objects import ComplexType

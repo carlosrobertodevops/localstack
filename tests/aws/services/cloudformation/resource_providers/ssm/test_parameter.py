@@ -4,7 +4,7 @@ import pytest
 from botocore.exceptions import ClientError
 
 from localstack.aws.connect import ServiceLevelClientFactory
-from localstack.testing.pytest import markers
+from localstack.tooling.testing.pytest import markers
 
 
 class TestBasicCRD:

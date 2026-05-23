@@ -9,8 +9,8 @@ import xmltodict
 from botocore.exceptions import ClientError
 
 from localstack.aws.api.apigateway import ContentHandlingStrategy
-from localstack.testing.aws.util import is_aws_cloud
-from localstack.testing.pytest import markers
+from localstack.tooling.testing.aws.util import is_aws_cloud
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.sync import retry
 from tests.aws.services.apigateway.apigateway_fixtures import api_invoke_url
 from tests.aws.services.apigateway.conftest import APIGATEWAY_ASSUME_ROLE_POLICY

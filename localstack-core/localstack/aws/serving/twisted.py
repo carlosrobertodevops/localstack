@@ -12,9 +12,9 @@ from twisted.protocols.policies import ProtocolWrapper, WrappingFactory
 from twisted.protocols.tls import BufferingTLSTransport, TLSMemoryBIOFactory
 from twisted.python.threadpool import ThreadPool
 
-from localstack import config
-from localstack.config import HostAndPort
-from localstack.runtime.shutdown import ON_AFTER_SERVICE_SHUTDOWN_HANDLERS
+from localstack.platform import config
+from localstack.platform.config import HostAndPort
+from localstack.platform.runtime.shutdown import ON_AFTER_SERVICE_SHUTDOWN_HANDLERS
 from localstack.utils.patch import patch
 from localstack.utils.ssl import create_ssl_cert, install_predefined_cert_if_available
 from localstack.utils.threads import start_worker_thread

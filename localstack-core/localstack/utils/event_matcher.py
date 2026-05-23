@@ -1,6 +1,6 @@
 from typing import Any
 
-from localstack.services.events.event_rule_engine import (
+from localstack.aws.services.events.event_rule_engine import (
     EventPatternCompiler,
     EventRuleEngine,
     InvalidEventPatternException,

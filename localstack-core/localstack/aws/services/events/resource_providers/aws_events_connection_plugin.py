@@ -1,0 +1,18 @@
+from localstack.aws.services.cloudformation.resource_provider import (
+    CloudFormationResourceProviderPlugin,
+    ResourceProvider,
+)
+
+
+class EventsConnectionProviderPlugin(CloudFormationResourceProviderPlugin):
+    name = "AWS::Events::Connection"
+
+    def __init__(self):
+        self.factory: type[ResourceProvider] | None = None
+
+    def load(self):
+        from localstack.aws.services.events.resource_providers.aws_events_connection import (
+            EventsConnectionProvider,
+        )
+
+        self.factory = EventsConnectionProvider

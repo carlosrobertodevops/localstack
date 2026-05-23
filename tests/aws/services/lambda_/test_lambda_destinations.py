@@ -11,10 +11,10 @@ import aws_cdk.aws_lambda_destinations as destinations
 import pytest
 from aws_cdk.aws_events import EventPattern, Rule
 
-from localstack import config
+from localstack.platform import config
 from localstack.aws.api.lambda_ import Runtime
-from localstack.testing.aws.util import is_aws_cloud
-from localstack.testing.pytest import markers
+from localstack.tooling.testing.aws.util import is_aws_cloud
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.strings import short_uid, to_bytes, to_str
 from localstack.utils.sync import retry, wait_until
 from tests.aws.services.lambda_.functions import lambda_integration

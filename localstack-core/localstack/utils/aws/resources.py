@@ -1,6 +1,6 @@
 from localstack.aws.api.dynamodb import CreateTableOutput, DescribeTableOutput
 from localstack.aws.connect import connect_to
-from localstack.constants import AWS_REGION_US_EAST_1
+from localstack.platform.constants import AWS_REGION_US_EAST_1
 from localstack.utils.aws.aws_stack import LOG
 from localstack.utils.functions import run_safe
 from localstack.utils.sync import poll_condition

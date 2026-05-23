@@ -2,7 +2,7 @@ import logging
 import random
 import threading
 
-from localstack.testing.pytest import markers
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.strings import short_uid
 
 LOG = logging.getLogger(__name__)

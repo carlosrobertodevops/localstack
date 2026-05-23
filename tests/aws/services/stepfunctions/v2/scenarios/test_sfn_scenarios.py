@@ -4,7 +4,7 @@ from pathlib import Path
 from typing import Any, TypedDict
 
 from localstack.aws.api.stepfunctions import ExecutionStatus
-from localstack.testing.pytest import markers
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.sync import wait_until
 
 THIS_FOLDER = Path(os.path.dirname(__file__))

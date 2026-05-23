@@ -2,7 +2,7 @@ import pathlib
 
 import pytest
 
-from localstack.state import AssetDirectory
+from localstack.platform.state import AssetDirectory
 
 
 def test_asset_directory(tmp_path):

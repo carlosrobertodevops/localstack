@@ -6,7 +6,7 @@ import unittest
 
 import yaml
 
-from localstack import config
+from localstack.platform import config
 from localstack.utils import async_utils, config_listener
 from localstack.utils.common import json_safe, now_utc
 from localstack.utils.container_utils.container_client import PortMappings

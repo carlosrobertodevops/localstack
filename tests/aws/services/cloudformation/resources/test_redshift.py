@@ -1,6 +1,6 @@
 import os
 
-from localstack.testing.pytest import markers
+from localstack.tooling.testing.pytest import markers
 
 
 # only runs in Docker when run against Pro (since it needs postgres on the system)

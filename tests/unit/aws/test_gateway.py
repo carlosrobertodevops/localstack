@@ -8,8 +8,8 @@ from localstack.aws.api import RequestContext
 from localstack.aws.chain import HandlerChain
 from localstack.aws.gateway import Gateway
 from localstack.aws.serving.asgi import AsgiGateway
-from localstack.http import Response
-from localstack.http.hypercorn import HypercornServer
+from localstack.platform.http import Response
+from localstack.platform.http.hypercorn import HypercornServer
 from localstack.utils import net
 from localstack.utils.sync import poll_condition
 

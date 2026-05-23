@@ -3,8 +3,8 @@ import pytest
 from localstack.aws.chain import HandlerChain
 from localstack.aws.forwarder import create_aws_request_context
 from localstack.aws.handlers.response import ResponseMetadataEnricher
-from localstack.constants import HEADER_LOCALSTACK_IDENTIFIER
-from localstack.http import Response
+from localstack.platform.constants import HEADER_LOCALSTACK_IDENTIFIER
+from localstack.platform.http import Response
 
 
 @pytest.fixture

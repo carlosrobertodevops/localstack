@@ -1,6 +1,6 @@
 from importlib.util import find_spec
 
-from localstack.runtime import hooks
+from localstack.platform.runtime import hooks
 from localstack.utils.patch import patch
 
 

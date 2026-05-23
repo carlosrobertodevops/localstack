@@ -3,7 +3,7 @@ from queue import Queue
 
 from pytest_httpserver import HTTPServer
 
-from localstack.constants import VERSION
+from localstack.platform.constants import VERSION
 from localstack.utils.analytics.client import AnalyticsClient
 from localstack.utils.analytics.events import Event, EventMetadata
 from localstack.utils.analytics.metadata import get_client_metadata, get_session_id

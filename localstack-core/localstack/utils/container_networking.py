@@ -3,7 +3,7 @@ import os
 import re
 from functools import lru_cache
 
-from localstack import config, constants
+from localstack.platform import config, constants
 from localstack.utils.container_utils.container_client import ContainerException
 from localstack.utils.docker_utils import DOCKER_CLIENT
 from localstack.utils.net import get_docker_host_from_container

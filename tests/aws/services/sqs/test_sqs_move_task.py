@@ -5,8 +5,8 @@ import uuid
 import pytest
 from botocore.exceptions import ClientError
 
-from localstack.services.sqs.utils import decode_move_task_handle, encode_move_task_handle
-from localstack.testing.pytest import markers
+from localstack.aws.services.sqs.utils import decode_move_task_handle, encode_move_task_handle
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.aws import arns
 from localstack.utils.sync import retry
 

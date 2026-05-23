@@ -3,8 +3,8 @@ import time
 
 import pytest
 
-from localstack.testing.aws.util import is_aws_cloud
-from localstack.testing.pytest import markers
+from localstack.tooling.testing.aws.util import is_aws_cloud
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.strings import short_uid
 from tests.aws.services.events.helper_functions import (
     is_old_provider,

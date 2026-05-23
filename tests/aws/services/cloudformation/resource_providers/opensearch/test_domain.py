@@ -3,9 +3,9 @@ import os
 import pytest
 
 from localstack.aws.connect import ServiceLevelClientFactory
-from localstack.testing.aws.util import is_aws_cloud
-from localstack.testing.pytest import markers
-from localstack.testing.pytest.fixtures import StackDeployError
+from localstack.tooling.testing.aws.util import is_aws_cloud
+from localstack.tooling.testing.pytest import markers
+from localstack.tooling.testing.pytest.fixtures import StackDeployError
 
 RESOURCE_GETATT_TARGETS = [
     "DomainName",

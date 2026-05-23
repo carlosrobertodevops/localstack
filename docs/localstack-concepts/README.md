@@ -185,7 +185,7 @@ The installer manages all installation-related information: the destination, the
 There are various types of installers available as base classes that try to minimize the required effort to install software, depending on what we need to install (executables, jar files, GitHub assets,...).
 So before you start reinventing the wheel, please check if there is a suitable class to extend.
 
-Packages and installers can usually be found in `packages.py` in the `localstack.services.<service>` module of the service that requires the dependency.
+Packages and installers can usually be found in `packages.py` in the `localstack.aws.services.<service>` module of the service that requires the dependency.
 Dependencies that are required by multiple services are located in `localstack.packages`.
 
 Additionally, there is the _LocalStack Package Manager (LPM)_.
@@ -195,7 +195,7 @@ _LPM_ can be used directly as a module, and if called without a specific command
 
 ```python
 source .venv/bin/activate
-python -m localstack.cli.lpm
+python -m localstack.tooling.cli.lpm
 ```
 
 ### Versions
@@ -211,7 +211,7 @@ To keep things nice and clean, packages are installed in two locations, `static_
 `static_libs` is used for packages installed at build time.
 When building the docker container, the packages are installed to a folder which will not be overwritten by a host-mounted volume.
 The `static_libs` directory should not be modified at container runtime, as it will be reset when the container is recreated.
-This is the default target if a package is installed in the aforementioned way via `python -m localstack.cli.lpm install`.
+This is the default target if a package is installed in the aforementioned way via `python -m localstack.tooling.cli.lpm install`.
 
 `var_libs` is the main and default location used for packages installed at runtime.
 When starting the docker container, a host-volume is mounted at `var_libs`.
@@ -228,10 +228,10 @@ This is usually done by writing a function in `plugins.py` that loads a package 
 ### `lpm` commands
 The available `lpm` commands are:
 
-- `python -m localstack.cli.lpm list`
-- `python -m localstack.cli.lpm install [OPTIONS] PACKAGE...`
+- `python -m localstack.tooling.cli.lpm list`
+- `python -m localstack.tooling.cli.lpm install [OPTIONS] PACKAGE...`
 
-For help with the specific commands, use `python -m localstack.cli.lpm <command> --help`.
+For help with the specific commands, use `python -m localstack.tooling.cli.lpm <command> --help`.
 
 ## Utilities
 

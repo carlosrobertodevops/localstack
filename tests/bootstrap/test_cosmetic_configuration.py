@@ -8,13 +8,13 @@ import pytest
 import requests
 from botocore.exceptions import ClientError
 
-from localstack import constants
+from localstack.platform import constants
 from localstack.aws.connect import ServiceLevelClientFactory
-from localstack.config import in_docker
-from localstack.testing.pytest import markers
-from localstack.testing.pytest.container import ContainerFactory, LogStreamFactory
-from localstack.testing.scenario.cdk_lambda_helper import load_python_lambda_to_s3
-from localstack.testing.scenario.provisioning import InfraProvisioner
+from localstack.platform.config import in_docker
+from localstack.tooling.testing.pytest import markers
+from localstack.tooling.testing.pytest.container import ContainerFactory, LogStreamFactory
+from localstack.tooling.testing.scenario.cdk_lambda_helper import load_python_lambda_to_s3
+from localstack.tooling.testing.scenario.provisioning import InfraProvisioner
 from localstack.utils.bootstrap import ContainerConfigurators
 from localstack.utils.net import get_free_tcp_port
 from localstack.utils.strings import short_uid

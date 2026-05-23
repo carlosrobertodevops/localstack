@@ -6,8 +6,7 @@ from typing import Any
 import yaml
 from plux import PluginManager
 
-from localstack import version
-
+from localstack.platform import version
 LOG = logging.getLogger(__name__)
 
 spec_top_info = textwrap.dedent("""

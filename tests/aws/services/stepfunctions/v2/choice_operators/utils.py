@@ -3,8 +3,8 @@ from typing import Any, Final
 
 from localstack_snapshot.snapshots.transformer import RegexTransformer
 
-from localstack.services.stepfunctions.asl.utils.json_path import extract_json
-from localstack.testing.pytest.stepfunctions.utils import await_execution_success
+from localstack.aws.services.stepfunctions.asl.utils.json_path import extract_json
+from localstack.tooling.testing.pytest.stepfunctions.utils import await_execution_success
 from localstack.utils.strings import short_uid
 from tests.aws.services.stepfunctions.templates.choiceoperators.choice_operators_templates import (
     ChoiceOperatorTemplate as COT,

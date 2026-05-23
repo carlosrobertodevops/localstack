@@ -3,8 +3,8 @@ import json
 import pytest
 
 from localstack.aws.api.stepfunctions import InspectionLevel
-from localstack.testing.aws.util import is_aws_cloud
-from localstack.testing.pytest import markers
+from localstack.tooling.testing.aws.util import is_aws_cloud
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.aws import arns
 from tests.aws.services.stepfunctions.templates.test_state.test_state_templates import (
     TestStateTemplate as TST,

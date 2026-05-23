@@ -3,9 +3,9 @@ from unittest.mock import MagicMock
 
 import pytest as pytest
 
-from localstack import config
-from localstack.constants import LOCALHOST
-from localstack.testing.pytest import markers
+from localstack.platform import config
+from localstack.platform.constants import LOCALHOST
+from localstack.tooling.testing.pytest import markers
 from localstack.utils import net
 from localstack.utils.common import short_uid
 from localstack.utils.net import (

@@ -46,8 +46,8 @@ from localstack.aws.protocol.serializer import (
     create_serializer,
 )
 from localstack.aws.spec import load_service
-from localstack.constants import APPLICATION_AMZ_CBOR_1_1, APPLICATION_CBOR
-from localstack.http import Request, Response
+from localstack.platform.constants import APPLICATION_AMZ_CBOR_1_1, APPLICATION_CBOR
+from localstack.platform.http import Request, Response
 from localstack.utils.common import to_str
 from localstack.utils.strings import long_uid
 

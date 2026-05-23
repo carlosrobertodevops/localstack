@@ -72,6 +72,5 @@ def get_os() -> str:
 
 
 def in_docker() -> bool:
-    from localstack import config
-
+    from localstack.platform import config
     return config.in_docker()

@@ -2,8 +2,8 @@ import json
 
 import pytest
 
-from localstack.testing.pytest import markers
-from localstack.testing.pytest.stepfunctions.utils import (
+from localstack.tooling.testing.pytest import markers
+from localstack.tooling.testing.pytest.stepfunctions.utils import (
     SfnNoneRecursiveParallelTransformer,
     create_and_record_execution,
 )

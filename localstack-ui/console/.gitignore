@@ -1,0 +1,9 @@
+node_modules
+dist
+.turbo
+*.tsbuildinfo
+.vite
+.env.local
+playwright-report
+test-results
+coverage

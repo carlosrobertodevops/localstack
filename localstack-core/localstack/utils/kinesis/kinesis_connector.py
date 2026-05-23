@@ -12,9 +12,9 @@ from typing import Any
 from amazon_kclpy import kcl
 from amazon_kclpy.v2 import processor
 
-from localstack import config
-from localstack.constants import LOCALSTACK_ROOT_FOLDER, LOCALSTACK_VENV_FOLDER
-from localstack.packages.java import java_package
+from localstack.platform import config
+from localstack.platform.constants import LOCALSTACK_ROOT_FOLDER, LOCALSTACK_VENV_FOLDER
+from localstack.tooling.packages.java import java_package
 from localstack.utils.aws import arns
 from localstack.utils.files import TMP_FILES, chmod_r, save_file
 from localstack.utils.kinesis import kclipy_helper
@@ -311,7 +311,7 @@ logging.basicConfig(level=logging.INFO)
 for path in glob.glob('{LOCALSTACK_VENV_FOLDER}/lib/python*/site-packages'):
     sys.path.insert(0, path)
 sys.path.insert(0, '{LOCALSTACK_ROOT_FOLDER}')
-from localstack.config import DEFAULT_ENCODING
+from localstack.platform.config import DEFAULT_ENCODING
 from localstack.utils.kinesis import kinesis_connector
 from localstack.utils.time import timestamp
 events_file = '{events_file}'

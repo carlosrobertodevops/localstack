@@ -6,7 +6,7 @@ import json
 import pytest
 from botocore.exceptions import ClientError
 
-from localstack.testing.pytest import markers
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.common import now_utc, short_uid
 
 S3_POLICY = {

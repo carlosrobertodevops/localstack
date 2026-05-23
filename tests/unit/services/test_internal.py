@@ -1,9 +1,9 @@
 from unittest import mock
 
-from localstack.constants import VERSION
-from localstack.http import Request
-from localstack.services.internal import HealthResource
-from localstack.services.plugins import ServiceManager, ServiceState
+from localstack.platform.constants import VERSION
+from localstack.platform.http import Request
+from localstack.aws.services.internal import HealthResource
+from localstack.aws.services.plugins import ServiceManager, ServiceState
 
 
 class TestHealthResource:

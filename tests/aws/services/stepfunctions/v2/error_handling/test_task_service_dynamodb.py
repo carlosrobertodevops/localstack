@@ -1,7 +1,7 @@
 import json
 
-from localstack.testing.pytest import markers
-from localstack.testing.pytest.stepfunctions.utils import (
+from localstack.tooling.testing.pytest import markers
+from localstack.tooling.testing.pytest.stepfunctions.utils import (
     create_and_record_execution,
 )
 from localstack.utils.strings import short_uid

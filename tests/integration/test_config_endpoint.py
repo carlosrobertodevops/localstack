@@ -1,9 +1,9 @@
 import pytest
 import requests
 
-from localstack import config
-from localstack.http import Resource
-from localstack.services.internal import ConfigResource, get_internal_apis
+from localstack.platform import config
+from localstack.platform.http import Resource
+from localstack.aws.services.internal import ConfigResource, get_internal_apis
 from localstack.utils import config_listener
 
 

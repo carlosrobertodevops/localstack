@@ -4,10 +4,10 @@ import pytest
 import requests
 
 from localstack.aws.api.lambda_ import Runtime
-from localstack.constants import (
+from localstack.platform.constants import (
     APPLICATION_JSON,
 )
-from localstack.testing.pytest import markers
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.strings import short_uid
 from localstack.utils.sync import retry
 from tests.aws.services.apigateway.apigateway_fixtures import (

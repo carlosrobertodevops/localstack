@@ -5,7 +5,7 @@ import time
 import pytest
 from pytest_httpserver import HTTPServer
 
-from localstack.http import Request, Response
+from localstack.platform.http import Request, Response
 from localstack.utils.files import load_file, new_tmp_file, rm_rf
 from localstack.utils.http import ACCEPT, add_query_params_to_url, canonicalize_headers, download
 

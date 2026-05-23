@@ -3,7 +3,7 @@ from functools import cached_property
 from rolo.gateway import Gateway
 
 from localstack.aws.app import LocalstackAwsGateway
-from localstack.runtime.components import BaseComponents
+from localstack.platform.runtime.components import BaseComponents
 
 
 class AwsComponents(BaseComponents):
@@ -17,6 +17,6 @@ class AwsComponents(BaseComponents):
     def gateway(self) -> Gateway:
         # FIXME: the ServiceManager should be reworked to be more generic, and then become part of the
         #  components
-        from localstack.services.plugins import SERVICE_PLUGINS
+        from localstack.aws.services.plugins import SERVICE_PLUGINS
 
         return LocalstackAwsGateway(SERVICE_PLUGINS)

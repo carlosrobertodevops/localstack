@@ -1,8 +1,8 @@
 import pytest
 import requests
 
-from localstack import config
-from localstack.config import in_docker
+from localstack.platform import config
+from localstack.platform.config import in_docker
 from localstack.utils.bootstrap import LocalstackContainerServer
 from localstack.utils.sync import poll_condition
 

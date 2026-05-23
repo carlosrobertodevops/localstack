@@ -22,23 +22,23 @@ from localstack_snapshot.snapshots.transformer import RegexTransformer
 from pytest_httpserver import HTTPServer
 from werkzeug import Response
 
-from localstack import config
+from localstack.platform import config
 from localstack.aws.api.lambda_ import Runtime
-from localstack.config import external_service_url
-from localstack.constants import (
+from localstack.platform.config import external_service_url
+from localstack.platform.constants import (
     AWS_REGION_US_EAST_1,
 )
-from localstack.services.sns.constants import (
+from localstack.aws.services.sns.constants import (
     PLATFORM_ENDPOINT_MSGS_ENDPOINT,
     SMS_MSGS_ENDPOINT,
     SMS_PHONE_NUMBER_OPT_OUT_ENDPOINT,
     SUBSCRIPTION_TOKENS_ENDPOINT,
 )
-from localstack.services.sns.provider import SnsProvider
-from localstack.testing.aws.util import is_aws_cloud
-from localstack.testing.config import TEST_AWS_ACCESS_KEY_ID, TEST_AWS_SECRET_ACCESS_KEY
-from localstack.testing.pytest import markers
-from localstack.testing.snapshots.transformer_utility import TransformerUtility
+from localstack.aws.services.sns.provider import SnsProvider
+from localstack.tooling.testing.aws.util import is_aws_cloud
+from localstack.tooling.testing.config import TEST_AWS_ACCESS_KEY_ID, TEST_AWS_SECRET_ACCESS_KEY
+from localstack.tooling.testing.pytest import markers
+from localstack.tooling.testing.snapshots.transformer_utility import TransformerUtility
 from localstack.utils import testutil
 from localstack.utils.aws.arns import get_partition, parse_arn, sqs_queue_arn
 from localstack.utils.net import wait_for_port_closed, wait_for_port_open

@@ -15,15 +15,15 @@ from typing import Any
 
 from rich.console import Console
 
-from localstack import config, constants
-from localstack.config import (
+from localstack.platform import config, constants
+from localstack.platform.config import (
     HostAndPort,
     default_ip,
     is_env_not_false,
     load_environment,
 )
-from localstack.constants import VERSION
-from localstack.runtime import hooks
+from localstack.platform.constants import VERSION
+from localstack.platform.runtime import hooks
 from localstack.utils.container_networking import get_main_container_name
 from localstack.utils.container_utils.container_client import (
     BindMount,
@@ -78,7 +78,7 @@ API_DEPENDENCIES = {
 # - maps from API names to list of other API names that they _optionally_ depend on: <service>:<dependent-services>
 # - an optional service dependency is a service without which a service's basic functionality doesn't break,
 #   but which is needed for certain features (f.e. for one of multiple integrations)
-# - this mapping is used f.e. used for the selective test execution (localstack.testing.testselection)
+# - this mapping is used f.e. used for the selective test execution (localstack.tooling.testing.testselection)
 # - only add optional dependencies of services here, use API_DEPENDENCIES for mandatory dependencies
 API_DEPENDENCIES_OPTIONAL = {
     # firehose's optional dependencies are supported delivery stream destinations
@@ -243,7 +243,7 @@ def get_server_version() -> str:
 
 def setup_logging():
     """Determine and set log level. The singleton factory makes sure the logging is only set up once."""
-    from localstack.logging.setup import setup_logging_from_config
+    from localstack.platform.logging.setup import setup_logging_from_config
 
     setup_logging_from_config()
 
@@ -302,7 +302,7 @@ def get_enabled_apis() -> set[str]:
 
     The result is cached, so it's safe to call. Clear the cache with get_enabled_apis.cache_clear().
     """
-    from localstack.services.plugins import SERVICE_PLUGINS
+    from localstack.aws.services.plugins import SERVICE_PLUGINS
 
     services_env = os.environ.get("SERVICES", "").strip()
     services = SERVICE_PLUGINS.list_available()
@@ -350,7 +350,7 @@ def get_preloaded_services() -> set[str]:
             services.append(service)
 
     if not services:
-        from localstack.services.plugins import SERVICE_PLUGINS
+        from localstack.aws.services.plugins import SERVICE_PLUGINS
 
         services = SERVICE_PLUGINS.list_available()
 
@@ -358,7 +358,7 @@ def get_preloaded_services() -> set[str]:
 
 
 def start_infra_locally():
-    from localstack.runtime.main import main
+    from localstack.platform.runtime.main import main
 
     return main()
 

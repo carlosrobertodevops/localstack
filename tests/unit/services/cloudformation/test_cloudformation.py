@@ -1,12 +1,12 @@
 import pytest
 
-from localstack.services.cloudformation.api_utils import is_local_service_url
-from localstack.services.cloudformation.deployment_utils import (
+from localstack.aws.services.cloudformation.api_utils import is_local_service_url
+from localstack.aws.services.cloudformation.deployment_utils import (
     PLACEHOLDER_AWS_NO_VALUE,
     remove_none_values,
 )
-from localstack.services.cloudformation.engine.template_deployer import order_resources
-from localstack.services.cloudformation.engine.v2.resolving import REGEX_DYNAMIC_REF
+from localstack.aws.services.cloudformation.engine.template_deployer import order_resources
+from localstack.aws.services.cloudformation.engine.v2.resolving import REGEX_DYNAMIC_REF
 
 
 def test_is_local_service_url():

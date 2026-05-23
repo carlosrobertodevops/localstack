@@ -34,31 +34,31 @@ from botocore.exceptions import ClientError
 from localstack_snapshot.snapshots.transformer import RegexTransformer
 from urllib3 import HTTPHeaderDict
 
-from localstack import config, constants
+from localstack.platform import config, constants
 from localstack.aws.api.lambda_ import Runtime
 from localstack.aws.api.s3 import StorageClass, TransitionDefaultMinimumObjectSize
-from localstack.config import S3_VIRTUAL_HOSTNAME
-from localstack.constants import (
+from localstack.platform.config import S3_VIRTUAL_HOSTNAME
+from localstack.platform.constants import (
     AWS_REGION_US_EAST_1,
     LOCALHOST_HOSTNAME,
 )
-from localstack.services.s3 import constants as s3_constants
-from localstack.services.s3.headers import encode_header_rfc2047
-from localstack.services.s3.utils import (
+from localstack.aws.services.s3 import constants as s3_constants
+from localstack.aws.services.s3.headers import encode_header_rfc2047
+from localstack.aws.services.s3.utils import (
     RFC1123,
     etag_to_base_64_content_md5,
     get_bucket_location_xml,
     parse_expiration_header,
     rfc_1123_datetime,
 )
-from localstack.testing.aws.util import create_client_with_keys, in_default_partition, is_aws_cloud
-from localstack.testing.config import (
+from localstack.tooling.testing.aws.util import create_client_with_keys, in_default_partition, is_aws_cloud
+from localstack.tooling.testing.config import (
     SECONDARY_TEST_AWS_ACCESS_KEY_ID,
     SECONDARY_TEST_AWS_SECRET_ACCESS_KEY,
     TEST_AWS_ACCESS_KEY_ID,
 )
-from localstack.testing.pytest import markers
-from localstack.testing.snapshots.transformer_utility import TransformerUtility
+from localstack.tooling.testing.pytest import markers
+from localstack.tooling.testing.snapshots.transformer_utility import TransformerUtility
 from localstack.utils import testutil
 from localstack.utils.aws.arns import get_partition
 from localstack.utils.aws.request_context import mock_aws_request_headers

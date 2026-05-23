@@ -22,9 +22,9 @@ from localstack.aws.client import create_http_request, parse_response, raise_ser
 from localstack.aws.connect import connect_to
 from localstack.aws.skeleton import DispatchTable, create_dispatch_table
 from localstack.aws.spec import ProtocolName, load_service
-from localstack.constants import AWS_REGION_US_EAST_1
-from localstack.http import Response
-from localstack.http.proxy import Proxy
+from localstack.platform.constants import AWS_REGION_US_EAST_1
+from localstack.platform.http import Response
+from localstack.platform.http.proxy import Proxy
 
 
 class AwsRequestProxy:

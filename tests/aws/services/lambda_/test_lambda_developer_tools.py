@@ -6,9 +6,9 @@ from pathlib import Path
 import pytest
 from botocore.exceptions import ClientError
 
-from localstack import config
+from localstack.platform import config
 from localstack.aws.api.lambda_ import Runtime
-from localstack.testing.pytest import markers
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.container_networking import get_main_container_network
 from localstack.utils.docker_utils import DOCKER_CLIENT, get_host_path_for_path_in_docker
 from localstack.utils.files import load_file, mkdir, rm_rf

@@ -4,7 +4,7 @@ from pathlib import Path
 
 import pytest
 
-from localstack.testing.testselection.matching import (
+from localstack.tooling.testing.testselection.matching import (
     MATCHING_RULES,
     SENTINEL_ALL_TESTS,
     Matchers,
@@ -12,7 +12,7 @@ from localstack.testing.testselection.matching import (
     generic_service_test_matching_rule,
     resolve_dependencies,
 )
-from localstack.testing.testselection.testselection import get_affected_tests_from_changes
+from localstack.tooling.testing.testselection.testselection import get_affected_tests_from_changes
 
 
 def test_service_dependency_resolving_no_deps():

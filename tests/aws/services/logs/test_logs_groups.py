@@ -4,7 +4,7 @@ import json
 
 import pytest
 
-from localstack.testing.pytest import markers
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.common import poll_condition, short_uid
 
 

@@ -2,7 +2,7 @@ from queue import PriorityQueue
 
 import pytest
 
-from localstack.state import pickle
+from localstack.platform.state import pickle
 
 
 def test_pickle_priority_queue():

@@ -36,7 +36,7 @@ classifiers = [
 ]
 
 [tool.setuptools_scm]
-version_file = "localstack-core/localstack/version.py"
+version_file = "localstack-core/localstack/platform/version.py"
 # pypi does not support local versions:
 # https://setuptools-scm.readthedocs.io/en/latest/usage/#default-versioning-scheme
 local_scheme = "no-local-version"
@@ -177,8 +177,8 @@ exclude = ["tests*"]
     "services/**/*.html",
     "services/**/resource_providers/**/*.schema.json",
     "utils/kinesis/java/cloud/localstack/*.*",
-    "openapi.yaml",
-    "http/resources/swagger/templates/index.html"
+    "platform/openapi.yaml",
+    "platform/http/resources/swagger/templates/index.html"
 ]
 
 [tool.ruff]
@@ -202,12 +202,12 @@ exclude = [
 
 [tool.ruff.per-file-target-version]
 # Only allow minimum version for code used in the CLI
-"localstack-core/localstack/cli/**" = "py310"
-"localstack-core/localstack/packages/**" = "py310"
-"localstack-core/localstack/config.py" = "py310"
-"localstack-core/localstack/constants.py" = "py310"
+"localstack-core/localstack/tooling/cli/**" = "py310"
+"localstack-core/localstack/tooling/packages/**" = "py310"
+"localstack-core/localstack/platform/config.py" = "py310"
+"localstack-core/localstack/platform/constants.py" = "py310"
 "localstack-core/localstack/utils/**" = "py310"  # imported by CLI tests
-"localstack-core/localstack/testing/pytest/**" = "py310" # imported by CLI tests
+"localstack-core/localstack/tooling/testing/pytest/**" = "py310" # imported by CLI tests
 "localstack-core/localstack/aws/connect.py" = "py310" # imported by CLI tests
 
 [tool.deptry]
@@ -217,11 +217,11 @@ known_first_party = [
 ]
 extend_exclude = [
     "scripts/**", # dependencies not handled by pyproject.toml
-    "localstack-core/localstack/testing/**", # utilities for testing
+    "localstack-core/localstack/tooling/testing/**", # utilities for testing
     "localstack-core/localstack/aws/mocking.py", # not used at runtime
     "localstack-core/localstack/aws/scaffold.py", # not used at runtime
-    "localstack-core/localstack/dev/**", # internal dev tooling
-    "localstack-core/localstack/services/stepfunctions/asl/antlr/runtime/**" # generated code
+    "localstack-core/localstack/tooling/dev/**", # internal dev tooling
+    "localstack-core/localstack/aws/services/stepfunctions/asl/antlr/runtime/**" # generated code
 ]
 pep621_dev_dependency_groups = ["dev", "typehint", "test"]
 

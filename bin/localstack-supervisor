@@ -39,7 +39,7 @@ def get_localstack_command() -> list[str]:
 
     command = os.environ.get("LOCALSTACK_SUPERVISOR_COMMAND")
     if not command:
-        return [sys.executable, "-m", "localstack.runtime.main"]
+        return [sys.executable, "-m", "localstack.platform.runtime.main"]
     return shlex.split(command)
 
 

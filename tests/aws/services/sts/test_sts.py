@@ -6,11 +6,11 @@ import requests
 from botocore.config import Config
 from botocore.exceptions import ClientError
 
-from localstack import config
-from localstack.constants import APPLICATION_JSON
-from localstack.testing.aws.util import create_client_with_keys
-from localstack.testing.config import TEST_AWS_ACCESS_KEY_ID
-from localstack.testing.pytest import markers
+from localstack.platform import config
+from localstack.platform.constants import APPLICATION_JSON
+from localstack.tooling.testing.aws.util import create_client_with_keys
+from localstack.tooling.testing.config import TEST_AWS_ACCESS_KEY_ID
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.aws.request_context import mock_aws_request_headers
 from localstack.utils.numbers import is_number
 from localstack.utils.strings import short_uid, to_str

@@ -4,8 +4,7 @@ from typing import Any
 from hypercorn import Config
 from hypercorn.asyncio import serve as serve_hypercorn
 
-from localstack import constants
-
+from localstack.platform import constants
 from ..gateway import Gateway
 from .asgi import AsgiGateway
 

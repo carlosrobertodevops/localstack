@@ -9,8 +9,8 @@ from botocore.exceptions import WaiterError
 from localstack_snapshot.snapshots.transformer import SortingTransformer
 
 from localstack.aws.api.cloudcontrol import Operation, OperationStatus
-from localstack.testing.pytest import markers
-from localstack.testing.snapshots.transformer_utility import PATTERN_UUID
+from localstack.tooling.testing.pytest import markers
+from localstack.tooling.testing.snapshots.transformer_utility import PATTERN_UUID
 from localstack.utils.strings import long_uid, short_uid
 from localstack.utils.sync import ShortCircuitWaitException, wait_until
 

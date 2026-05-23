@@ -1,5 +1,5 @@
-from localstack.constants import AWS_REGION_US_EAST_1
-from localstack.testing.pytest import markers
+from localstack.platform.constants import AWS_REGION_US_EAST_1
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.urls import localstack_host
 
 """
@@ -16,7 +16,7 @@ import requests
 import xmltodict
 from botocore.auth import SigV4Auth
 
-from localstack import config
+from localstack.platform import config
 from localstack.aws.api.lambda_ import Runtime
 from localstack.utils.files import new_tmp_file, save_file
 from localstack.utils.strings import short_uid

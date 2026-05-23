@@ -3,8 +3,8 @@ from collections.abc import Iterable
 
 import pytest
 
-from localstack.services.cloudformation.v2.utils import is_v2_engine
-from localstack.testing.aws.util import is_aws_cloud
+from localstack.aws.services.cloudformation.v2.utils import is_v2_engine
+from localstack.tooling.testing.aws.util import is_aws_cloud
 from localstack.utils.collections import optional_list
 
 SKIP_TYPE_RE = re.compile(r"^CFNV2\((?P<reason>[^\)]+)\)")

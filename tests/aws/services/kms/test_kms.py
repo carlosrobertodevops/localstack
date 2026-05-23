@@ -19,16 +19,16 @@ from cryptography.hazmat.primitives.keywrap import aes_key_wrap_with_padding
 from cryptography.hazmat.primitives.serialization import load_der_public_key
 from localstack_snapshot.snapshots.transformer import RegexTransformer
 
-from localstack.services.kms.models import (
+from localstack.aws.services.kms.models import (
     HEADER_LEN,
     IV_LEN,
     ON_DEMAND_ROTATION_LIMIT,
     Ciphertext,
     _serialize_ciphertext_blob,
 )
-from localstack.services.kms.utils import get_hash_algorithm
-from localstack.testing.aws.util import in_default_partition, is_aws_cloud
-from localstack.testing.pytest import markers
+from localstack.aws.services.kms.utils import get_hash_algorithm
+from localstack.tooling.testing.aws.util import in_default_partition, is_aws_cloud
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.crypto import encrypt
 from localstack.utils.strings import short_uid, to_str
 from localstack.utils.sync import poll_condition

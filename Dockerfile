@@ -154,7 +154,7 @@ RUN . .venv/bin/activate && python3 -m localstack.aws.spec
 RUN --mount=type=cache,target=/root/.cache \
     --mount=type=cache,target=/var/lib/localstack/cache \
     source .venv/bin/activate && \
-    python -m localstack.cli.lpm install \
+    python -m localstack.tooling.cli.lpm install \
       lambda-runtime \
       jpype-jsonata \
       dynamodb-local && \

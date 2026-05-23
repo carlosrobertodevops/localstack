@@ -3,9 +3,9 @@ import json
 
 import pytest
 
-from localstack.testing.aws.util import is_aws_cloud
-from localstack.testing.pytest import markers
-from localstack.testing.pytest.stepfunctions.utils import (
+from localstack.tooling.testing.aws.util import is_aws_cloud
+from localstack.tooling.testing.pytest import markers
+from localstack.tooling.testing.pytest.stepfunctions.utils import (
     create_and_record_execution,
 )
 from tests.aws.services.stepfunctions.templates.base.base_templates import BaseTemplate

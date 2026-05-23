@@ -1,0 +1,62 @@
+#!/usr/bin/env bash
+# azurelocal — `az` CLI wrapper pointing at the LocalStack Azure gateway.
+#
+# Requires: `az` CLI installed locally.
+# Env overrides:
+#   LOCALSTACK_ENDPOINT          (default: http://localhost:4566)
+#   LOCALSTACK_AZURE_CLOUD_NAME  (default: LocalStack)
+#   LOCALSTACK_AZURE_TENANT      (default: localstack-tenant)
+#   LOCALSTACK_AZURE_SUB         (default: 00000000-0000-0000-0000-000000000000)
+set -euo pipefail
+
+if ! command -v az >/dev/null 2>&1; then
+  echo "azurelocal: 'az' CLI not found on PATH. Install: https://learn.microsoft.com/cli/azure/install-azure-cli" >&2
+  exit 127
+fi
+
+# Azure CLI / MSAL require HTTPS on the authority. Default to the TLS sidecar
+# (localstack-tls service in docker-compose.yml). Override with
+# LOCALSTACK_ENDPOINT if you provide your own HTTPS terminator.
+ENDPOINT="${LOCALSTACK_ENDPOINT:-https://localhost:4569}"
+CLOUD_NAME="${LOCALSTACK_AZURE_CLOUD_NAME:-LocalStack}"
+
+# msal validates the TLS cert chain; our nginx sidecar serves a self-signed
+# cert. Trust it explicitly via REQUESTS_CA_BUNDLE.
+_LS_CERT="${LOCALSTACK_AZURE_CERT:-$(cd "$(dirname "$0")/.." && pwd)/localstack-tls/certs/cert.pem}"
+if [ -f "$_LS_CERT" ]; then
+  export REQUESTS_CA_BUNDLE="$_LS_CERT"
+  export CURL_CA_BUNDLE="$_LS_CERT"
+  export SSL_CERT_FILE="$_LS_CERT"
+fi
+export AZURE_CLI_DISABLE_CONNECTION_VERIFICATION=1
+export ADAL_PYTHON_SSL_NO_VERIFY=1
+TENANT="${LOCALSTACK_AZURE_TENANT:-localstack-tenant}"
+SUB="${LOCALSTACK_AZURE_SUB:-00000000-0000-0000-0000-000000000000}"
+
+# Suffix used by `az storage` to build per-account URLs like
+# <account>.blob.<suffix>. Matches the host pattern handled by AzureGateway.
+STORAGE_SUFFIX="${LOCALSTACK_AZURE_STORAGE_SUFFIX:-core.windows.net}"
+KV_SUFFIX="${LOCALSTACK_AZURE_KV_SUFFIX:-vault.azure.net}"
+
+# Disable TLS verification so `az` accepts our http endpoint as the active cloud.
+export AZURE_CLI_DISABLE_CONNECTION_VERIFICATION=1
+export ADAL_PYTHON_SSL_NO_VERIFY=1
+export AZURE_HTTP_USER_AGENT="${AZURE_HTTP_USER_AGENT:-localstack-azurelocal}"
+
+if ! az cloud show --name "$CLOUD_NAME" >/dev/null 2>&1; then
+  az cloud register --name "$CLOUD_NAME" \
+    --endpoint-resource-manager "$ENDPOINT" \
+    --endpoint-active-directory "$ENDPOINT" \
+    --endpoint-active-directory-graph-resource-id "$ENDPOINT" \
+    --endpoint-active-directory-resource-id "$ENDPOINT" \
+    --suffix-storage-endpoint "$STORAGE_SUFFIX" \
+    --suffix-keyvault-dns ".${KV_SUFFIX}" >/dev/null
+fi
+
+az cloud set --name "$CLOUD_NAME" >/dev/null
+
+# Drop a synthetic subscription into the local profile so `az` calls that
+# require --subscription resolve. The login itself targets our Entra router.
+az account set --subscription "$SUB" >/dev/null 2>&1 || true
+
+exec az "$@"

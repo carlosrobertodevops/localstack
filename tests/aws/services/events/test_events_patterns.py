@@ -8,7 +8,7 @@ import json5
 import pytest
 from botocore.exceptions import ClientError
 
-from localstack.testing.pytest import markers
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.common import short_uid
 from localstack.utils.files import load_file
 from tests.aws.services.events.helper_functions import (

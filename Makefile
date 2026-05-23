@@ -77,6 +77,31 @@ entrypoints: install-dev
 	@# make sure that the plux.ini file with the entrypoints has correctly been created
 	@test -s plux.ini || (echo "Entrypoints were not correctly created! Aborting!" && exit 1)
 
+# --- Multi-cloud console (localstack-ui/console) ----------------------------
+console-install:          ## Install console SPA dependencies (bun)
+	cd localstack-ui/console && bun install
+
+console-dev:              ## Run Vite dev server on :5173
+	cd localstack-ui/console && bun run dev
+
+console-build:            ## Build the console SPA into dist/
+	cd localstack-ui/console && bun run build
+
+console-lint:             ## Lint + typecheck the console SPA
+	cd localstack-ui/console && bun run lint && bun run typecheck
+
+console-test:             ## Run console SPA tests (vitest)
+	cd localstack-ui/console && bun run test
+
+console-test-e2e:         ## Run console SPA e2e tests (playwright)
+	cd localstack-ui/console && bun run test:e2e
+
+console-bridge:           ## Run the host-side CLI bridge worker on :4578
+	./bin/console-cli-bridge
+
+console-bridge-install:   ## Install the bridge worker requirements
+	$(PIP_CMD) install -r bin/console-cli-bridge.requirements.txt
+
 dist:                     ## Build source and built (wheel) distributions of the current version
 	$(VENV_RUN); pip install --upgrade build twine; python -m build
 
@@ -89,7 +114,7 @@ coveralls:         		  ## Publish coveralls metrics
 	$(VENV_RUN); coveralls
 
 start:             		  ## Manually start the local infrastructure for testing
-	($(VENV_RUN); python3 -m localstack.runtime.main)
+	($(VENV_RUN); python3 -m localstack.platform.runtime.main)
 
 docker-run-tests:		  ## Initializes the test environment and runs the tests in a docker container
 	docker run -e LOCALSTACK_INTERNAL_TEST_COLLECT_METRIC=1 -e DOCKERHUB_USERNAME -e DOCKERHUB_PASSWORD --entrypoint= -v `pwd`/.git:/opt/code/localstack/.git -v `pwd`/requirements-test.txt:/opt/code/localstack/requirements-test.txt -v `pwd`/.test_durations:/opt/code/localstack/.test_durations -v `pwd`/tests/:/opt/code/localstack/tests/ -v `pwd`/dist/:/opt/code/localstack/dist/ -v `pwd`/target/:/opt/code/localstack/target/ -v /var/run/docker.sock:/var/run/docker.sock -v /tmp/localstack:/var/lib/localstack  \
@@ -121,7 +146,7 @@ lint:              		  ## Run code linter to check code style, check if formatte
 	@[ -f localstack-core/localstack/__init__.py ] && echo "localstack-core/localstack/__init__.py will break packaging." && exit 1 || :
 	($(VENV_RUN); python -m ruff check --output-format=full . && python -m ruff format --check --diff .)
 	$(VENV_RUN); pre-commit run check-pinned-deps-for-needed-upgrade --files pyproject.toml # run pre-commit hook manually here to ensure that this check runs in CI as well
-	$(VENV_RUN); openapi-spec-validator localstack-core/localstack/openapi.yaml
+	$(VENV_RUN); openapi-spec-validator localstack-core/localstack/platform/openapi.yaml
 	$(VENV_RUN); cd localstack-core && mypy --install-types --non-interactive
 	$(VENV_RUN); deptry .
 

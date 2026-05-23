@@ -4,8 +4,8 @@ from http import HTTPMethod
 import pytest
 import requests
 
-from localstack.testing.aws.util import is_aws_cloud
-from localstack.testing.pytest import markers
+from localstack.tooling.testing.aws.util import is_aws_cloud
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.sync import retry
 from tests.aws.services.apigateway.apigateway_fixtures import api_invoke_url
 from tests.aws.services.apigateway.conftest import is_next_gen_api

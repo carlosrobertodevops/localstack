@@ -3,8 +3,8 @@ from botocore.exceptions import ClientError
 from localstack_snapshot.snapshots.transformer import SortingTransformer
 from moto import settings as moto_settings
 
-from localstack.testing.aws.util import is_aws_cloud
-from localstack.testing.pytest import markers
+from localstack.tooling.testing.aws.util import is_aws_cloud
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.crypto import generate_ssl_cert
 from localstack.utils.strings import short_uid
 from localstack.utils.sync import retry, wait_until

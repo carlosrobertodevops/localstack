@@ -14,8 +14,8 @@ from botocore.exceptions import UnknownServiceError
 from botocore.loaders import Loader, instance_cache
 from botocore.model import OperationModel, ServiceModel
 
-from localstack import config
-from localstack.constants import VERSION
+from localstack.platform import config
+from localstack.platform.constants import VERSION
 from localstack.utils.objects import singleton_factory
 
 LOG = logging.getLogger(__name__)

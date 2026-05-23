@@ -3,8 +3,8 @@ import os
 import pytest
 from tests.aws.services.cloudformation.conftest import skip_if_legacy_engine
 
-from localstack.services.cloudformation.engine.template_deployer import MOCK_REFERENCE
-from localstack.testing.pytest import markers
+from localstack.aws.services.cloudformation.engine.template_deployer import MOCK_REFERENCE
+from localstack.tooling.testing.pytest import markers
 from localstack.utils import testutil
 from localstack.utils.strings import short_uid
 

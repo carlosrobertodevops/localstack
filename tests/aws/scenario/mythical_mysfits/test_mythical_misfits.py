@@ -11,9 +11,9 @@ import json
 import pytest
 import requests
 
-from localstack.testing.aws.util import is_aws_cloud
-from localstack.testing.pytest import markers
-from localstack.testing.scenario.provisioning import InfraProvisioner
+from localstack.tooling.testing.aws.util import is_aws_cloud
+from localstack.tooling.testing.pytest import markers
+from localstack.tooling.testing.scenario.provisioning import InfraProvisioner
 from localstack.utils.strings import to_str
 from localstack.utils.sync import retry
 from tests.aws.scenario.mythical_mysfits.stacks.mysfits_core_stack import MythicalMysfitsCoreStack

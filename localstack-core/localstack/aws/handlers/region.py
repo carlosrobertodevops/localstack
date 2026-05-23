@@ -5,7 +5,7 @@ from functools import cached_property
 
 from boto3.session import Session
 
-from localstack.http import Request, Response
+from localstack.platform.http import Request, Response
 from localstack.utils.aws.arns import get_partition
 
 from ..api import RequestContext

@@ -1,11 +1,11 @@
 import logging
 import threading
 
-from localstack import config
+from localstack.platform import config
 from localstack.aws.api import RequestContext
 from localstack.aws.chain import HandlerChain
 from localstack.aws.client import parse_response
-from localstack.http import Response
+from localstack.platform.http import Response
 from localstack.utils.analytics.service_request_aggregator import (
     ServiceRequestAggregator,
     ServiceRequestInfo,

@@ -6,9 +6,9 @@ from localstack.aws.api.kms import (
     DryRunOperationException,
     UnsupportedOperationException,
 )
-from localstack.services.kms.exceptions import ValidationException
-from localstack.services.kms.provider import KmsProvider
-from localstack.services.kms.utils import (
+from localstack.aws.services.kms.exceptions import ValidationException
+from localstack.aws.services.kms.provider import KmsProvider
+from localstack.aws.services.kms.utils import (
     execute_dry_run_capable,
     validate_alias_name,
 )

@@ -8,12 +8,12 @@ from urllib.parse import urlparse
 
 from werkzeug.datastructures import Headers
 
-from localstack import config
+from localstack.platform import config
 from localstack.aws.api import RequestContext
 from localstack.aws.chain import Handler, HandlerChain
-from localstack.config import EXTRA_CORS_ALLOWED_HEADERS, EXTRA_CORS_EXPOSE_HEADERS
-from localstack.constants import LOCALHOST, LOCALHOST_HOSTNAME, PATH_USER_REQUEST
-from localstack.http import Response
+from localstack.platform.config import EXTRA_CORS_ALLOWED_HEADERS, EXTRA_CORS_EXPOSE_HEADERS
+from localstack.platform.constants import LOCALHOST, LOCALHOST_HOSTNAME, PATH_USER_REQUEST
+from localstack.platform.http import Response
 from localstack.utils.urls import localstack_host
 
 LOG = logging.getLogger(__name__)

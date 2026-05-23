@@ -3,11 +3,11 @@ import threading
 
 from rolo.gateway.wsgi import WsgiGateway
 
-from localstack import config
+from localstack.platform import config
 from localstack.aws.app import LocalstackAwsGateway
-from localstack.config import HostAndPort
-from localstack.runtime import get_current_runtime
-from localstack.runtime.shutdown import ON_AFTER_SERVICE_SHUTDOWN_HANDLERS
+from localstack.platform.config import HostAndPort
+from localstack.platform.runtime import get_current_runtime
+from localstack.platform.runtime.shutdown import ON_AFTER_SERVICE_SHUTDOWN_HANDLERS
 from localstack.utils.collections import ensure_list
 
 LOG = logging.getLogger(__name__)
@@ -91,7 +91,7 @@ def _serve_werkzeug(
 def _serve_hypercorn(
     gateway: LocalstackAwsGateway, listen: list[HostAndPort], use_ssl: bool, asynchronous: bool
 ):
-    from localstack.http.hypercorn import GatewayServer
+    from localstack.platform.http.hypercorn import GatewayServer
 
     # start serving gateway
     server = GatewayServer(gateway, listen, use_ssl, config.GATEWAY_WORKER_COUNT)

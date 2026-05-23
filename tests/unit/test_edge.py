@@ -2,8 +2,8 @@ import pytest
 import requests
 from pytest_httpserver.httpserver import HTTPServer
 
-from localstack.config import HostAndPort
-from localstack.services.edge import start_proxy
+from localstack.platform.config import HostAndPort
+from localstack.aws.services.edge import start_proxy
 from localstack.utils.net import get_free_tcp_port
 
 

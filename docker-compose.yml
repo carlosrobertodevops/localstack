@@ -1,13 +1,62 @@
 services:
   localstack:
     container_name: "${LOCALSTACK_DOCKER_NAME:-localstack-main}"
-    image: localstack/localstack
+    image: ${LOCALSTACK_IMAGE:-localstack/localstack-custom}
     ports:
-      - "127.0.0.1:4566:4566"            # LocalStack Gateway
-      - "127.0.0.1:4510-4559:4510-4559"  # external services port range
+      - "127.0.0.1:4566:4566" # LocalStack Gateway
+      - "127.0.0.1:4510-4559:4510-4559" # external services port range
     environment:
       # LocalStack configuration: https://docs.localstack.cloud/references/configuration/
       - DEBUG=${DEBUG:-0}
+      - PERSISTENCE=${PERSISTENCE:-0}
+      # OrbStack auto-domain (<container>.<project>.orb.local) + UI sidecar + outros origins via env
+      - EXTRA_CORS_ALLOWED_ORIGINS=${EXTRA_CORS_ALLOWED_ORIGINS:-https://localstack-ui.localstack.orb.local,http://localstack-ui.localstack.orb.local,https://localstack.localstack.orb.local,http://localstack.localstack.orb.local,https://localstack-tls.localstack.orb.local,http://localstack-tls.localstack.orb.local,http://localhost:4577,http://127.0.0.1:4577,http://localhost:5173,http://127.0.0.1:5173,http://localhost:4578,http://127.0.0.1:4578}
+      # Permite que CORS responda mesmo para sub-domínios *.orb.local (dev only).
+      - DISABLE_CORS_CHECKS=${DISABLE_CORS_CHECKS:-1}
     volumes:
       - "${LOCALSTACK_VOLUME_DIR:-./volume}:/var/lib/localstack"
       - "/var/run/docker.sock:/var/run/docker.sock"
+      # Init hooks (ready.d) — cria buckets default p/ evitar 404 NoSuchBucket em dev
+      - "./localstack-init:/etc/localstack/init"
+  localstack-ui:
+    container_name: localstack-ui
+    image: nginx:1.27-alpine
+    ports:
+      - "127.0.0.1:4577:80"
+    volumes:
+      # Serves the built console SPA (run `make console-build` to populate dist/).
+      # legacy.html is copied from console/public/ into dist/ by Vite at build time.
+      - "./localstack-ui/console/dist:/usr/share/nginx/html:ro"
+      # Proxies /_localstack/* → localstack:4566 and /_bridge/* → host:4578.
+      - "./localstack-ui/console/nginx.conf:/etc/nginx/nginx.conf:ro"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    depends_on:
+      - localstack
+    restart: unless-stopped
+  # Optional host-side CLI bridge for the console (bin/console-cli-bridge).
+  # Documented in docs/multi-cloud-console-plan.md §3.5, §4. Runs on the host
+  # by default — only enable this service if you have built a container that
+  # ships aws/az/gcloud (heavy).
+  # localstack-console-bridge:
+  #   container_name: localstack-console-bridge
+  #   image: python:3.12-alpine
+  #   ports:
+  #     - "127.0.0.1:4578:4578"
+  #   volumes:
+  #     - "./bin:/app/bin:ro"
+  #     - "./localstack-core:/app/localstack-core:ro"
+  #   working_dir: /app
+  #   command: ["python", "/app/bin/console-cli-bridge", "--host", "0.0.0.0"]
+  #   restart: unless-stopped
+  localstack-tls:
+    container_name: localstack-tls
+    image: nginx:1.27-alpine
+    ports:
+      - "127.0.0.1:4569:4569"
+    volumes:
+      - "./localstack-tls/nginx.conf:/etc/nginx/nginx.conf:ro"
+      - "./localstack-tls/certs:/etc/nginx/certs:ro"
+    depends_on:
+      - localstack
+    restart: unless-stopped

@@ -1,19 +1,19 @@
 import pytest
 
 from localstack.aws.api.apigateway import GatewayResponse, GatewayResponseType
-from localstack.http import Request
-from localstack.services.apigateway.models import MergedRestApi, RestApiDeployment
-from localstack.services.apigateway.next_gen.execute_api.api import RestApiGatewayHandlerChain
-from localstack.services.apigateway.next_gen.execute_api.context import RestApiInvocationContext
-from localstack.services.apigateway.next_gen.execute_api.gateway_response import (
+from localstack.platform.http import Request
+from localstack.aws.services.apigateway.models import MergedRestApi, RestApiDeployment
+from localstack.aws.services.apigateway.next_gen.execute_api.api import RestApiGatewayHandlerChain
+from localstack.aws.services.apigateway.next_gen.execute_api.context import RestApiInvocationContext
+from localstack.aws.services.apigateway.next_gen.execute_api.gateway_response import (
     AccessDeniedError,
     BaseGatewayException,
     UnauthorizedError,
 )
-from localstack.services.apigateway.next_gen.execute_api.handlers import GatewayExceptionHandler
-from localstack.services.apigateway.next_gen.execute_api.router import ApiGatewayEndpoint
-from localstack.services.apigateway.next_gen.execute_api.variables import ContextVariables
-from localstack.testing.config import TEST_AWS_ACCOUNT_ID, TEST_AWS_REGION_NAME
+from localstack.aws.services.apigateway.next_gen.execute_api.handlers import GatewayExceptionHandler
+from localstack.aws.services.apigateway.next_gen.execute_api.router import ApiGatewayEndpoint
+from localstack.aws.services.apigateway.next_gen.execute_api.variables import ContextVariables
+from localstack.tooling.testing.config import TEST_AWS_ACCOUNT_ID, TEST_AWS_REGION_NAME
 
 
 class TestGatewayResponse:

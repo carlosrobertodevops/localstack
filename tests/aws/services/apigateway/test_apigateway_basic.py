@@ -13,26 +13,26 @@ from botocore.exceptions import ClientError
 from jsonpatch import apply_patch
 from requests.structures import CaseInsensitiveDict
 
-from localstack import config
+from localstack.platform import config
 from localstack.aws.api.lambda_ import Runtime
 from localstack.aws.handlers import cors
-from localstack.constants import TAG_KEY_CUSTOM_ID
-from localstack.services.apigateway.helpers import (
+from localstack.platform.constants import TAG_KEY_CUSTOM_ID
+from localstack.aws.services.apigateway.helpers import (
     host_based_url,
     localstack_path_based_url,
     path_based_url,
 )
-from localstack.services.apigateway.legacy.helpers import (
+from localstack.aws.services.apigateway.legacy.helpers import (
     get_resource_for_path,
     get_rest_api_paths,
 )
-from localstack.testing.aws.util import in_default_partition
-from localstack.testing.config import (
+from localstack.tooling.testing.aws.util import in_default_partition
+from localstack.tooling.testing.config import (
     TEST_AWS_ACCESS_KEY_ID,
     TEST_AWS_ACCOUNT_ID,
     TEST_AWS_REGION_NAME,
 )
-from localstack.testing.pytest import markers
+from localstack.tooling.testing.pytest import markers
 from localstack.utils import testutil
 from localstack.utils.aws import arns
 from localstack.utils.aws import resources as resource_util

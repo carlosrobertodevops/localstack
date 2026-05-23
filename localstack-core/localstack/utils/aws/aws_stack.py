@@ -5,9 +5,9 @@ from functools import lru_cache
 
 import boto3
 
-from localstack import config
-from localstack.config import S3_VIRTUAL_HOSTNAME
-from localstack.constants import (
+from localstack.platform import config
+from localstack.platform.config import S3_VIRTUAL_HOSTNAME
+from localstack.platform.constants import (
     LOCALHOST,
 )
 from localstack.utils.strings import is_string_or_bytes, to_str

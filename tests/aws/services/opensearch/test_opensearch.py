@@ -12,7 +12,7 @@ from botocore.auth import SigV4Auth
 from opensearchpy import OpenSearch
 from opensearchpy.exceptions import AuthorizationException
 
-from localstack import config
+from localstack.platform import config
 from localstack.aws.api.opensearch import (
     AdvancedSecurityOptionsInput,
     AutoTuneDesiredState,
@@ -26,9 +26,9 @@ from localstack.aws.api.opensearch import (
     OpenSearchPartitionInstanceType,
     VolumeType,
 )
-from localstack.services.opensearch import provider
-from localstack.services.opensearch.cluster import CustomEndpoint, EdgeProxiedOpensearchCluster
-from localstack.services.opensearch.cluster_manager import (
+from localstack.aws.services.opensearch import provider
+from localstack.aws.services.opensearch.cluster import CustomEndpoint, EdgeProxiedOpensearchCluster
+from localstack.aws.services.opensearch.cluster_manager import (
     CustomBackendManager,
     DomainKey,
     MultiClusterManager,
@@ -36,15 +36,15 @@ from localstack.services.opensearch.cluster_manager import (
     SingletonClusterManager,
     create_cluster_manager,
 )
-from localstack.services.opensearch.packages import (
+from localstack.aws.services.opensearch.packages import (
     ELASTICSEARCH_DEFAULT_VERSION,
     OPENSEARCH_DEFAULT_VERSION,
     OPENSEARCH_PLUGIN_LIST,
     opensearch_package,
 )
-from localstack.testing import config as test_config
-from localstack.testing.aws.util import is_aws_cloud
-from localstack.testing.pytest import markers
+from localstack.tooling.testing import config as test_config
+from localstack.tooling.testing.aws.util import is_aws_cloud
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.common import call_safe, poll_condition, retry, short_uid, start_worker_thread
 from localstack.utils.common import safe_requests as requests
 from localstack.utils.strings import to_str

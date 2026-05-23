@@ -9,7 +9,7 @@ from localstack.aws.chain import HandlerChain
 from localstack.aws.forwarder import create_aws_request_context
 from localstack.aws.handlers.service import ServiceExceptionSerializer, ServiceResponseParser
 from localstack.aws.protocol.serializer import create_serializer
-from localstack.http import Request, Response
+from localstack.platform.http import Request, Response
 from localstack.utils.catalog.common import AwsServiceSupportAtRuntime
 
 

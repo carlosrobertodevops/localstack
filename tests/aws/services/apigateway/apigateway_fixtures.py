@@ -1,11 +1,11 @@
 from enum import Enum
 
-from localstack.services.apigateway.helpers import (
+from localstack.aws.services.apigateway.helpers import (
     host_based_url,
     localstack_path_based_url,
     path_based_url,
 )
-from localstack.testing.aws.util import is_aws_cloud
+from localstack.tooling.testing.aws.util import is_aws_cloud
 from localstack.utils.aws import aws_stack
 
 # TODO convert the test util functions in this file to pytest fixtures

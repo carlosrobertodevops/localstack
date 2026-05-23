@@ -1,6 +1,6 @@
 import pytest
 
-from localstack.testing.aws.asf_utils import (
+from localstack.tooling.testing.aws.asf_utils import (
     check_provider_signature,
     collect_implemented_provider_operations,
 )

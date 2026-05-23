@@ -8,9 +8,9 @@ import requests
 from botocore.exceptions import ClientError
 
 from localstack.aws.api.lambda_ import Runtime
-from localstack.constants import TAG_KEY_CUSTOM_ID
-from localstack.testing.aws.util import is_aws_cloud
-from localstack.testing.pytest import markers
+from localstack.platform.constants import TAG_KEY_CUSTOM_ID
+from localstack.tooling.testing.aws.util import is_aws_cloud
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.aws.arns import get_partition, parse_arn
 from localstack.utils.strings import short_uid
 from localstack.utils.sync import retry

@@ -2,7 +2,7 @@ import json
 
 import pytest
 
-from localstack.testing.pytest import markers
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.strings import short_uid
 from tests.aws.services.events.helper_functions import is_old_provider
 from tests.aws.services.events.test_events import TEST_EVENT_PATTERN

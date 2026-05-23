@@ -1,7 +1,7 @@
 import pytest
 
-from localstack.constants import AWS_REGION_US_EAST_1
-from localstack.testing.pytest import markers
+from localstack.platform.constants import AWS_REGION_US_EAST_1
+from localstack.tooling.testing.pytest import markers
 
 TEST_SUPPORT_CASE = {
     "subject": "TEST CASE-Please ignore",

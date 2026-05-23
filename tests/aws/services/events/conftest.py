@@ -3,7 +3,7 @@ import logging
 
 import pytest
 
-from localstack.testing.snapshots.transformer_utility import TransformerUtility
+from localstack.tooling.testing.snapshots.transformer_utility import TransformerUtility
 from localstack.utils.aws.arns import get_partition
 from localstack.utils.strings import short_uid
 from localstack.utils.sync import retry

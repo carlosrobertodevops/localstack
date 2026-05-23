@@ -4,15 +4,15 @@ from json import JSONDecodeError
 import pytest
 import xmltodict
 
-from localstack.constants import APPLICATION_JSON, APPLICATION_XML
-from localstack.services.apigateway.next_gen.execute_api.template_mapping import (
+from localstack.platform.constants import APPLICATION_JSON, APPLICATION_XML
+from localstack.aws.services.apigateway.next_gen.execute_api.template_mapping import (
     ApiGatewayVtlTemplate,
     MappingTemplateInput,
     MappingTemplateParams,
     MappingTemplateVariables,
     VelocityUtilApiGateway,
 )
-from localstack.services.apigateway.next_gen.execute_api.variables import (
+from localstack.aws.services.apigateway.next_gen.execute_api.variables import (
     ContextVariableOverrides,
     ContextVariables,
     ContextVarsAuthorizer,

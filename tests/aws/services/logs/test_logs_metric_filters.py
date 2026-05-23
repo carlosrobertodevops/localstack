@@ -3,7 +3,7 @@
 import pytest
 from localstack_snapshot.pytest.snapshot import is_aws
 
-from localstack.testing.pytest import markers
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.common import now_utc, retry, short_uid
 
 

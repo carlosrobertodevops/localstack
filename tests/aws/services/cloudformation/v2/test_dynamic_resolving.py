@@ -1,6 +1,6 @@
 from tests.aws.services.cloudformation.conftest import skip_if_legacy_engine
 
-from localstack.testing.pytest import markers
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.strings import short_uid
 
 pytestmark = skip_if_legacy_engine(reason="Only valid for the V2 provider")

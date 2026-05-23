@@ -4,8 +4,8 @@ import pytest
 from botocore.exceptions import ClientError
 from localstack_snapshot.pytest.snapshot import is_aws
 
-from localstack.constants import APPLICATION_AMZ_JSON_1_1
-from localstack.testing.pytest import markers
+from localstack.platform.constants import APPLICATION_AMZ_JSON_1_1
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.common import now_utc, retry
 
 

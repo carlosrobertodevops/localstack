@@ -2,7 +2,7 @@ import json
 import os
 from datetime import UTC, datetime, timedelta
 
-from localstack.testing.aws.util import is_aws_cloud
+from localstack.tooling.testing.aws.util import is_aws_cloud
 from localstack.utils.sync import retry
 
 

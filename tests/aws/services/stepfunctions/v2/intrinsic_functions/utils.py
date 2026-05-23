@@ -2,7 +2,7 @@ import json
 
 from localstack_snapshot.snapshots.transformer import RegexTransformer
 
-from localstack.testing.pytest.stepfunctions.utils import (
+from localstack.tooling.testing.pytest.stepfunctions.utils import (
     await_execution_terminated,
 )
 from localstack.utils.strings import short_uid

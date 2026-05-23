@@ -17,12 +17,12 @@ from cbor2._decoder import loads as cbor2_loads
 from cbor2._encoder import dumps as cbor2_dumps
 from requests import Response
 
-from localstack import config, constants
+from localstack.platform import config, constants
 from localstack.aws.api.lambda_ import Runtime
 from localstack.aws.client import _patch_cbor2
-from localstack.services.kinesis import provider as kinesis_provider
-from localstack.testing.aws.util import is_aws_cloud
-from localstack.testing.pytest import markers
+from localstack.aws.services.kinesis import provider as kinesis_provider
+from localstack.tooling.testing.aws.util import is_aws_cloud
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.aws import resources
 from localstack.utils.aws.arns import kinesis_stream_arn
 from localstack.utils.common import retry, select_attributes, short_uid

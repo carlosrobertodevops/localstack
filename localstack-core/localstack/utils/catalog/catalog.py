@@ -44,13 +44,13 @@ class CatalogPlugin(Plugin):
 
     @staticmethod
     def _get_services_at_runtime() -> set[ServiceName]:
-        from localstack.services.plugins import SERVICE_PLUGINS
+        from localstack.aws.services.plugins import SERVICE_PLUGINS
 
         return set(SERVICE_PLUGINS.list_available())
 
     @staticmethod
     def _get_cfn_resources_available_at_runtime() -> set[CfnResourceName]:
-        from localstack.services.cloudformation.resource_provider import (
+        from localstack.aws.services.cloudformation.resource_provider import (
             plugin_manager as cfn_plugin_manager,
         )
 

@@ -11,20 +11,20 @@ import requests
 from botocore.exceptions import ClientError
 from localstack_snapshot.snapshots.transformer import GenericTransformer
 
-from localstack import config
+from localstack.platform import config
 from localstack.aws.api.lambda_ import Runtime
-from localstack.services.sqs.constants import DEFAULT_MAXIMUM_MESSAGE_SIZE, SQS_UUID_STRING_SEED
-from localstack.services.sqs.models import sqs_stores
-from localstack.services.sqs.provider import MAX_NUMBER_OF_MESSAGES
-from localstack.services.sqs.utils import parse_queue_url
-from localstack.testing.aws.util import is_aws_cloud
-from localstack.testing.config import (
+from localstack.aws.services.sqs.constants import DEFAULT_MAXIMUM_MESSAGE_SIZE, SQS_UUID_STRING_SEED
+from localstack.aws.services.sqs.models import sqs_stores
+from localstack.aws.services.sqs.provider import MAX_NUMBER_OF_MESSAGES
+from localstack.aws.services.sqs.utils import parse_queue_url
+from localstack.tooling.testing.aws.util import is_aws_cloud
+from localstack.tooling.testing.config import (
     SECONDARY_TEST_AWS_ACCESS_KEY_ID,
     SECONDARY_TEST_AWS_SECRET_ACCESS_KEY,
     TEST_AWS_ACCESS_KEY_ID,
     TEST_AWS_SECRET_ACCESS_KEY,
 )
-from localstack.testing.pytest import markers
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.aws import arns
 from localstack.utils.aws.arns import get_partition
 from localstack.utils.aws.request_context import mock_aws_request_headers
@@ -240,7 +240,7 @@ class TestSqsProvider:
         region_name,
     ):
         # this is a white-box test for the QueueDeletedRecently timeout behavior
-        from localstack.services.sqs import constants
+        from localstack.aws.services.sqs import constants
 
         monkeypatch.setattr(config, "SQS_DELAY_RECENTLY_DELETED", True)
         monkeypatch.setattr(constants, "RECENTLY_DELETED_TIMEOUT", 1)

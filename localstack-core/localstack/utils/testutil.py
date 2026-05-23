@@ -12,7 +12,7 @@ from typing import Any
 
 from localstack.aws.api.lambda_ import Runtime
 from localstack.aws.connect import connect_externally_to, connect_to
-from localstack.testing.aws.util import is_aws_cloud
+from localstack.tooling.testing.aws.util import is_aws_cloud
 from localstack.utils.aws import arns
 from localstack.utils.aws import resources as resource_utils
 from localstack.utils.aws.request_context import mock_aws_request_headers
@@ -26,15 +26,15 @@ except ImportError:
 import boto3
 import requests
 
-from localstack import config
-from localstack.constants import (
+from localstack.platform import config
+from localstack.platform.constants import (
     LOCALSTACK_ROOT_FOLDER,
     LOCALSTACK_VENV_FOLDER,
 )
-from localstack.services.lambda_.lambda_utils import (
+from localstack.aws.services.lambda_.lambda_utils import (
     get_handler_file_from_name,
 )
-from localstack.testing.config import (
+from localstack.tooling.testing.config import (
     TEST_AWS_ACCESS_KEY_ID,
     TEST_AWS_ACCOUNT_ID,
     TEST_AWS_REGION_NAME,

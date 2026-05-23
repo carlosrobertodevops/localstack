@@ -2,8 +2,8 @@ import os
 
 import pytest
 
-from localstack.testing.aws.util import in_default_partition
-from localstack.testing.pytest import markers
+from localstack.tooling.testing.aws.util import in_default_partition
+from localstack.tooling.testing.pytest import markers
 
 
 @pytest.mark.skipif(

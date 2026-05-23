@@ -4,7 +4,7 @@ from pathlib import Path
 import pytest
 from _pytest.python import Metafunc
 
-from localstack.testing.aws.lambda_utils import ParametrizedLambda, generate_tests, package_for_lang
+from localstack.tooling.testing.aws.lambda_utils import ParametrizedLambda, generate_tests, package_for_lang
 
 
 def pytest_configure(config):

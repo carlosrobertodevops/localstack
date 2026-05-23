@@ -7,7 +7,7 @@ from datetime import date, datetime
 from json import JSONDecodeError
 from typing import Any
 
-from localstack.config import HostAndPort
+from localstack.platform.config import HostAndPort
 
 from .numbers import is_number
 from .strings import to_str

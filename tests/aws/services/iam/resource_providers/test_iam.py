@@ -3,8 +3,8 @@ import os
 
 import pytest
 
-from localstack.services.iam.provider import SERVICE_LINKED_ROLE_PATH_PREFIX
-from localstack.testing.pytest import markers
+from localstack.aws.services.iam.provider import SERVICE_LINKED_ROLE_PATH_PREFIX
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.common import short_uid
 
 

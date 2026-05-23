@@ -5,8 +5,8 @@ import binascii
 import logging
 import re
 
-from localstack import config
-from localstack.constants import DEFAULT_AWS_ACCOUNT_ID
+from localstack.platform import config
+from localstack.platform.constants import DEFAULT_AWS_ACCOUNT_ID
 
 LOG = logging.getLogger(__name__)
 

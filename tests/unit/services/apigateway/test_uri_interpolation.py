@@ -1,6 +1,6 @@
 import pytest
 
-from localstack.services.apigateway.next_gen.execute_api.helpers import (
+from localstack.aws.services.apigateway.next_gen.execute_api.helpers import (
     render_uri_with_path_parameters,
     render_uri_with_stage_variables,
 )

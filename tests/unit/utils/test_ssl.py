@@ -1,6 +1,6 @@
 import pytest
 
-from localstack import config
+from localstack.platform import config
 from localstack.utils.ssl import get_cert_pem_file_path
 
 

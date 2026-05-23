@@ -8,10 +8,10 @@ import localstack.aws.accounts
 from localstack.aws.api import RequestContext, ServiceException, handler
 from localstack.aws.forwarder import NotImplementedAvoidFallbackError
 from localstack.aws.spec import load_service
-from localstack.constants import AWS_REGION_US_EAST_1
-from localstack.services import moto
-from localstack.services.moto import MotoFallbackDispatcher
-from localstack.testing.pytest import markers
+from localstack.platform.constants import AWS_REGION_US_EAST_1
+from localstack.aws.services import moto
+from localstack.aws.services.moto import MotoFallbackDispatcher
+from localstack.tooling.testing.pytest import markers
 from localstack.utils.common import short_uid
 
 

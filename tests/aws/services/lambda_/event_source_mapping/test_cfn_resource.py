@@ -1,8 +1,8 @@
 import json
 import os
 
-from localstack.testing.pytest import markers
-from localstack.testing.scenario.provisioning import cleanup_s3_bucket
+from localstack.tooling.testing.pytest import markers
+from localstack.tooling.testing.scenario.provisioning import cleanup_s3_bucket
 from localstack.utils.strings import short_uid
 from localstack.utils.sync import retry
 

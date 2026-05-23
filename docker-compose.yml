@@ -10,7 +10,9 @@ services:
       - DEBUG=${DEBUG:-0}
       - PERSISTENCE=${PERSISTENCE:-0}
       # OrbStack auto-domain (<container>.<project>.orb.local) + UI sidecar + outros origins via env
-      - EXTRA_CORS_ALLOWED_ORIGINS=${EXTRA_CORS_ALLOWED_ORIGINS:-https://localstack.localstack.orb.local,http://localstack.localstack.orb.local,http://localhost:4577,http://127.0.0.1:4577,http://localhost:5173,http://127.0.0.1:5173,http://localhost:4578,http://127.0.0.1:4578}
+      - EXTRA_CORS_ALLOWED_ORIGINS=${EXTRA_CORS_ALLOWED_ORIGINS:-https://localstack-ui.localstack.orb.local,http://localstack-ui.localstack.orb.local,https://localstack.localstack.orb.local,http://localstack.localstack.orb.local,https://localstack-tls.localstack.orb.local,http://localstack-tls.localstack.orb.local,http://localhost:4577,http://127.0.0.1:4577,http://localhost:5173,http://127.0.0.1:5173,http://localhost:4578,http://127.0.0.1:4578}
+      # Permite que CORS responda mesmo para sub-domínios *.orb.local (dev only).
+      - DISABLE_CORS_CHECKS=${DISABLE_CORS_CHECKS:-1}
     volumes:
       - "${LOCALSTACK_VOLUME_DIR:-./volume}:/var/lib/localstack"
       - "/var/run/docker.sock:/var/run/docker.sock"
@@ -23,9 +25,12 @@ services:
       - "127.0.0.1:4577:80"
     volumes:
       # Serves the built console SPA (run `make console-build` to populate dist/).
-      # Falls back to the placeholder index.html committed under console/dist/.
       # legacy.html is copied from console/public/ into dist/ by Vite at build time.
       - "./localstack-ui/console/dist:/usr/share/nginx/html:ro"
+      # Proxies /_localstack/* → localstack:4566 and /_bridge/* → host:4578.
+      - "./localstack-ui/console/nginx.conf:/etc/nginx/nginx.conf:ro"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     depends_on:
       - localstack
     restart: unless-stopped

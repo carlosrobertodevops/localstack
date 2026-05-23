@@ -632,13 +632,13 @@ git diff --name-only main...HEAD
 
 ### 20.2. Documentação oficial das ferramentas
 
-| Ferramenta              | Documentação                                                        |
-| ----------------------- | ------------------------------------------------------------------- |
-| AWS CLI                 | https://docs.aws.amazon.com/cli/latest/userguide/                   |
-| Azure CLI               | https://learn.microsoft.com/cli/azure/                              |
-| gcloud CLI              | https://cloud.google.com/sdk/gcloud/reference                       |
-| Terraform               | https://developer.hashicorp.com/terraform/docs                      |
-| Terraform AWS Provider  | https://registry.terraform.io/providers/hashicorp/aws/latest/docs   |
-| Serverless Framework v3 | https://www.serverless.com/framework/docs                           |
-| serverless-localstack   | https://github.com/localstack/serverless-localstack                 |
-| LocalStack (upstream)   | https://docs.localstack.cloud/                                      |
+| Ferramenta              | Documentação                                                      |
+| ----------------------- | ----------------------------------------------------------------- |
+| AWS CLI                 | https://docs.aws.amazon.com/cli/latest/userguide/                 |
+| Azure CLI               | https://learn.microsoft.com/cli/azure/                            |
+| gcloud CLI              | https://cloud.google.com/sdk/gcloud/reference                     |
+| Terraform               | https://developer.hashicorp.com/terraform/docs                    |
+| Terraform AWS Provider  | https://registry.terraform.io/providers/hashicorp/aws/latest/docs |
+| Serverless Framework v3 | https://www.serverless.com/framework/docs                         |
+| serverless-localstack   | https://github.com/localstack/serverless-localstack               |
+| LocalStack (upstream)   | https://docs.localstack.cloud/                                    |

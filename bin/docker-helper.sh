@@ -52,11 +52,14 @@ function _fail {
 }
 
 function _get_current_version() {
-    # check if setuptools_scm is installed, if not prompt to install. python3 is expected to be present
-    if ! python3 -m pip -qqq show setuptools_scm > /dev/null ; then
-      _fail "ERROR: setuptools_scm is not installed. Run 'pip install --upgrade setuptools setuptools_scm'"
+    # prefer repo venv python if present, else fall back to system python3
+    local PY="python3"
+    if [ -x ".venv/bin/python" ]; then PY=".venv/bin/python"; fi
+    # check if setuptools_scm is installed, if not prompt to install
+    if ! "$PY" -m pip -qqq show setuptools_scm > /dev/null ; then
+      _fail "ERROR: setuptools_scm is not installed. Run '$PY -m pip install --upgrade setuptools setuptools_scm' (or activate .venv and re-run)."
     fi
-    python3 -m setuptools_scm
+    "$PY" -m setuptools_scm
 }
 
 function _is_release_commit() {
@@ -109,6 +112,12 @@ function _enforce_platform() {
 function _set_version_defaults() {
     # determine major/minor/patch versions
     if [ -z "$IMAGE_TAG" ]; then
+      IMAGE_TAG=$(_get_current_version)
+    fi
+    # setuptools_scm exige tag PEP 440 (ex: 1.2.3, 1.2.3.dev0). Valores como
+    # "dev"/"latest"/"stable" quebram o build. Sanitiza para versão derivada do SCM.
+    if ! [[ "$IMAGE_TAG" =~ ^[0-9]+(\.[0-9]+){0,2}([._-]?(a|b|rc|alpha|beta|dev|post)[0-9]*)?(\+[A-Za-z0-9._-]+)?$ ]]; then
+      echo "WARN: IMAGE_TAG='$IMAGE_TAG' não é PEP 440 — substituindo por versão do setuptools_scm." >&2
       IMAGE_TAG=$(_get_current_version)
     fi
     if [ -z "$MAJOR_VERSION" ]; then MAJOR_VERSION=$(echo ${IMAGE_TAG} | cut -d '.' -f1); fi

@@ -1,0 +1,44 @@
+# GCP Cloud Functions via Serverless Framework, pointed at LocalStack.
+service: sls-localstack-gcp
+frameworkVersion: ">=3.30.0 <4.0.0"
+
+provider:
+  name: google
+  runtime: python311
+  region: us-central1
+  project: localstack-project
+  credentials: ${env:GOOGLE_APPLICATION_CREDENTIALS, "./key.json"}
+
+plugins:
+  - serverless-google-cloudfunctions
+
+# Run with overrides:
+#
+#   export CLOUDSDK_API_ENDPOINT_OVERRIDES_CLOUDFUNCTIONS=http://localhost:4566/
+#   export GOOGLE_OAUTH_ACCESS_TOKEN=dummy-token
+#   export GOOGLE_APPLICATION_CREDENTIALS=$PWD/key.json   # dummy file
+#   serverless deploy
+#
+# key.json (dummy, present so the SDK doesn't choke on resolution):
+#   {
+#     "type": "service_account",
+#     "project_id": "localstack-project",
+#     "private_key_id": "key-id",
+#     "private_key": "-----BEGIN PRIVATE KEY-----\nMIIE...IDAQAB\n-----END PRIVATE KEY-----\n",
+#     "client_email": "test@localstack.iam.gserviceaccount.com",
+#     "client_id": "test-client",
+#     "auth_uri": "http://localhost:4566/oauth2/token",
+#     "token_uri": "http://localhost:4566/oauth2/token"
+#   }
+
+package:
+  exclude:
+    - node_modules/**
+    - .gitignore
+    - .git/**
+
+functions:
+  hello:
+    handler: hello
+    events:
+      - http: hello

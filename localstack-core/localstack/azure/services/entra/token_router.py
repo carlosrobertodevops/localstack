@@ -17,6 +17,14 @@ from typing import Any
 from werkzeug.wrappers import Request, Response
 
 _TOKEN_PATH_RE = re.compile(r"^/(?P<tenant>[^/]+)/oauth2/v2\.0/token$")
+_OIDC_CONFIG_RE = re.compile(
+    r"^/(?P<tenant>[^/]+)/v2\.0/\.well-known/openid-configuration$"
+)
+_OIDC_CONFIG_NOPATH_RE = re.compile(
+    r"^/(?P<tenant>[^/]+)/\.well-known/openid-configuration$"
+)
+_OIDC_KEYS_RE = re.compile(r"^/(?P<tenant>[^/]+)/discovery/v2\.0/keys$")
+_DISCOVERY_INSTANCE_RE = re.compile(r"^/common/discovery/instance$")
 _DEFAULT_LIFETIME_S = 3600
 _HMAC_SECRET = b"localstack-azure-entra-mock"
 
@@ -60,7 +68,20 @@ class EntraTokenRouter:
         return response(environ, start_response)
 
     def _dispatch(self, request: Request) -> Response:
-        match = _TOKEN_PATH_RE.match(request.path)
+        path = request.path
+
+        if _DISCOVERY_INSTANCE_RE.match(path):
+            return self._discovery_instance(request)
+
+        oidc_match = _OIDC_CONFIG_RE.match(path) or _OIDC_CONFIG_NOPATH_RE.match(path)
+        if oidc_match:
+            return self._openid_configuration(request, oidc_match.group("tenant"))
+
+        keys_match = _OIDC_KEYS_RE.match(path)
+        if keys_match:
+            return self._jwks(keys_match.group("tenant"))
+
+        match = _TOKEN_PATH_RE.match(path)
         if not match:
             return _error("not_found", "unknown route", status=404)
         if request.method != "POST":
@@ -99,5 +120,88 @@ class EntraTokenRouter:
                 "expires_in": _DEFAULT_LIFETIME_S,
                 "ext_expires_in": _DEFAULT_LIFETIME_S,
                 "access_token": token,
+            }
+        )
+
+    def _base_url(self, request: Request) -> str:
+        scheme = request.environ.get("wsgi.url_scheme", "http")
+        return f"{scheme}://{request.host}"
+
+    def _openid_configuration(self, request: Request, tenant: str) -> Response:
+        base = self._base_url(request)
+        return _json_response(
+            {
+                "token_endpoint": f"{base}/{tenant}/oauth2/v2.0/token",
+                "token_endpoint_auth_methods_supported": [
+                    "client_secret_post",
+                    "client_secret_basic",
+                    "private_key_jwt",
+                ],
+                "jwks_uri": f"{base}/{tenant}/discovery/v2.0/keys",
+                "response_modes_supported": ["query", "fragment", "form_post"],
+                "subject_types_supported": ["pairwise"],
+                "id_token_signing_alg_values_supported": ["HS256"],
+                "response_types_supported": [
+                    "code",
+                    "id_token",
+                    "code id_token",
+                    "id_token token",
+                ],
+                "scopes_supported": ["openid", "profile", "email", "offline_access"],
+                "issuer": f"{base}/{tenant}/v2.0",
+                "request_uri_parameter_supported": False,
+                "userinfo_endpoint": f"{base}/oidc/userinfo",
+                "authorization_endpoint": f"{base}/{tenant}/oauth2/v2.0/authorize",
+                "device_authorization_endpoint": f"{base}/{tenant}/oauth2/v2.0/devicecode",
+                "http_logout_supported": True,
+                "frontchannel_logout_supported": True,
+                "end_session_endpoint": f"{base}/{tenant}/oauth2/v2.0/logout",
+                "claims_supported": [
+                    "sub",
+                    "iss",
+                    "cloud_instance_name",
+                    "cloud_instance_host_name",
+                    "cloud_graph_host_name",
+                    "msgraph_host",
+                    "aud",
+                    "exp",
+                    "iat",
+                    "auth_time",
+                    "acr",
+                    "nonce",
+                    "preferred_username",
+                    "name",
+                    "tid",
+                    "ver",
+                    "at_hash",
+                    "c_hash",
+                    "email",
+                ],
+                "kerberos_endpoint": f"{base}/{tenant}/kerberos",
+                "tenant_region_scope": "WW",
+                "cloud_instance_name": "localstack",
+                "cloud_graph_host_name": request.host,
+                "msgraph_host": request.host,
+                "rbac_url": base,
+            }
+        )
+
+    def _jwks(self, tenant: str) -> Response:
+        return _json_response({"keys": []})
+
+    def _discovery_instance(self, request: Request) -> Response:
+        base = self._base_url(request)
+        # Accepts ?authorization_endpoint=...
+        return _json_response(
+            {
+                "tenant_discovery_endpoint": f"{base}/common/v2.0/.well-known/openid-configuration",
+                "api-version": "1.1",
+                "metadata": [
+                    {
+                        "preferred_network": request.host,
+                        "preferred_cache": request.host,
+                        "aliases": [request.host, "localhost"],
+                    }
+                ],
             }
         )

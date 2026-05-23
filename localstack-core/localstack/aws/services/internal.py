@@ -185,8 +185,8 @@ class PluginsResource:
 
     def __init__(self):
         # defer imports here to lazy-load code
-        from localstack.platform.runtime import hooks, init
         from localstack.aws.services.plugins import SERVICE_PLUGINS
+        from localstack.platform.runtime import hooks, init
 
         # service providers
         PluginsResource.plugin_managers.append(SERVICE_PLUGINS.plugin_manager)
@@ -299,6 +299,103 @@ class ConfigResource:
         }
 
 
+def _ensure_cloud_registry():
+    from localstack.cloud.builtin import register_builtins
+    from localstack.cloud.registry import registry as cloud_registry
+
+    if len(cloud_registry) == 0:
+        register_builtins(cloud_registry)
+    return cloud_registry
+
+
+class CloudsListResource:
+    def on_get(self, request):
+        reg = _ensure_cloud_registry()
+        clouds = []
+        for provider in reg:
+            try:
+                count = len(provider.list_services())
+            except Exception:
+                count = 0
+            clouds.append(
+                {
+                    "name": provider.name,
+                    "display_name": provider.display_name,
+                    "package": provider.package,
+                    "services_count": count,
+                }
+            )
+        return {"clouds": clouds}
+
+
+class CloudHealthResource:
+    def __init__(self, service_manager):
+        self._aws_health = HealthResource(service_manager)
+
+    def on_get(self, request, cloud: str):
+        cloud = (cloud or "").lower()
+        if cloud == "aws":
+            result = self._aws_health.on_get(request)
+            if isinstance(result, dict):
+                result.setdefault("cloud", "aws")
+            return result
+
+        reg = _ensure_cloud_registry()
+        provider = reg.get(cloud)
+        if provider is None:
+            return Response(
+                f'{{"error":"unknown cloud: {cloud}"}}', 404, mimetype="application/json"
+            )
+        try:
+            services = provider.list_services()
+        except Exception as e:
+            LOG.exception("failed to list services for cloud %s", cloud)
+            services = {}
+            error = str(e)
+        else:
+            error = None
+        body = {
+            "cloud": provider.name,
+            "display_name": provider.display_name,
+            "edition": get_localstack_edition(),
+            "version": constants.VERSION,
+            "services": services,
+        }
+        if error:
+            body["error"] = error
+        return body
+
+
+class CloudInfoResource:
+    def on_get(self, request, cloud: str):
+        cloud = (cloud or "").lower()
+        reg = _ensure_cloud_registry()
+        provider = reg.get(cloud)
+        if provider is None:
+            return Response(
+                f'{{"error":"unknown cloud: {cloud}"}}', 404, mimetype="application/json"
+            )
+        base = InfoResource.get_info_data()
+        try:
+            services_count = len(provider.list_services())
+        except Exception:
+            services_count = 0
+        meta = provider.metadata or {}
+        base.update(
+            {
+                "cloud": provider.name,
+                "display_name": provider.display_name,
+                "package": provider.package,
+                "edge_hosts": list(provider.edge_hosts),
+                "services_count": services_count,
+                "scope_terms": meta.get("scope_terms", {}),
+                "auth": meta.get("auth"),
+                "id_format": meta.get("id_format"),
+            }
+        )
+        return base
+
+
 class LocalstackResources(Router):
     """
     Router for localstack-internal HTTP resources.
@@ -318,6 +415,9 @@ class LocalstackResources(Router):
         self.add(Resource("/_localstack/plugins", PluginsResource()))
         self.add(Resource("/_localstack/init", InitScriptsResource()))
         self.add(Resource("/_localstack/init/<stage>", InitScriptsStageResource()))
+        self.add(Resource("/_localstack/clouds", CloudsListResource()))
+        self.add(Resource("/_localstack/clouds/<cloud>/health", CloudHealthResource(SERVICE_PLUGINS)))
+        self.add(Resource("/_localstack/clouds/<cloud>/info", CloudInfoResource()))
 
         if config.ENABLE_CONFIG_UPDATES:
             LOG.warning(

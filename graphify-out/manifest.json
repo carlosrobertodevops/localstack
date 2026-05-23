@@ -9967,22 +9967,22 @@
   "/Users/carlosroberto/Workspace/Projetos/localstack/localstack-core/localstack/cloud/registry.py": {
     "mtime": 1779459271.0857704,
     "ast_hash": "323d3cefcf00f305c20c4043d538d272",
-    "semantic_hash": ""
+    "semantic_hash": "323d3cefcf00f305c20c4043d538d272"
   },
   "/Users/carlosroberto/Workspace/Projetos/localstack/localstack-core/localstack/cloud/__init__.py": {
     "mtime": 1779460735.3116093,
     "ast_hash": "415381394db0e1cb5f4049a6ba70cb03",
-    "semantic_hash": ""
+    "semantic_hash": "415381394db0e1cb5f4049a6ba70cb03"
   },
   "/Users/carlosroberto/Workspace/Projetos/localstack/localstack-core/localstack/cloud/builtin.py": {
     "mtime": 1779476757.4640718,
     "ast_hash": "fb897b8ac27567e1783b51343d392439",
-    "semantic_hash": ""
+    "semantic_hash": "fb897b8ac27567e1783b51343d392439"
   },
   "/Users/carlosroberto/Workspace/Projetos/localstack/localstack-core/localstack/cloud/base.py": {
     "mtime": 1779459260.59022,
     "ast_hash": "38ec937bed319732ed20c42638f81830",
-    "semantic_hash": ""
+    "semantic_hash": "38ec937bed319732ed20c42638f81830"
   },
   "/Users/carlosroberto/Workspace/Projetos/localstack/localstack-core/localstack/aws/services/plugins.py": {
     "mtime": 1779478360.9284475,
@@ -15532,7 +15532,7 @@
   "/Users/carlosroberto/Workspace/Projetos/localstack/localstack-core/localstack/cloud/edge.py": {
     "mtime": 1779460691.4686089,
     "ast_hash": "eaebc7044e4bc3d88f2e5149af41a520",
-    "semantic_hash": ""
+    "semantic_hash": "eaebc7044e4bc3d88f2e5149af41a520"
   },
   "/Users/carlosroberto/Workspace/Projetos/localstack/docs/superpowers/plans/2026-05-22-master-roadmap.md": {
     "mtime": 1779476885.9767625,
@@ -16447,11 +16447,6 @@
   "/Users/carlosroberto/Workspace/Projetos/localstack/localstack-core/localstack/gcp/services/logging/__init__.py": {
     "mtime": 1779475611.7159998,
     "ast_hash": "7afc895b8f93e92692024e48d927feeb",
-    "semantic_hash": ""
-  },
-  "/Users/carlosroberto/Workspace/Projetos/localstack/docs/TESTING_LOCAL.md": {
-    "mtime": 1779454337.7231774,
-    "ast_hash": "ae2320b49ebeac4be5c461514297084e",
     "semantic_hash": ""
   },
   "/Users/carlosroberto/Workspace/Projetos/localstack/docs/LOCALSTACK-AWS-AZURE-GCP-RUN.md": {

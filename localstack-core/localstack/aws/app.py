@@ -1,11 +1,11 @@
-from localstack.platform import config
 from localstack.aws import handlers
 from localstack.aws.api import RequestContext
 from localstack.aws.chain import HandlerChain
 from localstack.aws.handlers.metric_handler import MetricHandler
 from localstack.aws.handlers.service_plugin import ServiceLoader, ServiceLoaderForDataPlane
-from localstack.platform.http.trace import TracingHandlerChain
 from localstack.aws.services.plugins import SERVICE_PLUGINS, ServiceManager, ServicePluginManager
+from localstack.platform import config
+from localstack.platform.http.trace import TracingHandlerChain
 from localstack.utils.ssl import create_ssl_cert, install_predefined_cert_if_available
 
 from .gateway import Gateway
@@ -37,6 +37,7 @@ class LocalstackAwsGateway(Gateway):
                 handlers.content_decoder,  # depends on preprocess_request for the S3 service
                 handlers.validate_request_schema,  # validate request schema for public LS endpoints
                 handlers.serve_localstack_resources,  # try to serve endpoints in /_localstack
+                handlers.serve_multi_cloud_routes,  # forward Azure/GCP CLI calls to their gateways
                 handlers.serve_edge_router_rules,
                 # start aws handler chain
                 handlers.parse_service_name,

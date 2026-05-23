@@ -8,7 +8,7 @@ from __future__ import annotations
 
 import json
 import re
-from typing import Callable
+from collections.abc import Callable
 
 from werkzeug.wrappers import Request, Response
 
@@ -46,6 +46,54 @@ def _not_found() -> Response:
     )
 
 
+def _arm_metadata_endpoints(endpoint: str) -> Response:
+    body = {
+        "galleryEndpoint": endpoint,
+        "graphEndpoint": endpoint,
+        "portalEndpoint": endpoint,
+        "authentication": {
+            "loginEndpoint": endpoint,
+            "audiences": [endpoint],
+            "tenant": "localstack-tenant",
+            "identityProvider": "AAD",
+        },
+        "graph": endpoint,
+        "graphAudience": endpoint,
+        "msGraph": endpoint,
+        "appInsightsResourceId": endpoint,
+        "appInsightsTelemetryChannelResourceId": endpoint,
+        "synapseAnalyticsResourceId": endpoint,
+        "logAnalyticsResourceId": endpoint,
+        "ossrDbmsResourceId": endpoint,
+        "microsoftGraphResourceId": endpoint,
+        "media": endpoint,
+        "attestationResourceId": endpoint,
+        "batch": endpoint,
+        "resourceManager": endpoint,
+        "vmImageAliasDoc": endpoint,
+        "sqlManagement": endpoint,
+        "activeDirectoryDataLake": endpoint,
+        "suffixes": {
+            "azureDataLakeStoreFileSystem": "azuredatalakestore.net",
+            "acrLoginServer": "azurecr.io",
+            "sqlServerHostname": ".database.windows.net",
+            "azureDataLakeAnalyticsCatalogAndJob": "azuredatalakeanalytics.net",
+            "keyVaultDns": ".vault.azure.net",
+            "storage": "core.windows.net",
+            "storageSyncEndpointSuffix": "afs.azure.net",
+            "mhsmDns": ".managedhsm.azure.net",
+            "mysqlServerEndpoint": ".mysql.database.azure.com",
+            "postgresqlServerEndpoint": ".postgres.database.azure.com",
+            "mariadbServerEndpoint": ".mariadb.database.azure.com",
+            "synapseAnalytics": ".dev.azuresynapse.net",
+            "attestationEndpoint": ".attest.azure.net",
+        },
+        "name": "LocalStack",
+        "type": "Microsoft.Azure",
+    }
+    return Response(json.dumps(body), status=200, mimetype="application/json")
+
+
 class AzureGateway:
     """Single WSGI entrypoint mounting every Azure router."""
 
@@ -75,6 +123,10 @@ class AzureGateway:
 
     def __call__(self, environ, start_response):
         request = Request(environ)
+        if request.path == "/metadata/endpoints":
+            scheme = environ.get("wsgi.url_scheme", "http")
+            endpoint = f"{scheme}://{request.host}"
+            return _arm_metadata_endpoints(endpoint)(environ, start_response)
         target, rewrite = self._select_router(request)
         if target is None:
             return _not_found()(environ, start_response)
@@ -112,6 +164,14 @@ class AzureGateway:
 
         # entra fallback for /{tenant}/oauth2/v2.0/token regardless of host
         if request.path.endswith("/oauth2/v2.0/token"):
+            return self.entra_router, None
+
+        # OpenID Connect discovery paths used by `az login` and SDKs
+        if (
+            request.path.endswith("/.well-known/openid-configuration")
+            or "/discovery/v2.0/keys" in request.path
+            or request.path == "/common/discovery/instance"
+        ):
             return self.entra_router, None
 
         return None, None

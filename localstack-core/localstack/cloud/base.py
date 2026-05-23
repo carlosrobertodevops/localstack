@@ -2,8 +2,9 @@
 
 from __future__ import annotations
 
+from collections.abc import Callable
 from dataclasses import dataclass, field
-from typing import Any, Callable
+from typing import Any
 
 # Each cloud advertises a small contract: a WSGI gateway factory, a state-store factory,
 # and a provider-plugin registry factory. Imports stay lazy so registering a cloud is cheap.
@@ -34,3 +35,15 @@ class CloudProvider:
 
     def build_plugin_registry(self) -> Any | None:
         return self.plugin_registry_factory() if self.plugin_registry_factory else None
+
+    def list_services(self) -> dict[str, str]:
+        reg = self.build_plugin_registry()
+        if reg is None:
+            return {}
+        if hasattr(reg, "namespaces"):
+            names = reg.namespaces()
+        elif hasattr(reg, "services"):
+            names = reg.services()
+        else:
+            return {}
+        return dict.fromkeys(names, "available")

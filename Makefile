@@ -77,6 +77,31 @@ entrypoints: install-dev
 	@# make sure that the plux.ini file with the entrypoints has correctly been created
 	@test -s plux.ini || (echo "Entrypoints were not correctly created! Aborting!" && exit 1)
 
+# --- Multi-cloud console (localstack-ui/console) ----------------------------
+console-install:          ## Install console SPA dependencies (bun)
+	cd localstack-ui/console && bun install
+
+console-dev:              ## Run Vite dev server on :5173
+	cd localstack-ui/console && bun run dev
+
+console-build:            ## Build the console SPA into dist/
+	cd localstack-ui/console && bun run build
+
+console-lint:             ## Lint + typecheck the console SPA
+	cd localstack-ui/console && bun run lint && bun run typecheck
+
+console-test:             ## Run console SPA tests (vitest)
+	cd localstack-ui/console && bun run test
+
+console-test-e2e:         ## Run console SPA e2e tests (playwright)
+	cd localstack-ui/console && bun run test:e2e
+
+console-bridge:           ## Run the host-side CLI bridge worker on :4578
+	./bin/console-cli-bridge
+
+console-bridge-install:   ## Install the bridge worker requirements
+	$(PIP_CMD) install -r bin/console-cli-bridge.requirements.txt
+
 dist:                     ## Build source and built (wheel) distributions of the current version
 	$(VENV_RUN); pip install --upgrade build twine; python -m build
 

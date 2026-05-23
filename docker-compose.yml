@@ -10,7 +10,7 @@ services:
       - DEBUG=${DEBUG:-0}
       - PERSISTENCE=${PERSISTENCE:-0}
       # OrbStack auto-domain (<container>.<project>.orb.local) + UI sidecar + outros origins via env
-      - EXTRA_CORS_ALLOWED_ORIGINS=${EXTRA_CORS_ALLOWED_ORIGINS:-https://localstack.localstack.orb.local,http://localstack.localstack.orb.local,http://localhost:4577,http://127.0.0.1:4577}
+      - EXTRA_CORS_ALLOWED_ORIGINS=${EXTRA_CORS_ALLOWED_ORIGINS:-https://localstack.localstack.orb.local,http://localstack.localstack.orb.local,http://localhost:4577,http://127.0.0.1:4577,http://localhost:5173,http://127.0.0.1:5173,http://localhost:4578,http://127.0.0.1:4578}
     volumes:
       - "${LOCALSTACK_VOLUME_DIR:-./volume}:/var/lib/localstack"
       - "/var/run/docker.sock:/var/run/docker.sock"
@@ -22,10 +22,29 @@ services:
     ports:
       - "127.0.0.1:4577:80"
     volumes:
-      - "./localstack-ui:/usr/share/nginx/html:ro"
+      # Serves the built console SPA (run `make console-build` to populate dist/).
+      # Falls back to the placeholder index.html committed under console/dist/.
+      - "./localstack-ui/console/dist:/usr/share/nginx/html:ro"
+      # Legacy painel still reachable at /legacy.html.
+      - "./localstack-ui/console/legacy.html:/usr/share/nginx/html/legacy.html:ro"
     depends_on:
       - localstack
     restart: unless-stopped
+  # Optional host-side CLI bridge for the console (bin/console-cli-bridge).
+  # Documented in docs/multi-cloud-console-plan.md §3.5, §4. Runs on the host
+  # by default — only enable this service if you have built a container that
+  # ships aws/az/gcloud (heavy).
+  # localstack-console-bridge:
+  #   container_name: localstack-console-bridge
+  #   image: python:3.12-alpine
+  #   ports:
+  #     - "127.0.0.1:4578:4578"
+  #   volumes:
+  #     - "./bin:/app/bin:ro"
+  #     - "./localstack-core:/app/localstack-core:ro"
+  #   working_dir: /app
+  #   command: ["python", "/app/bin/console-cli-bridge", "--host", "0.0.0.0"]
+  #   restart: unless-stopped
   localstack-tls:
     container_name: localstack-tls
     image: nginx:1.27-alpine

@@ -1,0 +1,24 @@
+#!/usr/bin/env python3
+"""LocalStack console CLI bridge — thin wrapper.
+
+Delegates to localstack.tooling.dev.console_bridge.main(). The actual
+implementation lives in the importable module so unit tests can exercise
+the validators without spawning a server.
+"""
+from __future__ import annotations
+
+import os
+import sys
+from pathlib import Path
+
+# Make sure localstack-core is on the path when running from the repo root.
+_HERE = Path(__file__).resolve().parent
+_REPO_ROOT = _HERE.parent
+_CORE = _REPO_ROOT / "localstack-core"
+if _CORE.is_dir() and str(_CORE) not in sys.path:
+    sys.path.insert(0, str(_CORE))
+
+from localstack.tooling.dev.console_bridge import main  # noqa: E402
+
+if __name__ == "__main__":
+    raise SystemExit(main())

@@ -1,9 +1,14 @@
 """Module for localstack internal resources, such as health, graph, or _localstack/cloudformation/deploy."""
 
+import json
 import logging
 import os
+import pathlib
 import re
+import shutil
+import subprocess
 import time
+import uuid
 from collections import defaultdict
 from datetime import datetime
 
@@ -396,6 +401,357 @@ class CloudInfoResource:
         return base
 
 
+# ---------------------------------------------------------------------------
+# Console passthrough (CLI + IaC) — see docs/multi-cloud-console-plan.md §7
+# ---------------------------------------------------------------------------
+
+_CLI_ALLOWLIST = ("aws", "az", "gcloud")
+_IAC_TOOL_ALLOWLIST = ("terraform", "serverless")
+_IAC_ACTION_ALLOWLIST = ("plan", "apply", "destroy")
+_SHELL_METACHARS = re.compile(r"[;&|`$><\n\r]")
+_ENV_KEY_RE = re.compile(r"^[A-Z_][A-Z0-9_]*$")
+_SESSION_ID_RE = re.compile(r"^[a-f0-9]{32}$")
+_IAC_MAX_SNIPPET = 64 * 1024
+_CLI_TIMEOUT = 30
+_IAC_TIMEOUT = 120
+_CONSOLE_IAC_ROOT = pathlib.Path(os.path.expanduser("~/.localstack/console-iac"))
+
+
+def _validate_args(args) -> str | None:
+    if not isinstance(args, list):
+        return "args must be a list"
+    for a in args:
+        if not isinstance(a, str):
+            return "each arg must be a string"
+        if _SHELL_METACHARS.search(a):
+            return "shell metachar in arg"
+    return None
+
+
+def _validate_env(env) -> str | None:
+    if env is None:
+        return None
+    if not isinstance(env, dict):
+        return "env must be an object"
+    for k, v in env.items():
+        if not isinstance(k, str) or not _ENV_KEY_RE.match(k):
+            return f"invalid env key: {k!r}"
+        if not isinstance(v, str) or _SHELL_METACHARS.search(v):
+            return f"invalid env value for {k}"
+    return None
+
+
+def _cli_default_env(cli: str) -> dict:
+    if cli == "aws":
+        return {
+            "AWS_ACCESS_KEY_ID": "test",
+            "AWS_SECRET_ACCESS_KEY": "test",
+            "AWS_DEFAULT_REGION": "us-east-1",
+            "AWS_ENDPOINT_URL": "http://localhost:4566",
+        }
+    if cli == "az":
+        return {"AZURE_HTTP_USER_AGENT": "localstack-console"}
+    if cli == "gcloud":
+        return {"CLOUDSDK_CORE_PROJECT": "localstack-project"}
+    return {}
+
+
+def _terraform_provider_block() -> str:
+    """Generate a provider.tf wrapper pointing all providers at LocalStack."""
+    return '''terraform {
+  required_providers {
+    aws     = { source = "hashicorp/aws",     version = "~> 5.0" }
+    azurerm = { source = "hashicorp/azurerm", version = "~> 3.0" }
+    google  = { source = "hashicorp/google",  version = "~> 5.0" }
+  }
+}
+
+provider "aws" {
+  region                      = "us-east-1"
+  access_key                  = "test"
+  secret_key                  = "test"
+  skip_credentials_validation = true
+  skip_metadata_api_check     = true
+  skip_requesting_account_id  = true
+  s3_use_path_style           = true
+  endpoints {
+    s3             = "http://localhost:4566"
+    sqs            = "http://localhost:4566"
+    dynamodb       = "http://localhost:4566"
+    lambda         = "http://localhost:4566"
+    iam            = "http://localhost:4566"
+    sts            = "http://localhost:4566"
+    secretsmanager = "http://localhost:4566"
+    kms            = "http://localhost:4566"
+    apigateway     = "http://localhost:4566"
+    sns            = "http://localhost:4566"
+    cloudwatch     = "http://localhost:4566"
+    events         = "http://localhost:4566"
+    logs           = "http://localhost:4566"
+  }
+}
+
+provider "azurerm" {
+  features {}
+  skip_provider_registration = true
+  client_id                  = "00000000-0000-0000-0000-000000000000"
+  client_secret              = "test"
+  tenant_id                  = "00000000-0000-0000-0000-000000000000"
+  subscription_id            = "00000000-0000-0000-0000-000000000000"
+  environment                = "public"
+}
+
+provider "google" {
+  project = "localstack-project"
+  region  = "us-central1"
+}
+'''
+
+
+class CliPassthroughResource:
+    """POST /_localstack/console/cli — execute aws|az|gcloud inside the
+    LocalStack process.
+
+    NOTE: assumes the host has the CLI on PATH. The recommended deployment
+    runs the separate host-side bridge (`bin/console-cli-bridge`) so the
+    LocalStack container does not need to ship multi-GB CLIs. This endpoint
+    is the in-container fallback for the SPA.
+    """
+
+    def on_post(self, request: Request):
+        try:
+            data = request.get_json(True, True) or {}
+        except Exception:
+            return Response('{"error":"invalid json"}', 400, mimetype="application/json")
+
+        cli = data.get("cli")
+        if cli not in _CLI_ALLOWLIST:
+            return Response(
+                json.dumps({"error": "cli not in allowlist", "cli": cli}),
+                400,
+                mimetype="application/json",
+            )
+
+        args = data.get("args", [])
+        err = _validate_args(args)
+        if err:
+            return Response(
+                json.dumps({"error": err}), 400, mimetype="application/json"
+            )
+
+        env_overrides = data.get("env")
+        err = _validate_env(env_overrides)
+        if err:
+            return Response(
+                json.dumps({"error": err}), 400, mimetype="application/json"
+            )
+
+        binary = shutil.which(cli)
+        if not binary:
+            return Response(
+                json.dumps({"error": "cli not available on host", "cli": cli}),
+                503,
+                mimetype="application/json",
+            )
+
+        env = dict(os.environ)
+        env.update(_cli_default_env(cli))
+        if env_overrides:
+            env.update(env_overrides)
+
+        session_id = uuid.uuid4().hex
+        started = time.monotonic()
+        try:
+            proc = subprocess.run(
+                [binary, *args],
+                env=env,
+                capture_output=True,
+                text=True,
+                timeout=_CLI_TIMEOUT,
+            )
+        except subprocess.TimeoutExpired as exc:
+            duration_ms = int((time.monotonic() - started) * 1000)
+            return Response(
+                json.dumps(
+                    {
+                        "error": "timeout",
+                        "session_id": session_id,
+                        "cli": cli,
+                        "args": args,
+                        "duration_ms": duration_ms,
+                        "stdout": exc.stdout or "",
+                        "stderr": exc.stderr or "",
+                    }
+                ),
+                504,
+                mimetype="application/json",
+            )
+        except OSError as exc:
+            LOG.exception("cli passthrough failed: %s", cli)
+            return Response(
+                json.dumps({"error": "exec failed", "detail": str(exc)}),
+                500,
+                mimetype="application/json",
+            )
+
+        duration_ms = int((time.monotonic() - started) * 1000)
+        return {
+            "session_id": session_id,
+            "exit_code": proc.returncode,
+            "stdout": proc.stdout,
+            "stderr": proc.stderr,
+            "duration_ms": duration_ms,
+        }
+
+
+def _iac_validate(data):
+    tool = data.get("tool")
+    if tool not in _IAC_TOOL_ALLOWLIST:
+        return None, ("tool not in allowlist", 400)
+    snippet = data.get("snippet", "")
+    if not isinstance(snippet, str):
+        return None, ("snippet must be a string", 400)
+    if len(snippet.encode("utf-8")) > _IAC_MAX_SNIPPET:
+        return None, ("snippet exceeds 64KB limit", 400)
+    return (tool, snippet), None
+
+
+def _iac_render_files(tool: str, snippet: str) -> dict:
+    if tool == "terraform":
+        return {"provider.tf": _terraform_provider_block(), "main.tf": snippet}
+    # serverless
+    return {"serverless.yml": snippet}
+
+
+class IacApplyResource:
+    """POST /_localstack/console/iac — write snippet to temp dir and run
+    terraform/serverless. Synchronous. TODO: SSE streaming (plan §3.4).
+    """
+
+    def on_post(self, request: Request):
+        try:
+            data = request.get_json(True, True) or {}
+        except Exception:
+            return Response('{"error":"invalid json"}', 400, mimetype="application/json")
+
+        validated, err = _iac_validate(data)
+        if err:
+            return Response(
+                json.dumps({"error": err[0]}), err[1], mimetype="application/json"
+            )
+        tool, snippet = validated
+
+        action = data.get("action")
+        if action not in _IAC_ACTION_ALLOWLIST:
+            return Response(
+                json.dumps({"error": "action not in allowlist"}),
+                400,
+                mimetype="application/json",
+            )
+
+        binary = shutil.which(tool)
+        if not binary:
+            return Response(
+                json.dumps({"error": "tool not installed on host", "tool": tool}),
+                503,
+                mimetype="application/json",
+            )
+
+        session_id = uuid.uuid4().hex
+        session_dir = _CONSOLE_IAC_ROOT / session_id
+        session_dir.mkdir(parents=True, exist_ok=True)
+
+        for name, content in _iac_render_files(tool, snippet).items():
+            (session_dir / name).write_text(content)
+
+        log_path = session_dir / "exec.log"
+        env = dict(os.environ)
+        env.update(_cli_default_env("aws"))
+
+        started = time.monotonic()
+        combined_stdout = []
+        combined_stderr = []
+
+        def _run(cmd: list[str]) -> int:
+            try:
+                proc = subprocess.run(
+                    cmd,
+                    cwd=str(session_dir),
+                    env=env,
+                    capture_output=True,
+                    text=True,
+                    timeout=_IAC_TIMEOUT,
+                )
+            except subprocess.TimeoutExpired as exc:
+                combined_stdout.append(exc.stdout or "")
+                combined_stderr.append(exc.stderr or "")
+                combined_stderr.append("\n[localstack] timeout\n")
+                return 124
+            combined_stdout.append(proc.stdout or "")
+            combined_stderr.append(proc.stderr or "")
+            return proc.returncode
+
+        if tool == "terraform":
+            rc = _run([binary, "init", "-input=false", "-no-color"])
+            if rc == 0:
+                cmd = [binary, action, "-input=false", "-no-color"]
+                if action in ("apply", "destroy"):
+                    cmd.append("-auto-approve")
+                rc = _run(cmd)
+        else:
+            cmd = [binary, action, "--stage", "local"]
+            rc = _run(cmd)
+
+        duration_ms = int((time.monotonic() - started) * 1000)
+        stdout = "".join(combined_stdout)
+        stderr = "".join(combined_stderr)
+        log_path.write_text(
+            f"# session {session_id}\n# tool {tool} action {action}\n# duration_ms {duration_ms}\n"
+            f"# exit_code {rc}\n\n=== STDOUT ===\n{stdout}\n=== STDERR ===\n{stderr}\n"
+        )
+
+        return {
+            "session_id": session_id,
+            "exit_code": rc,
+            "stdout": stdout,
+            "stderr": stderr,
+            "log_path": str(log_path),
+            "duration_ms": duration_ms,
+        }
+
+
+class IacPreviewResource:
+    """POST /_localstack/console/iac/preview — render the files that would
+    be written by IacApply. Pure render, no execution.
+    """
+
+    def on_post(self, request: Request):
+        try:
+            data = request.get_json(True, True) or {}
+        except Exception:
+            return Response('{"error":"invalid json"}', 400, mimetype="application/json")
+
+        validated, err = _iac_validate(data)
+        if err:
+            return Response(
+                json.dumps({"error": err[0]}), err[1], mimetype="application/json"
+            )
+        tool, snippet = validated
+        return {"tool": tool, "files": _iac_render_files(tool, snippet)}
+
+
+class SessionLogResource:
+    """GET /_localstack/console/sessions/<session_id>/log — return exec.log."""
+
+    def on_get(self, request: Request, session_id: str):
+        if not _SESSION_ID_RE.match(session_id or ""):
+            return Response('{"error":"invalid session_id"}', 404, mimetype="application/json")
+        log_path = _CONSOLE_IAC_ROOT / session_id / "exec.log"
+        if not log_path.is_file():
+            return Response('{"error":"log not found"}', 404, mimetype="application/json")
+        return Response(log_path.read_text(), 200, mimetype="text/plain")
+
+
 class LocalstackResources(Router):
     """
     Router for localstack-internal HTTP resources.
@@ -418,6 +774,15 @@ class LocalstackResources(Router):
         self.add(Resource("/_localstack/clouds", CloudsListResource()))
         self.add(Resource("/_localstack/clouds/<cloud>/health", CloudHealthResource(SERVICE_PLUGINS)))
         self.add(Resource("/_localstack/clouds/<cloud>/info", CloudInfoResource()))
+        self.add(Resource("/_localstack/console/cli", CliPassthroughResource()))
+        self.add(Resource("/_localstack/console/iac", IacApplyResource()))
+        self.add(Resource("/_localstack/console/iac/preview", IacPreviewResource()))
+        self.add(
+            Resource(
+                "/_localstack/console/sessions/<session_id>/log",
+                SessionLogResource(),
+            )
+        )
 
         if config.ENABLE_CONFIG_UPDATES:
             LOG.warning(

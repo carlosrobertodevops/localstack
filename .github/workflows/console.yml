@@ -1,0 +1,48 @@
+name: Console SPA
+
+on:
+  pull_request:
+    paths:
+      - "localstack-ui/console/**"
+      - ".github/workflows/console.yml"
+  push:
+    branches: [main, multi-clouds]
+    paths:
+      - "localstack-ui/console/**"
+      - ".github/workflows/console.yml"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: localstack-ui/console
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun install --no-frozen-lockfile
+
+      - name: Typecheck
+        run: bun run typecheck
+
+      - name: Lint
+        run: bun run lint
+        continue-on-error: true
+
+      - name: Unit tests (vitest)
+        run: bun run test
+
+      - name: Build
+        run: bun run build
+
+      - name: Upload dist artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: console-dist
+          path: localstack-ui/console/dist
+          retention-days: 7

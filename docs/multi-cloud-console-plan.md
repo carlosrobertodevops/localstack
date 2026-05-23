@@ -47,22 +47,22 @@ Restrições herdadas (CLAUDE.md):
 Tela canônica = **service home + list/detail/create** por recurso.
 Mapeamento p/ serviços que emulamos hoje:
 
-| Serviço         | Telas relevantes                                                                      |
-|-----------------|----------------------------------------------------------------------------------------|
+| Serviço         | Telas relevantes                                                                            |
+| --------------- | ------------------------------------------------------------------------------------------- |
 | S3              | Buckets list · Bucket detail (Objects, Properties, Permissions, Versioning) · Object viewer |
-| SQS             | Queues list · Queue detail (Messages, Send, Receive, Attributes, DLQ)                  |
-| SNS             | Topics list · Topic detail (Subscriptions, Publish)                                    |
-| DynamoDB        | Tables list · Table detail (Items, Indexes, Streams, Capacity)                         |
-| Lambda          | Functions list · Function detail (Code, Triggers, Env, Layers, Test event)             |
-| IAM             | Users · Roles · Policies · Identity providers                                          |
-| CloudWatch      | Logs · Metrics · Alarms · Dashboards                                                   |
-| API Gateway     | APIs list · API detail (Resources, Methods, Stages, Deployments)                       |
-| Secrets Manager | Secrets list · Secret detail (Versions, Rotation, Replication)                         |
-| KMS             | Keys list · Key detail (Policy, Rotation, Aliases)                                     |
-| EventBridge     | Buses · Rules · Targets · Schedules                                                    |
-| Kinesis         | Streams · Shards · Consumers · Firehose                                                |
-| Step Functions  | State machines · Executions · Visual workflow                                          |
-| CloudFormation  | Stacks · Stack detail (Events, Resources, Outputs, Template)                           |
+| SQS             | Queues list · Queue detail (Messages, Send, Receive, Attributes, DLQ)                       |
+| SNS             | Topics list · Topic detail (Subscriptions, Publish)                                         |
+| DynamoDB        | Tables list · Table detail (Items, Indexes, Streams, Capacity)                              |
+| Lambda          | Functions list · Function detail (Code, Triggers, Env, Layers, Test event)                  |
+| IAM             | Users · Roles · Policies · Identity providers                                               |
+| CloudWatch      | Logs · Metrics · Alarms · Dashboards                                                        |
+| API Gateway     | APIs list · API detail (Resources, Methods, Stages, Deployments)                            |
+| Secrets Manager | Secrets list · Secret detail (Versions, Rotation, Replication)                              |
+| KMS             | Keys list · Key detail (Policy, Rotation, Aliases)                                          |
+| EventBridge     | Buses · Rules · Targets · Schedules                                                         |
+| Kinesis         | Streams · Shards · Consumers · Firehose                                                     |
+| Step Functions  | State machines · Executions · Visual workflow                                               |
+| CloudFormation  | Stacks · Stack detail (Events, Resources, Outputs, Template)                                |
 
 Pattern visual AWS: header laranja com região, sidebar de serviços,
 tabelas-densas com filtro/coluna, breadcrumbs.
@@ -72,14 +72,14 @@ tabelas-densas com filtro/coluna, breadcrumbs.
 Tela canônica = **Resource Group → Resources** + **Service Blade**.
 Mapeamento:
 
-| Provider Azure         | Telas relevantes                                                            |
-|------------------------|------------------------------------------------------------------------------|
-| Microsoft.Resources    | Subscriptions list · Resource Groups list · Group detail (Resources, Deployments, Activity log) |
-| Microsoft.Storage      | Storage Accounts list · Account detail (Containers, Queues, Tables, Files, Access keys) |
-| Microsoft.Web          | App Services list · App detail (Configuration, Deployment, Logs, Scale)     |
-| Microsoft.DocumentDB   | Cosmos accounts list · Account detail (Containers/Databases, Data Explorer) |
-| Microsoft.KeyVault     | Vaults list · Vault detail (Secrets, Keys, Certificates, Access policies)   |
-| Entra                  | Tenants · Users · App registrations · Service principals · Tokens (debug)   |
+| Provider Azure       | Telas relevantes                                                                                |
+| -------------------- | ----------------------------------------------------------------------------------------------- |
+| Microsoft.Resources  | Subscriptions list · Resource Groups list · Group detail (Resources, Deployments, Activity log) |
+| Microsoft.Storage    | Storage Accounts list · Account detail (Containers, Queues, Tables, Files, Access keys)         |
+| Microsoft.Web        | App Services list · App detail (Configuration, Deployment, Logs, Scale)                         |
+| Microsoft.DocumentDB | Cosmos accounts list · Account detail (Containers/Databases, Data Explorer)                     |
+| Microsoft.KeyVault   | Vaults list · Vault detail (Secrets, Keys, Certificates, Access policies)                       |
+| Entra                | Tenants · Users · App registrations · Service principals · Tokens (debug)                       |
 
 Pattern visual Azure: header azul Microsoft, navegação por blade (slide-in
 panels), forms hierárquicos, "Create" wizard step-by-step.
@@ -89,25 +89,25 @@ panels), forms hierárquicos, "Create" wizard step-by-step.
 Tela canônica = **Project picker → Service**. Mapeamento p/ nossos
 GCP services:
 
-| Serviço            | Telas relevantes                                                       |
-|--------------------|------------------------------------------------------------------------|
-| Resource Manager   | Project picker · Project settings                                      |
-| Cloud Storage      | Buckets list · Bucket detail (Objects, Permissions, Lifecycle, Retention) |
-| Pub/Sub            | Topics · Subscriptions · Snapshots · Schemas                           |
-| Firestore          | Database picker · Collections · Documents · Indexes · Rules            |
-| Cloud Functions    | Functions list · Function detail (Source, Trigger, Logs)               |
-| IAM & Admin        | Principals · Roles · Service accounts · Workload identity              |
-| BigQuery           | Datasets · Tables · Queries · Job history                              |
-| Secret Manager     | Secrets · Versions · Rotation                                          |
-| Cloud KMS          | Key rings · Keys · Versions                                            |
-| Cloud Tasks        | Queues · Tasks                                                         |
-| Cloud Run          | Services · Revisions · Domain mappings                                 |
-| Cloud Logging      | Log explorer · Logs router · Metrics-based logs                        |
-| Cloud SQL          | Instances · Databases · Users · Connections                            |
-| Cloud Scheduler    | Jobs · Executions                                                      |
-| Cloud DNS          | Zones · Records · Policies                                             |
-| Spanner            | Instances · Databases · Tables                                         |
-| Memorystore        | Instances · Connections                                                |
+| Serviço          | Telas relevantes                                                          |
+| ---------------- | ------------------------------------------------------------------------- |
+| Resource Manager | Project picker · Project settings                                         |
+| Cloud Storage    | Buckets list · Bucket detail (Objects, Permissions, Lifecycle, Retention) |
+| Pub/Sub          | Topics · Subscriptions · Snapshots · Schemas                              |
+| Firestore        | Database picker · Collections · Documents · Indexes · Rules               |
+| Cloud Functions  | Functions list · Function detail (Source, Trigger, Logs)                  |
+| IAM & Admin      | Principals · Roles · Service accounts · Workload identity                 |
+| BigQuery         | Datasets · Tables · Queries · Job history                                 |
+| Secret Manager   | Secrets · Versions · Rotation                                             |
+| Cloud KMS        | Key rings · Keys · Versions                                               |
+| Cloud Tasks      | Queues · Tasks                                                            |
+| Cloud Run        | Services · Revisions · Domain mappings                                    |
+| Cloud Logging    | Log explorer · Logs router · Metrics-based logs                           |
+| Cloud SQL        | Instances · Databases · Users · Connections                               |
+| Cloud Scheduler  | Jobs · Executions                                                         |
+| Cloud DNS        | Zones · Records · Policies                                                |
+| Spanner          | Instances · Databases · Tables                                            |
+| Memorystore      | Instances · Connections                                                   |
 
 Pattern visual GCP: header escuro, sidebar denso ("≡"), Material Design,
 cards Material-elevation, FAB de criação, breadcrumbs em projeto/região.
@@ -118,18 +118,18 @@ cards Material-elevation, FAB de criação, breadcrumbs em projeto/região.
 
 ### 3.1 Frontend
 
-| Decisão                | Escolha                                  | Por quê |
-|------------------------|------------------------------------------|---------|
-| Framework              | **React 19 + TypeScript + Vite**         | SPA leve, dev server rápido, ecossistema |
-| Routing                | `react-router` v7                        | Browser history, nested routes (cloud → service → resource) |
-| Estado                 | `@tanstack/react-query`                  | Cache HTTP, refetch on focus, sem boilerplate Redux |
-| Component library      | `shadcn/ui` (Radix + Tailwind)           | Customizável por cloud-skin |
-| Tabelas                | `@tanstack/react-table`                  | Filter/sort/paginate sem markup pesado |
-| Forms                  | `react-hook-form` + `zod`                | Validação tipada |
-| Editor JSON/YAML       | `@monaco-editor/react`                   | IaC inline (policy, template, manifest) |
-| Toast/notifications    | `sonner`                                 | API simples |
-| Charts                 | `recharts`                               | Métricas CloudWatch/StackDriver |
-| Auth (UI-local)        | nenhum hoje                              | Tudo é dev local; cookie de "user-stub" se necessário |
+| Decisão             | Escolha                          | Por quê                                                     |
+| ------------------- | -------------------------------- | ----------------------------------------------------------- |
+| Framework           | **React 19 + TypeScript + Vite** | SPA leve, dev server rápido, ecossistema                    |
+| Routing             | `react-router` v7                | Browser history, nested routes (cloud → service → resource) |
+| Estado              | `@tanstack/react-query`          | Cache HTTP, refetch on focus, sem boilerplate Redux         |
+| Component library   | `shadcn/ui` (Radix + Tailwind)   | Customizável por cloud-skin                                 |
+| Tabelas             | `@tanstack/react-table`          | Filter/sort/paginate sem markup pesado                      |
+| Forms               | `react-hook-form` + `zod`        | Validação tipada                                            |
+| Editor JSON/YAML    | `@monaco-editor/react`           | IaC inline (policy, template, manifest)                     |
+| Toast/notifications | `sonner`                         | API simples                                                 |
+| Charts              | `recharts`                       | Métricas CloudWatch/StackDriver                             |
+| Auth (UI-local)     | nenhum hoje                      | Tudo é dev local; cookie de "user-stub" se necessário       |
 
 Build target: `localstack-ui/console/` (substitui o `index.html` simples
 atual, mas mantém o `/_localstack/clouds*` como API). Servido pelo
@@ -137,14 +137,14 @@ sidecar nginx existente.
 
 ### 3.2 Backend (sem novo serviço — reutiliza handlers existentes)
 
-| Operação              | Endpoint                                                                  |
-|-----------------------|----------------------------------------------------------------------------|
-| Lista de clouds       | `GET /_localstack/clouds`                                                  |
-| Health por cloud      | `GET /_localstack/clouds/{cloud}/health`                                   |
-| Info por cloud        | `GET /_localstack/clouds/{cloud}/info`                                     |
-| Operação de serviço   | API nativa (S3, SQS, ARM, GCP REST) via fetch direto                       |
-| **CLI passthrough**   | **novo** `POST /_localstack/console/cli` (executa wrapper, retorna stdout) |
-| **IaC passthrough**   | **novo** `POST /_localstack/console/iac` (gera/aplica `.tf` snippet)       |
+| Operação            | Endpoint                                                                   |
+| ------------------- | -------------------------------------------------------------------------- |
+| Lista de clouds     | `GET /_localstack/clouds`                                                  |
+| Health por cloud    | `GET /_localstack/clouds/{cloud}/health`                                   |
+| Info por cloud      | `GET /_localstack/clouds/{cloud}/info`                                     |
+| Operação de serviço | API nativa (S3, SQS, ARM, GCP REST) via fetch direto                       |
+| **CLI passthrough** | **novo** `POST /_localstack/console/cli` (executa wrapper, retorna stdout) |
+| **IaC passthrough** | **novo** `POST /_localstack/console/iac` (gera/aplica `.tf` snippet)       |
 
 Endpoints novos vivem em `aws/services/internal.py` (mesmo pattern dos
 `CloudHealthResource`).
@@ -237,16 +237,16 @@ Decidir no início da implementação (questão aberta §10).
 
 Phase 1 — MVP (sem IaC inline / sem cloud-shell):
 
-| Cloud | Service        | List | Detail | Create | Delete |
-|-------|----------------|------|--------|--------|--------|
-| AWS   | S3             | ✓    | ✓      | ✓      | ✓      |
-| AWS   | SQS            | ✓    | ✓      | ✓      | ✓      |
-| AWS   | DynamoDB       | ✓    | ✓      | ✓      | ✓      |
-| AWS   | Lambda         | ✓    | ✓      | ✓      | ✓      |
-| Azure | Resource Groups| ✓    | ✓      | ✓      | ✓      |
-| Azure | Storage Acct   | ✓    | ✓      | ✓      | ✓      |
-| GCP   | Cloud Storage  | ✓    | ✓      | ✓      | ✓      |
-| GCP   | Pub/Sub        | ✓    | ✓      | ✓      | ✓      |
+| Cloud | Service         | List | Detail | Create | Delete |
+| ----- | --------------- | ---- | ------ | ------ | ------ |
+| AWS   | S3              | ✓    | ✓      | ✓      | ✓      |
+| AWS   | SQS             | ✓    | ✓      | ✓      | ✓      |
+| AWS   | DynamoDB        | ✓    | ✓      | ✓      | ✓      |
+| AWS   | Lambda          | ✓    | ✓      | ✓      | ✓      |
+| Azure | Resource Groups | ✓    | ✓      | ✓      | ✓      |
+| Azure | Storage Acct    | ✓    | ✓      | ✓      | ✓      |
+| GCP   | Cloud Storage   | ✓    | ✓      | ✓      | ✓      |
+| GCP   | Pub/Sub         | ✓    | ✓      | ✓      | ✓      |
 
 Phase 2 — IaC inline + cloud shell.
 
@@ -258,13 +258,13 @@ Phase 3 — restante dos serviços listados na §2.
 
 Tokens CSS por skin (Tailwind config + CSS vars):
 
-| Token       | AWS              | Azure                 | GCP               |
-|-------------|------------------|------------------------|-------------------|
-| `--bg-top`  | `#232f3e`        | `#0078d4`              | `#1a73e8`         |
-| `--accent`  | `#ff9900`        | `#50e6ff`              | `#34a853`         |
-| `--sidebar` | `#1b2330`        | `#e6e6e6` (light)      | `#202124`         |
-| `--font`    | `Amazon Ember`   | `Segoe UI`             | `Google Sans`     |
-| `--shadow`  | flat             | drop-shadow            | material-elevation|
+| Token       | AWS            | Azure             | GCP                |
+| ----------- | -------------- | ----------------- | ------------------ |
+| `--bg-top`  | `#232f3e`      | `#0078d4`         | `#1a73e8`          |
+| `--accent`  | `#ff9900`      | `#50e6ff`         | `#34a853`          |
+| `--sidebar` | `#1b2330`      | `#e6e6e6` (light) | `#202124`          |
+| `--font`    | `Amazon Ember` | `Segoe UI`        | `Google Sans`      |
+| `--shadow`  | flat           | drop-shadow       | material-elevation |
 
 Componentes neutros (table, form) usam Radix sem skin — apenas tokens
 mudam por cloud-context.
@@ -349,16 +349,16 @@ splitar pkgs). Justificativa em §10 caso o time prefira npm.
 
 ## 9 · Plano de implementação (8 milestones)
 
-| # | Milestone                                        | Output esperado                                                                                | Tempo bruto |
-|---|--------------------------------------------------|------------------------------------------------------------------------------------------------|-------------|
-| 1 | Scaffolding SPA + skin AWS + roteamento          | `pnpm dev` abre console, troca cloud, sidebar carrega                                          | 0.5d        |
-| 2 | API client + tabelas list (S3, SQS, Storage, Pub/Sub) | 4 telas list funcionais consumindo gateway                                                  | 1d          |
-| 3 | Detail + Create wizard (S3 + Pub/Sub)            | criar bucket pela UI → terraform shows mesmo resource                                          | 1d          |
-| 4 | Skins Azure + GCP + cloud picker                 | troca de skin visualmente convincente                                                          | 0.5d        |
-| 5 | IaC inline drawer (Show as Terraform / Apply)    | snippet por recurso + `terraform apply` real                                                   | 1.5d        |
-| 6 | Cloud shell drawer + bridge worker               | `aws s3 ls` na UI retorna mesmo output do terminal                                             | 1d          |
-| 7 | Resto dos serviços phase 1 (DynamoDB, Lambda, RG)| matriz §5 completa                                                                             | 1d          |
-| 8 | Tests + lint + CI                                | playwright smokes p/ list/create/delete por cloud; vitest p/ utils                             | 0.5d        |
+| #   | Milestone                                             | Output esperado                                                    | Tempo bruto |
+| --- | ----------------------------------------------------- | ------------------------------------------------------------------ | ----------- |
+| 1   | Scaffolding SPA + skin AWS + roteamento               | `pnpm dev` abre console, troca cloud, sidebar carrega              | 0.5d        |
+| 2   | API client + tabelas list (S3, SQS, Storage, Pub/Sub) | 4 telas list funcionais consumindo gateway                         | 1d          |
+| 3   | Detail + Create wizard (S3 + Pub/Sub)                 | criar bucket pela UI → terraform shows mesmo resource              | 1d          |
+| 4   | Skins Azure + GCP + cloud picker                      | troca de skin visualmente convincente                              | 0.5d        |
+| 5   | IaC inline drawer (Show as Terraform / Apply)         | snippet por recurso + `terraform apply` real                       | 1.5d        |
+| 6   | Cloud shell drawer + bridge worker                    | `aws s3 ls` na UI retorna mesmo output do terminal                 | 1d          |
+| 7   | Resto dos serviços phase 1 (DynamoDB, Lambda, RG)     | matriz §5 completa                                                 | 1d          |
+| 8   | Tests + lint + CI                                     | playwright smokes p/ list/create/delete por cloud; vitest p/ utils | 0.5d        |
 
 Total estimado: **~7 dias úteis** (1 dev). Critério de done por
 milestone definido na issue/checklist correspondente.
@@ -399,14 +399,14 @@ milestone definido na issue/checklist correspondente.
 
 ## 12 · Riscos e mitigações
 
-| Risco                                                       | Mitigação                                                                                              |
-|-------------------------------------------------------------|--------------------------------------------------------------------------------------------------------|
-| Service surface diverge do real AWS/Azure/GCP                | Skin só. Forms validam contra payload SDK gerado pelos próprios providers Python (snapshot-driven)     |
-| Bridge CLI vira vetor de RCE                                 | Bind only `127.0.0.1`, allowlist comandos (`aws|az|gcloud`), reject shell metachars, log everything    |
-| Performance com refetch agressivo                            | TanStack Query staleTime + window-focus refetch off-by-default; SSE streams para listas grandes        |
-| Self-signed TLS quebra fetch do navegador                    | Console SPA → HTTP :4566 direto (gateway AWS); Azure-only screens podem usar :4569 com user-side trust |
-| Drift entre IaC inline e estado real                         | Botão "Refresh from state" lê via API e regera snippet                                                 |
-| Tradução das blades Azure (UX denso)                         | MVP usa só blade master/detail; multi-blade fica para phase 3                                          |
+| Risco                                         | Mitigação                                                                                              |
+| --------------------------------------------- | ------------------------------------------------------------------------------------------------------ | --- | ------------------------------------------------ |
+| Service surface diverge do real AWS/Azure/GCP | Skin só. Forms validam contra payload SDK gerado pelos próprios providers Python (snapshot-driven)     |
+| Bridge CLI vira vetor de RCE                  | Bind only `127.0.0.1`, allowlist comandos (`aws                                                        | az  | gcloud`), reject shell metachars, log everything |
+| Performance com refetch agressivo             | TanStack Query staleTime + window-focus refetch off-by-default; SSE streams para listas grandes        |
+| Self-signed TLS quebra fetch do navegador     | Console SPA → HTTP :4566 direto (gateway AWS); Azure-only screens podem usar :4569 com user-side trust |
+| Drift entre IaC inline e estado real          | Botão "Refresh from state" lê via API e regera snippet                                                 |
+| Tradução das blades Azure (UX denso)          | MVP usa só blade master/detail; multi-blade fica para phase 3                                          |
 
 ---
 

@@ -24,9 +24,8 @@ services:
     volumes:
       # Serves the built console SPA (run `make console-build` to populate dist/).
       # Falls back to the placeholder index.html committed under console/dist/.
+      # legacy.html is copied from console/public/ into dist/ by Vite at build time.
       - "./localstack-ui/console/dist:/usr/share/nginx/html:ro"
-      # Legacy painel still reachable at /legacy.html.
-      - "./localstack-ui/console/legacy.html:/usr/share/nginx/html/legacy.html:ro"
     depends_on:
       - localstack
     restart: unless-stopped

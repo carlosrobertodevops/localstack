@@ -334,29 +334,59 @@ Log da sessão: `GET /_localstack/console/sessions/<session_id>/log`.
 
 ---
 
-## 13. CLIs apontadas para o LocalStack
+## 13. CLIs e ferramentas IaC apontadas para o LocalStack
+
+### 13.1. Matriz de suporte
+
+| Ferramenta           | Versão mínima | Bridge `/exec` | Endpoint `/_localstack/console/iac` | Wrapper repo       |
+| -------------------- | ------------- | -------------- | ----------------------------------- | ------------------ |
+| AWS CLI (`aws`)      | 2.15+         | ✅ allowlist   | n/a                                 | `bin/awslocal-dev` |
+| Azure CLI (`az`)     | 2.60+         | ✅ allowlist   | n/a                                 | `bin/azurelocal`   |
+| gcloud               | 470.0+        | ✅ allowlist   | n/a                                 | `bin/gcloudlocal`  |
+| Terraform            | 1.6+          | n/a            | ✅ `tool: "terraform"`              | —                  |
+| Serverless Framework | 3.38+         | n/a            | ✅ `tool: "serverless"`             | —                  |
+
+Allowlists no código:
+
+- Bridge host: `localstack-core/localstack/tooling/dev/console_bridge.py:35` → `CLI_ALLOWLIST = ("aws", "az", "gcloud")`
+- IaC backend: `localstack-core/localstack/aws/services/internal.py:409` → `_IAC_TOOL_ALLOWLIST = ("terraform", "serverless")`
+- Ações IaC: `("plan", "apply", "destroy")` (Terraform) · `("deploy", "remove", "package")` (Serverless)
+
+### 13.2. AWS CLI
 
 ```bash
-# AWS CLI — explícito
+# Explícito
 aws --endpoint-url=http://localhost:4566 s3 ls
 aws --endpoint-url=http://localhost:4566 sqs list-queues
 aws --endpoint-url=http://localhost:4566 dynamodb list-tables
 aws --endpoint-url=http://localhost:4566 lambda list-functions
 
-# AWS CLI — via env (evita repetir --endpoint-url)
+# Via env (evita repetir --endpoint-url)
 export AWS_ENDPOINT_URL=http://localhost:4566
 export AWS_ACCESS_KEY_ID=test
 export AWS_SECRET_ACCESS_KEY=test
 export AWS_DEFAULT_REGION=us-east-1
 aws s3 ls
+```
 
-# Azure CLI (wrapper do repo)
+### 13.3. Azure CLI
+
+```bash
 bin/azurelocal group list --output table
+bin/azurelocal storage account list
+```
 
-# gcloud (config 'localstack' apontando para o gateway)
+### 13.4. gcloud
+
+```bash
+# Configuration 'localstack' apontando para o gateway
 gcloud --configuration=localstack storage ls
+gcloud --configuration=localstack pubsub topics list
+```
 
-# Terraform contra o fork
+### 13.5. Terraform
+
+```bash
 cat > /tmp/main.tf <<'EOF'
 terraform {
   required_providers { aws = { source = "hashicorp/aws" } }
@@ -375,6 +405,71 @@ resource "aws_s3_bucket" "demo" { bucket = "demo-bucket" }
 EOF
 cd /tmp && terraform init && terraform apply -auto-approve
 ```
+
+Via console (drawer IaC):
+
+```bash
+curl -s -X POST http://localhost:4566/_localstack/console/iac \
+  -H 'content-type: application/json' \
+  -d '{"tool":"terraform","action":"apply","snippet":"resource \"aws_s3_bucket\" \"demo\" { bucket = \"demo\" }"}'
+```
+
+### 13.6. Serverless Framework
+
+Instalação host (uma vez):
+
+```bash
+npm install -g serverless@3
+# ou via bun
+bun add -g serverless@3
+serverless --version   # >= 3.38
+```
+
+Plugin recomendado para LocalStack:
+
+```bash
+npm install -g serverless-localstack
+```
+
+Snippet mínimo `serverless.yml`:
+
+```yaml
+service: demo-fork
+frameworkVersion: "3"
+provider:
+  name: aws
+  runtime: python3.11
+  region: us-east-1
+plugins:
+  - serverless-localstack
+custom:
+  localstack:
+    stages: [local]
+    host: http://localhost
+    edgePort: 4566
+functions:
+  hello:
+    handler: handler.hello
+```
+
+Deploy local (stage `local`, hardcoded pelo backend do console):
+
+```bash
+serverless deploy --stage local
+serverless invoke --stage local -f hello
+serverless remove --stage local
+```
+
+Via console (mesmo endpoint, `tool: "serverless"`):
+
+```bash
+SNIPPET=$(cat serverless.yml | jq -Rs .)
+curl -s -X POST http://localhost:4566/_localstack/console/iac \
+  -H 'content-type: application/json' \
+  -d "{\"tool\":\"serverless\",\"action\":\"deploy\",\"snippet\":${SNIPPET}}"
+```
+
+> **Nota:** o backend roda `serverless <action> --stage local` no diretório de sessão (`~/.localstack/console-iac/<session>/`). Binário tem que estar no `PATH` do host onde o LocalStack roda (ou montado no container).
 
 ---
 
@@ -522,10 +617,28 @@ git diff --name-only main...HEAD
 
 ## 20. Referências
 
+### 20.1. Repositório
+
 - Plano de design: [`multi-cloud-console-plan.md`](./multi-cloud-console-plan.md)
 - Bridge CLI: `bin/console-cli-bridge.md`
 - Convenções de contribuição: `localstack-ui/console/CONTRIBUTING.md`
 - Endpoints internos: `localstack-core/localstack/aws/services/internal.py`
+- Bridge host (módulo): `localstack-core/localstack/tooling/dev/console_bridge.py`
+- Geradores IaC (UI): `localstack-ui/console/src/lib/iac/generators.ts`
+- Store do drawer IaC: `localstack-ui/console/src/lib/iac-drawer-store.ts`
 - Validadores Python (unit): `tests/unit/console/`
 - Dockerfile: `Dockerfile` (raiz do repo)
 - Helper de build: `bin/docker-helper.sh`
+
+### 20.2. Documentação oficial das ferramentas
+
+| Ferramenta              | Documentação                                                        |
+| ----------------------- | ------------------------------------------------------------------- |
+| AWS CLI                 | https://docs.aws.amazon.com/cli/latest/userguide/                   |
+| Azure CLI               | https://learn.microsoft.com/cli/azure/                              |
+| gcloud CLI              | https://cloud.google.com/sdk/gcloud/reference                       |
+| Terraform               | https://developer.hashicorp.com/terraform/docs                      |
+| Terraform AWS Provider  | https://registry.terraform.io/providers/hashicorp/aws/latest/docs   |
+| Serverless Framework v3 | https://www.serverless.com/framework/docs                           |
+| serverless-localstack   | https://github.com/localstack/serverless-localstack                 |
+| LocalStack (upstream)   | https://docs.localstack.cloud/                                      |

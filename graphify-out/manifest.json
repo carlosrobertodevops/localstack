@@ -7665,8 +7665,8 @@
     "semantic_hash": ""
   },
   "/Users/carlosroberto/Workspace/Projetos/localstack/docker-compose.yml": {
-    "mtime": 1779536290.9528952,
-    "ast_hash": "a4e3bed4ab94a15a28c42a9b5619da92",
+    "mtime": 1779539371.495386,
+    "ast_hash": "144d9409306f27cc88dead5a28efcff5",
     "semantic_hash": ""
   },
   "/Users/carlosroberto/Workspace/Projetos/localstack/AGENTS.md": {
@@ -15775,8 +15775,8 @@
     "semantic_hash": ""
   },
   "/Users/carlosroberto/Workspace/Projetos/localstack/localstack-core/localstack/platform/version.py": {
-    "mtime": 1779487037.4085858,
-    "ast_hash": "fe76f5f60fb3ced7a7a620e57b5eeb03",
+    "mtime": 1779538737.3217537,
+    "ast_hash": "170fcc3bf1c47ba41602fb6b9dc0a41d",
     "semantic_hash": ""
   },
   "/Users/carlosroberto/Workspace/Projetos/localstack/localstack-core/localstack/platform/constants.py": {
@@ -16535,8 +16535,8 @@
     "semantic_hash": ""
   },
   "/Users/carlosroberto/Workspace/Projetos/localstack/localstack-ui/console/src/lib/api/aws.ts": {
-    "mtime": 1779536059.8565686,
-    "ast_hash": "64e3d34ea0e62b40aad23fc16059b8ab",
+    "mtime": 1779536987.2785726,
+    "ast_hash": "87b5fa60690f6689e019476aa0e8207b",
     "semantic_hash": ""
   },
   "/Users/carlosroberto/Workspace/Projetos/localstack/localstack-ui/console/src/lib/api/azure.ts": {
@@ -16579,9 +16579,34 @@
     "ast_hash": "8e293556b009951ce0c16916f38d707c",
     "semantic_hash": ""
   },
-  "/Users/carlosroberto/Workspace/Projetos/localstack/localstack-ui/console/legacy.html": {
-    "mtime": 1779495854.2541664,
-    "ast_hash": "9fb47e0aacd728044a46f75a3b172f60",
+  "/Users/carlosroberto/Workspace/Projetos/localstack/localstack-ui/console/vite.config.d.ts": {
+    "mtime": 1779536966.5800629,
+    "ast_hash": "9fcf75521f4c43fd8b75300e0f63b867",
+    "semantic_hash": ""
+  },
+  "/Users/carlosroberto/Workspace/Projetos/localstack/localstack-ui/console/vitest.config.d.ts": {
+    "mtime": 1779536966.5830889,
+    "ast_hash": "9fcf75521f4c43fd8b75300e0f63b867",
+    "semantic_hash": ""
+  },
+  "/Users/carlosroberto/Workspace/Projetos/localstack/localstack-ui/console/playwright.config.js": {
+    "mtime": 1779536966.5842159,
+    "ast_hash": "1accfe3bea8e605346981cb5113d3115",
+    "semantic_hash": ""
+  },
+  "/Users/carlosroberto/Workspace/Projetos/localstack/localstack-ui/console/vite.config.js": {
+    "mtime": 1779536966.5482328,
+    "ast_hash": "a900881aefa34ebb08be3bbe815caa73",
+    "semantic_hash": ""
+  },
+  "/Users/carlosroberto/Workspace/Projetos/localstack/localstack-ui/console/vitest.config.js": {
+    "mtime": 1779536966.5811548,
+    "ast_hash": "ddbe6ec1d25b5bb89c248e71516da95f",
+    "semantic_hash": ""
+  },
+  "/Users/carlosroberto/Workspace/Projetos/localstack/localstack-ui/console/playwright.config.d.ts": {
+    "mtime": 1779536966.5868034,
+    "ast_hash": "a2b260c5788792ba1ab5a6ac465f65e8",
     "semantic_hash": ""
   }
 }

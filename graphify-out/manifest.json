@@ -7225,8 +7225,8 @@
     "semantic_hash": ""
   },
   "/Users/carlosroberto/Workspace/Projetos/localstack/localstack-core/localstack/aws/app.py": {
-    "mtime": 1779478360.8492763,
-    "ast_hash": "e776d7467dd0fded45a0910fab0724f2",
+    "mtime": 1779496756.0096498,
+    "ast_hash": "eb6f6cdb6501fe1b500f7733e8ac9603",
     "semantic_hash": ""
   },
   "/Users/carlosroberto/Workspace/Projetos/localstack/localstack-core/localstack/aws/scaffold.py": {
@@ -7565,8 +7565,8 @@
     "semantic_hash": ""
   },
   "/Users/carlosroberto/Workspace/Projetos/localstack/localstack-core/localstack/aws/handlers/__init__.py": {
-    "mtime": 1779402241.2358413,
-    "ast_hash": "79126eb359b8c23846269698fc6d6c7b",
+    "mtime": 1779496670.4231162,
+    "ast_hash": "9ed5fa8be508c108a9a2065e6f61efe2",
     "semantic_hash": ""
   },
   "/Users/carlosroberto/Workspace/Projetos/localstack/localstack-core/localstack/aws/handlers/response.py": {
@@ -7630,8 +7630,8 @@
     "semantic_hash": ""
   },
   "/Users/carlosroberto/Workspace/Projetos/localstack/docker-compose-pro.yml": {
-    "mtime": 1779402241.2020922,
-    "ast_hash": "87a14ca959250aea6fca60b547e73695",
+    "mtime": 1779494148.611118,
+    "ast_hash": "95f6b35383b4a22bbecce3f9b0ff4c58",
     "semantic_hash": ""
   },
   "/Users/carlosroberto/Workspace/Projetos/localstack/requirements-test.txt": {
@@ -7665,8 +7665,8 @@
     "semantic_hash": ""
   },
   "/Users/carlosroberto/Workspace/Projetos/localstack/docker-compose.yml": {
-    "mtime": 1779402241.2021596,
-    "ast_hash": "81a6295c4084b9942ba0e04a699687e3",
+    "mtime": 1779497104.4282584,
+    "ast_hash": "001817091668ea79349b9207f38442f4",
     "semantic_hash": ""
   },
   "/Users/carlosroberto/Workspace/Projetos/localstack/AGENTS.md": {
@@ -9329,201 +9329,6 @@
     "ast_hash": "a772f64324c2a64cd7d109b9a6d31596",
     "semantic_hash": ""
   },
-  "/Users/carlosroberto/Workspace/Projetos/localstack/.github/FUNDING.yml": {
-    "mtime": 1779402241.1946366,
-    "ast_hash": "406e675e89423408f953df4f4eee5e39",
-    "semantic_hash": ""
-  },
-  "/Users/carlosroberto/Workspace/Projetos/localstack/.github/release.yml": {
-    "mtime": 1779402241.19575,
-    "ast_hash": "46f55f9f25efbaaab70d657be480f985",
-    "semantic_hash": ""
-  },
-  "/Users/carlosroberto/Workspace/Projetos/localstack/.github/PULL_REQUEST_TEMPLATE.md": {
-    "mtime": 1779402241.1950579,
-    "ast_hash": "5039f86101efd88c770763f8ff691d47",
-    "semantic_hash": ""
-  },
-  "/Users/carlosroberto/Workspace/Projetos/localstack/.github/CLA.md": {
-    "mtime": 1779402241.1945693,
-    "ast_hash": "64840ed28f12bd22d6579e456ca8db92",
-    "semantic_hash": ""
-  },
-  "/Users/carlosroberto/Workspace/Projetos/localstack/.github/dependabot.yml": {
-    "mtime": 1779402241.1956844,
-    "ast_hash": "c4a1005db7c413b6d11c94a62ea048f6",
-    "semantic_hash": ""
-  },
-  "/Users/carlosroberto/Workspace/Projetos/localstack/.github/bot_templates/ASF_UPGRADE_PR.md": {
-    "mtime": 1779402241.1955442,
-    "ast_hash": "3698f61b8e6305a7cb42f2a428147348",
-    "semantic_hash": ""
-  },
-  "/Users/carlosroberto/Workspace/Projetos/localstack/.github/workflows/aws-tests-s3-image.yml": {
-    "mtime": 1779402241.196414,
-    "ast_hash": "c5dc565aea2ceb2a04729e44cd4de0b7",
-    "semantic_hash": ""
-  },
-  "/Users/carlosroberto/Workspace/Projetos/localstack/.github/workflows/stale-bot.yml": {
-    "mtime": 1779402241.1973863,
-    "ast_hash": "aca8fca0823f358a51ab63fa5b8cf6f6",
-    "semantic_hash": ""
-  },
-  "/Users/carlosroberto/Workspace/Projetos/localstack/.github/workflows/pr-enforce-no-major-minor-main.yml": {
-    "mtime": 1779402241.1969392,
-    "ast_hash": "3b228aa7cb8c3361f3c8adbe09f1fd58",
-    "semantic_hash": ""
-  },
-  "/Users/carlosroberto/Workspace/Projetos/localstack/.github/workflows/create_artifact_with_features_files.yml": {
-    "mtime": 1779402241.1965952,
-    "ast_hash": "bc2ad2b5a60806077e1c5019ecea2ba7",
-    "semantic_hash": ""
-  },
-  "/Users/carlosroberto/Workspace/Projetos/localstack/.github/workflows/rebase-release-targeting-prs.yml": {
-    "mtime": 1779402241.1973164,
-    "ast_hash": "202a44fb7871d9a6db8a4eebbce800a2",
-    "semantic_hash": ""
-  },
-  "/Users/carlosroberto/Workspace/Projetos/localstack/.github/workflows/update-test-durations.yml": {
-    "mtime": 1779402241.198054,
-    "ast_hash": "5f23b4484edd773b994a5e5171b63433",
-    "semantic_hash": ""
-  },
-  "/Users/carlosroberto/Workspace/Projetos/localstack/.github/workflows/tests-bin.yml": {
-    "mtime": 1779402241.1975968,
-    "ast_hash": "8520702753680146f7e43aeb236cf873",
-    "semantic_hash": ""
-  },
-  "/Users/carlosroberto/Workspace/Projetos/localstack/.github/workflows/marker-report.yml": {
-    "mtime": 1779478022.4694624,
-    "ast_hash": "ae853a8d6b53417294cbe38678f8610b",
-    "semantic_hash": ""
-  },
-  "/Users/carlosroberto/Workspace/Projetos/localstack/.github/workflows/update-openapi-spec.yml": {
-    "mtime": 1779402241.1979842,
-    "ast_hash": "5aa7e0ee7159ac433ef7fd7c411269dd",
-    "semantic_hash": ""
-  },
-  "/Users/carlosroberto/Workspace/Projetos/localstack/.github/workflows/sync-labels.yml": {
-    "mtime": 1779402241.197449,
-    "ast_hash": "d48b2d88eaca26e3f0a885499acec352",
-    "semantic_hash": ""
-  },
-  "/Users/carlosroberto/Workspace/Projetos/localstack/.github/workflows/pr-welcome-first-time-contributors.yml": {
-    "mtime": 1779402241.1971648,
-    "ast_hash": "0315eacd1c961256b681eda2288cbda7",
-    "semantic_hash": ""
-  },
-  "/Users/carlosroberto/Workspace/Projetos/localstack/.github/workflows/pr-validate-features-files.yml": {
-    "mtime": 1779402241.1970887,
-    "ast_hash": "79496ffd7df6bffb602feff4aedde5c1",
-    "semantic_hash": ""
-  },
-  "/Users/carlosroberto/Workspace/Projetos/localstack/.github/workflows/asf-updates.yml": {
-    "mtime": 1779402241.1958714,
-    "ast_hash": "8f043873d14dbdbb05edeae6031f7934",
-    "semantic_hash": ""
-  },
-  "/Users/carlosroberto/Workspace/Projetos/localstack/.github/workflows/aws-main.yml": {
-    "mtime": 1779402241.196074,
-    "ast_hash": "2ecf93f4355ab4103affddd1fa54dc0a",
-    "semantic_hash": ""
-  },
-  "/Users/carlosroberto/Workspace/Projetos/localstack/.github/workflows/update-cfn-resources.yml": {
-    "mtime": 1779402241.1979055,
-    "ast_hash": "c5e5b116adbde4e50c66ac78bed38b13",
-    "semantic_hash": ""
-  },
-  "/Users/carlosroberto/Workspace/Projetos/localstack/.github/workflows/dockerhub-description.yml": {
-    "mtime": 1779402241.196668,
-    "ast_hash": "eb9bf13295845241d1a22304851a6f7e",
-    "semantic_hash": ""
-  },
-  "/Users/carlosroberto/Workspace/Projetos/localstack/.github/workflows/upgrade-python-dependencies.yml": {
-    "mtime": 1779402241.198122,
-    "ast_hash": "da1d1d37306b35ecccd8523b51d346f2",
-    "semantic_hash": ""
-  },
-  "/Users/carlosroberto/Workspace/Projetos/localstack/.github/workflows/rebase-release-prs.yml": {
-    "mtime": 1779402241.197237,
-    "ast_hash": "29dec8c747404eb19a4d8973162c4a59",
-    "semantic_hash": ""
-  },
-  "/Users/carlosroberto/Workspace/Projetos/localstack/.github/workflows/pr-enforce-no-major-main.yml": {
-    "mtime": 1779402241.1968746,
-    "ast_hash": "457a34d443f6592dd0ab4c2756912b3b",
-    "semantic_hash": ""
-  },
-  "/Users/carlosroberto/Workspace/Projetos/localstack/.github/workflows/aws-tests-mamr.yml": {
-    "mtime": 1779402241.1961682,
-    "ast_hash": "63f24eee6c2018e41f56801273700d50",
-    "semantic_hash": ""
-  },
-  "/Users/carlosroberto/Workspace/Projetos/localstack/.github/workflows/tests-podman.yml": {
-    "mtime": 1779402241.1977093,
-    "ast_hash": "a15dd5767de223547581553fe7752d1c",
-    "semantic_hash": ""
-  },
-  "/Users/carlosroberto/Workspace/Projetos/localstack/.github/workflows/tests-pro-integration.yml": {
-    "mtime": 1779478022.4786005,
-    "ast_hash": "7875e60caa3b8462c6880368c48ad24a",
-    "semantic_hash": ""
-  },
-  "/Users/carlosroberto/Workspace/Projetos/localstack/.github/workflows/pr-cla.yml": {
-    "mtime": 1779402241.1968105,
-    "ast_hash": "7e9baa2be01aec114caaa0811cebfc5d",
-    "semantic_hash": ""
-  },
-  "/Users/carlosroberto/Workspace/Projetos/localstack/.github/workflows/pr-enforce-pr-labels.yml": {
-    "mtime": 1779402241.1970189,
-    "ast_hash": "a5a45110668c386460e9df7e7954e9be",
-    "semantic_hash": ""
-  },
-  "/Users/carlosroberto/Workspace/Projetos/localstack/.github/workflows/validate-codeowners.yml": {
-    "mtime": 1779402241.198186,
-    "ast_hash": "84352f2e57fbc7b47c1fe9b6ab009e2f",
-    "semantic_hash": ""
-  },
-  "/Users/carlosroberto/Workspace/Projetos/localstack/.github/workflows/sync-project.yml": {
-    "mtime": 1779402241.1975117,
-    "ast_hash": "1bd15a289113e1059b93ca209846ec6e",
-    "semantic_hash": ""
-  },
-  "/Users/carlosroberto/Workspace/Projetos/localstack/.github/workflows/aws-tests.yml": {
-    "mtime": 1779478022.486555,
-    "ast_hash": "1e33905a631c47b4d7ef8428cd468ba7",
-    "semantic_hash": ""
-  },
-  "/Users/carlosroberto/Workspace/Projetos/localstack/.github/actions/load-localstack-docker-from-artifacts/action.yml": {
-    "mtime": 1779402241.195312,
-    "ast_hash": "fc2a585cb42067e67685e1054b930283",
-    "semantic_hash": ""
-  },
-  "/Users/carlosroberto/Workspace/Projetos/localstack/.github/actions/build-image/action.yml": {
-    "mtime": 1779402241.1952024,
-    "ast_hash": "537a494b2103cfe092249dcc4776f83f",
-    "semantic_hash": ""
-  },
-  "/Users/carlosroberto/Workspace/Projetos/localstack/.github/actions/setup-tests-env/action.yml": {
-    "mtime": 1779402241.1954296,
-    "ast_hash": "6dfeecd23951ba2e77c63852f9b2db6c",
-    "semantic_hash": ""
-  },
-  "/Users/carlosroberto/Workspace/Projetos/localstack/.github/ISSUE_TEMPLATE/bug-report.yml": {
-    "mtime": 1779402241.1948519,
-    "ast_hash": "6d5100299987902ee8ab3bba0c45a833",
-    "semantic_hash": ""
-  },
-  "/Users/carlosroberto/Workspace/Projetos/localstack/.github/ISSUE_TEMPLATE/config.yml": {
-    "mtime": 1779402241.1949215,
-    "ast_hash": "97a9626b94e4cbf8a49b32e667019b37",
-    "semantic_hash": ""
-  },
-  "/Users/carlosroberto/Workspace/Projetos/localstack/.github/ISSUE_TEMPLATE/feature-request.yml": {
-    "mtime": 1779402241.1949878,
-    "ast_hash": "38bd79ba3835576e10707823d195126e",
-    "semantic_hash": ""
-  },
   "/Users/carlosroberto/Workspace/Projetos/localstack/localstack-core/localstack/aws/data/sqs-query/2012-11-05/README.md": {
     "mtime": 1779402241.2353327,
     "ast_hash": "16a7719ddf9dda99971b0ed83eee2a41",
@@ -9895,8 +9700,8 @@
     "semantic_hash": ""
   },
   "/Users/carlosroberto/Workspace/Projetos/localstack/localstack-core/localstack/azure/gateway.py": {
-    "mtime": 1779457810.3860517,
-    "ast_hash": "344f7fe7d84c68af074b7d5a3ba318c0",
+    "mtime": 1779496896.5591557,
+    "ast_hash": "b76923d23be3b5b4895f832a7ac4b50e",
     "semantic_hash": ""
   },
   "/Users/carlosroberto/Workspace/Projetos/localstack/localstack-core/localstack/azure/handlers.py": {
@@ -9980,9 +9785,9 @@
     "semantic_hash": "fb897b8ac27567e1783b51343d392439"
   },
   "/Users/carlosroberto/Workspace/Projetos/localstack/localstack-core/localstack/cloud/base.py": {
-    "mtime": 1779459260.59022,
-    "ast_hash": "38ec937bed319732ed20c42638f81830",
-    "semantic_hash": "38ec937bed319732ed20c42638f81830"
+    "mtime": 1779496756.0100558,
+    "ast_hash": "e60162a5b2237f2c35321e443ddf7dc6",
+    "semantic_hash": ""
   },
   "/Users/carlosroberto/Workspace/Projetos/localstack/localstack-core/localstack/aws/services/plugins.py": {
     "mtime": 1779478360.9284475,
@@ -9990,8 +9795,8 @@
     "semantic_hash": ""
   },
   "/Users/carlosroberto/Workspace/Projetos/localstack/localstack-core/localstack/aws/services/internal.py": {
-    "mtime": 1779478360.9334311,
-    "ast_hash": "783657ab8047fba053120e9548760003",
+    "mtime": 1779496756.0100555,
+    "ast_hash": "211fe39b39da471353e03cc603901ad0",
     "semantic_hash": ""
   },
   "/Users/carlosroberto/Workspace/Projetos/localstack/localstack-core/localstack/aws/services/edge.py": {
@@ -15970,8 +15775,8 @@
     "semantic_hash": ""
   },
   "/Users/carlosroberto/Workspace/Projetos/localstack/localstack-core/localstack/platform/version.py": {
-    "mtime": 1779458279.760975,
-    "ast_hash": "0875025bc90d5cedfbcbbbfe125ebf1a",
+    "mtime": 1779487037.4085858,
+    "ast_hash": "fe76f5f60fb3ced7a7a620e57b5eeb03",
     "semantic_hash": ""
   },
   "/Users/carlosroberto/Workspace/Projetos/localstack/localstack-core/localstack/platform/constants.py": {
@@ -16467,6 +16272,51 @@
   "/Users/carlosroberto/Workspace/Projetos/localstack/localstack-core/localstack/platform/http/resources/swagger/templates/index.html": {
     "mtime": 1779402241.2445445,
     "ast_hash": "2944e9600497e0abe7c846fca096c2fc",
+    "semantic_hash": ""
+  },
+  "/Users/carlosroberto/Workspace/Projetos/localstack/examples/serverless/azure/handler.py": {
+    "mtime": 1779497296.7527804,
+    "ast_hash": "4c09c42110c824a5fc944c47ec1cd632",
+    "semantic_hash": ""
+  },
+  "/Users/carlosroberto/Workspace/Projetos/localstack/examples/serverless/gcp/main.py": {
+    "mtime": 1779497305.6940165,
+    "ast_hash": "385b93f0c3c97be75d8e8fef3c1ecc66",
+    "semantic_hash": ""
+  },
+  "/Users/carlosroberto/Workspace/Projetos/localstack/examples/serverless/aws/handler.py": {
+    "mtime": 1779497286.104759,
+    "ast_hash": "0633fd860097b8a8c3360a67201c04c8",
+    "semantic_hash": ""
+  },
+  "/Users/carlosroberto/Workspace/Projetos/localstack/localstack-core/localstack/aws/handlers/multi_cloud.py": {
+    "mtime": 1779496904.8941576,
+    "ast_hash": "813f4cb65fa3aa58abac09559e44b0c0",
+    "semantic_hash": ""
+  },
+  "/Users/carlosroberto/Workspace/Projetos/localstack/localstack-init/ready.d/init-s3.sh": {
+    "mtime": 1779490447.3206117,
+    "ast_hash": "de7431244839580c333005c63ebd91d7",
+    "semantic_hash": ""
+  },
+  "/Users/carlosroberto/Workspace/Projetos/localstack/localstack-ui/index.html": {
+    "mtime": 1779495854.2541664,
+    "ast_hash": "9fb47e0aacd728044a46f75a3b172f60",
+    "semantic_hash": ""
+  },
+  "/Users/carlosroberto/Workspace/Projetos/localstack/examples/serverless/azure/serverless.yml": {
+    "mtime": 1779497294.6957407,
+    "ast_hash": "e50bbd14000b8f7bbc507380e6bb967f",
+    "semantic_hash": ""
+  },
+  "/Users/carlosroberto/Workspace/Projetos/localstack/examples/serverless/gcp/serverless.yml": {
+    "mtime": 1779497304.081847,
+    "ast_hash": "a41832b3deab70b59fe36141ecfd5a0f",
+    "semantic_hash": ""
+  },
+  "/Users/carlosroberto/Workspace/Projetos/localstack/examples/serverless/aws/serverless.yml": {
+    "mtime": 1779497284.5874481,
+    "ast_hash": "e47fb9e9061bd6d5fc5b94770624c4f3",
     "semantic_hash": ""
   }
 }

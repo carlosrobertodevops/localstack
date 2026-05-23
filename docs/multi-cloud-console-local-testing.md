@@ -1,8 +1,10 @@
-# Multi-cloud Console — Manual de Testes Locais
+# Multi-cloud Console — Manual de Testes e Execução Local
 
-Guia para subir e testar localmente o LocalStack fork + console multi-cloud
+Guia único para subir, testar e operar o LocalStack fork + console multi-cloud
 **usando a imagem que construímos a partir deste repositório**
 (`localstack/localstack-custom`), **não a imagem oficial `localstack/localstack`**.
+
+Combina visão conceitual + cheatsheet comando-a-comando.
 
 ---
 
@@ -24,7 +26,20 @@ apontado para `${LOCALSTACK_IMAGE:-localstack/localstack-custom}`.
 
 ---
 
-## 1. Pré-requisitos
+## 1. Atalho — do zero ao console em 5 passos
+
+```bash
+make install                                                       # 1. venv + deps Python
+make entrypoints                                                   # 2. plux.ini
+IMAGE_NAME=localstack/localstack-custom make docker-build          # 3. imagem do fork
+make console-install && make console-build                         # 4. SPA (bun)
+docker compose up -d localstack localstack-ui                      # 5. stack
+open http://localhost:4577
+```
+
+---
+
+## 2. Pré-requisitos
 
 | Ferramenta     | Versão mínima    | Verificar                |
 | -------------- | ---------------- | ------------------------ |
@@ -45,149 +60,216 @@ curl -fsSL https://bun.sh/install | bash
 
 ---
 
-## 2. Build da nossa imagem
-
-A imagem é construída a partir do `Dockerfile` na raiz, via
-`bin/docker-helper.sh`. O target `make docker-build` empacota o
-`localstack-core` atual + entrypoints + providers do fork.
-
-### 2.1. Build padrão
+## 3. Setup de ambiente Python
 
 ```bash
-# Tag default: localstack/localstack:latest
-make docker-build
-```
-
-### 2.2. Build com tag custom (recomendado para evitar colisão com upstream)
-
-```bash
-# Use a mesma tag que o docker-compose espera por default
-IMAGE_NAME=localstack/localstack-custom DEFAULT_TAG=dev make docker-build
-docker image ls localstack/localstack-custom
-```
-
-### 2.3. Build multiplataforma (Apple Silicon → linux/amd64 p/ CI parity)
-
-```bash
-IMAGE_NAME=localstack/localstack-custom PLATFORM=linux/amd64 make docker-build
-```
-
-### 2.4. Rebuild rápido após mudança só em `localstack-core/`
-
-```bash
-# Reaproveita as camadas anteriores
-DOCKER_BUILDKIT=1 IMAGE_NAME=localstack/localstack-custom make docker-build
-```
-
-> Tag default do compose: `localstack/localstack-custom:latest`.
-> Se você usou outra tag (ex.: `:dev`), exporte:
->
-> ```bash
-> export LOCALSTACK_IMAGE=localstack/localstack-custom:dev
-> ```
-
----
-
-## 3. Backend (LocalStack fork) via docker-compose
-
-### 3.1. Venv local + entrypoints (necessário antes de `make docker-build`)
-
-```bash
-make install            # cria .venv + instala deps
+make install                # cria .venv + instala localstack-core[dev]
 source .venv/bin/activate
-make entrypoints        # regenera plux.ini (obrigatório p/ providers serem descobertos)
+make entrypoints            # regenera plux.ini (obrigatório p/ providers serem descobertos)
+
+# Lint / format
+make lint                   # ruff + ruff format --check + mypy + deptry
+make format                 # ruff check --fix + ruff format
+make lint-modified          # scoped p/ git-modified .py
+make format-modified
 ```
 
 > Pular `make entrypoints` é a fonte #1 de "endpoint X 404" — o Plux registry
 > não enxerga providers novos sem `plux.ini` atualizado.
 
-### 3.2. Subir só o LocalStack
+---
+
+## 4. Build da imagem do fork
+
+A imagem é construída a partir do `Dockerfile` na raiz via
+`bin/docker-helper.sh`. Empacota `localstack-core` atual + entrypoints +
+providers do fork.
 
 ```bash
-LOCALSTACK_IMAGE=localstack/localstack-custom:latest docker compose up -d localstack
-docker compose ps                                # esperar 'healthy'
-docker compose logs -f localstack | head -40     # verificar boot
+# Build padrão (tag: localstack/localstack:latest)
+make docker-build
+
+# Build com a tag que o docker-compose espera por default
+IMAGE_NAME=localstack/localstack-custom make docker-build
+
+# Tag custom (ex.: :dev) — exporte LOCALSTACK_IMAGE depois
+IMAGE_NAME=localstack/localstack-custom DEFAULT_TAG=dev make docker-build
+export LOCALSTACK_IMAGE=localstack/localstack-custom:dev
+
+# Build linux/amd64 em Apple Silicon (parity com CI)
+IMAGE_NAME=localstack/localstack-custom PLATFORM=linux/amd64 make docker-build
+
+# Listar imagens construídas
+docker image ls localstack/localstack-custom
+
+# Remover imagem
+docker image rm localstack/localstack-custom:latest
 ```
 
-### 3.3. Confirmar que é o nosso fork (não o upstream)
+> Tag default do compose: `localstack/localstack-custom:latest`.
+> Para outra tag, exporte `LOCALSTACK_IMAGE=localstack/localstack-custom:dev`.
+
+---
+
+## 5. Subir / derrubar a stack
 
 ```bash
-# /clouds só existe no fork
+# Subir só o LocalStack
+docker compose up -d localstack
+
+# Subir LocalStack + nginx sidecar (SPA em :4577)
+docker compose up -d localstack localstack-ui
+
+# Subir tudo
+docker compose up -d
+
+# Status + logs
+docker compose ps
+docker compose logs -f localstack
+docker compose logs -f localstack-ui
+
+# Restart sem rebuild
+docker compose restart localstack
+
+# Force recreate (depois de alterar env/compose)
+docker compose up -d --force-recreate localstack
+
+# Down (preserva volume)
+docker compose down
+
+# Down + volumes (estado limpo)
+docker compose down -v
+```
+
+---
+
+## 6. Verificar que está rodando o fork
+
+```bash
+# Health geral
+curl -s http://localhost:4566/_localstack/health | jq
+
+# Clouds registradas (só existe no fork)
 curl -s http://localhost:4566/_localstack/clouds | jq
+# Esperado: { "clouds": [ { "name": "aws", ... }, { "name": "azure", ... } ] }
 
-# Esperado:
-# { "clouds": [ { "name": "aws", ... }, { "name": "azure", ... } ] }
-
-# Se voltar 404 → você está rodando upstream. Confira:
-docker compose images localstack
+# Imagem que o container está usando
 docker inspect localstack-main --format '{{.Config.Image}}'
+
+# Versão do localstack-core dentro do container
+docker exec localstack-main localstack --version
 ```
 
-### 3.4. Endpoints do console (só existem no fork)
+Se `/clouds` retornar 404 → está rodando upstream. Rebuild com
+`IMAGE_NAME=localstack/localstack-custom make docker-build` e recreate
+o container.
+
+---
+
+## 7. Console SPA (bun + Vite + Tailwind + shadcn)
+
+### 7.1. Via make targets
 
 ```bash
-# Render de provider.tf + main.tf
+make console-install        # bun install
+make console-dev            # vite dev server em :5173
+make console-build          # tsc -b && vite build → dist/
+make console-lint           # eslint + tsc --noEmit
+make console-test           # vitest run
+make console-test-e2e       # playwright (requer stack)
+```
+
+### 7.2. Direto pelo bun (sem make)
+
+```bash
+cd localstack-ui/console
+bun install
+bun run dev
+bun run build
+bun run typecheck
+bun run lint
+bun run test
+bun run test:e2e
+```
+
+### 7.3. Reinstalar do zero
+
+```bash
+rm -rf localstack-ui/console/{node_modules,bun.lock,dist}
+make console-install
+```
+
+Vite proxy: `/_localstack/*` → `:4566`; `/_bridge/*` → `:4578`.
+
+---
+
+## 8. Bridge CLI host-side (`:4578`)
+
+Executa `aws`, `az`, `gcloud` na **sua máquina** com credenciais reais
+quando o Cloud Shell drawer precisa de algo fora do escopo do container.
+Bridge offline → SPA cai automaticamente para `/_localstack/console/cli`
+(in-container).
+
+```bash
+# Instalar deps do bridge (cria .venv-bridge)
+make console-bridge-install
+
+# Foreground em :4578
+make console-bridge
+
+# Background (sem make)
+nohup bin/console-cli-bridge --host 127.0.0.1 --port 4578 > bridge.log 2>&1 &
+echo $! > bridge.pid
+
+# Healthcheck
+curl -s http://127.0.0.1:4578/health | jq
+
+# Parar
+kill "$(cat bridge.pid)" && rm bridge.pid
+```
+
+Allowlist (enforced no bridge **e** no in-container endpoint):
+`aws`, `az`, `gcloud`. Outros → 400 unsupported cli.
+
+---
+
+## 9. Endpoints internos do console (curl direto)
+
+```bash
+# Render preview (provider.tf + main.tf)
 curl -s -X POST http://localhost:4566/_localstack/console/iac/preview \
   -H 'content-type: application/json' \
   -d '{"tool":"terraform","snippet":"resource \"aws_s3_bucket\" \"x\" { bucket = \"x\" }"}' \
   | jq
 
-# CLI passthrough (in-container) — rejeita cli fora da allowlist
+# Aplicar IaC
+curl -s -X POST http://localhost:4566/_localstack/console/iac \
+  -H 'content-type: application/json' \
+  -d '{"tool":"terraform","snippet":"resource \"aws_s3_bucket\" \"y\" { bucket = \"y\" }","action":"apply"}' \
+  | jq
+
+# Ler log de uma sessão IaC
+SESSION_ID=<id-retornado-acima>
+curl -s "http://localhost:4566/_localstack/console/sessions/${SESSION_ID}/log"
+
+# CLI passthrough (in-container)
+curl -s -X POST http://localhost:4566/_localstack/console/cli \
+  -H 'content-type: application/json' \
+  -d '{"cli":"aws","args":["s3","ls"]}' | jq
+
+# Allowlist check (deve retornar 400)
 curl -s -X POST http://localhost:4566/_localstack/console/cli \
   -H 'content-type: application/json' -d '{"cli":"evil","args":[]}'
-# → 400 unsupported cli
 ```
 
 ---
 
-## 4. Console SPA
-
-### 4.1. Dev (Vite, hot-reload em `:5173`)
-
-```bash
-make console-install        # bun install
-make console-dev            # http://localhost:5173
-```
-
-Proxy do Vite: `/_localstack/*` → `:4566`; `/_bridge/*` → `:4578`.
-
-### 4.2. Build de produção + servir via nginx sidecar (`:4577`)
-
-```bash
-make console-build                          # gera localstack-ui/console/dist/
-docker compose up -d localstack-ui          # nginx monta dist/ em :4577
-open http://localhost:4577
-```
-
----
-
-## 5. Bridge CLI host-side (`:4578`)
-
-Executa `aws`, `az`, `gcloud` na **sua máquina** com credenciais reais
-quando o Cloud Shell drawer precisa de algo fora do escopo do container.
-
-```bash
-make console-bridge-install     # cria .venv-bridge e instala aiohttp
-make console-bridge             # listen em 127.0.0.1:4578
-```
-
-Healthcheck (outra aba):
-
-```bash
-curl -s http://127.0.0.1:4578/health | jq
-```
-
-Bridge offline → SPA cai automaticamente para `/_localstack/console/cli`
-(in-container, com PATH limitado).
-
----
-
-## 6. Roteiros de teste pela UI
+## 10. Roteiros de teste pela UI
 
 Abra `http://localhost:4577` (build) ou `http://localhost:5173` (dev).
 Use o **cloud picker** na TopBar para alternar skin + serviços.
 
-### 6.1. AWS · S3
+### 10.1. AWS · S3
 
 1. `/aws/s3` → **Create bucket** → `demo-bucket`
 2. Lista atualiza → click no bucket → detail page.
@@ -203,7 +285,7 @@ Use o **cloud picker** na TopBar para alternar skin + serviços.
    ```
 6. **Delete bucket** na UI; confirme via CLI.
 
-### 6.2. AWS · SQS · DynamoDB · Lambda
+### 10.2. AWS · SQS · DynamoDB · Lambda
 
 | Rota            | Ação                                                                     |
 | --------------- | ------------------------------------------------------------------------ |
@@ -211,30 +293,34 @@ Use o **cloud picker** na TopBar para alternar skin + serviços.
 | `/aws/dynamodb` | Create table (PK = `id`) → Scan                                          |
 | `/aws/lambda`   | Create function (Runtime `python3.12`, zip base64 default) → Invoke `{}` |
 
-### 6.3. Azure · Resource Groups + Storage
+### 10.3. Azure · Resource Groups + Storage
 
 1. Troque para **Azure**.
 2. `/azure/resource-groups` → Create RG `rg-demo` (location `eastus`).
 3. `/azure/storage-accounts` → Create `stdemo` no RG `rg-demo`.
+4. CLI: `bin/azurelocal group list --output table` (wrapper).
 
-### 6.4. GCP · Storage + Pub/Sub
+### 10.4. GCP · Storage + Pub/Sub
 
 1. Troque para **GCP**.
 2. `/gcp/storage` → Create bucket `gcs-demo`.
 3. `/gcp/pubsub` → Create topic `topic-demo`.
+4. CLI: `gcloud --configuration=localstack storage ls`.
 
 ---
 
-## 7. Cloud Shell drawer
+## 11. Cloud Shell drawer
 
 1. Botão flutuante (canto inferior direito) → abre drawer com xterm.
 2. Comandos: `aws s3 ls`, `az group list`, `gcloud storage ls`.
 3. Histórico em `localStorage` (`localstack-console:shell-history`); ↑/↓.
-4. Allowlist enforced: `aws`, `az`, `gcloud`. Outros → 400.
+4. Allowlist enforced (`aws|az|gcloud`); outros → 400.
 
 ---
 
-## 8. IaC inline drawer
+## 12. IaC inline drawer (Terraform / Serverless)
+
+Em qualquer página de recurso, clique em **Show as Terraform**:
 
 | Botão   | Endpoint                                         | Efeito                     |
 | ------- | ------------------------------------------------ | -------------------------- |
@@ -248,90 +334,195 @@ Log da sessão: `GET /_localstack/console/sessions/<session_id>/log`.
 
 ---
 
-## 9. Testes automatizados
-
-### 9.1. Unit Python (validators dos endpoints)
+## 13. CLIs apontadas para o LocalStack
 
 ```bash
+# AWS CLI — explícito
+aws --endpoint-url=http://localhost:4566 s3 ls
+aws --endpoint-url=http://localhost:4566 sqs list-queues
+aws --endpoint-url=http://localhost:4566 dynamodb list-tables
+aws --endpoint-url=http://localhost:4566 lambda list-functions
+
+# AWS CLI — via env (evita repetir --endpoint-url)
+export AWS_ENDPOINT_URL=http://localhost:4566
+export AWS_ACCESS_KEY_ID=test
+export AWS_SECRET_ACCESS_KEY=test
+export AWS_DEFAULT_REGION=us-east-1
+aws s3 ls
+
+# Azure CLI (wrapper do repo)
+bin/azurelocal group list --output table
+
+# gcloud (config 'localstack' apontando para o gateway)
+gcloud --configuration=localstack storage ls
+
+# Terraform contra o fork
+cat > /tmp/main.tf <<'EOF'
+terraform {
+  required_providers { aws = { source = "hashicorp/aws" } }
+}
+provider "aws" {
+  region                      = "us-east-1"
+  access_key                  = "test"
+  secret_key                  = "test"
+  skip_credentials_validation = true
+  skip_metadata_api_check     = true
+  skip_requesting_account_id  = true
+  s3_use_path_style           = true
+  endpoints { s3 = "http://localhost:4566" }
+}
+resource "aws_s3_bucket" "demo" { bucket = "demo-bucket" }
+EOF
+cd /tmp && terraform init && terraform apply -auto-approve
+```
+
+---
+
+## 14. Testes automatizados
+
+```bash
+# Unit Python (validators do console)
 source .venv/bin/activate
 python -m pytest tests/unit/console/ -v
-```
+# Esperado: ~66 testes, 0 falhas
 
-Esperado: ~66 testes, 0 falhas.
+# Suite completa de unit Python
+make test TEST_PATH=tests/unit
 
-### 9.2. Unit TypeScript (vitest)
+# Pytest direto (qualquer caminho)
+pytest tests/aws/services/s3/
 
-```bash
-make console-test       # bun run test → 8/8
-```
-
-### 9.3. Smoke contra LocalStack rodando (**na nossa imagem**)
-
-```bash
-docker compose up -d localstack                                # imagem custom
+# Smoke contra LocalStack rodando (na nossa imagem)
+docker compose up -d localstack
 SKIP_CONSOLE_SMOKE=0 pytest tests/aws/test_console_endpoints_smoke.py -v
-```
 
-Falhou com "endpoint não existe"? Você está na upstream — rebuild:
-`IMAGE_NAME=localstack/localstack-custom make docker-build`.
+# Markers AWS (verifica que todo teste em tests/aws/* tem marker)
+make check-aws-markers
 
-### 9.4. E2E Playwright
+# Rodar testes dentro da imagem custom (parity CI)
+make docker-run-tests
 
-```bash
+# Unit TypeScript (vitest)
+make console-test                   # 8/8
+
+# E2E Playwright (sobe stack antes)
 make console-build && docker compose up -d localstack localstack-ui
-make console-test-e2e   # bun run test:e2e
+make console-test-e2e
 ```
 
-### 9.5. Suite de testes dentro da imagem
+Parity contra a AWS real (atualizar snapshots):
 
 ```bash
-make docker-run-tests   # roda pytest dentro do container construído
+AWS_PROFILE=<seu_perfil> TEST_TARGET=AWS_CLOUD SNAPSHOT_UPDATE=1 \
+  pytest tests/aws/services/s3/test_s3.py -k <test_name>
 ```
 
 ---
 
-## 10. Troubleshooting
+## 15. Logs / debug
 
-| Sintoma                                                     | Causa provável                                            | Ação                                                                                                                  |
-| ----------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| `curl :4566/_localstack/clouds` retorna 404                 | Compose subiu `localstack/localstack` (upstream)          | `LOCALSTACK_IMAGE=localstack/localstack-custom make docker-build && docker compose up -d --force-recreate localstack` |
-| `Endpoint /_localstack/console/iac/preview` retorna 404     | Provider novo não foi registrado pelo Plux                | Reativar venv → `make entrypoints` → `make docker-build` → recriar container                                          |
-| Console em `:4577` carrega CSS mas dados vazios             | CORS bloqueando                                           | Confira `EXTRA_CORS_ALLOWED_ORIGINS` no compose (inclui `:4577` e `:5173`)                                            |
-| **Apply** falha com `terraform: not found`                  | `terraform` ausente do PATH do container                  | Use a allowlist do bridge host (`make console-bridge`) ou monte um volume com terraform binário                       |
-| Cloud Shell mostra "bridge unavailable"                     | Worker `:4578` desligado                                  | Em outro terminal: `make console-bridge`                                                                              |
-| `make docker-build` falha em Apple Silicon                  | `PLATFORM` default não bate com runtime                   | `PLATFORM=linux/arm64 make docker-build` (ou `linux/amd64` se quiser parity com CI)                                   |
-| `bun install` falha em arm64 mac                            | Bun antigo                                                | `curl -fsSL https://bun.sh/install \| bash`                                                                           |
-| `vite build` → `TS2769 Runtime` em `aws.ts`                 | SDK Lambda atualizou enum                                 | Confirme `import { type Runtime } from "@aws-sdk/client-lambda"` em `src/lib/api/aws.ts`                              |
-| `docker compose up -d localstack` puxa upstream do registry | `LOCALSTACK_IMAGE` não exportado e tag custom inexistente | Build primeiro: `make docker-build`, depois export `LOCALSTACK_IMAGE=...:latest`                                      |
+```bash
+# Logs do container
+docker compose logs -f localstack
+docker compose logs --tail 100 localstack
+
+# DEBUG=1 (mais verboso)
+DEBUG=1 docker compose up -d --force-recreate localstack
+
+# Shell dentro do container
+docker exec -it localstack-main bash
+
+# Inspecionar volume de estado
+ls volume/
+
+# Limpar log de uma sessão IaC
+rm -rf volume/console-sessions/<session_id>/
+```
 
 ---
 
-## 11. Reset / limpeza
+## 16. Reset / limpeza total
 
 ```bash
-# Stack down
-docker compose down
-
-# State + volume LocalStack
+# Stack + estado
 docker compose down -v
 rm -rf volume/
 
 # SPA build + node_modules
-rm -rf localstack-ui/console/{dist,node_modules,bun.lock}
+rm -rf localstack-ui/console/{node_modules,bun.lock,dist}
 
 # Imagem custom
-docker image rm localstack/localstack-custom:latest
+docker image rm localstack/localstack-custom:latest 2>/dev/null
 
 # Reconstruir tudo
-make docker-build && make console-install && make console-build
+make install && make entrypoints
+IMAGE_NAME=localstack/localstack-custom make docker-build
+make console-install && make console-build
 docker compose up -d localstack localstack-ui
+open http://localhost:4577
 ```
 
 ---
 
-## 12. Referências
+## 17. Variáveis de ambiente
 
-- Plano de design: `docs/multi-cloud-console-plan.md`
+| Variável                     | Default                        | Onde                        |
+| ---------------------------- | ------------------------------ | --------------------------- |
+| `LOCALSTACK_IMAGE`           | `localstack/localstack-custom` | `docker-compose.yml`        |
+| `LOCALSTACK_DOCKER_NAME`     | `localstack-main`              | `docker-compose.yml`        |
+| `LOCALSTACK_VOLUME_DIR`      | `./volume`                     | `docker-compose.yml`        |
+| `EXTRA_CORS_ALLOWED_ORIGINS` | `:4577,:5173,:4578,orb.local`  | `docker-compose.yml`        |
+| `DEBUG`                      | `0`                            | `docker-compose.yml`        |
+| `PERSISTENCE`                | `0`                            | `docker-compose.yml`        |
+| `IMAGE_NAME`                 | `localstack/localstack`        | `Makefile` (`docker-build`) |
+| `DEFAULT_TAG`                | `latest`                       | `Makefile`                  |
+| `PLATFORM`                   | host                           | `Makefile`                  |
+| `SKIP_CONSOLE_SMOKE`         | `1`                            | smoke tests                 |
+| `LOCALSTACK_ENDPOINT`        | `http://localhost:4566`        | smoke tests                 |
+| `AWS_ENDPOINT_URL`           | —                              | AWS CLI / SDK               |
+
+Exemplos:
+
+```bash
+PERSISTENCE=1 docker compose up -d --force-recreate localstack
+LOCALSTACK_IMAGE=localstack/localstack-custom:dev docker compose up -d localstack
+LOCALSTACK_VOLUME_DIR=/tmp/ls-state docker compose up -d localstack
+```
+
+---
+
+## 18. Troubleshooting
+
+| Sintoma                                                     | Causa provável                                            | Ação                                                                                                            |
+| ----------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| `curl :4566/_localstack/clouds` retorna 404                 | Compose subiu `localstack/localstack` (upstream)          | `IMAGE_NAME=localstack/localstack-custom make docker-build && docker compose up -d --force-recreate localstack` |
+| Endpoint `_localstack/console/iac/preview` retorna 404      | Provider não foi registrado pelo Plux                     | Ativar venv → `make entrypoints` → `make docker-build` → recriar container                                      |
+| Console em `:4577` carrega CSS mas dados vazios             | CORS bloqueando                                           | Confirme `EXTRA_CORS_ALLOWED_ORIGINS` no compose (inclui `:4577` e `:5173`)                                     |
+| **Apply** falha com `terraform: not found`                  | `terraform` ausente do PATH do container                  | Usar bridge host (`make console-bridge`) ou montar volume com binário                                           |
+| Cloud Shell mostra "bridge unavailable"                     | Worker `:4578` desligado                                  | Em outro terminal: `make console-bridge`                                                                        |
+| `make docker-build` falha em Apple Silicon                  | `PLATFORM` default não bate com runtime                   | `PLATFORM=linux/arm64 make docker-build` (ou `linux/amd64` p/ CI parity)                                        |
+| `bun install` falha em arm64 mac                            | Bun antigo                                                | `curl -fsSL https://bun.sh/install \| bash`                                                                     |
+| `vite build` → `TS2769 Runtime` em `aws.ts`                 | SDK Lambda atualizou enum                                 | Confirmar `import { type Runtime } from "@aws-sdk/client-lambda"` em `src/lib/api/aws.ts`                       |
+| `docker compose up -d localstack` puxa upstream do registry | `LOCALSTACK_IMAGE` não exportado e tag custom inexistente | Build primeiro: `make docker-build`, depois export `LOCALSTACK_IMAGE=...:latest`                                |
+
+---
+
+## 19. Git / atalhos de dev
+
+```bash
+git status
+git diff localstack-core/localstack/aws/services/internal.py
+git log --oneline -10
+
+# Arquivos modificados na branch
+git diff --name-only main...HEAD
+```
+
+---
+
+## 20. Referências
+
+- Plano de design: [`multi-cloud-console-plan.md`](./multi-cloud-console-plan.md)
 - Bridge CLI: `bin/console-cli-bridge.md`
 - Convenções de contribuição: `localstack-ui/console/CONTRIBUTING.md`
 - Endpoints internos: `localstack-core/localstack/aws/services/internal.py`
